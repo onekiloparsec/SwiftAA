@@ -1,0 +1,942 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F29B4701B47313500B64C96 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B46F1B47313500B64C96 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F29B4761B47313500B64C96 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F29B46A1B47313500B64C96 /* SwiftAA.framework */; };
+		9F29B47D1B47313500B64C96 /* SwiftAATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B47C1B47313500B64C96 /* SwiftAATests.swift */; };
+		9F29B5041B47317500B64C96 /* AA+.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4871B47317500B64C96 /* AA+.h */; };
+		9F29B5051B47317500B64C96 /* AA+.htm in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B4881B47317500B64C96 /* AA+.htm */; };
+		9F29B5061B47317500B64C96 /* AA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4891B47317500B64C96 /* AA2DCoordinate.h */; };
+		9F29B5071B47317500B64C96 /* AA3DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B48A1B47317500B64C96 /* AA3DCoordinate.h */; };
+		9F29B5081B47317500B64C96 /* AAAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B48B1B47317500B64C96 /* AAAberration.cpp */; };
+		9F29B5091B47317500B64C96 /* AAAberration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B48C1B47317500B64C96 /* AAAberration.h */; };
+		9F29B50A1B47317500B64C96 /* AAAngularSeparation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */; };
+		9F29B50B1B47317500B64C96 /* AAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */; };
+		9F29B50C1B47317500B64C96 /* AABinaryStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */; };
+		9F29B50D1B47317500B64C96 /* AABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4901B47317500B64C96 /* AABinaryStar.h */; };
+		9F29B50E1B47317500B64C96 /* AACoordinateTransformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */; };
+		9F29B50F1B47317500B64C96 /* AACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4921B47317500B64C96 /* AACoordinateTransformation.h */; };
+		9F29B5101B47317500B64C96 /* AADate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4931B47317500B64C96 /* AADate.cpp */; };
+		9F29B5111B47317500B64C96 /* AADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4941B47317500B64C96 /* AADate.h */; };
+		9F29B5121B47317500B64C96 /* AADiameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4951B47317500B64C96 /* AADiameters.cpp */; };
+		9F29B5131B47317500B64C96 /* AADiameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4961B47317500B64C96 /* AADiameters.h */; };
+		9F29B5141B47317500B64C96 /* AADynamicalTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */; };
+		9F29B5151B47317500B64C96 /* AADynamicalTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4981B47317500B64C96 /* AADynamicalTime.h */; };
+		9F29B5161B47317500B64C96 /* AAEarth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4991B47317500B64C96 /* AAEarth.cpp */; };
+		9F29B5171B47317500B64C96 /* AAEarth.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B49A1B47317500B64C96 /* AAEarth.h */; };
+		9F29B5181B47317500B64C96 /* AAEaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B49B1B47317500B64C96 /* AAEaster.cpp */; };
+		9F29B5191B47317500B64C96 /* AAEaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B49C1B47317500B64C96 /* AAEaster.h */; };
+		9F29B51A1B47317500B64C96 /* AAEclipses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B49D1B47317500B64C96 /* AAEclipses.cpp */; };
+		9F29B51B1B47317500B64C96 /* AAEclipses.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B49E1B47317500B64C96 /* AAEclipses.h */; };
+		9F29B51C1B47317500B64C96 /* AAEclipticalElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B49F1B47317500B64C96 /* AAEclipticalElements.cpp */; };
+		9F29B51D1B47317500B64C96 /* AAEclipticalElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4A01B47317500B64C96 /* AAEclipticalElements.h */; };
+		9F29B51E1B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4A11B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp */; };
+		9F29B51F1B47317500B64C96 /* AAElementsPlanetaryOrbit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4A21B47317500B64C96 /* AAElementsPlanetaryOrbit.h */; };
+		9F29B5201B47317500B64C96 /* AAElliptical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4A31B47317500B64C96 /* AAElliptical.cpp */; };
+		9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4A41B47317500B64C96 /* AAElliptical.h */; };
+		9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4A51B47317500B64C96 /* AAEquationOfTime.cpp */; };
+		9F29B5231B47317500B64C96 /* AAEquationOfTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4A61B47317500B64C96 /* AAEquationOfTime.h */; };
+		9F29B5241B47317500B64C96 /* AAEquinoxesAndSolstices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4A71B47317500B64C96 /* AAEquinoxesAndSolstices.cpp */; };
+		9F29B5251B47317500B64C96 /* AAEquinoxesAndSolstices.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4A81B47317500B64C96 /* AAEquinoxesAndSolstices.h */; };
+		9F29B5261B47317500B64C96 /* AAFK5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4A91B47317500B64C96 /* AAFK5.cpp */; };
+		9F29B5271B47317500B64C96 /* AAFK5.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4AA1B47317500B64C96 /* AAFK5.h */; };
+		9F29B5281B47317500B64C96 /* AAGalileanMoons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4AB1B47317500B64C96 /* AAGalileanMoons.cpp */; };
+		9F29B5291B47317500B64C96 /* AAGalileanMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4AC1B47317500B64C96 /* AAGalileanMoons.h */; };
+		9F29B52A1B47317500B64C96 /* AAGlobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4AD1B47317500B64C96 /* AAGlobe.cpp */; };
+		9F29B52B1B47317500B64C96 /* AAGlobe.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4AE1B47317500B64C96 /* AAGlobe.h */; };
+		9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4AF1B47317500B64C96 /* AAIlluminatedFraction.cpp */; };
+		9F29B52D1B47317500B64C96 /* AAIlluminatedFraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4B01B47317500B64C96 /* AAIlluminatedFraction.h */; };
+		9F29B52E1B47317500B64C96 /* AAInterpolate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4B11B47317500B64C96 /* AAInterpolate.cpp */; };
+		9F29B52F1B47317500B64C96 /* AAInterpolate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4B21B47317500B64C96 /* AAInterpolate.h */; };
+		9F29B5301B47317500B64C96 /* AAJewishCalendar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4B31B47317500B64C96 /* AAJewishCalendar.cpp */; };
+		9F29B5311B47317500B64C96 /* AAJewishCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4B41B47317500B64C96 /* AAJewishCalendar.h */; };
+		9F29B5321B47317500B64C96 /* AAJupiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4B51B47317500B64C96 /* AAJupiter.cpp */; };
+		9F29B5331B47317500B64C96 /* AAJupiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4B61B47317500B64C96 /* AAJupiter.h */; };
+		9F29B5341B47317500B64C96 /* AAKepler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4B71B47317500B64C96 /* AAKepler.cpp */; };
+		9F29B5351B47317500B64C96 /* AAKepler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4B81B47317500B64C96 /* AAKepler.h */; };
+		9F29B5361B47317500B64C96 /* AAMars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4B91B47317500B64C96 /* AAMars.cpp */; };
+		9F29B5371B47317500B64C96 /* AAMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4BA1B47317500B64C96 /* AAMars.h */; };
+		9F29B5381B47317500B64C96 /* AAMercury.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4BB1B47317500B64C96 /* AAMercury.cpp */; };
+		9F29B5391B47317500B64C96 /* AAMercury.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4BC1B47317500B64C96 /* AAMercury.h */; };
+		9F29B53A1B47317500B64C96 /* AAMoon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4BD1B47317500B64C96 /* AAMoon.cpp */; };
+		9F29B53B1B47317500B64C96 /* AAMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4BE1B47317500B64C96 /* AAMoon.h */; };
+		9F29B53C1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4BF1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp */; };
+		9F29B53D1B47317500B64C96 /* AAMoonIlluminatedFraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4C01B47317500B64C96 /* AAMoonIlluminatedFraction.h */; };
+		9F29B53E1B47317500B64C96 /* AAMoonMaxDeclinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4C11B47317500B64C96 /* AAMoonMaxDeclinations.cpp */; };
+		9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4C21B47317500B64C96 /* AAMoonMaxDeclinations.h */; };
+		9F29B5401B47317500B64C96 /* AAMoonNodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4C31B47317500B64C96 /* AAMoonNodes.cpp */; };
+		9F29B5411B47317500B64C96 /* AAMoonNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4C41B47317500B64C96 /* AAMoonNodes.h */; };
+		9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4C51B47317500B64C96 /* AAMoonPerigeeApogee.cpp */; };
+		9F29B5431B47317500B64C96 /* AAMoonPerigeeApogee.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4C61B47317500B64C96 /* AAMoonPerigeeApogee.h */; };
+		9F29B5441B47317500B64C96 /* AAMoonPhases.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4C71B47317500B64C96 /* AAMoonPhases.cpp */; };
+		9F29B5451B47317500B64C96 /* AAMoonPhases.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4C81B47317500B64C96 /* AAMoonPhases.h */; };
+		9F29B5461B47317500B64C96 /* AAMoslemCalendar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4C91B47317500B64C96 /* AAMoslemCalendar.cpp */; };
+		9F29B5471B47317500B64C96 /* AAMoslemCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4CA1B47317500B64C96 /* AAMoslemCalendar.h */; };
+		9F29B5481B47317500B64C96 /* AANearParabolic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4CB1B47317500B64C96 /* AANearParabolic.cpp */; };
+		9F29B5491B47317500B64C96 /* AANearParabolic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4CC1B47317500B64C96 /* AANearParabolic.h */; };
+		9F29B54A1B47317500B64C96 /* AANeptune.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4CD1B47317500B64C96 /* AANeptune.cpp */; };
+		9F29B54B1B47317500B64C96 /* AANeptune.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4CE1B47317500B64C96 /* AANeptune.h */; };
+		9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4CF1B47317500B64C96 /* AANodes.cpp */; };
+		9F29B54D1B47317500B64C96 /* AANodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4D01B47317500B64C96 /* AANodes.h */; };
+		9F29B54E1B47317500B64C96 /* AANutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4D11B47317500B64C96 /* AANutation.cpp */; };
+		9F29B54F1B47317500B64C96 /* AANutation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4D21B47317500B64C96 /* AANutation.h */; };
+		9F29B5501B47317500B64C96 /* AAParabolic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4D31B47317500B64C96 /* AAParabolic.cpp */; };
+		9F29B5511B47317500B64C96 /* AAParabolic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4D41B47317500B64C96 /* AAParabolic.h */; };
+		9F29B5521B47317500B64C96 /* AAParallactic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4D51B47317500B64C96 /* AAParallactic.cpp */; };
+		9F29B5531B47317500B64C96 /* AAParallactic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4D61B47317500B64C96 /* AAParallactic.h */; };
+		9F29B5541B47317500B64C96 /* AAParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4D71B47317500B64C96 /* AAParallax.cpp */; };
+		9F29B5551B47317500B64C96 /* AAParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4D81B47317500B64C96 /* AAParallax.h */; };
+		9F29B5561B47317500B64C96 /* AAPhysicalJupiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4D91B47317500B64C96 /* AAPhysicalJupiter.cpp */; };
+		9F29B5571B47317500B64C96 /* AAPhysicalJupiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4DA1B47317500B64C96 /* AAPhysicalJupiter.h */; };
+		9F29B5581B47317500B64C96 /* AAPhysicalMars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4DB1B47317500B64C96 /* AAPhysicalMars.cpp */; };
+		9F29B5591B47317500B64C96 /* AAPhysicalMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4DC1B47317500B64C96 /* AAPhysicalMars.h */; };
+		9F29B55A1B47317500B64C96 /* AAPhysicalMoon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4DD1B47317500B64C96 /* AAPhysicalMoon.cpp */; };
+		9F29B55B1B47317500B64C96 /* AAPhysicalMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4DE1B47317500B64C96 /* AAPhysicalMoon.h */; };
+		9F29B55C1B47317500B64C96 /* AAPhysicalSun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4DF1B47317500B64C96 /* AAPhysicalSun.cpp */; };
+		9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4E01B47317500B64C96 /* AAPhysicalSun.h */; };
+		9F29B55E1B47317500B64C96 /* AAPlanetaryPhenomena.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4E11B47317500B64C96 /* AAPlanetaryPhenomena.cpp */; };
+		9F29B55F1B47317500B64C96 /* AAPlanetaryPhenomena.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4E21B47317500B64C96 /* AAPlanetaryPhenomena.h */; };
+		9F29B5601B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4E31B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp */; };
+		9F29B5611B47317500B64C96 /* AAPlanetPerihelionAphelion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4E41B47317500B64C96 /* AAPlanetPerihelionAphelion.h */; };
+		9F29B5621B47317500B64C96 /* AAPluto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4E51B47317500B64C96 /* AAPluto.cpp */; };
+		9F29B5631B47317500B64C96 /* AAPluto.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4E61B47317500B64C96 /* AAPluto.h */; };
+		9F29B5641B47317500B64C96 /* AAPrecession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4E71B47317500B64C96 /* AAPrecession.cpp */; };
+		9F29B5651B47317500B64C96 /* AAPrecession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4E81B47317500B64C96 /* AAPrecession.h */; };
+		9F29B5661B47317500B64C96 /* AARefraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4E91B47317500B64C96 /* AARefraction.cpp */; };
+		9F29B5671B47317500B64C96 /* AARefraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4EA1B47317500B64C96 /* AARefraction.h */; };
+		9F29B5681B47317500B64C96 /* AARiseTransitSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4EB1B47317500B64C96 /* AARiseTransitSet.cpp */; };
+		9F29B5691B47317500B64C96 /* AARiseTransitSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4EC1B47317500B64C96 /* AARiseTransitSet.h */; };
+		9F29B56A1B47317500B64C96 /* AASaturn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4ED1B47317500B64C96 /* AASaturn.cpp */; };
+		9F29B56B1B47317500B64C96 /* AASaturn.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4EE1B47317500B64C96 /* AASaturn.h */; };
+		9F29B56C1B47317500B64C96 /* AASaturnMoons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4EF1B47317500B64C96 /* AASaturnMoons.cpp */; };
+		9F29B56D1B47317500B64C96 /* AASaturnMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F01B47317500B64C96 /* AASaturnMoons.h */; };
+		9F29B56E1B47317500B64C96 /* AASaturnRings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F11B47317500B64C96 /* AASaturnRings.cpp */; };
+		9F29B56F1B47317500B64C96 /* AASaturnRings.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F21B47317500B64C96 /* AASaturnRings.h */; };
+		9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F31B47317500B64C96 /* AASidereal.cpp */; };
+		9F29B5711B47317500B64C96 /* AASidereal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F41B47317500B64C96 /* AASidereal.h */; };
+		9F29B5721B47317500B64C96 /* AAStellarMagnitudes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F51B47317500B64C96 /* AAStellarMagnitudes.cpp */; };
+		9F29B5731B47317500B64C96 /* AAStellarMagnitudes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F61B47317500B64C96 /* AAStellarMagnitudes.h */; };
+		9F29B5741B47317500B64C96 /* AASun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F71B47317500B64C96 /* AASun.cpp */; };
+		9F29B5751B47317500B64C96 /* AASun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F81B47317500B64C96 /* AASun.h */; };
+		9F29B5761B47317500B64C96 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F91B47317500B64C96 /* AATest.cpp */; };
+		9F29B5771B47317500B64C96 /* AATest.sln in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B4FA1B47317500B64C96 /* AATest.sln */; };
+		9F29B5781B47317500B64C96 /* AATest.vcproj in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B4FB1B47317500B64C96 /* AATest.vcproj */; };
+		9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4FC1B47317500B64C96 /* AAUranus.cpp */; };
+		9F29B57A1B47317500B64C96 /* AAUranus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4FD1B47317500B64C96 /* AAUranus.h */; };
+		9F29B57B1B47317500B64C96 /* AAVenus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4FE1B47317500B64C96 /* AAVenus.cpp */; };
+		9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4FF1B47317500B64C96 /* AAVenus.h */; };
+		9F29B57D1B47317500B64C96 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B5001B47317500B64C96 /* CMakeLists.txt */; };
+		9F29B57E1B47317500B64C96 /* naughter.css in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B5011B47317500B64C96 /* naughter.css */; };
+		9F29B57F1B47317500B64C96 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5021B47317500B64C96 /* stdafx.cpp */; };
+		9F29B5801B47317500B64C96 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5031B47317500B64C96 /* stdafx.h */; };
+		9F29B5841B47320200B64C96 /* KPCCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCCAA2DCoordinate.h */; };
+		9F29B5851B47320200B64C96 /* KPCCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCCAA2DCoordinate.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F29B4771B47313500B64C96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F29B4611B47313500B64C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F29B4691B47313500B64C96;
+			remoteInfo = SwiftAA;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F29B46A1B47313500B64C96 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F29B46E1B47313500B64C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F29B46F1B47313500B64C96 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftAA.h; sourceTree = "<group>"; };
+		9F29B4751B47313500B64C96 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F29B47B1B47313500B64C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F29B47C1B47313500B64C96 /* SwiftAATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAATests.swift; sourceTree = "<group>"; };
+		9F29B4871B47317500B64C96 /* AA+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AA+.h"; sourceTree = "<group>"; };
+		9F29B4881B47317500B64C96 /* AA+.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "AA+.htm"; sourceTree = "<group>"; };
+		9F29B4891B47317500B64C96 /* AA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AA2DCoordinate.h; sourceTree = "<group>"; };
+		9F29B48A1B47317500B64C96 /* AA3DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AA3DCoordinate.h; sourceTree = "<group>"; };
+		9F29B48B1B47317500B64C96 /* AAAberration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAAberration.cpp; sourceTree = "<group>"; };
+		9F29B48C1B47317500B64C96 /* AAAberration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAberration.h; sourceTree = "<group>"; };
+		9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAAngularSeparation.cpp; sourceTree = "<group>"; };
+		9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAngularSeparation.h; sourceTree = "<group>"; };
+		9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AABinaryStar.cpp; sourceTree = "<group>"; };
+		9F29B4901B47317500B64C96 /* AABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AABinaryStar.h; sourceTree = "<group>"; };
+		9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACoordinateTransformation.cpp; sourceTree = "<group>"; };
+		9F29B4921B47317500B64C96 /* AACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACoordinateTransformation.h; sourceTree = "<group>"; };
+		9F29B4931B47317500B64C96 /* AADate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AADate.cpp; sourceTree = "<group>"; };
+		9F29B4941B47317500B64C96 /* AADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADate.h; sourceTree = "<group>"; };
+		9F29B4951B47317500B64C96 /* AADiameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AADiameters.cpp; sourceTree = "<group>"; };
+		9F29B4961B47317500B64C96 /* AADiameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADiameters.h; sourceTree = "<group>"; };
+		9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AADynamicalTime.cpp; sourceTree = "<group>"; };
+		9F29B4981B47317500B64C96 /* AADynamicalTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADynamicalTime.h; sourceTree = "<group>"; };
+		9F29B4991B47317500B64C96 /* AAEarth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEarth.cpp; sourceTree = "<group>"; };
+		9F29B49A1B47317500B64C96 /* AAEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEarth.h; sourceTree = "<group>"; };
+		9F29B49B1B47317500B64C96 /* AAEaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEaster.cpp; sourceTree = "<group>"; };
+		9F29B49C1B47317500B64C96 /* AAEaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEaster.h; sourceTree = "<group>"; };
+		9F29B49D1B47317500B64C96 /* AAEclipses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEclipses.cpp; sourceTree = "<group>"; };
+		9F29B49E1B47317500B64C96 /* AAEclipses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEclipses.h; sourceTree = "<group>"; };
+		9F29B49F1B47317500B64C96 /* AAEclipticalElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEclipticalElements.cpp; sourceTree = "<group>"; };
+		9F29B4A01B47317500B64C96 /* AAEclipticalElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEclipticalElements.h; sourceTree = "<group>"; };
+		9F29B4A11B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAElementsPlanetaryOrbit.cpp; sourceTree = "<group>"; };
+		9F29B4A21B47317500B64C96 /* AAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAElementsPlanetaryOrbit.h; sourceTree = "<group>"; };
+		9F29B4A31B47317500B64C96 /* AAElliptical.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAElliptical.cpp; sourceTree = "<group>"; };
+		9F29B4A41B47317500B64C96 /* AAElliptical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAElliptical.h; sourceTree = "<group>"; };
+		9F29B4A51B47317500B64C96 /* AAEquationOfTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEquationOfTime.cpp; sourceTree = "<group>"; };
+		9F29B4A61B47317500B64C96 /* AAEquationOfTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEquationOfTime.h; sourceTree = "<group>"; };
+		9F29B4A71B47317500B64C96 /* AAEquinoxesAndSolstices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAEquinoxesAndSolstices.cpp; sourceTree = "<group>"; };
+		9F29B4A81B47317500B64C96 /* AAEquinoxesAndSolstices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAEquinoxesAndSolstices.h; sourceTree = "<group>"; };
+		9F29B4A91B47317500B64C96 /* AAFK5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAFK5.cpp; sourceTree = "<group>"; };
+		9F29B4AA1B47317500B64C96 /* AAFK5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAFK5.h; sourceTree = "<group>"; };
+		9F29B4AB1B47317500B64C96 /* AAGalileanMoons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAGalileanMoons.cpp; sourceTree = "<group>"; };
+		9F29B4AC1B47317500B64C96 /* AAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGalileanMoons.h; sourceTree = "<group>"; };
+		9F29B4AD1B47317500B64C96 /* AAGlobe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAGlobe.cpp; sourceTree = "<group>"; };
+		9F29B4AE1B47317500B64C96 /* AAGlobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGlobe.h; sourceTree = "<group>"; };
+		9F29B4AF1B47317500B64C96 /* AAIlluminatedFraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAIlluminatedFraction.cpp; sourceTree = "<group>"; };
+		9F29B4B01B47317500B64C96 /* AAIlluminatedFraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAIlluminatedFraction.h; sourceTree = "<group>"; };
+		9F29B4B11B47317500B64C96 /* AAInterpolate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAInterpolate.cpp; sourceTree = "<group>"; };
+		9F29B4B21B47317500B64C96 /* AAInterpolate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAInterpolate.h; sourceTree = "<group>"; };
+		9F29B4B31B47317500B64C96 /* AAJewishCalendar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAJewishCalendar.cpp; sourceTree = "<group>"; };
+		9F29B4B41B47317500B64C96 /* AAJewishCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAJewishCalendar.h; sourceTree = "<group>"; };
+		9F29B4B51B47317500B64C96 /* AAJupiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAJupiter.cpp; sourceTree = "<group>"; };
+		9F29B4B61B47317500B64C96 /* AAJupiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAJupiter.h; sourceTree = "<group>"; };
+		9F29B4B71B47317500B64C96 /* AAKepler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAKepler.cpp; sourceTree = "<group>"; };
+		9F29B4B81B47317500B64C96 /* AAKepler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAKepler.h; sourceTree = "<group>"; };
+		9F29B4B91B47317500B64C96 /* AAMars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMars.cpp; sourceTree = "<group>"; };
+		9F29B4BA1B47317500B64C96 /* AAMars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMars.h; sourceTree = "<group>"; };
+		9F29B4BB1B47317500B64C96 /* AAMercury.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMercury.cpp; sourceTree = "<group>"; };
+		9F29B4BC1B47317500B64C96 /* AAMercury.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMercury.h; sourceTree = "<group>"; };
+		9F29B4BD1B47317500B64C96 /* AAMoon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoon.cpp; sourceTree = "<group>"; };
+		9F29B4BE1B47317500B64C96 /* AAMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoon.h; sourceTree = "<group>"; };
+		9F29B4BF1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoonIlluminatedFraction.cpp; sourceTree = "<group>"; };
+		9F29B4C01B47317500B64C96 /* AAMoonIlluminatedFraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoonIlluminatedFraction.h; sourceTree = "<group>"; };
+		9F29B4C11B47317500B64C96 /* AAMoonMaxDeclinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoonMaxDeclinations.cpp; sourceTree = "<group>"; };
+		9F29B4C21B47317500B64C96 /* AAMoonMaxDeclinations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoonMaxDeclinations.h; sourceTree = "<group>"; };
+		9F29B4C31B47317500B64C96 /* AAMoonNodes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoonNodes.cpp; sourceTree = "<group>"; };
+		9F29B4C41B47317500B64C96 /* AAMoonNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoonNodes.h; sourceTree = "<group>"; };
+		9F29B4C51B47317500B64C96 /* AAMoonPerigeeApogee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoonPerigeeApogee.cpp; sourceTree = "<group>"; };
+		9F29B4C61B47317500B64C96 /* AAMoonPerigeeApogee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoonPerigeeApogee.h; sourceTree = "<group>"; };
+		9F29B4C71B47317500B64C96 /* AAMoonPhases.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoonPhases.cpp; sourceTree = "<group>"; };
+		9F29B4C81B47317500B64C96 /* AAMoonPhases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoonPhases.h; sourceTree = "<group>"; };
+		9F29B4C91B47317500B64C96 /* AAMoslemCalendar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAMoslemCalendar.cpp; sourceTree = "<group>"; };
+		9F29B4CA1B47317500B64C96 /* AAMoslemCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMoslemCalendar.h; sourceTree = "<group>"; };
+		9F29B4CB1B47317500B64C96 /* AANearParabolic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AANearParabolic.cpp; sourceTree = "<group>"; };
+		9F29B4CC1B47317500B64C96 /* AANearParabolic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANearParabolic.h; sourceTree = "<group>"; };
+		9F29B4CD1B47317500B64C96 /* AANeptune.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AANeptune.cpp; sourceTree = "<group>"; };
+		9F29B4CE1B47317500B64C96 /* AANeptune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANeptune.h; sourceTree = "<group>"; };
+		9F29B4CF1B47317500B64C96 /* AANodes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AANodes.cpp; sourceTree = "<group>"; };
+		9F29B4D01B47317500B64C96 /* AANodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANodes.h; sourceTree = "<group>"; };
+		9F29B4D11B47317500B64C96 /* AANutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AANutation.cpp; sourceTree = "<group>"; };
+		9F29B4D21B47317500B64C96 /* AANutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANutation.h; sourceTree = "<group>"; };
+		9F29B4D31B47317500B64C96 /* AAParabolic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAParabolic.cpp; sourceTree = "<group>"; };
+		9F29B4D41B47317500B64C96 /* AAParabolic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAParabolic.h; sourceTree = "<group>"; };
+		9F29B4D51B47317500B64C96 /* AAParallactic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAParallactic.cpp; sourceTree = "<group>"; };
+		9F29B4D61B47317500B64C96 /* AAParallactic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAParallactic.h; sourceTree = "<group>"; };
+		9F29B4D71B47317500B64C96 /* AAParallax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAParallax.cpp; sourceTree = "<group>"; };
+		9F29B4D81B47317500B64C96 /* AAParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAParallax.h; sourceTree = "<group>"; };
+		9F29B4D91B47317500B64C96 /* AAPhysicalJupiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPhysicalJupiter.cpp; sourceTree = "<group>"; };
+		9F29B4DA1B47317500B64C96 /* AAPhysicalJupiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPhysicalJupiter.h; sourceTree = "<group>"; };
+		9F29B4DB1B47317500B64C96 /* AAPhysicalMars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPhysicalMars.cpp; sourceTree = "<group>"; };
+		9F29B4DC1B47317500B64C96 /* AAPhysicalMars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPhysicalMars.h; sourceTree = "<group>"; };
+		9F29B4DD1B47317500B64C96 /* AAPhysicalMoon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPhysicalMoon.cpp; sourceTree = "<group>"; };
+		9F29B4DE1B47317500B64C96 /* AAPhysicalMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPhysicalMoon.h; sourceTree = "<group>"; };
+		9F29B4DF1B47317500B64C96 /* AAPhysicalSun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPhysicalSun.cpp; sourceTree = "<group>"; };
+		9F29B4E01B47317500B64C96 /* AAPhysicalSun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPhysicalSun.h; sourceTree = "<group>"; };
+		9F29B4E11B47317500B64C96 /* AAPlanetaryPhenomena.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPlanetaryPhenomena.cpp; sourceTree = "<group>"; };
+		9F29B4E21B47317500B64C96 /* AAPlanetaryPhenomena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlanetaryPhenomena.h; sourceTree = "<group>"; };
+		9F29B4E31B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPlanetPerihelionAphelion.cpp; sourceTree = "<group>"; };
+		9F29B4E41B47317500B64C96 /* AAPlanetPerihelionAphelion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlanetPerihelionAphelion.h; sourceTree = "<group>"; };
+		9F29B4E51B47317500B64C96 /* AAPluto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPluto.cpp; sourceTree = "<group>"; };
+		9F29B4E61B47317500B64C96 /* AAPluto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPluto.h; sourceTree = "<group>"; };
+		9F29B4E71B47317500B64C96 /* AAPrecession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAPrecession.cpp; sourceTree = "<group>"; };
+		9F29B4E81B47317500B64C96 /* AAPrecession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPrecession.h; sourceTree = "<group>"; };
+		9F29B4E91B47317500B64C96 /* AARefraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AARefraction.cpp; sourceTree = "<group>"; };
+		9F29B4EA1B47317500B64C96 /* AARefraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AARefraction.h; sourceTree = "<group>"; };
+		9F29B4EB1B47317500B64C96 /* AARiseTransitSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AARiseTransitSet.cpp; sourceTree = "<group>"; };
+		9F29B4EC1B47317500B64C96 /* AARiseTransitSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AARiseTransitSet.h; sourceTree = "<group>"; };
+		9F29B4ED1B47317500B64C96 /* AASaturn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASaturn.cpp; sourceTree = "<group>"; };
+		9F29B4EE1B47317500B64C96 /* AASaturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASaturn.h; sourceTree = "<group>"; };
+		9F29B4EF1B47317500B64C96 /* AASaturnMoons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASaturnMoons.cpp; sourceTree = "<group>"; };
+		9F29B4F01B47317500B64C96 /* AASaturnMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASaturnMoons.h; sourceTree = "<group>"; };
+		9F29B4F11B47317500B64C96 /* AASaturnRings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASaturnRings.cpp; sourceTree = "<group>"; };
+		9F29B4F21B47317500B64C96 /* AASaturnRings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASaturnRings.h; sourceTree = "<group>"; };
+		9F29B4F31B47317500B64C96 /* AASidereal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASidereal.cpp; sourceTree = "<group>"; };
+		9F29B4F41B47317500B64C96 /* AASidereal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASidereal.h; sourceTree = "<group>"; };
+		9F29B4F51B47317500B64C96 /* AAStellarMagnitudes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAStellarMagnitudes.cpp; sourceTree = "<group>"; };
+		9F29B4F61B47317500B64C96 /* AAStellarMagnitudes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAStellarMagnitudes.h; sourceTree = "<group>"; };
+		9F29B4F71B47317500B64C96 /* AASun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASun.cpp; sourceTree = "<group>"; };
+		9F29B4F81B47317500B64C96 /* AASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASun.h; sourceTree = "<group>"; };
+		9F29B4F91B47317500B64C96 /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
+		9F29B4FA1B47317500B64C96 /* AATest.sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AATest.sln; sourceTree = "<group>"; };
+		9F29B4FB1B47317500B64C96 /* AATest.vcproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AATest.vcproj; sourceTree = "<group>"; };
+		9F29B4FC1B47317500B64C96 /* AAUranus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAUranus.cpp; sourceTree = "<group>"; };
+		9F29B4FD1B47317500B64C96 /* AAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAUranus.h; sourceTree = "<group>"; };
+		9F29B4FE1B47317500B64C96 /* AAVenus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVenus.cpp; sourceTree = "<group>"; };
+		9F29B4FF1B47317500B64C96 /* AAVenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVenus.h; sourceTree = "<group>"; };
+		9F29B5001B47317500B64C96 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		9F29B5011B47317500B64C96 /* naughter.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = naughter.css; sourceTree = "<group>"; };
+		9F29B5021B47317500B64C96 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		9F29B5031B47317500B64C96 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		9F29B5821B47320200B64C96 /* KPCCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCCAA2DCoordinate.h; path = SwiftAA/KPCCAA2DCoordinate.h; sourceTree = "<group>"; };
+		9F29B5831B47320200B64C96 /* KPCCAA2DCoordinate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCCAA2DCoordinate.mm; path = SwiftAA/KPCCAA2DCoordinate.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F29B4661B47313500B64C96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F29B4721B47313500B64C96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F29B4761B47313500B64C96 /* SwiftAA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F29B4601B47313500B64C96 = {
+			isa = PBXGroup;
+			children = (
+				9F29B46C1B47313500B64C96 /* SwiftAA */,
+				9F29B5811B47319D00B64C96 /* Obj-C */,
+				9F29B4861B47317500B64C96 /* aaplus-v1.60 */,
+				9F29B46D1B47313500B64C96 /* Supporting Files */,
+				9F29B4791B47313500B64C96 /* SwiftAATests */,
+				9F29B46B1B47313500B64C96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F29B46B1B47313500B64C96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B46A1B47313500B64C96 /* SwiftAA.framework */,
+				9F29B4751B47313500B64C96 /* SwiftAATests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F29B46C1B47313500B64C96 /* SwiftAA */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B46F1B47313500B64C96 /* SwiftAA.h */,
+			);
+			path = SwiftAA;
+			sourceTree = "<group>";
+		};
+		9F29B46D1B47313500B64C96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B46E1B47313500B64C96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = SwiftAA;
+			sourceTree = "<group>";
+		};
+		9F29B4791B47313500B64C96 /* SwiftAATests */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B47C1B47313500B64C96 /* SwiftAATests.swift */,
+				9F29B47A1B47313500B64C96 /* Supporting Files */,
+			);
+			path = SwiftAATests;
+			sourceTree = "<group>";
+		};
+		9F29B47A1B47313500B64C96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B47B1B47313500B64C96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F29B4861B47317500B64C96 /* aaplus-v1.60 */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B4871B47317500B64C96 /* AA+.h */,
+				9F29B4881B47317500B64C96 /* AA+.htm */,
+				9F29B4891B47317500B64C96 /* AA2DCoordinate.h */,
+				9F29B48A1B47317500B64C96 /* AA3DCoordinate.h */,
+				9F29B48B1B47317500B64C96 /* AAAberration.cpp */,
+				9F29B48C1B47317500B64C96 /* AAAberration.h */,
+				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
+				9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */,
+				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
+				9F29B4901B47317500B64C96 /* AABinaryStar.h */,
+				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
+				9F29B4921B47317500B64C96 /* AACoordinateTransformation.h */,
+				9F29B4931B47317500B64C96 /* AADate.cpp */,
+				9F29B4941B47317500B64C96 /* AADate.h */,
+				9F29B4951B47317500B64C96 /* AADiameters.cpp */,
+				9F29B4961B47317500B64C96 /* AADiameters.h */,
+				9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */,
+				9F29B4981B47317500B64C96 /* AADynamicalTime.h */,
+				9F29B4991B47317500B64C96 /* AAEarth.cpp */,
+				9F29B49A1B47317500B64C96 /* AAEarth.h */,
+				9F29B49B1B47317500B64C96 /* AAEaster.cpp */,
+				9F29B49C1B47317500B64C96 /* AAEaster.h */,
+				9F29B49D1B47317500B64C96 /* AAEclipses.cpp */,
+				9F29B49E1B47317500B64C96 /* AAEclipses.h */,
+				9F29B49F1B47317500B64C96 /* AAEclipticalElements.cpp */,
+				9F29B4A01B47317500B64C96 /* AAEclipticalElements.h */,
+				9F29B4A11B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp */,
+				9F29B4A21B47317500B64C96 /* AAElementsPlanetaryOrbit.h */,
+				9F29B4A31B47317500B64C96 /* AAElliptical.cpp */,
+				9F29B4A41B47317500B64C96 /* AAElliptical.h */,
+				9F29B4A51B47317500B64C96 /* AAEquationOfTime.cpp */,
+				9F29B4A61B47317500B64C96 /* AAEquationOfTime.h */,
+				9F29B4A71B47317500B64C96 /* AAEquinoxesAndSolstices.cpp */,
+				9F29B4A81B47317500B64C96 /* AAEquinoxesAndSolstices.h */,
+				9F29B4A91B47317500B64C96 /* AAFK5.cpp */,
+				9F29B4AA1B47317500B64C96 /* AAFK5.h */,
+				9F29B4AB1B47317500B64C96 /* AAGalileanMoons.cpp */,
+				9F29B4AC1B47317500B64C96 /* AAGalileanMoons.h */,
+				9F29B4AD1B47317500B64C96 /* AAGlobe.cpp */,
+				9F29B4AE1B47317500B64C96 /* AAGlobe.h */,
+				9F29B4AF1B47317500B64C96 /* AAIlluminatedFraction.cpp */,
+				9F29B4B01B47317500B64C96 /* AAIlluminatedFraction.h */,
+				9F29B4B11B47317500B64C96 /* AAInterpolate.cpp */,
+				9F29B4B21B47317500B64C96 /* AAInterpolate.h */,
+				9F29B4B31B47317500B64C96 /* AAJewishCalendar.cpp */,
+				9F29B4B41B47317500B64C96 /* AAJewishCalendar.h */,
+				9F29B4B51B47317500B64C96 /* AAJupiter.cpp */,
+				9F29B4B61B47317500B64C96 /* AAJupiter.h */,
+				9F29B4B71B47317500B64C96 /* AAKepler.cpp */,
+				9F29B4B81B47317500B64C96 /* AAKepler.h */,
+				9F29B4B91B47317500B64C96 /* AAMars.cpp */,
+				9F29B4BA1B47317500B64C96 /* AAMars.h */,
+				9F29B4BB1B47317500B64C96 /* AAMercury.cpp */,
+				9F29B4BC1B47317500B64C96 /* AAMercury.h */,
+				9F29B4BD1B47317500B64C96 /* AAMoon.cpp */,
+				9F29B4BE1B47317500B64C96 /* AAMoon.h */,
+				9F29B4BF1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp */,
+				9F29B4C01B47317500B64C96 /* AAMoonIlluminatedFraction.h */,
+				9F29B4C11B47317500B64C96 /* AAMoonMaxDeclinations.cpp */,
+				9F29B4C21B47317500B64C96 /* AAMoonMaxDeclinations.h */,
+				9F29B4C31B47317500B64C96 /* AAMoonNodes.cpp */,
+				9F29B4C41B47317500B64C96 /* AAMoonNodes.h */,
+				9F29B4C51B47317500B64C96 /* AAMoonPerigeeApogee.cpp */,
+				9F29B4C61B47317500B64C96 /* AAMoonPerigeeApogee.h */,
+				9F29B4C71B47317500B64C96 /* AAMoonPhases.cpp */,
+				9F29B4C81B47317500B64C96 /* AAMoonPhases.h */,
+				9F29B4C91B47317500B64C96 /* AAMoslemCalendar.cpp */,
+				9F29B4CA1B47317500B64C96 /* AAMoslemCalendar.h */,
+				9F29B4CB1B47317500B64C96 /* AANearParabolic.cpp */,
+				9F29B4CC1B47317500B64C96 /* AANearParabolic.h */,
+				9F29B4CD1B47317500B64C96 /* AANeptune.cpp */,
+				9F29B4CE1B47317500B64C96 /* AANeptune.h */,
+				9F29B4CF1B47317500B64C96 /* AANodes.cpp */,
+				9F29B4D01B47317500B64C96 /* AANodes.h */,
+				9F29B4D11B47317500B64C96 /* AANutation.cpp */,
+				9F29B4D21B47317500B64C96 /* AANutation.h */,
+				9F29B4D31B47317500B64C96 /* AAParabolic.cpp */,
+				9F29B4D41B47317500B64C96 /* AAParabolic.h */,
+				9F29B4D51B47317500B64C96 /* AAParallactic.cpp */,
+				9F29B4D61B47317500B64C96 /* AAParallactic.h */,
+				9F29B4D71B47317500B64C96 /* AAParallax.cpp */,
+				9F29B4D81B47317500B64C96 /* AAParallax.h */,
+				9F29B4D91B47317500B64C96 /* AAPhysicalJupiter.cpp */,
+				9F29B4DA1B47317500B64C96 /* AAPhysicalJupiter.h */,
+				9F29B4DB1B47317500B64C96 /* AAPhysicalMars.cpp */,
+				9F29B4DC1B47317500B64C96 /* AAPhysicalMars.h */,
+				9F29B4DD1B47317500B64C96 /* AAPhysicalMoon.cpp */,
+				9F29B4DE1B47317500B64C96 /* AAPhysicalMoon.h */,
+				9F29B4DF1B47317500B64C96 /* AAPhysicalSun.cpp */,
+				9F29B4E01B47317500B64C96 /* AAPhysicalSun.h */,
+				9F29B4E11B47317500B64C96 /* AAPlanetaryPhenomena.cpp */,
+				9F29B4E21B47317500B64C96 /* AAPlanetaryPhenomena.h */,
+				9F29B4E31B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp */,
+				9F29B4E41B47317500B64C96 /* AAPlanetPerihelionAphelion.h */,
+				9F29B4E51B47317500B64C96 /* AAPluto.cpp */,
+				9F29B4E61B47317500B64C96 /* AAPluto.h */,
+				9F29B4E71B47317500B64C96 /* AAPrecession.cpp */,
+				9F29B4E81B47317500B64C96 /* AAPrecession.h */,
+				9F29B4E91B47317500B64C96 /* AARefraction.cpp */,
+				9F29B4EA1B47317500B64C96 /* AARefraction.h */,
+				9F29B4EB1B47317500B64C96 /* AARiseTransitSet.cpp */,
+				9F29B4EC1B47317500B64C96 /* AARiseTransitSet.h */,
+				9F29B4ED1B47317500B64C96 /* AASaturn.cpp */,
+				9F29B4EE1B47317500B64C96 /* AASaturn.h */,
+				9F29B4EF1B47317500B64C96 /* AASaturnMoons.cpp */,
+				9F29B4F01B47317500B64C96 /* AASaturnMoons.h */,
+				9F29B4F11B47317500B64C96 /* AASaturnRings.cpp */,
+				9F29B4F21B47317500B64C96 /* AASaturnRings.h */,
+				9F29B4F31B47317500B64C96 /* AASidereal.cpp */,
+				9F29B4F41B47317500B64C96 /* AASidereal.h */,
+				9F29B4F51B47317500B64C96 /* AAStellarMagnitudes.cpp */,
+				9F29B4F61B47317500B64C96 /* AAStellarMagnitudes.h */,
+				9F29B4F71B47317500B64C96 /* AASun.cpp */,
+				9F29B4F81B47317500B64C96 /* AASun.h */,
+				9F29B4F91B47317500B64C96 /* AATest.cpp */,
+				9F29B4FA1B47317500B64C96 /* AATest.sln */,
+				9F29B4FB1B47317500B64C96 /* AATest.vcproj */,
+				9F29B4FC1B47317500B64C96 /* AAUranus.cpp */,
+				9F29B4FD1B47317500B64C96 /* AAUranus.h */,
+				9F29B4FE1B47317500B64C96 /* AAVenus.cpp */,
+				9F29B4FF1B47317500B64C96 /* AAVenus.h */,
+				9F29B5001B47317500B64C96 /* CMakeLists.txt */,
+				9F29B5011B47317500B64C96 /* naughter.css */,
+				9F29B5021B47317500B64C96 /* stdafx.cpp */,
+				9F29B5031B47317500B64C96 /* stdafx.h */,
+			);
+			path = "aaplus-v1.60";
+			sourceTree = "<group>";
+		};
+		9F29B5811B47319D00B64C96 /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				9F29B5821B47320200B64C96 /* KPCCAA2DCoordinate.h */,
+				9F29B5831B47320200B64C96 /* KPCCAA2DCoordinate.mm */,
+			);
+			name = "Obj-C";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9F29B4671B47313500B64C96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F29B5251B47317500B64C96 /* AAEquinoxesAndSolstices.h in Headers */,
+				9F29B5291B47317500B64C96 /* AAGalileanMoons.h in Headers */,
+				9F29B54B1B47317500B64C96 /* AANeptune.h in Headers */,
+				9F29B5311B47317500B64C96 /* AAJewishCalendar.h in Headers */,
+				9F29B5231B47317500B64C96 /* AAEquationOfTime.h in Headers */,
+				9F29B5411B47317500B64C96 /* AAMoonNodes.h in Headers */,
+				9F29B5841B47320200B64C96 /* KPCCAA2DCoordinate.h in Headers */,
+				9F29B5041B47317500B64C96 /* AA+.h in Headers */,
+				9F29B54D1B47317500B64C96 /* AANodes.h in Headers */,
+				9F29B5551B47317500B64C96 /* AAParallax.h in Headers */,
+				9F29B5651B47317500B64C96 /* AAPrecession.h in Headers */,
+				9F29B55F1B47317500B64C96 /* AAPlanetaryPhenomena.h in Headers */,
+				9F29B5591B47317500B64C96 /* AAPhysicalMars.h in Headers */,
+				9F29B5171B47317500B64C96 /* AAEarth.h in Headers */,
+				9F29B5531B47317500B64C96 /* AAParallactic.h in Headers */,
+				9F29B5191B47317500B64C96 /* AAEaster.h in Headers */,
+				9F29B52F1B47317500B64C96 /* AAInterpolate.h in Headers */,
+				9F29B53D1B47317500B64C96 /* AAMoonIlluminatedFraction.h in Headers */,
+				9F29B56B1B47317500B64C96 /* AASaturn.h in Headers */,
+				9F29B5111B47317500B64C96 /* AADate.h in Headers */,
+				9F29B55B1B47317500B64C96 /* AAPhysicalMoon.h in Headers */,
+				9F29B51B1B47317500B64C96 /* AAEclipses.h in Headers */,
+				9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */,
+				9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */,
+				9F29B4701B47313500B64C96 /* SwiftAA.h in Headers */,
+				9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */,
+				9F29B5151B47317500B64C96 /* AADynamicalTime.h in Headers */,
+				9F29B5131B47317500B64C96 /* AADiameters.h in Headers */,
+				9F29B5061B47317500B64C96 /* AA2DCoordinate.h in Headers */,
+				9F29B5371B47317500B64C96 /* AAMars.h in Headers */,
+				9F29B5571B47317500B64C96 /* AAPhysicalJupiter.h in Headers */,
+				9F29B50F1B47317500B64C96 /* AACoordinateTransformation.h in Headers */,
+				9F29B5691B47317500B64C96 /* AARiseTransitSet.h in Headers */,
+				9F29B5611B47317500B64C96 /* AAPlanetPerihelionAphelion.h in Headers */,
+				9F29B53B1B47317500B64C96 /* AAMoon.h in Headers */,
+				9F29B51D1B47317500B64C96 /* AAEclipticalElements.h in Headers */,
+				9F29B5451B47317500B64C96 /* AAMoonPhases.h in Headers */,
+				9F29B5431B47317500B64C96 /* AAMoonPerigeeApogee.h in Headers */,
+				9F29B52D1B47317500B64C96 /* AAIlluminatedFraction.h in Headers */,
+				9F29B5731B47317500B64C96 /* AAStellarMagnitudes.h in Headers */,
+				9F29B5711B47317500B64C96 /* AASidereal.h in Headers */,
+				9F29B5471B47317500B64C96 /* AAMoslemCalendar.h in Headers */,
+				9F29B5091B47317500B64C96 /* AAAberration.h in Headers */,
+				9F29B5491B47317500B64C96 /* AANearParabolic.h in Headers */,
+				9F29B54F1B47317500B64C96 /* AANutation.h in Headers */,
+				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
+				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
+				9F29B50D1B47317500B64C96 /* AABinaryStar.h in Headers */,
+				9F29B5391B47317500B64C96 /* AAMercury.h in Headers */,
+				9F29B5351B47317500B64C96 /* AAKepler.h in Headers */,
+				9F29B57A1B47317500B64C96 /* AAUranus.h in Headers */,
+				9F29B5071B47317500B64C96 /* AA3DCoordinate.h in Headers */,
+				9F29B5631B47317500B64C96 /* AAPluto.h in Headers */,
+				9F29B52B1B47317500B64C96 /* AAGlobe.h in Headers */,
+				9F29B5331B47317500B64C96 /* AAJupiter.h in Headers */,
+				9F29B5271B47317500B64C96 /* AAFK5.h in Headers */,
+				9F29B50B1B47317500B64C96 /* AAAngularSeparation.h in Headers */,
+				9F29B5511B47317500B64C96 /* AAParabolic.h in Headers */,
+				9F29B56D1B47317500B64C96 /* AASaturnMoons.h in Headers */,
+				9F29B51F1B47317500B64C96 /* AAElementsPlanetaryOrbit.h in Headers */,
+				9F29B5671B47317500B64C96 /* AARefraction.h in Headers */,
+				9F29B5801B47317500B64C96 /* stdafx.h in Headers */,
+				9F29B56F1B47317500B64C96 /* AASaturnRings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9F29B4691B47313500B64C96 /* SwiftAA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F29B4801B47313500B64C96 /* Build configuration list for PBXNativeTarget "SwiftAA" */;
+			buildPhases = (
+				9F29B4651B47313500B64C96 /* Sources */,
+				9F29B4661B47313500B64C96 /* Frameworks */,
+				9F29B4671B47313500B64C96 /* Headers */,
+				9F29B4681B47313500B64C96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftAA;
+			productName = SwiftAA;
+			productReference = 9F29B46A1B47313500B64C96 /* SwiftAA.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F29B4741B47313500B64C96 /* SwiftAATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F29B4831B47313500B64C96 /* Build configuration list for PBXNativeTarget "SwiftAATests" */;
+			buildPhases = (
+				9F29B4711B47313500B64C96 /* Sources */,
+				9F29B4721B47313500B64C96 /* Frameworks */,
+				9F29B4731B47313500B64C96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F29B4781B47313500B64C96 /* PBXTargetDependency */,
+			);
+			name = SwiftAATests;
+			productName = SwiftAATests;
+			productReference = 9F29B4751B47313500B64C96 /* SwiftAATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F29B4611B47313500B64C96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = onekiloparsec;
+				TargetAttributes = {
+					9F29B4691B47313500B64C96 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					9F29B4741B47313500B64C96 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 9F29B4641B47313500B64C96 /* Build configuration list for PBXProject "SwiftAA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9F29B4601B47313500B64C96;
+			productRefGroup = 9F29B46B1B47313500B64C96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F29B4691B47313500B64C96 /* SwiftAA */,
+				9F29B4741B47313500B64C96 /* SwiftAATests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F29B4681B47313500B64C96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F29B57D1B47317500B64C96 /* CMakeLists.txt in Resources */,
+				9F29B57E1B47317500B64C96 /* naughter.css in Resources */,
+				9F29B5051B47317500B64C96 /* AA+.htm in Resources */,
+				9F29B5771B47317500B64C96 /* AATest.sln in Resources */,
+				9F29B5781B47317500B64C96 /* AATest.vcproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F29B4731B47313500B64C96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F29B4651B47313500B64C96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F29B5361B47317500B64C96 /* AAMars.cpp in Sources */,
+				9F29B5121B47317500B64C96 /* AADiameters.cpp in Sources */,
+				9F29B56A1B47317500B64C96 /* AASaturn.cpp in Sources */,
+				9F29B50E1B47317500B64C96 /* AACoordinateTransformation.cpp in Sources */,
+				9F29B55A1B47317500B64C96 /* AAPhysicalMoon.cpp in Sources */,
+				9F29B5281B47317500B64C96 /* AAGalileanMoons.cpp in Sources */,
+				9F29B5441B47317500B64C96 /* AAMoonPhases.cpp in Sources */,
+				9F29B5261B47317500B64C96 /* AAFK5.cpp in Sources */,
+				9F29B5161B47317500B64C96 /* AAEarth.cpp in Sources */,
+				9F29B5401B47317500B64C96 /* AAMoonNodes.cpp in Sources */,
+				9F29B52A1B47317500B64C96 /* AAGlobe.cpp in Sources */,
+				9F29B5681B47317500B64C96 /* AARiseTransitSet.cpp in Sources */,
+				9F29B54A1B47317500B64C96 /* AANeptune.cpp in Sources */,
+				9F29B53C1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp in Sources */,
+				9F29B5541B47317500B64C96 /* AAParallax.cpp in Sources */,
+				9F29B56C1B47317500B64C96 /* AASaturnMoons.cpp in Sources */,
+				9F29B51A1B47317500B64C96 /* AAEclipses.cpp in Sources */,
+				9F29B53A1B47317500B64C96 /* AAMoon.cpp in Sources */,
+				9F29B5181B47317500B64C96 /* AAEaster.cpp in Sources */,
+				9F29B5661B47317500B64C96 /* AARefraction.cpp in Sources */,
+				9F29B5141B47317500B64C96 /* AADynamicalTime.cpp in Sources */,
+				9F29B5561B47317500B64C96 /* AAPhysicalJupiter.cpp in Sources */,
+				9F29B55E1B47317500B64C96 /* AAPlanetaryPhenomena.cpp in Sources */,
+				9F29B5461B47317500B64C96 /* AAMoslemCalendar.cpp in Sources */,
+				9F29B53E1B47317500B64C96 /* AAMoonMaxDeclinations.cpp in Sources */,
+				9F29B5501B47317500B64C96 /* AAParabolic.cpp in Sources */,
+				9F29B55C1B47317500B64C96 /* AAPhysicalSun.cpp in Sources */,
+				9F29B50C1B47317500B64C96 /* AABinaryStar.cpp in Sources */,
+				9F29B57F1B47317500B64C96 /* stdafx.cpp in Sources */,
+				9F29B5741B47317500B64C96 /* AASun.cpp in Sources */,
+				9F29B56E1B47317500B64C96 /* AASaturnRings.cpp in Sources */,
+				9F29B5621B47317500B64C96 /* AAPluto.cpp in Sources */,
+				9F29B50A1B47317500B64C96 /* AAAngularSeparation.cpp in Sources */,
+				9F29B52E1B47317500B64C96 /* AAInterpolate.cpp in Sources */,
+				9F29B51E1B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp in Sources */,
+				9F29B5481B47317500B64C96 /* AANearParabolic.cpp in Sources */,
+				9F29B5721B47317500B64C96 /* AAStellarMagnitudes.cpp in Sources */,
+				9F29B5641B47317500B64C96 /* AAPrecession.cpp in Sources */,
+				9F29B5321B47317500B64C96 /* AAJupiter.cpp in Sources */,
+				9F29B5851B47320200B64C96 /* KPCCAA2DCoordinate.mm in Sources */,
+				9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */,
+				9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */,
+				9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */,
+				9F29B5301B47317500B64C96 /* AAJewishCalendar.cpp in Sources */,
+				9F29B5201B47317500B64C96 /* AAElliptical.cpp in Sources */,
+				9F29B54E1B47317500B64C96 /* AANutation.cpp in Sources */,
+				9F29B5381B47317500B64C96 /* AAMercury.cpp in Sources */,
+				9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */,
+				9F29B5601B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp in Sources */,
+				9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */,
+				9F29B5521B47317500B64C96 /* AAParallactic.cpp in Sources */,
+				9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */,
+				9F29B5341B47317500B64C96 /* AAKepler.cpp in Sources */,
+				9F29B57B1B47317500B64C96 /* AAVenus.cpp in Sources */,
+				9F29B5081B47317500B64C96 /* AAAberration.cpp in Sources */,
+				9F29B5241B47317500B64C96 /* AAEquinoxesAndSolstices.cpp in Sources */,
+				9F29B51C1B47317500B64C96 /* AAEclipticalElements.cpp in Sources */,
+				9F29B5761B47317500B64C96 /* AATest.cpp in Sources */,
+				9F29B5581B47317500B64C96 /* AAPhysicalMars.cpp in Sources */,
+				9F29B5101B47317500B64C96 /* AADate.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F29B4711B47313500B64C96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F29B47D1B47313500B64C96 /* SwiftAATests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F29B4781B47313500B64C96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F29B4691B47313500B64C96 /* SwiftAA */;
+			targetProxy = 9F29B4771B47313500B64C96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9F29B47E1B47313500B64C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9F29B47F1B47313500B64C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9F29B4811B47313500B64C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SwiftAA/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9F29B4821B47313500B64C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SwiftAA/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9F29B4841B47313500B64C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftAATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F29B4851B47313500B64C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftAATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F29B4641B47313500B64C96 /* Build configuration list for PBXProject "SwiftAA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F29B47E1B47313500B64C96 /* Debug */,
+				9F29B47F1B47313500B64C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F29B4801B47313500B64C96 /* Build configuration list for PBXNativeTarget "SwiftAA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F29B4811B47313500B64C96 /* Debug */,
+				9F29B4821B47313500B64C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F29B4831B47313500B64C96 /* Build configuration list for PBXNativeTarget "SwiftAATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F29B4841B47313500B64C96 /* Debug */,
+				9F29B4851B47313500B64C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F29B4611B47313500B64C96 /* Project object */;
+}
