@@ -9,7 +9,7 @@
 #import "KPCAA2DCoordinate.h"
 
 @interface KPCAA2DCoordinate () {
-    CAA2DCoordinate wrapped;
+    CAA2DCoordinate _wrapped;
 }
 @end
 
@@ -19,7 +19,7 @@
 {
     self = [super init];
     if (self) {
-        wrapped = CAA2DCoordinate();
+        _wrapped = CAA2DCoordinate();
     }
     return self;
 }
@@ -28,7 +28,7 @@
 {
     self = [super init];
     if (self) {
-        wrapped = wrappedCoord;
+        _wrapped = wrappedCoord;
     }
     return self;
 }
@@ -40,22 +40,22 @@
 
 - (double)X
 {
-    return wrapped.X;
+    return _wrapped.X;
 }
 
 - (void)setX:(double)X
 {
-    wrapped.X = X;
+    _wrapped.X = X;
 }
 
 - (double)Y
 {
-    return wrapped.Y;
+    return _wrapped.Y;
 }
 
 - (void)setY:(double)Y
 {
-    wrapped.Y = Y;
+    _wrapped.Y = Y;
 }
 
 @end
