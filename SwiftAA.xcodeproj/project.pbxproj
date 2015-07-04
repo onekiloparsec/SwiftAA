@@ -141,6 +141,8 @@
 		9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 		9F29B5971B47BFA700B64C96 /* KPCAABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */; };
 		9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */; };
+		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
+		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +293,8 @@
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = SwiftAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
+		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
+		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,10 +384,10 @@
 				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
 				9F29B4901B47317500B64C96 /* AABinaryStar.h */,
 				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
-				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
 				9F29B4921B47317500B64C96 /* AACoordinateTransformation.h */,
-				9F29B4931B47317500B64C96 /* AADate.cpp */,
+				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
 				9F29B4941B47317500B64C96 /* AADate.h */,
+				9F29B4931B47317500B64C96 /* AADate.cpp */,
 				9F29B4951B47317500B64C96 /* AADiameters.cpp */,
 				9F29B4961B47317500B64C96 /* AADiameters.h */,
 				9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */,
@@ -508,6 +512,8 @@
 				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
 				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
 				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
+				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
+				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				9F29B52F1B47317500B64C96 /* AAInterpolate.h in Headers */,
 				9F29B53D1B47317500B64C96 /* AAMoonIlluminatedFraction.h in Headers */,
 				9F29B5971B47BFA700B64C96 /* KPCAABinaryStar.h in Headers */,
+				9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */,
 				9F29B58F1B47B43400B64C96 /* KPCAAAberration.h in Headers */,
 				9F29B56B1B47317500B64C96 /* AASaturn.h in Headers */,
 				9F29B5111B47317500B64C96 /* AADate.h in Headers */,
@@ -699,6 +706,7 @@
 				9F29B52A1B47317500B64C96 /* AAGlobe.cpp in Sources */,
 				9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */,
 				9F29B5681B47317500B64C96 /* AARiseTransitSet.cpp in Sources */,
+				9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */,
 				9F29B54A1B47317500B64C96 /* AANeptune.cpp in Sources */,
 				9F29B53C1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp in Sources */,
 				9F29B5541B47317500B64C96 /* AAParallax.cpp in Sources */,
