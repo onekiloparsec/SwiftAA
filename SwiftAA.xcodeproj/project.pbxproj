@@ -143,6 +143,8 @@
 		9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
+		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
+		9F8AB3931B48201600EF40C8 /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +297,8 @@
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
+		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
+		9F8AB3911B48201600EF40C8 /* KPCAADate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADate.mm; path = SwiftAA/KPCAADate.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +518,8 @@
 				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
+				9F8AB3901B48201600EF40C8 /* KPCAADate.h */,
+				9F8AB3911B48201600EF40C8 /* KPCAADate.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				9F29B5931B47BA7C00B64C96 /* KPCAAAngularSeparation.h in Headers */,
 				9F29B50B1B47317500B64C96 /* AAAngularSeparation.h in Headers */,
 				9F29B5511B47317500B64C96 /* AAParabolic.h in Headers */,
+				9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */,
 				9F29B56D1B47317500B64C96 /* AASaturnMoons.h in Headers */,
 				9F29B51F1B47317500B64C96 /* AAElementsPlanetaryOrbit.h in Headers */,
 				9F29B5671B47317500B64C96 /* AARefraction.h in Headers */,
@@ -723,6 +730,7 @@
 				9F29B5501B47317500B64C96 /* AAParabolic.cpp in Sources */,
 				9F29B55C1B47317500B64C96 /* AAPhysicalSun.cpp in Sources */,
 				9F29B50C1B47317500B64C96 /* AABinaryStar.cpp in Sources */,
+				9F8AB3931B48201600EF40C8 /* KPCAADate.mm in Sources */,
 				9F29B57F1B47317500B64C96 /* stdafx.cpp in Sources */,
 				9F29B5741B47317500B64C96 /* AASun.cpp in Sources */,
 				9F29B56E1B47317500B64C96 /* AASaturnRings.cpp in Sources */,
