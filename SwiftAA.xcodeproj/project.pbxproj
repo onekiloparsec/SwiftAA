@@ -137,6 +137,8 @@
 		9F29B58C1B47B37A00B64C96 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
 		9F29B58F1B47B43400B64C96 /* KPCAAAberration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */; };
 		9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */; };
+		9F29B5931B47BA7C00B64C96 /* KPCAAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */; };
+		9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +285,8 @@
 		9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA3DCoordinate.mm; path = SwiftAA/KPCAA3DCoordinate.mm; sourceTree = "<group>"; };
 		9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAAberration.h; path = SwiftAA/KPCAAAberration.h; sourceTree = "<group>"; };
 		9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAberration.mm; path = SwiftAA/KPCAAAberration.mm; sourceTree = "<group>"; };
+		9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAAngularSeparation.h; path = SwiftAA/KPCAAAngularSeparation.h; sourceTree = "<group>"; };
+		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +500,8 @@
 				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
 				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
 				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
+				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
+				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 				9F29B52B1B47317500B64C96 /* AAGlobe.h in Headers */,
 				9F29B5331B47317500B64C96 /* AAJupiter.h in Headers */,
 				9F29B5271B47317500B64C96 /* AAFK5.h in Headers */,
+				9F29B5931B47BA7C00B64C96 /* KPCAAAngularSeparation.h in Headers */,
 				9F29B50B1B47317500B64C96 /* AAAngularSeparation.h in Headers */,
 				9F29B5511B47317500B64C96 /* AAParabolic.h in Headers */,
 				9F29B56D1B47317500B64C96 /* AASaturnMoons.h in Headers */,
@@ -713,6 +720,7 @@
 				9F29B5641B47317500B64C96 /* AAPrecession.cpp in Sources */,
 				9F29B5321B47317500B64C96 /* AAJupiter.cpp in Sources */,
 				9F29B5851B47320200B64C96 /* KPCAA2DCoordinate.mm in Sources */,
+				9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */,
 				9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */,
 				9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */,
 				9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */,
