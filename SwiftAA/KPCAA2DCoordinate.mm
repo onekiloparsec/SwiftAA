@@ -7,14 +7,13 @@
 //
 
 #import "KPCAA2DCoordinate.h"
-#import "AA2DCoordinate.h"
 
-@interface KPCCAA2DCoordinate () {
+@interface KPCAA2DCoordinate () {
     CAA2DCoordinate wrapped;
 }
 @end
 
-@implementation KPCCAA2DCoordinate
+@implementation KPCAA2DCoordinate
 
 - (instancetype)init
 {
@@ -23,6 +22,20 @@
         wrapped = CAA2DCoordinate();
     }
     return self;
+}
+
+- (instancetype)initWithWrapped:(CAA2DCoordinate)wrappedCoord
+{
+    self = [super init];
+    if (self) {
+        wrapped = wrappedCoord;
+    }
+    return self;
+}
+
++ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord
+{
+    return [[KPCAA2DCoordinate alloc] initWithWrapped:wrappedCoord];
 }
 
 - (double)X

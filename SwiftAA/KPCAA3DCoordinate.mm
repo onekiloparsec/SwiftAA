@@ -7,7 +7,6 @@
 //
 
 #import "KPCAA3DCoordinate.h"
-#import "AA3DCoordinate.h"
 
 @interface KPCAA3DCoordinate () {
     CAA3DCoordinate wrapped;
@@ -23,6 +22,20 @@
         wrapped = CAA3DCoordinate();
     }
     return self;
+}
+
+- (instancetype)initWithWrapped:(CAA3DCoordinate)wrappedCoord
+{
+    self = [super init];
+    if (self) {
+        wrapped = wrappedCoord;
+    }
+    return self;
+}
+
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord
+{
+    return [[KPCAA3DCoordinate alloc] initWithWrapped:wrappedCoord];
 }
 
 - (double)X

@@ -139,6 +139,8 @@
 		9F29B5851B47320200B64C96 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F29B58B1B47B37A00B64C96 /* KPCAA3DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */; };
 		9F29B58C1B47B37A00B64C96 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
+		9F29B58F1B47B43400B64C96 /* KPCAAAberration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */; };
+		9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +289,8 @@
 		9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA2DCoordinate.mm; path = SwiftAA/KPCAA2DCoordinate.mm; sourceTree = "<group>"; };
 		9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA3DCoordinate.h; path = SwiftAA/KPCAA3DCoordinate.h; sourceTree = "<group>"; };
 		9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA3DCoordinate.mm; path = SwiftAA/KPCAA3DCoordinate.mm; sourceTree = "<group>"; };
+		9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAAberration.h; path = SwiftAA/KPCAAAberration.h; sourceTree = "<group>"; };
+		9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAberration.mm; path = SwiftAA/KPCAAAberration.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,8 +374,8 @@
 				9F29B4881B47317500B64C96 /* AA+.htm */,
 				9F29B4891B47317500B64C96 /* AA2DCoordinate.h */,
 				9F29B48A1B47317500B64C96 /* AA3DCoordinate.h */,
-				9F29B48B1B47317500B64C96 /* AAAberration.cpp */,
 				9F29B48C1B47317500B64C96 /* AAAberration.h */,
+				9F29B48B1B47317500B64C96 /* AAAberration.cpp */,
 				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
 				9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */,
 				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
@@ -502,6 +506,8 @@
 				9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */,
 				9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */,
 				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
+				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
+				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				9F29B5191B47317500B64C96 /* AAEaster.h in Headers */,
 				9F29B52F1B47317500B64C96 /* AAInterpolate.h in Headers */,
 				9F29B53D1B47317500B64C96 /* AAMoonIlluminatedFraction.h in Headers */,
+				9F29B58F1B47B43400B64C96 /* KPCAAAberration.h in Headers */,
 				9F29B56B1B47317500B64C96 /* AASaturn.h in Headers */,
 				9F29B5111B47317500B64C96 /* AADate.h in Headers */,
 				9F29B55B1B47317500B64C96 /* AAPhysicalMoon.h in Headers */,
@@ -732,6 +739,7 @@
 				9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */,
 				9F29B5601B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */,
+				9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */,
 				9F29B5521B47317500B64C96 /* AAParallactic.cpp in Sources */,
 				9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */,
 				9F29B5341B47317500B64C96 /* AAKepler.cpp in Sources */,
