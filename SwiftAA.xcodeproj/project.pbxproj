@@ -145,6 +145,8 @@
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
 		9F8AB3931B48201600EF40C8 /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
+		9F8AB3961B4828F500EF40C8 /* KPCAADiameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */; };
+		9F8AB3971B4828F500EF40C8 /* KPCAADiameters.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +301,8 @@
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
 		9F8AB3911B48201600EF40C8 /* KPCAADate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADate.mm; path = SwiftAA/KPCAADate.mm; sourceTree = "<group>"; };
+		9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADiameters.h; path = SwiftAA/KPCAADiameters.h; sourceTree = "<group>"; };
+		9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADiameters.mm; path = SwiftAA/KPCAADiameters.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,12 +396,12 @@
 				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
 				9F29B4941B47317500B64C96 /* AADate.h */,
 				9F29B4931B47317500B64C96 /* AADate.cpp */,
-				9F29B4951B47317500B64C96 /* AADiameters.cpp */,
 				9F29B4961B47317500B64C96 /* AADiameters.h */,
-				9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */,
+				9F29B4951B47317500B64C96 /* AADiameters.cpp */,
 				9F29B4981B47317500B64C96 /* AADynamicalTime.h */,
-				9F29B4991B47317500B64C96 /* AAEarth.cpp */,
+				9F29B4971B47317500B64C96 /* AADynamicalTime.cpp */,
 				9F29B49A1B47317500B64C96 /* AAEarth.h */,
+				9F29B4991B47317500B64C96 /* AAEarth.cpp */,
 				9F29B49B1B47317500B64C96 /* AAEaster.cpp */,
 				9F29B49C1B47317500B64C96 /* AAEaster.h */,
 				9F29B49D1B47317500B64C96 /* AAEclipses.cpp */,
@@ -520,6 +524,8 @@
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 				9F8AB3901B48201600EF40C8 /* KPCAADate.h */,
 				9F8AB3911B48201600EF40C8 /* KPCAADate.mm */,
+				9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */,
+				9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				9F29B5471B47317500B64C96 /* AAMoslemCalendar.h in Headers */,
 				9F29B5091B47317500B64C96 /* AAAberration.h in Headers */,
 				9F29B5491B47317500B64C96 /* AANearParabolic.h in Headers */,
+				9F8AB3961B4828F500EF40C8 /* KPCAADiameters.h in Headers */,
 				9F29B54F1B47317500B64C96 /* AANutation.h in Headers */,
 				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
 				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
@@ -763,6 +770,7 @@
 				9F29B5081B47317500B64C96 /* AAAberration.cpp in Sources */,
 				9F29B5241B47317500B64C96 /* AAEquinoxesAndSolstices.cpp in Sources */,
 				9F29B51C1B47317500B64C96 /* AAEclipticalElements.cpp in Sources */,
+				9F8AB3971B4828F500EF40C8 /* KPCAADiameters.mm in Sources */,
 				9F29B5761B47317500B64C96 /* AATest.cpp in Sources */,
 				9F29B5581B47317500B64C96 /* AAPhysicalMars.cpp in Sources */,
 				9F29B5101B47317500B64C96 /* AADate.cpp in Sources */,
