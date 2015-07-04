@@ -139,6 +139,8 @@
 		9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */; };
 		9F29B5931B47BA7C00B64C96 /* KPCAAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */; };
 		9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
+		9F29B5971B47BFA700B64C96 /* KPCAABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */; };
+		9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +289,8 @@
 		9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAberration.mm; path = SwiftAA/KPCAAAberration.mm; sourceTree = "<group>"; };
 		9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAAngularSeparation.h; path = SwiftAA/KPCAAAngularSeparation.h; sourceTree = "<group>"; };
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
+		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = SwiftAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
+		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,8 +378,8 @@
 				9F29B48B1B47317500B64C96 /* AAAberration.cpp */,
 				9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */,
 				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
-				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
 				9F29B4901B47317500B64C96 /* AABinaryStar.h */,
+				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
 				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
 				9F29B4921B47317500B64C96 /* AACoordinateTransformation.h */,
 				9F29B4931B47317500B64C96 /* AADate.cpp */,
@@ -502,6 +506,8 @@
 				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
 				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
 				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
+				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
+				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				9F29B5191B47317500B64C96 /* AAEaster.h in Headers */,
 				9F29B52F1B47317500B64C96 /* AAInterpolate.h in Headers */,
 				9F29B53D1B47317500B64C96 /* AAMoonIlluminatedFraction.h in Headers */,
+				9F29B5971B47BFA700B64C96 /* KPCAABinaryStar.h in Headers */,
 				9F29B58F1B47B43400B64C96 /* KPCAAAberration.h in Headers */,
 				9F29B56B1B47317500B64C96 /* AASaturn.h in Headers */,
 				9F29B5111B47317500B64C96 /* AADate.h in Headers */,
@@ -690,6 +697,7 @@
 				9F29B5161B47317500B64C96 /* AAEarth.cpp in Sources */,
 				9F29B5401B47317500B64C96 /* AAMoonNodes.cpp in Sources */,
 				9F29B52A1B47317500B64C96 /* AAGlobe.cpp in Sources */,
+				9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */,
 				9F29B5681B47317500B64C96 /* AARiseTransitSet.cpp in Sources */,
 				9F29B54A1B47317500B64C96 /* AANeptune.cpp in Sources */,
 				9F29B53C1B47317500B64C96 /* AAMoonIlluminatedFraction.cpp in Sources */,
