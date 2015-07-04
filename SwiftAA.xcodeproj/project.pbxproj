@@ -125,14 +125,10 @@
 		9F29B5741B47317500B64C96 /* AASun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F71B47317500B64C96 /* AASun.cpp */; };
 		9F29B5751B47317500B64C96 /* AASun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4F81B47317500B64C96 /* AASun.h */; };
 		9F29B5761B47317500B64C96 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4F91B47317500B64C96 /* AATest.cpp */; };
-		9F29B5771B47317500B64C96 /* AATest.sln in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B4FA1B47317500B64C96 /* AATest.sln */; };
-		9F29B5781B47317500B64C96 /* AATest.vcproj in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B4FB1B47317500B64C96 /* AATest.vcproj */; };
 		9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4FC1B47317500B64C96 /* AAUranus.cpp */; };
 		9F29B57A1B47317500B64C96 /* AAUranus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4FD1B47317500B64C96 /* AAUranus.h */; };
 		9F29B57B1B47317500B64C96 /* AAVenus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B4FE1B47317500B64C96 /* AAVenus.cpp */; };
 		9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B4FF1B47317500B64C96 /* AAVenus.h */; };
-		9F29B57D1B47317500B64C96 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B5001B47317500B64C96 /* CMakeLists.txt */; };
-		9F29B57E1B47317500B64C96 /* naughter.css in Resources */ = {isa = PBXBuildFile; fileRef = 9F29B5011B47317500B64C96 /* naughter.css */; };
 		9F29B57F1B47317500B64C96 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5021B47317500B64C96 /* stdafx.cpp */; };
 		9F29B5801B47317500B64C96 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5031B47317500B64C96 /* stdafx.h */; };
 		9F29B5841B47320200B64C96 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; };
@@ -275,14 +271,10 @@
 		9F29B4F71B47317500B64C96 /* AASun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASun.cpp; sourceTree = "<group>"; };
 		9F29B4F81B47317500B64C96 /* AASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASun.h; sourceTree = "<group>"; };
 		9F29B4F91B47317500B64C96 /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
-		9F29B4FA1B47317500B64C96 /* AATest.sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AATest.sln; sourceTree = "<group>"; };
-		9F29B4FB1B47317500B64C96 /* AATest.vcproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AATest.vcproj; sourceTree = "<group>"; };
 		9F29B4FC1B47317500B64C96 /* AAUranus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAUranus.cpp; sourceTree = "<group>"; };
 		9F29B4FD1B47317500B64C96 /* AAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAUranus.h; sourceTree = "<group>"; };
 		9F29B4FE1B47317500B64C96 /* AAVenus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVenus.cpp; sourceTree = "<group>"; };
 		9F29B4FF1B47317500B64C96 /* AAVenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVenus.h; sourceTree = "<group>"; };
-		9F29B5001B47317500B64C96 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		9F29B5011B47317500B64C96 /* naughter.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = naughter.css; sourceTree = "<group>"; };
 		9F29B5021B47317500B64C96 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
 		9F29B5031B47317500B64C96 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA2DCoordinate.h; path = SwiftAA/KPCAA2DCoordinate.h; sourceTree = "<group>"; };
@@ -376,8 +368,8 @@
 				9F29B48A1B47317500B64C96 /* AA3DCoordinate.h */,
 				9F29B48C1B47317500B64C96 /* AAAberration.h */,
 				9F29B48B1B47317500B64C96 /* AAAberration.cpp */,
-				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
 				9F29B48E1B47317500B64C96 /* AAAngularSeparation.h */,
+				9F29B48D1B47317500B64C96 /* AAAngularSeparation.cpp */,
 				9F29B48F1B47317500B64C96 /* AABinaryStar.cpp */,
 				9F29B4901B47317500B64C96 /* AABinaryStar.h */,
 				9F29B4911B47317500B64C96 /* AACoordinateTransformation.cpp */,
@@ -485,16 +477,12 @@
 				9F29B4F71B47317500B64C96 /* AASun.cpp */,
 				9F29B4F81B47317500B64C96 /* AASun.h */,
 				9F29B4F91B47317500B64C96 /* AATest.cpp */,
-				9F29B4FA1B47317500B64C96 /* AATest.sln */,
-				9F29B4FB1B47317500B64C96 /* AATest.vcproj */,
 				9F29B4FC1B47317500B64C96 /* AAUranus.cpp */,
 				9F29B4FD1B47317500B64C96 /* AAUranus.h */,
 				9F29B4FE1B47317500B64C96 /* AAVenus.cpp */,
 				9F29B4FF1B47317500B64C96 /* AAVenus.h */,
-				9F29B5001B47317500B64C96 /* CMakeLists.txt */,
-				9F29B5011B47317500B64C96 /* naughter.css */,
-				9F29B5021B47317500B64C96 /* stdafx.cpp */,
 				9F29B5031B47317500B64C96 /* stdafx.h */,
+				9F29B5021B47317500B64C96 /* stdafx.cpp */,
 			);
 			path = "aaplus-v1.60";
 			sourceTree = "<group>";
@@ -666,11 +654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F29B57D1B47317500B64C96 /* CMakeLists.txt in Resources */,
-				9F29B57E1B47317500B64C96 /* naughter.css in Resources */,
 				9F29B5051B47317500B64C96 /* AA+.htm in Resources */,
-				9F29B5771B47317500B64C96 /* AATest.sln in Resources */,
-				9F29B5781B47317500B64C96 /* AATest.vcproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
