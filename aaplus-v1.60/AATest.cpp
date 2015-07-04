@@ -268,7 +268,7 @@ void PrintSunAndMoonInfo(long year, long month, long day, double longitude, doub
   PrintMoonIlluminationAndPhase(JD);
 }
 
-void PrintSunAndMoonInfo2(const char* city_name, int year, int month, int day, int time_offset, double longitude, double latitude)
+void PrintSunAndMoonInfo2(const char* city_name, long year, long month, long day, int time_offset, double longitude, double latitude)
 {
   CAADate CalcDate(year, month, day, true);
   double JD = CalcDate.Julian();
