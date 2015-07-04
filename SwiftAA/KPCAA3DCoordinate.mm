@@ -1,26 +1,26 @@
 //
-//  CAA2DCoordinate.m
+//  KPCAA3DCoordinate.m
 //  SwiftAA
 //
-//  Created by Cédric Foellmi on 03/07/15.
+//  Created by Cédric Foellmi on 04/07/15.
 //  Copyright (c) 2015 onekiloparsec. All rights reserved.
 //
 
-#import "KPCCAA2DCoordinate.h"
-#import "AA2DCoordinate.h"
+#import "KPCAA3DCoordinate.h"
+#import "AA3DCoordinate.h"
 
-@interface KPCCAA2DCoordinate () {
-    CAA2DCoordinate wrapped;
+@interface KPCAA3DCoordinate () {
+    CAA3DCoordinate wrapped;
 }
 @end
 
-@implementation KPCCAA2DCoordinate
+@implementation KPCAA3DCoordinate
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        wrapped = CAA2DCoordinate();
+        wrapped = CAA3DCoordinate();
     }
     return self;
 }
@@ -43,6 +43,16 @@
 - (void)setY:(double)Y
 {
     wrapped.Y = Y;
+}
+
+- (double)Z
+{
+    return wrapped.Z;
+}
+
+- (void)setZ:(double)Z
+{
+    wrapped.Z = Z;
 }
 
 @end
