@@ -149,6 +149,8 @@
 		9F8AB3971B4828F500EF40C8 /* KPCAADiameters.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */; };
 		9F8AB39A1B48373A00EF40C8 /* KPCAADynamicalTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3981B48373A00EF40C8 /* KPCAADynamicalTime.h */; };
 		9F8AB39B1B48373A00EF40C8 /* KPCAADynamicalTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3991B48373A00EF40C8 /* KPCAADynamicalTime.mm */; };
+		9F8AB39E1B48385C00EF40C8 /* KPCAAEarth.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */; };
+		9F8AB39F1B48385C00EF40C8 /* KPCAAEarth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +309,8 @@
 		9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADiameters.mm; path = SwiftAA/KPCAADiameters.mm; sourceTree = "<group>"; };
 		9F8AB3981B48373A00EF40C8 /* KPCAADynamicalTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADynamicalTime.h; path = SwiftAA/KPCAADynamicalTime.h; sourceTree = "<group>"; };
 		9F8AB3991B48373A00EF40C8 /* KPCAADynamicalTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAADynamicalTime.mm; path = SwiftAA/KPCAADynamicalTime.mm; sourceTree = "<group>"; };
+		9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEarth.h; path = SwiftAA/KPCAAEarth.h; sourceTree = "<group>"; };
+		9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEarth.mm; path = SwiftAA/KPCAAEarth.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -532,6 +536,8 @@
 				9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */,
 				9F8AB3981B48373A00EF40C8 /* KPCAADynamicalTime.h */,
 				9F8AB3991B48373A00EF40C8 /* KPCAADynamicalTime.mm */,
+				9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */,
+				9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -573,6 +579,7 @@
 				9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */,
 				9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */,
 				9F29B4701B47313500B64C96 /* SwiftAA.h in Headers */,
+				9F8AB39E1B48385C00EF40C8 /* KPCAAEarth.h in Headers */,
 				9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */,
 				9F29B5151B47317500B64C96 /* AADynamicalTime.h in Headers */,
 				9F29B5131B47317500B64C96 /* AADiameters.h in Headers */,
@@ -760,6 +767,7 @@
 				9F29B5851B47320200B64C96 /* KPCAA2DCoordinate.mm in Sources */,
 				9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */,
 				9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */,
+				9F8AB39F1B48385C00EF40C8 /* KPCAAEarth.mm in Sources */,
 				9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */,
 				9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */,
 				9F29B5301B47317500B64C96 /* AAJewishCalendar.cpp in Sources */,
