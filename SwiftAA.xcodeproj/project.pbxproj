@@ -152,6 +152,8 @@
 		9F8AB3A31B483DC100EF40C8 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3A11B483DC100EF40C8 /* stdafx.h */; };
 		9F8AB3A61B4867C900EF40C8 /* KPCAAEclipses.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */; };
 		9F8AB3A71B4867C900EF40C8 /* KPCAAEclipses.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */; };
+		9FF028221B4900AF008B28A6 /* KPCAAEclipticalElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */; };
+		9FF028231B4900AF008B28A6 /* KPCAAEclipticalElements.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -313,6 +315,8 @@
 		9F8AB3A11B483DC100EF40C8 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipses.h; path = SwiftAA/KPCAAEclipses.h; sourceTree = "<group>"; };
 		9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = SwiftAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
+		9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipticalElements.h; path = SwiftAA/KPCAAEclipticalElements.h; sourceTree = "<group>"; };
+		9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = SwiftAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +545,8 @@
 				9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */,
 				9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */,
 				9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */,
+				9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */,
+				9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -624,6 +630,7 @@
 				9F29B56D1B47317500B64C96 /* AASaturnMoons.h in Headers */,
 				9F29B51F1B47317500B64C96 /* AAElementsPlanetaryOrbit.h in Headers */,
 				9F29B5671B47317500B64C96 /* AARefraction.h in Headers */,
+				9FF028221B4900AF008B28A6 /* KPCAAEclipticalElements.h in Headers */,
 				9F29B56F1B47317500B64C96 /* AASaturnRings.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +778,7 @@
 				9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */,
 				9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */,
 				9F8AB39F1B48385C00EF40C8 /* KPCAAEarth.mm in Sources */,
+				9FF028231B4900AF008B28A6 /* KPCAAEclipticalElements.mm in Sources */,
 				9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */,
 				9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */,
 				9F29B5301B47317500B64C96 /* AAJewishCalendar.cpp in Sources */,
