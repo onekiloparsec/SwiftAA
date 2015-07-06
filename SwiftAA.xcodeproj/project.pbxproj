@@ -160,6 +160,8 @@
 		9FF0282B1B4A5434008B28A6 /* KPCAAElliptical.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */; };
 		9FF55F8E1B4B093900A99DA2 /* KPCAAEquationOfTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */; };
 		9FF55F8F1B4B093900A99DA2 /* KPCAAEquationOfTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */; };
+		9FF55F921B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */; };
+		9FF55F931B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF55F911B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +331,8 @@
 		9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElliptical.mm; path = SwiftAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
 		9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquationOfTime.h; path = SwiftAA/KPCAAEquationOfTime.h; sourceTree = "<group>"; };
 		9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquationOfTime.mm; path = SwiftAA/KPCAAEquationOfTime.mm; sourceTree = "<group>"; };
+		9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquinoxesAndSolstices.h; path = SwiftAA/KPCAAEquinoxesAndSolstices.h; sourceTree = "<group>"; };
+		9FF55F911B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquinoxesAndSolstices.mm; path = SwiftAA/KPCAAEquinoxesAndSolstices.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -565,6 +569,8 @@
 				9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */,
 				9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */,
 				9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */,
+				9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */,
+				9FF55F911B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				9F29B5631B47317500B64C96 /* AAPluto.h in Headers */,
 				9F29B52B1B47317500B64C96 /* AAGlobe.h in Headers */,
 				9F29B5331B47317500B64C96 /* AAJupiter.h in Headers */,
+				9FF55F921B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h in Headers */,
 				9F29B5271B47317500B64C96 /* AAFK5.h in Headers */,
 				9F29B5931B47BA7C00B64C96 /* KPCAAAngularSeparation.h in Headers */,
 				9F29B50B1B47317500B64C96 /* AAAngularSeparation.h in Headers */,
@@ -772,6 +779,7 @@
 				9F29B5541B47317500B64C96 /* AAParallax.cpp in Sources */,
 				9F29B56C1B47317500B64C96 /* AASaturnMoons.cpp in Sources */,
 				9F29B51A1B47317500B64C96 /* AAEclipses.cpp in Sources */,
+				9FF55F931B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F29B53A1B47317500B64C96 /* AAMoon.cpp in Sources */,
 				9F29B5181B47317500B64C96 /* AAEaster.cpp in Sources */,
 				9F29B5661B47317500B64C96 /* AARefraction.cpp in Sources */,
