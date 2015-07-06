@@ -16,5 +16,6 @@
 @property(nonatomic, assign) double Z;
 
 + (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
 
 @end

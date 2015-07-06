@@ -156,6 +156,8 @@
 		9FF028231B4900AF008B28A6 /* KPCAAEclipticalElements.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */; };
 		9FF028261B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */; };
 		9FF028271B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */; };
+		9FF0282A1B4A5434008B28A6 /* KPCAAElliptical.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */; };
+		9FF0282B1B4A5434008B28A6 /* KPCAAElliptical.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +323,8 @@
 		9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = SwiftAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
 		9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElementsPlanetaryOrbit.h; path = SwiftAA/KPCAAElementsPlanetaryOrbit.h; sourceTree = "<group>"; };
 		9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElementsPlanetaryOrbit.mm; path = SwiftAA/KPCAAElementsPlanetaryOrbit.mm; sourceTree = "<group>"; };
+		9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElliptical.h; path = SwiftAA/KPCAAElliptical.h; sourceTree = "<group>"; };
+		9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElliptical.mm; path = SwiftAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -553,6 +557,8 @@
 				9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */,
 				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
 				9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */,
+				9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */,
+				9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
 				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
 				9F29B50D1B47317500B64C96 /* AABinaryStar.h in Headers */,
+				9FF0282A1B4A5434008B28A6 /* KPCAAElliptical.h in Headers */,
 				9F29B5391B47317500B64C96 /* AAMercury.h in Headers */,
 				9F29B5351B47317500B64C96 /* AAKepler.h in Headers */,
 				9F29B57A1B47317500B64C96 /* AAUranus.h in Headers */,
@@ -786,6 +793,7 @@
 				9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */,
 				9F29B5421B47317500B64C96 /* AAMoonPerigeeApogee.cpp in Sources */,
 				9F8AB39F1B48385C00EF40C8 /* KPCAAEarth.mm in Sources */,
+				9FF0282B1B4A5434008B28A6 /* KPCAAElliptical.mm in Sources */,
 				9FF028231B4900AF008B28A6 /* KPCAAEclipticalElements.mm in Sources */,
 				9F29B5221B47317500B64C96 /* AAEquationOfTime.cpp in Sources */,
 				9F29B5701B47317500B64C96 /* AASidereal.cpp in Sources */,

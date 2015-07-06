@@ -38,6 +38,11 @@
     return [[KPCAA3DCoordinate alloc] initWithWrapped:wrappedCoord];
 }
 
+- (CAA3DCoordinate)wrappedCoord
+{
+    return _wrapped;
+}
+
 - (double)X
 {
     return _wrapped.X;
