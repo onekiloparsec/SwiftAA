@@ -138,6 +138,8 @@
 		9F29B5941B47BA7C00B64C96 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 		9F29B5971B47BFA700B64C96 /* KPCAABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */; };
 		9F29B5981B47BFA700B64C96 /* KPCAABinaryStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */; };
+		9F48D51E1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */; };
+		9F48D51F1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -311,6 +313,8 @@
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = SwiftAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
+		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
+		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -577,6 +581,8 @@
 				9FF55F911B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm */,
 				9FF55F941B4B0AC300A99DA2 /* KPCAAFK5.h */,
 				9FF55F951B4B0AC300A99DA2 /* KPCAAFK5.mm */,
+				9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */,
+				9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				9F8AB3A31B483DC100EF40C8 /* stdafx.h in Headers */,
 				9F8AB39A1B48373A00EF40C8 /* KPCAADynamicalTime.h in Headers */,
 				9F29B5251B47317500B64C96 /* AAEquinoxesAndSolstices.h in Headers */,
+				9F48D51E1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h in Headers */,
 				9F29B5291B47317500B64C96 /* AAGalileanMoons.h in Headers */,
 				9F29B54B1B47317500B64C96 /* AANeptune.h in Headers */,
 				9F29B5311B47317500B64C96 /* AAJewishCalendar.h in Headers */,
@@ -830,6 +837,7 @@
 				9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */,
 				9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */,
 				9FF55F971B4B0AC300A99DA2 /* KPCAAFK5.mm in Sources */,
+				9F48D51F1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm in Sources */,
 				9F29B5521B47317500B64C96 /* AAParallactic.cpp in Sources */,
 				9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */,
 				9F29B5341B47317500B64C96 /* AAKepler.cpp in Sources */,
