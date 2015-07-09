@@ -158,6 +158,8 @@
 		9F48D53F1B4EC22F00B7EE7F /* KPCAAMoon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */; };
 		9F48D5421B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */; };
 		9F48D5431B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */; };
+		9F48D5461B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */; };
+		9F48D5471B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -351,6 +353,8 @@
 		9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoon.mm; path = SwiftAA/KPCAAMoon.mm; sourceTree = "<group>"; };
 		9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAMoonIlluminatedFraction.h; path = SwiftAA/KPCAAMoonIlluminatedFraction.h; sourceTree = "<group>"; };
 		9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonIlluminatedFraction.mm; path = SwiftAA/KPCAAMoonIlluminatedFraction.mm; sourceTree = "<group>"; };
+		9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAMoonMaxDeclinations.h; path = SwiftAA/KPCAAMoonMaxDeclinations.h; sourceTree = "<group>"; };
+		9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonMaxDeclinations.mm; path = SwiftAA/KPCAAMoonMaxDeclinations.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -637,6 +641,8 @@
 				9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */,
 				9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */,
 				9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */,
+				9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */,
+				9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				9FF55F961B4B0AC300A99DA2 /* KPCAAFK5.h in Headers */,
 				9F29B5551B47317500B64C96 /* AAParallax.h in Headers */,
 				9F29B5651B47317500B64C96 /* AAPrecession.h in Headers */,
+				9F48D5461B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h in Headers */,
 				9F29B55F1B47317500B64C96 /* AAPlanetaryPhenomena.h in Headers */,
 				9F29B5591B47317500B64C96 /* AAPhysicalMars.h in Headers */,
 				9F29B5171B47317500B64C96 /* AAEarth.h in Headers */,
@@ -906,6 +913,7 @@
 				9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */,
 				9F29B5601B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F8AB3A21B483DC100EF40C8 /* stdafx.cpp in Sources */,
+				9F48D5471B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm in Sources */,
 				9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */,
 				9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */,
 				9FF55F971B4B0AC300A99DA2 /* KPCAAFK5.mm in Sources */,
