@@ -7,6 +7,7 @@
 //
 
 #import "KPCAAEclipses.h"
+#import "AAEclipses.h"
 
 @interface KPCAASolarEclipseDetails () {
     CAASolarEclipseDetails _wrapped;

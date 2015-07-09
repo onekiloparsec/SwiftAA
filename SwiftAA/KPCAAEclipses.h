@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AAEclipses.h"
 
 @interface KPCAASolarEclipseDetails : NSObject
 
@@ -17,8 +16,6 @@
 @property(nonatomic, assign) double u;
 @property(nonatomic, assign) double gamma;
 @property(nonatomic, assign) double GreatestMagnitude;
-
-+ (KPCAASolarEclipseDetails *)detailsByWrapping:(CAASolarEclipseDetails)wrappedDetails;
 
 @end
 
@@ -36,8 +33,6 @@
 @property(nonatomic, assign) double PartialPhaseSemiDuration;
 @property(nonatomic, assign) double TotalPhaseSemiDuration;
 @property(nonatomic, assign) double PartialPhasePenumbraSemiDuration;
-
-+ (KPCAALunarEclipseDetails *)detailsByWrapping:(CAALunarEclipseDetails)wrappedDetails;
 
 @end
 

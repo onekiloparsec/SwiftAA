@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
-#import "AAGalileanMoons.h"
 
 @interface KPCAAGalileanMoonDetail : NSObject
 
@@ -24,8 +23,6 @@
 @property(nonatomic, assign) BOOL inEclipse;
 @property(nonatomic, assign) BOOL inShadowTransit;
 
-+ (KPCAAGalileanMoonDetail *)detailByWrapping:(CAAGalileanMoonDetail)wrappedDetail;
-
 @end
 
 @interface KPCAAGalileanMoonsDetails : NSObject
@@ -34,8 +31,6 @@
 @property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite2;
 @property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite3;
 @property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite4;
-
-+ (KPCAAGalileanMoonsDetails *)detailsByWrapping:(CAAGalileanMoonsDetails)wrappedDetails;
 
 @end
 

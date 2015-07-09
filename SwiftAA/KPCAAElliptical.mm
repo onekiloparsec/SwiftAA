@@ -7,6 +7,7 @@
 //
 
 #import "KPCAAElliptical.h"
+#import "AAElliptical.h"
 
 @interface KPCAAEllipticalObjectElements () {
     CAAEllipticalObjectElements _wrapped;

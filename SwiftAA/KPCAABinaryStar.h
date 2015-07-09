@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AABinaryStar.h"
 
 @interface KPCAABinaryStarDetails : NSObject
 
 @property(nonatomic, assign) double r;
 @property(nonatomic, assign) double Theta;
 @property(nonatomic, assign) double Rho;
-
-+ (KPCAABinaryStarDetails *)detailsByWrapping:(CAABinaryStarDetails)wrappedDetails;
 
 @end
 

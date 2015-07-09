@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AADate.h"
 
 @interface KPCAACalendarDate : NSObject
 
 @property(nonatomic, assign) long Year;
 @property(nonatomic, assign) long Month;
 @property(nonatomic, assign) long Day;
-
-+ (KPCAACalendarDate *)calendarDateByWrapping:(CAACalendarDate)wrappedCalDate;
 
 @end
 
@@ -48,9 +45,9 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 
 + (void)DayOfYearToDayAndMonth:(long)DayOfYear leap:(BOOL)leapYear dayOfMonth:(long *)DayOfMonth month:(long *)Month;
 
-+ (CAACalendarDate)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day;
++ (KPCAACalendarDate *)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day;
 
-+ (CAACalendarDate)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day;
++ (KPCAACalendarDate *)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day;
 
 // Instance methods (~ 'non static' in C++)
 

@@ -15,8 +15,6 @@
 @property(nonatomic, assign) double w;
 @property(nonatomic, assign) double omega;
 
-+ (KPCAAEclipticalElementDetails *)detailsByWrapping:(CAAEclipticalElementDetails)wrappedDetails;
-
 @end
 
 @interface KPCAAEclipticalElements : NSObject

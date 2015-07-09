@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
-#import "AAElliptical.h"
 
 @interface KPCAAEllipticalObjectElements : NSObject
 
@@ -20,8 +19,6 @@
 @property(nonatomic, assign) double JDEquinox;
 @property(nonatomic, assign) double T;
 
-+ (KPCAAEllipticalObjectElements *)elementsByWrapping:(CAAEllipticalObjectElements)wrappedElements;
-
 @end
 
 @interface KPCAAEllipticalPlanetaryDetails : NSObject
@@ -32,8 +29,6 @@
 @property(nonatomic, assign) double ApparentLightTime;
 @property(nonatomic, assign) double ApparentGeocentricRA;
 @property(nonatomic, assign) double ApparentGeocentricDeclination;
-
-+ (KPCAAEllipticalPlanetaryDetails *)detailsByWrapping:(CAAEllipticalPlanetaryDetails)wrappedDetails;
 
 @end
 
@@ -53,8 +48,6 @@
 @property(nonatomic, assign) double AstrometricGeocentricLightTime;
 @property(nonatomic, assign) double Elongation;
 @property(nonatomic, assign) double PhaseAngle;
-
-+ (KPCAAEllipticalObjectDetails *)detailsByWrapping:(CAAEllipticalObjectDetails)wrappedDetails;
 
 @end
 

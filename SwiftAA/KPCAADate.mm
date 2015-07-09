@@ -7,6 +7,7 @@
 //
 
 #import "KPCAADate.h"
+#import "AADate.h"
 
 @interface KPCAACalendarDate () {
     CAACalendarDate _wrapped;
@@ -125,14 +126,14 @@
     return CAADate::DayOfYearToDayAndMonth(DayOfYear, (bool)leapYear, *DayOfMonth, *Month);
 }
 
-+ (CAACalendarDate)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day
++ (KPCAACalendarDate *)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day
 {
-    return CAADate::JulianToGregorian(Year, Month, Day);
+    return [KPCAACalendarDate calendarDateByWrapping:CAADate::JulianToGregorian(Year, Month, Day)];
 }
 
-+ (CAACalendarDate)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day
++ (KPCAACalendarDate *)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day
 {
-    return CAADate::GregorianToJulian(Year, Month, Day);
+    return [KPCAACalendarDate calendarDateByWrapping:CAADate::GregorianToJulian(Year, Month, Day)];
 }
 
 + (BOOL)AfterPapalReformForYear:(long)Year month:(long)Month day:(double)Day

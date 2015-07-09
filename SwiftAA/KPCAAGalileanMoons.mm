@@ -7,6 +7,7 @@
 //
 
 #import "KPCAAGalileanMoons.h"
+#import "AAGalileanMoons.h"
 
 @interface KPCAAGalileanMoonDetail () {
     CAAGalileanMoonDetail _wrapped;

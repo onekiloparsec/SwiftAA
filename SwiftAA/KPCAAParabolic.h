@@ -1,5 +1,5 @@
 //
-//  KPCAANearParabolic.h
+//  KPCAAParabolic.h
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 09/07/15.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-@interface KPCAANearParabolicObjectElements : NSObject
+@interface KPCAAParabolicObjectElements : NSObject
 
 @property(nonatomic, assign) double q;
 @property(nonatomic, assign) double i;
@@ -17,12 +17,11 @@
 @property(nonatomic, assign) double omega;
 @property(nonatomic, assign) double JDEquinox;
 @property(nonatomic, assign) double T;
-@property(nonatomic, assign) double e;
 
 @end
 
 
-@interface KPCAANearParabolicObjectDetails : NSObject
+@interface KPCAAParabolicObjectDetails : NSObject
 
 @property(nonatomic, strong) KPCAA3DCoordinate *HeliocentricRectangularEquatorial;
 @property(nonatomic, strong) KPCAA3DCoordinate *HeliocentricRectangularEcliptical;
@@ -42,12 +41,9 @@
 @end
 
 
-@interface KPCAANearParabolic : NSObject
+@interface KPCAAParabolic : NSObject
 
-+ (KPCAANearParabolicObjectDetails *)Calculate:(double)JD elements:(KPCAANearParabolicObjectElements *)elements;
-
-+ (double)cbrt:(double)x;
-
-+ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double&)v r:(double&)r;
++ (double)CalculateBarkers:(double)W;
++ (KPCAAParabolicObjectDetails *)Calculate:(double)JD elements:(KPCAAParabolicObjectElements *)elements;
 
 @end

@@ -1,32 +1,32 @@
 //
-//  KPCAANearParabolic.m
+//  KPCAAParabolic.m
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 09/07/15.
 //  Copyright (c) 2015 onekiloparsec. All rights reserved.
 //
 
-#import "KPCAANearParabolic.h"
-#import "AANearParabolic.h"
+#import "KPCAAParabolic.h"
+#import "AAParabolic.h"
 
-@interface KPCAANearParabolicObjectElements () {
-    CAANearParabolicObjectElements _wrapped;
+@interface KPCAAParabolicObjectElements () {
+    CAAParabolicObjectElements _wrapped;
 }
-- (CAANearParabolicObjectElements)wrappedElements;
+- (CAAParabolicObjectElements)wrappedElements;
 @end
 
-@implementation KPCAANearParabolicObjectElements
+@implementation KPCAAParabolicObjectElements
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _wrapped = CAANearParabolicObjectElements();
+        _wrapped = CAAParabolicObjectElements();
     }
     return self;
 }
 
-- (instancetype)initWithWrappedElements:(CAANearParabolicObjectElements)wrappedElements
+- (instancetype)initWithWrappedElements:(CAAParabolicObjectElements)wrappedElements
 {
     self = [super init];
     if (self) {
@@ -35,12 +35,12 @@
     return self;
 }
 
-+ (KPCAANearParabolicObjectElements *)elementsByWrapping:(CAANearParabolicObjectElements)wrappedElements
++ (KPCAAParabolicObjectElements *)elementsByWrapping:(CAAParabolicObjectElements)wrappedElements
 {
-    return [[KPCAANearParabolicObjectElements alloc] initWithWrappedElements:wrappedElements];
+    return [[KPCAAParabolicObjectElements alloc] initWithWrappedElements:wrappedElements];
 }
 
-- (CAANearParabolicObjectElements)wrappedElements
+- (CAAParabolicObjectElements)wrappedElements
 {
     return _wrapped;
 }
@@ -105,36 +105,27 @@
     _wrapped.T = T;
 }
 
-- (double)e
-{
-    return _wrapped.e;
-}
-
-- (void)setE:(double)e
-{
-    _wrapped.e = e;
-}
-
 @end
 
 
-@interface KPCAANearParabolicObjectDetails () {
-    CAANearParabolicObjectDetails _wrapped;
+
+@interface KPCAAParabolicObjectDetails () {
+    CAAParabolicObjectDetails _wrapped;
 }
 @end
 
-@implementation KPCAANearParabolicObjectDetails
+@implementation KPCAAParabolicObjectDetails
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _wrapped = CAANearParabolicObjectDetails();
+        _wrapped = CAAParabolicObjectDetails();
     }
     return self;
 }
 
-- (instancetype)initWithWrappedDetails:(CAANearParabolicObjectDetails)wrappedDetails
+- (instancetype)initWithWrappedDetails:(CAAParabolicObjectDetails)wrappedDetails
 {
     self = [super init];
     if (self) {
@@ -143,9 +134,9 @@
     return self;
 }
 
-+ (KPCAANearParabolicObjectDetails *)detailsByWrapping:(CAANearParabolicObjectDetails)wrappedDetails
++ (KPCAAParabolicObjectDetails *)detailsByWrapping:(CAAParabolicObjectDetails)wrappedDetails
 {
-    return [[KPCAANearParabolicObjectDetails alloc] initWithWrappedDetails:wrappedDetails];
+    return [[KPCAAParabolicObjectDetails alloc] initWithWrappedDetails:wrappedDetails];
 }
 
 - (KPCAA3DCoordinate *)HeliocentricRectangularEquatorial
@@ -230,12 +221,12 @@
 
 - (double)AstrometricGeocentricRA
 {
-    return _wrapped.AstrometricGeocentricRA;
+    return _wrapped.AstrometricGeocenticRA;
 }
 
 - (void)setAstrometricGeocentricRA:(double)AstrometricGeocentricRA
 {
-    _wrapped.AstrometricGeocentricRA = AstrometricGeocentricRA;
+    _wrapped.AstrometricGeocenticRA = AstrometricGeocentricRA;
 }
 
 - (double)AstrometricGeocentricDeclination
@@ -292,21 +283,17 @@
 
 
 
-@implementation KPCAANearParabolic
 
-+ (KPCAANearParabolicObjectDetails *)Calculate:(double)JD elements:(KPCAANearParabolicObjectElements *)elements
+@implementation KPCAAParabolic
+
++ (double)CalculateBarkers:(double)W
 {
-    return [KPCAANearParabolicObjectDetails detailsByWrapping:CAANearParabolic::Calculate(JD, elements.wrappedElements)];
+    return CAAParabolic::CalculateBarkers(W);
 }
 
-+ (double)cbrt:(double)x
++ (KPCAAParabolicObjectDetails *)Calculate:(double)JD elements:(KPCAAParabolicObjectElements *)elements
 {
-    return CAANearParabolic::cbrt(x);
-}
-
-+ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double&)v r:(double&)r
-{
-    return CAANearParabolic::CalulateTrueAnnomalyAndRadius(JD, elements.wrappedElements, v, r);
+    return [KPCAAParabolicObjectDetails detailsByWrapping:CAAParabolic::Calculate(JD, elements.wrappedElements)];
 }
 
 @end

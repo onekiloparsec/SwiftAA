@@ -7,6 +7,7 @@
 //
 
 #import "KPCAABinaryStar.h"
+#import "AABinaryStar.h"
 
 @interface KPCAABinaryStarDetails () {
     CAABinaryStarDetails _wrapped;
