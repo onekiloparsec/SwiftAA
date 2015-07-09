@@ -166,6 +166,8 @@
 		9F48D54F1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */; };
 		9F48D5521B4EE14F00B7EE7F /* KPCAAMoonPhases.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */; };
 		9F48D5531B4EE14F00B7EE7F /* KPCAAMoonPhases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */; };
+		9F48D5561B4EE1FD00B7EE7F /* KPCAANearParabolic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */; };
+		9F48D5571B4EE1FD00B7EE7F /* KPCAANearParabolic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -367,6 +369,8 @@
 		9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonPerigeeApogee.mm; path = SwiftAA/KPCAAMoonPerigeeApogee.mm; sourceTree = "<group>"; };
 		9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAMoonPhases.h; path = SwiftAA/KPCAAMoonPhases.h; sourceTree = "<group>"; };
 		9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAMoonPhases.mm; path = SwiftAA/KPCAAMoonPhases.mm; sourceTree = "<group>"; };
+		9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAANearParabolic.h; path = SwiftAA/KPCAANearParabolic.h; sourceTree = "<group>"; };
+		9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANearParabolic.mm; path = SwiftAA/KPCAANearParabolic.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -661,6 +665,8 @@
 				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
 				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
 				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
+				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
+				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -713,6 +719,7 @@
 				9F29B51B1B47317500B64C96 /* AAEclipses.h in Headers */,
 				9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */,
 				9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */,
+				9F48D5561B4EE1FD00B7EE7F /* KPCAANearParabolic.h in Headers */,
 				9F29B4701B47313500B64C96 /* SwiftAA.h in Headers */,
 				9F8AB39E1B48385C00EF40C8 /* KPCAAEarth.h in Headers */,
 				9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */,
@@ -930,6 +937,7 @@
 				9F48D5331B4EC10200B7EE7F /* KPCAAKepler.mm in Sources */,
 				9F48D53F1B4EC22F00B7EE7F /* KPCAAMoon.mm in Sources */,
 				9F29B5381B47317500B64C96 /* AAMercury.cpp in Sources */,
+				9F48D5571B4EE1FD00B7EE7F /* KPCAANearParabolic.mm in Sources */,
 				9F48D5231B4DC33C00B7EE7F /* KPCAAGlobe.mm in Sources */,
 				9F48D52F1B4EC01F00B7EE7F /* KPCAAJupiter.mm in Sources */,
 				9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */,
