@@ -184,6 +184,8 @@
 		9F48D5731B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */; };
 		9F48D5761B4FA7B900B7EE7F /* KPCPhysicalMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */; };
 		9F48D5771B4FA7B900B7EE7F /* KPCPhysicalMars.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */; };
+		9F48D57A1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */; };
+		9F48D57B1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -403,6 +405,8 @@
 		9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalJupiter.mm; path = SwiftAA/KPCAAPhysicalJupiter.mm; sourceTree = "<group>"; };
 		9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCPhysicalMars.h; path = SwiftAA/KPCPhysicalMars.h; sourceTree = "<group>"; };
 		9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCPhysicalMars.mm; path = SwiftAA/KPCPhysicalMars.mm; sourceTree = "<group>"; };
+		9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalMoon.h; path = SwiftAA/KPCAAPhysicalMoon.h; sourceTree = "<group>"; };
+		9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalMoon.mm; path = SwiftAA/KPCAAPhysicalMoon.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -715,6 +719,8 @@
 				9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */,
 				9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */,
 				9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */,
+				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
+				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 				9F8AB3A61B4867C900EF40C8 /* KPCAAEclipses.h in Headers */,
 				9F29B55B1B47317500B64C96 /* AAPhysicalMoon.h in Headers */,
 				9F29B51B1B47317500B64C96 /* AAEclipses.h in Headers */,
+				9F48D57A1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h in Headers */,
 				9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */,
 				9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */,
 				9F48D5561B4EE1FD00B7EE7F /* KPCAANearParabolic.h in Headers */,
@@ -927,6 +934,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F48D57B1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm in Sources */,
 				9F29B5361B47317500B64C96 /* AAMars.cpp in Sources */,
 				9F29B5121B47317500B64C96 /* AADiameters.cpp in Sources */,
 				9F29B56A1B47317500B64C96 /* AASaturn.cpp in Sources */,
