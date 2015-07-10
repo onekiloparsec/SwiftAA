@@ -192,6 +192,8 @@
 		9F48D5831B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */; };
 		9F48D5861B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */; };
 		9F48D5871B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */; };
+		9F48D58A1B4FAFCF00B7EE7F /* KPCAAPluto.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5881B4FAFCF00B7EE7F /* KPCAAPluto.h */; };
+		9F48D58B1B4FAFCF00B7EE7F /* KPCAAPluto.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -419,6 +421,8 @@
 		9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetaryPhenomena.mm; path = SwiftAA/KPCAAPlanetaryPhenomena.mm; sourceTree = "<group>"; };
 		9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPlanetPerihelionAphelion.h; path = SwiftAA/KPCAAPlanetPerihelionAphelion.h; sourceTree = "<group>"; };
 		9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetPerihelionAphelion.mm; path = SwiftAA/KPCAAPlanetPerihelionAphelion.mm; sourceTree = "<group>"; };
+		9F48D5881B4FAFCF00B7EE7F /* KPCAAPluto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPluto.h; path = SwiftAA/KPCAAPluto.h; sourceTree = "<group>"; };
+		9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPluto.mm; path = SwiftAA/KPCAAPluto.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -739,6 +743,8 @@
 				9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */,
 				9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */,
 				9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */,
+				9F48D5881B4FAFCF00B7EE7F /* KPCAAPluto.h */,
+				9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -797,6 +803,7 @@
 				9F29B57C1B47317500B64C96 /* AAVenus.h in Headers */,
 				9F29B53F1B47317500B64C96 /* AAMoonMaxDeclinations.h in Headers */,
 				9F48D5561B4EE1FD00B7EE7F /* KPCAANearParabolic.h in Headers */,
+				9F48D58A1B4FAFCF00B7EE7F /* KPCAAPluto.h in Headers */,
 				9F29B4701B47313500B64C96 /* SwiftAA.h in Headers */,
 				9F8AB39E1B48385C00EF40C8 /* KPCAAEarth.h in Headers */,
 				9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */,
@@ -958,6 +965,7 @@
 				9F48D57B1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm in Sources */,
 				9F29B5361B47317500B64C96 /* AAMars.cpp in Sources */,
 				9F29B5121B47317500B64C96 /* AADiameters.cpp in Sources */,
+				9F48D58B1B4FAFCF00B7EE7F /* KPCAAPluto.mm in Sources */,
 				9F29B56A1B47317500B64C96 /* AASaturn.cpp in Sources */,
 				9F29B50E1B47317500B64C96 /* AACoordinateTransformation.cpp in Sources */,
 				9F48D5371B4EC1AA00B7EE7F /* KPCAAMars.mm in Sources */,
