@@ -188,6 +188,8 @@
 		9F48D57B1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */; };
 		9F48D57E1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */; };
 		9F48D57F1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */; };
+		9F48D5821B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */; };
+		9F48D5831B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -411,6 +413,8 @@
 		9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalMoon.mm; path = SwiftAA/KPCAAPhysicalMoon.mm; sourceTree = "<group>"; };
 		9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalSun.h; path = SwiftAA/KPCAAPhysicalSun.h; sourceTree = "<group>"; };
 		9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalSun.mm; path = SwiftAA/KPCAAPhysicalSun.mm; sourceTree = "<group>"; };
+		9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPlanetaryPhenomena.h; path = SwiftAA/KPCAAPlanetaryPhenomena.h; sourceTree = "<group>"; };
+		9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetaryPhenomena.mm; path = SwiftAA/KPCAAPlanetaryPhenomena.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -727,6 +731,8 @@
 				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 				9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */,
 				9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */,
+				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,
+				9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -803,6 +809,7 @@
 				9F29B5451B47317500B64C96 /* AAMoonPhases.h in Headers */,
 				9F29B5431B47317500B64C96 /* AAMoonPerigeeApogee.h in Headers */,
 				9F29B52D1B47317500B64C96 /* AAIlluminatedFraction.h in Headers */,
+				9F48D5821B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h in Headers */,
 				9F29B5731B47317500B64C96 /* AAStellarMagnitudes.h in Headers */,
 				9F29B5711B47317500B64C96 /* AASidereal.h in Headers */,
 				9F29B5471B47317500B64C96 /* AAMoslemCalendar.h in Headers */,
@@ -994,6 +1001,7 @@
 				9F29B5481B47317500B64C96 /* AANearParabolic.cpp in Sources */,
 				9F29B5721B47317500B64C96 /* AAStellarMagnitudes.cpp in Sources */,
 				9F29B58C1B47B37A00B64C96 /* KPCAA3DCoordinate.mm in Sources */,
+				9F48D5831B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9F29B5641B47317500B64C96 /* AAPrecession.cpp in Sources */,
 				9F48D5671B4EF07F00B7EE7F /* KPCAANutation.mm in Sources */,
 				9F29B5321B47317500B64C96 /* AAJupiter.cpp in Sources */,
