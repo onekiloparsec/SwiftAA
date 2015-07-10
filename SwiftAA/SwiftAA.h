@@ -33,3 +33,27 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAAEquinoxesAndSolstices.h>
 #import <SwiftAA/KPCAAFK5.h>
 #import <SwiftAA/KPCAAGalileanMoons.h>
+#import <SwiftAA/KPCAAGlobe.h>
+#import <SwiftAA/KPCAAIlluminatedFraction.h>
+#import <SwiftAA/KPCAAInterpolate.h>
+#import <SwiftAA/KPCAAJupiter.h>
+#import <SwiftAA/KPCAAKepler.h>
+#import <SwiftAA/KPCAAMars.h>
+#import <SwiftAA/KPCAAMercury.h>
+#import <SwiftAA/KPCAAMoon.h>
+#import <SwiftAA/KPCAAMoonIlluminatedFraction.h>
+#import <SwiftAA/KPCAAMoonMaxDeclinations.h>
+#import <SwiftAA/KPCAAMoonNodes.h>
+#import <SwiftAA/KPCAAMoonPerigeeApogee.h>
+#import <SwiftAA/KPCAAMoonPhases.h>
+#import <SwiftAA/KPCAANearParabolic.h>
+#import <SwiftAA/KPCAANeptune.h>
+#import <SwiftAA/KPCAANodes.h>
+#import <SwiftAA/KPCAANutation.h>
+#import <SwiftAA/KPCAAParabolic.h>
+#import <SwiftAA/KPCAAParallactic.h>
+#import <SwiftAA/KPCAAParallax.h>
+#import <SwiftAA/KPCAAPhysicalJupiter.h>
+#import <SwiftAA/KPCPhysicalMars.h>
+
+
