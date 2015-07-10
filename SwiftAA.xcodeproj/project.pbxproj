@@ -178,6 +178,8 @@
 		9F48D5671B4EF07F00B7EE7F /* KPCAANutation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5651B4EF07F00B7EE7F /* KPCAANutation.mm */; };
 		9F48D56A1B4EF16A00B7EE7F /* KPCAAParallactic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */; };
 		9F48D56B1B4EF16A00B7EE7F /* KPCAAParallactic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */; };
+		9F48D56E1B4EFB2C00B7EE7F /* KPCAAParallax.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D56C1B4EFB2C00B7EE7F /* KPCAAParallax.h */; };
+		9F48D56F1B4EFB2C00B7EE7F /* KPCAAParallax.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -391,6 +393,8 @@
 		9F48D5651B4EF07F00B7EE7F /* KPCAANutation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAANutation.mm; path = SwiftAA/KPCAANutation.mm; sourceTree = "<group>"; };
 		9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAParallactic.h; path = SwiftAA/KPCAAParallactic.h; sourceTree = "<group>"; };
 		9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParallactic.mm; path = SwiftAA/KPCAAParallactic.mm; sourceTree = "<group>"; };
+		9F48D56C1B4EFB2C00B7EE7F /* KPCAAParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAParallax.h; path = SwiftAA/KPCAAParallax.h; sourceTree = "<group>"; };
+		9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParallax.mm; path = SwiftAA/KPCAAParallax.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -697,6 +701,8 @@
 				9F48D5611B4EE63000B7EE7F /* KPCAAParabolic.mm */,
 				9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */,
 				9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */,
+				9F48D56C1B4EFB2C00B7EE7F /* KPCAAParallax.h */,
+				9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				9F29B54F1B47317500B64C96 /* AANutation.h in Headers */,
 				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
 				9FF55F8E1B4B093900A99DA2 /* KPCAAEquationOfTime.h in Headers */,
+				9F48D56E1B4EFB2C00B7EE7F /* KPCAAParallax.h in Headers */,
 				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
 				9F29B50D1B47317500B64C96 /* AABinaryStar.h in Headers */,
 				9FF0282A1B4A5434008B28A6 /* KPCAAElliptical.h in Headers */,
@@ -930,6 +937,7 @@
 				9F29B51A1B47317500B64C96 /* AAEclipses.cpp in Sources */,
 				9FF55F931B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F29B53A1B47317500B64C96 /* AAMoon.cpp in Sources */,
+				9F48D56F1B4EFB2C00B7EE7F /* KPCAAParallax.mm in Sources */,
 				9F48D5271B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.mm in Sources */,
 				9F29B5181B47317500B64C96 /* AAEaster.cpp in Sources */,
 				9F29B5661B47317500B64C96 /* AARefraction.cpp in Sources */,
