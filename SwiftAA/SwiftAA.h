@@ -67,3 +67,5 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAASaturnMoons.h>
 #import <SwiftAA/KPCAASaturnRings.h>
 #import <SwiftAA/KPCAASidereal.h>
+#import <SwiftAA/KPCAAStellarMagnitudes.h>
+
