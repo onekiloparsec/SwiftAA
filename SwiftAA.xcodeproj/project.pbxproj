@@ -642,7 +642,7 @@
 		9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPluto.mm; path = SwiftAA/KPCAAPluto.mm; sourceTree = "<group>"; };
 		9F48D58C1B4FB01C00B7EE7F /* KPCAAPrecession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPrecession.h; path = SwiftAA/KPCAAPrecession.h; sourceTree = "<group>"; };
 		9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPrecession.mm; path = SwiftAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
-		9F48D5901B4FB67700B7EE7F /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftAA.playground; path = SwiftAA/SwiftAA.playground; sourceTree = "<group>"; };
+		9F48D5901B4FB67700B7EE7F /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D5961B4FB74300B7EE7F /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
@@ -659,7 +659,7 @@
 		9F8AB3A11B483DC100EF40C8 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipses.h; path = SwiftAA/KPCAAEclipses.h; sourceTree = "<group>"; };
 		9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = SwiftAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
-		9FCE93201B4FBC300026E149 /* AA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AA.swift; path = SwiftAA/AA.swift; sourceTree = "<group>"; };
+		9FCE93201B4FBC300026E149 /* AA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AA.swift; sourceTree = "<group>"; };
 		9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipticalElements.h; path = SwiftAA/KPCAAEclipticalElements.h; sourceTree = "<group>"; };
 		9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = SwiftAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
 		9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElementsPlanetaryOrbit.h; path = SwiftAA/KPCAAElementsPlanetaryOrbit.h; sourceTree = "<group>"; };
@@ -703,8 +703,6 @@
 		9F29B4601B47313500B64C96 = {
 			isa = PBXGroup;
 			children = (
-				9FCE93201B4FBC300026E149 /* AA.swift */,
-				9F48D5901B4FB67700B7EE7F /* SwiftAA.playground */,
 				9F29B46C1B47313500B64C96 /* SwiftAA */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
 				9F29B4861B47317500B64C96 /* aaplus-v1.60 */,
@@ -727,8 +725,8 @@
 		9F29B46C1B47313500B64C96 /* SwiftAA */ = {
 			isa = PBXGroup;
 			children = (
-				9F29B46F1B47313500B64C96 /* SwiftAA.h */,
-				9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */,
+				9FCE93201B4FBC300026E149 /* AA.swift */,
+				9F48D5901B4FB67700B7EE7F /* SwiftAA.playground */,
 			);
 			path = SwiftAA;
 			sourceTree = "<group>";
@@ -736,6 +734,8 @@
 		9F29B46D1B47313500B64C96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F29B46F1B47313500B64C96 /* SwiftAA.h */,
+				9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */,
 				9F29B46E1B47313500B64C96 /* Info.plist */,
 			);
 			name = "Supporting Files";
