@@ -331,6 +331,14 @@
 		9F7A9E091B4FCD4100033B77 /* KPCAAStellarMagnitudes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */; };
 		9F7A9E0A1B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */; };
 		9F7A9E0B1B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */; };
+		9F7A9E0E1B4FCE0300033B77 /* KPCAAUranus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */; };
+		9F7A9E0F1B4FCE0300033B77 /* KPCAAUranus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */; };
+		9F7A9E101B4FCE0300033B77 /* KPCAAUranus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E0D1B4FCE0300033B77 /* KPCAAUranus.mm */; };
+		9F7A9E111B4FCE0300033B77 /* KPCAAUranus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E0D1B4FCE0300033B77 /* KPCAAUranus.mm */; };
+		9F7A9E141B4FCE1500033B77 /* KPCAAVenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */; };
+		9F7A9E151B4FCE1500033B77 /* KPCAAVenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */; };
+		9F7A9E161B4FCE1500033B77 /* KPCAAVenus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */; };
+		9F7A9E171B4FCE1500033B77 /* KPCAAVenus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -687,6 +695,10 @@
 		9F7A9E011B4FCCB600033B77 /* KPCAASidereal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASidereal.mm; path = SwiftAA/KPCAASidereal.mm; sourceTree = "<group>"; };
 		9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAStellarMagnitudes.h; path = SwiftAA/KPCAAStellarMagnitudes.h; sourceTree = "<group>"; };
 		9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAStellarMagnitudes.mm; path = SwiftAA/KPCAAStellarMagnitudes.mm; sourceTree = "<group>"; };
+		9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAUranus.h; path = SwiftAA/KPCAAUranus.h; sourceTree = "<group>"; };
+		9F7A9E0D1B4FCE0300033B77 /* KPCAAUranus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAUranus.mm; path = SwiftAA/KPCAAUranus.mm; sourceTree = "<group>"; };
+		9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAVenus.h; path = SwiftAA/KPCAAVenus.h; sourceTree = "<group>"; };
+		9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAVenus.mm; path = SwiftAA/KPCAAVenus.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -1037,6 +1049,10 @@
 				9F7A9E011B4FCCB600033B77 /* KPCAASidereal.mm */,
 				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
 				9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */,
+				9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */,
+				9F7A9E0D1B4FCE0300033B77 /* KPCAAUranus.mm */,
+				9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */,
+				9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -1132,6 +1148,7 @@
 				9F29B5611B47317500B64C96 /* AAPlanetPerihelionAphelion.h in Headers */,
 				9F29B53B1B47317500B64C96 /* AAMoon.h in Headers */,
 				9F29B51D1B47317500B64C96 /* AAEclipticalElements.h in Headers */,
+				9F7A9E0E1B4FCE0300033B77 /* KPCAAUranus.h in Headers */,
 				9F29B5451B47317500B64C96 /* AAMoonPhases.h in Headers */,
 				9F29B5431B47317500B64C96 /* AAMoonPerigeeApogee.h in Headers */,
 				9F29B52D1B47317500B64C96 /* AAIlluminatedFraction.h in Headers */,
@@ -1146,6 +1163,7 @@
 				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
 				9F7A9DEA1B4FC5D900033B77 /* KPCAARiseTransitSet.h in Headers */,
 				9F7A9DE41B4FC4D400033B77 /* KPCAARefraction.h in Headers */,
+				9F7A9E141B4FCE1500033B77 /* KPCAAVenus.h in Headers */,
 				9F48D6191B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h in Headers */,
 				9F7A9E021B4FCCB600033B77 /* KPCAASidereal.h in Headers */,
 				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
@@ -1256,12 +1274,14 @@
 				9FCE93551B4FBCFD0026E149 /* AAAngularSeparation.h in Headers */,
 				9FCE93421B4FBCD20026E149 /* KPCAANearParabolic.h in Headers */,
 				9FCE93431B4FBCD20026E149 /* KPCAANeptune.h in Headers */,
+				9F7A9E0F1B4FCE0300033B77 /* KPCAAUranus.h in Headers */,
 				9F7A9DEB1B4FC5D900033B77 /* KPCAARiseTransitSet.h in Headers */,
 				9FCE936C1B4FBCFD0026E149 /* AAMercury.h in Headers */,
 				9FCE93441B4FBCD20026E149 /* KPCAANodes.h in Headers */,
 				9FCE93451B4FBCD20026E149 /* KPCAANutation.h in Headers */,
 				9FCE93741B4FBCFD0026E149 /* AANearParabolic.h in Headers */,
 				9FCE938B1B4FBCFD0026E149 /* AAUranus.h in Headers */,
+				9F7A9E151B4FCE1500033B77 /* KPCAAVenus.h in Headers */,
 				9FCE93511B4FBCF70026E149 /* AA+.h in Headers */,
 				9FCE93461B4FBCD20026E149 /* KPCAAParabolic.h in Headers */,
 				9FCE93691B4FBCFD0026E149 /* AAJupiter.h in Headers */,
@@ -1474,6 +1494,7 @@
 				9FF028271B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm in Sources */,
 				9F29B51E1B47317500B64C96 /* AAElementsPlanetaryOrbit.cpp in Sources */,
 				9F29B5481B47317500B64C96 /* AANearParabolic.cpp in Sources */,
+				9F7A9E101B4FCE0300033B77 /* KPCAAUranus.mm in Sources */,
 				9F29B5721B47317500B64C96 /* AAStellarMagnitudes.cpp in Sources */,
 				9F29B58C1B47B37A00B64C96 /* KPCAA3DCoordinate.mm in Sources */,
 				9F48D5831B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm in Sources */,
@@ -1503,6 +1524,7 @@
 				9F29B52C1B47317500B64C96 /* AAIlluminatedFraction.cpp in Sources */,
 				9F29B5601B47317500B64C96 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F48D54B1B4EE02600B7EE7F /* KPCAAMoonNodes.mm in Sources */,
+				9F7A9E161B4FCE1500033B77 /* KPCAAVenus.mm in Sources */,
 				9F8AB3A21B483DC100EF40C8 /* stdafx.cpp in Sources */,
 				9F48D5471B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm in Sources */,
 				9F29B54C1B47317500B64C96 /* AANodes.cpp in Sources */,
@@ -1626,6 +1648,7 @@
 				9F48D60A1B4FB7A200B7EE7F /* AAPluto.cpp in Sources */,
 				9F48D5E51B4FB7A200B7EE7F /* AAEaster.cpp in Sources */,
 				9F48D5E81B4FB7A200B7EE7F /* AAElementsPlanetaryOrbit.cpp in Sources */,
+				9F7A9E171B4FCE1500033B77 /* KPCAAVenus.mm in Sources */,
 				9F48D5AF1B4FB79300B7EE7F /* KPCAA2DCoordinate.mm in Sources */,
 				9F48D5B41B4FB79300B7EE7F /* KPCAACoordinateTransformation.mm in Sources */,
 				9F48D6131B4FB7A200B7EE7F /* AASun.cpp in Sources */,
@@ -1649,6 +1672,7 @@
 				9F48D5B01B4FB79300B7EE7F /* KPCAA3DCoordinate.mm in Sources */,
 				9F48D6141B4FB7A200B7EE7F /* AAUranus.cpp in Sources */,
 				9F48D60D1B4FB7A200B7EE7F /* AARiseTransitSet.cpp in Sources */,
+				9F7A9E111B4FCE0300033B77 /* KPCAAUranus.mm in Sources */,
 				9F48D5C91B4FB79300B7EE7F /* KPCAAMoonIlluminatedFraction.mm in Sources */,
 				9F48D5EF1B4FB7A200B7EE7F /* AAIlluminatedFraction.cpp in Sources */,
 				9F48D5B61B4FB79300B7EE7F /* KPCAADiameters.mm in Sources */,
