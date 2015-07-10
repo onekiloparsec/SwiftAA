@@ -182,6 +182,8 @@
 		9F48D56F1B4EFB2C00B7EE7F /* KPCAAParallax.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */; };
 		9F48D5721B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */; };
 		9F48D5731B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */; };
+		9F48D5761B4FA7B900B7EE7F /* KPCPhysicalMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */; };
+		9F48D5771B4FA7B900B7EE7F /* KPCPhysicalMars.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -399,6 +401,8 @@
 		9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAParallax.mm; path = SwiftAA/KPCAAParallax.mm; sourceTree = "<group>"; };
 		9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalJupiter.h; path = SwiftAA/KPCAAPhysicalJupiter.h; sourceTree = "<group>"; };
 		9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalJupiter.mm; path = SwiftAA/KPCAAPhysicalJupiter.mm; sourceTree = "<group>"; };
+		9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCPhysicalMars.h; path = SwiftAA/KPCPhysicalMars.h; sourceTree = "<group>"; };
+		9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCPhysicalMars.mm; path = SwiftAA/KPCPhysicalMars.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */,
 				9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */,
 				9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */,
+				9F48D5741B4FA7B900B7EE7F /* KPCPhysicalMars.h */,
+				9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				9F48D56A1B4EF16A00B7EE7F /* KPCAAParallactic.h in Headers */,
 				9F29B53B1B47317500B64C96 /* AAMoon.h in Headers */,
 				9F29B51D1B47317500B64C96 /* AAEclipticalElements.h in Headers */,
+				9F48D5761B4FA7B900B7EE7F /* KPCPhysicalMars.h in Headers */,
 				9F29B5451B47317500B64C96 /* AAMoonPhases.h in Headers */,
 				9F29B5431B47317500B64C96 /* AAMoonPerigeeApogee.h in Headers */,
 				9F29B52D1B47317500B64C96 /* AAIlluminatedFraction.h in Headers */,
@@ -952,6 +959,7 @@
 				9F29B5561B47317500B64C96 /* AAPhysicalJupiter.cpp in Sources */,
 				9F29B55E1B47317500B64C96 /* AAPlanetaryPhenomena.cpp in Sources */,
 				9F29B5461B47317500B64C96 /* AAMoslemCalendar.cpp in Sources */,
+				9F48D5771B4FA7B900B7EE7F /* KPCPhysicalMars.mm in Sources */,
 				9F29B53E1B47317500B64C96 /* AAMoonMaxDeclinations.cpp in Sources */,
 				9F48D5731B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm in Sources */,
 				9F48D54F1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm in Sources */,
