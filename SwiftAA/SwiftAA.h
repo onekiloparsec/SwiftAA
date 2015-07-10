@@ -61,3 +61,4 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAAPlanetaryPhenomena.h>
 #import <SwiftAA/KPCAAPluto.h>
 #import <SwiftAA/KPCAAPrecession.h>
+#import <SwiftAA/KPCAARefraction.h>

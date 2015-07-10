@@ -303,6 +303,10 @@
 		9F48D6171B4FB87E00B7EE7F /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B46F1B47313500B64C96 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F48D6191B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */; };
 		9F48D61A1B4FB91200B7EE7F /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */; };
+		9F7A9DE41B4FC4D400033B77 /* KPCAARefraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F7A9DE51B4FC4D400033B77 /* KPCAARefraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F7A9DE61B4FC4D400033B77 /* KPCAARefraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */; };
+		9F7A9DE71B4FC4D400033B77 /* KPCAARefraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -645,6 +649,8 @@
 		9F48D5901B4FB67700B7EE7F /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D5961B4FB74300B7EE7F /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F48D6181B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARefraction.h; path = SwiftAA/KPCAARefraction.h; sourceTree = "<group>"; };
+		9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARefraction.mm; path = SwiftAA/KPCAARefraction.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -981,6 +987,8 @@
 				9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */,
 				9F48D58C1B4FB01C00B7EE7F /* KPCAAPrecession.h */,
 				9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */,
+				9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */,
+				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -1084,6 +1092,7 @@
 				9F29B5491B47317500B64C96 /* AANearParabolic.h in Headers */,
 				9F29B54F1B47317500B64C96 /* AANutation.h in Headers */,
 				9F29B55D1B47317500B64C96 /* AAPhysicalSun.h in Headers */,
+				9F7A9DE41B4FC4D400033B77 /* KPCAARefraction.h in Headers */,
 				9F48D6191B4FB8FB00B7EE7F /* SwiftAA-Bridging-Header.h in Headers */,
 				9F29B5751B47317500B64C96 /* AASun.h in Headers */,
 				9F29B50D1B47317500B64C96 /* AABinaryStar.h in Headers */,
@@ -1161,6 +1170,7 @@
 				9FCE93381B4FBCD20026E149 /* KPCAAJupiter.h in Headers */,
 				9FCE936D1B4FBCFD0026E149 /* AAMoon.h in Headers */,
 				9FCE937D1B4FBCFD0026E149 /* AAPhysicalMoon.h in Headers */,
+				9F7A9DE51B4FC4D400033B77 /* KPCAARefraction.h in Headers */,
 				9FCE93571B4FBCFD0026E149 /* AACoordinateTransformation.h in Headers */,
 				9FCE93791B4FBCFD0026E149 /* AAParallactic.h in Headers */,
 				9FCE93391B4FBCD20026E149 /* KPCAAKepler.h in Headers */,
@@ -1434,6 +1444,7 @@
 				9F29B5901B47B43400B64C96 /* KPCAAAberration.mm in Sources */,
 				9FF55F971B4B0AC300A99DA2 /* KPCAAFK5.mm in Sources */,
 				9F48D51F1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm in Sources */,
+				9F7A9DE61B4FC4D400033B77 /* KPCAARefraction.mm in Sources */,
 				9F29B5521B47317500B64C96 /* AAParallactic.cpp in Sources */,
 				9F29B5791B47317500B64C96 /* AAUranus.cpp in Sources */,
 				9F48D55B1B4EE45200B7EE7F /* KPCAANeptune.mm in Sources */,
@@ -1538,6 +1549,7 @@
 				9F48D5E11B4FB7A200B7EE7F /* AADate.cpp in Sources */,
 				9F48D5C01B4FB79300B7EE7F /* KPCAAGalileanMoons.mm in Sources */,
 				9F48D60C1B4FB7A200B7EE7F /* AARefraction.cpp in Sources */,
+				9F7A9DE71B4FC4D400033B77 /* KPCAARefraction.mm in Sources */,
 				9F48D5E41B4FB7A200B7EE7F /* AAEarth.cpp in Sources */,
 				9F48D5D01B4FB79300B7EE7F /* KPCAANodes.mm in Sources */,
 				9F48D60A1B4FB7A200B7EE7F /* AAPluto.cpp in Sources */,
