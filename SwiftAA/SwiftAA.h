@@ -62,3 +62,8 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAAPluto.h>
 #import <SwiftAA/KPCAAPrecession.h>
 #import <SwiftAA/KPCAARefraction.h>
+#import <SwiftAA/KPCAARiseTransitSet.h>
+#import <SwiftAA/KPCAASaturn.h>
+#import <SwiftAA/KPCAASaturnMoons.h>
+#import <SwiftAA/KPCAASaturnRings.h>
+#import <SwiftAA/KPCAASidereal.h>
