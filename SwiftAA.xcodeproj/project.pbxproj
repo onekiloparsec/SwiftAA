@@ -186,6 +186,8 @@
 		9F48D5771B4FA7B900B7EE7F /* KPCPhysicalMars.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */; };
 		9F48D57A1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */; };
 		9F48D57B1B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */; };
+		9F48D57E1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */; };
+		9F48D57F1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -407,6 +409,8 @@
 		9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCPhysicalMars.mm; path = SwiftAA/KPCPhysicalMars.mm; sourceTree = "<group>"; };
 		9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalMoon.h; path = SwiftAA/KPCAAPhysicalMoon.h; sourceTree = "<group>"; };
 		9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalMoon.mm; path = SwiftAA/KPCAAPhysicalMoon.mm; sourceTree = "<group>"; };
+		9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPhysicalSun.h; path = SwiftAA/KPCAAPhysicalSun.h; sourceTree = "<group>"; };
+		9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalSun.mm; path = SwiftAA/KPCAAPhysicalSun.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -721,6 +725,8 @@
 				9F48D5751B4FA7B900B7EE7F /* KPCPhysicalMars.mm */,
 				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
 				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
+				9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */,
+				9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -783,6 +789,7 @@
 				9F29B5211B47317500B64C96 /* AAElliptical.h in Headers */,
 				9F29B5151B47317500B64C96 /* AADynamicalTime.h in Headers */,
 				9F29B5131B47317500B64C96 /* AADiameters.h in Headers */,
+				9F48D57E1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h in Headers */,
 				9F29B5061B47317500B64C96 /* AA2DCoordinate.h in Headers */,
 				9F29B5371B47317500B64C96 /* AAMars.h in Headers */,
 				9F29B5571B47317500B64C96 /* AAPhysicalJupiter.h in Headers */,
@@ -1028,6 +1035,7 @@
 				9F29B5241B47317500B64C96 /* AAEquinoxesAndSolstices.cpp in Sources */,
 				9F29B51C1B47317500B64C96 /* AAEclipticalElements.cpp in Sources */,
 				9F8AB3971B4828F500EF40C8 /* KPCAADiameters.mm in Sources */,
+				9F48D57F1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm in Sources */,
 				9F8AB39B1B48373A00EF40C8 /* KPCAADynamicalTime.mm in Sources */,
 				9F29B5761B47317500B64C96 /* AATest.cpp in Sources */,
 				9F48D5631B4EE63000B7EE7F /* KPCAAParabolic.mm in Sources */,
