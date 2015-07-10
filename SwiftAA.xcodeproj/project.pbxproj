@@ -319,6 +319,10 @@
 		9F7A9DF71B4FC89F00033B77 /* KPCAASaturnMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */; };
 		9F7A9DF81B4FC89F00033B77 /* KPCAASaturnMoons.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */; };
 		9F7A9DF91B4FC89F00033B77 /* KPCAASaturnMoons.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */; };
+		9F7A9DFC1B4FCB8600033B77 /* KPCAASaturnRings.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */; };
+		9F7A9DFD1B4FCB8600033B77 /* KPCAASaturnRings.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */; };
+		9F7A9DFE1B4FCB8600033B77 /* KPCAASaturnRings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */; };
+		9F7A9DFF1B4FCB8600033B77 /* KPCAASaturnRings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -669,6 +673,8 @@
 		9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturn.mm; path = SwiftAA/KPCAASaturn.mm; sourceTree = "<group>"; };
 		9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASaturnMoons.h; path = SwiftAA/KPCAASaturnMoons.h; sourceTree = "<group>"; };
 		9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturnMoons.mm; path = SwiftAA/KPCAASaturnMoons.mm; sourceTree = "<group>"; };
+		9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASaturnRings.h; path = SwiftAA/KPCAASaturnRings.h; sourceTree = "<group>"; };
+		9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASaturnRings.mm; path = SwiftAA/KPCAASaturnRings.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -1013,6 +1019,8 @@
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
 				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
 				9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */,
+				9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */,
+				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -1038,6 +1046,7 @@
 				9F29B58B1B47B37A00B64C96 /* KPCAA3DCoordinate.h in Headers */,
 				9FF55F961B4B0AC300A99DA2 /* KPCAAFK5.h in Headers */,
 				9F48D54E1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h in Headers */,
+				9F7A9DFC1B4FCB8600033B77 /* KPCAASaturnRings.h in Headers */,
 				9F48D5461B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h in Headers */,
 				9F48D5521B4EE14F00B7EE7F /* KPCAAMoonPhases.h in Headers */,
 				9F48D52A1B4EBCFC00B7EE7F /* KPCAAInterpolate.h in Headers */,
@@ -1171,6 +1180,7 @@
 				9FCE932F1B4FBCD20026E149 /* KPCAAElementsPlanetaryOrbit.h in Headers */,
 				9FCE93831B4FBCFD0026E149 /* AARefraction.h in Headers */,
 				9FCE936A1B4FBCFD0026E149 /* AAKepler.h in Headers */,
+				9F7A9DFD1B4FCB8600033B77 /* KPCAASaturnRings.h in Headers */,
 				9FCE936E1B4FBCFD0026E149 /* AAMoonIlluminatedFraction.h in Headers */,
 				9FCE93301B4FBCD20026E149 /* KPCAAElliptical.h in Headers */,
 				9FCE93701B4FBCFD0026E149 /* AAMoonNodes.h in Headers */,
@@ -1393,6 +1403,7 @@
 				9F29B50E1B47317500B64C96 /* AACoordinateTransformation.cpp in Sources */,
 				9FCE93211B4FBC300026E149 /* AA.swift in Sources */,
 				9F48D5371B4EC1AA00B7EE7F /* KPCAAMars.mm in Sources */,
+				9F7A9DFE1B4FCB8600033B77 /* KPCAASaturnRings.mm in Sources */,
 				9F29B55A1B47317500B64C96 /* AAPhysicalMoon.cpp in Sources */,
 				9F29B5281B47317500B64C96 /* AAGalileanMoons.cpp in Sources */,
 				9F29B5441B47317500B64C96 /* AAMoonPhases.cpp in Sources */,
@@ -1534,6 +1545,7 @@
 				9F48D5B51B4FB79300B7EE7F /* KPCAADate.mm in Sources */,
 				9F48D5E71B4FB7A200B7EE7F /* AAEclipticalElements.cpp in Sources */,
 				9F48D6051B4FB7A200B7EE7F /* AAPhysicalMars.cpp in Sources */,
+				9F7A9DFF1B4FCB8600033B77 /* KPCAASaturnRings.mm in Sources */,
 				9F48D5CA1B4FB79300B7EE7F /* KPCAAMoonMaxDeclinations.mm in Sources */,
 				9F48D5B71B4FB79300B7EE7F /* KPCAADynamicalTime.mm in Sources */,
 				9F48D5E01B4FB7A200B7EE7F /* AACoordinateTransformation.cpp in Sources */,
