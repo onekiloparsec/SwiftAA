@@ -9,6 +9,11 @@
 #import "KPCAACoordinateTransformation.h"
 #import "AACoordinateTransformation.h"
 
+@interface KPCAA2DCoordinate ()
++ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
+- (CAA2DCoordinate)wrappedCoord;
+@end
+
 @implementation KPCAACoordinateTransformation
 
 + (KPCAA2DCoordinate *)Equatorial2EclipticForRightAscension:(double)Alpha declination:(double)Delta epoch:(double)Epsilon

@@ -9,6 +9,16 @@
 #import "KPCAAAberration.h"
 #import "AAAberration.h"
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
+@interface KPCAA2DCoordinate ()
++ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
+- (CAA2DCoordinate)wrappedCoord;
+@end
+
 @implementation KPCAAAberration
 
 + (KPCAA3DCoordinate *)EarthVelocity:(double)JD

@@ -7,6 +7,7 @@
 //
 
 #import "KPCAAEclipticalElements.h"
+#import "AAEclipticalElements.h"
 
 @interface KPCAAEclipticalElementDetails () {
     CAAEclipticalElementDetails _wrapped;

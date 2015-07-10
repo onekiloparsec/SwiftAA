@@ -118,6 +118,11 @@
 @end
 
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
 @interface KPCAANearParabolicObjectDetails () {
     CAANearParabolicObjectDetails _wrapped;
 }
@@ -304,9 +309,9 @@
     return CAANearParabolic::cbrt(x);
 }
 
-+ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double&)v r:(double&)r
++ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double *)v r:(double *)r
 {
-    return CAANearParabolic::CalulateTrueAnnomalyAndRadius(JD, elements.wrappedElements, v, r);
+    return CAANearParabolic::CalulateTrueAnnomalyAndRadius(JD, elements.wrappedElements, *v, *r);
 }
 
 @end

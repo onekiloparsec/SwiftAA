@@ -9,6 +9,12 @@
 #import "KPCAAParabolic.h"
 #import "AAParabolic.h"
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
+
 @interface KPCAAParabolicObjectElements () {
     CAAParabolicObjectElements _wrapped;
 }

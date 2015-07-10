@@ -9,6 +9,11 @@
 #import "KPCAAGalileanMoons.h"
 #import "AAGalileanMoons.h"
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
 @interface KPCAAGalileanMoonDetail () {
     CAAGalileanMoonDetail _wrapped;
 }

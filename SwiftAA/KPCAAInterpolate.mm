@@ -31,14 +31,14 @@
     return CAAInterpolate::LagrangeInterpolate(X, n, pX, pY);
 }
 
-+ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 nm:(double&)nm
++ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 nm:(double *)nm
 {
-    return CAAInterpolate::Extremum(Y1, Y2, Y3, nm);
+    return CAAInterpolate::Extremum(Y1, Y2, Y3, *nm);
 }
 
-+ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5 nm:(double&)nm
++ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5 nm:(double *)nm
 {
-    return CAAInterpolate::Extremum(Y1, Y2, Y3, Y4, Y5, nm);
+    return CAAInterpolate::Extremum(Y1, Y2, Y3, Y4, Y5, *nm);
 }
 
 + (double)Zero:(double)Y1 Y2:(double)Y2 Y3:(double)Y3

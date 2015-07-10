@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
+#import "KPCAAPlanetaryPhenomena.h"
 
 @interface KPCAAEllipticalObjectElements : NSObject
 
@@ -51,22 +52,10 @@
 
 @end
 
-typedef NS_ENUM(NSUInteger, KPCEllipticalObject) {
-    SUN,
-    MERCURY,
-    VENUS,
-    MARS,
-    JUPITER,
-    SATURN,
-    URANUS,
-    NEPTUNE,
-    PLUTO
-};
-
 @interface KPCAAElliptical : NSObject
 
 + (double)DistanceToLightTime:(double)Distance;
-+ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCEllipticalObject)object;
++ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCPlanetaryObject)object;
 + (double)SemiMajorAxisFromPerihelionDistance:(double)q e:(double)e;
 + (double)MeanMotionFromSemiMajorAxis:(double)a;
 + (KPCAAEllipticalObjectDetails *)Calculate:(double)JD elements:(KPCAAEllipticalObjectElements * __autoreleasing *) elements;

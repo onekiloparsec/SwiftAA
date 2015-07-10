@@ -9,6 +9,12 @@
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
+
 @interface KPCAAEllipticalObjectElements () {
     CAAEllipticalObjectElements _wrapped;
 }
@@ -388,7 +394,7 @@
     return CAAElliptical::DistanceToLightTime(Distance);
 }
 
-+ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCEllipticalObject)object
++ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCPlanetaryObject)object
 {
     return [KPCAAEllipticalPlanetaryDetails detailsByWrapping:CAAElliptical::Calculate(JD, (CAAElliptical::EllipticalObject)object)];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "KPCAA3DCoordinate.h"
+#import "AA3DCoordinate.h"
 
 @interface KPCAA3DCoordinate () {
     CAA3DCoordinate _wrapped;

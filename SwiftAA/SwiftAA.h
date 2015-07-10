@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 onekiloparsec. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftAA.
 FOUNDATION_EXPORT double SwiftAAVersionNumber;
@@ -54,6 +54,10 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAAParallactic.h>
 #import <SwiftAA/KPCAAParallax.h>
 #import <SwiftAA/KPCAAPhysicalJupiter.h>
-#import <SwiftAA/KPCPhysicalMars.h>
-
-
+#import <SwiftAA/KPCAAPhysicalMars.h>
+#import <SwiftAA/KPCAAPhysicalMoon.h>
+#import <SwiftAA/KPCAAPhysicalSun.h>
+#import <SwiftAA/KPCAAPlanetPerihelionAphelion.h>
+#import <SwiftAA/KPCAAPlanetaryPhenomena.h>
+#import <SwiftAA/KPCAAPluto.h>
+#import <SwiftAA/KPCAAPrecession.h>

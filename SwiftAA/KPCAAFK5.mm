@@ -9,6 +9,11 @@
 #import "KPCAAFK5.h"
 #import "AAFK5.h"
 
+@interface KPCAA3DCoordinate ()
++ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
+- (CAA3DCoordinate)wrappedCoord;
+@end
+
 @implementation KPCAAFK5
 
 + (double)CorrectionInLongitude:(double)Longitude latitude:(double)Latitude JD:(double)JD

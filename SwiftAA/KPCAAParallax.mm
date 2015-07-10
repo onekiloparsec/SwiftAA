@@ -9,6 +9,11 @@
 #import "KPCAAParallax.h"
 #import "AAParallax.h"
 
+@interface KPCAA2DCoordinate ()
++ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
+- (CAA2DCoordinate)wrappedCoord;
+@end
+
 @interface KPCAATopocentricEclipticDetails () {
     CAATopocentricEclipticDetails _wrapped;
 }

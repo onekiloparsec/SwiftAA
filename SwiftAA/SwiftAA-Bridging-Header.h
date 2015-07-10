@@ -6,8 +6,5 @@
 //  Copyright (c) 2015 onekiloparsec. All rights reserved.
 //
 
-#ifndef SwiftAA_SwiftAA_Bridging_Header_h
-#define SwiftAA_SwiftAA_Bridging_Header_h
+#import "SwiftAA.h"
 
-
-#endif

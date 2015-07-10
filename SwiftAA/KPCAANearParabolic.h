@@ -48,6 +48,6 @@
 
 + (double)cbrt:(double)x;
 
-+ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double&)v r:(double&)r;
++ (void)CalulateTrueAnnomalyAndRadius:(double)JD elements:(KPCAANearParabolicObjectElements *)elements v:(double *)v r:(double *)r;
 
 @end

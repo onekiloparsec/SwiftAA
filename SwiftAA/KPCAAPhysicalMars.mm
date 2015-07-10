@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 onekiloparsec. All rights reserved.
 //
 
-#import "KPCPhysicalMars.h"
+#import "KPCAAPhysicalMars.h"
 #import "AAPhysicalMars.h"
 
 @interface KPCAAPhysicalMarsDetails () {
@@ -121,7 +121,7 @@
 
 @end
 
-@implementation KPCPhysicalMars
+@implementation KPCAAPhysicalMars
 
 + (KPCAAPhysicalMarsDetails *)Calculate:(double)JD
 {

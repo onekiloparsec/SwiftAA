@@ -9,6 +9,11 @@
 #import "KPCAAPrecession.h"
 #import "AAPrecession.h"
 
+@interface KPCAA2DCoordinate ()
++ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
+- (CAA2DCoordinate)wrappedCoord;
+@end
+
 @implementation KPCAAPrecession
 
 + (KPCAA2DCoordinate *)PrecessEquatorial:(double)Alpha Delta:(double)Delta JD0:(double)JD0 JD:(double)JD

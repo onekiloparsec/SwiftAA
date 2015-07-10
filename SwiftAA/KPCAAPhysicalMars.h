@@ -21,7 +21,7 @@
 
 @end
 
-@interface KPCPhysicalMars : NSObject
+@interface KPCAAPhysicalMars : NSObject
 
 + (KPCAAPhysicalMarsDetails *)Calculate:(double)JD;
 

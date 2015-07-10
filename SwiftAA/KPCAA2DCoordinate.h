@@ -7,13 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AA2DCoordinate.h"
 
 @interface KPCAA2DCoordinate : NSObject
 
 @property(nonatomic, assign) double X;
 @property(nonatomic, assign) double Y;
-
-+ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrapped;
 
 @end
