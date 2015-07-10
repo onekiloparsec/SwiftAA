@@ -190,6 +190,8 @@
 		9F48D57F1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */; };
 		9F48D5821B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */; };
 		9F48D5831B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */; };
+		9F48D5861B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */; };
+		9F48D5871B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */; };
 		9F8AB38D1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */; };
 		9F8AB38E1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */; };
 		9F8AB3921B48201600EF40C8 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; };
@@ -415,6 +417,8 @@
 		9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPhysicalSun.mm; path = SwiftAA/KPCAAPhysicalSun.mm; sourceTree = "<group>"; };
 		9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPlanetaryPhenomena.h; path = SwiftAA/KPCAAPlanetaryPhenomena.h; sourceTree = "<group>"; };
 		9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetaryPhenomena.mm; path = SwiftAA/KPCAAPlanetaryPhenomena.mm; sourceTree = "<group>"; };
+		9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPlanetPerihelionAphelion.h; path = SwiftAA/KPCAAPlanetPerihelionAphelion.h; sourceTree = "<group>"; };
+		9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPlanetPerihelionAphelion.mm; path = SwiftAA/KPCAAPlanetPerihelionAphelion.mm; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -733,6 +737,8 @@
 				9F48D57D1B4FAC5500B7EE7F /* KPCAAPhysicalSun.mm */,
 				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,
 				9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */,
+				9F48D5841B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h */,
+				9F48D5851B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F48D5861B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.h in Headers */,
 				9F8AB3A31B483DC100EF40C8 /* stdafx.h in Headers */,
 				9F8AB39A1B48373A00EF40C8 /* KPCAADynamicalTime.h in Headers */,
 				9F48D5261B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.h in Headers */,
@@ -971,6 +978,7 @@
 				9F29B5541B47317500B64C96 /* AAParallax.cpp in Sources */,
 				9F29B56C1B47317500B64C96 /* AASaturnMoons.cpp in Sources */,
 				9F29B51A1B47317500B64C96 /* AAEclipses.cpp in Sources */,
+				9F48D5871B4FAE9600B7EE7F /* KPCAAPlanetPerihelionAphelion.mm in Sources */,
 				9FF55F931B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F29B53A1B47317500B64C96 /* AAMoon.cpp in Sources */,
 				9F48D56F1B4EFB2C00B7EE7F /* KPCAAParallax.mm in Sources */,
