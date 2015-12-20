@@ -1,3 +1,4 @@
+
 //
 //  toto.swift
 //  SwiftAA
@@ -7,7 +8,5 @@
 //
 
 import Foundation
-import SwiftAA
 
 let coord = KPCAA2DCoordinate()
-//println("\(coord)")

@@ -1,9 +1,11 @@
 //: Playground - noun: a place where people can play
 
-import Foundation
+import Cocoa
 import SwiftAA
 
 var str = "Hello, playground"
 
-let coord = KPCAA2DCoordinate()
-println("\(coord)")
+let coords = KPCAA2DCoordinate()
+coords.X = 1.0
+coords.Y = 2.0
+print("\(coords.X)")
