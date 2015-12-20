@@ -1,3 +1,5 @@
+ [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
+
 # SwiftAA
 *Bringing the best implementation of the Astronomical Algorithms to Apple's Swift realm.*
 

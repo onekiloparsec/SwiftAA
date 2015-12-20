@@ -437,6 +437,7 @@
 		9F73798C1C26B79F007EF484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7379901C26B8DC007EF484 /* SwiftAA-OSX.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "SwiftAA-OSX.playground"; sourceTree = SOURCE_ROOT; };
 		9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F737A7C1C26DBCE007EF484 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARefraction.h; path = SwiftAA/KPCAARefraction.h; sourceTree = "<group>"; };
 		9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARefraction.mm; path = SwiftAA/KPCAARefraction.mm; sourceTree = "<group>"; };
 		9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARiseTransitSet.h; path = SwiftAA/KPCAARiseTransitSet.h; sourceTree = "<group>"; };
@@ -500,6 +501,7 @@
 		9F29B4601B47313500B64C96 = {
 			isa = PBXGroup;
 			children = (
+				9F737A7C1C26DBCE007EF484 /* README.md */,
 				9F29B46C1B47313500B64C96 /* SwiftAA */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
 				9F29B4861B47317500B64C96 /* aaplus-v1.60 */,
