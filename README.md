@@ -3,6 +3,8 @@
 # SwiftAA
 *Bringing the best implementation of the Astronomical Algorithms to Apple's Swift realm.*
 
+Using AA+ version 1.63 (released 16 September 2015)
+
 Licence
 =======
 
