@@ -23,6 +23,6 @@
 
 @interface KPCAAPhysicalMars : NSObject
 
-+ (KPCAAPhysicalMarsDetails *)Calculate:(double)JD;
++ (KPCAAPhysicalMarsDetails *)Calculate:(double)JD highPrecision:(BOOL)highPrecision;
 
 @end

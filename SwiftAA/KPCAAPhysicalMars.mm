@@ -123,9 +123,9 @@
 
 @implementation KPCAAPhysicalMars
 
-+ (KPCAAPhysicalMarsDetails *)Calculate:(double)JD
++ (KPCAAPhysicalMarsDetails *)Calculate:(double)JD highPrecision:(BOOL)highPrecision
 {
-    return [KPCAAPhysicalMarsDetails detailsByWrapping:CAAPhysicalMars::Calculate(JD)];
+    return [KPCAAPhysicalMarsDetails detailsByWrapping:CAAPhysicalMars::Calculate(JD, highPrecision)];
 }
 
 @end
