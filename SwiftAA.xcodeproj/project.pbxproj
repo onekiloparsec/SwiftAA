@@ -124,7 +124,6 @@
 		9F3EE0251C2AC44A00029EFA /* AAStellarMagnitudes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3EDF421C2AC44A00029EFA /* AAStellarMagnitudes.h */; };
 		9F3EE0261C2AC44A00029EFA /* AASun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDF431C2AC44A00029EFA /* AASun.cpp */; };
 		9F3EE0271C2AC44A00029EFA /* AASun.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3EDF441C2AC44A00029EFA /* AASun.h */; };
-		9F3EE0281C2AC44A00029EFA /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDF451C2AC44A00029EFA /* AATest.cpp */; };
 		9F3EE02B1C2AC44A00029EFA /* AAUranus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDF481C2AC44A00029EFA /* AAUranus.cpp */; };
 		9F3EE02C1C2AC44A00029EFA /* AAUranus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3EDF491C2AC44A00029EFA /* AAUranus.h */; };
 		9F3EE02D1C2AC44A00029EFA /* AAVenus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDF4A1C2AC44A00029EFA /* AAVenus.cpp */; };
@@ -477,7 +476,6 @@
 		9F3EDF421C2AC44A00029EFA /* AAStellarMagnitudes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAStellarMagnitudes.h; sourceTree = "<group>"; };
 		9F3EDF431C2AC44A00029EFA /* AASun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASun.cpp; sourceTree = "<group>"; };
 		9F3EDF441C2AC44A00029EFA /* AASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASun.h; sourceTree = "<group>"; };
-		9F3EDF451C2AC44A00029EFA /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
 		9F3EDF481C2AC44A00029EFA /* AAUranus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAUranus.cpp; sourceTree = "<group>"; };
 		9F3EDF491C2AC44A00029EFA /* AAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAUranus.h; sourceTree = "<group>"; };
 		9F3EDF4A1C2AC44A00029EFA /* AAVenus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVenus.cpp; sourceTree = "<group>"; };
@@ -1000,7 +998,6 @@
 				9F3EDF421C2AC44A00029EFA /* AAStellarMagnitudes.h */,
 				9F3EDF431C2AC44A00029EFA /* AASun.cpp */,
 				9F3EDF441C2AC44A00029EFA /* AASun.h */,
-				9F3EDF451C2AC44A00029EFA /* AATest.cpp */,
 				9F3EDF481C2AC44A00029EFA /* AAUranus.cpp */,
 				9F3EDF491C2AC44A00029EFA /* AAUranus.h */,
 				9F3EDF4A1C2AC44A00029EFA /* AAVenus.cpp */,
@@ -1400,7 +1397,6 @@
 				9F3EE05F1C2AC44A00029EFA /* AAVSOP87B_URA.cpp in Sources */,
 				9F7379C61C26B9BA007EF484 /* KPCAASun.mm in Sources */,
 				9F3EE0771C2AC44A00029EFA /* AAVSOP87D_MAR.cpp in Sources */,
-				9F3EE0281C2AC44A00029EFA /* AATest.cpp in Sources */,
 				9F7379B11C26B9BA007EF484 /* KPCAANeptune.mm in Sources */,
 				9F3EDFF41C2AC44A00029EFA /* AAMoonPerigeeApogee.cpp in Sources */,
 				9F3EDFC81C2AC44A00029EFA /* AAEarth.cpp in Sources */,
