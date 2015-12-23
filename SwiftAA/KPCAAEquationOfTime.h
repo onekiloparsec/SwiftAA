@@ -8,8 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAEquationOfTime : NSObject
-
-+ (double)Calculate:(double)JD;
-
-@end
+double KPCAAEquationOfTime(double JD, BOOL highPrecision);
