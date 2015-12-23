@@ -8,34 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPhysicalMoonDetails : NSObject
+typedef struct KPCAAPhysicalMoonDetails {
+    double ldash;
+    double bdash;
+    double ldash2;
+    double bdash2;
+    double l;
+    double b;
+    double P;
+} KPCAAPhysicalMoonDetails;
 
-@property(nonatomic, assign) double ldash;
-@property(nonatomic, assign) double bdash;
-@property(nonatomic, assign) double ldash2;
-@property(nonatomic, assign) double bdash2;
-@property(nonatomic, assign) double l;
-@property(nonatomic, assign) double b;
-@property(nonatomic, assign) double P;
+typedef struct KPCAASelenographicMoonDetails {
+    double l0;
+    double b0;
+    double c0;
+} KPCAASelenographicMoonDetails;
 
-@end
 
-@interface KPCAASelenographicMoonDetails : NSObject
+KPCAAPhysicalMoonDetails KPCPhysicalMoonGeocentric(double JD);
+KPCAAPhysicalMoonDetails KPCPhysicalMoonTopocentric(double JD, double Longitude, double Latitude);
+KPCAASelenographicMoonDetails KPCPhysicalMoonSelenographicPositionOfSun(double JD, BOOL highPrecision);
 
-@property(nonatomic, assign) double l0;
-@property(nonatomic, assign) double b0;
-@property(nonatomic, assign) double c0;
+double KPCPhysicalMoonAltitudeOfSun(double JD, double Longitude, double Latitude, BOOL highPrecision);
+double KPCPhysicalMoonTimeOfSunrise(double JD, double Longitude, double Latitude, BOOL highPrecision);
+double KPCPhysicalMoonTimeOfSunset(double JD, double Longitude, double Latitude, BOOL highPrecision);
 
-@end
-
-@interface KPCAAPhysicalMoon : NSObject
-
-+ (KPCAAPhysicalMoonDetails *)CalculateGeocentric:(double)JD;
-+ (KPCAAPhysicalMoonDetails *)CalculateTopocentric:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude;
-+ (KPCAASelenographicMoonDetails *)CalculateSelenographicPositionOfSun:(double)JD;
-
-+ (double)AltitudeOfSun:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude;
-+ (double)TimeOfSunrise:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude;
-+ (double)TimeOfSunset:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude;
-
-@end

@@ -9,202 +9,53 @@
 #import "KPCAAPhysicalMoon.h"
 #import "AAPhysicalMoon.h"
 
-@interface KPCAAPhysicalMoonDetails () {
-    CAAPhysicalMoonDetails _wrapped;
+KPCAAPhysicalMoonDetails KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoonDetails details) {
+    KPCAAPhysicalMoonDetails results;
+    results.ldash = details.ldash;
+    results.bdash = details.bdash;
+    results.ldash2 = details.ldash2;
+    results.bdash2 = details.bdash2;
+    results.l = details.l;
+    results.b = details.b;
+    results.P = details.P;
+    return results;
 }
-@end
 
-@implementation KPCAAPhysicalMoonDetails
+KPCAASelenographicMoonDetails KPCAASelenographicMoonDetailsMake(CAASelenographicMoonDetails details) {
+    KPCAASelenographicMoonDetails results;
+    results.l0 = details.l0;
+    results.b0 = details.b0;
+    results.c0 = details.c0;
+    return results;
+}
 
-- (instancetype)init
+KPCAAPhysicalMoonDetails KPCPhysicalMoonGeocentric(double JD)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAAPhysicalMoonDetails();
-    }
-    return self;
+    return KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoon::CalculateGeocentric(JD));
 }
 
-- (instancetype)initWithWrappedDetails:(CAAPhysicalMoonDetails)wrappedDetails
+KPCAAPhysicalMoonDetails KPCPhysicalMoonTopocentric(double JD, double Longitude, double Latitude)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
+    return KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoon::CalculateTopocentric(JD, Longitude, Latitude));
 }
 
-+ (KPCAAPhysicalMoonDetails *)detailsByWrapping:(CAAPhysicalMoonDetails)wrappedDetails
+KPCAASelenographicMoonDetails KPCPhysicalMoonSelenographicPositionOfSun(double JD, BOOL highPrecision)
 {
-    return [[KPCAAPhysicalMoonDetails alloc] initWithWrappedDetails:wrappedDetails];
+    return KPCAASelenographicMoonDetailsMake(CAAPhysicalMoon::CalculateSelenographicPositionOfSun(JD, highPrecision));
 }
 
-- (double)ldash
+double KPCPhysicalMoonAltitudeOfSun(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
-    return _wrapped.ldash;
+    return CAAPhysicalMoon::AltitudeOfSun(JD, Longitude, Latitude, highPrecision);
 }
 
-- (void)setLdash:(double)ldash
+double KPCPhysicalMoonTimeOfSunrise(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
-    _wrapped.ldash = ldash;
+    return CAAPhysicalMoon::TimeOfSunrise(JD, Longitude, Latitude, highPrecision);
 }
 
-- (double)bdash
+double KPCPhysicalMoonTimeOfSunset(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
-    return _wrapped.bdash;
+    return CAAPhysicalMoon::TimeOfSunset(JD, Longitude, Latitude, highPrecision);
 }
 
-- (void)setBdash:(double)bdash
-{
-    _wrapped.bdash = bdash;
-}
-
-- (double)ldash2
-{
-    return _wrapped.ldash2;
-}
-
-- (void)setLdash2:(double)ldash2
-{
-    _wrapped.ldash2 = ldash2;
-}
-
-- (double)bdash2
-{
-    return _wrapped.bdash2;
-}
-
-- (void)setBdash2:(double)bdash2
-{
-    _wrapped.bdash2 = bdash2;
-}
-
-- (double)l
-{
-    return _wrapped.l;
-}
-
-- (void)setL:(double)l
-{
-    _wrapped.l = l;
-}
-
-- (double)b
-{
-    return _wrapped.b;
-}
-
-- (void)setB:(double)b
-{
-    _wrapped.b = b;
-}
-
-- (double)P
-{
-    return _wrapped.P;
-}
-
-- (void)setP:(double)P
-{
-    _wrapped.P = P;
-}
-
-@end
-
-
-@interface KPCAASelenographicMoonDetails () {
-    CAASelenographicMoonDetails _wrapped;
-}
-@end
-
-@implementation KPCAASelenographicMoonDetails
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAASelenographicMoonDetails();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedDetails:(CAASelenographicMoonDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAASelenographicMoonDetails *)detailsByWrapping:(CAASelenographicMoonDetails)wrappedDetails
-{
-    return [[KPCAASelenographicMoonDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (double)l0
-{
-    return _wrapped.l0;
-}
-
-- (void)setL0:(double)l0
-{
-    _wrapped.l0 = l0;
-}
-
-- (double)b0
-{
-    return _wrapped.b0;
-}
-
-- (void)setB0:(double)b0
-{
-    _wrapped.b0 = b0;
-}
-
-- (double)c0
-{
-    return _wrapped.c0;
-}
-
-- (void)setC0:(double)c0
-{
-    _wrapped.c0 = c0;
-}
-
-@end
-
-
-@implementation KPCAAPhysicalMoon
-
-+ (KPCAAPhysicalMoonDetails *)CalculateGeocentric:(double)JD
-{
-    return [KPCAAPhysicalMoonDetails detailsByWrapping:CAAPhysicalMoon::CalculateGeocentric(JD)];
-}
-
-+ (KPCAAPhysicalMoonDetails *)CalculateTopocentric:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude
-{
-    return [KPCAAPhysicalMoonDetails detailsByWrapping:CAAPhysicalMoon::CalculateTopocentric(JD, Longitude, Latitude)];
-}
-
-+ (KPCAASelenographicMoonDetails *)CalculateSelenographicPositionOfSun:(double)JD
-{
-    return [KPCAASelenographicMoonDetails detailsByWrapping:CAAPhysicalMoon::CalculateSelenographicPositionOfSun(JD)];
-}
-
-+ (double)AltitudeOfSun:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude
-{
-    return CAAPhysicalMoon::AltitudeOfSun(JD, Longitude, Latitude);
-}
-
-+ (double)TimeOfSunrise:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude
-{
-    return CAAPhysicalMoon::TimeOfSunrise(JD, Longitude, Latitude);
-}
-
-+ (double)TimeOfSunset:(double)JD Longitude:(double)Longitude Latitude:(double)Latitude
-{
-    return CAAPhysicalMoon::TimeOfSunset(JD, Longitude, Latitude);
-}
-
-@end
