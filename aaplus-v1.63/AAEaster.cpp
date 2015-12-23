@@ -34,7 +34,7 @@ CAAEasterDetails CAAEaster::Calculate(long nYear, bool GregorianCalendar)
   if (GregorianCalendar)
   {                      
     int a = nYear % 19;
-    int b = nYear / 100;
+    int b = (int)nYear / 100;
     int c = nYear % 100;
     int d = b / 4;
     int e = b % 4;
