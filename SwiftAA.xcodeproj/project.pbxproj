@@ -361,7 +361,7 @@
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
 		9F3EDEC91C2A8CB500029EFA /* AA2DCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AA2DCoordinate.swift; path = SwiftAA/AA2DCoordinate.swift; sourceTree = "<group>"; };
 		9F3EDECC1C2A8E1900029EFA /* AA3DCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AA3DCoordinate.swift; path = SwiftAA/AA3DCoordinate.swift; sourceTree = "<group>"; };
-		9F3EDECE1C2A8E5600029EFA /* AAAberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAberration.swift; sourceTree = "<group>"; };
+		9F3EDECE1C2A8E5600029EFA /* AAAberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AAAberration.swift; path = SwiftAA/AAAberration.swift; sourceTree = "<group>"; };
 		9F3EDED01C2A94FA00029EFA /* AAAngularSeparation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AAAngularSeparation.swift; path = SwiftAA/AAAngularSeparation.swift; sourceTree = "<group>"; };
 		9F3EDED31C2AC44A00029EFA /* AA+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AA+.h"; sourceTree = "<group>"; };
 		9F3EDED51C2AC44A00029EFA /* AA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AA2DCoordinate.h; sourceTree = "<group>"; };
