@@ -9,31 +9,20 @@
 #import "KPCAAAberration.h"
 #import "AAAberration.h"
 
-@interface KPCAA3DCoordinate ()
-+ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
-- (CAA3DCoordinate)wrappedCoord;
-@end
-
-@interface KPCAA2DCoordinate ()
-+ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
-- (CAA2DCoordinate)wrappedCoord;
-@end
-
-@implementation KPCAAAberration
-
-+ (KPCAA3DCoordinate *)EarthVelocity:(double)JD
+KPCAA3DCoordinateComponents EarthVelocity(double JD)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAAAberration::EarthVelocity(JD)];
+    CAA3DCoordinate coords = CAAAberration::EarthVelocity(JD);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-+ (KPCAA2DCoordinate *)EclipticAberrationForAlpha:(double)Alpha delta:(double)Delta julianDay:(double)JD
+KPCAA2DCoordinateComponents EclipticAberrationForAlpha(double Alpha, double Delta, double JD)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAAberration::EclipticAberration(Alpha, Delta, JD)];
+    CAA2DCoordinate coords = CAAAberration::EclipticAberration(Alpha, Delta, JD);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)EquatorialAberrationForLambda:(double)Lambda beta:(double)Beta julianDay:(double)JD
+KPCAA2DCoordinateComponents EquatorialAberrationForLambda(double Lambda, double Beta, double JD)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAAberration::EquatorialAberration(Lambda, Beta, JD)];
+    CAA2DCoordinate coords = CAAAberration::EquatorialAberration(Lambda, Beta, JD);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
-
-@end

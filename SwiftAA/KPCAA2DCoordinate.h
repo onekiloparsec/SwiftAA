@@ -14,3 +14,10 @@
 @property(nonatomic, assign) double Y;
 
 @end
+
+typedef struct KPCAA2DCoordinateComponents {
+    double X;
+    double Y;
+} KPCAA2DCoordinateComponents;
+
+KPCAA2DCoordinateComponents KPCAA2DCoordinateComponentsMake(double X, double Y);

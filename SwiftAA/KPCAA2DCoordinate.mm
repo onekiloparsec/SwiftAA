@@ -60,3 +60,11 @@
 }
 
 @end
+
+KPCAA2DCoordinateComponents KPCAA2DCoordinateComponentsMake(double X, double Y)
+{
+    KPCAA2DCoordinateComponents comps;
+    comps.X = X;
+    comps.Y = Y;
+    return comps;
+}

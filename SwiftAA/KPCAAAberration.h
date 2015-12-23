@@ -10,10 +10,10 @@
 #import "KPCAA2DCoordinate.h"
 #import "KPCAA3DCoordinate.h"
 
-@interface KPCAAAberration : NSObject
+// 3D
+KPCAA3DCoordinateComponents EarthVelocity(double JD);
 
-+ (KPCAA3DCoordinate *)EarthVelocity:(double)JD;
-+ (KPCAA2DCoordinate *)EclipticAberrationForAlpha:(double)Alpha delta:(double)Delta julianDay:(double)JD;
-+ (KPCAA2DCoordinate *)EquatorialAberrationForLambda:(double)Lambda beta:(double)Beta julianDay:(double)JD;
+// 2D
+KPCAA2DCoordinateComponents EclipticAberrationForAlpha(double Alpha, double Delta, double JD);
+KPCAA2DCoordinateComponents EquatorialAberrationForLambda(double Lambda, double Beta, double JD);
 
-@end
