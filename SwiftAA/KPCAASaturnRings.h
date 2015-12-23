@@ -8,19 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAASaturnRingDetails : NSObject
+typedef struct KPCAASaturnRingDetails {
+    double B;
+    double Bdash;
+    double P;
+    double a;
+    double b;
+    double DeltaU;
+} KPCAASaturnRingDetails;
 
-@property(nonatomic, assign) double B;
-@property(nonatomic, assign) double Bdash;
-@property(nonatomic, assign) double P;
-@property(nonatomic, assign) double a;
-@property(nonatomic, assign) double bb; // conflicting setter for 'b' and 'B'
-@property(nonatomic, assign) double DeltaU;
-
-@end
-
-@interface KPCAASaturnRings : NSObject
-
-+ (KPCAASaturnRingDetails *)Calculate:(double)JD;
-
-@end
+KPCAASaturnRingDetails KPCAASaturnRings(double JD, BOOL highPrecision);

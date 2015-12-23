@@ -9,103 +9,15 @@
 #import "KPCAASaturnRings.h"
 #import "AASaturnRings.h"
 
-@interface KPCAASaturnRingDetails () {
-    CAASaturnRingDetails _wrapped;
-}
-@end
-
-@implementation KPCAASaturnRingDetails
-
-- (instancetype)init
+KPCAASaturnRingDetails KPCAASaturnRings(double JD, BOOL highPrecision)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAASaturnRingDetails();
-    }
-    return self;
+    CAASaturnRingDetails details = CAASaturnRings::Calculate(JD, highPrecision);
+    KPCAASaturnRingDetails results;
+    results.B = details.B;
+    results.Bdash = details.Bdash;
+    results.P = details.P;
+    results.a = details.a;
+    results.b = details.b;
+    results.DeltaU = details.DeltaU;
+    return results;
 }
-
-- (instancetype)initWithWrappedDetails:(CAASaturnRingDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAASaturnRingDetails *)detailedByWrapping:(CAASaturnRingDetails)wrappedDetails
-{
-    return [[KPCAASaturnRingDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (double)B
-{
-    return _wrapped.B;
-}
-
-- (void)setB:(double)B
-{
-    _wrapped.B = B;
-}
-
-- (double)Bdash
-{
-    return _wrapped.Bdash;
-}
-
-- (void)setBdash:(double)Bdash
-{
-    _wrapped.Bdash = Bdash;
-}
-
-- (double)P
-{
-    return _wrapped.P;
-}
-
-- (void)setP:(double)P
-{
-    _wrapped.P = P;
-}
-
-- (double)a
-{
-    return _wrapped.a;
-}
-
-- (void)setA:(double)a
-{
-    _wrapped.a = a;
-}
-
-- (double)bb
-{
-    return _wrapped.b;
-}
-
-- (void)setBb:(double)bb
-{
-    _wrapped.b = bb;
-}
-
-- (double)DeltaU
-{
-    return _wrapped.DeltaU;
-}
-
-- (void)setDeltaU:(double)DeltaU
-{
-    _wrapped.DeltaU = DeltaU;
-}
-
-@end
-
-@implementation KPCAASaturnRings
-
-+ (KPCAASaturnRingDetails *)Calculate:(double)JD
-{
-    return [KPCAASaturnRingDetails detailedByWrapping:CAASaturnRings::Calculate(JD)];
-}
-
-@end
