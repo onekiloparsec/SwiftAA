@@ -10,6 +10,7 @@
 		9F3EDECA1C2A8CB500029EFA /* AA2DCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDEC91C2A8CB500029EFA /* AA2DCoordinate.swift */; };
 		9F3EDECD1C2A8E1900029EFA /* AA3DCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDECC1C2A8E1900029EFA /* AA3DCoordinate.swift */; };
 		9F3EDECF1C2A8E5600029EFA /* AAAberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDECE1C2A8E5600029EFA /* AAAberration.swift */; };
+		9F3EDED11C2A94FA00029EFA /* AAAngularSeparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EDED01C2A94FA00029EFA /* AAAngularSeparation.swift */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379921C26B9BA007EF484 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
 		9F7379931C26B9BA007EF484 /* KPCAAAberration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */; };
@@ -380,6 +381,7 @@
 		9F3EDEC91C2A8CB500029EFA /* AA2DCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AA2DCoordinate.swift; path = SwiftAA/AA2DCoordinate.swift; sourceTree = "<group>"; };
 		9F3EDECC1C2A8E1900029EFA /* AA3DCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AA3DCoordinate.swift; path = SwiftAA/AA3DCoordinate.swift; sourceTree = "<group>"; };
 		9F3EDECE1C2A8E5600029EFA /* AAAberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAberration.swift; sourceTree = "<group>"; };
+		9F3EDED01C2A94FA00029EFA /* AAAngularSeparation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AAAngularSeparation.swift; path = SwiftAA/AAAngularSeparation.swift; sourceTree = "<group>"; };
 		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
 		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
 		9F48D5201B4DC33C00B7EE7F /* KPCAAGlobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGlobe.h; path = SwiftAA/KPCAAGlobe.h; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 				9F3EDEC91C2A8CB500029EFA /* AA2DCoordinate.swift */,
 				9F3EDECC1C2A8E1900029EFA /* AA3DCoordinate.swift */,
 				9F3EDECE1C2A8E5600029EFA /* AAAberration.swift */,
+				9F3EDED01C2A94FA00029EFA /* AAAngularSeparation.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				9F7379A81C26B9BA007EF484 /* KPCAAMars.mm in Sources */,
 				9F7379BB1C26B9BA007EF484 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9F7379B41C26B9BA007EF484 /* KPCAAParabolic.mm in Sources */,
+				9F3EDED11C2A94FA00029EFA /* AAAngularSeparation.swift in Sources */,
 				9F737A531C26B9DF007EF484 /* AAPhysicalJupiter.cpp in Sources */,
 				9F737A5D1C26B9DF007EF484 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F737A2F1C26B9DF007EF484 /* AAJupiter.cpp in Sources */,

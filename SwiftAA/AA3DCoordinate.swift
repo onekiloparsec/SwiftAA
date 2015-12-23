@@ -13,7 +13,7 @@ public struct AA3DCoordinates {
     var Y: Double;
     var Z: Double;
     
-    public init(X: Double, Y: Double, Z: Double) {
+    public init(X: Double = 0, Y: Double = 0, Z: Double = 0) {
         self.X = X;
         self.Y = Y;
         self.Z = Z;

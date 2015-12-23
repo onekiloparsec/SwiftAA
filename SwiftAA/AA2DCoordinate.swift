@@ -12,7 +12,7 @@ public struct AA2DCoordinates {
     var X: Double;
     var Y: Double;
 
-    public init(X: Double, Y: Double) {
+    public init(X: Double = 0, Y: Double = 0) {
         self.X = X;
         self.Y = Y;
     }
