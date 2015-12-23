@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 - (long)Year;
 - (long)Hour;
 - (long)Minute;
-- (long)Second;
+- (double)Second;
 
 - (void)setDateWithYear:(long)Year month:(long)Month day:(double)Day hour:(double)Hour minute:(double)Minute second:(double)Second usingGregorianCalendar:(BOOL)gregorianCalendar;
 
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 - (void)getDateWithYear:(long *)Year month:(long *)Month day:(long *)Day hour:(long *)Hour minute:(long *)Minute second:(double *)Second;
 
 - (DAY_OF_WEEK)DayOfWeek;
-- (long)DayOfYear;
+- (double)DayOfYear;
 - (long)DaysInMonth;
 - (long)DaysInYear;
 - (BOOL)Leap;

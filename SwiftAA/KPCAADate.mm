@@ -186,7 +186,7 @@
     return _wrapped.Minute();
 }
 
-- (long)Second
+- (double)Second
 {
     return _wrapped.Second();
 }
@@ -216,7 +216,7 @@
     return (DAY_OF_WEEK)_wrapped.DayOfWeek();
 }
 
-- (long)DayOfYear
+- (double)DayOfYear
 {
     return _wrapped.DayOfYear();
 }
