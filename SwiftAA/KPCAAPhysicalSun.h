@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPhysicalSunDetails : NSObject
+typedef struct KPCAAPhysicalSunDetails {
+    double P;
+    double B0;
+    double L0;
+} KPCAAPhysicalSunDetails;
 
-@property(nonatomic, assign) double P;
-@property(nonatomic, assign) double B0;
-@property(nonatomic, assign) double L0;
-
-@end
-
-@interface KPCAAPhysicalSun : NSObject
-
-+ (KPCAAPhysicalSunDetails *)Calculate:(double)JD;
-+ (double)TimeOfStartOfRotation:(long)C;
-
-@end
+KPCAAPhysicalSunDetails KPCAAPhysicalSunCalculateDetails(double JD, BOOL highPrecision);
+double KPCAAPhysicalSunTimeOfStartOfRotation(long C);
