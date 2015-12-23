@@ -9,6 +9,7 @@
 #import "KPCAAPhysicalMoon.h"
 #import "AAPhysicalMoon.h"
 
+KPCAAPhysicalMoonDetails KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoonDetails details); // prototype
 KPCAAPhysicalMoonDetails KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoonDetails details) {
     KPCAAPhysicalMoonDetails results;
     results.ldash = details.ldash;
@@ -21,6 +22,7 @@ KPCAAPhysicalMoonDetails KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoonDetails det
     return results;
 }
 
+KPCAASelenographicMoonDetails KPCAASelenographicMoonDetailsMake(CAASelenographicMoonDetails details); // prototype
 KPCAASelenographicMoonDetails KPCAASelenographicMoonDetailsMake(CAASelenographicMoonDetails details) {
     KPCAASelenographicMoonDetails results;
     results.l0 = details.l0;
