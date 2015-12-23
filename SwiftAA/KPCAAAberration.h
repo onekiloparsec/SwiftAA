@@ -11,9 +11,9 @@
 #import "KPCAA3DCoordinate.h"
 
 // 3D
-KPCAA3DCoordinateComponents KPCEarthVelocityForJulianDay(double JD);
+KPCAA3DCoordinateComponents KPCEarthVelocityForJulianDay(double JD, BOOL highPrecision);
 
 // 2D
-KPCAA2DCoordinateComponents KPCEclipticAberrationForAlphaDeltaJulianDay(double Alpha, double Delta, double JD);
-KPCAA2DCoordinateComponents KPCEquatorialAberrationForLambdaBetaJulianDay(double Lambda, double Beta, double JD);
+KPCAA2DCoordinateComponents KPCEclipticAberrationForAlphaDeltaJulianDay(double Alpha, double Delta, double JD, BOOL highPrecision);
+KPCAA2DCoordinateComponents KPCEquatorialAberrationForLambdaBetaJulianDay(double Lambda, double Beta, double JD, BOOL highPrecision);
 
