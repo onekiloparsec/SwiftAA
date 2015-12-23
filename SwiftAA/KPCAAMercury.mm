@@ -11,19 +11,19 @@
 
 @implementation KPCAAMercury
 
-+ (double)EclipticLongitude:(double)JD
++ (double)EclipticLongitude:(double)JD highPrecision:(BOOL)highPrecision
 {
-    return CAAMercury::EclipticLongitude(JD);
+    return CAAMercury::EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)EclipticLatitude:(double)JD
++ (double)EclipticLatitude:(double)JD highPrecision:(BOOL)highPrecision
 {
-    return CAAMercury::EclipticLatitude(JD);
+    return CAAMercury::EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)RadiusVector:(double)JD
++ (double)RadiusVector:(double)JD highPrecision:(BOOL)highPrecision
 {
-    return CAAMercury::RadiusVector(JD);
+    return CAAMercury::RadiusVector(JD, highPrecision);
 }
 
 @end

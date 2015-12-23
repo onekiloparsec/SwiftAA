@@ -10,8 +10,8 @@
 
 @interface KPCAAMercury : NSObject
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
++ (double)EclipticLongitude:(double)JD highPrecision:(BOOL)highPrecision;
++ (double)EclipticLatitude:(double)JD highPrecision:(BOOL)highPrecision;
++ (double)RadiusVector:(double)JD highPrecision:(BOOL)highPrecision;
 
 @end
