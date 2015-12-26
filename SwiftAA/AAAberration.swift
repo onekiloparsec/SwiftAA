@@ -8,15 +8,15 @@
 
 import Foundation
 
-func EarthVelocity(forJulianDay JD: Double) -> AA3DCoordinates {
-    return AA3DCoordinates(components: KPCEarthVelocityForJulianDay(JD))
+func EarthVelocity(forJulianDay JD: Double, useHighPrecision: Bool = true) -> AA3DCoordinates {
+    return AA3DCoordinates(components: KPCEarthVelocityForJulianDay(JD, useHighPrecision))
 }
 
-func EclipticAberration(forRA Alpha: Double, Dec Delta: Double, JulianDay JD: Double) -> AA2DCoordinates {
-    return AA2DCoordinates(components: KPCEclipticAberrationForAlphaDeltaJulianDay(Alpha, Delta, JD))
+func EclipticAberration(forRA Alpha: Double, Dec Delta: Double, JulianDay JD: Double, useHighPrecision: Bool = true) -> AA2DCoordinates {
+    return AA2DCoordinates(components: KPCEclipticAberrationForAlphaDeltaJulianDay(Alpha, Delta, JD, useHighPrecision))
 }
 
-func EquatorialAberration(forLambda Lambda: Double, Beta: Double, JulianDay JD: Double) -> AA2DCoordinates {
-    return AA2DCoordinates(components: KPCEquatorialAberrationForLambdaBetaJulianDay(Lambda, Beta, JD))
+func EquatorialAberration(forLambda Lambda: Double, Beta: Double, JulianDay JD: Double, useHighPrecision: Bool = true) -> AA2DCoordinates {
+    return AA2DCoordinates(components: KPCEquatorialAberrationForLambdaBetaJulianDay(Lambda, Beta, JD, useHighPrecision))
 }
 
