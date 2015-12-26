@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAEquinoxesAndSolstices : NSObject
+double KPCAAEquinoxesAndSolsticesNorthwardEquinox(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesNorthernSolstice(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesSouthwardEquinox(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesSouthernSolstice(long Year, BOOL highPrecision);
 
-+ (double)NorthwardEquinox:(long)Year;
-+ (double)NorthernSolstice:(long)Year;
-+ (double)SouthwardEquinox:(long)Year;
-+ (double)SouthernSolstice:(long)Year;
-
-+ (double)LengthOfSpring:(long)Year northernHemisphere:(BOOL)north;
-+ (double)LengthOfSummer:(long)Year northernHemisphere:(BOOL)north;
-+ (double)LengthOfAutumn:(long)Year northernHemisphere:(BOOL)north;
-+ (double)LengthOfWinter:(long)Year northernHemisphere:(BOOL)north;
-
-@end
+double KPCAAEquinoxesAndSolsticesLengthOfSpring(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesLengthOfSummer(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesLengthOfAutumn(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolsticesLengthOfWinter(long Year, BOOL northernHemisphere, BOOL highPrecision);
