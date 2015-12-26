@@ -10,19 +10,13 @@
 #import "KPCAAElliptical.h"
 #import "KPCAAParabolic.h"
 
-@interface KPCAANodeObjectDetails : NSObject
+typedef struct KPCAANodeObjectDetails {
+    double t;
+    double radius;
+} KPCAANodeObjectDetails;
 
-@property(nonatomic, assign) double t;
-@property(nonatomic, assign) double radius;
+KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
 
-@end
-
-@interface KPCAANodes : NSObject
-
-+ (KPCAANodeObjectDetails *)PassageThroAscendingNodeForEllipticalElements:(KPCAAEllipticalObjectElements *)elements;
-+ (KPCAANodeObjectDetails *)PassageThroDescendingNodeForEllipticalElements:(KPCAAEllipticalObjectElements *)elements;
-
-+ (KPCAANodeObjectDetails *)PassageThroAscendingNodeForParabolicElements:(KPCAAParabolicObjectElements *)elements;
-+ (KPCAANodeObjectDetails *)PassageThroDescendingNodeForParabolicElements:(KPCAAParabolicObjectElements *)elements;
-
-@end
+KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);

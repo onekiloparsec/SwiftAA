@@ -10,62 +10,55 @@
 #import "KPCAA3DCoordinate.h"
 #import "KPCAAPlanetaryPhenomena.h"
 
-@interface KPCAAEllipticalObjectElements : NSObject
+typedef struct KPCAAEllipticalObjectElements {
+    double a;
+    double e;
+    double i;
+    double w;
+    double omega;
+    double JDEquinox;
+    double T;
+} KPCAAEllipticalObjectElements;
 
-@property(nonatomic, assign) double a;
-@property(nonatomic, assign) double e;
-@property(nonatomic, assign) double i;
-@property(nonatomic, assign) double w;
-@property(nonatomic, assign) double omega;
-@property(nonatomic, assign) double JDEquinox;
-@property(nonatomic, assign) double T;
+typedef struct KPCAAEllipticalPlanetaryDetails {
+    double ApparentGeocentricLongitude;
+    double ApparentGeocentricLatitude;
+    double ApparentGeocentricDistance;
+    double ApparentLightTime;
+    double ApparentGeocentricRA;
+    double ApparentGeocentricDeclination;
+} KPCAAEllipticalPlanetaryDetails;
 
-@end
+typedef struct KPCAAEllipticalObjectDetails {
+    KPCAA3DCoordinateComponents HeliocentricRectangularEquatorialCoordinateComponents;
+    KPCAA3DCoordinateComponents HeliocentricRectangularEclipticalCoordinateComponents;
+    double HeliocentricEclipticLongitude;
+    double HeliocentricEclipticLatitude;
+    double TrueGeocentricRA;
+    double TrueGeocentricDeclination;
+    double TrueGeocentricDistance;
+    double TrueGeocentricLightTime;
+    double AstrometricGeocentricRA;
+    double AstrometricGeocentricDeclination;
+    double AstrometricGeocentricDistance;
+    double AstrometricGeocentricLightTime;
+    double Elongation;
+    double PhaseAngle;
+} KPCAAEllipticalObjectDetails;
 
-@interface KPCAAEllipticalPlanetaryDetails : NSObject
 
-@property(nonatomic, assign) double ApparentGeocentricLongitude;
-@property(nonatomic, assign) double ApparentGeocentricLatitude;
-@property(nonatomic, assign) double ApparentGeocentricDistance;
-@property(nonatomic, assign) double ApparentLightTime;
-@property(nonatomic, assign) double ApparentGeocentricRA;
-@property(nonatomic, assign) double ApparentGeocentricDeclination;
+double KPCAAEllipticalDistanceToLightTime(double Distance);
+KPCAAEllipticalPlanetaryDetails KPCAAEllipticalCalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision);
+double KPCAAEllipticalSemiMajorAxisFromPerihelionDistance(double q, double e);
+double KPCAAEllipticalMeanMotionFromSemiMajorAxis(double a);
+KPCAAEllipticalObjectDetails KPCAAEllipticalCalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);
+double KPCAAEllipticalInstantaneousVelocity(double r, double a);
+double KPCAAEllipticalVelocityAtPerihelion(double e, double a);
+double KPCAAEllipticalVelocityAtAphelion(double e, double a);
+double KPCAAEllipticalLengthOfEllipse(double e, double a);
+double KPCAAEllipticalCometMagnitude(double g, double delta, double k, double r);
+double KPCAAEllipticalMinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle);
 
-@end
 
-@interface KPCAAEllipticalObjectDetails : NSObject
-
-@property(nonatomic, strong) KPCAA3DCoordinate *HeliocentricRectangularEquatorial;
-@property(nonatomic, strong) KPCAA3DCoordinate *HeliocentricRectangularEcliptical;
-@property(nonatomic, assign) double HeliocentricEclipticLongitude;
-@property(nonatomic, assign) double HeliocentricEclipticLatitude;
-@property(nonatomic, assign) double TrueGeocentricRA;
-@property(nonatomic, assign) double TrueGeocentricDeclination;
-@property(nonatomic, assign) double TrueGeocentricDistance;
-@property(nonatomic, assign) double TrueGeocentricLightTime;
-@property(nonatomic, assign) double AstrometricGeocentricRA;
-@property(nonatomic, assign) double AstrometricGeocentricDeclination;
-@property(nonatomic, assign) double AstrometricGeocentricDistance;
-@property(nonatomic, assign) double AstrometricGeocentricLightTime;
-@property(nonatomic, assign) double Elongation;
-@property(nonatomic, assign) double PhaseAngle;
-
-@end
-
-@interface KPCAAElliptical : NSObject
-
-+ (double)DistanceToLightTime:(double)Distance;
-+ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCPlanetaryObject)object;
-+ (double)SemiMajorAxisFromPerihelionDistance:(double)q e:(double)e;
-+ (double)MeanMotionFromSemiMajorAxis:(double)a;
-+ (KPCAAEllipticalObjectDetails *)Calculate:(double)JD elements:(KPCAAEllipticalObjectElements * __autoreleasing *) elements;
-+ (double)InstantaneousVelocity:(double)r a:(double)a;
-+ (double)VelocityAtPerihelion:(double)e a:(double)a;
-+ (double)VelocityAtAphelion:(double)e a:(double)a;
-+ (double)LengthOfEllipse:(double)e a:(double)a;
-+ (double)CometMagnitude:(double)g delta:(double)delta  k:(double)k  r:(double)r;
-+ (double)MinorPlanetMagnitude:(double)H delta:(double)delta G:(double)G r:(double)r PhaseAngle:(double)PhaseAngle;
-
-@end
 
 

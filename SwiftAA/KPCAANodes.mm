@@ -9,99 +9,64 @@
 #import "KPCAANodes.h"
 #import "AANodes.h"
 
-@interface KPCAANodeObjectDetails () {
-    CAANodeObjectDetails _wrapped;
-}
-@end
-
-@implementation KPCAANodeObjectDetails
-
-- (instancetype)init
+KPCAANodeObjectDetails KPCAANodeObjectDetailsMake(CAANodeObjectDetails detailsPlus);
+KPCAANodeObjectDetails KPCAANodeObjectDetailsMake(CAANodeObjectDetails detailsPlus)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAANodeObjectDetails();
-    }
-    return self;
+    struct KPCAANodeObjectDetails details;
+    details.t = detailsPlus.t;
+    details.radius = detailsPlus.radius;
+    return details;
 }
 
-- (instancetype)initWithWrappedDetails:(CAANodeObjectDetails)wrappedDetails
+CAAEllipticalObjectElements CAAEllipticalObjectElementsMake(KPCAAEllipticalObjectElements *elements);
+CAAEllipticalObjectElements CAAEllipticalObjectElementsMake(KPCAAEllipticalObjectElements *elements)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
+    CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
+    elementsPlus.a = (*elements).a;
+    elementsPlus.e = (*elements).e;
+    elementsPlus.i = (*elements).i;
+    elementsPlus.w = (*elements).w;
+    elementsPlus.omega = (*elements).omega;
+    elementsPlus.JDEquinox = (*elements).JDEquinox;
+    elementsPlus.T = (*elements).T;
+    return elementsPlus;
 }
 
-+ (KPCAANodeObjectDetails *)detailsByWrapping:(CAANodeObjectDetails)wrappedDetails
+CAAParabolicObjectElements CAAParabolicObjectElementsMake(KPCAAParabolicObjectElements *elements);
+CAAParabolicObjectElements CAAParabolicObjectElementsMake(KPCAAParabolicObjectElements *elements)
 {
-    return [[KPCAANodeObjectDetails alloc] initWithWrappedDetails:wrappedDetails];
+    CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElements();
+    elementsPlus.q = (*elements).q;
+    elementsPlus.i = (*elements).i;
+    elementsPlus.w = (*elements).w;
+    elementsPlus.omega = (*elements).omega;
+    elementsPlus.JDEquinox = (*elements).JDEquinox;
+    elementsPlus.T = (*elements).T;
+    return elementsPlus;
 }
 
-- (double)t
+
+KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
 {
-    return _wrapped.t;
+    CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElementsMake(elements);
+    return KPCAANodeObjectDetailsMake(CAANodes::PassageThroAscendingNode(elementsPlus));
 }
 
-- (void)setT:(double)t
+KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
 {
-    _wrapped.t = t;
+    CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElementsMake(elements);
+    return KPCAANodeObjectDetailsMake(CAANodes::PassageThroDescendingNode(elementsPlus));
 }
 
-- (double)radius
+KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
 {
-    return _wrapped.radius;
+    CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElementsMake(elements);
+    return KPCAANodeObjectDetailsMake(CAANodes::PassageThroAscendingNode(elementsPlus));
 }
 
-- (void)setRadius:(double)radius
+KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
 {
-    _wrapped.radius = radius;
+    CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElementsMake(elements);
+    return KPCAANodeObjectDetailsMake(CAANodes::PassageThroDescendingNode(elementsPlus));
 }
 
-@end
-
-
-
-
-
-/**
- *  Redeclaration of private interface. See KPCElliptical.mm
- */
-@interface KPCAAEllipticalObjectElements () 
-- (CAAEllipticalObjectElements)wrappedElements;
-@end
-
-/**
- *  Redeclaration of private interface. See KPCParabolic.mm
- */
-@interface KPCAAParabolicObjectElements ()
-- (CAAParabolicObjectElements)wrappedElements;
-@end
-
-
-@implementation KPCAANodes
-
-
-+ (KPCAANodeObjectDetails *)PassageThroAscendingNodeForEllipticalElements:(KPCAAEllipticalObjectElements *)elements
-{
-    return [KPCAANodeObjectDetails detailsByWrapping:CAANodes::PassageThroAscendingNode(elements.wrappedElements)];
-}
-
-+ (KPCAANodeObjectDetails *)PassageThroDescendingNodeForEllipticalElements:(KPCAAEllipticalObjectElements *)elements
-{
-    return [KPCAANodeObjectDetails detailsByWrapping:CAANodes::PassageThroDescendingNode(elements.wrappedElements)];
-}
-
-+ (KPCAANodeObjectDetails *)PassageThroAscendingNodeForParabolicElements:(KPCAAParabolicObjectElements *)elements
-{
-    return [KPCAANodeObjectDetails detailsByWrapping:CAANodes::PassageThroAscendingNode(elements.wrappedElements)];
-}
-
-+ (KPCAANodeObjectDetails *)PassageThroDescendingNodeForParabolicElements:(KPCAAParabolicObjectElements *)elements
-{
-    return [KPCAANodeObjectDetails detailsByWrapping:CAANodes::PassageThroDescendingNode(elements.wrappedElements)];   
-}
-
-            
-@end

@@ -9,440 +9,94 @@
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
 
-@interface KPCAA3DCoordinate ()
-+ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
-- (CAA3DCoordinate)wrappedCoord;
-@end
-
-
-@interface KPCAAEllipticalObjectElements () {
-    CAAEllipticalObjectElements _wrapped;
-}
-- (CAAEllipticalObjectElements)wrappedElements;
-@end
-
-@implementation KPCAAEllipticalObjectElements
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAAEllipticalObjectElements();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedElements:(CAAEllipticalObjectElements)wrappedElements
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedElements;
-    }
-    return self;
-}
-
-+ (KPCAAEllipticalObjectElements *)elementsByWrapping:(CAAEllipticalObjectElements)wrappedElements
-{
-    return [[KPCAAEllipticalObjectElements alloc] initWithWrappedElements:wrappedElements];
-}
-
-- (CAAEllipticalObjectElements)wrappedElements
-{
-    return _wrapped;
-}
-
-- (double)a
-{
-    return _wrapped.a;
-}
-
-- (void)setA:(double)a
-{
-    _wrapped.a = a;
-}
-
-- (double)e
-{
-    return _wrapped.e;
-}
-
-- (void)setE:(double)e
-{
-    _wrapped.e = e;
-}
-
-- (double)i
-{
-    return _wrapped.i;
-}
-
-- (void)setI:(double)i
-{
-    _wrapped.i = i;
-}
-
-- (double)w
-{
-    return _wrapped.w;
-}
-
-- (void)setW:(double)w
-{
-    _wrapped.w = w;
-}
-
-- (double)omega
-{
-    return _wrapped.omega;
-}
-
-- (void)setOmega:(double)omega
-{
-    _wrapped.omega = omega;
-}
-
-- (double)JDEquinox
-{
-    return _wrapped.JDEquinox;
-}
-
-- (void)setJDEquinox:(double)JDEquinox
-{
-    _wrapped.JDEquinox = JDEquinox;
-}
-
-- (double)T
-{
-    return _wrapped.T;
-}
-
-- (void)setT:(double)T
-{
-    _wrapped.T = T;
-}
-
-@end
-
-@interface KPCAAEllipticalPlanetaryDetails () {
-    CAAEllipticalPlanetaryDetails _wrapped;
-}
-@end
-
-@implementation KPCAAEllipticalPlanetaryDetails
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAAEllipticalPlanetaryDetails();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedDetails:(CAAEllipticalPlanetaryDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAAEllipticalPlanetaryDetails *)detailsByWrapping:(CAAEllipticalPlanetaryDetails)wrappedDetails
-{
-    return [[KPCAAEllipticalPlanetaryDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (double)ApparentGeocentricLongitude
-{
-    return _wrapped.ApparentGeocentricLongitude;
-}
-
-- (void)setApparentGeocentricLongitude:(double)ApparentGeocentricLongitude
-{
-    _wrapped.ApparentGeocentricLongitude = ApparentGeocentricLongitude;
-}
-
-- (double)ApparentGeocentricLatitude
-{
-    return _wrapped.ApparentGeocentricLatitude;
-}
-
-- (void)setApparentGeocentricLatitude:(double)ApparentGeocentricLatitude
-{
-    _wrapped.ApparentGeocentricLatitude = ApparentGeocentricLatitude;
-}
-
-- (double)ApparentGeocentricDistance
-{
-    return _wrapped.ApparentGeocentricDistance;
-}
-
-- (void)setApparentGeocentricDistance:(double)ApparentGeocentricDistance
-{
-    _wrapped.ApparentGeocentricDistance = ApparentGeocentricDistance;
-}
-
-- (double)ApparentLightTime
-{
-    return _wrapped.ApparentLightTime;
-}
-
-- (void)setApparentLightTime:(double)ApparentLightTime
-{
-    _wrapped.ApparentLightTime = ApparentLightTime;
-}
-
-- (double)ApparentGeocentricRA
-{
-    return _wrapped.ApparentGeocentricRA;
-}
-
-- (void)setApparentGeocentricRA:(double)ApparentGeocentricRA
-{
-    _wrapped.ApparentGeocentricRA = ApparentGeocentricRA;
-}
-
-- (double)ApparentGeocentricDeclination
-{
-    return _wrapped.ApparentGeocentricDeclination;
-}
-
-- (void)setApparentGeocentricDeclination:(double)ApparentGeocentricDeclination
-{
-    _wrapped.ApparentGeocentricDeclination = ApparentGeocentricDeclination;
-}
-
-@end
-
-@interface KPCAAEllipticalObjectDetails () {
-    CAAEllipticalObjectDetails _wrapped;
-}
-@end
-
-@implementation KPCAAEllipticalObjectDetails
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAAEllipticalObjectDetails();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedDetails:(CAAEllipticalObjectDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAAEllipticalObjectDetails *)detailsByWrapping:(CAAEllipticalObjectDetails)wrappedDetails
-{
-    return [[KPCAAEllipticalObjectDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (KPCAA3DCoordinate *)HeliocentricRectangularEquatorial
-{
-    return [KPCAA3DCoordinate coordinateByWrapping:_wrapped.HeliocentricRectangularEquatorial];
-}
-
-- (void)setHeliocentricRectangularEquatorial:(KPCAA3DCoordinate *)HeliocentricRectangularEquatorial
-{
-    _wrapped.HeliocentricRectangularEquatorial = HeliocentricRectangularEquatorial.wrappedCoord;
-}
-
-- (KPCAA3DCoordinate *)HeliocentricRectangularEcliptical
-{
-    return [KPCAA3DCoordinate coordinateByWrapping:_wrapped.HeliocentricRectangularEcliptical];
-}
-
-- (void)setHeliocentricRectangularEcliptical:(KPCAA3DCoordinate *)HeliocentricRectangularEcliptical
-{
-    _wrapped.HeliocentricRectangularEcliptical = HeliocentricRectangularEcliptical.wrappedCoord;
-}
-
-- (double)HeliocentricEclipticLongitude
-{
-    return _wrapped.HeliocentricEclipticLongitude;
-}
-
-- (void)setHeliocentricEclipticLongitude:(double)HeliocentricEclipticLongitude
-{
-    _wrapped.HeliocentricEclipticLongitude = HeliocentricEclipticLongitude;
-}
-
-- (double)HeliocentricEclipticLatitude
-{
-    return _wrapped.HeliocentricEclipticLatitude;
-}
-
-- (void)setHeliocentricEclipticLatitude:(double)HeliocentricEclipticLatitude
-{
-    _wrapped.HeliocentricEclipticLatitude = HeliocentricEclipticLatitude;
-}
-
-- (double)TrueGeocentricRA
-{
-    return _wrapped.TrueGeocentricRA;
-}
-
-- (void)setTrueGeocentricRA:(double)TrueGeocentricRA
-{
-    _wrapped.TrueGeocentricRA = TrueGeocentricRA;
-}
-
-- (double)TrueGeocentricDeclination
-{
-    return _wrapped.TrueGeocentricDeclination;
-}
-
-- (void)setTrueGeocentricDeclination:(double)TrueGeocentricDeclination
-{
-    _wrapped.TrueGeocentricDeclination = TrueGeocentricDeclination;
-}
-
-- (double)TrueGeocentricDistance
-{
-    return _wrapped.TrueGeocentricDistance;
-}
-
-- (void)setTrueGeocentricDistance:(double)TrueGeocentricDistance
-{
-    _wrapped.TrueGeocentricDistance = TrueGeocentricDistance;
-}
-
-- (double)TrueGeocentricLightTime
-{
-    return _wrapped.TrueGeocentricLightTime;
-}
-
-- (void)setTrueGeocentricLightTime:(double)TrueGeocentricLightTime
-{
-    _wrapped.TrueGeocentricLightTime = TrueGeocentricLightTime;
-}
-
-- (double)AstrometricGeocentricRA
-{
-    return _wrapped.AstrometricGeocentricRA;
-}
-
-- (void)setAstrometricGeocentricRA:(double)AstrometricGeocentricRA
-{
-    _wrapped.AstrometricGeocentricRA = AstrometricGeocentricRA;
-}
-
-- (double)AstrometricGeocentricDeclination
-{
-    return _wrapped.AstrometricGeocentricDeclination;
-}
-
-- (void)setAstrometricGeocentricDeclination:(double)AstrometricGeocentricDeclination
-{
-    _wrapped.AstrometricGeocentricDeclination = AstrometricGeocentricDeclination;
-}
-
-- (double)AstrometricGeocentricDistance
-{
-    return _wrapped.AstrometricGeocentricDistance;
-}
-
-- (void)setAstrometricGeocentricDistance:(double)AstrometricGeocentricDistance
-{
-    _wrapped.AstrometricGeocentricDistance = AstrometricGeocentricDistance;
-}
-
-- (double)AstrometricGeocentricLightTime
-{
-    return _wrapped.AstrometricGeocentricLightTime;
-}
-
-- (void)setAstrometricGeocentricLightTime:(double)AstrometricGeocentricLightTime
-{
-    _wrapped.AstrometricGeocentricLightTime = AstrometricGeocentricLightTime;
-}
-
-- (double)Elongation
-{
-    return _wrapped.Elongation;
-}
-
-- (void)setElongation:(double)Elongation
-{
-    _wrapped.Elongation = Elongation;
-}
-
-- (double)PhaseAngle
-{
-    return _wrapped.PhaseAngle;
-}
-
-- (void)setPhaseAngle:(double)PhaseAngle
-{
-    _wrapped.PhaseAngle = PhaseAngle;
-}
-
-@end
-
-@implementation KPCAAElliptical
-
-+ (double)DistanceToLightTime:(double)Distance
+double KPCAAEllipticalDistanceToLightTime(double Distance)
 {
     return CAAElliptical::DistanceToLightTime(Distance);
 }
 
-+ (KPCAAEllipticalPlanetaryDetails *)Calculate:(double)JD object:(KPCPlanetaryObject)object
+KPCAAEllipticalPlanetaryDetails KPCAAEllipticalCalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision)
 {
-    return [KPCAAEllipticalPlanetaryDetails detailsByWrapping:CAAElliptical::Calculate(JD, (CAAElliptical::EllipticalObject)object)];
+    CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, (CAAElliptical::EllipticalObject)object, highPrecision);
+    
+    struct KPCAAEllipticalPlanetaryDetails details;
+    details.ApparentGeocentricLongitude = detailsPlus.ApparentGeocentricLongitude;
+    details.ApparentGeocentricLatitude = detailsPlus.ApparentGeocentricLatitude;
+    details.ApparentGeocentricDistance = detailsPlus.ApparentGeocentricDistance;
+    details.ApparentLightTime = detailsPlus.ApparentLightTime;
+    details.ApparentGeocentricRA = detailsPlus.ApparentGeocentricRA;
+    details.ApparentGeocentricDeclination = detailsPlus.ApparentGeocentricDeclination;
+
+    return details;
 }
 
-+ (double)SemiMajorAxisFromPerihelionDistance:(double)q e:(double)e
+double KPCAAEllipticalSemiMajorAxisFromPerihelionDistance(double q, double e)
 {
     return CAAElliptical::SemiMajorAxisFromPerihelionDistance(q, e);
 }
 
-+ (double)MeanMotionFromSemiMajorAxis:(double)a
+double KPCAAEllipticalMeanMotionFromSemiMajorAxis(double a)
 {
     return CAAElliptical::MeanMotionFromSemiMajorAxis(a);
 }
 
-+ (KPCAAEllipticalObjectDetails *)Calculate:(double)JD elements:(KPCAAEllipticalObjectElements * __autoreleasing *)elements
+KPCAAEllipticalObjectDetails KPCAAEllipticalCalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision)
 {
-    CAAEllipticalObjectElements wrappedElements = (*elements).wrappedElements;
-    return [KPCAAEllipticalObjectDetails detailsByWrapping:CAAElliptical::Calculate(JD, wrappedElements)];
+    CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
+    CAAEllipticalObjectDetails detailsPlus = CAAElliptical::Calculate(JD, elementsPlus, highPrecision);
+
+    struct KPCAAEllipticalObjectDetails details;
+    
+    details.HeliocentricRectangularEquatorialCoordinateComponents = KPCAA3DCoordinateComponentsMake(detailsPlus.HeliocentricRectangularEquatorial.X,
+                                                                                                    detailsPlus.HeliocentricRectangularEquatorial.Y,
+                                                                                                    detailsPlus.HeliocentricRectangularEquatorial.Z);
+    
+    details.HeliocentricRectangularEclipticalCoordinateComponents = KPCAA3DCoordinateComponentsMake(detailsPlus.HeliocentricRectangularEcliptical.X,
+                                                                                                    detailsPlus.HeliocentricRectangularEcliptical.Y,
+                                                                                                    detailsPlus.HeliocentricRectangularEcliptical.Z);
+    
+    details.HeliocentricEclipticLongitude = detailsPlus.HeliocentricEclipticLongitude;
+    details.HeliocentricEclipticLatitude = detailsPlus.HeliocentricEclipticLatitude;
+    details.TrueGeocentricRA = detailsPlus.TrueGeocentricRA;
+    details.TrueGeocentricDeclination = detailsPlus.TrueGeocentricDeclination;
+    details.TrueGeocentricDistance = detailsPlus.TrueGeocentricDistance;
+    details.TrueGeocentricLightTime = detailsPlus.TrueGeocentricLightTime;
+    details.AstrometricGeocentricRA = detailsPlus.AstrometricGeocentricRA;
+    details.AstrometricGeocentricDeclination = detailsPlus.AstrometricGeocentricDeclination;
+    details.AstrometricGeocentricDistance = detailsPlus.AstrometricGeocentricDistance;
+    details.AstrometricGeocentricLightTime = detailsPlus.AstrometricGeocentricLightTime;
+    details.Elongation = detailsPlus.Elongation;
+    details.PhaseAngle = detailsPlus.PhaseAngle;
+    
+    return details;
 }
 
-+ (double)InstantaneousVelocity:(double)r a:(double)a
+double KPCAAEllipticalInstantaneousVelocity(double r, double a)
 {
     return CAAElliptical::InstantaneousVelocity(r, a);
 }
 
-+ (double)VelocityAtPerihelion:(double)e a:(double)a
+double KPCAAEllipticalVelocityAtPerihelion(double e, double a)
 {
     return CAAElliptical::VelocityAtPerihelion(e, a);
 }
 
-+ (double)VelocityAtAphelion:(double)e a:(double)a
+double KPCAAEllipticalVelocityAtAphelion(double e, double a)
 {
     return CAAElliptical::VelocityAtAphelion(e, a);
 }
 
-+ (double)LengthOfEllipse:(double)e a:(double)a
+double KPCAAEllipticalLengthOfEllipse(double e, double a)
 {
     return CAAElliptical::LengthOfEllipse(e, a);
 }
 
-+ (double)CometMagnitude:(double)g delta:(double)delta  k:(double)k  r:(double)r
+double KPCAAEllipticalCometMagnitude(double g, double delta, double k, double r)
 {
     return CAAElliptical::CometMagnitude(g, delta, k, r);
 }
 
-+ (double)MinorPlanetMagnitude:(double)H delta:(double)delta G:(double)G r:(double)r PhaseAngle:(double)PhaseAngle
+double KPCAAEllipticalMinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle)
 {
     return CAAElliptical::MinorPlanetMagnitude(H, delta, G, r, PhaseAngle);
 }
 
-@end
