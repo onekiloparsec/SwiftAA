@@ -11,7 +11,7 @@
 double KPCAAEarthEclipticLongitude(double JD, BOOL highPrecision);
 double KPCAAEarthEclipticLatitude(double JD, BOOL highPrecision);
 double KPCAAEarthRadiusVector(double JD, BOOL highPrecision);
-double KPCAAEarthSunMeanAnomaly(double JD;
+double KPCAAEarthSunMeanAnomaly(double JD);
 double KPCAAEarthEccentricity(double JD);
 double KPCAAEarthEclipticLongitudeJ2000(double JD, BOOL highPrecision);
 double KPCAAEarthEclipticLatitudeJ2000(double JD, BOOL highPrecision);

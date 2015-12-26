@@ -8,33 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAABinaryStarDetails : NSObject
-
-@property(nonatomic, assign) double r;
-@property(nonatomic, assign) double Theta;
-@property(nonatomic, assign) double Rho;
-
-@end
-
-@interface KPCAABinaryStar : NSObject
+typedef struct KPCAABinaryStarDetails {
+    double r;
+    double Theta;
+    double Rho;
+} KPCAABinaryStarDetails;
 
 /** Units:
- * t: decimal years
- * P: mean solar years
- * T: decimal year
- * e: n.a.
- * a: arcseconds
- * i: degrees
- * Omega: degrees
- * w: degrees
+ * t (time): decimal years
+ * P (Period): mean solar years
+ * T (time of periastron): decimal year
+ * e (eccentricity): n.a.
+ * a (semi major axis): arcseconds
+ * i (inclination): degrees
+ * Omega (position angle of ascending nodes): degrees
+ * w (longitude of periastron): degrees
  */
-+ (KPCAABinaryStarDetails *)CalculateWithTime:(double)t period:(double)P timeOfPeriastron:(double)T eccentricity:(double)e semimajorAxis:(double)a inclination:(double)i positionAngleOfAscendingNode:(double)Omega longitudeOfPeriastron:(double)w;
+KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w);
 
 /** Units:
  * e: n.a.
  * i: degrees
  * w: degrees
  */
-+ (double)ApparentEccentricityForEccentricity:(double)e inclination:(double)i longitudeOfPeriastron:(double)w;
-
-@end
+double KPCAABinaryStarApparentEccentricity(double e, double i, double w);

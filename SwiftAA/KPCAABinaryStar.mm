@@ -9,48 +9,20 @@
 #import "KPCAABinaryStar.h"
 #import "AABinaryStar.h"
 
-@interface KPCAABinaryStarDetails () {
-    CAABinaryStarDetails _wrapped;
-}
-@end
-
-@implementation KPCAABinaryStarDetails
-
-- (instancetype)init
+KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAABinaryStarDetails();
-    }
-    return self;
+    CAABinaryStarDetails detailsPlus = CAABinaryStar::Calculate(t, P, T, e, a, i, Omega, w);
+    
+    struct KPCAABinaryStarDetails details;
+    details.r = detailsPlus.r;
+    details.Theta = detailsPlus.Theta;
+    details.Rho = detailsPlus.Rho;
+    
+    return details;
 }
 
-- (instancetype)initWithWrapped:(CAABinaryStarDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAABinaryStarDetails *)detailsByWrapping:(CAABinaryStarDetails)wrappedDetails
-{
-    return [[KPCAABinaryStarDetails alloc] initWithWrapped:wrappedDetails];
-}
-
-@end
-
-@implementation KPCAABinaryStar
-
-+ (KPCAABinaryStarDetails *)CalculateWithTime:(double)t period:(double)P timeOfPeriastron:(double)T eccentricity:(double)e semimajorAxis:(double)a inclination:(double)i positionAngleOfAscendingNode:(double)Omega longitudeOfPeriastron:(double)w
-{
-    return [KPCAABinaryStarDetails detailsByWrapping:CAABinaryStar::Calculate(t, P, T, e, a, i, Omega, w)];
-}
-
-+ (double)ApparentEccentricityForEccentricity:(double)e inclination:(double)i longitudeOfPeriastron:(double)w
+double KPCAABinaryStarApparentEccentricity(double e, double i, double w)
 {
     return CAABinaryStar::ApparentEccentricity(e, i, w);
 }
 
-@end
