@@ -9,33 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-@interface KPCAASaturnMoonDetail : NSObject
-
-@property(nonatomic, strong) KPCAA3DCoordinate *TrueRectangularCoordinates;
-@property(nonatomic, strong) KPCAA3DCoordinate *ApparentRectangularCoordinates;
-@property(nonatomic, assign) BOOL isInTransit;
-@property(nonatomic, assign) BOOL isInOccultation;
-@property(nonatomic, assign) BOOL isInEclipse;
-@property(nonatomic, assign) BOOL isInShadowTransit;
-
-@end
+typedef struct KPCAASaturnMoonDetails {
+    KPCAA3DCoordinateComponents TrueRectangularCoordinateComponents;
+    KPCAA3DCoordinateComponents ApparentRectangularCoordinateComponents;
+    BOOL isInTransit;
+    BOOL isInOccultation;
+    BOOL isInEclipse;
+    BOOL isInShadowTransit;
+} KPCAASaturnMoonDetails;
 
 
-@interface KPCAASaturnMoonsDetails : NSObject
+typedef struct KPCAASaturnMoonsDetails {
+    KPCAASaturnMoonDetails Satellite1;
+    KPCAASaturnMoonDetails Satellite2;
+    KPCAASaturnMoonDetails Satellite3;
+    KPCAASaturnMoonDetails Satellite4;
+    KPCAASaturnMoonDetails Satellite5;
+    KPCAASaturnMoonDetails Satellite6;
+    KPCAASaturnMoonDetails Satellite7;
+    KPCAASaturnMoonDetails Satellite8;
+} KPCAASaturnMoonsDetails;
 
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite1;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite2;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite3;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite4;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite5;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite6;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite7;
-@property(nonatomic, strong) KPCAASaturnMoonDetail *Satellite8;
+KPCAASaturnMoonsDetails KPCAASaturnMoonsDetailsCalculate(double JD, BOOL highPrecision);
 
-@end
-
-@interface KPCAASaturnMoons : NSObject
-
-+ (KPCAASaturnMoonsDetails *)Calculate:(double)JD;
-
-@end
