@@ -9,33 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-@interface KPCAAGalileanMoonDetail : NSObject
+typedef struct KPCAAGalileanMoonDetails {
+    double MeanLongitude;
+    double TrueLongitude;
+    double TropicalLongitude;
+    double EquatorialLatitude;
+    double r;
+    KPCAA3DCoordinateComponents TrueRectangularCoordinateComponents;
+    KPCAA3DCoordinateComponents ApparentRectangularCoordinateComponents;
+    BOOL inTransit;
+    BOOL inOccultation;
+    BOOL inEclipse;
+    BOOL inShadowTransit;
+} KPCAAGalileanMoonDetails;
 
-@property(nonatomic, assign) double MeanLongitude;
-@property(nonatomic, assign) double TrueLongitude;
-@property(nonatomic, assign) double TropicalLongitude;
-@property(nonatomic, assign) double EquatorialLatitude;
-@property(nonatomic, assign) double r;
-@property(nonatomic, strong) KPCAA3DCoordinate *TrueRectangularCoordinates;
-@property(nonatomic, strong) KPCAA3DCoordinate *ApparentRectangularCoordinates;
-@property(nonatomic, assign) BOOL inTransit;
-@property(nonatomic, assign) BOOL inOccultation;
-@property(nonatomic, assign) BOOL inEclipse;
-@property(nonatomic, assign) BOOL inShadowTransit;
+typedef struct KPCAAGalileanMoonsDetails {
+    KPCAAGalileanMoonDetails Satellite1;
+    KPCAAGalileanMoonDetails Satellite2;
+    KPCAAGalileanMoonDetails Satellite3;
+    KPCAAGalileanMoonDetails Satellite4;
+} KPCAAGalileanMoonsDetails;
 
-@end
-
-@interface KPCAAGalileanMoonsDetails : NSObject
-
-@property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite1;
-@property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite2;
-@property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite3;
-@property(nonatomic, strong) KPCAAGalileanMoonDetail *Satellite4;
-
-@end
-
-@interface KPCAAGalileanMoons : NSObject
-
-+ (KPCAAGalileanMoonsDetails *)Calculate:(double)JD;
-
-@end
+KPCAAGalileanMoonsDetails KPCAAGalileanMoonsCalculateDetails(double JD, BOOL highPrecision);
