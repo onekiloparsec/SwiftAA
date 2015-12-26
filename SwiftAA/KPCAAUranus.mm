@@ -9,21 +9,17 @@
 #import "KPCAAUranus.h"
 #import "AAUranus.h"
 
-@implementation KPCAAUranus
-
-+ (double)EclipticLongitude:(double)JD
+double KPCAAUranusEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAAUranus::EclipticLongitude(JD);
+    return CAAUranus::EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)EclipticLatitude:(double)JD
+double KPCAAUranusEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAAUranus::EclipticLatitude(JD);
+    return CAAUranus::EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)RadiusVector:(double)JD
+double KPCAAUranusRadiusVector(double JD, BOOL highPrecision)
 {
-    return CAAUranus::RadiusVector(JD);
+    return CAAUranus::RadiusVector(JD, highPrecision);
 }
-
-@end

@@ -9,113 +9,18 @@
 #import "KPCAAPhysicalJupiter.h"
 #import "AAPhysicalJupiter.h"
 
-@interface KPCAAPhysicalJupiterDetails () {
-    CAAPhysicalJupiterDetails _wrapped;
-}
-@end
-
-@implementation KPCAAPhysicalJupiterDetails
-
-- (instancetype)init
+KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiterCalculateDetails(double JD, BOOL highPrecision)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAAPhysicalJupiterDetails();
-    }
-    return self;
+    CAAPhysicalJupiterDetails detailsPlus = CAAPhysicalJupiter::Calculate(JD, highPrecision);
+    
+    struct KPCAAPhysicalJupiterDetails details;
+    details.DE = detailsPlus.DE;
+    details.DS = detailsPlus.DS;
+    details.Geometricw1 = detailsPlus.Geometricw1;
+    details.Geometricw2 = detailsPlus.Geometricw2;
+    details.Apparentw1 = detailsPlus.Apparentw1;
+    details.Apparentw2 = detailsPlus.Apparentw2;
+    details.P = detailsPlus.P;
+
+    return details;
 }
-
-- (instancetype)initWithWrappedDetails:(CAAPhysicalJupiterDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAAPhysicalJupiterDetails *)detailsByWrapping:(CAAPhysicalJupiterDetails)wrappedDetails
-{
-    return [[KPCAAPhysicalJupiterDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (double)DE
-{
-    return _wrapped.DE;
-}
-
-- (void)setDE:(double)DE
-{
-    _wrapped.DE = DE;
-}
-
-- (double)DS
-{
-    return _wrapped.DS;
-}
-
-- (void)setDS:(double)DS
-{
-    _wrapped.DS = DS;
-}
-
-- (double)Geometricw1
-{
-    return _wrapped.Geometricw1;
-}
-
-- (void)setGeometricw1:(double)Geometricw1
-{
-    _wrapped.Geometricw1 = Geometricw1;
-}
-
-- (double)Geometricw2
-{
-    return _wrapped.Geometricw2;
-}
-
-- (void)setGeometricw2:(double)Geometricw2
-{
-    _wrapped.Geometricw2 = Geometricw2;
-}
-
-- (double)Apparentw1
-{
-    return _wrapped.Apparentw1;
-}
-
-- (void)setApparentw1:(double)Apparentw1
-{
-    _wrapped.Apparentw1 = Apparentw1;
-}
-
-- (double)Apparentw2
-{
-    return _wrapped.Apparentw2;
-}
-
-- (void)setApparentw2:(double)Apparentw2
-{
-    _wrapped.Apparentw2 = Apparentw2;
-}
-
-- (double)P
-{
-    return _wrapped.P;
-}
-
-- (void)setP:(double)P
-{
-    _wrapped.P = P;
-}
-
-@end
-
-@implementation KPCAAPhysicalJupiter
-
-+ (KPCAAPhysicalJupiterDetails *)Calculate:(double)JD
-{
-    return [KPCAAPhysicalJupiterDetails detailsByWrapping:CAAPhysicalJupiter::Calculate(JD)];
-}
-
-@end

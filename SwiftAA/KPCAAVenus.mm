@@ -9,22 +9,17 @@
 #import "KPCAAVenus.h"
 #import "AAVenus.h"
 
-@implementation KPCAAVenus
-
-+ (double)EclipticLongitude:(double)JD
+double KPCAAVenusEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAAVenus::EclipticLongitude(JD);
+    return CAAVenus::EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)EclipticLatitude:(double)JD
+double KPCAAVenusEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAAVenus::EclipticLatitude(JD);
+    return CAAVenus::EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)RadiusVector:(double)JD
+double KPCAAVenusRadiusVector(double JD, BOOL highPrecision)
 {
-    return CAAVenus::RadiusVector(JD);
+    return CAAVenus::RadiusVector(JD, highPrecision);
 }
-
-
-@end

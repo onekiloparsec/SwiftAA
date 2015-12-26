@@ -9,21 +9,17 @@
 #import "KPCAAJupiter.h"
 #import "AAJupiter.h"
 
-@implementation KPCAAJupiter
-
-+ (double)EclipticLongitude:(double)JD
+double KPCAAJupiterEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAAJupiter::EclipticLongitude(JD);
+    return CAAJupiter::EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)EclipticLatitude:(double)JD
+double KPCAAJupiterEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAAJupiter::EclipticLatitude(JD);
+    return CAAJupiter::EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)RadiusVector:(double)JD
+double KPCAAJupiterRadiusVector(double JD, BOOL highPrecision)
 {
-    return CAAJupiter::RadiusVector(JD);
+    return CAAJupiter::RadiusVector(JD, highPrecision);
 }
-
-@end

@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAJupiter : NSObject
+double KPCAAJupiterEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAJupiterEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAJupiterRadiusVector(double JD, BOOL highPrecision);
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-
-@end

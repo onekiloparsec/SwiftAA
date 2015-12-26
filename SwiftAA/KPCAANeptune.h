@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAANeptune : NSObject
+double KPCAANeptuneEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAANeptuneEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAANeptuneRadiusVector(double JD, BOOL highPrecision);
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-
-@end

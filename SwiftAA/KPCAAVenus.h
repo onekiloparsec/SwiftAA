@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAVenus : NSObject
+double KPCAAVenusEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAVenusEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAVenusRadiusVector(double JD, BOOL highPrecision);
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-
-@end

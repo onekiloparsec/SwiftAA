@@ -8,14 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAEarth : NSObject
-
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-+ (double)SunMeanAnomaly:(double)JD;
-+ (double)Eccentricity:(double)JD;
-+ (double)EclipticLongitudeJ2000:(double)JD;
-+ (double)EclipticLatitudeJ2000:(double)JD;
-
-@end
+double KPCAAEarthEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAEarthEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAEarthRadiusVector(double JD, BOOL highPrecision);
+double KPCAAEarthSunMeanAnomaly(double JD;
+double KPCAAEarthEccentricity(double JD);
+double KPCAAEarthEclipticLongitudeJ2000(double JD, BOOL highPrecision);
+double KPCAAEarthEclipticLatitudeJ2000(double JD, BOOL highPrecision);

@@ -9,21 +9,18 @@
 #import "KPCAANeptune.h"
 #import "AANeptune.h"
 
-@implementation KPCAANeptune
-
-+ (double)EclipticLongitude:(double)JD
+double KPCAANeptuneEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAANeptune::EclipticLongitude(JD);
+    return CAANeptune::EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)EclipticLatitude:(double)JD
+double KPCAANeptuneEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAANeptune::EclipticLatitude(JD);
+    return CAANeptune::EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)RadiusVector:(double)JD
+double KPCAANeptuneRadiusVector(double JD, BOOL highPrecision)
 {
-    return CAANeptune::RadiusVector(JD);
+    return CAANeptune::RadiusVector(JD, highPrecision);
 }
 
-@end

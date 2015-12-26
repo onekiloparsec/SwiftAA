@@ -8,20 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPhysicalJupiterDetails : NSObject
+typedef struct KPCAAPhysicalJupiterDetails {
+    double DE;
+    double DS;
+    double Geometricw1;
+    double Geometricw2;
+    double Apparentw1;
+    double Apparentw2;
+    double P;
+} KPCAAPhysicalJupiterDetails;
 
-@property(nonatomic, assign) double DE;
-@property(nonatomic, assign) double DS;
-@property(nonatomic, assign) double Geometricw1;
-@property(nonatomic, assign) double Geometricw2;
-@property(nonatomic, assign) double Apparentw1;
-@property(nonatomic, assign) double Apparentw2;
-@property(nonatomic, assign) double P;
+KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiterCalculateDetails(double JD, BOOL highPrecision);
 
-@end
-
-@interface KPCAAPhysicalJupiter : NSObject
-
-+ (KPCAAPhysicalJupiterDetails *)Calculate:(double)JD;
-
-@end

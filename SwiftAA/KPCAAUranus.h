@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAUranus : NSObject
-
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-
-@end
+double KPCAAUranusEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAUranusEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAUranusRadiusVector(double JD, BOOL highPrecision);

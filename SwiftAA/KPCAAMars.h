@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMars : NSObject
-
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
-
-@end
+double KPCAAMarsEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAMarsEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAMarsRadiusVector(double JD, BOOL highPrecision);
