@@ -14,7 +14,7 @@ double KPCAAParabolicBarkers(double W)
     return CAAParabolic::CalculateBarkers(W);
 }
 
-KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, KPCAAParabolicObjectElements elements, BOOL highPrecision)
+KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision)
 {
     CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElements();
     elementsPlus.q = elements.q;
@@ -26,7 +26,7 @@ KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, KPCAAParab
     
     CAAParabolicObjectDetails detailsPlus = CAAParabolic::Calculate(JD, elementsPlus, highPrecision);
     
-    KPCAAParabolicObjectDetails details;
+    struct KPCAAParabolicObjectDetails details;
     
     details.HeliocentricRectangularEclipticalCoordinateComponents = KPCAA3DCoordinateComponentsMake(detailsPlus.HeliocentricRectangularEcliptical.X,
                                                                                                     detailsPlus.HeliocentricRectangularEcliptical.Y,

@@ -38,5 +38,5 @@ typedef struct KPCAAParabolicObjectDetails {
 
 
 double KPCAAParabolicBarkers(double W);
-KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, KPCAAParabolicObjectElements elements, BOOL highPrecision);
+KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision);
 
