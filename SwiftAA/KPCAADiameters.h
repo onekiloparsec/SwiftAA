@@ -8,33 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAADiameters : NSObject
+double KPCAASunSemidiameterA(double Delta);
+double KPCAAMercurySemidiameterA(double Delta);
+double KPCAAVenusSemidiameterA(double Delta);
+double KPCAAMarsSemidiameterA(double Delta);
+double KPCAAJupiterEquatorialSemidiameterA(double Delta);
+double KPCAAJupiterPolarSemidiameterA(double Delta);
+double KPCAASaturnEquatorialSemidiameterA(double Delta);
+double KPCAASaturnPolarSemidiameterA(double Delta);
+double KPCAAApparentSaturnPolarSemidiameterA(double Delta, double B);
+double KPCAAUranusSemidiameterA(double Delta);
+double KPCAANeptuneSemidiameterA(double Delta);
 
-+ (double)SunSemidiameterA:(double)Delta;
-+ (double)MercurySemidiameterA:(double)Delta;
-+ (double)VenusSemidiameterA:(double)Delta;
-+ (double)MarsSemidiameterA:(double)Delta;
-+ (double)JupiterEquatorialSemidiameterA:(double)Delta;
-+ (double)JupiterPolarSemidiameterA:(double)Delta;
-+ (double)SaturnEquatorialSemidiameterA:(double)Delta;
-+ (double)SaturnPolarSemidiameterA:(double)Delta;
-+ (double)ApparentSaturnPolarSemidiameterA:(double)Delta B:(double)B;
-+ (double)UranusSemidiameterA:(double)Delta;
-+ (double)NeptuneSemidiameterA:(double)Delta;
-+ (double)MercurySemidiameterB:(double)Delta;
-+ (double)VenusSemidiameterB:(double)Delta;
-+ (double)MarsSemidiameterB:(double)Delta;
-+ (double)JupiterEquatorialSemidiameterB:(double)Delta;
-+ (double)JupiterPolarSemidiameterB:(double)Delta;
-+ (double)SaturnEquatorialSemidiameterB:(double)Delta;
-+ (double)SaturnPolarSemidiameterB:(double)Delta;
-+ (double)ApparentSaturnPolarSemidiameterB:(double)Delta B:(double)B;
-+ (double)UranusSemidiameterB:(double)Delta;
-+ (double)NeptuneSemidiameterB:(double)Delta;
-+ (double)PlutoSemidiameterB:(double)Delta;
-+ (double)GeocentricMoonSemidiameter:(double)Delta;
-+ (double)TopocentricMoonSemidiameter:(double)DistanceDelta Delta:(double)Delta H:(double)H latitude:(double)Latitude height:(double)Height;
-+ (double)AsteroidDiameter:(double)H A:(double)A;
-+ (double)ApparentAsteroidDiameter:(double)H A:(double)A;
+double KPCAAMercurySemidiameterB(double Delta);
+double KPCAAVenusSemidiameterB(double Delta);
+double KPCAAMarsSemidiameterB(double Delta);
+double KPCAAJupiterEquatorialSemidiameterB(double Delta);
+double KPCAAJupiterPolarSemidiameterB(double Delta);
+double KPCAASaturnEquatorialSemidiameterB(double Delta);
+double KPCAASaturnPolarSemidiameterB(double Delta);
+double KPCAAApparentSaturnPolarSemidiameterB(double Delta, double B);
+double KPCAAUranusSemidiameterB(double Delta);
+double KPCAANeptuneSemidiameterB(double Delta);
+double KPCAAPlutoSemidiameterB(double Delta);
 
-@end
+double KPCAAGeocentricMoonSemidiameter(double Delta);
+double KPCAATopocentricMoonSemidiameter(double DistanceDelta, double Delta, double H, double Latitude, double Height);
+double KPCAAAsteroidDiameter(double H, double A);
+double KPCAAApparentAsteroidDiameter(double H, double A);
+

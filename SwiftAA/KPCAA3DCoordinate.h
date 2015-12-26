@@ -8,14 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAA3DCoordinate : NSObject
-
-@property(nonatomic, assign) double X;
-@property(nonatomic, assign) double Y;
-@property(nonatomic, assign) double Z;
-
-@end
-
 typedef struct KPCAA3DCoordinateComponents {
     double X;
     double Y;

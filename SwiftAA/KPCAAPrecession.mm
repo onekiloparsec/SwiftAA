@@ -9,41 +9,39 @@
 #import "KPCAAPrecession.h"
 #import "AAPrecession.h"
 
-@interface KPCAA2DCoordinate ()
-+ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
-- (CAA2DCoordinate)wrappedCoord;
-@end
-
-@implementation KPCAAPrecession
-
-+ (KPCAA2DCoordinate *)PrecessEquatorial:(double)Alpha Delta:(double)Delta JD0:(double)JD0 JD:(double)JD
+KPCAA2DCoordinateComponents KPCAAPrecessEquatorial(double Alpha, double Delta, double JD0, double JD)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::PrecessEquatorial(Alpha, Delta, JD0, JD)];
+    CAA2DCoordinate coords = CAAPrecession::PrecessEquatorial(Alpha, Delta, JD0, JD);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)PrecessEquatorialFK4:(double)Alpha Delta:(double)Delta JD0:(double)JD0 JD:(double)JD
+KPCAA2DCoordinateComponents KPCAAPrecessEquatorialFK4(double Alpha, double Delta, double JD0, double JD)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::PrecessEquatorialFK4(Alpha, Delta, JD0, JD)];
+    CAA2DCoordinate coords = CAAPrecession::PrecessEquatorialFK4(Alpha, Delta, JD0, JD);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)PrecessEcliptic:(double)Lambda Beta:(double)Beta JD0:(double)JD0 JD:(double)JD
+KPCAA2DCoordinateComponents KPCAAPrecessEcliptic(double Lambda, double Beta, double JD0, double JD)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::PrecessEcliptic(Lambda, Beta, JD0, JD)];
+    CAA2DCoordinate coords = CAAPrecession::PrecessEcliptic(Lambda, Beta, JD0, JD);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)EquatorialPMToEcliptic:(double)Alpha Delta:(double)Delta Beta:(double)Beta  PMAlpha:(double)PMAlpha PMDelta:(double)PMDelta Epsilon:(double)Epsilon
+KPCAA2DCoordinateComponents KPCAAEquatorialPMToEcliptic(double Alpha, double Delta, double Beta, double PMAlpha, double PMDelta, double Epsilon)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::EquatorialPMToEcliptic(Alpha, Delta, Beta, PMAlpha, PMDelta, Epsilon)];
+    CAA2DCoordinate coords = CAAPrecession::EquatorialPMToEcliptic(Alpha, Delta, Beta, PMAlpha, PMDelta, Epsilon);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)AdjustPositionUsingUniformProperMotion:(double)t Alpha:(double)Alpha Delta:(double)Delta PMAlpha:(double)PMAlpha PMDelta:(double)PMDelta
+KPCAA2DCoordinateComponents KPCAAAdjustPositionUsingUniformProperMotion(double t, double Alpha, double Delta, double PMAlpha, double PMDelta)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::AdjustPositionUsingUniformProperMotion(t, Alpha, Delta, PMAlpha, PMDelta)];
+    CAA2DCoordinate coords = CAAPrecession::AdjustPositionUsingUniformProperMotion(t, Alpha, Delta, PMAlpha, PMDelta);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)AdjustPositionUsingMotionInSpace:(double)r deltar:(double)deltar t:(double)t  Alpha:(double)Alpha Delta:(double)Delta PMAlpha:(double)PMAlpha PMDelta:(double)PMDelta
+KPCAA2DCoordinateComponents KPCAAAdjustPositionUsingMotionInSpace(double r, double deltar, double t, double Alpha, double Delta, double PMAlpha, double PMDelta)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAAPrecession::AdjustPositionUsingMotionInSpace(r, deltar, t, Alpha, Delta, PMAlpha, PMDelta)];
+    CAA2DCoordinate coords = CAAPrecession::AdjustPositionUsingMotionInSpace(r, deltar, t, Alpha, Delta, PMAlpha, PMDelta);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
     
-@end

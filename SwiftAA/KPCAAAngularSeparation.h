@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
-double KPCSeparation(double Alpha1, double Delta1, double Alpha2, double Delta2);
+double KPCAngularSeparation(double Alpha1, double Delta1, double Alpha2, double Delta2);
 
 double KPCPositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2);
 

@@ -9,76 +9,74 @@
 #import "KPCAASun.h"
 #import "AASun.h"
 
-@interface KPCAA3DCoordinate ()
-+ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
-- (CAA3DCoordinate)wrappedCoord;
-@end
-
-@implementation KPCAASun
-
-+ (double)GeometricEclipticLongitude:(double)JD
+double KPCAASunGeometricEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricEclipticLongitude(JD);
+    return CAASun::GeometricEclipticLongitude(JD, highPrecision);
 }
 
-+ (double)GeometricEclipticLatitude:(double)JD
+double KPCAASunGeometricEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricEclipticLatitude(JD);
+    return CAASun::GeometricEclipticLatitude(JD, highPrecision);
 }
 
-+ (double)GeometricEclipticLongitudeJ2000:(double)JD
+double KPCAASunGeometricEclipticLongitudeJ2000(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricEclipticLongitudeJ2000(JD);
+    return CAASun::GeometricEclipticLongitudeJ2000(JD, highPrecision);
 }
 
-+ (double)GeometricEclipticLatitudeJ2000:(double)JD
+double KPCAASunGeometricEclipticLatitudeJ2000(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricEclipticLatitudeJ2000(JD);
+    return CAASun::GeometricEclipticLatitudeJ2000(JD, highPrecision);
 }
 
-+ (double)GeometricFK5EclipticLongitude:(double)JD
+double KPCAASunGeometricFK5EclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricFK5EclipticLongitude(JD);
+    return CAASun::GeometricFK5EclipticLongitude(JD, highPrecision);
 }
 
-+ (double)GeometricFK5EclipticLatitude:(double)JD
+double KPCAASunGeometricFK5EclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAASun::GeometricFK5EclipticLatitude(JD);
+    return CAASun::GeometricFK5EclipticLatitude(JD, highPrecision);
 }
 
-+ (double)ApparentEclipticLongitude:(double)JD
+double KPCAASunApparentEclipticLongitude(double JD, BOOL highPrecision)
 {
-    return CAASun::ApparentEclipticLongitude(JD);
+    return CAASun::ApparentEclipticLongitude(JD, highPrecision);
 }
 
-+ (double)ApparentEclipticLatitude:(double)JD
+double KPCAASunApparentEclipticLatitude(double JD, BOOL highPrecision)
 {
-    return CAASun::ApparentEclipticLatitude(JD);
+    return CAASun::ApparentEclipticLatitude(JD, highPrecision);
 }
 
-+ (KPCAA3DCoordinate *)EquatorialRectangularCoordinatesMeanEquinox:(double)JD
+
+KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesMeanEquinox(double JD, BOOL highPrecision)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAASun::EquatorialRectangularCoordinatesMeanEquinox(JD)];
+    CAA3DCoordinate coords = CAASun::EquatorialRectangularCoordinatesMeanEquinox(JD, highPrecision);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-+ (KPCAA3DCoordinate *)EclipticRectangularCoordinatesJ2000:(double)JD
+KPCAA3DCoordinateComponents KPCAASunEclipticRectangularCoordinatesJ2000(double JD, BOOL highPrecision)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAASun::EclipticRectangularCoordinatesJ2000(JD)];
+    CAA3DCoordinate coords = CAASun::EclipticRectangularCoordinatesJ2000(JD, highPrecision);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-+ (KPCAA3DCoordinate *)EquatorialRectangularCoordinatesJ2000:(double)JD
+KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesJ2000(double JD, BOOL highPrecision)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAASun::EquatorialRectangularCoordinatesJ2000(JD)];
+    CAA3DCoordinate coords = CAASun::EquatorialRectangularCoordinatesJ2000(JD, highPrecision);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-+ (KPCAA3DCoordinate *)EquatorialRectangularCoordinatesB1950:(double)JD
+KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesB1950(double JD, BOOL highPrecision)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAASun::EquatorialRectangularCoordinatesB1950(JD)];
+    CAA3DCoordinate coords = CAASun::EquatorialRectangularCoordinatesB1950(JD, highPrecision);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-+ (KPCAA3DCoordinate *)EquatorialRectangularCoordinatesAnyEquinox:(double)JD JDEquinox:(double)JDEquinox
+KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesAnyEquinox(double JD, double JDEquinox, BOOL highPrecision)
 {
-    return [KPCAA3DCoordinate coordinateByWrapping:CAASun::EquatorialRectangularCoordinatesAnyEquinox(JD, JDEquinox)];
+    CAA3DCoordinate coords = CAASun::EquatorialRectangularCoordinatesAnyEquinox(JD, JDEquinox, highPrecision);
+    return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-@end

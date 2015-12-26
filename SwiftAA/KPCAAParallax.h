@@ -9,23 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA2DCoordinate.h"
 
-@interface KPCAATopocentricEclipticDetails : NSObject
+typedef struct KPCAATopocentricEclipticDetails {
+    double Lambda;
+    double Beta;
+    double Semidiameter;
+} KPCAATopocentricEclipticDetails;
 
-@property(nonatomic, assign) double Lambda;
-@property(nonatomic, assign) double Beta;
-@property(nonatomic, assign) double Semidiameter;
+KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2TopocentricDelta(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
 
-@end
+KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2Topocentric(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
 
-@interface KPCAAParallax : NSObject
+KPCAATopocentricEclipticDetails KPCAAParallaxEcliptic2Topocentric(double Lambda, double Beta, double Semidiameter, double Distance, double Epsilon, double Latitude, double Height, double JD);
 
-+ (KPCAA2DCoordinate *)Equatorial2TopocentricDelta:(double)Alpha Delta:(double)Delta Distance:(double)Distance Longitude:(double)Longitude Latitude:(double)Latitude Height:(double)Height JD:(double)JD;
+double KPCAAParallaxParallaxToDistance(double Parallax);
+double KPCAAParallaxDistanceToParallax(double Distance);
 
-+ (KPCAA2DCoordinate *)Equatorial2Topocentric:(double)Alpha Delta:(double)Delta Distance:(double)Distance Longitude:(double)Longitude Latitude:(double)Latitude Height:(double)Height JD:(double)JD;
-
-+ (KPCAATopocentricEclipticDetails *)Ecliptic2Topocentric:(double)Lambda Beta:(double)Beta  Semidiameter:(double)Semidiameter Distance:(double)Distance Epsilon:(double)Epsilon Latitude:(double)Latitude Height:(double)Height JD:(double)JD;
-
-+ (double)ParallaxToDistance:(double)Parallax;
-+ (double)DistanceToParallax:(double)Distance;
-
-@end

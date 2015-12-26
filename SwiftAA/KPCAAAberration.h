@@ -16,4 +16,3 @@ KPCAA3DCoordinateComponents KPCEarthVelocityForJulianDay(double JD, BOOL highPre
 // 2D
 KPCAA2DCoordinateComponents KPCEclipticAberrationForAlphaDeltaJulianDay(double Alpha, double Delta, double JD, BOOL highPrecision);
 KPCAA2DCoordinateComponents KPCEquatorialAberrationForLambdaBetaJulianDay(double Lambda, double Beta, double JD, BOOL highPrecision);
-

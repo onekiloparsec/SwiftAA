@@ -9,139 +9,137 @@
 #import "KPCAADiameters.h"
 #import "AADiameters.h"
 
-@implementation KPCAADiameters
-
-+ (double)SunSemidiameterA:(double)Delta
+double KPCAASunSemidiameterA(double Delta)
 {
     return CAADiameters::SunSemidiameterA(Delta);
 }
 
-+ (double)MercurySemidiameterA:(double)Delta
+double KPCAAMercurySemidiameterA(double Delta)
 {
     return CAADiameters::MercurySemidiameterA(Delta);
 }
 
-+ (double)VenusSemidiameterA:(double)Delta
+double KPCAAVenusSemidiameterA(double Delta)
 {
     return CAADiameters::VenusSemidiameterA(Delta);
 }
 
-+ (double)MarsSemidiameterA:(double)Delta
+double KPCAAMarsSemidiameterA(double Delta)
 {
     return CAADiameters::MarsSemidiameterA(Delta);
 }
 
-+ (double)JupiterEquatorialSemidiameterA:(double)Delta
+double KPCAAJupiterEquatorialSemidiameterA(double Delta)
 {
     return CAADiameters::JupiterEquatorialSemidiameterA(Delta);
 }
-+ (double)JupiterPolarSemidiameterA:(double)Delta
+
+double KPCAAJupiterPolarSemidiameterA(double Delta)
 {
     return CAADiameters::JupiterPolarSemidiameterA(Delta);
 }
 
-+ (double)SaturnEquatorialSemidiameterA:(double)Delta
+double KPCAASaturnEquatorialSemidiameterA(double Delta)
 {
     return CAADiameters::SaturnEquatorialSemidiameterA(Delta);
 }
 
-+ (double)SaturnPolarSemidiameterA:(double)Delta
+double KPCAASaturnPolarSemidiameterA(double Delta)
 {
     return CAADiameters::SaturnPolarSemidiameterA(Delta);
 }
 
-+ (double)ApparentSaturnPolarSemidiameterA:(double)Delta B:(double)B
+double KPCAAApparentSaturnPolarSemidiameterA(double Delta, double B)
 {
     return CAADiameters::ApparentSaturnPolarSemidiameterA(Delta, B);
 }
 
-+ (double)UranusSemidiameterA:(double)Delta
+double KPCAAUranusSemidiameterA(double Delta)
 {
     return CAADiameters::UranusSemidiameterA(Delta);
 }
 
-+ (double)NeptuneSemidiameterA:(double)Delta
+double KPCAANeptuneSemidiameterA(double Delta)
 {
     return CAADiameters::NeptuneSemidiameterA(Delta);
 }
 
 // Bs
 
-+ (double)MercurySemidiameterB:(double)Delta
+double KPCAAMercurySemidiameterB(double Delta)
 {
     return CAADiameters::MercurySemidiameterB(Delta);
 }
 
-+ (double)VenusSemidiameterB:(double)Delta
+double KPCAAVenusSemidiameterB(double Delta)
 {
     return CAADiameters::VenusSemidiameterB(Delta);
 }
 
-+ (double)MarsSemidiameterB:(double)Delta
+double KPCAAMarsSemidiameterB(double Delta)
 {
     return CAADiameters::MarsSemidiameterB(Delta);
 }
 
-+ (double)JupiterEquatorialSemidiameterB:(double)Delta
+double KPCAAJupiterEquatorialSemidiameterB(double Delta)
 {
     return CAADiameters::JupiterEquatorialSemidiameterB(Delta);
 }
 
-+ (double)JupiterPolarSemidiameterB:(double)Delta
+double KPCAAJupiterPolarSemidiameterB(double Delta)
 {
     return CAADiameters::JupiterPolarSemidiameterB(Delta);
 }
 
-+ (double)SaturnEquatorialSemidiameterB:(double)Delta
+double KPCAASaturnEquatorialSemidiameterB(double Delta)
 {
     return CAADiameters::SaturnEquatorialSemidiameterB(Delta);
 }
 
-+ (double)SaturnPolarSemidiameterB:(double)Delta
+double KPCAASaturnPolarSemidiameterB(double Delta)
 {
     return CAADiameters::SaturnPolarSemidiameterB(Delta);
 }
 
-+ (double)ApparentSaturnPolarSemidiameterB:(double)Delta B:(double)B
+double KPCAAApparentSaturnPolarSemidiameterB(double Delta, double B)
 {
     return CAADiameters::ApparentSaturnPolarSemidiameterB(Delta, B);
 }
 
-+ (double)UranusSemidiameterB:(double)Delta
+double KPCAAUranusSemidiameterB(double Delta)
 {
     return CAADiameters::UranusSemidiameterB(Delta);
 }
 
-+ (double)NeptuneSemidiameterB:(double)Delta
+double KPCAANeptuneSemidiameterB(double Delta)
 {
     return CAADiameters::NeptuneSemidiameterB(Delta);
 }
 
-+ (double)PlutoSemidiameterB:(double)Delta
+double KPCAAPlutoSemidiameterB(double Delta)
 {
     return CAADiameters::PlutoSemidiameterB(Delta);
 }
 
 // Others
 
-+ (double)GeocentricMoonSemidiameter:(double)Delta
+double KPCAAGeocentricMoonSemidiameter(double Delta)
 {
     return CAADiameters::GeocentricMoonSemidiameter(Delta);
 }
 
-+ (double)TopocentricMoonSemidiameter:(double)DistanceDelta Delta:(double)Delta H:(double)H latitude:(double)Latitude height:(double)Height
+double KPCAATopocentricMoonSemidiameter(double DistanceDelta, double Delta, double H, double Latitude, double Height)
 {
     return CAADiameters::TopocentricMoonSemidiameter(DistanceDelta, Delta, H, Latitude, Height);
 }
 
-+ (double)AsteroidDiameter:(double)H A:(double)A
+double KPCAAAsteroidDiameter(double H, double A)
 {
     return CAADiameters::AsteroidDiameter(H, A);
 }
 
-+ (double)ApparentAsteroidDiameter:(double)H A:(double)A
+double KPCAAApparentAsteroidDiameter(double H, double A)
 {
     return CAADiameters::ApparentAsteroidDiameter(H, A);
 }
 
-@end
