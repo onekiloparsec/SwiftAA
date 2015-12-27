@@ -52,7 +52,7 @@ around it, with name prefixes.
 
 One could argue in favor of another pure-Swift layer, to hide these naming constraints, and use more of the Swift power and
 type safety. However, it would imply to maintain 2 layers instead of 1. Given the size of the concerned public... I would
-prefer to concentrate efforts on the aformentionned Swift library built atop SwiftAA rather than this extra layer.
+prefer to concentrate efforts on the aforementioned Swift library built atop SwiftAA rather than this extra layer.
 
 The first version of SwiftAA (tags 1.0+) was written with NSObject class methods, which is probably no more efficient that pure C-functions. 
 It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate thousands of coordinates instances one might need
