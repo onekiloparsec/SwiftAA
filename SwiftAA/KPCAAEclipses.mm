@@ -9,264 +9,39 @@
 #import "KPCAAEclipses.h"
 #import "AAEclipses.h"
 
-@interface KPCAASolarEclipseDetails () {
-    CAASolarEclipseDetails _wrapped;
-}
-@end
-
-@implementation KPCAASolarEclipseDetails
-
-- (instancetype)init
+KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAASolarEclipseDetails();
-    }
-    return self;
+    CAASolarEclipseDetails detailsPlus = CAAEclipses::CalculateSolar(k);
+
+    struct KPCAASolarEclipseDetails details;
+    details.eclipse = detailsPlus.bEclipse;
+    details.TimeOfMaximumEclipse = detailsPlus.TimeOfMaximumEclipse;
+    details.F = detailsPlus.F;
+    details.u = detailsPlus.u;
+    details.gamma = detailsPlus.gamma;
+    details.GreatestMagnitude = detailsPlus.GreatestMagnitude;
+    
+    return details;
 }
 
-- (instancetype)initWithWrappedDetails:(CAASolarEclipseDetails)wrappedDetails
+KPCAALunarEclipseDetails KPCAAEclipsesCalculateLunar(double k)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
+    CAALunarEclipseDetails detailsPlus = CAAEclipses::CalculateLunar(k);
+    
+    struct KPCAALunarEclipseDetails details;
+    details.eclipse = detailsPlus.bEclipse;
+    details.TimeOfMaximumEclipse = detailsPlus.TimeOfMaximumEclipse;
+    details.F = detailsPlus.F;
+    details.u = detailsPlus.u;
+    details.gamma = detailsPlus.gamma;
+    details.PenumbralRadii = detailsPlus.PenumbralRadii;
+    details.UmbralRadii = detailsPlus.UmbralRadii;
+    details.PenumbralMagnitude = detailsPlus.PenumbralMagnitude;
+    details.UmbralMagnitude = detailsPlus.UmbralMagnitude;
+    details.PartialPhaseSemiDuration = detailsPlus.PartialPhaseSemiDuration;
+    details.TotalPhaseSemiDuration = detailsPlus.TotalPhaseSemiDuration;
+    details.PartialPhasePenumbraSemiDuration = detailsPlus.PartialPhasePenumbraSemiDuration;
+    
+    return details;
 }
 
-+ (KPCAASolarEclipseDetails *)detailsByWrapping:(CAASolarEclipseDetails)wrappedDetails
-{
-    return [[KPCAASolarEclipseDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (BOOL)eclipse
-{
-    return _wrapped.bEclipse;
-}
-
-- (void)setEclipse:(BOOL)eclipse
-{
-    _wrapped.bEclipse = eclipse;
-}
-
-- (double)TimeOfMaximumEclipse
-{
-    return _wrapped.TimeOfMaximumEclipse;
-}
-
-- (void)setTimeOfMaximumEclipse:(double)TimeOfMaximumEclipse
-{
-    _wrapped.TimeOfMaximumEclipse = TimeOfMaximumEclipse;
-}
-
-- (double)F
-{
-    return _wrapped.F;
-}
-
-- (void)setF:(double)F
-{
-    _wrapped.F = F;
-}
-
-- (double)u
-{
-    return _wrapped.u;
-}
-
-- (void)setU:(double)u
-{
-    _wrapped.u = u;
-}
-
-- (double)gamma
-{
-    return _wrapped.gamma;
-}
-
-- (void)setGamma:(double)gamma
-{
-    _wrapped.gamma = gamma;
-}
-
-- (double)GreatestMagnitude
-{
-    return _wrapped.GreatestMagnitude;
-}
-
-- (void)setGreatestMagnitude:(double)GreatestMagnitude
-{
-    _wrapped.GreatestMagnitude = GreatestMagnitude;
-}
-
-@end
-
-
-// Lunar
-
-@interface KPCAALunarEclipseDetails () {
-    CAALunarEclipseDetails _wrapped;
-}
-@end
-
-@implementation KPCAALunarEclipseDetails
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAALunarEclipseDetails();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedDetails:(CAALunarEclipseDetails)wrappedDetails
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
-}
-
-+ (KPCAALunarEclipseDetails *)detailsByWrapping:(CAALunarEclipseDetails)wrappedDetails;
-{
-    return [[KPCAALunarEclipseDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (BOOL)eclipse
-{
-    return _wrapped.bEclipse;
-}
-
-- (void)setEclipse:(BOOL)eclipse
-{
-    _wrapped.bEclipse = eclipse;
-}
-
-- (double)TimeOfMaximumEclipse
-{
-    return _wrapped.TimeOfMaximumEclipse;
-}
-
-- (void)setTimeOfMaximumEclipse:(double)TimeOfMaximumEclipse
-{
-    _wrapped.TimeOfMaximumEclipse = TimeOfMaximumEclipse;
-}
-
-- (double)F
-{
-    return _wrapped.F;
-}
-
-- (void)setF:(double)F
-{
-    _wrapped.F = F;
-}
-
-- (double)u
-{
-    return _wrapped.u;
-}
-
-- (void)setU:(double)u
-{
-    _wrapped.u = u;
-}
-
-- (double)gamma
-{
-    return _wrapped.gamma;
-}
-
-- (void)setGamma:(double)gamma
-{
-    _wrapped.gamma = gamma;
-}
-
-- (double)PenumbralRadii
-{
-    return _wrapped.PenumbralRadii;
-}
-
-- (void)setPenumbralRadii:(double)PenumbralRadii
-{
-    _wrapped.PenumbralRadii = PenumbralRadii;
-}
-
-- (double)UmbralRadii
-{
-    return _wrapped.UmbralRadii;
-}
-
-- (void)setUmbralRadii:(double)UmbralRadii
-{
-    _wrapped.UmbralRadii = UmbralRadii;
-}
-
-- (double)PenumbralMagnitude
-{
-    return _wrapped.PenumbralMagnitude;
-}
-
-- (void)setPenumbralMagnitude:(double)PenumbralMagnitude
-{
-    _wrapped.PenumbralMagnitude = PenumbralMagnitude;
-}
-
-- (double)UmbralMagnitude
-{
-    return _wrapped.UmbralMagnitude;
-}
-
-- (void)setUmbralMagnitude:(double)UmbralMagnitude
-{
-    _wrapped.UmbralMagnitude = UmbralMagnitude;
-}
-
-- (double)PartialPhaseSemiDuration
-{
-    return _wrapped.PartialPhaseSemiDuration;
-}
-
-- (void)setPartialPhaseSemiDuration:(double)PartialPhaseSemiDuration
-{
-    _wrapped.PartialPhasePenumbraSemiDuration = PartialPhaseSemiDuration;
-}
-
-- (double)TotalPhaseSemiDuration
-{
-    return _wrapped.TotalPhaseSemiDuration;
-}
-
-- (void)setTotalPhaseSemiDuration:(double)TotalPhaseSemiDuration
-{
-    _wrapped.TotalPhaseSemiDuration = TotalPhaseSemiDuration;
-}
-
-- (double)PartialPhasePenumbraSemiDuration
-{
-    return _wrapped.PartialPhasePenumbraSemiDuration;
-}
-
-- (void)setPartialPhasePenumbraSemiDuration:(double)PartialPhasePenumbraSemiDuration
-{
-    _wrapped.PartialPhasePenumbraSemiDuration = PartialPhasePenumbraSemiDuration;
-}
-
-@end
-
-@implementation KPCAAEclipses
-
-+ (KPCAASolarEclipseDetails *)CalculateSolar:(double)k
-{
-    return [KPCAASolarEclipseDetails detailsByWrapping:CAAEclipses::CalculateSolar(k)];
-}
-
-+ (KPCAALunarEclipseDetails *)CalculateLunar:(double)k
-{
-    return [KPCAALunarEclipseDetails detailsByWrapping:CAAEclipses::CalculateLunar(k)];
-}
-
-
-@end

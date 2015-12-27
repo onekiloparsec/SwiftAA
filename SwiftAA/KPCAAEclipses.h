@@ -8,37 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAASolarEclipseDetails : NSObject
+typedef struct KPCAASolarEclipseDetails {
+    BOOL eclipse;
+    double TimeOfMaximumEclipse;
+    double F;
+    double u;
+    double gamma;
+    double GreatestMagnitude;
+} KPCAASolarEclipseDetails;
 
-@property(nonatomic, assign) BOOL eclipse;
-@property(nonatomic, assign) double TimeOfMaximumEclipse;
-@property(nonatomic, assign) double F;
-@property(nonatomic, assign) double u;
-@property(nonatomic, assign) double gamma;
-@property(nonatomic, assign) double GreatestMagnitude;
+typedef struct KPCAALunarEclipseDetails {
+    BOOL eclipse;
+    double TimeOfMaximumEclipse;
+    double F;
+    double u;
+    double gamma;
+    double PenumbralRadii;
+    double UmbralRadii;
+    double PenumbralMagnitude;
+    double UmbralMagnitude;
+    double PartialPhaseSemiDuration;
+    double TotalPhaseSemiDuration;
+    double PartialPhasePenumbraSemiDuration;
+} KPCAALunarEclipseDetails;
 
-@end
+KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k);
+KPCAALunarEclipseDetails KPCAAEclipsesCalculateLunar(double k);
 
-@interface KPCAALunarEclipseDetails : NSObject
-
-@property(nonatomic, assign) BOOL eclipse;
-@property(nonatomic, assign) double TimeOfMaximumEclipse;
-@property(nonatomic, assign) double F;
-@property(nonatomic, assign) double u;
-@property(nonatomic, assign) double gamma;
-@property(nonatomic, assign) double PenumbralRadii;
-@property(nonatomic, assign) double UmbralRadii;
-@property(nonatomic, assign) double PenumbralMagnitude;
-@property(nonatomic, assign) double UmbralMagnitude;
-@property(nonatomic, assign) double PartialPhaseSemiDuration;
-@property(nonatomic, assign) double TotalPhaseSemiDuration;
-@property(nonatomic, assign) double PartialPhasePenumbraSemiDuration;
-
-@end
-
-@interface KPCAAEclipses : NSObject
-
-+ (KPCAASolarEclipseDetails *)CalculateSolar:(double)k;
-+ (KPCAALunarEclipseDetails *)CalculateLunar:(double)k;
-
-@end
