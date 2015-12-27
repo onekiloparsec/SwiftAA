@@ -9,78 +9,26 @@
 #import "KPCAAEclipticalElements.h"
 #import "AAEclipticalElements.h"
 
-@interface KPCAAEclipticalElementDetails () {
-    CAAEclipticalElementDetails _wrapped;
-}
-@end
-
-@implementation KPCAAEclipticalElementDetails
-
-- (instancetype)init
+KPCAAEclipticalElementDetails KPCAAEclipticalElementCalculateDetails(double i0, double w0, double omega0, double JD0, double JD)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = CAAEclipticalElementDetails();
-    }
-    return self;
+    CAAEclipticalElementDetails detailsPlus = CAAEclipticalElements::Calculate(i0, w0, omega0, JD0, JD);
+    
+    struct KPCAAEclipticalElementDetails details;
+    details.i = detailsPlus.i;
+    details.w = detailsPlus.w;
+    details.omega = detailsPlus.omega;
+    
+    return details;
 }
 
-- (instancetype)initWithWrappedDetails:(CAAEclipticalElementDetails)wrappedDetails
+KPCAAEclipticalElementDetails KPCAAEclipticalElementFK4B1950ToFK5J2000(double i0, double w0, double omega0)
 {
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDetails;
-    }
-    return self;
+    CAAEclipticalElementDetails detailsPlus = CAAEclipticalElements::FK4B1950ToFK5J2000(i0, w0, omega0);
+
+    struct KPCAAEclipticalElementDetails details;
+    details.i = detailsPlus.i;
+    details.w = detailsPlus.w;
+    details.omega = detailsPlus.omega;
+    
+    return details;
 }
-
-+ (KPCAAEclipticalElementDetails *)detailsByWrapping:(CAAEclipticalElementDetails)wrappedDetails
-{
-    return [[KPCAAEclipticalElementDetails alloc] initWithWrappedDetails:wrappedDetails];
-}
-
-- (double)i
-{
-    return _wrapped.i;
-}
-
-- (void)setI:(double)i
-{
-    _wrapped.i = i;
-}
-
-- (double)w
-{
-    return _wrapped.w;
-}
-
-- (void)setW:(double)w
-{
-    _wrapped.w = w;
-}
-
-- (double)omega
-{
-    return _wrapped.omega;
-}
-
-- (void)setOmega:(double)omega
-{
-    _wrapped.omega = omega;
-}
-
-@end
-
-@implementation KPCAAEclipticalElements
-
-+ (KPCAAEclipticalElementDetails *)CalculateForI0:(double)i0 w0:(double)w0 omega0:(double)omega0 JD0:(double)JD0 JD:(double)JD
-{
-    return [KPCAAEclipticalElementDetails detailsByWrapping:CAAEclipticalElements::Calculate(i0, w0, omega0, JD0, JD)];
-}
-
-+ (KPCAAEclipticalElementDetails *)FK4B1950ToFK5J2000ForI0:(double)i0 w0:(double)w0 omega0:(double)omega0
-{
-    return [KPCAAEclipticalElementDetails detailsByWrapping:CAAEclipticalElements::FK4B1950ToFK5J2000(i0, w0, omega0)];
-}
-
-@end

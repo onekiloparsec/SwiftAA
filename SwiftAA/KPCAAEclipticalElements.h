@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAEclipticalElementDetails : NSObject
+typedef struct KPCAAEclipticalElementDetails {
+    double i;
+    double w;
+    double omega;
+} KPCAAEclipticalElementDetails;
 
-@property(nonatomic, assign) double i;
-@property(nonatomic, assign) double w;
-@property(nonatomic, assign) double omega;
-
-@end
-
-@interface KPCAAEclipticalElements : NSObject
-
-+ (KPCAAEclipticalElementDetails *)CalculateForI0:(double)i0 w0:(double)w0 omega0:(double)omega0 JD0:(double)JD0 JD:(double)JD;
-+ (KPCAAEclipticalElementDetails *)FK4B1950ToFK5J2000ForI0:(double)i0 w0:(double)w0 omega0:(double)omega0;
-
-@end
+KPCAAEclipticalElementDetails KPCAAEclipticalElementCalculateDetails(double i0, double w0, double omega0, double JD0, double JD);
+KPCAAEclipticalElementDetails KPCAAEclipticalElementFK4B1950ToFK5J2000(double i0, double w0, double omega0);
