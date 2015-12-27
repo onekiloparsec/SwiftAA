@@ -57,7 +57,7 @@ prefer to concentrate efforts on the aforementioned Swift library built atop Swi
 The first version of SwiftAA (tags 1.0+) was written with NSObject class methods, which is probably no more efficient that pure C-functions. 
 It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate thousands of coordinates instances one might need
 for plotting/storing some curves. Hence, I decided to remove KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C
-class methods to pure C-functions wrappers, in most cases. The most notable exception is KPCAADate which remains an NSObject subclass.
+class methods to pure C-functions wrappers and structs, in most cases. The most notable exception is KPCAADate which remains an NSObject subclass.
 
 Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.63 (with the new 
 [VSOP](https://en.wikipedia.org/wiki/VSOP_(planets)) implementation!). The tagged versions 1.0+ will remain as such, 
