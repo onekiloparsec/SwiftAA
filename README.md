@@ -39,8 +39,8 @@ Notes and Conventions
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
 is to build a Swift-compatible C/Objective-C layer that follow *strictly* the methods and interfaces of the underlying
-C++ library. A more object-oriented library, built around SwiftAA and containing some additional utilities, 
-is being written [elsewhere](https://github.com/onekiloparsec/AstroCocoaKit).
+C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
+A more object-oriented library, built around SwiftAA and containing some additional utilities, is being written [elsewhere](https://github.com/onekiloparsec/AstroCocoaKit).
 
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
 Objective-C. KPC stands for "kiloparsec"... and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
