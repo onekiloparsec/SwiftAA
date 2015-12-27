@@ -9,18 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA2DCoordinate.h"
 
-@interface KPCAACoordinateTransformation : NSObject
+// Alpha=R.A., Delta=Declination, Epsilon=Epoch
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Ecliptic(double Alpha, double Delta, double Epsilon);
 
-+ (KPCAA2DCoordinate *)Equatorial2EclipticForRightAscension:(double)Alpha declination:(double)Delta epoch:(double)Epsilon;
+// Lambda=Celestial Longitude, Beta=Celestial Latitude, Epsilon=Epoch
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEcliptic2Equatorial(double Lambda, double Beta, double Epsilon);
 
-+ (KPCAA2DCoordinate *)Ecliptic2EquatorialForCelestialLongitude:(double)Lambda celestialLatitude:(double)Beta epoch:(double)Epsilon;
+// lha=Local Hour Angle, Delta=Declination, latitude=Latitude
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Horizontal(double lha, double Delta, double latitude);
 
-+ (KPCAA2DCoordinate *)Equatorial2HorizontalForLocalHourAngle:(double)lha declination:(double)Delta latitude:(double)latitude;
+// A=Azimuth, h=Altitude, latitude=latitude
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationHorizontal2Equatorial(double A, double h, double latitude);
 
-+ (KPCAA2DCoordinate *)Horizontal2EquatorialForAzimuth:(double)A altitude:(double)h latitude:(double)latitude;
+// Alpha=R.A., Delta=Declination
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Galactic(double Alpha, double Delta);
 
-+ (KPCAA2DCoordinate *)Equatorial2GalacticForRightAscension:(double)Alpha declination:(double)Delta;
+// l=Galactic Longitude, b=Galactic Latitude;
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationGalactic2Equatorial(double l, double b);
 
-+ (KPCAA2DCoordinate *)Galactic2EquatorialForGalacticLongitude:(double)l galacticLatitude:(double)b;
-
-@end

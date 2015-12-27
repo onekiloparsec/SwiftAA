@@ -9,41 +9,39 @@
 #import "KPCAACoordinateTransformation.h"
 #import "AACoordinateTransformation.h"
 
-@interface KPCAA2DCoordinate ()
-+ (KPCAA2DCoordinate *)coordinateByWrapping:(CAA2DCoordinate)wrappedCoord;
-- (CAA2DCoordinate)wrappedCoord;
-@end
-
-@implementation KPCAACoordinateTransformation
-
-+ (KPCAA2DCoordinate *)Equatorial2EclipticForRightAscension:(double)Alpha declination:(double)Delta epoch:(double)Epsilon
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Ecliptic(double Alpha, double Delta, double Epsilon)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Equatorial2Ecliptic(Alpha, Delta, Epsilon)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Equatorial2Ecliptic(Alpha, Delta, Epsilon);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)Ecliptic2EquatorialForCelestialLongitude:(double)Lambda celestialLatitude:(double)Beta epoch:(double)Epsilon
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEcliptic2Equatorial(double Lambda, double Beta, double Epsilon)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Ecliptic2Equatorial(Lambda, Beta, Epsilon)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Ecliptic2Equatorial(Lambda, Beta, Epsilon);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)Equatorial2HorizontalForLocalHourAngle:(double)lha declination:(double)Delta latitude:(double)latitude
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Horizontal(double lha, double Delta, double latitude)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Equatorial2Horizontal(lha, Delta, latitude)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Equatorial2Horizontal(lha, Delta, latitude);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)Horizontal2EquatorialForAzimuth:(double)A altitude:(double)h latitude:(double)latitude
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationHorizontal2Equatorial(double A, double h, double latitude)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Horizontal2Equatorial(A, h, latitude)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Horizontal2Equatorial(A, h, latitude);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)Equatorial2GalacticForRightAscension:(double)Alpha declination:(double)Delta
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Galactic(double Alpha, double Delta)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Equatorial2Galactic(Alpha, Delta)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Equatorial2Galactic(Alpha, Delta);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-+ (KPCAA2DCoordinate *)Galactic2EquatorialForGalacticLongitude:(double)l galacticLatitude:(double)b
+KPCAA2DCoordinateComponents KPCAACoordinateTransformationGalactic2Equatorial(double l, double b)
 {
-    return [KPCAA2DCoordinate coordinateByWrapping:CAACoordinateTransformation::Galactic2Equatorial(l, b)];
+    CAA2DCoordinate coords = CAACoordinateTransformation::Galactic2Equatorial(l, b);
+    return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-@end
