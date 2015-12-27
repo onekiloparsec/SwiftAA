@@ -9,39 +9,47 @@
 #import "KPCAAFK5.h"
 #import "AAFK5.h"
 
-@interface KPCAA3DCoordinate ()
-+ (KPCAA3DCoordinate *)coordinateByWrapping:(CAA3DCoordinate)wrappedCoord;
-- (CAA3DCoordinate)wrappedCoord;
-@end
 
-@implementation KPCAAFK5
-
-+ (double)CorrectionInLongitude:(double)Longitude latitude:(double)Latitude JD:(double)JD
+double KPCAAFK5CorrectionInLongitude(double Longitude, double Latitude, double JD)
 {
     return CAAFK5::CorrectionInLongitude(Longitude, Latitude, JD);
 }
 
-+ (double)CorrectionInLatitude:(double)Longitude JD:(double)JD
+double KPCAAFK5CorrectionInLatitude(double Longitude, double JD)
 {
     return CAAFK5::CorrectionInLatitude(Longitude, JD);
 }
 
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5J2000:(KPCAA3DCoordinate * __autoreleasing *)value
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components)
 {
-    CAA3DCoordinate wrappedCoord = (*value).wrappedCoord;
-    return [KPCAA3DCoordinate coordinateByWrapping:CAAFK5::ConvertVSOPToFK5J2000(wrappedCoord)];
+    CAA3DCoordinate coordsIn = CAA3DCoordinate();
+    coordsIn.X = components.X;
+    coordsIn.Y = components.Y;
+    coordsIn.Z = components.Z;
+    
+    CAA3DCoordinate coordsOut = CAAFK5::ConvertVSOPToFK5J2000(coordsIn);
+    return KPCAA3DCoordinateComponentsMake(coordsOut.X, coordsOut.Y, coordsOut.Z);
 }
 
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5B1950:(KPCAA3DCoordinate * __autoreleasing *)value
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components)
 {
-    CAA3DCoordinate wrappedCoord = (*value).wrappedCoord;
-    return [KPCAA3DCoordinate coordinateByWrapping:CAAFK5::ConvertVSOPToFK5B1950(wrappedCoord)];
+    CAA3DCoordinate coordsIn = CAA3DCoordinate();
+    coordsIn.X = components.X;
+    coordsIn.Y = components.Y;
+    coordsIn.Z = components.Z;
+    
+    CAA3DCoordinate coordsOut = CAAFK5::ConvertVSOPToFK5B1950(coordsIn);
+    return KPCAA3DCoordinateComponentsMake(coordsOut.X, coordsOut.Y, coordsOut.Z);
 }
 
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5AnyEquinox:(KPCAA3DCoordinate * __autoreleasing *)value JDEquinox:(double)JDEquinox
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox)
 {
-    CAA3DCoordinate wrappedCoord = (*value).wrappedCoord;
-    return [KPCAA3DCoordinate coordinateByWrapping:CAAFK5::ConvertVSOPToFK5AnyEquinox(wrappedCoord, JDEquinox)];
+    CAA3DCoordinate coordsIn = CAA3DCoordinate();
+    coordsIn.X = components.X;
+    coordsIn.Y = components.Y;
+    coordsIn.Z = components.Z;
+    
+    CAA3DCoordinate coordsOut = CAAFK5::ConvertVSOPToFK5AnyEquinox(coordsIn, JDEquinox);
+    return KPCAA3DCoordinateComponentsMake(coordsOut.X, coordsOut.Y, coordsOut.Z);
 }
 
-@end

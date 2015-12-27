@@ -13,4 +13,5 @@ typedef struct KPCAA2DCoordinateComponents {
     double Y;
 } KPCAA2DCoordinateComponents;
 
+// Because we can't (and don't want) import C++ header in this one, one must go through the exposition of all vars.
 KPCAA2DCoordinateComponents KPCAA2DCoordinateComponentsMake(double X, double Y);

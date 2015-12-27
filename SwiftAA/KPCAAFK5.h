@@ -9,12 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-@interface KPCAAFK5 : NSObject
+double KPCAAFK5CorrectionInLongitude(double Longitude, double Latitude, double JD);
+double KPCAAFK5CorrectionInLatitude(double Longitude, double JD);
 
-+ (double)CorrectionInLongitude:(double)Longitude latitude:(double)Latitude JD:(double)JD;
-+ (double)CorrectionInLatitude:(double)Longitude JD:(double)JD;
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5J2000:(KPCAA3DCoordinate * __autoreleasing *)value;
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5B1950:(KPCAA3DCoordinate * __autoreleasing *)value;
-+ (KPCAA3DCoordinate *)ConvertVSOPToFK5AnyEquinox:(KPCAA3DCoordinate * __autoreleasing *)value JDEquinox:(double)JDEquinox;
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components);
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components);
+KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox);
 
-@end
