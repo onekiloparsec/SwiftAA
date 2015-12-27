@@ -9,14 +9,10 @@
 #import "KPCAAKepler.h"
 #import "AAKepler.h"
 
-@implementation KPCAAKepler
-
-+ (double)Calculate:(double)M  e:(double)e nIterations:(int)nIterations
+double KPCAAKeplerCalculate(double M, double e, int nIterations)
 {
     if (nIterations == 0) {
         nIterations = 53;
     }
     return CAAKepler::Calculate(M, e, nIterations);
 }
-
-@end

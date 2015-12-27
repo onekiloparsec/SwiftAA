@@ -9,51 +9,48 @@
 #import "KPCAADynamicalTime.h"
 #import "AADynamicalTime.h"
 
-@implementation KPCAADynamicalTime
-
-+ (double)DeltaT:(double)JD
+double KPCAADynamicalTimeDeltaT(double JD)
 {
     return CAADynamicalTime::DeltaT(JD);
 }
 
-+ (double)CumulativeLeapSeconds:(double)JD
+double KPCAADynamicalTimeCumulativeLeapSeconds(double JD)
 {
     return CAADynamicalTime::CumulativeLeapSeconds(JD);
 }
 
-+ (double)TT2UTC:(double)JD
+double KPCAADynamicalTimeTT2UTC(double JD)
 {
     return CAADynamicalTime::TT2UTC(JD);
 }
 
-+ (double)UTC2TT:(double)JD
+double KPCAADynamicalTimeUTC2TT(double JD)
 {
     return CAADynamicalTime::UTC2TT(JD);
 }
 
-+ (double)TT2TAI:(double)JD
+double KPCAADynamicalTimeTT2TAI(double JD)
 {
     return CAADynamicalTime::TT2TAI(JD);
 }
 
-+ (double)TAI2TT:(double)JD
+double KPCAADynamicalTimeTAI2TT(double JD)
 {
     return CAADynamicalTime::TAI2TT(JD);
 }
 
-+ (double)TT2UT1:(double)JD
+double KPCAADynamicalTimeTT2UT1(double JD)
 {
     return CAADynamicalTime::TT2UT1(JD);
 }
 
-+ (double)UT12TT:(double)JD
+double KPCAADynamicalTimeUT12TT(double JD)
 {
     return CAADynamicalTime::UT12TT(JD);
 }
 
-+ (double)UT1MinusUTC:(double)JD
+double KPCAADynamicalTimeUT1MinusUTC(double JD)
 {
     return CAADynamicalTime::UT1MinusUTC(JD);
 }
 
-@end
