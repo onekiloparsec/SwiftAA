@@ -8,21 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMoon : NSObject
+double KPCAAMoonMeanLongitude(double JD);
+double KPCAAMoonMeanElongation(double JD);
+double KPCAAMoonMeanAnomaly(double JD);
+double KPCAAMoonArgumentOfLatitude(double JD);
+double KPCAAMoonMeanLongitudeAscendingNode(double JD);
+double KPCAAMoonMeanLongitudePerigee(double JD);
+double KPCAAMoonTrueLongitudeAscendingNode(double JD);
 
-+ (double)MeanLongitude:(double)JD;
-+ (double)MeanElongation:(double)JD;
-+ (double)MeanAnomaly:(double)JD;
-+ (double)ArgumentOfLatitude:(double)JD;
-+ (double)MeanLongitudeAscendingNode:(double)JD;
-+ (double)MeanLongitudePerigee:(double)JD;
-+ (double)TrueLongitudeAscendingNode:(double)JD;
+double KPCAAMoonEclipticLongitude(double JD);
+double KPCAAMoonEclipticLatitude(double JD);
+double KPCAAMoonRadiusVector(double JD);
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
+double KPCAAMoonRadiusVectorToHorizontalParallax(double RadiusVector);
+double KPCAAMoonHorizontalParallaxToRadiusVector(double Parallax);
 
-+ (double)RadiusVectorToHorizontalParallax:(double)RadiusVector;
-+ (double)HorizontalParallaxToRadiusVector:(double)Parallax;
-
-@end
