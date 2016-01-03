@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAStellarMagnitudes : NSObject
+double KPCAAStellarMagnitudesCombinedMagnitude(double m1, double m2);
+double KPCAAStellarMagnitudesBrightnessRatio(double m1, double m2);
+double KPCAAStellarMagnitudesMagnitudeDifference(double brightnessRatio);
 
-+ (double)CombinedMagnitude:(double)m1 m2:(double)m2;
-+ (double)BrightnessRatio:(double)m1 m2:(double)m2;
-+ (double)MagnitudeDifference:(double)brightnessRatio;
-
-@end
