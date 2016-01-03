@@ -8,9 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAASidereal : NSObject
-
-+ (double)MeanGreenwichSiderealTime:(double)JD;
-+ (double)ApparentGreenwichSiderealTime:(double)JD;
-
-@end
+double KPCAAMeanGreenwichSiderealTime(double JD);
+double KPCAAApparentGreenwichSiderealTime(double JD);
