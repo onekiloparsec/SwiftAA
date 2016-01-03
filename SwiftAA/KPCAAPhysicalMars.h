@@ -8,21 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPhysicalMarsDetails : NSObject
+typedef struct KPCAAPhysicalMarsDetails {
+    double DE;
+    double DS;
+    double w;
+    double P;
+    double X;
+    double k;
+    double q;
+    double d;
+} KPCAAPhysicalMarsDetails;
 
-@property(nonatomic, assign) double DE;
-@property(nonatomic, assign) double DS;
-@property(nonatomic, assign) double w;
-@property(nonatomic, assign) double P;
-@property(nonatomic, assign) double X;
-@property(nonatomic, assign) double k;
-@property(nonatomic, assign) double q;
-@property(nonatomic, assign) double d;
+KPCAAPhysicalMarsDetails KPCAAPhysicalMarsCalculateDetails(double JD, BOOL highPrecision);
 
-@end
-
-@interface KPCAAPhysicalMars : NSObject
-
-+ (KPCAAPhysicalMarsDetails *)Calculate:(double)JD highPrecision:(BOOL)highPrecision;
-
-@end
