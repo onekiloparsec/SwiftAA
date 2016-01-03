@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAGlobe : NSObject
+double KPCAAGlobeRhoSinThetaPrime(double GeographicalLatitude, double Height);
+double KPCAAGlobeRhoCosThetaPrime(double GeographicalLatitude, double Height);
+double KPCAAGlobeRadiusOfParallelOfLatitude(double GeographicalLatitude);
+double KPCAAGlobeRadiusOfCurvature(double GeographicalLatitude);
 
-+ (double)RhoSinThetaPrime:(double)GeographicalLatitude height:(double)Height;
-+ (double)RhoCosThetaPrime:(double)GeographicalLatitude height:(double)Height;
-+ (double)RadiusOfParallelOfLatitude:(double)GeographicalLatitude;
-+ (double)RadiusOfCurvature:(double)GeographicalLatitude;
+double KPCAAGlobeDistanceBetweenPoints(double GeographicalLatitude1,
+                                       double GeographicalLongitude1,
+                                       double GeographicalLatitude2,
+                                       double GeographicalLongitude2);
 
-+ (double)DistanceBetweenPointsWithGeographicalLatitude1:(double)GeographicalLatitude1 GeographicalLongitude1:(double)GeographicalLongitude1 GeographicalLatitude2:(double)GeographicalLatitude2 GeographicalLongitude2:(double)GeographicalLongitude2;
-
-@end
