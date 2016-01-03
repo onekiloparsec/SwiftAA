@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMercury : NSObject
+double KPCAAMercuryEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAMercuryEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAMercuryRadiusVector(double JD, BOOL highPrecision);
 
-+ (double)EclipticLongitude:(double)JD highPrecision:(BOOL)highPrecision;
-+ (double)EclipticLatitude:(double)JD highPrecision:(BOOL)highPrecision;
-+ (double)RadiusVector:(double)JD highPrecision:(BOOL)highPrecision;
-
-@end
