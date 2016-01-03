@@ -8,19 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAARiseTransitSetDetails : NSObject
+typedef struct KPCAARiseTransitSetDetails {
+    BOOL isRiseValid;
+    double Rise;
+    BOOL isTransitAboveHorizon;
+    double Transit;
+    BOOL isSetValid;
+    double Set;
+} KPCAARiseTransitSetDetails;
 
-@property(nonatomic, assign) BOOL   isRiseValid;
-@property(nonatomic, assign) double Rise;
-@property(nonatomic, assign) BOOL   isTransitAboveHorizon;
-@property(nonatomic, assign) double Transit;
-@property(nonatomic, assign) BOOL   isSetValid;
-@property(nonatomic, assign) double Set;
+KPCAARiseTransitSetDetails KPCAARiseTransitSetCalculate(double JD,
+                                                        double Alpha1,
+                                                        double Delta1,
+                                                        double Alpha2,
+                                                        double Delta2,
+                                                        double Alpha3,
+                                                        double Delta3,
+                                                        double Longitude,
+                                                        double Latitude,
+                                                        double h0);
 
-@end
-
-@interface KPCAARiseTransitSet : NSObject
-
-+ (KPCAARiseTransitSetDetails *)Calculate:(double)JD Alpha1:(double)Alpha1 Delta1:(double)Delta1 Alpha2:(double)Alpha2 Delta2:(double)Delta2 Alpha3:(double)Alpha3 Delta3:(double)Delta3 Longitude:(double)Longitude Latitude:(double)Latitude h0:(double)h0;
-
-@end
