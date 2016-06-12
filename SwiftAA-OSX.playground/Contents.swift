@@ -5,7 +5,5 @@ import SwiftAA
 
 var str = "Hello, playground"
 
-let coords = KPCAA2DCoordinate()
-coords.X = 1.0
-coords.Y = 2.0
+let coords = KPCAA2DCoordinateComponentsMake(1.0, 2.0)
 print("\(coords.X)")
