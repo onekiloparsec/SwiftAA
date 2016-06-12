@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef struct KPCAASolarEclipseDetails {
-    BOOL eclipse;
+    unsigned int Flags;
     double TimeOfMaximumEclipse;
     double F;
     double u;

@@ -14,7 +14,7 @@ KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k)
     CAASolarEclipseDetails detailsPlus = CAAEclipses::CalculateSolar(k);
 
     struct KPCAASolarEclipseDetails details;
-    details.eclipse = detailsPlus.bEclipse;
+    details.Flags = detailsPlus.Flags;
     details.TimeOfMaximumEclipse = detailsPlus.TimeOfMaximumEclipse;
     details.F = detailsPlus.F;
     details.u = detailsPlus.u;
