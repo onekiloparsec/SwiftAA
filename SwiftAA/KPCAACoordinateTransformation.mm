@@ -45,3 +45,63 @@ KPCAA2DCoordinateComponents KPCAACoordinateTransformationGalactic2Equatorial(dou
     return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
+double DegreesToRadians(double Degrees)
+{
+    return CAACoordinateTransformation::DegreesToRadians(Degrees);
+}
+
+double RadiansToDegrees(double Radians)
+{
+    return CAACoordinateTransformation::RadiansToDegrees(Radians);
+}
+
+double RadiansToHours(double Radians)
+{
+    return CAACoordinateTransformation::RadiansToHours(Radians);
+}
+
+double HoursToRadians(double Hours)
+{
+    return CAACoordinateTransformation::HoursToRadians(Hours);
+}
+
+double HoursToDegrees(double Hours)
+{
+    return CAACoordinateTransformation::HoursToDegrees(Hours);
+}
+
+double DegreesToHours(double Degrees)
+{
+    return CAACoordinateTransformation::DegreesToHours(Degrees);
+}
+
+double PI()
+{
+    return CAACoordinateTransformation::PI();
+}
+
+double MapTo0To360Range(double Degrees)
+{
+    return CAACoordinateTransformation::MapTo0To360Range(Degrees);
+}
+
+double MapToMinus90To90Range(double Degrees)
+{
+    return CAACoordinateTransformation::MapToMinus90To90Range(Degrees);
+}
+
+double MapTo0To24Range(double HourAngle)
+{
+    return CAACoordinateTransformation::MapTo0To24Range(HourAngle);
+}
+
+double MapTo0To2PIRange(double Angle)
+{
+    return CAACoordinateTransformation::MapTo0To2PIRange(Angle);
+}
+
+double DMSToDegrees(double Degrees, double Minutes, double Seconds, bool bPositive)
+{
+    return CAACoordinateTransformation::DMSToDegrees(Degrees, Minutes, Seconds, bPositive);
+}
+

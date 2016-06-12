@@ -27,3 +27,16 @@ KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Galactic(dou
 // l=Galactic Longitude, b=Galactic Latitude;
 KPCAA2DCoordinateComponents KPCAACoordinateTransformationGalactic2Equatorial(double l, double b);
 
+double DegreesToRadians(double Degrees);
+double RadiansToDegrees(double Radians);
+double RadiansToHours(double Radians);
+double HoursToRadians(double Hours);
+double HoursToDegrees(double Hours);
+double DegreesToHours(double Degrees);
+double PI();
+double MapTo0To360Range(double Degrees);
+double MapToMinus90To90Range(double Degrees);
+double MapTo0To24Range(double HourAngle);
+double MapTo0To2PIRange(double Angle);
+double DMSToDegrees(double Degrees, double Minutes, double Seconds, bool bPositive);
+
