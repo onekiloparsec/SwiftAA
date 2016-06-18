@@ -757,11 +757,11 @@
 			isa = PBXGroup;
 			children = (
 				9F737A7C1C26DBCE007EF484 /* README.md */,
+				9F7379891C26B79F007EF484 /* Swift */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
+				9FC3402E1D156A5D0069E7C4 /* Tests */,
 				9FE182741D0DE730008CA0F8 /* aaplus-v1.71 */,
 				9FFA29081D15702800034972 /* aaplus-v1.71 tests */,
-				9F7379891C26B79F007EF484 /* SwiftAA */,
-				9FC3402E1D156A5D0069E7C4 /* SwiftAATests */,
 				9F29B46B1B47313500B64C96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -895,17 +895,18 @@
 			name = "Obj-C";
 			sourceTree = "<group>";
 		};
-		9F7379891C26B79F007EF484 /* SwiftAA */ = {
+		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
 				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
 				9F73798C1C26B79F007EF484 /* Info.plist */,
 			);
+			name = Swift;
 			path = SwiftAA;
 			sourceTree = "<group>";
 		};
-		9FC3402E1D156A5D0069E7C4 /* SwiftAATests */ = {
+		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */,
@@ -913,6 +914,7 @@
 				9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */,
 				9FC340311D156A5D0069E7C4 /* Info.plist */,
 			);
+			name = Tests;
 			path = SwiftAATests;
 			sourceTree = "<group>";
 		};
