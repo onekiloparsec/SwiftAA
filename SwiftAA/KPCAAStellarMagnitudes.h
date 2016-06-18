@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAStellarMagnitudesCombinedMagnitude(double m1, double m2);
-double KPCAAStellarMagnitudesBrightnessRatio(double m1, double m2);
-double KPCAAStellarMagnitudesMagnitudeDifference(double brightnessRatio);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+double KPCAAStellarMagnitudes_CombinedMagnitude(double m1, double m2);
+double KPCAAStellarMagnitudes_BrightnessRatio(double m1, double m2);
+double KPCAAStellarMagnitudes_MagnitudeDifference(double brightnessRatio);
+
+#if __cplusplus
+}
+#endif

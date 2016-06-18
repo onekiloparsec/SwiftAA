@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAVenusEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAAVenusEclipticLatitude(double JD, BOOL highPrecision);
-double KPCAAVenusRadiusVector(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+double KPCAAVenus_EclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAVenus_EclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAVenus_RadiusVector(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

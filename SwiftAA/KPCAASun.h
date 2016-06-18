@@ -9,17 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-double KPCAASunGeometricEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAASunGeometricEclipticLatitude(double JD, BOOL highPrecision);
-double KPCAASunGeometricEclipticLongitudeJ2000(double JD, BOOL highPrecision);
-double KPCAASunGeometricEclipticLatitudeJ2000(double JD, BOOL highPrecision);
-double KPCAASunGeometricFK5EclipticLongitude(double JD, BOOL highPrecision);
-double KPCAASunGeometricFK5EclipticLatitude(double JD, BOOL highPrecision);
-double KPCAASunApparentEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAASunApparentEclipticLatitude(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesMeanEquinox(double JD, BOOL highPrecision);
-KPCAA3DCoordinateComponents KPCAASunEclipticRectangularCoordinatesJ2000(double JD, BOOL highPrecision);
-KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesJ2000(double JD, BOOL highPrecision);
-KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesB1950(double JD, BOOL highPrecision);
-KPCAA3DCoordinateComponents KPCAASunEquatorialRectangularCoordinatesAnyEquinox(double JD, double JDEquinox, BOOL highPrecision);
+double KPCAASun_GeometricEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAASun_GeometricEclipticLatitude(double JD, BOOL highPrecision);
+double KPCAASun_GeometricEclipticLongitudeJ2000(double JD, BOOL highPrecision);
+double KPCAASun_GeometricEclipticLatitudeJ2000(double JD, BOOL highPrecision);
+double KPCAASun_GeometricFK5EclipticLongitude(double JD, BOOL highPrecision);
+double KPCAASun_GeometricFK5EclipticLatitude(double JD, BOOL highPrecision);
+double KPCAASun_ApparentEclipticLongitude(double JD, BOOL highPrecision);
+double KPCAASun_ApparentEclipticLatitude(double JD, BOOL highPrecision);
+
+KPCAA3DCoordinateComponents KPCAASun_EquatorialRectangularCoordinatesMeanEquinox(double JD, BOOL highPrecision);
+KPCAA3DCoordinateComponents KPCAASun_EclipticRectangularCoordinatesJ2000(double JD, BOOL highPrecision);
+KPCAA3DCoordinateComponents KPCAASun_EquatorialRectangularCoordinatesJ2000(double JD, BOOL highPrecision);
+KPCAA3DCoordinateComponents KPCAASun_EquatorialRectangularCoordinatesB1950(double JD, BOOL highPrecision);
+KPCAA3DCoordinateComponents KPCAASun_EquatorialRectangularCoordinatesAnyEquinox(double JD, double JDEquinox, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

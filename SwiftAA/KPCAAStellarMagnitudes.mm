@@ -9,17 +9,17 @@
 #import "KPCAAStellarMagnitudes.h"
 #import "AAStellarMagnitudes.h"
 
-double KPCAAStellarMagnitudesCombinedMagnitude(double m1, double m2)
+double KPCAAStellarMagnitudes_CombinedMagnitude(double m1, double m2)
 {
     return CAAStellarMagnitudes::CombinedMagnitude(m1, m2);
 }
 
-double KPCAAStellarMagnitudesBrightnessRatio(double m1, double m2)
+double KPCAAStellarMagnitudes_BrightnessRatio(double m1, double m2)
 {
     return CAAStellarMagnitudes::BrightnessRatio(m1, m2);
 }
 
-double KPCAAStellarMagnitudesMagnitudeDifference(double brightnessRatio)
+double KPCAAStellarMagnitudes_MagnitudeDifference(double brightnessRatio)
 {
     return CAAStellarMagnitudes::MagnitudeDifference(brightnessRatio);
 }

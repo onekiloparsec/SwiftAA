@@ -8,5 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAMeanGreenwichSiderealTime(double JD);
-double KPCAAApparentGreenwichSiderealTime(double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+double KPCAASidereal_MeanGreenwichSiderealTime(double JD);
+double KPCAASidereal_ApparentGreenwichSiderealTime(double JD);
+
+#if __cplusplus
+}
+#endif

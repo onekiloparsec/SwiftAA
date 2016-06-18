@@ -9,12 +9,12 @@
 #import "KPCAASidereal.h"
 #import "AASidereal.h"
 
-double KPCAAMeanGreenwichSiderealTime(double JD)
+double KPCAASidereal_MeanGreenwichSiderealTime(double JD)
 {
     return CAASidereal::MeanGreenwichSiderealTime(JD);
 }
 
-double KPCAAApparentGreenwichSiderealTime(double JD)
+double KPCAASidereal_ApparentGreenwichSiderealTime(double JD)
 {
     return CAASidereal::ApparentGreenwichSiderealTime(JD);
 }
