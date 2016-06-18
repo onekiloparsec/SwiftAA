@@ -561,6 +561,10 @@
 		9F694EDB1D15C67300EE7492 /* KPCAAPhysicalMoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694EDC1D15C67300EE7492 /* AADiameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182841D0DE730008CA0F8 /* AADiameters.h */; };
 		9F694EDD1D15C67300EE7492 /* KPCAAGalileanMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F694EE51D15C7CA00EE7492 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE41D15C7CA00EE7492 /* Venus.swift */; };
+		9F694EE61D15C7CA00EE7492 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE41D15C7CA00EE7492 /* Venus.swift */; };
+		9F694EE81D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
+		9F694EE91D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379C91C26B9D4007EF484 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F737A7A1C26BA98007EF484 /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */; };
@@ -891,6 +895,8 @@
 		9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPrecession.mm; path = SwiftAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/Apps/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
+		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
+		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
 		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
@@ -1363,6 +1369,8 @@
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
+				9F694EE71D15CDF500EE7492 /* Constants.swift */,
 			);
 			name = Swift;
 			path = SwiftAA;
@@ -2147,6 +2155,7 @@
 				9F694D9E1D15C67300EE7492 /* KPCAAFK5.mm in Sources */,
 				9F694D9F1D15C67300EE7492 /* AASaturnMoons.cpp in Sources */,
 				9F694DA01D15C67300EE7492 /* AAMars.cpp in Sources */,
+				9F694EE61D15C7CA00EE7492 /* Venus.swift in Sources */,
 				9F694DA11D15C67300EE7492 /* KPCAANeptune.mm in Sources */,
 				9F694DA21D15C67300EE7492 /* AARefraction.cpp in Sources */,
 				9F694DA31D15C67300EE7492 /* KPCAAParabolic.mm in Sources */,
@@ -2219,6 +2228,7 @@
 				9F694DE61D15C67300EE7492 /* AAVSOP87C_URA.cpp in Sources */,
 				9F694DE71D15C67300EE7492 /* AAVSOP87A_EAR.cpp in Sources */,
 				9F694DE81D15C67300EE7492 /* AAVSOP87E_MAR.cpp in Sources */,
+				9F694EE91D15CDF500EE7492 /* Constants.swift in Sources */,
 				9F694DE91D15C67300EE7492 /* KPCAAMoonPerigeeApogee.mm in Sources */,
 				9F694DEA1D15C67300EE7492 /* AAVSOP87B_JUP.cpp in Sources */,
 				9F694DEB1D15C67300EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
@@ -2320,6 +2330,7 @@
 				9F694D351D1579A000EE7492 /* KPCAAFK5.mm in Sources */,
 				9FE183C41D0DE730008CA0F8 /* AASaturnMoons.cpp in Sources */,
 				9FE1838E1D0DE730008CA0F8 /* AAMars.cpp in Sources */,
+				9F694EE51D15C7CA00EE7492 /* Venus.swift in Sources */,
 				9F694D671D157BD200EE7492 /* KPCAANeptune.mm in Sources */,
 				9FE183BE1D0DE730008CA0F8 /* AARefraction.cpp in Sources */,
 				9F694D6D1D157BD200EE7492 /* KPCAAParabolic.mm in Sources */,
@@ -2392,6 +2403,7 @@
 				9FE184151D0DE730008CA0F8 /* AAVSOP87C_URA.cpp in Sources */,
 				9FE183E71D0DE730008CA0F8 /* AAVSOP87A_EAR.cpp in Sources */,
 				9FE1842D1D0DE730008CA0F8 /* AAVSOP87E_MAR.cpp in Sources */,
+				9F694EE81D15CDF500EE7492 /* Constants.swift in Sources */,
 				9F694D611D157BD200EE7492 /* KPCAAMoonPerigeeApogee.mm in Sources */,
 				9FE183FB1D0DE730008CA0F8 /* AAVSOP87B_JUP.cpp in Sources */,
 				9F694D331D15797600EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
