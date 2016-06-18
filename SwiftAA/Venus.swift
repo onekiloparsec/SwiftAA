@@ -10,11 +10,15 @@ import Foundation
 
 // AA, pp. 269 and followings: 
 
-public struct Venus {
-    let julianDay: Double
+public struct Venus: Planet {
+    var julianDay: JulianDay
     
-    init(julianDay: Double) {
+    init(julianDay: JulianDay) {
         self.julianDay = julianDay
+    }
+    
+    func planetaryObject() -> KPCPlanetaryObject {
+        return KPCPlanetaryObject.VENUS
     }
     
     func eclipticLongitude(withHighPrecision hp: Bool = true) -> Double {
@@ -107,8 +111,25 @@ public struct Venus {
         return KPCAAPlanetaryPhenomena_True(k, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
     }
     
+//    func details(withHighPrecision hp: Bool = true) -> KPCAAEllipticalPlanetaryDetails {
+//        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, KPCPlanetaryObject.VENUS, hp)
+//    }
+//    
 //    func illuminatedFraction(year: Double) -> Double {
-//        let r =
+//        // L = ecliptic|heliocentric longitude of planet (0=Earth)
+//        // B = ecliptic|heliocentric latitude of planet (0=Earth)
+//        // R = radius vector of planet (= distance to the Sun) (0=Earth)
+//        
+//        let details = self.details()
+//        // Delta = ApparentGeocentricDistance = distance earth-planet
+//        let Delta = details.ApparentGeocentricDistance
+//        
+//        let earth = Earth(julianDay: self.julianDay)
+//        
+//        // i = phase angle
+//        let i = KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector(), earth.radiusVector(), Delta)
+//        
+//        return KPCAAIlluminatedFraction_IlluminatedFraction(i)
 //    }
 
 }
