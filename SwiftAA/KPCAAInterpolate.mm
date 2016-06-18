@@ -9,56 +9,53 @@
 #import "KPCAAInterpolate.h"
 #import "AAInterpolate.h"
 
-@implementation KPCAAInterpolate
-
-+ (double)Interpolate:(double)n Y1:(double)Y1 Y2:(double)Y2 Y3:(double)Y3
+double KPCAAInterpolate_Interpolate_1234(double n, double Y1, double Y2, double Y3)
 {
     return CAAInterpolate::Interpolate(n, Y1, Y2, Y3);
 }
 
-+ (double)Interpolate:(double)n Y1:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5
+double KPCAAInterpolate_Interpolate_12345(double n, double Y1, double Y2, double Y3, double Y4, double Y5)
 {
     return CAAInterpolate::Interpolate(n, Y1, Y2, Y3, Y4, Y5);
 }
 
-+ (double)InterpolateToHalves:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4
+double KPCAAInterpolate_InterpolateToHalves(double Y1, double Y2, double Y3, double Y4)
 {
     return CAAInterpolate::InterpolateToHalves(Y1, Y2, Y3, Y4);
 }
 
-+ (double)LagrangeInterpolate:(double)X n:(int)n  pX:(double *)pX pY:(double *)pY
+double KPCAAInterpolate_LagrangeInterpolate(double X, int n, double *pX, double *pY)
 {
     return CAAInterpolate::LagrangeInterpolate(X, n, pX, pY);
 }
 
-+ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 nm:(double *)nm
+double KPCAAInterpolate_Extremum_123(double Y1, double Y2, double Y3, double *nm)
 {
     return CAAInterpolate::Extremum(Y1, Y2, Y3, *nm);
 }
 
-+ (double)Extremum:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5 nm:(double *)nm
+double KPCAAInterpolate_Extremum_12345(double Y1, double Y2, double Y3, double Y4, double Y5, double *nm)
 {
     return CAAInterpolate::Extremum(Y1, Y2, Y3, Y4, Y5, *nm);
 }
 
-+ (double)Zero:(double)Y1 Y2:(double)Y2 Y3:(double)Y3
+double KPCAAInterpolate_Zero_123(double Y1, double Y2, double Y3)
 {
     return CAAInterpolate::Zero(Y1, Y2, Y3);
 }
 
-+ (double)Zero:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5
+double KPCAAInterpolate_Zero_12345(double Y1, double Y2, double Y3, double Y4, double Y5)
 {
     return CAAInterpolate::Zero(Y1, Y2, Y3, Y4, Y5);
 }
 
-+ (double)Zero2:(double)Y1 Y2:(double)Y2 Y3:(double)Y3
+double KPCAAInterpolate_Zero2_123(double Y1, double Y2, double Y3)
 {
     return CAAInterpolate::Zero2(Y1, Y2, Y3);
 }
 
-+ (double)Zero2:(double)Y1 Y2:(double)Y2 Y3:(double)Y3 Y4:(double)Y4 Y5:(double)Y5
+double KPCAAInterpolate_Zero2_12345(double Y1, double Y2, double Y3, double Y4, double Y5)
 {
     return CAAInterpolate::Zero2(Y1, Y2, Y3, Y4, Y5);
 }
 
-@end

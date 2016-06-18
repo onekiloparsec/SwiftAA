@@ -8,13 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAACalendarDate : NSObject
-
-@property(nonatomic, assign) long Year;
-@property(nonatomic, assign) long Month;
-@property(nonatomic, assign) long Day;
-
-@end
+typedef struct KPCAACalendarDate {
+    long Year;
+    long Month;
+    long Day;
+} KPCAACalendarDate;
 
 
 typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
@@ -45,9 +43,9 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 
 + (void)DayOfYearToDayAndMonth:(long)DayOfYear leap:(BOOL)leapYear dayOfMonth:(long *)DayOfMonth month:(long *)Month;
 
-+ (KPCAACalendarDate *)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day;
++ (KPCAACalendarDate)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day;
 
-+ (KPCAACalendarDate *)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day;
++ (KPCAACalendarDate)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day;
 
 // Instance methods (~ 'non static' in C++)
 
@@ -77,9 +75,3 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 
 @end
 
-
-@interface KPCAADate (SwiftAACustom)
-
-- (instancetype)initWithGregorianCalendarDate:(NSDate *)date;
-
-@end

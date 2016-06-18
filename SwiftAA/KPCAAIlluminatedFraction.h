@@ -8,28 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+double KPCAAIlluminatedFraction_PhaseAngle(double r, double R, double Delta);
+double KPCAAIlluminatedFraction_PhaseAngle_bis(double R, double R0, double B, double L, double L0, double Delta);
+double KPCAAIlluminatedFraction_PhaseAngleRectangular(double x, double y, double z, double B, double L, double Delta);
+double KPCAAIlluminatedFraction_IlluminatedFraction(double PhaseAngle);
+double KPCAAIlluminatedFraction_IlluminatedFraction_bis(double r, double R, double Delta);
 
-@interface KPCAAIlluminatedFraction : NSObject
+double KPCAAIlluminatedFraction_MercuryMagnitudeMuller(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_VenusMagnitudeMuller(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_MarsMagnitudeMuller(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_JupiterMagnitudeMuller(double r, double Delta);
+double KPCAAIlluminatedFraction_SaturnMagnitudeMuller(double r, double Delta, double DeltaU, double B);
+double KPCAAIlluminatedFraction_UranusMagnitudeMuller(double r, double Delta);
+double KPCAAIlluminatedFraction_NeptuneMagnitudeMuller(double r, double Delta);
 
-+ (double)PhaseAngle:(double)r R:(double)R Delta:(double)Delta;
-+ (double)PhaseAngle:(double)R R0:(double)R0 B:(double)B L:(double)L L:(double)L0 Delta:(double)Delta;
-+ (double)PhaseAngleRectangular:(double)x y:(double)y z:(double)z B:(double)B L:(double)L Delta:(double)Delta;
-+ (double)IlluminatedFraction:(double)PhaseAngle;
-+ (double)IlluminatedFraction:(double)r R:(double)R Delta:(double)Delta;
-+ (double)MercuryMagnitudeMuller:(double)r Delta:(double)Delta i:(double)i;
-+ (double)VenusMagnitudeMuller:(double)r Delta:(double)Delta i:(double)i;
-+ (double)MarsMagnitudeMuller:(double)r Delta:(double)Delta i:(double)i;
-+ (double)JupiterMagnitudeMuller:(double)r Delta:(double)Delta;
-+ (double)SaturnMagnitudeMuller:(double)r Delta:(double)Delta DeltaU:(double)DeltaU B:(double)B;
-+ (double)UranusMagnitudeMuller:(double)r Delta:(double)Delta;
-+ (double)NeptuneMagnitudeMuller:(double)r Delta:(double)Delta;
-+ (double)MercuryMagnitudeAA:(double)r Delta:(double)Delta i:(double)i;
-+ (double)VenusMagnitudeAA:(double)r Delta:(double)Delta i:(double)i;
-+ (double)MarsMagnitudeAA:(double)r Delta:(double)Delta i:(double)i;
-+ (double)JupiterMagnitudeAA:(double)r Delta:(double)Delta i:(double)i;
-+ (double)SaturnMagnitudeAA:(double)r Delta:(double)Delta DeltaU:(double)DeltaU B:(double)B;
-+ (double)UranusMagnitudeAA:(double)r Delta:(double)Delta;
-+ (double)NeptuneMagnitudeAA:(double)r Delta:(double)Delta;
-+ (double)PlutoMagnitudeAA:(double)r Delta:(double)Delta;
+double KPCAAIlluminatedFraction_MercuryMagnitudeAA(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_VenusMagnitudeAA(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_MarsMagnitudeAA(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_JupiterMagnitudeAA(double r, double Delta, double i);
+double KPCAAIlluminatedFraction_SaturnMagnitudeAA(double r, double Delta, double DeltaU, double B);
+double KPCAAIlluminatedFraction_UranusMagnitudeAA(double r, double Delta);
+double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta);
+double KPCAAIlluminatedFraction_PlutoMagnitudeAA(double r, double Delta);
 
-@end
+#if __cplusplus
+}
+#endif

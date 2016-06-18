@@ -9,68 +9,6 @@
 #import "KPCAADate.h"
 #import "AADate.h"
 
-@interface KPCAACalendarDate () {
-    CAACalendarDate _wrapped;
-}
-@end
-
-@implementation KPCAACalendarDate
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAACalendarDate();
-    }
-    return self;
-}
-
-- (instancetype)initWithWrappedCalDate:(CAACalendarDate)wrappedCalDate
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedCalDate;
-    }
-    return self;
-}
-
-+ (KPCAACalendarDate *)calendarDateByWrapping:(CAACalendarDate)wrappedCalDate
-{
-    return [[KPCAACalendarDate alloc] initWithWrappedCalDate:wrappedCalDate];
-}
-
-- (long)Year
-{
-    return _wrapped.Year;
-}
-
-- (void)setYear:(long)Year
-{
-    _wrapped.Year = Year;
-}
-
-- (long)Month
-{
-    return _wrapped.Month;
-}
-
-- (void)setMonth:(long)Month
-{
-    _wrapped.Month = Month;
-}
-
-- (long)Day
-{
-    return _wrapped.Day;
-}
-
-- (void)setDay:(long)Day
-{
-    _wrapped.Day = Day;
-}
-
-@end
-
 @interface KPCAADate () {
     CAADate _wrapped;
 }
@@ -126,14 +64,24 @@
     return CAADate::DayOfYearToDayAndMonth(DayOfYear, (bool)leapYear, *DayOfMonth, *Month);
 }
 
-+ (KPCAACalendarDate *)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day
++ (KPCAACalendarDate)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day
 {
-    return [KPCAACalendarDate calendarDateByWrapping:CAADate::JulianToGregorian(Year, Month, Day)];
+    CAACalendarDate plusDate = CAADate::JulianToGregorian(Year, Month, Day);
+    KPCAACalendarDate date;
+    date.Year = plusDate.Year;
+    date.Month = plusDate.Month;
+    date.Day = plusDate.Day;
+    return date;
 }
 
-+ (KPCAACalendarDate *)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day
++ (KPCAACalendarDate)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day
 {
-    return [KPCAACalendarDate calendarDateByWrapping:CAADate::GregorianToJulian(Year, Month, Day)];
+    CAACalendarDate plusDate = CAADate::GregorianToJulian(Year, Month, Day);
+    KPCAACalendarDate date;
+    date.Year = plusDate.Year;
+    date.Month = plusDate.Month;
+    date.Day = plusDate.Day;
+    return date;
 }
 
 + (BOOL)AfterPapalReformForYear:(long)Year month:(long)Month day:(double)Day
@@ -249,14 +197,3 @@
 @end
 
 
-@implementation KPCAADate (SwiftAACustom)
-
-- (instancetype)initWithGregorianCalendarDate:(NSDate *)date
-{
-    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:date];
-    
-    return [self initWithWrappedDate:CAADate(components.year, components.month, components.day, components.hour, components.minute, components.second, YES)];
-}
-
-@end
