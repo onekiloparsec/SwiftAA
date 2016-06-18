@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftAA/PublicHeader.h>
 
 #import <SwiftAA/KPCAA2DCoordinate.h>
-//#import <SwiftAA/KPCAA3DCoordinate.h>
+#import <SwiftAA/KPCAA3DCoordinate.h>
 //#import <SwiftAA/KPCAAAberration.h>
 //#import <SwiftAA/KPCAAAngularSeparation.h>
 //#import <SwiftAA/KPCAABinaryStar.h>

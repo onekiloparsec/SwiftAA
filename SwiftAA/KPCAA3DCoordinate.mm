@@ -14,7 +14,7 @@ KPCAA3DCoordinateComponents KPCAA3DCoordinateComponentsMake(double X, double Y, 
     KPCAA3DCoordinateComponents comps;
     comps.X = X;
     comps.Y = Y;
-    comps.Z = X;
+    comps.Z = Z;
     return comps;
 }
 

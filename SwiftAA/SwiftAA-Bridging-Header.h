@@ -7,4 +7,5 @@
 //
 
 #import <SwiftAA/KPCAA2DCoordinate.h>
+#import <SwiftAA/KPCAA3DCoordinate.h>
 

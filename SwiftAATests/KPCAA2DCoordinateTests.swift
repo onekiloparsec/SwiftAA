@@ -11,14 +11,6 @@ import XCTest
 
 class SwiftAATests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func test2DCoordinatesMaker() {
         let coords = KPCAA2DCoordinateComponentsMake(1.0, 2.0)
         XCTAssertTrue(coords.X == 1.0)
