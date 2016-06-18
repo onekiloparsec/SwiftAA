@@ -9,7 +9,7 @@
 #import <SwiftAA/KPCAA2DCoordinate.h>
 #import <SwiftAA/KPCAA3DCoordinate.h>
 #import <SwiftAA/KPCAAAberration.h>
-//#import <SwiftAA/KPCAAAngularSeparation.h>
+#import <SwiftAA/KPCAAAngularSeparation.h>
 //#import <SwiftAA/KPCAABinaryStar.h>
 //#import <SwiftAA/KPCAACoordinateTransformation.h>
 //#import <SwiftAA/KPCAADate.h>

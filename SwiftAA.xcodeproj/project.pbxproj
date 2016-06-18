@@ -118,6 +118,8 @@
 		9F694D191D15719500EE7492 /* AAVSOP87E_SUN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183501D0DE730008CA0F8 /* AAVSOP87E_SUN.cpp */; };
 		9F694D1A1D15719500EE7492 /* AAVSOP87E_URA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183521D0DE730008CA0F8 /* AAVSOP87E_URA.cpp */; };
 		9F694D1B1D15719500EE7492 /* AAVSOP87E_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */; };
+		9F694D1C1D15744700EE7492 /* KPCAAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F694D1D1D15745D00EE7492 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379C91C26B9D4007EF484 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F737A7A1C26BA98007EF484 /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */; };
@@ -1167,6 +1169,7 @@
 				9FE183C71D0DE730008CA0F8 /* AASaturnRings.h in Headers */,
 				9FE183A31D0DE730008CA0F8 /* AANeptune.h in Headers */,
 				9FE1836B1D0DE730008CA0F8 /* AADynamicalTime.h in Headers */,
+				9F694D1C1D15744700EE7492 /* KPCAAAngularSeparation.h in Headers */,
 				9FE1839D1D0DE730008CA0F8 /* AAMoonPhases.h in Headers */,
 				9FFA28FE1D156D0900034972 /* KPCAA3DCoordinate.h in Headers */,
 				9FE184381D0DE730008CA0F8 /* AAVSOP87E_URA.h in Headers */,
@@ -1433,6 +1436,7 @@
 				9FE183A81D0DE730008CA0F8 /* AAParabolic.cpp in Sources */,
 				9FE184251D0DE730008CA0F8 /* AAVSOP87D_URA.cpp in Sources */,
 				9FE183BC1D0DE730008CA0F8 /* AAPrecession.cpp in Sources */,
+				9F694D1D1D15745D00EE7492 /* KPCAAAngularSeparation.mm in Sources */,
 				9FE183DD1D0DE730008CA0F8 /* AAVSOP87_MER.cpp in Sources */,
 				9FE184271D0DE730008CA0F8 /* AAVSOP87D_VEN.cpp in Sources */,
 				9FE1842B1D0DE730008CA0F8 /* AAVSOP87E_JUP.cpp in Sources */,
