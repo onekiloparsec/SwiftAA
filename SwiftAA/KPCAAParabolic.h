@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAAParabolicObjectElements {
     double q;
     double i;
@@ -37,6 +41,9 @@ typedef struct KPCAAParabolicObjectDetails {
 } KPCAAParabolicObjectDetails;
 
 
-double KPCAAParabolicBarkers(double W);
-KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision);
+double KPCAAParabolic_CalculateBarkers(double W);
+KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision);
 
+#if __cplusplus
+}
+#endif

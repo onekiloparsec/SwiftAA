@@ -9,21 +9,19 @@
 #import "KPCAAMoonPhases.h"
 #import "AAMoonPhases.h"
 
-@implementation KPCAAMoonPhases
 
-+ (double)K:(double)Year
+double KPCAAMoonPhases_K(double Year)
 {
     return CAAMoonPhases::K(Year);
 }
 
-+ (double)MeanPhase:(double)k
+double KPCAAMoonPhases_MeanPhase(double k)
 {
     return CAAMoonPhases::MeanPhase(k);
 }
 
-+ (double)TruePhase:(double)k
+double KPCAAMoonPhases_TruePhase(double k)
 {
     return CAAMoonPhases::TruePhase(k);
 }
 
-@end

@@ -9,26 +9,24 @@
 #import "KPCAAMoonIlluminatedFraction.h"
 #import "AAMoonIlluminatedFraction.h"
 
-@implementation KPCAAMoonIlluminatedFraction
 
-+ (double)GeocentricElongation:(double)ObjectAlpha ObjectDelta:(double)ObjectDelta SunAlpha:(double)SunAlpha SunDelta:(double)SunDelta
+double KPCAAMoonIlluminatedFraction_GeocentricElongation(double ObjectAlpha, double ObjectDelta, double SunAlpha, double SunDelta)
 {
     return CAAMoonIlluminatedFraction::GeocentricElongation(ObjectAlpha, ObjectDelta, SunAlpha, SunDelta);
 }
 
-+ (double)PhaseAngle:(double)GeocentricElongation EarthObjectDistance:(double)EarthObjectDistance EarthSunDistance:(double)EarthSunDistance
+double KPCAAMoonIlluminatedFraction_PhaseAngle(double GeocentricElongation, double EarthObjectDistance, double EarthSunDistance)
 {
     return CAAMoonIlluminatedFraction::PhaseAngle(GeocentricElongation, EarthObjectDistance, EarthSunDistance);
 }
 
-+ (double)IlluminatedFraction:(double)PhaseAngle
+double KPCAAMoonIlluminatedFraction_IlluminatedFraction(double PhaseAngle)
 {
     return CAAMoonIlluminatedFraction::IlluminatedFraction(PhaseAngle);
 }
 
-+ (double)PositionAngle:(double)Alpha0 Delta0:(double)Delta0 Alpha:(double)Alpha Delta:(double)Delta
+double KPCAAMoonIlluminatedFraction_PositionAngle(double Alpha0, double Delta0, double Alpha, double Delta)
 {
     return CAAMoonIlluminatedFraction::PositionAngle(Alpha0, Delta0, Alpha, Delta);
 }
 
-@end

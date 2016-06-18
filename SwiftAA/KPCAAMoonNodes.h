@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMoonNodes : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)K:(double)Year;
-+ (double)PassageThroNode:(double)k;
+double KPCAAMoonNodes_K(double Year);
+double KPCAAMoonNodes_PassageThroNode(double k);
 
-@end
+#if __cplusplus
+}
+#endif

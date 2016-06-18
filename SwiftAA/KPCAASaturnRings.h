@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAASaturnRingDetails {
     double B;
     double Bdash;
@@ -17,4 +21,8 @@ typedef struct KPCAASaturnRingDetails {
     double DeltaU;
 } KPCAASaturnRingDetails;
 
-KPCAASaturnRingDetails KPCAASaturnRings(double JD, BOOL highPrecision);
+KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

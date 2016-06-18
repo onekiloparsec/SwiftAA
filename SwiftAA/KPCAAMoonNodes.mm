@@ -9,16 +9,14 @@
 #import "KPCAAMoonNodes.h"
 #import "AAMoonNodes.h"
 
-@implementation KPCAAMoonNodes
 
-+ (double)K:(double)Year
+double KPCAAMoonNodes_K(double Year)
 {
     return CAAMoonNodes::K(Year);
 }
 
-+ (double)PassageThroNode:(double)k
+double KPCAAMoonNodes_PassageThroNode(double k)
 {
     return CAAMoonNodes::PassageThroNode(k);
 }
 
-@end

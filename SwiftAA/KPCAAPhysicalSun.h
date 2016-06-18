@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAAPhysicalSunDetails {
     double P;
     double B0;
     double L0;
 } KPCAAPhysicalSunDetails;
 
-KPCAAPhysicalSunDetails KPCAAPhysicalSunCalculateDetails(double JD, BOOL highPrecision);
-double KPCAAPhysicalSunTimeOfStartOfRotation(long C);
+KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, BOOL highPrecision);
+double KPCAAPhysicalSun_TimeOfStartOfRotation(long C);
+
+#if __cplusplus
+}
+#endif

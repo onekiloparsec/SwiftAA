@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef NS_ENUM(NSUInteger, KPCPlanetaryObject) {
     MERCURY,
     VENUS,
@@ -29,11 +33,12 @@ typedef NS_ENUM(NSUInteger, KPCPlanetaryEventType) {
     STATION2
 };
 
-@interface KPCAAPlanetaryPhenomena : NSObject
 
-+ (double)K:(double)Year object:(KPCPlanetaryObject)object eventType:(KPCPlanetaryEventType)type;
-+ (double)Mean:(double)k object:(KPCPlanetaryObject)object eventType:(KPCPlanetaryEventType)type;
-+ (double)True:(double)k object:(KPCPlanetaryObject)object eventType:(KPCPlanetaryEventType)type;
-+ (double)ElongationValue:(double)k object:(KPCPlanetaryObject)object eastern:(BOOL)eastern;
+double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type);
+double KPCAAPlanetaryPhenomena_Mean(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type);
+double KPCAAPlanetaryPhenomena_True(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type);
+double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, BOOL eastern);
 
-@end
+#if __cplusplus
+}
+#endif

@@ -9,126 +9,130 @@
 #import "KPCAAPlanetPerihelionAphelion.h"
 #import "AAPlanetPerihelionAphelion.h"
 
-@implementation KPCAAPlanetPerihelionAphelion
 
-+ (long)MercuryK:(double)Year
+long KPCAAPlanetPerihelionAphelion_MercuryK(double Year)
 {
     return CAAPlanetPerihelionAphelion::MercuryK(Year);
 }
 
-+ (double)MercuryPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_MercuryPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::MercuryPerihelion(k);
 }
 
-+ (double)MercuryAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_MercuryAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::MercuryAphelion(k);
 }
 
-+ (long)VenusK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_VenusK(double Year)
 {
     return CAAPlanetPerihelionAphelion::VenusK(Year);
 }
 
-+ (double)VenusPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_VenusPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::VenusPerihelion(k);
 }
 
-+ (double)VenusAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_VenusAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::VenusAphelion(k);
 }
 
-+ (long)EarthK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_EarthK(double Year)
 {
     return CAAPlanetPerihelionAphelion::EarthK(Year);
 }
 
-+ (double)EarthPerihelion:(long)k barycentric:(BOOL)barycentric
+double KPCAAPlanetPerihelionAphelion_EarthPerihelion(long k, BOOL barycentric)
 {
     return CAAPlanetPerihelionAphelion::EarthPerihelion(k, barycentric);
 }
 
-+ (double)EarthAphelion:(long)k barycentric:(BOOL)barycentric
+double KPCAAPlanetPerihelionAphelion_EarthAphelion(long k, BOOL barycentric)
 {
     return CAAPlanetPerihelionAphelion::EarthAphelion(k, barycentric);
 }
 
-+ (long)MarsK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_MarsK(double Year)
 {
     return CAAPlanetPerihelionAphelion::MarsK(Year);
 }
 
-+ (double)MarsPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_MarsPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::MarsPerihelion(k);
 }
 
-+ (double)MarsAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_MarsAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::MarsAphelion(k);
 }
 
-+ (long)JupiterK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_JupiterK(double Year)
 {
     return CAAPlanetPerihelionAphelion::JupiterK(Year);
 }
 
-+ (double)JupiterPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_JupiterPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::JupiterPerihelion(k);
 }
 
-+ (double)JupiterAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_JupiterAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::JupiterAphelion(k);
 }
 
-+ (long)SaturnK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_SaturnK(double Year)
 {
     return CAAPlanetPerihelionAphelion::SaturnK(Year);
 }
 
-+ (double)SaturnPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_SaturnPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::SaturnPerihelion(k);
 }
 
-+ (double)SaturnAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_SaturnAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::SaturnAphelion(k);
 }
 
-+ (long)UranusK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_UranusK(double Year)
 {
     return CAAPlanetPerihelionAphelion::UranusK(Year);
 }
 
-+ (double)UranusPerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_UranusPerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::UranusPerihelion(k);
 }
 
-+ (double)UranusAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_UranusAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::UranusAphelion(k);
 }
 
-+ (long)NeptuneK:(double)Year
+
+long KPCAAPlanetPerihelionAphelion_NeptuneK(double Year)
 {
     return CAAPlanetPerihelionAphelion::NeptuneK(Year);
 }
 
-+ (double)NeptunePerihelion:(long)k
+double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k)
 {
     return CAAPlanetPerihelionAphelion::NeptunePerihelion(k);
 }
 
-+ (double)NeptuneAphelion:(long)k
+double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::NeptuneAphelion(k);
 }
-
-@end

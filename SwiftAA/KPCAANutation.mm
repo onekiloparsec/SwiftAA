@@ -9,34 +9,33 @@
 #import "KPCAANutation.h"
 #import "AANutation.h"
 
-@implementation KPCAANutation
 
-+ (double)NutationInLongitude:(double)JD
+double KPCAANutation_NutationInLongitude(double JD)
 {
     return CAANutation::NutationInLongitude(JD);
 }
-+ (double)NutationInObliquity:(double)JD
+
+double KPCAANutation_NutationInObliquity(double JD)
 {
     return CAANutation::NutationInObliquity(JD);
 }
 
-+ (double)NutationInRightAscension:(double)Alpha Delta:(double)Delta Obliquity:(double)Obliquity NutationInLongitude:(double)NutationInLongitude NutationInObliquity:(double)NutationInObliquity
+double KPCAANutation_NutationInRightAscension(double Alpha, double Delta, double Obliquity, double NutationInLongitude, double NutationInObliquity)
 {
     return CAANutation::NutationInRightAscension(Alpha, Delta, Obliquity, NutationInLongitude, NutationInObliquity);
 }
-+ (double)NutationInDeclination:(double)Alpha Obliquity:(double)Obliquity NutationInLongitude:(double)NutationInLongitude NutationInObliquity:(double)NutationInObliquity
+double KPCAANutation_NutationInDeclination(double Alpha, double Obliquity, double NutationInLongitude, double NutationInObliquity)
 {
     return CAANutation::NutationInDeclination(Alpha, Obliquity, NutationInLongitude, NutationInObliquity);
 }
 
-+ (double)MeanObliquityOfEcliptic:(double)JD
+double KPCAANutation_MeanObliquityOfEcliptic(double JD)
 {
     return CAANutation::MeanObliquityOfEcliptic(JD);
 }
 
-+ (double)TrueObliquityOfEcliptic:(double)JD
+double KPCAANutation_TrueObliquityOfEcliptic(double JD)
 {
     return CAANutation::TrueObliquityOfEcliptic(JD);
 }
 
-@end

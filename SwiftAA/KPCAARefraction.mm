@@ -9,16 +9,13 @@
 #import "KPCAARefraction.h"
 #import "AARefraction.h"
 
-@implementation KPCAARefraction
-
-+ (double)RefractionFromApparentWithAltitude:(double)Altitude Pressure:(double)Pressure Temperature:(double)Temperature
+double KPCAARefraction_RefractionFromApparentWithAltitude(double Altitude, double Pressure,  double Temperature)
 {
     return CAARefraction::RefractionFromApparent(Altitude, Pressure, Temperature);
 }
 
-+ (double)RefractionFromTrueWithAltitude:(double)Altitude Pressure:(double)Pressure Temperature:(double)Temperature
+double KPCAARefraction_RefractionFromTrueWithAltitude(double Altitude, double Pressure, double Temperature)
 {
     return CAARefraction::RefractionFromTrue(Altitude, Pressure, Temperature);
 }
 
-@end

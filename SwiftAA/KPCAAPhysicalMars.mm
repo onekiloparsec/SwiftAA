@@ -9,7 +9,7 @@
 #import "KPCAAPhysicalMars.h"
 #import "AAPhysicalMars.h"
 
-KPCAAPhysicalMarsDetails KPCAAPhysicalMarsCalculateDetails(double JD, BOOL highPrecision)
+KPCAAPhysicalMarsDetails KPCAAPhysicalMars_CalculateDetails(double JD, BOOL highPrecision)
 {
     CAAPhysicalMarsDetails detailsPlus = CAAPhysicalMars::Calculate(JD, highPrecision);
     

@@ -46,25 +46,25 @@ CAAParabolicObjectElements CAAParabolicObjectElementsMake(KPCAAParabolicObjectEl
 }
 
 
-KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
+KPCAANodeObjectDetails KPCAANodes_PassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElementsMake(elements);
     return KPCAANodeObjectDetailsMake(CAANodes::PassageThroAscendingNode(elementsPlus));
 }
 
-KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
+KPCAANodeObjectDetails KPCAANodes_PassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements)
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElementsMake(elements);
     return KPCAANodeObjectDetailsMake(CAANodes::PassageThroDescendingNode(elementsPlus));
 }
 
-KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
+KPCAANodeObjectDetails KPCAANodes_PassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
 {
     CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElementsMake(elements);
     return KPCAANodeObjectDetailsMake(CAANodes::PassageThroAscendingNode(elementsPlus));
 }
 
-KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
+KPCAANodeObjectDetails KPCAANodes_PassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements)
 {
     CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElementsMake(elements);
     return KPCAANodeObjectDetailsMake(CAANodes::PassageThroDescendingNode(elementsPlus));

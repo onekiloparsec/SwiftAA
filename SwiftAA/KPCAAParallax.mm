@@ -9,19 +9,19 @@
 #import "KPCAAParallax.h"
 #import "AAParallax.h"
 
-KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2TopocentricDelta(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD)
+KPCAA2DCoordinateComponents KPCAAParallax_Equatorial2TopocentricDelta(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD)
 {
     CAA2DCoordinate coords = CAAParallax::Equatorial2TopocentricDelta(Alpha, Delta, Distance, Longitude, Latitude, Height, JD);
     return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2Topocentric(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD)
+KPCAA2DCoordinateComponents KPCAAParallax_Equatorial2Topocentric(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD)
 {
     CAA2DCoordinate coords = CAAParallax::Equatorial2Topocentric(Alpha, Delta, Distance, Longitude, Latitude, Height, JD);
     return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-KPCAATopocentricEclipticDetails KPCAAParallaxEcliptic2Topocentric(double Lambda, double Beta, double Semidiameter, double Distance, double Epsilon, double Latitude, double Height, double JD)
+KPCAATopocentricEclipticDetails KPCAAParallax_Ecliptic2Topocentric(double Lambda, double Beta, double Semidiameter, double Distance, double Epsilon, double Latitude, double Height, double JD)
 {
     CAATopocentricEclipticDetails detailsPlus = CAAParallax::Ecliptic2Topocentric(Lambda, Beta, Semidiameter, Distance, Epsilon, Latitude, Height, JD);
     struct KPCAATopocentricEclipticDetails details;
@@ -31,12 +31,12 @@ KPCAATopocentricEclipticDetails KPCAAParallaxEcliptic2Topocentric(double Lambda,
     return details;
 }
 
-double KPCAAParallaxParallaxToDistance(double Parallax)
+double KPCAAParallax_ParallaxToDistance(double Parallax)
 {
     return CAAParallax::ParallaxToDistance(Parallax);
 }
 
-double KPCAAParallaxDistanceToParallax(double Distance)
+double KPCAAParallax_DistanceToParallax(double Distance)
 {
     return CAAParallax::DistanceToParallax(Distance);
 }

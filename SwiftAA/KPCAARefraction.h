@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAARefraction : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // Standard Pressure = 1010
 // Standard Temperature = 10
 
-+ (double)RefractionFromApparentWithAltitude:(double)Altitude Pressure:(double)Pressure Temperature:(double)Temperature;
-+ (double)RefractionFromTrueWithAltitude:(double)Altitude Pressure:(double)Pressure Temperature:(double)Temperature;
+double KPCAARefraction_RefractionFromApparentWithAltitude(double Altitude, double Pressure,  double Temperature);
+double KPCAARefraction_RefractionFromTrueWithAltitude(double Altitude, double Pressure, double Temperature);
 
-@end
+#if __cplusplus
+}
+#endif

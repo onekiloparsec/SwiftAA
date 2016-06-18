@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAAPhysicalMarsDetails {
     double DE;
     double DS;
@@ -19,5 +23,8 @@ typedef struct KPCAAPhysicalMarsDetails {
     double d;
 } KPCAAPhysicalMarsDetails;
 
-KPCAAPhysicalMarsDetails KPCAAPhysicalMarsCalculateDetails(double JD, BOOL highPrecision);
+KPCAAPhysicalMarsDetails KPCAAPhysicalMars_CalculateDetails(double JD, BOOL highPrecision);
 
+#if __cplusplus
+}
+#endif

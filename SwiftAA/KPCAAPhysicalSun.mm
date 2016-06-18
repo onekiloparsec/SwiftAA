@@ -9,7 +9,7 @@
 #import "KPCAAPhysicalSun.h"
 #import "AAPhysicalSun.h"
 
-KPCAAPhysicalSunDetails KPCAAPhysicalSunCalculateDetails(double JD, BOOL highPrecision)
+KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, BOOL highPrecision)
 {
     CAAPhysicalSunDetails details = CAAPhysicalSun::Calculate(JD, highPrecision);
     KPCAAPhysicalSunDetails results;
@@ -19,7 +19,7 @@ KPCAAPhysicalSunDetails KPCAAPhysicalSunCalculateDetails(double JD, BOOL highPre
     return results;
 }
 
-double KPCAAPhysicalSunTimeOfStartOfRotation(long C)
+double KPCAAPhysicalSun_TimeOfStartOfRotation(long C)
 {
     return CAAPhysicalSun::TimeOfStartOfRotation(C);
 }

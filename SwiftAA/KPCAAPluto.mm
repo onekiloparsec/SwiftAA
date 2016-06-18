@@ -9,21 +9,19 @@
 #import "KPCAAPluto.h"
 #import "AAPluto.h"
 
-@implementation KPCAAPluto
 
-+ (double)EclipticLongitude:(double)JD
+double KPCAAPluto_EclipticLongitude(double JD)
 {
     return CAAPluto::EclipticLongitude(JD);
 }
 
-+ (double)EclipticLatitude:(double)JD
+double KPCAAPluto_EclipticLatitude(double JD)
 {
     return CAAPluto::EclipticLatitude(JD);
 }
 
-+ (double)RadiusVector:(double)JD
+double KPCAAPluto_RadiusVector(double JD)
 {
     return CAAPluto::RadiusVector(JD);
 }
 
-@end

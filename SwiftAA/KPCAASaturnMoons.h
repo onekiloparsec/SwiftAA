@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAASaturnMoonDetails {
     KPCAA3DCoordinateComponents TrueRectangularCoordinateComponents;
     KPCAA3DCoordinateComponents ApparentRectangularCoordinateComponents;
@@ -30,5 +34,8 @@ typedef struct KPCAASaturnMoonsDetails {
     KPCAASaturnMoonDetails Satellite8;
 } KPCAASaturnMoonsDetails;
 
-KPCAASaturnMoonsDetails KPCAASaturnMoonsDetailsCalculate(double JD, BOOL highPrecision);
+KPCAASaturnMoonsDetails KPCAASaturnMoonsDetails_Calculate(double JD, BOOL highPrecision);
 
+#if __cplusplus
+}
+#endif

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAARiseTransitSetDetails {
     BOOL isRiseValid;
     double Rise;
@@ -17,14 +21,17 @@ typedef struct KPCAARiseTransitSetDetails {
     double Set;
 } KPCAARiseTransitSetDetails;
 
-KPCAARiseTransitSetDetails KPCAARiseTransitSetCalculate(double JD,
-                                                        double Alpha1,
-                                                        double Delta1,
-                                                        double Alpha2,
-                                                        double Delta2,
-                                                        double Alpha3,
-                                                        double Delta3,
-                                                        double Longitude,
-                                                        double Latitude,
-                                                        double h0);
+KPCAARiseTransitSetDetails KPCAARiseTransitSet_Calculate(double JD,
+                                                         double Alpha1,
+                                                         double Delta1,
+                                                         double Alpha2,
+                                                         double Delta2,
+                                                         double Alpha3,
+                                                         double Delta3,
+                                                         double Longitude,
+                                                         double Latitude,
+                                                         double h0);
 
+#if __cplusplus
+}
+#endif

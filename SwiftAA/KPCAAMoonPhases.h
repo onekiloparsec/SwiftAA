@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMoonPhases : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)K:(double)Year;
-+ (double)MeanPhase:(double)k;
-+ (double)TruePhase:(double)k;
+double KPCAAMoonPhases_K(double Year);
+double KPCAAMoonPhases_MeanPhase(double k);
+double KPCAAMoonPhases_TruePhase(double k);
 
-@end
+#if __cplusplus
+}
+#endif

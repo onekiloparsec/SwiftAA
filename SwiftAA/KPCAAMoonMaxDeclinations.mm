@@ -9,31 +9,28 @@
 #import "KPCAAMoonMaxDeclinations.h"
 #import "AAMoonMaxDeclinations.h"
 
-@implementation KPCAAMoonMaxDeclinations
-
-+ (double)K:(double)Year
+double KPCAAMoonMaxDeclinations_K(double Year)
 {
     return CAAMoonMaxDeclinations::K(Year);
 }
 
-+ (double)MeanGreatestDeclination:(double)k northerly:(BOOL)northerly
+double KPCAAMoonMaxDeclinations_MeanGreatestDeclination(double k, BOOL northerly)
 {
     return CAAMoonMaxDeclinations::MeanGreatestDeclination(k, (bool)northerly);
 }
 
-+ (double)MeanGreatestDeclinationValue:(double)k
+double KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(double k)
 {
     return CAAMoonMaxDeclinations::MeanGreatestDeclinationValue(k);
 }
 
-+ (double)TrueGreatestDeclination:(double)k northerly:(BOOL)northerly
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclination(double k, BOOL northerly)
 {
     return CAAMoonMaxDeclinations::TrueGreatestDeclination(k, northerly);
 }
 
-+ (double)TrueGreatestDeclinationValue:(double)k northerly:(BOOL)northerly
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(double k, BOOL northerly)
 {
     return CAAMoonMaxDeclinations::TrueGreatestDeclinationValue(k, (BOOL)northerly);
 }
 
-@end

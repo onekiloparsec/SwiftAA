@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMoonMaxDeclinations : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)K:(double)Year;
-+ (double)MeanGreatestDeclination:(double)k northerly:(BOOL)northerly;
-+ (double)MeanGreatestDeclinationValue:(double)k;
-+ (double)TrueGreatestDeclination:(double)k northerly:(BOOL)northerly;
-+ (double)TrueGreatestDeclinationValue:(double)k northerly:(BOOL)northerly;
+double KPCAAMoonMaxDeclinations_K(double Year);
+double KPCAAMoonMaxDeclinations_MeanGreatestDeclination(double k, BOOL northerly);
+double KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(double k);
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclination(double k, BOOL northerly);
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(double k, BOOL northerly);
 
-@end
+#if __cplusplus
+}
+#endif

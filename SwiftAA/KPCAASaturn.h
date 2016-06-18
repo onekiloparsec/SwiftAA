@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAASaturnEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAASaturnEclipticLatitude(double JD, BOOL highPrecision);
-double KPCAASaturnRadiusVector(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+double KPCAASaturn_EclipticLongitude(double JD, BOOL highPrecision);
+double KPCAASaturn_EclipticLatitude(double JD, BOOL highPrecision);
+double KPCAASaturn_RadiusVector(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

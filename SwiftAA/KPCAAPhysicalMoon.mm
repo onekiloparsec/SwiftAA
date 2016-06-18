@@ -31,32 +31,32 @@ KPCAASelenographicMoonDetails KPCAASelenographicMoonDetailsMake(CAASelenographic
     return results;
 }
 
-KPCAAPhysicalMoonDetails KPCPhysicalMoonGeocentric(double JD)
+KPCAAPhysicalMoonDetails KPCPhysicalMoon_CalculateGeocentric(double JD)
 {
     return KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoon::CalculateGeocentric(JD));
 }
 
-KPCAAPhysicalMoonDetails KPCPhysicalMoonTopocentric(double JD, double Longitude, double Latitude)
+KPCAAPhysicalMoonDetails KPCPhysicalMoon_CalculateTopocentric(double JD, double Longitude, double Latitude)
 {
     return KPCAAPhysicalMoonDetailsMake(CAAPhysicalMoon::CalculateTopocentric(JD, Longitude, Latitude));
 }
 
-KPCAASelenographicMoonDetails KPCPhysicalMoonSelenographicPositionOfSun(double JD, BOOL highPrecision)
+KPCAASelenographicMoonDetails KPCPhysicalMoon_SelenographicPositionOfSun(double JD, BOOL highPrecision)
 {
     return KPCAASelenographicMoonDetailsMake(CAAPhysicalMoon::CalculateSelenographicPositionOfSun(JD, highPrecision));
 }
 
-double KPCPhysicalMoonAltitudeOfSun(double JD, double Longitude, double Latitude, BOOL highPrecision)
+double KPCPhysicalMoon_AltitudeOfSun(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
     return CAAPhysicalMoon::AltitudeOfSun(JD, Longitude, Latitude, highPrecision);
 }
 
-double KPCPhysicalMoonTimeOfSunrise(double JD, double Longitude, double Latitude, BOOL highPrecision)
+double KPCPhysicalMoon_TimeOfSunrise(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
     return CAAPhysicalMoon::TimeOfSunrise(JD, Longitude, Latitude, highPrecision);
 }
 
-double KPCPhysicalMoonTimeOfSunset(double JD, double Longitude, double Latitude, BOOL highPrecision)
+double KPCPhysicalMoon_TimeOfSunset(double JD, double Longitude, double Latitude, BOOL highPrecision)
 {
     return CAAPhysicalMoon::TimeOfSunset(JD, Longitude, Latitude, highPrecision);
 }

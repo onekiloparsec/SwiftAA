@@ -9,12 +9,12 @@
 #import "KPCAAParabolic.h"
 #import "AAParabolic.h"
 
-double KPCAAParabolicBarkers(double W)
+double KPCAAParabolic_CalculateBarkers(double W)
 {
     return CAAParabolic::CalculateBarkers(W);
 }
 
-KPCAAParabolicObjectDetails KPCAAParabolicCalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision)
+KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision)
 {
     CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElements();
     elementsPlus.q = elements.q;

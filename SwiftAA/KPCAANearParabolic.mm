@@ -9,7 +9,7 @@
 #import "KPCAANearParabolic.h"
 #import "AANearParabolic.h"
 
-KPCAANearParabolicObjectDetails KPCAANearParabolicCalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, BOOL highPrecision)
+KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, BOOL highPrecision)
 {
     CAANearParabolicObjectElements elementsPlus = CAANearParabolicObjectElements();
 
@@ -49,7 +49,7 @@ KPCAANearParabolicObjectDetails KPCAANearParabolicCalculateObjectDetails(double 
     return details;
 }
 
-void KPCAANearParabolicCalulateTrueAnnomalyAndRadius(double JD, struct KPCAANearParabolicObjectElements elements, double *v, double *r)
+void KPCAANearParabolic_CalulateTrueAnnomalyAndRadius(double JD, struct KPCAANearParabolicObjectElements elements, double *v, double *r)
 {
     CAANearParabolicObjectElements elementsPlus;
     CAANearParabolic::CalulateTrueAnnomalyAndRadius(JD, elementsPlus, *v, *r);

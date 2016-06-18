@@ -9,41 +9,37 @@
 #import "KPCAAMoonPerigeeApogee.h"
 #import "AAMoonPerigeeApogee.h"
 
-@implementation KPCAAMoonPerigeeApogee
-
-+ (double)K:(double)Year
+double KPCAAMoonPerigeeApogee_K(double Year)
 {
     return CAAMoonPerigeeApogee::K(Year);
 }
 
-+ (double)MeanPerigee:(double)k
+double KPCAAMoonPerigeeApogee_MeanPerigee(double k)
 {
     return CAAMoonPerigeeApogee::MeanPerigee(k);
 }
 
-+ (double)MeanApogee:(double)k
+double KPCAAMoonPerigeeApogee_MeanApogee(double k)
 {
     return CAAMoonPerigeeApogee::MeanApogee(k);
 }
 
-+ (double)TruePerigee:(double)k
+double KPCAAMoonPerigeeApogee_TruePerigee(double k)
 {
     return CAAMoonPerigeeApogee::TruePerigee(k);
 }
 
-+ (double)TrueApogee:(double)k
+double KPCAAMoonPerigeeApogee_TrueApogee(double k)
 {
     return CAAMoonPerigeeApogee::TrueApogee(k);
 }
 
-+ (double)PerigeeParallax:(double)k
+double KPCAAMoonPerigeeApogee_PerigeeParallax(double k)
 {
     return CAAMoonPerigeeApogee::PerigeeParallax(k);
 }
 
-+ (double)ApogeeParallax:(double)k
+double KPCAAMoonPerigeeApogee_ApogeeParallax(double k)
 {
     return CAAMoonPerigeeApogee::ApogeeParallax(k);
 }
-
-@end

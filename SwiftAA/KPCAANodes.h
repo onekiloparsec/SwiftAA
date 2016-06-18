@@ -10,13 +10,21 @@
 #import "KPCAAElliptical.h"
 #import "KPCAAParabolic.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAANodeObjectDetails {
     double t;
     double radius;
 } KPCAANodeObjectDetails;
 
-KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
-KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodes_PassageThroAscendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodes_PassageThroDescendingNodeForEllipticalElements(KPCAAEllipticalObjectElements *elements);
 
-KPCAANodeObjectDetails KPCAANodesPassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);
-KPCAANodeObjectDetails KPCAANodesPassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodes_PassageThroAscendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);
+KPCAANodeObjectDetails KPCAANodes_PassageThroDescendingNodeForParabolicElements(KPCAAParabolicObjectElements *elements);
+
+#if __cplusplus
+}
+#endif

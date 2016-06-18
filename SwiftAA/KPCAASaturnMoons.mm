@@ -29,7 +29,7 @@ KPCAASaturnMoonDetails KPCAASaturnMoonDetailMake(CAASaturnMoonDetail detailsPlus
     return details;
 }
 
-KPCAASaturnMoonsDetails KPCAASaturnMoonsDetailsCalculate(double JD, BOOL highPrecision)
+KPCAASaturnMoonsDetails KPCAASaturnMoonsDetails_Calculate(double JD, BOOL highPrecision)
 {
     CAASaturnMoonsDetails detailsPlus = CAASaturnMoons::Calculate(JD, highPrecision);
     

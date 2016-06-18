@@ -8,38 +8,42 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPlanetPerihelionAphelion : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (long)MercuryK:(double)Year;
-+ (double)MercuryPerihelion:(long)k;
-+ (double)MercuryAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_MercuryK(double Year);
+double KPCAAPlanetPerihelionAphelion_MercuryPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_MercuryAphelion(long k);
 
-+ (long)VenusK:(double)Year;
-+ (double)VenusPerihelion:(long)k;
-+ (double)VenusAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_VenusK(double Year);
+double KPCAAPlanetPerihelionAphelion_VenusPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_VenusAphelion(long k);
 
-+ (long)EarthK:(double)Year;
-+ (double)EarthPerihelion:(long)k barycentric:(BOOL)barycentric;
-+ (double)EarthAphelion:(long)k barycentric:(BOOL)barycentric;
+long KPCAAPlanetPerihelionAphelion_EarthK(double Year);
+double KPCAAPlanetPerihelionAphelion_EarthPerihelion(long k, BOOL barycentric);
+double KPCAAPlanetPerihelionAphelion_EarthAphelion(long k, BOOL barycentric);
 
-+ (long)MarsK:(double)Year;
-+ (double)MarsPerihelion:(long)k;
-+ (double)MarsAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_MarsK(double Year);
+double KPCAAPlanetPerihelionAphelion_MarsPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_MarsAphelion(long k);
 
-+ (long)JupiterK:(double)Year;
-+ (double)JupiterPerihelion:(long)k;
-+ (double)JupiterAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_JupiterK(double Year);
+double KPCAAPlanetPerihelionAphelion_JupiterPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_JupiterAphelion(long k);
 
-+ (long)SaturnK:(double)Year;
-+ (double)SaturnPerihelion:(long)k;
-+ (double)SaturnAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_SaturnK(double Year);
+double KPCAAPlanetPerihelionAphelion_SaturnPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_SaturnAphelion(long k);
 
-+ (long)UranusK:(double)Year;
-+ (double)UranusPerihelion:(long)k;
-+ (double)UranusAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_UranusK(double Year);
+double KPCAAPlanetPerihelionAphelion_UranusPerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_UranusAphelion(long k);
 
-+ (long)NeptuneK:(double)Year;
-+ (double)NeptunePerihelion:(long)k;
-+ (double)NeptuneAphelion:(long)k;
+long KPCAAPlanetPerihelionAphelion_NeptuneK(double Year);
+double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k);
+double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
 
-@end
+#if __cplusplus
+}
+#endif

@@ -9,12 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA2DCoordinate.h"
 
-KPCAA2DCoordinateComponents KPCAAPrecessEquatorial(double Alpha, double Delta, double JD0, double JD);
-KPCAA2DCoordinateComponents KPCAAPrecessEquatorialFK4(double Alpha, double Delta, double JD0, double JD);
-KPCAA2DCoordinateComponents KPCAAPrecessEcliptic(double Lambda, double Beta, double JD0, double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-KPCAA2DCoordinateComponents KPCAAEquatorialPMToEcliptic(double Alpha, double Delta, double Beta, double PMAlpha, double PMDelta, double Epsilon);
+KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEquatorial(double Alpha, double Delta, double JD0, double JD);
+KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEquatorialFK4(double Alpha, double Delta, double JD0, double JD);
+KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEcliptic(double Lambda, double Beta, double JD0, double JD);
 
-KPCAA2DCoordinateComponents KPCAAAdjustPositionUsingUniformProperMotion(double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+KPCAA2DCoordinateComponents KPCAAPrecession_EquatorialPMToEcliptic(double Alpha, double Delta, double Beta, double PMAlpha, double PMDelta, double Epsilon);
 
-KPCAA2DCoordinateComponents KPCAAAdjustPositionUsingMotionInSpace(double r, double deltar, double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingUniformProperMotion(double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+
+KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingMotionInSpace(double r, double deltar, double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+
+#if __cplusplus
+}
+#endif

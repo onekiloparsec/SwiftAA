@@ -9,18 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA2DCoordinate.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAATopocentricEclipticDetails {
     double Lambda;
     double Beta;
     double Semidiameter;
 } KPCAATopocentricEclipticDetails;
 
-KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2TopocentricDelta(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
+KPCAA2DCoordinateComponents KPCAAParallax_Equatorial2TopocentricDelta(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
 
-KPCAA2DCoordinateComponents KPCAAParallaxEquatorial2Topocentric(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
+KPCAA2DCoordinateComponents KPCAAParallax_Equatorial2Topocentric(double Alpha, double Delta, double Distance, double Longitude, double Latitude, double Height, double JD);
 
-KPCAATopocentricEclipticDetails KPCAAParallaxEcliptic2Topocentric(double Lambda, double Beta, double Semidiameter, double Distance, double Epsilon, double Latitude, double Height, double JD);
+KPCAATopocentricEclipticDetails KPCAAParallax_Ecliptic2Topocentric(double Lambda, double Beta, double Semidiameter, double Distance, double Epsilon, double Latitude, double Height, double JD);
 
-double KPCAAParallaxParallaxToDistance(double Parallax);
-double KPCAAParallaxDistanceToParallax(double Distance);
+double KPCAAParallax_ParallaxToDistance(double Parallax);
+double KPCAAParallax_DistanceToParallax(double Distance);
 
+#if __cplusplus
+}
+#endif

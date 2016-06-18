@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAPluto : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)EclipticLongitude:(double)JD;
-+ (double)EclipticLatitude:(double)JD;
-+ (double)RadiusVector:(double)JD;
+double KPCAAPluto_EclipticLongitude(double JD);
+double KPCAAPluto_EclipticLatitude(double JD);
+double KPCAAPluto_RadiusVector(double JD);
 
-@end
+#if __cplusplus
+}
+#endif

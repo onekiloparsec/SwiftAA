@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAANutation : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)NutationInLongitude:(double)JD;
-+ (double)NutationInObliquity:(double)JD;
-+ (double)NutationInRightAscension:(double)Alpha Delta:(double)Delta Obliquity:(double)Obliquity NutationInLongitude:(double)NutationInLongitude NutationInObliquity:(double)NutationInObliquity;
-+ (double)NutationInDeclination:(double)Alpha Obliquity:(double)Obliquity NutationInLongitude:(double)NutationInLongitude NutationInObliquity:(double)NutationInObliquity;
-+ (double)MeanObliquityOfEcliptic:(double)JD;
-+ (double)TrueObliquityOfEcliptic:(double)JD;
+double KPCAANutation_NutationInLongitude(double JD);
+double KPCAANutation_NutationInObliquity(double JD);
+double KPCAANutation_NutationInRightAscension(double Alpha, double Delta, double Obliquity, double NutationInLongitude, double NutationInObliquity);
+double KPCAANutation_NutationInDeclination(double Alpha, double Obliquity, double NutationInLongitude, double NutationInObliquity);
+double KPCAANutation_MeanObliquityOfEcliptic(double JD);
+double KPCAANutation_TrueObliquityOfEcliptic(double JD);
 
-@end
+#if __cplusplus
+}
+#endif

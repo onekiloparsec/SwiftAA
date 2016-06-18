@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAMoonPerigeeApogee : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)K:(double)Year;
-+ (double)MeanPerigee:(double)k;
-+ (double)MeanApogee:(double)k;
-+ (double)TruePerigee:(double)k;
-+ (double)TrueApogee:(double)k;
-+ (double)PerigeeParallax:(double)k;
-+ (double)ApogeeParallax:(double)k;
+double KPCAAMoonPerigeeApogee_K(double Year);
+double KPCAAMoonPerigeeApogee_MeanPerigee(double k);
+double KPCAAMoonPerigeeApogee_MeanApogee(double k);
+double KPCAAMoonPerigeeApogee_TruePerigee(double k);
+double KPCAAMoonPerigeeApogee_TrueApogee(double k);
+double KPCAAMoonPerigeeApogee_PerigeeParallax(double k);
+double KPCAAMoonPerigeeApogee_ApogeeParallax(double k);
 
-@end
+#if __cplusplus
+}
+#endif

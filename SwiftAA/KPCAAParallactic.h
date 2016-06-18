@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KPCAAParallactic : NSObject
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-+ (double)ParallacticAngle:(double)HourAngle Latitude:(double)Latitude delta:(double)delta;
-+ (double)EclipticLongitudeOnHorizon:(double)LocalSiderealTime ObliquityOfEcliptic:(double)ObliquityOfEcliptic Latitude:(double)Latitude;
-+ (double)AngleBetweenEclipticAndHorizon:(double)LocalSiderealTime ObliquityOfEcliptic:(double)ObliquityOfEcliptic Latitude:(double)Latitude;
-+ (double)AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic:(double)Lambda Beta:(double)Beta  ObliquityOfEcliptic:(double)ObliquityOfEcliptic;
-
-@end
+double KPCAAParallactic_ParallacticAngle(double HourAngle, double Latitude, double delta);
+double KPCAAParallactic_EclipticLongitudeOnHorizon(double LocalSiderealTime, double ObliquityOfEcliptic, double Latitude);
+double KPCAAParallactic_AngleBetweenEclipticAndHorizon(double LocalSiderealTime, double ObliquityOfEcliptic, double Latitude);
+double KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(double Lambda, double Beta, double ObliquityOfEcliptic);
+    
+#if __cplusplus
+}
+#endif
