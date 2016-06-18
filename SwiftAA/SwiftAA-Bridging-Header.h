@@ -6,5 +6,5 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import "SwiftAA.h"
+#import <SwiftAA/KPCAA2DCoordinate.h>
 
