@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAADynamicalTimeDeltaT(double JD);
-double KPCAADynamicalTimeCumulativeLeapSeconds(double JD);
-double KPCAADynamicalTimeTT2UTC(double JD);
-double KPCAADynamicalTimeUTC2TT(double JD);
-double KPCAADynamicalTimeTT2TAI(double JD);
-double KPCAADynamicalTimeTAI2TT(double JD);
-double KPCAADynamicalTimeTT2UT1(double JD);
-double KPCAADynamicalTimeUT12TT(double JD);
-double KPCAADynamicalTimeUT1MinusUTC(double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+double KPCAADynamicalTime_DeltaT(double JD);
+double KPCAADynamicalTime_CumulativeLeapSeconds(double JD);
+double KPCAADynamicalTime_TT2UTC(double JD);
+double KPCAADynamicalTime_UTC2TT(double JD);
+double KPCAADynamicalTime_TT2TAI(double JD);
+double KPCAADynamicalTime_TAI2TT(double JD);
+double KPCAADynamicalTime_TT2UT1(double JD);
+double KPCAADynamicalTime_UT12TT(double JD);
+double KPCAADynamicalTime_UT1MinusUTC(double JD);
+
+#if __cplusplus
+}
+#endif

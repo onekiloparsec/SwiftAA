@@ -9,37 +9,37 @@
 #import "KPCAAEarth.h"
 #import "AAEarth.h"
 
-double KPCAAEarthEclipticLongitude(double JD, BOOL highPrecision)
+double KPCAAEarth_EclipticLongitude(double JD, BOOL highPrecision)
 {
     return CAAEarth::EclipticLongitude(JD, highPrecision);
 }
 
-double KPCAAEarthEclipticLatitude(double JD, BOOL highPrecision)
+double KPCAAEarth_EclipticLatitude(double JD, BOOL highPrecision)
 {
     return CAAEarth::EclipticLatitude(JD, highPrecision);
 }
 
-double KPCAAEarthRadiusVector(double JD, BOOL highPrecision)
+double KPCAAEarth_RadiusVector(double JD, BOOL highPrecision)
 {
     return CAAEarth::RadiusVector(JD, highPrecision);
 }
 
-double KPCAAEarthSunMeanAnomaly(double JD)
+double KPCAAEarth_SunMeanAnomaly(double JD)
 {
     return CAAEarth::SunMeanAnomaly(JD);
 }
 
-double KPCAAEarthEccentricity(double JD)
+double KPCAAEarth_Eccentricity(double JD)
 {
     return CAAEarth::Eccentricity(JD);
 }
 
-double KPCAAEarthEclipticLongitudeJ2000(double JD, BOOL highPrecision)
+double KPCAAEarth_EclipticLongitudeJ2000(double JD, BOOL highPrecision)
 {
     return CAAEarth::EclipticLongitudeJ2000(JD, highPrecision);
 }
 
-double KPCAAEarthEclipticLatitudeJ2000(double JD, BOOL highPrecision)
+double KPCAAEarth_EclipticLatitudeJ2000(double JD, BOOL highPrecision)
 {
     return CAAEarth::EclipticLatitudeJ2000(JD, highPrecision);
 }

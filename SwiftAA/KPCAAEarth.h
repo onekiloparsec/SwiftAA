@@ -8,10 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAEarthEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAAEarthEclipticLatitude(double JD, BOOL highPrecision);
-double KPCAAEarthRadiusVector(double JD, BOOL highPrecision);
-double KPCAAEarthSunMeanAnomaly(double JD);
-double KPCAAEarthEccentricity(double JD);
-double KPCAAEarthEclipticLongitudeJ2000(double JD, BOOL highPrecision);
-double KPCAAEarthEclipticLatitudeJ2000(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+double KPCAAEarth_EclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAEarth_EclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAEarth_RadiusVector(double JD, BOOL highPrecision);
+double KPCAAEarth_SunMeanAnomaly(double JD);
+double KPCAAEarth_Eccentricity(double JD);
+double KPCAAEarth_EclipticLongitudeJ2000(double JD, BOOL highPrecision);
+double KPCAAEarth_EclipticLatitudeJ2000(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

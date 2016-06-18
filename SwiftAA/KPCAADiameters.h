@@ -8,32 +8,39 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAASunSemidiameterA(double Delta);
-double KPCAAMercurySemidiameterA(double Delta);
-double KPCAAVenusSemidiameterA(double Delta);
-double KPCAAMarsSemidiameterA(double Delta);
-double KPCAAJupiterEquatorialSemidiameterA(double Delta);
-double KPCAAJupiterPolarSemidiameterA(double Delta);
-double KPCAASaturnEquatorialSemidiameterA(double Delta);
-double KPCAASaturnPolarSemidiameterA(double Delta);
-double KPCAAApparentSaturnPolarSemidiameterA(double Delta, double B);
-double KPCAAUranusSemidiameterA(double Delta);
-double KPCAANeptuneSemidiameterA(double Delta);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-double KPCAAMercurySemidiameterB(double Delta);
-double KPCAAVenusSemidiameterB(double Delta);
-double KPCAAMarsSemidiameterB(double Delta);
-double KPCAAJupiterEquatorialSemidiameterB(double Delta);
-double KPCAAJupiterPolarSemidiameterB(double Delta);
-double KPCAASaturnEquatorialSemidiameterB(double Delta);
-double KPCAASaturnPolarSemidiameterB(double Delta);
-double KPCAAApparentSaturnPolarSemidiameterB(double Delta, double B);
-double KPCAAUranusSemidiameterB(double Delta);
-double KPCAANeptuneSemidiameterB(double Delta);
-double KPCAAPlutoSemidiameterB(double Delta);
+double KPCAADiameters_SunSemidiameterA(double Delta);
+double KPCAADiameters_MercurySemidiameterA(double Delta);
+double KPCAADiameters_VenusSemidiameterA(double Delta);
+double KPCAADiameters_MarsSemidiameterA(double Delta);
+double KPCAADiameters_JupiterEquatorialSemidiameterA(double Delta);
+double KPCAADiameters_JupiterPolarSemidiameterA(double Delta);
+double KPCAADiameters_SaturnEquatorialSemidiameterA(double Delta);
+double KPCAADiameters_SaturnPolarSemidiameterA(double Delta);
+double KPCAADiameters_ApparentSaturnPolarSemidiameterA(double Delta, double B);
+double KPCAADiameters_UranusSemidiameterA(double Delta);
+double KPCAADiameters_NeptuneSemidiameterA(double Delta);
 
-double KPCAAGeocentricMoonSemidiameter(double Delta);
-double KPCAATopocentricMoonSemidiameter(double DistanceDelta, double Delta, double H, double Latitude, double Height);
-double KPCAAAsteroidDiameter(double H, double A);
-double KPCAAApparentAsteroidDiameter(double H, double A);
+double KPCAADiameters_MercurySemidiameterB(double Delta);
+double KPCAADiameters_VenusSemidiameterB(double Delta);
+double KPCAADiameters_MarsSemidiameterB(double Delta);
+double KPCAADiameters_JupiterEquatorialSemidiameterB(double Delta);
+double KPCAADiameters_JupiterPolarSemidiameterB(double Delta);
+double KPCAADiameters_SaturnEquatorialSemidiameterB(double Delta);
+double KPCAADiameters_SaturnPolarSemidiameterB(double Delta);
+double KPCAADiameters_ApparentSaturnPolarSemidiameterB(double Delta, double B);
+double KPCAADiameters_UranusSemidiameterB(double Delta);
+double KPCAADiameters_NeptuneSemidiameterB(double Delta);
+double KPCAADiameters_PlutoSemidiameterB(double Delta);
 
+double KPCAADiameters_GeocentricMoonSemidiameter(double Delta);
+double KPCAADiameters_TopocentricMoonSemidiameter(double DistanceDelta, double Delta, double H, double Latitude, double Height);
+double KPCAADiameters_AsteroidDiameter(double H, double A);
+double KPCAADiameters_ApparentAsteroidDiameter(double H, double A);
+
+#if __cplusplus
+}
+#endif
