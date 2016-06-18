@@ -9,17 +9,17 @@
 #import "KPCAAMars.h"
 #import "AAMars.h"
 
-double KPCAAMarsEclipticLongitude(double JD, BOOL highPrecision)
+double KPCAAMars_EclipticLongitude(double JD, BOOL highPrecision)
 {
     return CAAMars::EclipticLongitude(JD, highPrecision);
 }
 
-double KPCAAMarsEclipticLatitude(double JD, BOOL highPrecision)
+double KPCAAMars_EclipticLatitude(double JD, BOOL highPrecision)
 {
     return CAAMars::EclipticLatitude(JD, highPrecision);
 }
 
-double KPCAAMarsRadiusVector(double JD, BOOL highPrecision)
+double KPCAAMars_RadiusVector(double JD, BOOL highPrecision)
 {
     return CAAMars::RadiusVector(JD, highPrecision);
 }

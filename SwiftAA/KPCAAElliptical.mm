@@ -9,12 +9,12 @@
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
 
-double KPCAAEllipticalDistanceToLightTime(double Distance)
+double KPCAAElliptical_DistanceToLightTime(double Distance)
 {
     return CAAElliptical::DistanceToLightTime(Distance);
 }
 
-KPCAAEllipticalPlanetaryDetails KPCAAEllipticalCalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision)
+KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision)
 {
     CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, (CAAElliptical::EllipticalObject)object, highPrecision);
     
@@ -29,17 +29,17 @@ KPCAAEllipticalPlanetaryDetails KPCAAEllipticalCalculatePlanetaryDetails(double 
     return details;
 }
 
-double KPCAAEllipticalSemiMajorAxisFromPerihelionDistance(double q, double e)
+double KPCAAElliptical_SemiMajorAxisFromPerihelionDistance(double q, double e)
 {
     return CAAElliptical::SemiMajorAxisFromPerihelionDistance(q, e);
 }
 
-double KPCAAEllipticalMeanMotionFromSemiMajorAxis(double a)
+double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a)
 {
     return CAAElliptical::MeanMotionFromSemiMajorAxis(a);
 }
 
-KPCAAEllipticalObjectDetails KPCAAEllipticalCalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision)
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision)
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
     CAAEllipticalObjectDetails detailsPlus = CAAElliptical::Calculate(JD, elementsPlus, highPrecision);
@@ -70,32 +70,32 @@ KPCAAEllipticalObjectDetails KPCAAEllipticalCalculateObjectDetails(double JD, KP
     return details;
 }
 
-double KPCAAEllipticalInstantaneousVelocity(double r, double a)
+double KPCAAElliptical_InstantaneousVelocity(double r, double a)
 {
     return CAAElliptical::InstantaneousVelocity(r, a);
 }
 
-double KPCAAEllipticalVelocityAtPerihelion(double e, double a)
+double KPCAAElliptical_VelocityAtPerihelion(double e, double a)
 {
     return CAAElliptical::VelocityAtPerihelion(e, a);
 }
 
-double KPCAAEllipticalVelocityAtAphelion(double e, double a)
+double KPCAAElliptical_VelocityAtAphelion(double e, double a)
 {
     return CAAElliptical::VelocityAtAphelion(e, a);
 }
 
-double KPCAAEllipticalLengthOfEllipse(double e, double a)
+double KPCAAElliptical_LengthOfEllipse(double e, double a)
 {
     return CAAElliptical::LengthOfEllipse(e, a);
 }
 
-double KPCAAEllipticalCometMagnitude(double g, double delta, double k, double r)
+double KPCAAElliptical_CometMagnitude(double g, double delta, double k, double r)
 {
     return CAAElliptical::CometMagnitude(g, delta, k, r);
 }
 
-double KPCAAEllipticalMinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle)
+double KPCAAElliptical_MinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle)
 {
     return CAAElliptical::MinorPlanetMagnitude(H, delta, G, r, PhaseAngle);
 }

@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 
-double KPCAAFK5CorrectionInLongitude(double Longitude, double Latitude, double JD);
-double KPCAAFK5CorrectionInLatitude(double Longitude, double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components);
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components);
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox);
+double KPCAAFK5_CorrectionInLongitude(double Longitude, double Latitude, double JD);
+double KPCAAFK5_CorrectionInLatitude(double Longitude, double JD);
 
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components);
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components);
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox);
+
+#if __cplusplus
+}
+#endif

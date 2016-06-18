@@ -9,42 +9,42 @@
 #import "KPCAAEquinoxesAndSolstices.h"
 #import "AAEquinoxesAndSolstices.h"
 
-double KPCAAEquinoxesAndSolsticesNorthwardEquinox(long Year, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_NorthwardEquinox(long Year, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::NorthwardEquinox(Year, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesNorthernSolstice(long Year, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_NorthernSolstice(long Year, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::NorthernSolstice(Year, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesSouthwardEquinox(long Year, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_SouthwardEquinox(long Year, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::SouthwardEquinox(Year, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesSouthernSolstice(long Year, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_SouthernSolstice(long Year, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::SouthernSolstice(Year, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesLengthOfSpring(long Year, BOOL northernHemisphere, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_LengthOfSpring(long Year, BOOL northernHemisphere, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::LengthOfSpring(Year, (bool)northernHemisphere, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesLengthOfSummer(long Year, BOOL northernHemisphere, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_LengthOfSummer(long Year, BOOL northernHemisphere, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::LengthOfSummer(Year, (bool)northernHemisphere, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesLengthOfAutumn(long Year, BOOL northernHemisphere, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_LengthOfAutumn(long Year, BOOL northernHemisphere, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::LengthOfAutumn(Year, (bool)northernHemisphere, highPrecision);
 }
 
-double KPCAAEquinoxesAndSolsticesLengthOfWinter(long Year, BOOL northernHemisphere, BOOL highPrecision)
+double KPCAAEquinoxesAndSolstices_LengthOfWinter(long Year, BOOL northernHemisphere, BOOL highPrecision)
 {
     return CAAEquinoxesAndSolstices::LengthOfWinter(Year, (bool)northernHemisphere, highPrecision);
 }

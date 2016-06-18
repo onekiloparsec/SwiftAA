@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAASolarEclipseDetails {
     unsigned int Flags;
     double TimeOfMaximumEclipse;
@@ -32,6 +36,9 @@ typedef struct KPCAALunarEclipseDetails {
     double PartialPhasePenumbraSemiDuration;
 } KPCAALunarEclipseDetails;
 
-KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k);
-KPCAALunarEclipseDetails KPCAAEclipsesCalculateLunar(double k);
+KPCAASolarEclipseDetails KPCAAEclipses_CalculateSolar(double k);
+KPCAALunarEclipseDetails KPCAAEclipses_CalculateLunar(double k);
 
+#if __cplusplus
+}
+#endif

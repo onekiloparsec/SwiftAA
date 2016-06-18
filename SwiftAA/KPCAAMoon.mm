@@ -9,64 +9,64 @@
 #import "KPCAAMoon.h"
 #import "AAMoon.h"
 
-double KPCAAMoonMeanLongitude(double JD)
+double KPCAAMoon_MeanLongitude(double JD)
 {
     return CAAMoon::MeanLongitude(JD);
 }
 
-double KPCAAMoonMeanElongation(double JD)
+double KPCAAMoon_MeanElongation(double JD)
 {
     return CAAMoon::MeanElongation(JD);
 }
 
-double KPCAAMoonMeanAnomaly(double JD)
+double KPCAAMoon_MeanAnomaly(double JD)
 {
     return CAAMoon::MeanAnomaly(JD);
 }
 
-double KPCAAMoonArgumentOfLatitude(double JD)
+double KPCAAMoon_ArgumentOfLatitude(double JD)
 {
     return CAAMoon::ArgumentOfLatitude(JD);
 }
 
-double KPCAAMoonMeanLongitudeAscendingNode(double JD)
+double KPCAAMoon_MeanLongitudeAscendingNode(double JD)
 {
     return CAAMoon::MeanLongitudeAscendingNode(JD);
 }
 
-double KPCAAMoonMeanLongitudePerigee(double JD)
+double KPCAAMoon_MeanLongitudePerigee(double JD)
 {
     return CAAMoon::MeanLongitudePerigee(JD);
 }
 
-double KPCAAMoonTrueLongitudeAscendingNode(double JD)
+double KPCAAMoon_TrueLongitudeAscendingNode(double JD)
 {
     return CAAMoon::TrueLongitudeAscendingNode(JD);
 }
 
 
-double KPCAAMoonEclipticLongitude(double JD)
+double KPCAAMoon_EclipticLongitude(double JD)
 {
     return CAAMoon::EclipticLongitude(JD);
 }
 
-double KPCAAMoonEclipticLatitude(double JD)
+double KPCAAMoon_EclipticLatitude(double JD)
 {
     return CAAMoon::EclipticLatitude(JD);
 }
 
-double KPCAAMoonRadiusVector(double JD)
+double KPCAAMoon_RadiusVector(double JD)
 {
     return CAAMoon::RadiusVector(JD);
 }
 
 
-double KPCAAMoonRadiusVectorToHorizontalParallax(double RadiusVector)
+double KPCAAMoon_RadiusVectorToHorizontalParallax(double RadiusVector)
 {
     return CAAMoon::RadiusVectorToHorizontalParallax(RadiusVector);
 }
 
-double KPCAAMoonHorizontalParallaxToRadiusVector(double Parallax)
+double KPCAAMoon_HorizontalParallaxToRadiusVector(double Parallax)
 {
     return CAAMoon::HorizontalParallaxToRadiusVector(Parallax);
 }

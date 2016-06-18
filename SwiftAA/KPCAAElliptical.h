@@ -10,6 +10,10 @@
 #import "KPCAA3DCoordinate.h"
 #import "KPCAAPlanetaryPhenomena.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAAEllipticalObjectElements {
     double a;
     double e;
@@ -47,18 +51,21 @@ typedef struct KPCAAEllipticalObjectDetails {
 } KPCAAEllipticalObjectDetails;
 
 
-double KPCAAEllipticalDistanceToLightTime(double Distance);
-KPCAAEllipticalPlanetaryDetails KPCAAEllipticalCalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision);
-double KPCAAEllipticalSemiMajorAxisFromPerihelionDistance(double q, double e);
-double KPCAAEllipticalMeanMotionFromSemiMajorAxis(double a);
-KPCAAEllipticalObjectDetails KPCAAEllipticalCalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);
-double KPCAAEllipticalInstantaneousVelocity(double r, double a);
-double KPCAAEllipticalVelocityAtPerihelion(double e, double a);
-double KPCAAEllipticalVelocityAtAphelion(double e, double a);
-double KPCAAEllipticalLengthOfEllipse(double e, double a);
-double KPCAAEllipticalCometMagnitude(double g, double delta, double k, double r);
-double KPCAAEllipticalMinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle);
+double KPCAAElliptical_DistanceToLightTime(double Distance);
+KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision);
+double KPCAAElliptical_SemiMajorAxisFromPerihelionDistance(double q, double e);
+double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a);
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);
+double KPCAAElliptical_InstantaneousVelocity(double r, double a);
+double KPCAAElliptical_VelocityAtPerihelion(double e, double a);
+double KPCAAElliptical_VelocityAtAphelion(double e, double a);
+double KPCAAElliptical_LengthOfEllipse(double e, double a);
+double KPCAAElliptical_CometMagnitude(double g, double delta, double k, double r);
+double KPCAAElliptical_MinorPlanetMagnitude(double H, double delta, double G, double r, double PhaseAngle);
 
 
+#if __cplusplus
+}
+#endif
 
 

@@ -9,17 +9,17 @@
 #import "KPCAAMercury.h"
 #import "AAMercury.h"
 
-double KPCAAMercuryEclipticLongitude(double JD, BOOL highPrecision)
+double KPCAAMercury_EclipticLongitude(double JD, BOOL highPrecision)
 {
     return CAAMercury::EclipticLongitude(JD, highPrecision);
 }
 
-double KPCAAMercuryEclipticLatitude(double JD, BOOL highPrecision)
+double KPCAAMercury_EclipticLatitude(double JD, BOOL highPrecision)
 {
     return CAAMercury::EclipticLatitude(JD, highPrecision);
 }
 
-double KPCAAMercuryRadiusVector(double JD, BOOL highPrecision)
+double KPCAAMercury_RadiusVector(double JD, BOOL highPrecision)
 {
     return CAAMercury::RadiusVector(JD, highPrecision);
 }

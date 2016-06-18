@@ -9,7 +9,7 @@
 #import "KPCAAKepler.h"
 #import "AAKepler.h"
 
-double KPCAAKeplerCalculate(double M, double e, int nIterations)
+double KPCAAKepler_Calculate(double M, double e, int nIterations)
 {
     if (nIterations == 0) {
         nIterations = 53;

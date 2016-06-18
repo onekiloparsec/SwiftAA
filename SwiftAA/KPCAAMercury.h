@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAMercuryEclipticLongitude(double JD, BOOL highPrecision);
-double KPCAAMercuryEclipticLatitude(double JD, BOOL highPrecision);
-double KPCAAMercuryRadiusVector(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+double KPCAAMercury_EclipticLongitude(double JD, BOOL highPrecision);
+double KPCAAMercury_EclipticLatitude(double JD, BOOL highPrecision);
+double KPCAAMercury_RadiusVector(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

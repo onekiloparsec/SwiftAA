@@ -8,99 +8,106 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAElementsPlanetaryOrbitMercuryMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitMercurySemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryInclination(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryLongitudePerihelion(double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-double KPCAAElementsPlanetaryOrbitVenusMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitVenusSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitVenusEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitVenusInclination(double JD);
-double KPCAAElementsPlanetaryOrbitVenusLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitVenusLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_MercurySemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitEarthMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitEarthSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitEarthEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitEarthInclination(double JD);
-double KPCAAElementsPlanetaryOrbitEarthLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitMarsMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitMarsSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitMarsEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitMarsInclination(double JD);
-double KPCAAElementsPlanetaryOrbitMarsLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitMarsLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitJupiterMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterInclination(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitSaturnMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnInclination(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitUranusMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitUranusSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitUranusEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitUranusInclination(double JD);
-double KPCAAElementsPlanetaryOrbitUranusLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitUranusLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitNeptuneMeanLongitude(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneSemimajorAxis(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneEccentricity(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneInclination(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudeAscendingNode(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudePerihelion(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitMercuryMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMercuryLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneInclination(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(double JD);
 
-double KPCAAElementsPlanetaryOrbitVenusMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitVenusInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitVenusLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitVenusLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitEarthMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitEarthInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitEarthLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitEarthLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitMarsMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMarsInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMarsLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitMarsLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitJupiterMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitJupiterLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitSaturnMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitSaturnLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitUranusMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitUranusInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitUranusLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitUranusLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelionJ2000(double JD);
 
-double KPCAAElementsPlanetaryOrbitNeptuneMeanLongitudeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneInclinationJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudeAscendingNodeJ2000(double JD);
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudePerihelionJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelionJ2000(double JD);
+
+double KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(double JD);
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD);
 
 
+#if __cplusplus
+}
+#endif

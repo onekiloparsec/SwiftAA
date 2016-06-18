@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-// Pass nIterations=0 to use default (53).
-double KPCAAKeplerCalculate(double M, double e, int nIterations);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+// Pass nIterations=0 to use default (53).
+double KPCAAKepler_Calculate(double M, double e, int nIterations);
+
+#if __cplusplus
+}
+#endif

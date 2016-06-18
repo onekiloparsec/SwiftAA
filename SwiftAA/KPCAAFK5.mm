@@ -10,17 +10,17 @@
 #import "AAFK5.h"
 
 
-double KPCAAFK5CorrectionInLongitude(double Longitude, double Latitude, double JD)
+double KPCAAFK5_CorrectionInLongitude(double Longitude, double Latitude, double JD)
 {
     return CAAFK5::CorrectionInLongitude(Longitude, Latitude, JD);
 }
 
-double KPCAAFK5CorrectionInLatitude(double Longitude, double JD)
+double KPCAAFK5_CorrectionInLatitude(double Longitude, double JD)
 {
     return CAAFK5::CorrectionInLatitude(Longitude, JD);
 }
 
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components)
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5J2000(KPCAA3DCoordinateComponents components)
 {
     CAA3DCoordinate coordsIn = CAA3DCoordinate();
     coordsIn.X = components.X;
@@ -31,7 +31,7 @@ KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5J2000(KPCAA3DCoordinateCompo
     return KPCAA3DCoordinateComponentsMake(coordsOut.X, coordsOut.Y, coordsOut.Z);
 }
 
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components)
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5B1950(KPCAA3DCoordinateComponents components)
 {
     CAA3DCoordinate coordsIn = CAA3DCoordinate();
     coordsIn.X = components.X;
@@ -42,7 +42,7 @@ KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5B1950(KPCAA3DCoordinateCompo
     return KPCAA3DCoordinateComponentsMake(coordsOut.X, coordsOut.Y, coordsOut.Z);
 }
 
-KPCAA3DCoordinateComponents KPCAAFK5ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox)
+KPCAA3DCoordinateComponents KPCAAFK5_ConvertVSOPToFK5AnyEquinox(KPCAA3DCoordinateComponents components, double JDEquinox)
 {
     CAA3DCoordinate coordsIn = CAA3DCoordinate();
     coordsIn.X = components.X;

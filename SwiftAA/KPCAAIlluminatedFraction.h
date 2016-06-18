@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface KPCAAIlluminatedFraction : NSObject
 
 + (double)PhaseAngle:(double)r R:(double)R Delta:(double)Delta;

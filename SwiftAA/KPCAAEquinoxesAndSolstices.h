@@ -8,12 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAEquinoxesAndSolsticesNorthwardEquinox(long Year, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesNorthernSolstice(long Year, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesSouthwardEquinox(long Year, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesSouthernSolstice(long Year, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-double KPCAAEquinoxesAndSolsticesLengthOfSpring(long Year, BOOL northernHemisphere, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesLengthOfSummer(long Year, BOOL northernHemisphere, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesLengthOfAutumn(long Year, BOOL northernHemisphere, BOOL highPrecision);
-double KPCAAEquinoxesAndSolsticesLengthOfWinter(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_NorthwardEquinox(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_NorthernSolstice(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_SouthwardEquinox(long Year, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_SouthernSolstice(long Year, BOOL highPrecision);
+
+double KPCAAEquinoxesAndSolstices_LengthOfSpring(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_LengthOfSummer(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_LengthOfAutumn(long Year, BOOL northernHemisphere, BOOL highPrecision);
+double KPCAAEquinoxesAndSolstices_LengthOfWinter(long Year, BOOL northernHemisphere, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif

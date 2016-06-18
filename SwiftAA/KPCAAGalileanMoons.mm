@@ -36,7 +36,7 @@ KPCAAGalileanMoonDetails KPCAAGalileanMoonDetailsMake(CAAGalileanMoonDetail deta
 }
 
 
-KPCAAGalileanMoonsDetails KPCAAGalileanMoonsCalculateDetails(double JD, BOOL highPrecision)
+KPCAAGalileanMoonsDetails KPCAAGalileanMoons_CalculateDetails(double JD, BOOL highPrecision)
 {
     CAAGalileanMoonsDetails detailsPlus = CAAGalileanMoons::Calculate(JD, highPrecision);
     

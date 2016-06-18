@@ -9,113 +9,113 @@
 #import "KPCAAElementsPlanetaryOrbit.h"
 #import "AAElementsPlanetaryOrbit.h"
 
-double KPCAAElementsPlanetaryOrbitMercuryMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::MercuryMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitMercurySemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::MercurySemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryEccentricity(double JD) { return CAAElementsPlanetaryOrbit::MercuryEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryInclination(double JD) { return CAAElementsPlanetaryOrbit::MercuryInclination(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::MercuryMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_MercurySemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::MercurySemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryEccentricity(double JD) { return CAAElementsPlanetaryOrbit::MercuryEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryInclination(double JD) { return CAAElementsPlanetaryOrbit::MercuryInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitVenusMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::VenusMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitVenusSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::VenusSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitVenusEccentricity(double JD) { return CAAElementsPlanetaryOrbit::VenusEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitVenusInclination(double JD) { return CAAElementsPlanetaryOrbit::VenusInclination(JD); }
-double KPCAAElementsPlanetaryOrbitVenusLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitVenusLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::VenusMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::VenusSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusEccentricity(double JD) { return CAAElementsPlanetaryOrbit::VenusEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusInclination(double JD) { return CAAElementsPlanetaryOrbit::VenusInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitEarthMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::EarthMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitEarthSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::EarthSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitEarthEccentricity(double JD) { return CAAElementsPlanetaryOrbit::EarthEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitEarthInclination(double JD) { return CAAElementsPlanetaryOrbit::EarthInclination(JD); }
-double KPCAAElementsPlanetaryOrbitEarthLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::EarthMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::EarthSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthEccentricity(double JD) { return CAAElementsPlanetaryOrbit::EarthEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthInclination(double JD) { return CAAElementsPlanetaryOrbit::EarthInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitMarsMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::MarsMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitMarsSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::MarsSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitMarsEccentricity(double JD) { return CAAElementsPlanetaryOrbit::MarsEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitMarsInclination(double JD) { return CAAElementsPlanetaryOrbit::MarsInclination(JD); }
-double KPCAAElementsPlanetaryOrbitMarsLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitMarsLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::MarsMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::MarsSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsEccentricity(double JD) { return CAAElementsPlanetaryOrbit::MarsEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsInclination(double JD) { return CAAElementsPlanetaryOrbit::MarsInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitJupiterMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::JupiterMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::JupiterSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterEccentricity(double JD) { return CAAElementsPlanetaryOrbit::JupiterEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterInclination(double JD) { return CAAElementsPlanetaryOrbit::JupiterInclination(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::JupiterMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::JupiterSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterEccentricity(double JD) { return CAAElementsPlanetaryOrbit::JupiterEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterInclination(double JD) { return CAAElementsPlanetaryOrbit::JupiterInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitSaturnMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::SaturnMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::SaturnSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnEccentricity(double JD) { return CAAElementsPlanetaryOrbit::SaturnEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnInclination(double JD) { return CAAElementsPlanetaryOrbit::SaturnInclination(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::SaturnMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::SaturnSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnEccentricity(double JD) { return CAAElementsPlanetaryOrbit::SaturnEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnInclination(double JD) { return CAAElementsPlanetaryOrbit::SaturnInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitUranusMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::UranusMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitUranusSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::UranusSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitUranusEccentricity(double JD) { return CAAElementsPlanetaryOrbit::UranusEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitUranusInclination(double JD) { return CAAElementsPlanetaryOrbit::UranusInclination(JD); }
-double KPCAAElementsPlanetaryOrbitUranusLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitUranusLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::UranusMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::UranusSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusEccentricity(double JD) { return CAAElementsPlanetaryOrbit::UranusEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusInclination(double JD) { return CAAElementsPlanetaryOrbit::UranusInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitNeptuneMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::NeptuneMeanLongitude(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::NeptuneSemimajorAxis(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneEccentricity(double JD) { return CAAElementsPlanetaryOrbit::NeptuneEccentricity(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneInclination(double JD) { return CAAElementsPlanetaryOrbit::NeptuneInclination(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudeAscendingNode(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelion(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::NeptuneMeanLongitude(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::NeptuneSemimajorAxis(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(double JD) { return CAAElementsPlanetaryOrbit::NeptuneEccentricity(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneInclination(double JD) { return CAAElementsPlanetaryOrbit::NeptuneInclination(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudeAscendingNode(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelion(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitMercuryMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMercuryLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::MercuryLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitVenusMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitVenusInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitVenusLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitVenusLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::VenusLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitEarthMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitEarthInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitEarthLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitEarthLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitMarsMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMarsInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMarsLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitMarsLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::MarsLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitJupiterMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitJupiterLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::JupiterLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitSaturnMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitSaturnLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::SaturnLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitUranusMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitUranusInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitUranusLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitUranusLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::UranusLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbitNeptuneMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneMeanLongitudeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneInclinationJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudeAscendingNodeJ2000(JD); }
-double KPCAAElementsPlanetaryOrbitNeptuneLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelionJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneMeanLongitudeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneInclinationJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudeAscendingNodeJ2000(JD); }
+double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelionJ2000(JD); }
 

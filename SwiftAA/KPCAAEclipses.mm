@@ -9,7 +9,7 @@
 #import "KPCAAEclipses.h"
 #import "AAEclipses.h"
 
-KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k)
+KPCAASolarEclipseDetails KPCAAEclipses_CalculateSolar(double k)
 {
     CAASolarEclipseDetails detailsPlus = CAAEclipses::CalculateSolar(k);
 
@@ -24,7 +24,7 @@ KPCAASolarEclipseDetails KPCAAEclipsesCalculateSolar(double k)
     return details;
 }
 
-KPCAALunarEclipseDetails KPCAAEclipsesCalculateLunar(double k)
+KPCAALunarEclipseDetails KPCAAEclipses_CalculateLunar(double k)
 {
     CAALunarEclipseDetails detailsPlus = CAAEclipses::CalculateLunar(k);
     

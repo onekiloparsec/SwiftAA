@@ -9,27 +9,27 @@
 #import "KPCAAGlobe.h"
 #import "AAGlobe.h"
 
-double KPCAAGlobeRhoSinThetaPrime(double GeographicalLatitude, double Height)
+double KPCAAGlobe_RhoSinThetaPrime(double GeographicalLatitude, double Height)
 {
     return CAAGlobe::RhoSinThetaPrime(GeographicalLatitude, Height);
 }
 
-double KPCAAGlobeRhoCosThetaPrime(double GeographicalLatitude, double Height)
+double KPCAAGlobe_RhoCosThetaPrime(double GeographicalLatitude, double Height)
 {
     return CAAGlobe::RhoCosThetaPrime(GeographicalLatitude, Height);
 }
 
-double KPCAAGlobeRadiusOfParallelOfLatitude(double GeographicalLatitude)
+double KPCAAGlobe_RadiusOfParallelOfLatitude(double GeographicalLatitude)
 {
     return CAAGlobe::RadiusOfParallelOfLatitude(GeographicalLatitude);
 }
 
-double KPCAAGlobeRadiusOfCurvature(double GeographicalLatitude)
+double KPCAAGlobe_RadiusOfCurvature(double GeographicalLatitude)
 {
     return CAAGlobe::RadiusOfCurvature(GeographicalLatitude);
 }
 
-double KPCAAGlobeDistanceBetweenPoints(double GeographicalLatitude1,
+double KPCAAGlobe_DistanceBetweenPoints(double GeographicalLatitude1,
                                        double GeographicalLongitude1,
                                        double GeographicalLatitude2,
                                        double GeographicalLongitude2)

@@ -8,18 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAMoonMeanLongitude(double JD);
-double KPCAAMoonMeanElongation(double JD);
-double KPCAAMoonMeanAnomaly(double JD);
-double KPCAAMoonArgumentOfLatitude(double JD);
-double KPCAAMoonMeanLongitudeAscendingNode(double JD);
-double KPCAAMoonMeanLongitudePerigee(double JD);
-double KPCAAMoonTrueLongitudeAscendingNode(double JD);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-double KPCAAMoonEclipticLongitude(double JD);
-double KPCAAMoonEclipticLatitude(double JD);
-double KPCAAMoonRadiusVector(double JD);
+double KPCAAMoon_MeanLongitude(double JD);
+double KPCAAMoon_MeanElongation(double JD);
+double KPCAAMoon_MeanAnomaly(double JD);
+double KPCAAMoon_ArgumentOfLatitude(double JD);
+double KPCAAMoon_MeanLongitudeAscendingNode(double JD);
+double KPCAAMoon_MeanLongitudePerigee(double JD);
+double KPCAAMoon_TrueLongitudeAscendingNode(double JD);
 
-double KPCAAMoonRadiusVectorToHorizontalParallax(double RadiusVector);
-double KPCAAMoonHorizontalParallaxToRadiusVector(double Parallax);
+double KPCAAMoon_EclipticLongitude(double JD);
+double KPCAAMoon_EclipticLatitude(double JD);
+double KPCAAMoon_RadiusVector(double JD);
 
+double KPCAAMoon_RadiusVectorToHorizontalParallax(double RadiusVector);
+double KPCAAMoon_HorizontalParallaxToRadiusVector(double Parallax);
+
+#if __cplusplus
+}
+#endif

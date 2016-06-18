@@ -9,7 +9,7 @@
 #import "KPCAAEclipticalElements.h"
 #import "AAEclipticalElements.h"
 
-KPCAAEclipticalElementDetails KPCAAEclipticalElementCalculateDetails(double i0, double w0, double omega0, double JD0, double JD)
+KPCAAEclipticalElementDetails KPCAAEclipticalElement_CalculateDetails(double i0, double w0, double omega0, double JD0, double JD)
 {
     CAAEclipticalElementDetails detailsPlus = CAAEclipticalElements::Calculate(i0, w0, omega0, JD0, JD);
     
@@ -21,7 +21,7 @@ KPCAAEclipticalElementDetails KPCAAEclipticalElementCalculateDetails(double i0, 
     return details;
 }
 
-KPCAAEclipticalElementDetails KPCAAEclipticalElementFK4B1950ToFK5J2000(double i0, double w0, double omega0)
+KPCAAEclipticalElementDetails KPCAAEclipticalElement_FK4B1950ToFK5J2000(double i0, double w0, double omega0)
 {
     CAAEclipticalElementDetails detailsPlus = CAAEclipticalElements::FK4B1950ToFK5J2000(i0, w0, omega0);
 

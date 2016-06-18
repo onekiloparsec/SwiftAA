@@ -8,4 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-double KPCAAEquationOfTime(double JD, BOOL highPrecision);
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+double KPCAAEquationOfTime_Calculate(double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif
