@@ -9,7 +9,7 @@
 #import "KPCAABinaryStar.h"
 #import "AABinaryStar.h"
 
-KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w)
+KPCAABinaryStarDetails KPCAABinaryStar_CalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w)
 {
     CAABinaryStarDetails detailsPlus = CAABinaryStar::Calculate(t, P, T, e, a, i, Omega, w);
     
@@ -21,7 +21,7 @@ KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, doubl
     return details;
 }
 
-double KPCAABinaryStarApparentEccentricity(double e, double i, double w)
+double KPCAABinaryStar_ApparentEccentricity(double e, double i, double w)
 {
     return CAABinaryStar::ApparentEccentricity(e, i, w);
 }

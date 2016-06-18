@@ -28,14 +28,14 @@ typedef struct KPCAABinaryStarDetails {
  * Omega (position angle of ascending nodes): degrees
  * w (longitude of periastron): degrees
  */
-KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w);
+KPCAABinaryStarDetails KPCAABinaryStar_CalculateDetails(double t, double P, double T, double e, double a, double i, double Omega, double w);
 
 /** Units:
  * e: n.a.
  * i: degrees
  * w: degrees
  */
-double KPCAABinaryStarApparentEccentricity(double e, double i, double w);
+double KPCAABinaryStar_ApparentEccentricity(double e, double i, double w);
 
 #if __cplusplus
 }
