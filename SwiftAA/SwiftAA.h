@@ -19,8 +19,8 @@ FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 #import <SwiftAA/KPCAA3DCoordinate.h>
 #import <SwiftAA/KPCAAAberration.h>
 #import <SwiftAA/KPCAAAngularSeparation.h>
-//#import <SwiftAA/KPCAABinaryStar.h>
-//#import <SwiftAA/KPCAACoordinateTransformation.h>
+#import <SwiftAA/KPCAABinaryStar.h>
+#import <SwiftAA/KPCAACoordinateTransformation.h>
 //#import <SwiftAA/KPCAADate.h>
 //#import <SwiftAA/KPCAADiameters.h>
 //#import <SwiftAA/KPCAADynamicalTime.h>

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct KPCAABinaryStarDetails {
     double r;
     double Theta;
@@ -32,3 +36,7 @@ KPCAABinaryStarDetails KPCAABinaryStarCalculateDetails(double t, double P, doubl
  * w: degrees
  */
 double KPCAABinaryStarApparentEccentricity(double e, double i, double w);
+
+#if __cplusplus
+}
+#endif

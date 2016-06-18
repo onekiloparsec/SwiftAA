@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA2DCoordinate.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Alpha=R.A., Delta=Declination, Epsilon=Epoch
 KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Ecliptic(double Alpha, double Delta, double Epsilon);
 
@@ -27,16 +31,20 @@ KPCAA2DCoordinateComponents KPCAACoordinateTransformationEquatorial2Galactic(dou
 // l=Galactic Longitude, b=Galactic Latitude;
 KPCAA2DCoordinateComponents KPCAACoordinateTransformationGalactic2Equatorial(double l, double b);
 
-double DegreesToRadians(double Degrees);
-double RadiansToDegrees(double Radians);
-double RadiansToHours(double Radians);
-double HoursToRadians(double Hours);
-double HoursToDegrees(double Hours);
-double DegreesToHours(double Degrees);
-double PI();
-double MapTo0To360Range(double Degrees);
-double MapToMinus90To90Range(double Degrees);
-double MapTo0To24Range(double HourAngle);
-double MapTo0To2PIRange(double Angle);
-double DMSToDegrees(double Degrees, double Minutes, double Seconds, bool bPositive);
+inline double DegreesToRadians(double Degrees);
+inline double RadiansToDegrees(double Radians);
+inline double RadiansToHours(double Radians);
+inline double HoursToRadians(double Hours);
+inline double HoursToDegrees(double Hours);
+inline double DegreesToHours(double Degrees);
+inline double PI();
+inline double MapTo0To360Range(double Degrees);
+inline double MapToMinus90To90Range(double Degrees);
+inline double MapTo0To24Range(double HourAngle);
+inline double MapTo0To2PIRange(double Angle);
+inline double DMSToDegrees(double Degrees, double Minutes, double Seconds, bool bPositive);
 
+
+#if __cplusplus
+}
+#endif
