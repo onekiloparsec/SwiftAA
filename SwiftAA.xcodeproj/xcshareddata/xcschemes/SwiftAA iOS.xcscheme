@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F694D891D15C67300EE7492"
-               BuildableName = "SwiftAA iOS.framework"
+               BuildableName = "SwiftAA.framework"
                BlueprintName = "SwiftAA iOS"
                ReferencedContainer = "container:SwiftAA.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA iOS.framework"
+            BuildableName = "SwiftAA.framework"
             BlueprintName = "SwiftAA iOS"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA iOS.framework"
+            BuildableName = "SwiftAA.framework"
             BlueprintName = "SwiftAA iOS"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA iOS.framework"
+            BuildableName = "SwiftAA.framework"
             BlueprintName = "SwiftAA iOS"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
