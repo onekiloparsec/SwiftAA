@@ -10,9 +10,17 @@
 #import "KPCAA2DCoordinate.h"
 #import "KPCAA3DCoordinate.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // 3D
 KPCAA3DCoordinateComponents KPCEarthVelocity(double JD, BOOL highPrecision);
 
 // 2D
 KPCAA2DCoordinateComponents KPCEclipticAberration(double Alpha, double Delta, double JD, BOOL highPrecision);
 KPCAA2DCoordinateComponents KPCEquatorialAberration(double Lambda, double Beta, double JD, BOOL highPrecision);
+
+#if __cplusplus
+}
+#endif
