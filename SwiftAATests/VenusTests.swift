@@ -26,6 +26,7 @@ class VenusTests: XCTestCase {
         // Months going from 0 to 11
         let date = KPCAADate(year: 1992, month: 12, day: 20, usingGregorianCalendar: true)
         let jd = date.Julian()
+        // Both radius vector are correct. Not Delta! Check.
         let frac = Venus(julianDay: jd).illuminatedFraction()
         XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)
     }
