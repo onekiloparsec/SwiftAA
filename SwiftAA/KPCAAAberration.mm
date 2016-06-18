@@ -9,19 +9,19 @@
 #import "KPCAAAberration.h"
 #import "AAAberration.h"
 
-KPCAA3DCoordinateComponents KPCAAberration_EarthVelocity(double JD, BOOL highPrecision)
+KPCAA3DCoordinateComponents KPCAAAberration_EarthVelocity(double JD, BOOL highPrecision)
 {
     CAA3DCoordinate coords = CAAAberration::EarthVelocity(JD, highPrecision);
     return KPCAA3DCoordinateComponentsMake(coords.X, coords.Y, coords.Z);
 }
 
-KPCAA2DCoordinateComponents KPCAAberration_EclipticAberration(double Alpha, double Delta, double JD, BOOL highPrecision)
+KPCAA2DCoordinateComponents KPCAAAberration_EclipticAberration(double Alpha, double Delta, double JD, BOOL highPrecision)
 {
     CAA2DCoordinate coords = CAAAberration::EclipticAberration(Alpha, Delta, JD, highPrecision);
     return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);
 }
 
-KPCAA2DCoordinateComponents KPCAAberration_EquatorialAberration(double Lambda, double Beta, double JD, BOOL highPrecision)
+KPCAA2DCoordinateComponents KPCAAAberration_EquatorialAberration(double Lambda, double Beta, double JD, BOOL highPrecision)
 {
     CAA2DCoordinate coords = CAAAberration::EquatorialAberration(Lambda, Beta, JD, highPrecision);
     return KPCAA2DCoordinateComponentsMake(coords.X, coords.Y);

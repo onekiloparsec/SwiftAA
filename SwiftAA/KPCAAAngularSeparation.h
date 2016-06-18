@@ -12,13 +12,13 @@
 extern "C" {
 #endif
 
-double KPCAngularSeparation(double Alpha1, double Delta1, double Alpha2, double Delta2);
+double KPCAAAngularSeparation_Separation(double Alpha1, double Delta1, double Alpha2, double Delta2);
 
-double KPCPositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2);
+double KPCAngularSeparation_PositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2);
 
-double KPCDistanceFromGreatArc(double Alpha1, double Delta1, double Alpha2, double Delta2, double Alpha3, double Delta3);
+double KPCAAAngularSeparation_DistanceFromGreatArc(double Alpha1, double Delta1, double Alpha2, double Delta2, double Alpha3, double Delta3);
 
-double KPCSmallestCircle(double Alpha1, double Delta1, double Alpha2, double Delta2, double Alpha3, double Delta3, bool *bType1);
+double KPCAAAngularSeparation_SmallestCircle(double Alpha1, double Delta1, double Alpha2, double Delta2, double Alpha3, double Delta3, bool *bType1);
 
 #if __cplusplus
 }
