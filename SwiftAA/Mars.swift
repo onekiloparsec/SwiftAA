@@ -18,6 +18,6 @@ public struct Mars: Planet {
     }
     
     public var color: Color {
-        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+        get { return Color(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
     }
 }

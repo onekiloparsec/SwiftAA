@@ -17,7 +17,7 @@ public struct Pluto: EclipticObject {
     }
     
     public var color: Color {
-        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+        get { return Color(red: 0.776, green:0.620, blue:0.486, alpha: 1.0) }
     }
 }
 

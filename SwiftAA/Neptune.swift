@@ -18,7 +18,7 @@ public struct Neptune: Planet {
     }
     
     public var color: Color {
-        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+        get { return Color(red: 0.392, green:0.518, blue:0.871, alpha: 1.0) }
     }
 }
 

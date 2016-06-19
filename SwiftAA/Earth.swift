@@ -17,7 +17,7 @@ public struct Earth: EclipticObject {
     }
     
     public var color: Color {
-        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+        get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
 
     func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
