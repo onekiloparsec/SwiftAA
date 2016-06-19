@@ -21,25 +21,25 @@ protocol EclipticObject {
     /**
      Compute the ecliptic (=heliocentric) longitude of the planet
      
-     - parameter hp: If true, will use the latest VSOP implementation to increase precision.
+     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
      
      - returns: the ecliptic longitude in AU
      */
-    func eclipticLongitude(highPrecision: Bool) -> AU
+    func eclipticLongitude(highPrecision: Bool) -> Degrees
     
     /**
      Compute the ecliptic (=heliocentric) latitude of the planet
      
-     - parameter hp: If true, will use the latest VSOP implementation to increase precision.
+     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
      
      - returns: the ecliptic latitude in AU
      */
-    func eclipticLatitude(highPrecision: Bool) -> AU
+    func eclipticLatitude(highPrecision: Bool) -> Degrees
     
     /**
      Compute the radius vector (=distance to the Sun)
      
-     - parameter hp: If true, will use the latest VSOP implementation to increase precision.
+     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
      
      - returns: the radius vector in AU
      */
@@ -47,11 +47,11 @@ protocol EclipticObject {
 }
 
 extension EclipticObject {
-    func eclipticLongitude(highPrecision: Bool = true) -> AU {
+    func eclipticLongitude(highPrecision: Bool = true) -> Degrees {
         return KPCAAEclipticalElement_EclipticalLongitude(self.julianDay, self.eclipticObject, highPrecision)
     }
     
-    func eclipticLatitude(highPrecision: Bool = true) -> AU {
+    func eclipticLatitude(highPrecision: Bool = true) -> Degrees {
         return KPCAAEclipticalElement_EclipticalLatitude(self.julianDay, self.eclipticObject, highPrecision)
     }
     

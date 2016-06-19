@@ -9,9 +9,18 @@
 import Foundation
 
 typealias JulianDay=Double
+typealias Degrees=Double
 typealias AU=Double // Astronomical Unit
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
+
+extension Degrees {
+    var Degrees: Double { return self }
+    var Minutes: Double { return self * 60.0 }
+    var Seconds: Double { return self * 3600.0 }
+    var Radians: Double { return DegreesToRadians(self) }
+}
+
 extension AU {
     var AU: Double { return self }
     var pc: Double { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)

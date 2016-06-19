@@ -80,7 +80,7 @@ protocol Planet: EclipticObject {
     /**
      Compute the details of the planet configuration
      
-     - parameter hp: If true, will use the latest VSOP implementation to increase precision.
+     - parameter highPrecision: If true, the VSOP87 implementation will be used to increase precision.
      
      - returns: a KPCAAEllipticalPlanetaryDetails struct
      */
@@ -89,6 +89,8 @@ protocol Planet: EclipticObject {
     /**
      Compute the illuminated fraction of the planet as seen from the Earth.
      
+     - parameter highPrecision: If true, the VSOP87 implementation will be used to increase precision.
+
      - returns: a value between 0 and 1.
      */
     func illuminatedFraction(highPrecision: Bool) -> Double

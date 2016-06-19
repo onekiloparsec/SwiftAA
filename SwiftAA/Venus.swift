@@ -16,19 +16,7 @@ public struct Venus: Planet {
     init(julianDay: JulianDay) {
         self.julianDay = julianDay
     }
-    
-    func eclipticLongitude(withHighPrecision hp: Bool = true) -> Double {
-        return KPCAAVenus_EclipticLongitude(self.julianDay, hp)
-    }
-
-    func eclipticLatitude(withHighPrecision hp: Bool = true) -> Double {
-        return KPCAAVenus_EclipticLatitude(self.julianDay, hp)
-    }
-
-    func radiusVector(withHighPrecision hp: Bool = true) -> Double {
-        return KPCAAVenus_RadiusVector(self.julianDay, hp)
-    }
-    
+        
     func perihelion(year: Double) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(KPCAAPlanetPerihelionAphelion_MercuryK(year))
     }
