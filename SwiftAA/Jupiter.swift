@@ -15,5 +15,5 @@ public struct Jupiter: Planet {
     
     init(julianDay: JulianDay) {
         self.julianDay = julianDay
-    }
+    }    
 }

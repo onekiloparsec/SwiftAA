@@ -16,5 +16,13 @@ public struct Saturn: Planet {
     init(julianDay: JulianDay) {
         self.julianDay = julianDay
     }
+    
+    func ringsDetails(highPrecision: Bool = true) -> KPCAASaturnRingDetails {
+        return KPCAASaturnRings_Calculate(self.julianDay, highPrecision)
+    }
+    
+    func moonsDetails(highPrecision: Bool = true) -> KPCAASaturnMoonsDetails {
+        return KPCAASaturnMoonsDetails_Calculate(self.julianDay, highPrecision)
+    }
 }
 
