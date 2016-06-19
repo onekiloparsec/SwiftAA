@@ -8,17 +8,13 @@
 
 import Foundation
 
-protocol Planet {
-    var julianDay: JulianDay { get set }
+/**
+ *  The Planet protocol specializes the EclipticObject for planets that are not the Earth!
+ */
+protocol Planet: EclipticObject {
     
-    init(julianDay: JulianDay)
-    
-    func planetaryObject() -> KPCPlanetaryObject
-    
-    func eclipticLongitude(withHighPrecision hp: Bool) -> Double
-    func eclipticLatitude(withHighPrecision hp: Bool) -> Double
-    func radiusVector(withHighPrecision hp: Bool) -> Double
-    
+    var planet: KPCPlanetaryObject { get }
+
     /**
      Compute the julian day of the perihelion of the planet for a given year
      
@@ -81,123 +77,58 @@ protocol Planet {
      */
     func trueSuperiorConjunction(year: Double) -> JulianDay
     
-    func details(withHighPrecision hp: Bool) -> KPCAAEllipticalPlanetaryDetails
+    /**
+     Compute the details of the planet configuration
+     
+     - parameter hp: If true, will use the latest VSOP implementation to increase precision.
+     
+     - returns: a KPCAAEllipticalPlanetaryDetails struct
+     */
+    func planetaryDetails(highPrecision: Bool) -> KPCAAEllipticalPlanetaryDetails
     
-    func illuminatedFraction() -> Double
+    /**
+     Compute the illuminated fraction of the planet as seen from the Earth.
+     
+     - returns: a value between 0 and 1.
+     */
+    func illuminatedFraction(highPrecision: Bool) -> Double
 }
 
 extension Planet {
-//    init(julianDay: JulianDay) {
-//        self.julianDay = julianDay
-//    }
-//
-//    func eclipticLongitude(withHighPrecision hp: Bool = true) -> Double {
-//        return KPCAAVenus_EclipticLongitude(self.julianDay, hp)
-//    }
-//
-//    func eclipticLatitude(withHighPrecision hp: Bool = true) -> Double {
-//        return KPCAAVenus_EclipticLatitude(self.julianDay, hp)
-//    }
-//
-//    func radiusVector(withHighPrecision hp: Bool = true) -> Double {
-//        return KPCAAVenus_RadiusVector(self.julianDay, hp)
-//    }
-//
-//    /**
-//     Compute the julian day of the perihelion of Venus for a given year
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day
-//     */
-//    func perihelion(year: Double) -> JulianDay {
-//        return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(KPCAAPlanetPerihelionAphelion_MercuryK(year))
-//    }
-//
-//    /**
-//     Compute the julian day of the aphelion of Venus for a given year
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day
-//     */
-//    func aphelion(year: Double) -> JulianDay {
-//        return KPCAAPlanetPerihelionAphelion_MercuryAphelion(KPCAAPlanetPerihelionAphelion_MercuryK(year))
-//    }
-//
-//    /**
-//     Compute the julian day of the mean inferior conjunction of Venus for the given year.
-//     The 'mean' configuration here means that it is calculated from
-//     circular orbits and uniform planetary motions. See AA. pp 250.
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day.
-//     */
-//    func meanInferiorConjunction(year: Double) -> JulianDay {
-//        let k = KPCAAPlanetaryPhenomena_K(year, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-//        return KPCAAPlanetaryPhenomena_Mean(k, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-//    }
-//
-//    /**
-//     Compute the julian day of the true inferior conjunction of Venus for the given year.
-//     The 'true' configuration here means that it is calculated by adding corrections to computations made from
-//     circular orbits and uniform planetary motions. See AA. pp 251.
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day.
-//     */
-//    func trueInferiorConjunction(year: Double) -> JulianDay {
-//        let k = KPCAAPlanetaryPhenomena_K(year, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-//        return KPCAAPlanetaryPhenomena_True(k, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-//    }
-//
-//    /**
-//     Compute the julian day of the mean superior conjunction of Venus for the given year.
-//     The 'mean' configuration here means that it is calculated from
-//     circular orbits and uniform planetary motions. See AA. pp 250.
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day.
-//     */
-//    func meanSuperiorConjunction(year: Double) -> JulianDay {
-//        let k = KPCAAPlanetaryPhenomena_K(year, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-//        return KPCAAPlanetaryPhenomena_Mean(k, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-//    }
-//
-//    /**
-//     Compute the julian day of the true superior conjunction of Venus for the given year.
-//     The 'true' configuration here means that it is calculated by adding corrections to computations made from
-//     circular orbits and uniform planetary motions. See AA. pp 251.
-//
-//     - parameter year: The year to consider. Can have decimals.
-//
-//     - returns: A julian day.
-//     */
-//    func trueSuperiorConjunction(year: Double) -> JulianDay {
-//        let k = KPCAAPlanetaryPhenomena_K(year, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-//        return KPCAAPlanetaryPhenomena_True(k, KPCPlanetaryObject.VENUS, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-//    }
     
-    func details(withHighPrecision hp: Bool = true) -> KPCAAEllipticalPlanetaryDetails {
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planetaryObject(), hp)
+    func meanInferiorConjunction(year: Double) -> JulianDay {
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
+        return KPCAAPlanetaryPhenomena_Mean(k, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
+    }
+
+    func trueInferiorConjunction(year: Double) -> JulianDay {
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
+        return KPCAAPlanetaryPhenomena_True(k, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
+    }
+
+    func meanSuperiorConjunction(year: Double) -> JulianDay {
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planet, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
+        return KPCAAPlanetaryPhenomena_Mean(k, self.planet, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
+    }
+
+    func trueSuperiorConjunction(year: Double) -> JulianDay {
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planet, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
+        return KPCAAPlanetaryPhenomena_True(k, self.planet, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
     }
     
-    func illuminatedFraction() -> Double {
-        // L = ecliptic|heliocentric longitude of planet (0=Earth)
-        // B = ecliptic|heliocentric latitude of planet (0=Earth)
-        // R = radius vector of planet (= distance to the Sun) (0=Earth)
-        
-        let details = self.details()
+    func planetaryDetails(highPrecision: Bool = true) -> KPCAAEllipticalPlanetaryDetails {
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planet, highPrecision)
+    }
+    
+    func illuminatedFraction(highPrecision: Bool = true) -> Double {
         // Delta = ApparentGeocentricDistance = distance earth-planet
-        let Delta = details.ApparentGeocentricDistance
-        
+        let Delta = self.planetaryDetails().ApparentGeocentricDistance
         let earth = Earth(julianDay: self.julianDay)
-                
-        let i = KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector(withHighPrecision: true), earth.radiusVector(), Delta)
-        // i = phase angle
-        return KPCAAIlluminatedFraction_IlluminatedFraction(i)
+
+        let phaseAngle = KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector(highPrecision),
+                                                             earth.radiusVector(highPrecision),
+                                                             Delta)
+        
+        return KPCAAIlluminatedFraction_IlluminatedFraction(phaseAngle)
     }
 }

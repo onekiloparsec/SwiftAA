@@ -23,7 +23,7 @@ class VenusTests: XCTestCase {
 
     // See AA p.284
     func testAAIlluminationFraction() {
-        // Months going from 0 to 11
+        // Months going from 1 to 12
         let date = KPCAADate(year: 1992, month: 12, day: 20, usingGregorianCalendar: true)
         let jd = date.Julian()
         // Both radius vector are correct. Not Delta! Check.

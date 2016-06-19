@@ -8,6 +8,15 @@
 
 #import "KPCAAEclipticalElements.h"
 #import "AAEclipticalElements.h"
+#import "KPCAAMercury.h"
+#import "KPCAAVenus.h"
+#import "KPCAAEarth.h"
+#import "KPCAAMars.h"
+#import "KPCAAJupiter.h"
+#import "KPCAASaturn.h"
+#import "KPCAAUranus.h"
+#import "KPCAANeptune.h"
+#import "KPCAAPluto.h"
 
 KPCAAEclipticalElementDetails KPCAAEclipticalElement_CalculateDetails(double i0, double w0, double omega0, double JD0, double JD)
 {
@@ -31,4 +40,130 @@ KPCAAEclipticalElementDetails KPCAAEclipticalElement_FK4B1950ToFK5J2000(double i
     details.omega = detailsPlus.omega;
     
     return details;
+}
+
+double KPCAAEclipticalElement_EclipticalLongitude(double JD, KPCEclipticObject object, BOOL highPrecision)
+{
+    switch (object) {
+        case Mercury: {
+            return KPCAAMercury_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Venus: {
+            return KPCAAVenus_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Earth: {
+            return KPCAAEarth_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Mars: {
+            return KPCAAMars_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAJupiter_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Saturn: {
+            return KPCAASaturn_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Uranus: {
+            return KPCAAUranus_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Neptune: {
+            return KPCAANeptune_EclipticLongitude(JD, highPrecision);
+            break;
+        }
+        case Pluto: {
+            return KPCAAPluto_EclipticLongitude(JD);
+            break;
+        }
+    }
+}
+
+double KPCAAEclipticalElement_EclipticalLatitude(double JD, KPCEclipticObject object, BOOL highPrecision)
+{
+    switch (object) {
+        case Mercury: {
+            return KPCAAMercury_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Venus: {
+            return KPCAAVenus_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Earth: {
+            return KPCAAEarth_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Mars: {
+            return KPCAAMars_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAJupiter_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Saturn: {
+            return KPCAASaturn_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Uranus: {
+            return KPCAAUranus_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Neptune: {
+            return KPCAANeptune_EclipticLatitude(JD, highPrecision);
+            break;
+        }
+        case Pluto: {
+            return KPCAAPluto_EclipticLatitude(JD);
+            break;
+        }
+    }
+}
+
+double KPCAAEclipticalElement_RadiusVector(double JD, KPCEclipticObject object, BOOL highPrecision)
+{
+    switch (object) {
+        case Mercury: {
+            return KPCAAMercury_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Venus: {
+            return KPCAAVenus_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Earth: {
+            return KPCAAEarth_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Mars: {
+            return KPCAAMars_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAJupiter_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Saturn: {
+            return KPCAASaturn_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Uranus: {
+            return KPCAAUranus_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Neptune: {
+            return KPCAANeptune_RadiusVector(JD, highPrecision);
+            break;
+        }
+        case Pluto: {
+            return KPCAAPluto_RadiusVector(JD);
+            break;
+        }
+    }
 }
