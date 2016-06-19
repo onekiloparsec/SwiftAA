@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EclipticObject {
+public protocol EclipticObject {
     var julianDay: JulianDay { get set }
     
     /**
@@ -17,6 +17,8 @@ protocol EclipticObject {
     var eclipticObject: KPCEclipticObject { get }
     
     init(julianDay: JulianDay)
+    
+    func name() -> String
     
     /**
      Compute the ecliptic (=heliocentric) longitude of the planet
@@ -46,7 +48,11 @@ protocol EclipticObject {
     func radiusVector(highPrecision: Bool) -> AU
 }
 
-extension EclipticObject {
+public extension EclipticObject {
+    func name() -> String {
+        return self.eclipticObject.toString()
+    }
+    
     func eclipticLongitude(highPrecision: Bool = true) -> Degrees {
         return KPCAAEclipticalElement_EclipticalLongitude(self.julianDay, self.eclipticObject, highPrecision)
     }

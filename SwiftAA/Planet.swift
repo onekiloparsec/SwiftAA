@@ -11,7 +11,7 @@ import Foundation
 /**
  *  The Planet protocol specializes the EclipticObject for planets that are not the Earth!
  */
-protocol Planet: EclipticObject {
+public protocol Planet: EclipticObject {
     
     var planet: KPCPlanetaryObject { get }
 
@@ -96,7 +96,7 @@ protocol Planet: EclipticObject {
     func illuminatedFraction(highPrecision: Bool) -> Double
 }
 
-extension Planet {
+public extension Planet {
     
     func perihelion(year: Double) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(year, self.eclipticObject), self.eclipticObject)

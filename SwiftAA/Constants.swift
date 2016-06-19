@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias JulianDay=Double
-typealias Degrees=Double
-typealias AU=Double // Astronomical Unit
+public typealias JulianDay=Double
+public typealias Degrees=Double
+public typealias AU=Double // Astronomical Unit
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
-extension Degrees {
+public extension Degrees {
     var Degrees: Double { return self }
     var Minutes: Double { return self * 60.0 }
     var Seconds: Double { return self * 3600.0 }
@@ -22,30 +22,34 @@ extension Degrees {
     var Hours:   Double { return self / 15.0 }
 }
 
-extension AU {
+public extension AU {
     var AU: Double { return self }
     var pc: Double { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
     var km: Double { return self / 149597870.7 }
     var m:  Double { return self / 149597870700.0 }
 }
 
-extension KPCPlanetaryObject {
+public extension KPCEclipticObject {
     func toString() -> String {
         switch self {
-        case MERCURY:
+        case Mercury:
             return "Mercury"
-        case VENUS:
+        case Venus:
             return "Venus"
-        case MARS:
+        case Earth:
+            return "Earth"
+        case Mars:
             return "Mars"
-        case JUPITER:
+        case Jupiter:
             return "Jupiter"
-        case SATURN:
+        case Saturn:
             return "Saturn"
-        case URANUS:
+        case Uranus:
             return "Uranus"
-        case NEPTUNE:
+        case Neptune:
             return "Neptune"
+        case Pluto:
+            return "Pluto"
         }
     }
 }

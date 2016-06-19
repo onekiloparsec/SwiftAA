@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Neptune: Planet {
-    var julianDay: JulianDay
-    var eclipticObject: KPCEclipticObject { return .Neptune }
-    var planet: KPCPlanetaryObject { return .NEPTUNE }
+    public var julianDay: JulianDay
+    public var eclipticObject: KPCEclipticObject { return .Neptune }
+    public var planet: KPCPlanetaryObject { return .NEPTUNE }
     
-    init(julianDay: JulianDay) {
+    public init(julianDay: JulianDay) {
         self.julianDay = julianDay
     }
 }

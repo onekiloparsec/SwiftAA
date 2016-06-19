@@ -811,6 +811,8 @@
 		9FE184381D0DE730008CA0F8 /* AAVSOP87E_URA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183531D0DE730008CA0F8 /* AAVSOP87E_URA.h */; };
 		9FE184391D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */; };
 		9FE1843A1D0DE730008CA0F8 /* AAVSOP87E_VEN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */; };
+		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
+		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */; };
 		9FFA28FE1D156D0900034972 /* KPCAA3DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFA28FF1D156D0900034972 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
@@ -854,6 +856,7 @@
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = SwiftAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
+		9F4594051D16ED2F0003CF2A /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftAA.playground; path = SwiftAA/SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
 		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
 		9F48D5201B4DC33C00B7EE7F /* KPCAAGlobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGlobe.h; path = SwiftAA/KPCAAGlobe.h; sourceTree = "<group>"; };
@@ -1244,6 +1247,7 @@
 		9F29B4601B47313500B64C96 = {
 			isa = PBXGroup;
 			children = (
+				9F4594051D16ED2F0003CF2A /* SwiftAA.playground */,
 				9F7379891C26B79F007EF484 /* Swift */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
 				9FC3402E1D156A5D0069E7C4 /* Tests */,
@@ -2220,6 +2224,7 @@
 				9F694D951D15C67300EE7492 /* AAEclipticalElements.cpp in Sources */,
 				9F694D961D15C67300EE7492 /* KPCAADynamicalTime.mm in Sources */,
 				9F694D971D15C67300EE7492 /* KPCAACoordinateTransformation.mm in Sources */,
+				9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */,
 				9F694D981D15C67300EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9F694D991D15C67300EE7492 /* AAMoonIlluminatedFraction.cpp in Sources */,
 				9F694D9A1D15C67300EE7492 /* AAVSOP87A_VEN.cpp in Sources */,
@@ -2404,6 +2409,7 @@
 				9FE183721D0DE730008CA0F8 /* AAEclipticalElements.cpp in Sources */,
 				9F694D241D15781600EE7492 /* KPCAADynamicalTime.mm in Sources */,
 				9F694D201D15755000EE7492 /* KPCAACoordinateTransformation.mm in Sources */,
+				9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */,
 				9F694D7B1D157BD200EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9FE183941D0DE730008CA0F8 /* AAMoonIlluminatedFraction.cpp in Sources */,
 				9FE183F71D0DE730008CA0F8 /* AAVSOP87A_VEN.cpp in Sources */,
