@@ -98,6 +98,14 @@ protocol Planet: EclipticObject {
 
 extension Planet {
     
+    func perihelion(year: Double) -> JulianDay {
+        return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(year, self.eclipticObject), self.eclipticObject)
+    }
+    
+    func aphelion(year: Double) -> JulianDay {
+        return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(year, self.eclipticObject), self.eclipticObject)
+    }
+
     func meanInferiorConjunction(year: Double) -> JulianDay {
         let k = KPCAAPlanetaryPhenomena_K(year, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
         return KPCAAPlanetaryPhenomena_Mean(k, self.planet, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)

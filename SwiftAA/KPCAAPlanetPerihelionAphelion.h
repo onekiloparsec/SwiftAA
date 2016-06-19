@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KPCAAEclipticalElements.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,6 +45,11 @@ long KPCAAPlanetPerihelionAphelion_NeptuneK(double Year);
 double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k);
 double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
 
+    
+long KPCAAPlanetPerihelionAphelion_K(double Year, KPCEclipticObject object);
+double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCEclipticObject object);
+double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCEclipticObject object);
+    
 #if __cplusplus
 }
 #endif

@@ -18,7 +18,8 @@ extension Degrees {
     var Degrees: Double { return self }
     var Minutes: Double { return self * 60.0 }
     var Seconds: Double { return self * 3600.0 }
-    var Radians: Double { return DegreesToRadians(self) }
+    var Radians: Double { return self * 0.017453292519943295769236907684886 }
+    var Hours:   Double { return self / 15.0 }
 }
 
 extension AU {

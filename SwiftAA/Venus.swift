@@ -15,13 +15,5 @@ public struct Venus: Planet {
     
     init(julianDay: JulianDay) {
         self.julianDay = julianDay
-    }
-        
-    func perihelion(year: Double) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(KPCAAPlanetPerihelionAphelion_MercuryK(year))
-    }
-
-    func aphelion(year: Double) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_MercuryAphelion(KPCAAPlanetPerihelionAphelion_MercuryK(year))
-    }
+    }        
 }

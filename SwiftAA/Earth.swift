@@ -14,5 +14,13 @@ public struct Earth: EclipticObject {
     
     init(julianDay: JulianDay) {
         self.julianDay = julianDay
-    }    
+    }
+    
+    func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
+        return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
+    }
+    
+    func aphelion(year: Double, baryCentric: Bool = true) -> JulianDay {
+        return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
+    }
 }

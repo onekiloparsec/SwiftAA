@@ -136,3 +136,103 @@ double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k)
 {
     return CAAPlanetPerihelionAphelion::NeptuneAphelion(k);
 }
+
+long KPCAAPlanetPerihelionAphelion_K(double Year, KPCEclipticObject object)
+{
+    switch (object) {
+        case Mercury:
+            return KPCAAPlanetPerihelionAphelion_MercuryK(Year);
+            break;
+        case Venus:
+            return KPCAAPlanetPerihelionAphelion_VenusK(Year);
+            break;
+        case Earth:
+            return KPCAAPlanetPerihelionAphelion_EarthK(Year);
+            break;
+        case Mars:
+            return KPCAAPlanetPerihelionAphelion_MarsK(Year);
+            break;
+        case Jupiter:
+            return KPCAAPlanetPerihelionAphelion_JupiterK(Year);
+            break;
+        case Saturn:
+            return KPCAAPlanetPerihelionAphelion_SaturnK(Year);
+            break;
+        case Uranus:
+            return KPCAAPlanetPerihelionAphelion_UranusK(Year);
+            break;
+        case Neptune:
+            return KPCAAPlanetPerihelionAphelion_NeptuneK(Year);
+            break;
+        case Pluto:
+            return 0;
+            break;
+    }
+}
+
+double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCEclipticObject object)
+{
+    switch (object) {
+        case Mercury:
+            return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(k);
+            break;
+        case Venus:
+            return KPCAAPlanetPerihelionAphelion_VenusPerihelion(k);
+            break;
+        case Earth:
+            return KPCAAPlanetPerihelionAphelion_EarthPerihelion(k, YES);
+            break;
+        case Mars:
+            return KPCAAPlanetPerihelionAphelion_MarsPerihelion(k);
+            break;
+        case Jupiter:
+            return KPCAAPlanetPerihelionAphelion_JupiterPerihelion(k);
+            break;
+        case Saturn:
+            return KPCAAPlanetPerihelionAphelion_SaturnPerihelion(k);
+            break;
+        case Uranus:
+            return KPCAAPlanetPerihelionAphelion_UranusPerihelion(k);
+            break;
+        case Neptune:
+            return KPCAAPlanetPerihelionAphelion_NeptunePerihelion(k);
+            break;
+        case Pluto:
+            return 0;
+            break;
+    }
+}
+
+double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCEclipticObject object)
+{
+    switch (object) {
+        case Mercury:
+            return KPCAAPlanetPerihelionAphelion_MercuryAphelion(k);
+            break;
+        case Venus:
+            return KPCAAPlanetPerihelionAphelion_VenusAphelion(k);
+            break;
+        case Earth:
+            return KPCAAPlanetPerihelionAphelion_EarthAphelion(k, YES);
+            break;
+        case Mars:
+            return KPCAAPlanetPerihelionAphelion_MarsAphelion(k);
+            break;
+        case Jupiter:
+            return KPCAAPlanetPerihelionAphelion_JupiterAphelion(k);
+            break;
+        case Saturn:
+            return KPCAAPlanetPerihelionAphelion_SaturnAphelion(k);
+            break;
+        case Uranus:
+            return KPCAAPlanetPerihelionAphelion_UranusAphelion(k);
+            break;
+        case Neptune:
+            return KPCAAPlanetPerihelionAphelion_NeptuneAphelion(k);
+            break;
+        case Pluto:
+            return 0;
+            break;
+    }
+}
+
