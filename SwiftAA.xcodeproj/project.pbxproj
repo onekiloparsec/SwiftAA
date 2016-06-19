@@ -576,6 +576,8 @@
 		9F7A57021D15F5CE0033CDC5 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A57001D15F5CE0033CDC5 /* Planet.swift */; };
 		9F7CBFAF1D16B8E100E13FB1 /* EclipticObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */; };
 		9F7CBFB01D16B8E100E13FB1 /* EclipticObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */; };
+		9F7CBFB21D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
+		9F7CBFB31D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
 		9FE1835A1D0DE730008CA0F8 /* AA+.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182751D0DE730008CA0F8 /* AA+.h */; };
@@ -933,6 +935,7 @@
 		9F7A9E181B4FCE8100033B77 /* KPCAASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASun.h; path = SwiftAA/KPCAASun.h; sourceTree = "<group>"; };
 		9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASun.mm; path = SwiftAA/KPCAASun.mm; sourceTree = "<group>"; };
 		9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EclipticObject.swift; sourceTree = "<group>"; };
+		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -1382,6 +1385,7 @@
 			children = (
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
+				9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */,
 				9F7A57001D15F5CE0033CDC5 /* Planet.swift */,
 				9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */,
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
@@ -2233,6 +2237,7 @@
 				9F694DDB1D15C67300EE7492 /* KPCAAUranus.mm in Sources */,
 				9F694DDC1D15C67300EE7492 /* AAElliptical.cpp in Sources */,
 				9F694DDD1D15C67300EE7492 /* AAVSOP87B_NEP.cpp in Sources */,
+				9F7CBFB31D16C4BE00E13FB1 /* Uranus.swift in Sources */,
 				9F694DDE1D15C67300EE7492 /* AAVSOP87C_VEN.cpp in Sources */,
 				9F694DDF1D15C67300EE7492 /* AAEquationOfTime.cpp in Sources */,
 				9F694DE01D15C67300EE7492 /* AAVSOP87_URA.cpp in Sources */,
@@ -2411,6 +2416,7 @@
 				9F694D4B1D157B0400EE7492 /* KPCAAUranus.mm in Sources */,
 				9FE183761D0DE730008CA0F8 /* AAElliptical.cpp in Sources */,
 				9FE184011D0DE730008CA0F8 /* AAVSOP87B_NEP.cpp in Sources */,
+				9F7CBFB21D16C4BE00E13FB1 /* Uranus.swift in Sources */,
 				9FE184171D0DE730008CA0F8 /* AAVSOP87C_VEN.cpp in Sources */,
 				9FE1837A1D0DE730008CA0F8 /* AAEquationOfTime.cpp in Sources */,
 				9FE183E31D0DE730008CA0F8 /* AAVSOP87_URA.cpp in Sources */,
