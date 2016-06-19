@@ -16,6 +16,10 @@ public struct Earth: EclipticObject {
         self.julianDay = julianDay
     }
     
+    public var color: Color {
+        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+    }
+
     func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }

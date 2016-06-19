@@ -6,7 +6,7 @@
 //  Copyright © 2015 onekiloparsec. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftAA.
 FOUNDATION_EXPORT double SwiftAAVersionNumber;

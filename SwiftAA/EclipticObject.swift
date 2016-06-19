@@ -15,10 +15,10 @@ public protocol EclipticObject {
      Identifies the ecliptical object.
      */
     var eclipticObject: KPCEclipticObject { get }
+    var name: String { get }
+    var color: Color { get }
     
     init(julianDay: JulianDay)
-    
-    func name() -> String
     
     /**
      Compute the ecliptic (=heliocentric) longitude of the planet
@@ -49,8 +49,8 @@ public protocol EclipticObject {
 }
 
 public extension EclipticObject {
-    func name() -> String {
-        return self.eclipticObject.toString()
+    var name: String {
+        get { return self.eclipticObject.toString() }
     }
     
     func eclipticLongitude(highPrecision: Bool = true) -> Degrees {

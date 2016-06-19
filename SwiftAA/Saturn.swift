@@ -17,6 +17,10 @@ public struct Saturn: Planet {
         self.julianDay = julianDay
     }
     
+    public var color: Color {
+        get { return Color(red: 145.0/255.0, green:139.0/255.0, blue:129.0/255.0, alpha: 1.0) }
+    }
+    
     func ringsDetails(highPrecision: Bool = true) -> KPCAASaturnRingDetails {
         return KPCAASaturnRings_Calculate(self.julianDay, highPrecision)
     }

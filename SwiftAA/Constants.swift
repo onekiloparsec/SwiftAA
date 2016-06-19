@@ -8,6 +8,14 @@
 
 import Foundation
 
+#if os(OSX)
+    import AppKit
+    public typealias Color=NSColor
+#else
+    import UIKit
+    public typealias Color=UIColor
+#endif
+
 public typealias JulianDay=Double
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
@@ -53,3 +61,11 @@ public extension KPCEclipticObject {
         }
     }
 }
+
+#if os(OSX)
+    extension NSColor {
+        convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+            self.init(calibratedRed: red, green: green, blue: blue, alpha: alpha)
+        }
+    }
+#endif

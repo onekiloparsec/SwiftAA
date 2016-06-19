@@ -413,7 +413,6 @@
 		9F694E471D15C67300EE7492 /* AAPrecession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182D81D0DE730008CA0F8 /* AAPrecession.h */; };
 		9F694E481D15C67300EE7492 /* AAPhysicalMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182CC1D0DE730008CA0F8 /* AAPhysicalMars.h */; };
 		9F694E491D15C67300EE7492 /* AAParallactic.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182C61D0DE730008CA0F8 /* AAParallactic.h */; };
-		9F694E4A1D15C67300EE7492 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694E4B1D15C67300EE7492 /* AAVSOP87_SAT.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182FD1D0DE730008CA0F8 /* AAVSOP87_SAT.h */; };
 		9F694E4C1D15C67300EE7492 /* AAJupiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182A61D0DE730008CA0F8 /* AAJupiter.h */; };
 		9F694E4D1D15C67300EE7492 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -813,6 +812,7 @@
 		9FE1843A1D0DE730008CA0F8 /* AAVSOP87E_VEN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */; };
 		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
+		9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */; };
 		9FFA28FE1D156D0900034972 /* KPCAA3DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFA28FF1D156D0900034972 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
@@ -1734,7 +1734,6 @@
 				9F694E471D15C67300EE7492 /* AAPrecession.h in Headers */,
 				9F694E481D15C67300EE7492 /* AAPhysicalMars.h in Headers */,
 				9F694E491D15C67300EE7492 /* AAParallactic.h in Headers */,
-				9F694E4A1D15C67300EE7492 /* SwiftAA.h in Headers */,
 				9F694E4B1D15C67300EE7492 /* AAVSOP87_SAT.h in Headers */,
 				9F694E4C1D15C67300EE7492 /* AAJupiter.h in Headers */,
 				9F694E4D1D15C67300EE7492 /* KPCAADate.h in Headers */,
@@ -1783,6 +1782,7 @@
 				9F694E781D15C67300EE7492 /* AAVSOP87C_URA.h in Headers */,
 				9F694E791D15C67300EE7492 /* KPCAAMoonPhases.h in Headers */,
 				9F694E7A1D15C67300EE7492 /* KPCAADynamicalTime.h in Headers */,
+				9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */,
 				9F694E7B1D15C67300EE7492 /* AAELP2000.h in Headers */,
 				9F694E7C1D15C67300EE7492 /* KPCAANearParabolic.h in Headers */,
 				9F694E7D1D15C67300EE7492 /* AAVSOP87_MER.h in Headers */,
@@ -2810,6 +2810,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2823,13 +2824,10 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -2843,6 +2841,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2856,13 +2855,10 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
