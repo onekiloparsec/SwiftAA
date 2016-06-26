@@ -2074,6 +2074,7 @@
 				9F694E311D15C67300EE7492 /* Frameworks */,
 				9F694E321D15C67300EE7492 /* Headers */,
 				9F694EDE1D15C67300EE7492 /* Resources */,
+				9F8D13851D1EED0300DF309D /* Copy SwiftAA Framework into Playground */,
 			);
 			buildRules = (
 			);
@@ -2204,6 +2205,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F8D13851D1EED0300DF309D /* Copy SwiftAA Framework into Playground */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy SwiftAA Framework into Playground";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -Rf ${BUILT_PRODUCTS_DIR}/SwiftAA.framework ${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F694D8A1D15C67300EE7492 /* Sources */ = {
@@ -2824,6 +2842,7 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
@@ -2855,6 +2874,7 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;

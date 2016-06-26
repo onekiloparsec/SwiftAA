@@ -16,7 +16,7 @@ public struct Earth: EclipticObject {
         self.julianDay = julianDay
     }
     
-    public var color: Color {
+    public static var color: Color {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
 

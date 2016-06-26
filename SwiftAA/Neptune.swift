@@ -17,7 +17,7 @@ public struct Neptune: Planet {
         self.julianDay = julianDay
     }
     
-    public var color: Color {
+    public static var color: Color {
         get { return Color(red: 0.392, green:0.518, blue:0.871, alpha: 1.0) }
     }
 }

@@ -9,6 +9,8 @@
 import Foundation
 
 public protocol EclipticObject {
+    static var color: Color { get }
+
     var julianDay: JulianDay { get set }
     
     /**
@@ -16,7 +18,6 @@ public protocol EclipticObject {
      */
     var eclipticObject: KPCEclipticObject { get }
     var name: String { get }
-    var color: Color { get }
     
     init(julianDay: JulianDay)
     
