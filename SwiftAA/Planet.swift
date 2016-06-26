@@ -9,62 +9,40 @@
 import Foundation
 
 
-public protocol Planet: TimeBase {
-    /**
-     Identifies the ecliptical object.
-     */
-    var planet: KPCAAPlanet { get }
-    var name: String { get }
-
+public protocol Planet: Base {
     /// The mean color of the planet
     static var color: Color { get }
 
-    init(julianDay: JulianDay)
+    // The planet type type
+    var planet: KPCAAPlanet { get }
     
-    /**
-     Compute the ecliptic (=heliocentric) longitude of the planet
-     
-     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
-     
-     - returns: the ecliptic longitude in AU
-     */
-    func eclipticLongitude(highPrecision: Bool) -> Degrees
-    
-    /**
-     Compute the ecliptic (=heliocentric) latitude of the planet
-     
-     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
-     
-     - returns: the ecliptic latitude in AU
-     */
-    func eclipticLatitude(highPrecision: Bool) -> Degrees
-    
-    /**
-     Compute the radius vector (=distance to the Sun)
-     
-     - parameter hp: If true, the VSOP87 implementation will be used to increase precision.
-     
-     - returns: the radius vector in AU
-     */
-    func radiusVector(highPrecision: Bool) -> AU
+    /// The name of the planet
+    var name: String { get }
 
     /**
-     Compute the julian day of the perihelion of the planet for a given year
+     Initialization of a Planet
      
-     - parameter year: The year to consider. Can have decimals.
+     - parameter julianDay:     The julian day at which one will consider the planet
+     - parameter highPrecision: Use VSOP87 implementation will be used to increase precision.
      
-     - returns: A julian day
+     - returns: A new instance of a Planet
      */
-    func perihelion(year: Double) -> JulianDay
+    init(julianDay: JulianDay, highPrecision: Bool)
     
-    /**
-     Compute the julian day of the aphelion of the planet for a given year
-     
-     - parameter year: The year to consider. Can have decimals.
-     
-     - returns: A julian day
-     */
-    func aphelion(year: Double) -> JulianDay
+    /// The ecliptic (=heliocentric) longitude of the planet
+    var eclipticLongitude: Degrees { get }
+    
+    /// The ecliptic (=heliocentric) latitude of the planet
+    var eclipticLatitude: Degrees { get }
+
+    /// The radius vector (=distance to the Sun)
+    var radiusVector: AU { get }
+
+    /// The julian day of the perihelion of the planet the after the given julian day
+    var perihelion: JulianDay { get }
+    
+    /// The julian day of the aphelion of the planet the after the given julian day
+    var aphelion: JulianDay { get }
 }
 
 public extension Planet {
@@ -72,23 +50,23 @@ public extension Planet {
         get { return self.planet.toString() }
     }
     
-    func eclipticLongitude(highPrecision: Bool = true) -> Degrees {
-        return KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, highPrecision)
+    var eclipticLongitude: Degrees {
+        get { return KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, self.highPrecision) }
     }
     
-    func eclipticLatitude(highPrecision: Bool = true) -> Degrees {
-        return KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, highPrecision)
+    var eclipticLatitude: Degrees {
+        get { return KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision) }
     }
     
-    func radiusVector(highPrecision: Bool = true) -> AU {
-        return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, highPrecision)
+    var radiusVector: AU {
+        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
     }
 
-    func perihelion(year: Double) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(year, self.planet), self.planet)
+    var perihelion: JulianDay {
+        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planet), self.planet) }
     }
     
-    func aphelion(year: Double) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(year, self.planet), self.planet)
+    var aphelion: JulianDay {
+        get { KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planet), self.planet) }
     }
 }

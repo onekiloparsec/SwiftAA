@@ -16,12 +16,12 @@ import Foundation
     public typealias Color=UIColor
 #endif
 
-public typealias JulianDay=Double
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
 
-public protocol TimeBase {
+public protocol Base {
     var julianDay: JulianDay { get set }
+    var highPrecision: Bool { get set }
 }
 
 enum PlanetError: ErrorType {

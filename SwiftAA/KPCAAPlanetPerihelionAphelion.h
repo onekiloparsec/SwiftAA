@@ -46,6 +46,8 @@ double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k);
 double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
 
     
+// SwiftAA Additions
+    
 long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanet planet);
 double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanet planet);
 double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanet planet);
