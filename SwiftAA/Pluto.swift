@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct Pluto: EclipticObject {
+public struct Pluto: Planet {
     public var julianDay: JulianDay
-    public var eclipticObject: KPCEclipticObject { return .Pluto }
+    public var planet: KPCAAPlanet { return .Pluto }
     
     public init(julianDay: JulianDay) {
         self.julianDay = julianDay

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2A87A01D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F2A87A11D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694CAD1D15717400EE7492 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29091D15704900034972 /* AATest.cpp */; };
 		9F694CAE1D15719500EE7492 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29041D156E5800034972 /* stdafx.cpp */; };
 		9F694CAF1D15719500EE7492 /* AAAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182791D0DE730008CA0F8 /* AAAberration.cpp */; };
@@ -571,10 +573,10 @@
 		9F7A56FC1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
 		9F7A56FD1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
 		9F7A56FF1D15F2F40033CDC5 /* VenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */; };
-		9F7A57011D15F5CE0033CDC5 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A57001D15F5CE0033CDC5 /* Planet.swift */; };
-		9F7A57021D15F5CE0033CDC5 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A57001D15F5CE0033CDC5 /* Planet.swift */; };
-		9F7CBFAF1D16B8E100E13FB1 /* EclipticObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */; };
-		9F7CBFB01D16B8E100E13FB1 /* EclipticObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */; };
+		9F7A57011D15F5CE0033CDC5 /* PlanetaryPhenomena.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */; };
+		9F7A57021D15F5CE0033CDC5 /* PlanetaryPhenomena.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */; };
+		9F7CBFAF1D16B8E100E13FB1 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */; };
+		9F7CBFB01D16B8E100E13FB1 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */; };
 		9F7CBFB21D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
 		9F7CBFB31D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
 		9F7CBFB51D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
@@ -856,6 +858,7 @@
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = SwiftAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = SwiftAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
+		9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = SwiftAA/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
 		9F4594051D16ED2F0003CF2A /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftAA.playground; path = SwiftAA/SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
 		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
@@ -926,7 +929,7 @@
 		9F737A7C1C26DBCE007EF484 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F7A56FB1D15E6890033CDC5 /* Earth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
 		9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenusTests.swift; sourceTree = "<group>"; };
-		9F7A57001D15F5CE0033CDC5 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryPhenomena.swift; sourceTree = "<group>"; };
 		9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARefraction.h; path = SwiftAA/KPCAARefraction.h; sourceTree = "<group>"; };
 		9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARefraction.mm; path = SwiftAA/KPCAARefraction.mm; sourceTree = "<group>"; };
 		9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARiseTransitSet.h; path = SwiftAA/KPCAARiseTransitSet.h; sourceTree = "<group>"; };
@@ -947,7 +950,7 @@
 		9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAVenus.mm; path = SwiftAA/KPCAAVenus.mm; sourceTree = "<group>"; };
 		9F7A9E181B4FCE8100033B77 /* KPCAASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASun.h; path = SwiftAA/KPCAASun.h; sourceTree = "<group>"; };
 		9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASun.mm; path = SwiftAA/KPCAASun.mm; sourceTree = "<group>"; };
-		9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EclipticObject.swift; sourceTree = "<group>"; };
+		9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
 		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
 		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
@@ -1398,6 +1401,7 @@
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
 				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
 				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
 				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
@@ -1412,7 +1416,6 @@
 			children = (
 				9FDA5C321D16E6B6003B9F31 /* Base */,
 				9FDA5C311D16E6A7003B9F31 /* Planets */,
-				9FDA5C331D16E6C5003B9F31 /* Earth */,
 				9F4593FE1D16E9340003CF2A /* Moon */,
 			);
 			name = Swift;
@@ -1437,6 +1440,7 @@
 			children = (
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
+				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
 				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
 				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
@@ -1450,19 +1454,11 @@
 		9FDA5C321D16E6B6003B9F31 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				9F7A57001D15F5CE0033CDC5 /* Planet.swift */,
-				9F7CBFAE1D16B8E100E13FB1 /* EclipticObject.swift */,
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
+				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
+				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 			);
 			name = Base;
-			sourceTree = "<group>";
-		};
-		9FDA5C331D16E6C5003B9F31 /* Earth */ = {
-			isa = PBXGroup;
-			children = (
-				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
-			);
-			name = Earth;
 			sourceTree = "<group>";
 		};
 		9FE182741D0DE730008CA0F8 /* aaplus-v1.71 */ = {
@@ -1818,6 +1814,7 @@
 				9F694E9B1D15C67300EE7492 /* AAPlanetaryPhenomena.h in Headers */,
 				9F694E9C1D15C67300EE7492 /* AAVSOP87A_URA.h in Headers */,
 				9F694E9D1D15C67300EE7492 /* AAMoon.h in Headers */,
+				9F2A87A11D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */,
 				9F694E9E1D15C67300EE7492 /* AAVSOP87B_MER.h in Headers */,
 				9F694E9F1D15C67300EE7492 /* AAVSOP87E_SAT.h in Headers */,
 				9F694EA01D15C67300EE7492 /* AAVSOP87D_URA.h in Headers */,
@@ -1996,6 +1993,7 @@
 				9FE183B71D0DE730008CA0F8 /* AAPlanetaryPhenomena.h in Headers */,
 				9FE183F61D0DE730008CA0F8 /* AAVSOP87A_URA.h in Headers */,
 				9FE183931D0DE730008CA0F8 /* AAMoon.h in Headers */,
+				9F2A87A01D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */,
 				9FE184001D0DE730008CA0F8 /* AAVSOP87B_MER.h in Headers */,
 				9FE184341D0DE730008CA0F8 /* AAVSOP87E_SAT.h in Headers */,
 				9FE184261D0DE730008CA0F8 /* AAVSOP87D_URA.h in Headers */,
@@ -2237,7 +2235,7 @@
 				9F694D911D15C67300EE7492 /* AAEquinoxesAndSolstices.cpp in Sources */,
 				9F694D921D15C67300EE7492 /* AASidereal.cpp in Sources */,
 				9F694D931D15C67300EE7492 /* AAVSOP87D_EAR.cpp in Sources */,
-				9F7A57021D15F5CE0033CDC5 /* Planet.swift in Sources */,
+				9F7A57021D15F5CE0033CDC5 /* PlanetaryPhenomena.swift in Sources */,
 				9F694D941D15C67300EE7492 /* AAMercury.cpp in Sources */,
 				9F694D951D15C67300EE7492 /* AAEclipticalElements.cpp in Sources */,
 				9F694D961D15C67300EE7492 /* KPCAADynamicalTime.mm in Sources */,
@@ -2387,7 +2385,7 @@
 				9F694E1D1D15C67300EE7492 /* AAPluto.cpp in Sources */,
 				9FDA5C2A1D16E60B003B9F31 /* Mercury.swift in Sources */,
 				9F694E1E1D15C67300EE7492 /* KPCAAPhysicalJupiter.mm in Sources */,
-				9F7CBFB01D16B8E100E13FB1 /* EclipticObject.swift in Sources */,
+				9F7CBFB01D16B8E100E13FB1 /* Planet.swift in Sources */,
 				9F694E1F1D15C67300EE7492 /* AAVSOP87_JUP.cpp in Sources */,
 				9F694E201D15C67300EE7492 /* AAPhysicalMars.cpp in Sources */,
 				9F694E211D15C67300EE7492 /* KPCAANutation.mm in Sources */,
@@ -2422,7 +2420,7 @@
 				9FE1837C1D0DE730008CA0F8 /* AAEquinoxesAndSolstices.cpp in Sources */,
 				9FE183C81D0DE730008CA0F8 /* AASidereal.cpp in Sources */,
 				9FE184191D0DE730008CA0F8 /* AAVSOP87D_EAR.cpp in Sources */,
-				9F7A57011D15F5CE0033CDC5 /* Planet.swift in Sources */,
+				9F7A57011D15F5CE0033CDC5 /* PlanetaryPhenomena.swift in Sources */,
 				9FE183901D0DE730008CA0F8 /* AAMercury.cpp in Sources */,
 				9FE183721D0DE730008CA0F8 /* AAEclipticalElements.cpp in Sources */,
 				9F694D241D15781600EE7492 /* KPCAADynamicalTime.mm in Sources */,
@@ -2572,7 +2570,7 @@
 				9FE183BA1D0DE730008CA0F8 /* AAPluto.cpp in Sources */,
 				9FDA5C291D16E60B003B9F31 /* Mercury.swift in Sources */,
 				9F694D731D157BD200EE7492 /* KPCAAPhysicalJupiter.mm in Sources */,
-				9F7CBFAF1D16B8E100E13FB1 /* EclipticObject.swift in Sources */,
+				9F7CBFAF1D16B8E100E13FB1 /* Planet.swift in Sources */,
 				9FE183D91D0DE730008CA0F8 /* AAVSOP87_JUP.cpp in Sources */,
 				9FE183B01D0DE730008CA0F8 /* AAPhysicalMars.cpp in Sources */,
 				9F694D6B1D157BD200EE7492 /* KPCAANutation.mm in Sources */,

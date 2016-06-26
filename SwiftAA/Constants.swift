@@ -20,6 +20,10 @@ public typealias JulianDay=Double
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
 
+public protocol TimeBase {
+    var julianDay: JulianDay { get set }
+}
+
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 public extension Degrees {
@@ -37,7 +41,7 @@ public extension AU {
     var m:  Double { return self / 149597870700.0 }
 }
 
-public extension KPCEclipticObject {
+public extension KPCAAPlanet {
     func toString() -> String {
         switch self {
         case Mercury:

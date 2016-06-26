@@ -46,9 +46,9 @@ double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k);
 double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
 
     
-long KPCAAPlanetPerihelionAphelion_K(double Year, KPCEclipticObject object);
-double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCEclipticObject object);
-double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCEclipticObject object);
+long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanet planet);
+double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanet planet);
+double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanet planet);
     
 #if __cplusplus
 }

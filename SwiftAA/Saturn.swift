@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct Saturn: Planet {
+public struct Saturn: Planet, PlanetaryPhenomena {
     public var julianDay: JulianDay
-    public var eclipticObject: KPCEclipticObject { return .Saturn }
-    public var planet: KPCPlanetaryObject { return .SATURN }
+    public var planet: KPCAAPlanet { return .Saturn }
+    public var planetaryObject: KPCPlanetaryObject { return .SATURN }
     
     public init(julianDay: JulianDay) {
         self.julianDay = julianDay

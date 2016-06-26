@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct Earth: EclipticObject {
+public struct Earth: Planet {
     public var julianDay: JulianDay
-    public var eclipticObject: KPCEclipticObject { return .Earth }
+    public var planet: KPCAAPlanet { return .Earth }
     
     public init(julianDay: JulianDay) {
         self.julianDay = julianDay
@@ -20,6 +20,7 @@ public struct Earth: EclipticObject {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
 
+    // Additional methods for Earth to deal with the baryCentric parameter
     func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }

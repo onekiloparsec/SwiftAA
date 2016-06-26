@@ -42,9 +42,9 @@ KPCAAEclipticalElementDetails KPCAAEclipticalElement_FK4B1950ToFK5J2000(double i
     return details;
 }
 
-double KPCAAEclipticalElement_EclipticalLongitude(double JD, KPCEclipticObject object, BOOL highPrecision)
+double KPCAAEclipticalElement_EclipticLongitude(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury: {
             return KPCAAMercury_EclipticLongitude(JD, highPrecision);
             break;
@@ -84,9 +84,9 @@ double KPCAAEclipticalElement_EclipticalLongitude(double JD, KPCEclipticObject o
     }
 }
 
-double KPCAAEclipticalElement_EclipticalLatitude(double JD, KPCEclipticObject object, BOOL highPrecision)
+double KPCAAEclipticalElement_EclipticLatitude(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury: {
             return KPCAAMercury_EclipticLatitude(JD, highPrecision);
             break;
@@ -126,9 +126,9 @@ double KPCAAEclipticalElement_EclipticalLatitude(double JD, KPCEclipticObject ob
     }
 }
 
-double KPCAAEclipticalElement_RadiusVector(double JD, KPCEclipticObject object, BOOL highPrecision)
+double KPCAAEclipticalElement_RadiusVector(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury: {
             return KPCAAMercury_RadiusVector(JD, highPrecision);
             break;

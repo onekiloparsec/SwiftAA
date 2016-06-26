@@ -137,9 +137,9 @@ double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k)
     return CAAPlanetPerihelionAphelion::NeptuneAphelion(k);
 }
 
-long KPCAAPlanetPerihelionAphelion_K(double Year, KPCEclipticObject object)
+long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanet planet)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryK(Year);
             break;
@@ -170,9 +170,9 @@ long KPCAAPlanetPerihelionAphelion_K(double Year, KPCEclipticObject object)
     }
 }
 
-double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCEclipticObject object)
+double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanet planet)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(k);
             break;
@@ -203,9 +203,9 @@ double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCEclipticObject object
     }
 }
 
-double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCEclipticObject object)
+double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanet planet)
 {
-    switch (object) {
+    switch (planet) {
         case Mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryAphelion(k);
             break;

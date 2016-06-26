@@ -6,6 +6,8 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
+#import <SwiftAA/KPCAASwiftAdditions.h>
+
 #import <SwiftAA/KPCAA2DCoordinate.h>
 #import <SwiftAA/KPCAA3DCoordinate.h>
 #import <SwiftAA/KPCAAAberration.h>

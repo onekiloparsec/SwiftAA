@@ -14,6 +14,7 @@ FOUNDATION_EXPORT double SwiftAAVersionNumber;
 //! Project version string for SwiftAA.
 FOUNDATION_EXPORT const unsigned char SwiftAAVersionString[];
 
+#import <SwiftAA/KPCAASwiftAdditions.h>
 
 #import <SwiftAA/KPCAA2DCoordinate.h>
 #import <SwiftAA/KPCAA3DCoordinate.h>
