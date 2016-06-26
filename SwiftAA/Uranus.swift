@@ -11,7 +11,6 @@ import Foundation
 public struct Uranus: Planet, PlanetaryPhenomena {
     public var julianDay: JulianDay
     public var planet: KPCAAPlanet { return .Uranus }
-    public var planetaryObject: KPCPlanetaryObject { return .URANUS }
     
     public init(julianDay: JulianDay) {
         self.julianDay = julianDay

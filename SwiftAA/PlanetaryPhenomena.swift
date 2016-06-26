@@ -80,6 +80,33 @@ public protocol PlanetaryPhenomena: TimeBase {
 
 public extension PlanetaryPhenomena {
     
+    var planetaryObject: KPCPlanetaryObject {
+        if self is Planet {
+            let typedSelf: Planet = self as! Planet
+            switch typedSelf.planet {
+            case .Mercury:
+                return .MERCURY
+            case .Venus:
+                return .VENUS
+            case .Mars:
+                return .MARS
+            case .Jupiter:
+                return .JUPITER
+            case .Saturn:
+                return .SATURN
+            case .Uranus:
+                return .URANUS
+            case .Neptune:
+                return .NEPTUNE
+            default:
+                break
+            }
+        }
+//        see what god himself says https://forums.developer.apple.com/thread/4289#11819
+//        throw PlanetError.InvalidSubtype
+        return .UNDEFINED
+    }
+    
     func meanInferiorConjunction(year: Double) -> JulianDay {
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
         return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)

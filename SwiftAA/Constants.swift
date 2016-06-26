@@ -24,6 +24,10 @@ public protocol TimeBase {
     var julianDay: JulianDay { get set }
 }
 
+enum PlanetError: ErrorType {
+    case InvalidSubtype
+}
+
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 public extension Degrees {

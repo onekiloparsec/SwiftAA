@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, KPCPlanetaryObject) {
     JUPITER,
     SATURN,
     URANUS,
-    NEPTUNE
+    NEPTUNE,
+    UNDEFINED = 999 // Swift Addition
 };
 
 typedef NS_ENUM(NSUInteger, KPCPlanetaryEventType) {
