@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Earth: Planet {
+public struct Earth: Planet, ElementsOfPlanetaryOrbit {
     public var planet: KPCAAPlanet { return .Earth }
     
     public var julianDay: JulianDay
@@ -30,5 +30,14 @@ public struct Earth: Planet {
     
     func aphelion(year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
+    }
+    
+    func longitudeOfAscendingNode(equinox: Equinox) throws -> Degrees {
+        switch equinox {
+        case .MeanEquinoxOfTheDate:
+            throw PlanetError.InvalidCase
+        case .StandardJ2000:
+            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planet, self.julianDay)
+        }
     }
 }

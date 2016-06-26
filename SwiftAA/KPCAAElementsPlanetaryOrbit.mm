@@ -29,6 +29,7 @@ double KPCAAElementsPlanetaryOrbit_EarthMeanLongitude(double JD) { return CAAEle
 double KPCAAElementsPlanetaryOrbit_EarthSemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::EarthSemimajorAxis(JD); }
 double KPCAAElementsPlanetaryOrbit_EarthEccentricity(double JD) { return CAAElementsPlanetaryOrbit::EarthEccentricity(JD); }
 double KPCAAElementsPlanetaryOrbit_EarthInclination(double JD) { return CAAElementsPlanetaryOrbit::EarthInclination(JD); }
+
 double KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelion(double JD) { return CAAElementsPlanetaryOrbit::EarthLongitudePerihelion(JD); }
 
 
@@ -119,3 +120,434 @@ double KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(double JD) { return C
 double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudeAscendingNodeJ2000(JD); }
 double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelionJ2000(JD); }
 
+
+double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryMeanLongitude(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusMeanLongitude(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthMeanLongitude(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsMeanLongitude(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterMeanLongitude(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnMeanLongitude(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusMeanLongitude(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercurySemimajorAxis(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusSemimajorAxis(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthSemimajorAxis(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsSemimajorAxis(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterSemimajorAxis(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnSemimajorAxis(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusSemimajorAxis(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+
+double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryEccentricity(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusEccentricity(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthEccentricity(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsEccentricity(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterEccentricity(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnEccentricity(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusEccentricity(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryInclination(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusInclination(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthInclination(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsInclination(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterInclination(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnInclination(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusInclination(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneInclination(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryInclinationJ2000(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusInclinationJ2000(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthInclinationJ2000(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsInclinationJ2000(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterInclinationJ2000(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnInclinationJ2000(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusInclinationJ2000(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNode(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNode(JD);
+            break;
+        }
+        case Earth: {
+            return -1.0;
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNode(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNode(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNode(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNode(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelion(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelion(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelion(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelion(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelion(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelion(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelion(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}
+
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanet planet, double JD)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Venus: {
+            return KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Earth: {
+            return KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Mars: {
+            return KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Jupiter: {
+            return KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Saturn: {
+            return KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Uranus: {
+            return KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Neptune: {
+            return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(JD);
+            break;
+        }
+        case Pluto: {
+            return -1.0;
+            break;
+        }
+    }
+    return -1.0;
+}

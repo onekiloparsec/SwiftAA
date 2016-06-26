@@ -8,17 +8,21 @@
 
 import Foundation
 
+enum PlanetError: ErrorType {
+    case InvalidSubtype
+    case InvalidCase
+}
 
-public protocol Planet: Base {
+public protocol PlanetBase {
+    var planet: KPCAAPlanet { get }
+    var name: String { get }
+    
+    var julianDay: JulianDay { get set }
+    var highPrecision: Bool { get set }
+    
     /// The mean color of the planet
     static var color: Color { get }
-
-    // The planet type type
-    var planet: KPCAAPlanet { get }
     
-    /// The name of the planet
-    var name: String { get }
-
     /**
      Initialization of a Planet
      
@@ -28,7 +32,9 @@ public protocol Planet: Base {
      - returns: A new instance of a Planet
      */
     init(julianDay: JulianDay, highPrecision: Bool)
-    
+}
+
+public protocol Planet: PlanetBase {
     /// The ecliptic (=heliocentric) longitude of the planet
     var eclipticLongitude: Degrees { get }
     
@@ -42,7 +48,7 @@ public protocol Planet: Base {
     var perihelion: JulianDay { get }
     
     /// The julian day of the aphelion of the planet the after the given julian day
-    var aphelion: JulianDay { get }
+    var aphelion: JulianDay { get }    
 }
 
 public extension Planet {

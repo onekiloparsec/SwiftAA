@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Uranus: Planet, PlanetaryPhenomena {
+public struct Uranus: Planet, PlanetaryPhenomena, ElementsOfPlanetaryOrbit {
     public var planet: KPCAAPlanet { return .Uranus }
     
     public var julianDay: JulianDay

@@ -11,6 +11,8 @@
 		9F2A87A11D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F2A87A41D1FF5030004ADDD /* JulianDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87A31D1FF5030004ADDD /* JulianDay.swift */; };
 		9F2A87A51D1FF5030004ADDD /* JulianDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87A31D1FF5030004ADDD /* JulianDay.swift */; };
+		9F2A87AB1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */; };
+		9F2A87AC1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */; };
 		9F694CAD1D15717400EE7492 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29091D15704900034972 /* AATest.cpp */; };
 		9F694CAE1D15719500EE7492 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29041D156E5800034972 /* stdafx.cpp */; };
 		9F694CAF1D15719500EE7492 /* AAAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182791D0DE730008CA0F8 /* AAAberration.cpp */; };
@@ -862,6 +864,7 @@
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = SwiftAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
 		9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = SwiftAA/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
 		9F2A87A31D1FF5030004ADDD /* JulianDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDay.swift; sourceTree = "<group>"; };
+		9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsOfPlanetaryOrbit.swift; sourceTree = "<group>"; };
 		9F4594051D16ED2F0003CF2A /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftAA.playground; path = SwiftAA/SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
 		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
@@ -1300,8 +1303,6 @@
 				9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */,
 				9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */,
 				9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */,
-				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
-				9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */,
 				9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */,
 				9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */,
 				9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */,
@@ -1373,6 +1374,8 @@
 		9F2A87A21D1FF4C20004ADDD /* Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
+				9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */,
 				9F48D52C1B4EC01F00B7EE7F /* KPCAAJupiter.h */,
 				9F48D52D1B4EC01F00B7EE7F /* KPCAAJupiter.mm */,
 				9F48D5341B4EC1AA00B7EE7F /* KPCAAMars.h */,
@@ -1457,6 +1460,9 @@
 		9FDA5C311D16E6A7003B9F31 /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
+				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
+				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
@@ -1475,8 +1481,6 @@
 			children = (
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
 				9F2A87A31D1FF5030004ADDD /* JulianDay.swift */,
-				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
-				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -2285,6 +2289,7 @@
 				9F694DAC1D15C67300EE7492 /* KPCAAInterpolate.mm in Sources */,
 				9F694DAD1D15C67300EE7492 /* AAVSOP87B_EAR.cpp in Sources */,
 				9F694DAE1D15C67300EE7492 /* AAPlanetPerihelionAphelion.cpp in Sources */,
+				9F2A87AC1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */,
 				9F694DAF1D15C67300EE7492 /* AAIlluminatedFraction.cpp in Sources */,
 				9F694DB01D15C67300EE7492 /* KPCAAPlanetPerihelionAphelion.mm in Sources */,
 				9F694DB11D15C67300EE7492 /* KPCAAGalileanMoons.mm in Sources */,
@@ -2471,6 +2476,7 @@
 				9F694D591D157BD200EE7492 /* KPCAAInterpolate.mm in Sources */,
 				9FE183F91D0DE730008CA0F8 /* AAVSOP87B_EAR.cpp in Sources */,
 				9FE183B81D0DE730008CA0F8 /* AAPlanetPerihelionAphelion.cpp in Sources */,
+				9F2A87AB1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */,
 				9FE183841D0DE730008CA0F8 /* AAIlluminatedFraction.cpp in Sources */,
 				9F694D7D1D157BD200EE7492 /* KPCAAPlanetPerihelionAphelion.mm in Sources */,
 				9F694D371D1579C500EE7492 /* KPCAAGalileanMoons.mm in Sources */,

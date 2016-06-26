@@ -19,13 +19,9 @@ import Foundation
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
 
-public protocol Base {
-    var julianDay: JulianDay { get set }
-    var highPrecision: Bool { get set }
-}
-
-enum PlanetError: ErrorType {
-    case InvalidSubtype
+public enum Equinox {
+    case MeanEquinoxOfTheDate
+    case StandardJ2000
 }
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
