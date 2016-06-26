@@ -67,6 +67,6 @@ public extension Planet {
     }
     
     var aphelion: JulianDay {
-        get { KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planet), self.planet) }
+        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planet), self.planet) }
     }
 }

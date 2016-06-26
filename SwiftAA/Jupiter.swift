@@ -9,11 +9,14 @@
 import Foundation
 
 public struct Jupiter: Planet, PlanetaryPhenomena {
-    public var julianDay: JulianDay
     public var planet: KPCAAPlanet { return .Jupiter }
     
-    public init(julianDay: JulianDay) {
+    public var julianDay: JulianDay
+    public var highPrecision: Bool
+    
+    public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
+        self.highPrecision = highPrecision
     }
     
     public static var color: Color {

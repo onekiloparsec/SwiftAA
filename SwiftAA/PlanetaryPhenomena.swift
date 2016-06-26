@@ -11,7 +11,7 @@ import Foundation
 /**
  *  The Planet protocol specializes the EclipticObject for planets that are not the Earth!
  */
-public protocol PlanetaryPhenomena: TimeBase {
+public protocol PlanetaryPhenomena: Base {
     
     var planetaryObject: KPCPlanetaryObject { get }
     

@@ -9,11 +9,14 @@
 import Foundation
 
 public struct Earth: Planet {
-    public var julianDay: JulianDay
     public var planet: KPCAAPlanet { return .Earth }
     
-    public init(julianDay: JulianDay) {
+    public var julianDay: JulianDay
+    public var highPrecision: Bool
+    
+    public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
+        self.highPrecision = highPrecision
     }
     
     public static var color: Color {
