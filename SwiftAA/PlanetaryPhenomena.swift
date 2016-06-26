@@ -16,48 +16,30 @@ public protocol PlanetaryPhenomena: Base {
     var planetaryObject: KPCPlanetaryObject { get }
     
     /**
-     Compute the julian day of the mean inferior conjunction of the planet for the given year.
-     The 'mean' configuration here means that it is calculated from
+     Compute the julian day of the inferior conjunction of the planet after the given julian day.
+
+     - parameter mean: The 'mean' configuration here means that it is calculated from 
      circular orbits and uniform planetary motions. See AA. pp 250.
      
-     - parameter year: The year to consider. Can have decimals.
+     if false, the true inferior conjunction is computed. That is, calculated by adding corrections 
+     to computations made from circular orbits and uniform planetary motions. See AA. pp 251.
      
      - returns: A julian day.
      */
-    func meanInferiorConjunction(year: Double) -> JulianDay
+    func inferiorConjunction(mean: Bool) -> JulianDay
     
     /**
-     Compute the julian day of the true inferior conjunction of the planet for the given year.
-     The 'true' configuration here means that it is calculated by adding corrections to computations made from
-     circular orbits and uniform planetary motions. See AA. pp 251.
+     Compute the julian day of the superior conjunction of the planet after the given julian day.
      
-     - parameter year: The year to consider. Can have decimals.
-     
-     - returns: A julian day.
-     */
-    func trueInferiorConjunction(year: Double) -> JulianDay
-    
-    /**
-     Compute the julian day of the mean superior conjunction of the planet for the given year.
-     The 'mean' configuration here means that it is calculated from
+     - parameter mean: The 'mean' configuration here means that it is calculated from
      circular orbits and uniform planetary motions. See AA. pp 250.
      
-     - parameter year: The year to consider. Can have decimals.
+     if false, the true inferior conjunction is computed. That is, calculated by adding corrections
+     to computations made from circular orbits and uniform planetary motions. See AA. pp 251.
      
      - returns: A julian day.
      */
-    func meanSuperiorConjunction(year: Double) -> JulianDay
-    
-    /**
-     Compute the julian day of the true superior conjunction of the planet for the given year.
-     The 'true' configuration here means that it is calculated by adding corrections to computations made from
-     circular orbits and uniform planetary motions. See AA. pp 251.
-     
-     - parameter year: The year to consider. Can have decimals.
-     
-     - returns: A julian day.
-     */
-    func trueSuperiorConjunction(year: Double) -> JulianDay
+    func superiorConjunction(mean: Bool) -> JulianDay
     
     /**
      Compute the details of the planet configuration
@@ -102,29 +84,31 @@ public extension PlanetaryPhenomena {
                 break
             }
         }
-//        see what god himself says https://forums.developer.apple.com/thread/4289#11819
+//        see what god himself says https://forums.developer.apple.com/thread/4289#11819 about throwing in computed properties
 //        throw PlanetError.InvalidSubtype
         return .UNDEFINED
     }
     
-    func meanInferiorConjunction(year: Double) -> JulianDay {
-        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-        return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
+    func inferiorConjunction(mean: Bool) -> JulianDay {
+        let year = Double(self.julianDay.Date().Year())
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .INFERIOR_CONJUNCTION)
+        if mean == true {
+            return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
+        }
+        else {
+            return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
+        }
     }
 
-    func trueInferiorConjunction(year: Double) -> JulianDay {
-        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-        return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, KPCPlanetaryEventType.INFERIOR_CONJUNCTION)
-    }
-
-    func meanSuperiorConjunction(year: Double) -> JulianDay {
-        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-        return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-    }
-
-    func trueSuperiorConjunction(year: Double) -> JulianDay {
-        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
-        return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, KPCPlanetaryEventType.SUPERIOR_CONJUNCTION)
+    func superiorConjunction(mean: Bool) -> JulianDay {
+        let year = Double(self.julianDay.Date().Year())
+        let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .SUPERIOR_CONJUNCTION)
+        if mean == true {
+            return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
+        }
+        else {
+            return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
+        }
     }
     
 //    func planetaryDetails(highPrecision: Bool = true) -> KPCAAEllipticalPlanetaryDetails {
