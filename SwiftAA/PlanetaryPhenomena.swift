@@ -39,25 +39,7 @@ public protocol PlanetaryPhenomena: PlanetBase {
      
      - returns: A julian day.
      */
-    func superiorConjunction(mean: Bool) -> JulianDay
-    
-    /**
-     Compute the details of the planet configuration
-     
-     - parameter highPrecision: If true, the VSOP87 implementation will be used to increase precision.
-     
-     - returns: a KPCAAEllipticalPlanetaryDetails struct
-     */
-//    func planetaryDetails(highPrecision: Bool) -> KPCAAEllipticalPlanetaryDetails
-    
-    /**
-     Compute the illuminated fraction of the planet as seen from the Earth.
-     
-     - parameter highPrecision: If true, the VSOP87 implementation will be used to increase precision.
-
-     - returns: a value between 0 and 1.
-     */
-//    func illuminatedFraction(highPrecision: Bool) -> Double
+    func superiorConjunction(mean: Bool) -> JulianDay    
 }
 
 public extension PlanetaryPhenomena {
@@ -110,20 +92,5 @@ public extension PlanetaryPhenomena {
             return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
         }
     }
-    
-//    func planetaryDetails(highPrecision: Bool = true) -> KPCAAEllipticalPlanetaryDetails {
-//        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planet, highPrecision)
-//    }
-//    
-//    func illuminatedFraction(highPrecision: Bool = true) -> Double {
-//        // Delta = ApparentGeocentricDistance = distance earth-planet
-//        let Delta = self.planetaryDetails().ApparentGeocentricDistance
-//        let earth = Earth(julianDay: self.julianDay)
-//
-//        let phaseAngle = KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector(highPrecision),
-//                                                             earth.radiusVector(highPrecision),
-//                                                             Delta)
-//        
-//        return KPCAAIlluminatedFraction_IlluminatedFraction(phaseAngle)
-//    }
 }
+

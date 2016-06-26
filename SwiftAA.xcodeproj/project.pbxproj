@@ -13,6 +13,8 @@
 		9F2A87A51D1FF5030004ADDD /* JulianDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87A31D1FF5030004ADDD /* JulianDay.swift */; };
 		9F2A87AB1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */; };
 		9F2A87AC1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */; };
+		9F2A87AE1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */; };
+		9F2A87AF1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */; };
 		9F694CAD1D15717400EE7492 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29091D15704900034972 /* AATest.cpp */; };
 		9F694CAE1D15719500EE7492 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29041D156E5800034972 /* stdafx.cpp */; };
 		9F694CAF1D15719500EE7492 /* AAAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182791D0DE730008CA0F8 /* AAAberration.cpp */; };
@@ -865,6 +867,7 @@
 		9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = SwiftAA/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
 		9F2A87A31D1FF5030004ADDD /* JulianDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDay.swift; sourceTree = "<group>"; };
 		9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsOfPlanetaryOrbit.swift; sourceTree = "<group>"; };
+		9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IlluminatedFraction.swift; sourceTree = "<group>"; };
 		9F4594051D16ED2F0003CF2A /* SwiftAA.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftAA.playground; path = SwiftAA/SwiftAA.playground; sourceTree = "<group>"; };
 		9F48D51C1B4D0D0700B7EE7F /* KPCAAGalileanMoons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAGalileanMoons.h; path = SwiftAA/KPCAAGalileanMoons.h; sourceTree = "<group>"; };
 		9F48D51D1B4D0D0700B7EE7F /* KPCAAGalileanMoons.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAGalileanMoons.mm; path = SwiftAA/KPCAAGalileanMoons.mm; sourceTree = "<group>"; };
@@ -1463,6 +1466,7 @@
 				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
 				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
+				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
@@ -2406,6 +2410,7 @@
 				9F694E181D15C67300EE7492 /* KPCAAAberration.mm in Sources */,
 				9F694E191D15C67300EE7492 /* KPCAANearParabolic.mm in Sources */,
 				9F694E1A1D15C67300EE7492 /* AAVSOP87B_MAR.cpp in Sources */,
+				9F2A87AF1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */,
 				9F694E1B1D15C67300EE7492 /* AADate.cpp in Sources */,
 				9F694E1C1D15C67300EE7492 /* KPCAAPrecession.mm in Sources */,
 				9F694E1D1D15C67300EE7492 /* AAPluto.cpp in Sources */,
@@ -2593,6 +2598,7 @@
 				9FFA29011D156DD200034972 /* KPCAAAberration.mm in Sources */,
 				9F694D651D157BD200EE7492 /* KPCAANearParabolic.mm in Sources */,
 				9FE183FD1D0DE730008CA0F8 /* AAVSOP87B_MAR.cpp in Sources */,
+				9F2A87AE1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */,
 				9FE183661D0DE730008CA0F8 /* AADate.cpp in Sources */,
 				9F694D811D157BD200EE7492 /* KPCAAPrecession.mm in Sources */,
 				9FE183BA1D0DE730008CA0F8 /* AAPluto.cpp in Sources */,

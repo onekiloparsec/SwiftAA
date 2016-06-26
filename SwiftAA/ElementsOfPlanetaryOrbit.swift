@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ElementsOfPlanetaryOrbit: PlanetBase {
+public protocol ElementsOfPlanetaryOrbit: PlanetBase {
     /**
      Computes the mean longitude of the orbit
      
@@ -60,7 +60,7 @@ protocol ElementsOfPlanetaryOrbit: PlanetBase {
     func longitudeOfPerihelion(equinox: Equinox) -> Degrees    
 }
 
-extension ElementsOfPlanetaryOrbit {
+public extension ElementsOfPlanetaryOrbit {
     func meanLongitude(equinox: Equinox) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:

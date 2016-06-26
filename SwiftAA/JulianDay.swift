@@ -11,7 +11,7 @@ import Foundation
 public typealias JulianDay=Double
 public typealias Hour=Double
 
-extension JulianDay {
+public extension JulianDay {
     func Date() -> KPCAADate {
         return KPCAADate(julianDay: self, usingGregorianCalendar: true)
     }
