@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPCAAEclipticalElements.h"
+#import "KPCAASwiftAdditions.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,9 +48,9 @@ double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
     
 // SwiftAA Additions
     
-long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanet planet);
-double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanet planet);
-double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanet planet);
+long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet);
+double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanetStrict planet);
+double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanetStrict planet);
     
 #if __cplusplus
 }

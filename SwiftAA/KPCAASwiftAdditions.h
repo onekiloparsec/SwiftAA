@@ -16,15 +16,27 @@
 // The Obj-C code respects that. To extend it here to include Earth and Pluto,
 // We use the normal case.
 
+typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
+    mercury = MERCURY,
+    venus = VENUS,
+    earth = 99,
+    mars = MARS,
+    jupiter = JUPITER,
+    saturn = SATURN,
+    uranus = URANUS,
+    neptune = NEPTUNE,
+    undefined = -1
+};
+
 typedef NS_ENUM(NSInteger, KPCAAPlanet) {
-    Mercury = MERCURY,
-    Venus = VENUS,
-    Earth = 99,
-    Mars = MARS,
-    Jupiter = JUPITER,
-    Saturn = SATURN,
-    Uranus = URANUS,
-    Neptune = NEPTUNE,
+    Mercury = mercury,
+    Venus = venus,
+    Earth = earth,
+    Mars = mars,
+    Jupiter = jupiter,
+    Saturn = saturn,
+    Uranus = uranus,
+    Neptune = neptune,
     Pluto = 999,
     Undefined = -1
 };
