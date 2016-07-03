@@ -52,8 +52,12 @@ public protocol Planet: PlanetBase {
 }
 
 public extension Planet {
+    var planet: KPCAAPlanet {
+        return KPCAAPlanet.fromString(self.name)
+    }
+    
     var name: String {
-        get { return self.planet.toString() }
+        get { return String(self.dynamicType) }
     }
     
     var eclipticLongitude: Degrees {
