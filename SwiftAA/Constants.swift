@@ -42,6 +42,39 @@ public extension AU {
 }
 
 public extension KPCAAPlanet {
+    static func fromString(string: String) -> KPCAAPlanet {
+        if string == "Mercury" {
+            return .Mercury
+        }
+        else if string == "Venus" {
+            return .Venus
+        }
+        else if string == "Earth" {
+            return .Earth
+        }
+        else if string == "Mars" {
+            return .Mars
+        }
+        else if string == "Jupiter" {
+            return .Jupiter
+        }
+        else if string == "Saturn" {
+            return .Saturn
+        }
+        else if string == "Uranus" {
+            return .Uranus
+        }
+        else if string == "Neptune" {
+            return .Neptune
+        }
+        else if string == "Pluto" {
+            return .Pluto
+        }
+        else {
+            return .Undefined
+        }
+    }
+    
     func toString() -> String {
         switch self {
         case Mercury:
