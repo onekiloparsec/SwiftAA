@@ -9,14 +9,16 @@ let scale = 100.0 // pixels/AU
 var solarSystemView = SolarSystemView()
 XCPlaygroundPage.currentPage.liveView = solarSystemView
 
-for i in 0..<100{
+for i in 0..<100 {
     let jd = KPCAADate(year: 2016, month: 6, day: 21.0, usingGregorianCalendar: true).Julian() + Double(i)
     
-    let planets: Array<EclipticObject> = [Mars(julianDay: jd)]
+    let planets: Array<Planet> = [Mars(julianDay: jd)]
+    let name = String(planets[0].dynamicType)
+    print("\(name)")
 
     for (index, planet) in planets.enumerate() {
-        var r = planet.radiusVector()
-        var phi = planet.eclipticLongitude()
+        var r = planet.radiusVector
+        var phi = planet.eclipticLongitude
         var x = r * cos(phi.Radians)
         var y = r * sin(phi.Radians)
         
