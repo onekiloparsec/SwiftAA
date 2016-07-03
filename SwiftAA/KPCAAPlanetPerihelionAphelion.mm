@@ -164,7 +164,7 @@ long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanet planet)
         case Neptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneK(Year);
             break;
-        case Pluto:
+        default:
             return 0;
             break;
     }
@@ -197,7 +197,7 @@ double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanet planet)
         case Neptune:
             return KPCAAPlanetPerihelionAphelion_NeptunePerihelion(k);
             break;
-        case Pluto:
+        default:
             return 0;
             break;
     }
@@ -230,7 +230,7 @@ double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanet planet)
         case Neptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneAphelion(k);
             break;
-        case Pluto:
+        default:
             return 0;
             break;
     }

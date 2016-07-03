@@ -1440,11 +1440,23 @@
 			isa = PBXGroup;
 			children = (
 				9FDA5C321D16E6B6003B9F31 /* Base */,
+				9FB70C681D25A3BD00A03C6D /* Planets Base */,
 				9FDA5C311D16E6A7003B9F31 /* Planets */,
 				9F4593FE1D16E9340003CF2A /* Moon */,
 			);
 			name = Swift;
 			path = SwiftAA;
+			sourceTree = "<group>";
+		};
+		9FB70C681D25A3BD00A03C6D /* Planets Base */ = {
+			isa = PBXGroup;
+			children = (
+				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
+				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
+				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
+				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
+			);
+			name = "Planets Base";
 			sourceTree = "<group>";
 		};
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
@@ -1463,10 +1475,6 @@
 		9FDA5C311D16E6A7003B9F31 /* Planets */ = {
 			isa = PBXGroup;
 			children = (
-				9F7CBFAE1D16B8E100E13FB1 /* Planet.swift */,
-				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
-				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
-				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,

@@ -81,6 +81,10 @@ double KPCAAEclipticalElement_EclipticLongitude(double JD, KPCAAPlanet planet, B
             return KPCAAPluto_EclipticLongitude(JD);
             break;
         }
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
+            break;
     }
 }
 
@@ -123,6 +127,10 @@ double KPCAAEclipticalElement_EclipticLatitude(double JD, KPCAAPlanet planet, BO
             return KPCAAPluto_EclipticLatitude(JD);
             break;
         }
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
+            break;
     }
 }
 
@@ -165,5 +173,9 @@ double KPCAAEclipticalElement_RadiusVector(double JD, KPCAAPlanet planet, BOOL h
             return KPCAAPluto_RadiusVector(JD);
             break;
         }
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
+            break;
     }
 }

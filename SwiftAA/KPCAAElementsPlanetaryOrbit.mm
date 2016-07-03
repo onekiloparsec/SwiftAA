@@ -156,12 +156,11 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanet planet, double JD)
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double JD)
@@ -199,12 +198,11 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD)
@@ -242,12 +240,11 @@ double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD)
             return KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 
@@ -286,12 +283,11 @@ double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanet planet, double JD)
             return KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD)
@@ -329,12 +325,11 @@ double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD)
             return KPCAAElementsPlanetaryOrbit_NeptuneInclination(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double JD)
@@ -372,12 +367,11 @@ double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double J
             return KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, double JD)
@@ -415,12 +409,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, do
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet planet, double JD)
@@ -458,12 +451,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet plane
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, double JD)
@@ -501,12 +493,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, doubl
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }
 
 double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanet planet, double JD)
@@ -544,10 +535,9 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanet planet, 
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(JD);
             break;
         }
-        case Pluto: {
-            return -1.0;
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
             break;
-        }
     }
-    return -1.0;
 }

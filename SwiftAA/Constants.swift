@@ -95,6 +95,8 @@ public extension KPCAAPlanet {
             return "Neptune"
         case Pluto:
             return "Pluto"
+        case Undefined:
+            return ""
         }
     }
 }

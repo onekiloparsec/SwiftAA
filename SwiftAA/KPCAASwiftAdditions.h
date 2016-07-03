@@ -16,7 +16,7 @@
 // The Obj-C code respects that. To extend it here to include Earth and Pluto,
 // We use the normal case.
 
-typedef NS_ENUM(NSUInteger, KPCAAPlanet) {
+typedef NS_ENUM(NSInteger, KPCAAPlanet) {
     Mercury = MERCURY,
     Venus = VENUS,
     Earth = 99,
@@ -25,7 +25,8 @@ typedef NS_ENUM(NSUInteger, KPCAAPlanet) {
     Saturn = SATURN,
     Uranus = URANUS,
     Neptune = NEPTUNE,
-    Pluto = 999
+    Pluto = 999,
+    Undefined = -1
 };
 
 #endif /* KPCAASwiftAdditions_h */
