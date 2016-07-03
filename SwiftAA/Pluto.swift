@@ -8,9 +8,7 @@
 
 import Foundation
 
-public struct Pluto: Planet {
-    public var planet: KPCAAPlanet { return .Pluto }
-    
+public struct Pluto: DwarfPlanet {    
     public var julianDay: JulianDay
     public var highPrecision: Bool
     

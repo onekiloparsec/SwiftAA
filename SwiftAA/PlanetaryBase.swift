@@ -13,28 +13,30 @@ enum PlanetError: ErrorType {
     case InvalidCase
 }
 
-public protocol PlanetBase {
-    var planet: KPCAAPlanet { get }
-    var name: String { get }
-    
-    var julianDay: JulianDay { get set }
-    var highPrecision: Bool { get set }
-    
+public protocol PlanetaryBase {
     /// The mean color of the planet
     static var color: Color { get }
     
+    var julianDay: JulianDay { get set }
+    var highPrecision: Bool { get set }
+
     /**
      Initialization of a Planet
      
      - parameter julianDay:     The julian day at which one will consider the planet
      - parameter highPrecision: Use VSOP87 implementation will be used to increase precision.
      
-     - returns: A new instance of a Planet
+     - returns: A new instance of a PlanetaryBase object
      */
     init(julianDay: JulianDay, highPrecision: Bool)
-}
 
-public protocol Planet: PlanetBase {
+    // The planet type indexes
+    var planet: KPCAAPlanet { get }
+    var planetaryObject: KPCPlanetaryObject { get }
+    
+    // The planet name
+    var name: String { get }
+    
     /// The ecliptic (=heliocentric) longitude of the planet
     var eclipticLongitude: Degrees { get }
     
@@ -51,9 +53,33 @@ public protocol Planet: PlanetBase {
     var aphelion: JulianDay { get }    
 }
 
-public extension Planet {
+public extension PlanetaryBase {    
     var planet: KPCAAPlanet {
         return KPCAAPlanet.fromString(self.name)
+    }
+    
+    var planetaryObject: KPCPlanetaryObject {
+        switch self.planet {
+        case .Mercury:
+            return .MERCURY
+        case .Venus:
+            return .VENUS
+        case .Mars:
+            return .MARS
+        case .Jupiter:
+            return .JUPITER
+        case .Saturn:
+            return .SATURN
+        case .Uranus:
+            return .URANUS
+        case .Neptune:
+            return .NEPTUNE
+        default:
+            break
+        }
+//        see what god himself says https://forums.developer.apple.com/thread/4289#11819 about throwing errors in computed properties
+//        throw PlanetError.InvalidSubtype
+        return .UNDEFINED
     }
     
     var name: String {

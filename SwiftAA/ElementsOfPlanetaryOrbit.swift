@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ElementsOfPlanetaryOrbit: PlanetBase {
+public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
     /**
      Computes the mean longitude of the orbit
      

@@ -11,10 +11,8 @@ import Foundation
 /**
  *  The Planet protocol specializes the EclipticObject for planets that are not the Earth!
  */
-public protocol PlanetaryPhenomena: PlanetBase {
-    
-    var planetaryObject: KPCPlanetaryObject { get }
-    
+public protocol PlanetaryPhenomena: PlanetaryBase {
+        
     /**
      Compute the julian day of the inferior conjunction of the planet after the given julian day.
 
@@ -43,35 +41,8 @@ public protocol PlanetaryPhenomena: PlanetBase {
 }
 
 public extension PlanetaryPhenomena {
-    
-    var planetaryObject: KPCPlanetaryObject {
-        if self is Planet {
-            let typedSelf: Planet = self as! Planet
-            switch typedSelf.planet {
-            case .Mercury:
-                return .MERCURY
-            case .Venus:
-                return .VENUS
-            case .Mars:
-                return .MARS
-            case .Jupiter:
-                return .JUPITER
-            case .Saturn:
-                return .SATURN
-            case .Uranus:
-                return .URANUS
-            case .Neptune:
-                return .NEPTUNE
-            default:
-                break
-            }
-        }
-//        see what god himself says https://forums.developer.apple.com/thread/4289#11819 about throwing in computed properties
-//        throw PlanetError.InvalidSubtype
-        return .UNDEFINED
-    }
-    
-    func inferiorConjunction(mean: Bool) -> JulianDay {
+        
+    func inferiorConjunction(mean: Bool = true) -> JulianDay {
         let year = Double(self.julianDay.Date().Year())
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .INFERIOR_CONJUNCTION)
         if mean == true {
@@ -82,7 +53,7 @@ public extension PlanetaryPhenomena {
         }
     }
 
-    func superiorConjunction(mean: Bool) -> JulianDay {
+    func superiorConjunction(mean: Bool = true) -> JulianDay {
         let year = Double(self.julianDay.Date().Year())
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .SUPERIOR_CONJUNCTION)
         if mean == true {

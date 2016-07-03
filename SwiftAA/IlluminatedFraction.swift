@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol IlluminatedFraction: Planet {
+public protocol IlluminatedFraction: PlanetaryBase {
     var planetaryObject: KPCPlanetaryObject { get }
 
     // The details of the planet configuration

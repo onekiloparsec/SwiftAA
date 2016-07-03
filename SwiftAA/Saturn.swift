@@ -8,9 +8,7 @@
 
 import Foundation
 
-public struct Saturn: Planet, IlluminatedFraction, PlanetaryPhenomena, ElementsOfPlanetaryOrbit {
-    public var planet: KPCAAPlanet { return .Saturn }
-    
+public struct Saturn: Planet {
     public var julianDay: JulianDay
     public var highPrecision: Bool
     
