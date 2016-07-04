@@ -69,6 +69,7 @@ double KPCAAElementsPlanetaryOrbit_NeptuneInclination(double JD);
 double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(double JD);
 double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(double JD);
 
+    
 double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitudeJ2000(double JD);
 double KPCAAElementsPlanetaryOrbit_MercuryInclinationJ2000(double JD);
 double KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNodeJ2000(double JD);
@@ -112,20 +113,20 @@ double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD);
     
 // SwiftAA Additions
     
-double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanet planet, double JD);
-double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double JD);
+double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanetStrict planet, double JD);
+double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanetStrict planet, double JD);
 
-double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD);
-double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanet planet, double JD);
+double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanetStrict planet, double JD);
+double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanetStrict planet, double JD);
     
-double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD);
-double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double JD);
+double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanetStrict planet, double JD);
+double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanetStrict planet, double JD);
 
-double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, double JD);
-double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet planet, double JD);
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanetStrict planet, double JD);
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanetStrict planet, double JD);
 
-double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, double JD);
-double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanet planet, double JD);
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanetStrict planet, double JD);
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanetStrict planet, double JD);
 
 #if __cplusplus
 }

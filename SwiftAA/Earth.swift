@@ -35,7 +35,7 @@ public struct Earth: EarthPlanet {
         case .MeanEquinoxOfTheDate:
             throw PlanetError.InvalidCase
         case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
         }
     }
 }

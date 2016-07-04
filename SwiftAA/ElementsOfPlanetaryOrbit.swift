@@ -64,44 +64,44 @@ public extension ElementsOfPlanetaryOrbit {
     func meanLongitude(equinox: Equinox) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
-            return KPCAAElementsPlanetaryOrbit_MeanLongitude(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_MeanLongitude(self.planetStrict, self.julianDay)
         case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(self.planetStrict, self.julianDay)
         }
     }
     
     func semimajorAxis() -> AU {
-        return KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planet, self.julianDay)
+        return KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay)
     }
     
     func eccentricity() -> Double {
-        return KPCAAElementsPlanetaryOrbit_Eccentricity(self.planet, self.julianDay)
+        return KPCAAElementsPlanetaryOrbit_Eccentricity(self.planetStrict, self.julianDay)
     }
     
     func inclination(equinox: Equinox) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
-            return KPCAAElementsPlanetaryOrbit_Inclination(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_Inclination(self.planetStrict, self.julianDay)
         case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_InclinationJ2000(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_InclinationJ2000(self.planetStrict, self.julianDay)
         }
     }
     
     func longitudeOfAscendingNode(equinox: Equinox) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
-            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(self.planetStrict, self.julianDay)
         case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
         }
     }
     
     func longitudeOfPerihelion(equinox: Equinox) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
-            return KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planetStrict, self.julianDay)
         case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(self.planet, self.julianDay)
+            return KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(self.planetStrict, self.julianDay)
         }
     }
 }

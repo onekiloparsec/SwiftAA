@@ -121,7 +121,7 @@ double KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(double JD)
 double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD) { return CAAElementsPlanetaryOrbit::NeptuneLongitudePerihelionJ2000(JD); }
 
 
-double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -163,7 +163,7 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanet planet, double JD)
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -205,7 +205,7 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanet planet, double
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -248,7 +248,7 @@ double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanet planet, double JD)
 }
 
 
-double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -290,7 +290,7 @@ double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanet planet, double JD)
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -332,7 +332,7 @@ double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanet planet, double JD)
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -374,7 +374,7 @@ double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanet planet, double J
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -416,7 +416,7 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanet planet, do
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -458,7 +458,7 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanet plane
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
@@ -500,7 +500,7 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanet planet, doubl
     }
 }
 
-double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanet planet, double JD)
+double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
         case Mercury: {
