@@ -30,12 +30,8 @@ public struct Earth: EarthPlanet {
         return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }
     
-    func longitudeOfAscendingNode(equinox: Equinox) throws -> Degrees {
-        switch equinox {
-        case .MeanEquinoxOfTheDate:
-            throw PlanetError.InvalidCase
-        case .StandardJ2000:
-            return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
-        }
+    func longitudeOfAscendingNode() -> Degrees {
+        // There is no method for .MeanEquinoxOfTheDate, hence defaulting to J2000
+        return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
     }
 }
