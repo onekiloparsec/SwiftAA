@@ -9,8 +9,6 @@
 import Foundation
 
 public protocol IlluminatedFraction: PlanetaryBase {
-    var planetaryObject: KPCPlanetaryObject { get }
-
     // The details of the planet configuration
     var planetaryDetails: KPCAAEllipticalPlanetaryDetails { get }
     
@@ -19,6 +17,8 @@ public protocol IlluminatedFraction: PlanetaryBase {
 }
 
 public extension IlluminatedFraction {
+    
+    // extremely innefficient. but it works
     var planetaryDetails: KPCAAEllipticalPlanetaryDetails {
         get { return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planetaryObject, self.highPrecision) }
     }
