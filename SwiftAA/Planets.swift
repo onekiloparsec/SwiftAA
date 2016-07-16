@@ -9,9 +9,11 @@
 import Foundation
 
 // To be understood as a "non-Earth" planet
-protocol Planet: PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, IlluminatedFraction {}
+public protocol Planet: PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, IlluminatedFraction {}
 
-protocol EarthPlanet: PlanetaryBase, ElementsOfPlanetaryOrbit {}
+// Earth special case 
+public protocol EarthPlanet: PlanetaryBase, ElementsOfPlanetaryOrbit {}
 
 // special Pluto:
-protocol DwarfPlanet: PlanetaryBase {}
+public protocol DwarfPlanet: PlanetaryBase {}
+
