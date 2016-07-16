@@ -14,7 +14,7 @@ enum PlanetError: ErrorType {
 }
 
 public protocol PlanetaryBase {
-    /// The mean color of the planet
+    /// The average color of the planet
     static var color: Color { get }
     
     var julianDay: JulianDay { get set }
