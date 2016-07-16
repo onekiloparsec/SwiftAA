@@ -61,7 +61,7 @@ public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
 }
 
 public extension ElementsOfPlanetaryOrbit {
-    func meanLongitude(equinox: Equinox) -> Degrees {
+    func meanLongitude(equinox: Equinox = .StandardJ2000) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
             return KPCAAElementsPlanetaryOrbit_MeanLongitude(self.planetStrict, self.julianDay)
@@ -78,7 +78,7 @@ public extension ElementsOfPlanetaryOrbit {
         return KPCAAElementsPlanetaryOrbit_Eccentricity(self.planetStrict, self.julianDay)
     }
     
-    func inclination(equinox: Equinox) -> Degrees {
+    func inclination(equinox: Equinox = .StandardJ2000) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
             return KPCAAElementsPlanetaryOrbit_Inclination(self.planetStrict, self.julianDay)
@@ -87,7 +87,7 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
-    func longitudeOfAscendingNode(equinox: Equinox) -> Degrees {
+    func longitudeOfAscendingNode(equinox: Equinox = .StandardJ2000) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
             return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(self.planetStrict, self.julianDay)
@@ -96,7 +96,7 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
-    func longitudeOfPerihelion(equinox: Equinox) -> Degrees {
+    func longitudeOfPerihelion(equinox: Equinox = .StandardJ2000) -> Degrees {
         switch equinox {
         case .MeanEquinoxOfTheDate:
             return KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planetStrict, self.julianDay)
