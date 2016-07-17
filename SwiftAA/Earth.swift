@@ -8,17 +8,21 @@
 
 import Foundation
 
-public struct Earth: EarthPlanet {    
-    public var julianDay: JulianDay
-    public var highPrecision: Bool
+public struct Earth: EarthPlanet {
+    public static var color: Color {
+        get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
+    }
+    
+    public private(set) var julianDay: JulianDay
+    public private(set) var highPrecision: Bool
     
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
     }
     
-    public static var color: Color {
-        get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
+    public init(date: NSDate, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
     }
 
     // Additional methods for Earth to deal with the baryCentric parameter

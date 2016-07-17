@@ -35,14 +35,18 @@ public struct GalileanMoon {
     }
 }
 
-public struct Jupiter: Planet {    
-    public var julianDay: JulianDay
-    public var highPrecision: Bool
+public struct Jupiter: Planet {
+    public static var color: Color {
+        get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
+    }
+    
+    public private(set) var julianDay: JulianDay
+    public private(set) var highPrecision: Bool
 
-    public var Io: GalileanMoon
-    public var Europa: GalileanMoon
-    public var Ganymede: GalileanMoon
-    public var Callisto: GalileanMoon
+    public private(set) var Io: GalileanMoon
+    public private(set) var Europa: GalileanMoon
+    public private(set) var Ganymede: GalileanMoon
+    public private(set) var Callisto: GalileanMoon
     
     public var moons: [GalileanMoon] {
         get { return [self.Io, self.Europa, self.Ganymede, self.Callisto] }
@@ -59,7 +63,7 @@ public struct Jupiter: Planet {
         self.Callisto = GalileanMoon(name: "Callisto", details: details.Satellite4)
     }
     
-    public static var color: Color {
-        get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
+    public init(date: NSDate, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
     }
 }

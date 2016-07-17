@@ -17,18 +17,28 @@ public protocol PlanetaryBase {
     /// The average color of the planet
     static var color: Color { get }
     
-    var julianDay: JulianDay { get set }
-    var highPrecision: Bool { get set }
+    var julianDay: JulianDay { get }
+    var highPrecision: Bool { get }
 
     /**
      Initialization of a Planet
      
      - parameter julianDay:     The julian day at which one will consider the planet
-     - parameter highPrecision: Use VSOP87 implementation will be used to increase precision.
+     - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
      
      - returns: A new instance of a PlanetaryBase object
      */
     init(julianDay: JulianDay, highPrecision: Bool)
+
+    /**
+     Initialization of a Planet
+     
+     - parameter date:          The date at which one will consider the planet
+     - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
+     
+     - returns: A new instance of a PlanetaryBase object
+     */
+    init(date: NSDate, highPrecision: Bool)
 
     // The planet type indexes
     var planet: KPCAAPlanet { get }

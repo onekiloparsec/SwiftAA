@@ -196,4 +196,16 @@
 
 @end
 
+@implementation KPCAADate (SwiftAAAdditions)
+
+- (instancetype)initWithGregorianCalendarDate:(NSDate *)date
+{
+    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:date];
+    
+    return [self initWithWrappedDate:CAADate(components.year, components.month, components.day, components.hour, components.minute, components.second, YES)];
+}
+
+@end
+
 
