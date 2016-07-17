@@ -51,6 +51,10 @@ public struct Saturn: Planet {
     public private(set) var Titan: SaturnianMoon
     public private(set) var Iapetus: SaturnianMoon
     
+    public var moons: [SaturnianMoon] {
+        get { return [self.Mimas, self.Enceladus, self.Tethys, self.Dione, self.Rhea, self.Titan, self.Iapetus] }
+    }
+    
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
