@@ -24,6 +24,13 @@ public enum Equinox {
     case StandardJ2000
 }
 
+public enum Season {
+    case Spring
+    case Summer
+    case Autumn
+    case Winter
+}
+
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 public extension Degrees {

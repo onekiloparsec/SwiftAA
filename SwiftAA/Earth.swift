@@ -34,4 +34,62 @@ public struct Earth: EarthPlanet {
         // There is no method for .MeanEquinoxOfTheDate, hence defaulting to J2000
         return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
     }
+
+    /**
+     Computes the julian day of the equinox for the given year
+     
+     - parameter northward: if yes, means the spring equinox for the northern hemisphere.
+     if flase, it is the autumn equinox of the northern hemisphere.
+     
+     - returns: A julian day
+     */
+    func equinox(northward: Bool) -> JulianDay {
+        let year = self.julianDay.Date().Year()
+        if northward == true {
+            return KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision)
+        }
+        else {
+            return KPCAAEquinoxesAndSolstices_SouthwardEquinox(year, self.highPrecision)
+        }
+    }
+    
+    /**
+     Computes the julian day of the solstice for the given year
+     
+     - parameter northern: if true, means the summer solstice in the northern hemisphere,
+     if false, means the winter solstice in the norther hemisphere.
+     
+     - returns: A julian day
+     */
+    func solstice(northern: Bool) -> JulianDay {
+        let year = self.julianDay.Date().Year()
+        if northern == true {
+            return KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision)
+        }
+        else {
+            return KPCAAEquinoxesAndSolstices_SouthernSolstice(year, self.highPrecision)
+        }
+    }
+    
+    /**
+     Computes the length of a given season.
+     
+     - parameter season:             The season to compute the length of.
+     - parameter northernHemisphere: A flag indicating which hemisphere to consider
+     
+     - returns: A length in (Julian) Days.
+     */
+    func lengthOfSeason(season: Season, northernHemisphere: Bool) -> Double {
+        let year = self.julianDay.Date().Year()
+        switch season {
+        case .Spring:
+            return KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision)
+        case .Summer:
+            return KPCAAEquinoxesAndSolstices_LengthOfSummer(year, northernHemisphere, self.highPrecision)
+        case .Autumn:
+            return KPCAAEquinoxesAndSolstices_LengthOfAutumn(year, northernHemisphere, self.highPrecision)
+        case .Winter:
+            return KPCAAEquinoxesAndSolstices_LengthOfWinter(year, northernHemisphere, self.highPrecision)
+        }
+    }
 }
