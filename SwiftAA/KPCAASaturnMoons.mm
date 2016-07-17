@@ -22,10 +22,10 @@ KPCAASaturnMoonDetails KPCAASaturnMoonDetailMake(CAASaturnMoonDetail detailsPlus
                                                                                       detailsPlus.ApparentRectangularCoordinates.Y,
                                                                                       detailsPlus.ApparentRectangularCoordinates.Z);
 
-    details.isInTransit = detailsPlus.bInTransit;
-    details.isInOccultation = detailsPlus.bInOccultation;
-    details.isInEclipse = detailsPlus.bInEclipse;
-    details.isInShadowTransit = detailsPlus.bInShadowTransit;
+    details.inTransit = detailsPlus.bInTransit;
+    details.inOccultation = detailsPlus.bInOccultation;
+    details.inEclipse = detailsPlus.bInEclipse;
+    details.inShadowTransit = detailsPlus.bInShadowTransit;
     return details;
 }
 

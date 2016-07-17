@@ -18,6 +18,9 @@ import Foundation
 
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
+public typealias m=Double // meters
+public typealias kg=Double // kilograms
+public typealias day=Double // kilograms
 
 public enum Equinox {
     case MeanEquinoxOfTheDate

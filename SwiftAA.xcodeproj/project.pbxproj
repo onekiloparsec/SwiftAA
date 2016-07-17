@@ -1359,8 +1359,6 @@
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
 				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
-				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
-				9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */,
 				9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */,
 				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
@@ -1396,6 +1394,8 @@
 				9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */,
 				9F7A9DEE1B4FC7A800033B77 /* KPCAASaturn.h */,
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
+				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
+				9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */,
 				9F7A9E001B4FCCB600033B77 /* KPCAASidereal.h */,
 				9F7A9E011B4FCCB600033B77 /* KPCAASidereal.mm */,
 				9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */,
@@ -1419,13 +1419,6 @@
 			name = "Partly Swifted";
 			sourceTree = "<group>";
 		};
-		9F4593FE1D16E9340003CF2A /* Moon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Moon;
-			sourceTree = "<group>";
-		};
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1445,7 +1438,6 @@
 				9FDA5C321D16E6B6003B9F31 /* Base */,
 				9FB70C681D25A3BD00A03C6D /* Planets Base */,
 				9FDA5C311D16E6A7003B9F31 /* Planets */,
-				9F4593FE1D16E9340003CF2A /* Moon */,
 			);
 			name = Swift;
 			path = SwiftAA;

@@ -16,10 +16,10 @@ extern "C" {
 typedef struct KPCAASaturnMoonDetails {
     KPCAA3DCoordinateComponents TrueRectangularCoordinateComponents;
     KPCAA3DCoordinateComponents ApparentRectangularCoordinateComponents;
-    BOOL isInTransit;
-    BOOL isInOccultation;
-    BOOL isInEclipse;
-    BOOL isInShadowTransit;
+    BOOL inTransit;
+    BOOL inOccultation;
+    BOOL inEclipse;
+    BOOL inShadowTransit;
 } KPCAASaturnMoonDetails;
 
 
