@@ -1450,7 +1450,6 @@
 				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
-				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 			);
 			name = "Planets Base";
 			sourceTree = "<group>";
@@ -1471,6 +1470,7 @@
 		9FDA5C311D16E6A7003B9F31 /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
