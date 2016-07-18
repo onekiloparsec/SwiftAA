@@ -1,6 +1,8 @@
 //: [Previous](@previous)
 
-import Foundation
+import UIKit
+import SwiftAA
+import XCPlayground
 
 var str = "Hello, playground"
 

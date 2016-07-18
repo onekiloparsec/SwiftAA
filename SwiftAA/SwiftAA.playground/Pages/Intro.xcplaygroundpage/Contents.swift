@@ -1,7 +1,3 @@
-import UIKit
-import SwiftAA
-import XCPlayground
-
 //: # Swift AA Playground
 //: ### A world to play with at your fingertips!
 //: ### Developed by Cédric Foellmi, Ph.D. ([@onekiloparsec](https://twitter.com/onekiloparsec))
