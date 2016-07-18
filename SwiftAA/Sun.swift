@@ -8,6 +8,27 @@
 
 import Foundation
 
-struct Sun {
+public struct Sun: ObjectBase {
+    public private(set) var julianDay: JulianDay
+    public private(set) var highPrecision: Bool
     
+    public init(julianDay: JulianDay, highPrecision: Bool = true) {
+        self.julianDay = julianDay
+        self.highPrecision = highPrecision
+    }
+    
+    public init(date: NSDate, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    }
+    
+    /**
+     Computes the time of the next start of the synodic rotation of the Sun
+     (used to follow sunspots).
+     
+     - returns: The julian day of the next stary
+     */
+    func nextStartOfTimeOfRotation() -> JulianDay {
+        let C = ceil((self.julianDay - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
+        return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
+    }
 }
