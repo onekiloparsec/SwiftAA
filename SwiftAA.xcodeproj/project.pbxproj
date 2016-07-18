@@ -17,10 +17,13 @@
 		9F2A87AC1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */; };
 		9F2A87AE1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */; };
 		9F2A87AF1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */; };
+		9F51D0C51D3D5D6E00895295 /* libswiftaa.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F51D0C41D3D5D6E00895295 /* libswiftaa.h */; };
+		9F51D0C71D3D5D6E00895295 /* libswiftaa.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F51D0C61D3D5D6E00895295 /* libswiftaa.m */; };
 		9F525B2A1D3CB53400041696 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B291D3CB53400041696 /* Sun.swift */; };
 		9F525B2B1D3CB53400041696 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B291D3CB53400041696 /* Sun.swift */; };
 		9F525B2D1D3CB58300041696 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B2C1D3CB58300041696 /* ObjectBase.swift */; };
 		9F525B2E1D3CB58300041696 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B2C1D3CB58300041696 /* ObjectBase.swift */; };
+		9F525B431D3CDEDC00041696 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B421D3CDEDC00041696 /* main.swift */; };
 		9F694CAD1D15717400EE7492 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29091D15704900034972 /* AATest.cpp */; };
 		9F694CAE1D15719500EE7492 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29041D156E5800034972 /* stdafx.cpp */; };
 		9F694CAF1D15719500EE7492 /* AAAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182791D0DE730008CA0F8 /* AAAberration.cpp */; };
@@ -848,6 +851,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9F51D0C01D3D5D6E00895295 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				9F51D0C51D3D5D6E00895295 /* libswiftaa.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F525B3E1D3CDEDC00041696 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		9FFA29281D15710F00034972 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -934,10 +956,15 @@
 		9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPluto.mm; path = SwiftAA/KPCAAPluto.mm; sourceTree = "<group>"; };
 		9F48D58C1B4FB01C00B7EE7F /* KPCAAPrecession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPrecession.h; path = SwiftAA/KPCAAPrecession.h; sourceTree = "<group>"; };
 		9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPrecession.mm; path = SwiftAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
+		9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibswiftaa.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F51D0C41D3D5D6E00895295 /* libswiftaa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libswiftaa.h; sourceTree = "<group>"; };
+		9F51D0C61D3D5D6E00895295 /* libswiftaa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libswiftaa.m; sourceTree = "<group>"; };
 		9F525B291D3CB53400041696 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		9F525B2C1D3CB58300041696 /* ObjectBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
+		9F525B401D3CDEDC00041696 /* swiftaa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftaa; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F525B421D3CDEDC00041696 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/Apps/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
+		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/onekiloparsec/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1233,6 +1260,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F51D0BF1D3D5D6E00895295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F525B3D1D3CDEDC00041696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F694E311D15C67300EE7492 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1275,6 +1316,8 @@
 				9FE182741D0DE730008CA0F8 /* aaplus-v1.71 */,
 				9FFA29081D15702800034972 /* aaplus-v1.71 tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
+				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
+				9F525B411D3CDEDC00041696 /* swiftaa */,
 				9F29B46B1B47313500B64C96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1286,6 +1329,8 @@
 				9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */,
 				9FFA292A1D15710F00034972 /* AAPlusTests */,
 				9F694EE21D15C67300EE7492 /* SwiftAA.framework */,
+				9F525B401D3CDEDC00041696 /* swiftaa */,
+				9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1425,12 +1470,29 @@
 			name = "Partly Swifted";
 			sourceTree = "<group>";
 		};
+		9F51D0C31D3D5D6E00895295 /* libswiftaa */ = {
+			isa = PBXGroup;
+			children = (
+				9F51D0C41D3D5D6E00895295 /* libswiftaa.h */,
+				9F51D0C61D3D5D6E00895295 /* libswiftaa.m */,
+			);
+			path = libswiftaa;
+			sourceTree = "<group>";
+		};
 		9F525B281D3CB4F300041696 /* Sun */ = {
 			isa = PBXGroup;
 			children = (
 				9F525B291D3CB53400041696 /* Sun.swift */,
 			);
 			name = Sun;
+			sourceTree = "<group>";
+		};
+		9F525B411D3CDEDC00041696 /* swiftaa */ = {
+			isa = PBXGroup;
+			children = (
+				9F525B421D3CDEDC00041696 /* main.swift */,
+			);
+			path = swiftaa;
 			sourceTree = "<group>";
 		};
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
@@ -2112,6 +2174,40 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9F51D0C11D3D5D6E00895295 /* libswiftaa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F51D0C81D3D5D6E00895295 /* Build configuration list for PBXNativeTarget "libswiftaa" */;
+			buildPhases = (
+				9F51D0BE1D3D5D6E00895295 /* Sources */,
+				9F51D0BF1D3D5D6E00895295 /* Frameworks */,
+				9F51D0C01D3D5D6E00895295 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libswiftaa;
+			productName = libswiftaa;
+			productReference = 9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9F525B3F1D3CDEDC00041696 /* swiftaa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F525B441D3CDEDC00041696 /* Build configuration list for PBXNativeTarget "swiftaa" */;
+			buildPhases = (
+				9F525B3C1D3CDEDC00041696 /* Sources */,
+				9F525B3D1D3CDEDC00041696 /* Frameworks */,
+				9F525B3E1D3CDEDC00041696 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = swiftaa;
+			productName = swiftaa;
+			productReference = 9F525B401D3CDEDC00041696 /* swiftaa */;
+			productType = "com.apple.product-type.tool";
+		};
 		9F694D891D15C67300EE7492 /* SwiftAA iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA iOS" */;
@@ -2194,6 +2290,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
+					9F51D0C11D3D5D6E00895295 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9F525B3F1D3CDEDC00041696 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -2224,6 +2326,8 @@
 				9F694D891D15C67300EE7492 /* SwiftAA iOS */,
 				9FC3402C1D156A5D0069E7C4 /* SwiftAATests */,
 				9FFA29291D15710F00034972 /* AAPlusTests */,
+				9F51D0C11D3D5D6E00895295 /* libswiftaa */,
+				9F525B3F1D3CDEDC00041696 /* swiftaa */,
 			);
 		};
 /* End PBXProject section */
@@ -2270,6 +2374,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F51D0BE1D3D5D6E00895295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F51D0C71D3D5D6E00895295 /* libswiftaa.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F525B3C1D3CDEDC00041696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F525B431D3CDEDC00041696 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F694D8A1D15C67300EE7492 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2877,6 +2997,51 @@
 			};
 			name = Release;
 		};
+		9F51D0C91D3D5D6E00895295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9F51D0CA1D3D5D6E00895295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F525B451D3CDEDC00041696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F525B461D3CDEDC00041696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9F694EE01D15C67300EE7492 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3061,6 +3226,24 @@
 			buildConfigurations = (
 				9F29B47E1B47313500B64C96 /* Debug */,
 				9F29B47F1B47313500B64C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F51D0C81D3D5D6E00895295 /* Build configuration list for PBXNativeTarget "libswiftaa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F51D0C91D3D5D6E00895295 /* Debug */,
+				9F51D0CA1D3D5D6E00895295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F525B441D3CDEDC00041696 /* Build configuration list for PBXNativeTarget "swiftaa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F525B451D3CDEDC00041696 /* Debug */,
+				9F525B461D3CDEDC00041696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
