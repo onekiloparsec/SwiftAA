@@ -1,4 +1,7 @@
- [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
+![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
+![](https://img.shields.io/badge/licence-MIT-blue.svg)
 
 # SwiftAA
 *The most comprehensive and accurate collection of astronomical algorithms written in Swift, period.*
