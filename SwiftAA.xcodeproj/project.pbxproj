@@ -1414,8 +1414,6 @@
 				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
 				9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */,
-				9F7A9E181B4FCE8100033B77 /* KPCAASun.h */,
-				9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */,
 				9F2A87A61D1FF6250004ADDD /* Partly Swifted */,
 				9F2A87A21D1FF4C20004ADDD /* Swifted */,
 			);
@@ -1466,6 +1464,8 @@
 				9F48D5251B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.mm */,
 				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,
 				9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */,
+				9F7A9E181B4FCE8100033B77 /* KPCAASun.h */,
+				9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */,
 			);
 			name = "Partly Swifted";
 			sourceTree = "<group>";

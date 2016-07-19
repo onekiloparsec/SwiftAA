@@ -31,4 +31,23 @@ public struct Sun: ObjectBase {
         let C = ceil((self.julianDay - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
         return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
     }
+    
+    func geocentricLongitude(equinox: Equinox) -> Degrees {
+        switch equinox {
+        case .MeanEquinoxOfTheDate:
+            return KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision)
+        case .StandardJ2000:
+            return KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay, self.highPrecision)
+        }
+    }
+    
+    func geocentricLatitude(equinox: Equinox) -> Degrees {
+        switch equinox {
+        case .MeanEquinoxOfTheDate:
+            return KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision)
+        case .StandardJ2000:
+            return KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision)
+        }
+    }
+
 }
