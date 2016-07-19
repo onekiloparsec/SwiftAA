@@ -1,12 +1,22 @@
  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
 
 # SwiftAA
-*Bringing the best implementation of the Astronomical Algorithms to Apple's Swift realm.*
+*The most comprehensive and accurate collection of astronomical algorithms written in Swift, period.*
 
 Using AA+ version 1.71 (released 28 April 2016)
 
-SwiftAA provides a C/C++/Objective-C/ObjectiveC++ and Swift-compatible layer upon astronomical algorithms, as well as
-a modern unit tests implementation. 
+SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
+These algorithms also make use of the VSOP87 framework making it the most complete and accurate collection of algorithms for all things astronomical.
+
+On top of this, SwiftAA provides swifty APIs taking advantage of the expressiveness of Swift and its various modern
+syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
+completeness and ease of use. Moreover, SwiftAA intends to provide a much improved unit tests coverage.
+
+Finally, a Swift Playground is being written and made available for distribution. This playground could easily be used
+**for educational purposes**, especially in the [Swift coding app on iPad](https://www.apple.com/swift/playgrounds/) coming with iOS10.
+With SwiftAA, teachers and educators could easily propose exercices and fun little computations on stars, sun, moon, 
+planets, seasons, coordinates etc.
+
 
 Licence
 =======
@@ -30,25 +40,25 @@ To make the most of this code, you'd rather have a copy of the book with you.
 As the author of the app iObserve (for [Mac](http://onekilopars.ec/apps#iobserve) and [iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
 myself worked a lot on implementing some of the AA algorithms for my needs. However, to push iObserve to the next level,
 I need to put a lot more work on these algorithms. And it is pointless (as well as very hard) to reach the fantastic level and quality the AA+ framework
-has already reached, after years of development and tests.
-
-One thing however that AA+ lacks are modern unit tests. The available tests do not assert anything, and appears only
-to print out some values to be checked by eye. This is human-readable, hence error prone. Here, we intend to provide
-such unit testing.
+has already reached, after years of development and tests. Moreover, AA+ make use of the VSOP87 framework, hence making it
+the most complete and accurate collection of astronomical algorithms available.
 
 P.J. Naughter has kindly agreed to let me create a public repo with his code. My intention is to write a wrapper around it,
 to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests will be accepted (if by any chance
 it happens) only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
 to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
 
+One thing however that AA+ lacks are modern unit tests. The available tests do not assert anything, and appears only
+to print out some values to be checked by eye. This is human-readable, hence error prone. Here, we intend to provide
+such unit testing, all on top of the Swift layer.
+
+
 Notes and Conventions
 =====================
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
-is to build a Swift-compatible C/Objective-C layer that follow *strictly* the methods and interfaces of the underlying
+is to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
 C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
-A more object-oriented library, built around SwiftAA and containing some additional utilities, is being written 
-[elsewhere](https://github.com/onekiloparsec/AstroCocoaKit).
 
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
 Objective-C. KPC stands for "kiloparsec"... and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
@@ -62,7 +72,7 @@ The first version of SwiftAA (tags 1.0+) was written with NSObject class methods
 that pure C-functions.  It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate 
 thousands of coordinates instances one might need for plotting/storing some curves. Hence, I decided to remove 
 KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C class methods to pure C-functions wrappers 
-and structs, in most cases. The most notable exception is KPCAADate which remains an NSObject subclass.
+and structs, everywhere it was possible. The most notable exception is KPCAADate which remains an NSObject subclass.
 
 Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.71 or later (with the new 
 [VSOP](https://en.wikipedia.org/wiki/VSOP_(planets)) implementation!). The tagged versions 1.0+ will remain as such, 
