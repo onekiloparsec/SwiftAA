@@ -23,8 +23,21 @@ public extension JulianDay {
      
      - returns: The sidereal time in hours.
      */
-    func MeanGreenwichSiderealTime() -> Hour {
+    func meanGreenwichSiderealTime() -> Hour {
         return KPCAASidereal_MeanGreenwichSiderealTime(self)
+    }
+
+    /**
+     Computes the mean sidereal time for a given longitude on Earth.
+     
+     - parameter longitude: Positively Westward (see AA p. 93 for explanations).
+     Basically: this is the contrary of IAU decision. But this orientation is consistent
+     with longitude orientation in all other planets!
+     
+     - returns: The sidereal time in hours.
+     */
+    func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
+        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreesToRadians(longitude))
     }
 
     /**
@@ -34,7 +47,7 @@ public extension JulianDay {
      
      - returns: The sidereal time in hours.
      */
-    func ApparentGreenwichSiderealTime() -> Hour {
+    func apparentGreenwichSiderealTime() -> Hour {
         return KPCAASidereal_ApparentGreenwichSiderealTime(self)
     }
 }

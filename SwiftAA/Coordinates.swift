@@ -8,6 +8,18 @@
 
 import Foundation
 
+public struct GeographicCoordinates {
+    private(set) var longitude: Degrees
+    private(set) var latitude: Degrees
+    var altitude: Meters
+    
+    init(positivelyWestwardLongitude longitude: Degrees, latitude: Degrees, altitude: Meters = 0) {
+        self.longitude = longitude
+        self.latitude = latitude
+        self.altitude = altitude
+    }
+}
+
 public struct EquatorialCoordinates {
     private(set) var rightAscension: Hour
     private(set) var declination: Degrees
@@ -34,9 +46,30 @@ public struct EquatorialCoordinates {
         return EclipticCoordinates(lambda: components.X, beta: components.Y, epsilon: self.epoch)
     }
     
+    /**
+     Transform the coordinates to galactic ones.
+     
+     The galactic coordinates system has been defined by the International Astronomical Union 
+     in 1959. In the standard equatorial system of B1950.0, the galactic North Pole
+     has the coordinates: alpha = 192.25 Degrees, and delta = 27.4 Degrees, and the origin
+     of the galactic longitude is the point (in western Sagittarius) of the galactic equator 
+     which is 33º distant from the ascending node (in western Aquila) of the galactic equator
+     with the equator of B1950.0.
+     These values have been fixed conventionally and therefore must be considered as exact for 
+     the mentionned equinox of B1950.0
+     
+     - returns: The corresponding galactic coordinates.
+     */
     func toGalacticCoordinates() -> GalacticCoordinates {
-        let components = KPCAACoordinateTransformation_Equatorial2Galactic(self.rightAscension, self.declination)
+        let precessedCoords = self.precessedCoordinates(to: StandardEpoch_B1950_0)
+        let components = KPCAACoordinateTransformation_Equatorial2Galactic(precessedCoords.rightAscension, precessedCoords.declination)
         return GalacticCoordinates(l: components.X, b: components.Y)
+    }
+    
+    func toHorizontalCoordinates(forGeographicalCoordinates coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
+        let lha = julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude)
+        let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha, self.declination, coords.latitude)
+        return HorizontalCoordinates(azimuth: components.X, altitude: components.Y, geographicCoordinates: coords, julianDay: julianDay, epoch: self.epoch)
     }
     
     func precessedCoordinates(to newEpoch: Double) -> EquatorialCoordinates {
@@ -66,6 +99,11 @@ public struct EclipticCoordinates {
         self.epoch = epsilon
     }
     
+    func toEquatorialCoordinates() -> EquatorialCoordinates {
+        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude, self.celestialLatitude, self.epoch)
+        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+    }
+    
     func precessedCoordinates(to newEpoch: Double) -> EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude, self.celestialLatitude, self.epoch, newEpoch)
         return EclipticCoordinates(lambda: components.X, beta: components.Y, epsilon: newEpoch)
@@ -75,7 +113,8 @@ public struct EclipticCoordinates {
 public struct GalacticCoordinates {
     private(set) var galacticLongitude: Degrees
     private(set) var galacticLatitude: Degrees
-    
+    public let epoch: Double = StandardEpoch_B1950_0
+
     var l: Degrees {
         get { return self.galacticLongitude }
         set { self.galacticLongitude = newValue }
@@ -90,4 +129,38 @@ public struct GalacticCoordinates {
         self.galacticLongitude = l
         self.galacticLatitude = b
     }
+    
+    /**
+     Transform the coordinates to equatorial ones.
+     Careful: the epoch is necessarily that of the galactic coordinates which is always B1950.0.
+     
+     - returns: The corresponding equatorial coordinates.
+     */
+    func toEquatorialCoordinates() -> EquatorialCoordinates {
+        let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude, self.galacticLatitude)
+        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+    }
 }
+
+public struct HorizontalCoordinates {
+    private(set) var azimuth: Degrees // westward from the South see AA. p91
+    private(set) var altitude: Degrees
+    private(set) var geographicCoordinates: GeographicCoordinates
+    private(set) var julianDay: JulianDay
+    private(set) var epoch: Double
+    
+    init(azimuth: Degrees, altitude: Degrees, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: Double) {
+        self.azimuth = azimuth
+        self.altitude = altitude
+        self.geographicCoordinates = geographicCoordinates
+        self.julianDay = julianDay
+        self.epoch = epoch
+    }
+    
+    func toEquatorialCoordinates() -> EquatorialCoordinates {
+        let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth, self.altitude, self.geographicCoordinates.latitude)
+        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+    }
+
+}
+

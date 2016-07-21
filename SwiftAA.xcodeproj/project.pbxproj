@@ -1422,6 +1422,8 @@
 		9F2A87A21D1FF4C20004ADDD /* Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
+				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
 				9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */,
 				9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */,
@@ -1457,8 +1459,6 @@
 		9F2A87A61D1FF6250004ADDD /* Partly Swifted */ = {
 			isa = PBXGroup;
 			children = (
-				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
-				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 				9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */,
 				9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */,
 				9F48D5241B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.h */,

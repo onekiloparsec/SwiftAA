@@ -18,9 +18,9 @@ import Foundation
 
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
-public typealias m=Double // meters
-public typealias kg=Double // kilograms
-public typealias day=Double // kilograms
+public typealias Meters=Double // meters
+public typealias Kilograms=Double // kilograms
+public typealias Days=Double // days
 
 public enum Equinox {
     case MeanEquinoxOfTheDate
@@ -33,6 +33,14 @@ public enum Season {
     case Autumn
     case Winter
 }
+
+public let JulianYear: Days = 365.25            // See p.133 of AA.
+public let BesselianYear: Days = 365.2421988    // See p.133 of AA.
+public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
+
+public let StandardEpoch_J2000_0 = 2451545.0 // See p.133 of AA.
+public let StandardEpoch_B1950_0 = 2433282.4235 // See p.133 of AA.
+
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
