@@ -1000,7 +1000,7 @@
 		9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASun.mm; path = SwiftAA/KPCAASun.mm; sourceTree = "<group>"; };
 		9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBase.swift; sourceTree = "<group>"; };
 		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
-		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
+		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Saturn.swift; path = SwiftAA/Saturn.swift; sourceTree = "<group>"; };
 		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
@@ -1341,10 +1341,6 @@
 		9F29B5811B47319D00B64C96 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
-				9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */,
-				9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */,
-				9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */,
-				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
 				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
 				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
 				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
@@ -1409,8 +1405,6 @@
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
 				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
-				9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */,
-				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
 				9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */,
 				9F2A87A61D1FF6250004ADDD /* Partly Swifted */,
@@ -1422,6 +1416,10 @@
 		9F2A87A21D1FF4C20004ADDD /* Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */,
+				9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */,
+				9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */,
+				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
 				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
@@ -1446,6 +1444,9 @@
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
 				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
 				9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */,
+				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
+				9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */,
+				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E001B4FCCB600033B77 /* KPCAASidereal.h */,
 				9F7A9E011B4FCCB600033B77 /* KPCAASidereal.mm */,
 				9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */,
@@ -1556,7 +1557,6 @@
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
 				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
-				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
 				9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */,
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,
