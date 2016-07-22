@@ -24,7 +24,7 @@ public struct Earth: EarthPlanet {
     public init(date: NSDate, highPrecision: Bool = true) {
         self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
     }
-
+    
     // Additional methods for Earth to deal with the baryCentric parameter
     func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)

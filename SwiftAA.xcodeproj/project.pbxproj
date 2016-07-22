@@ -1000,7 +1000,7 @@
 		9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAASun.mm; path = SwiftAA/KPCAASun.mm; sourceTree = "<group>"; };
 		9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBase.swift; sourceTree = "<group>"; };
 		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
-		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Saturn.swift; path = SwiftAA/Saturn.swift; sourceTree = "<group>"; };
+		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
 		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
@@ -1422,6 +1422,8 @@
 				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
 				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
+				9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */,
+				9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */,
 				9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */,
 				9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */,
 				9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */,
@@ -1444,7 +1446,6 @@
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
 				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
 				9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */,
-				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
 				9F7A9DFA1B4FCB8600033B77 /* KPCAASaturnRings.h */,
 				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E001B4FCCB600033B77 /* KPCAASidereal.h */,
@@ -1460,8 +1461,6 @@
 		9F2A87A61D1FF6250004ADDD /* Partly Swifted */ = {
 			isa = PBXGroup;
 			children = (
-				9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */,
-				9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */,
 				9F48D5241B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.h */,
 				9F48D5251B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.mm */,
 				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,
@@ -1557,6 +1556,7 @@
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
 				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
+				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
 				9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */,
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,

@@ -30,6 +30,7 @@ public struct GalileanMoon {
         self.details = details
     }
     
+    // TODO: Improve this by not returning KPCAA3DCoordinateComponents and also add doc.
     public func rectangularCoordinates(apparent: Bool = true) -> KPCAA3DCoordinateComponents {
         return (apparent == true) ? self.details.ApparentRectangularCoordinateComponents : self.details.TrueRectangularCoordinateComponents
     }
