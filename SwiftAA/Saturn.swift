@@ -127,6 +127,9 @@ public struct Saturn: Planet {
     
     public init(date: NSDate, highPrecision: Bool = true) {
         self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
-    }    
+    }
+    
+    /// Includes the contribution from the ring.
+    public var magnitude: Double { get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.ringSystem.details.DeltaU, self.ringSystem.details.B) } }
 }
 

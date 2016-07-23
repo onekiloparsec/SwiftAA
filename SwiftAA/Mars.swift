@@ -24,4 +24,6 @@ public struct Mars: Planet {
     public init(date: NSDate, highPrecision: Bool = true) {
         self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
     }
+    
+    public var magnitude: Double { get { return KPCAAIlluminatedFraction_MarsMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
 }

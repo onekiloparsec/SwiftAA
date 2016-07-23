@@ -33,8 +33,11 @@ double KPCAAIlluminatedFraction_JupiterMagnitudeAA(double r, double Delta, doubl
 double KPCAAIlluminatedFraction_SaturnMagnitudeAA(double r, double Delta, double DeltaU, double B);
 double KPCAAIlluminatedFraction_UranusMagnitudeAA(double r, double Delta);
 double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta);
+    
+//AA+ No idea where this comes from
 double KPCAAIlluminatedFraction_PlutoMagnitudeAA(double r, double Delta);
 
+    
 #if __cplusplus
 }
 #endif

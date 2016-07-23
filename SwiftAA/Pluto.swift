@@ -23,6 +23,6 @@ public struct Pluto: DwarfPlanet {
     
     public init(date: NSDate, highPrecision: Bool = true) {
         self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
-    }
+    }    
 }
 
