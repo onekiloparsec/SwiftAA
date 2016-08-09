@@ -1,9 +1,20 @@
+<h3 align="center">
+	<img src="http://onekilopars.ec/s/1kpcAstroComponents.png" width="100%" />
+</h3>
+<p align="center">
+<a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (<a href="https://github.com/onekiloparsec/arcsecond.sdk.swift">Swift SDK</a>) &bull;
+<b>SwiftAA</b> &bull;
+<a href="https://github.com/onekiloparsec/QLFits">QLFits</a>
+</p>
+
+SwiftAA
+============
+
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
 
-# SwiftAA
 *The most comprehensive and accurate collection of astronomical algorithms written in Swift, period.*
 
 Using AA+ version 1.71 (released 28 April 2016)
