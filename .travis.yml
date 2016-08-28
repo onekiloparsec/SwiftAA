@@ -1,0 +1,5 @@
+language: swift
+xcode_project: SwiftAA.xcodeproj
+xcode_scheme: SwiftAA macOS
+osx_image: xcode7.3
+
