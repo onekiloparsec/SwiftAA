@@ -12,6 +12,11 @@ public typealias JulianDay=Double
 public typealias Hour=Double
 
 public extension JulianDay {
+    /**
+     Transform a julian day into a Date.
+     
+     - returns: The corresponding Date instance.
+     */
     func Date() -> KPCAADate {
         return KPCAADate(julianDay: self, usingGregorianCalendar: true)
     }

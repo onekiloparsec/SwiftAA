@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ *  This protocol aims at providing the base used by all types of astronomical objects considered in SwiftAA,
+ *  planets, moons etc.
+ */
 public protocol ObjectBase {
     var julianDay: JulianDay { get }
     var highPrecision: Bool { get }
@@ -18,7 +22,7 @@ public protocol ObjectBase {
      - parameter julianDay:     The julian day at which one will consider the object
      - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
      
-     - returns: A new instance of a PlanetaryBase object
+     - returns: A new instance of a ObjectBase object
      */
     init(julianDay: JulianDay, highPrecision: Bool)
     
@@ -28,7 +32,7 @@ public protocol ObjectBase {
      - parameter date:          The date at which one will consider the object
      - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
      
-     - returns: A new instance of a PlanetaryBase object
+     - returns: A new instance of a ObjectBase object
      */
     init(date: NSDate, highPrecision: Bool)
 }

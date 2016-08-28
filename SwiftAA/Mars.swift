@@ -39,6 +39,4 @@ public struct Mars: Planet {
     public var planetocentricDeclinationSun: Degrees {
         return self.physicalDetails.DS
     }
-    
-    public var
 }
