@@ -13,7 +13,7 @@ enum PlanetError: ErrorType {
     case InvalidCase
 }
 
-public protocol PlanetaryBase: ObjectBase {
+public protocol PlanetaryBase: ObjectBase, OrbitingObject {
     /// The average color of the planet
     static var color: Color { get }
     
@@ -25,15 +25,6 @@ public protocol PlanetaryBase: ObjectBase {
     // The planet name
     var name: String { get }
     
-    /// The ecliptic (=heliocentric) longitude of the planet
-    var eclipticLongitude: Degrees { get }
-    
-    /// The ecliptic (=heliocentric) latitude of the planet
-    var eclipticLatitude: Degrees { get }
-
-    /// The radius vector (=distance to the Sun)
-    var radiusVector: AU { get }
-
     /// The julian day of the perihelion of the planet the after the given julian day
     var perihelion: JulianDay { get }
     
