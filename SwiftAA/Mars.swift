@@ -30,12 +30,12 @@ public struct Mars: Planet {
     
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_MarsMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
     
-    /// The planetocentric declination of the Earth. Wjen it is positive, Mars' northern pole is tilted towards the Earth
+    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
     public var planetocentricDeclinationEarth: Degrees {
         return self.physicalDetails.DE
     }
 
-    /// The planetocentric declination of the Sun. Wjen it is positive, Mars' northern pole is tilted towards the Sun
+    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
     public var planetocentricDeclinationSun: Degrees {
         return self.physicalDetails.DS
     }

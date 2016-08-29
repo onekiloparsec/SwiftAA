@@ -37,6 +37,8 @@ public struct GalileanMoon {
 }
 
 public struct Jupiter: Planet {
+    private var physicalDetails: KPCAAPhysicalJupiterDetails
+
     public static var color: Color {
         get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
     }
@@ -62,6 +64,8 @@ public struct Jupiter: Planet {
         self.Europa = GalileanMoon(name: "Europa", details: details.Satellite2)
         self.Ganymede = GalileanMoon(name: "Ganymede", details: details.Satellite3)
         self.Callisto = GalileanMoon(name: "Callisto", details: details.Satellite4)
+        
+        self.physicalDetails = KPCAAPhysicalJupiter_CalculateDetails(self.julianDay, self.highPrecision)
     }
     
     public init(date: NSDate, highPrecision: Bool = true) {
@@ -69,4 +73,37 @@ public struct Jupiter: Planet {
     }
     
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
+    
+    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
+    public var planetocentricDeclinationEarth: Degrees {
+        return self.physicalDetails.DE
+    }
+    
+    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
+    public var planetocentricDeclinationSun: Degrees {
+        return self.physicalDetails.DS
+    }
+
+    /// See AA. ch 43, pp. 293-
+    
+    public var geometricCentralMeridianLongitudeSystemI: Degrees {
+        return self.physicalDetails.Geometricw1
+    }
+
+    public var geometricCentralMeridianLongitudeSystemII: Degrees {
+        return self.physicalDetails.Geometricw2
+    }
+
+    public var apparentCentralMeridianLongitudeSystemI: Degrees {
+        return self.physicalDetails.Apparentw1
+    }
+    
+    public var apparentCentralMeridianLongitudeSystemII: Degrees {
+        return self.physicalDetails.Apparentw2
+    }
+
+    /// The position angle of the northern rotation pole of the planet
+    public var positionAngleOfNorthernRotationPole: Degrees {
+        return self.physicalDetails.P
+    }
 }
