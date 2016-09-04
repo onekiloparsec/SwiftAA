@@ -11,11 +11,14 @@ import Foundation
 public struct Sun: ObjectBase {
     public private(set) var julianDay: JulianDay
     public private(set) var highPrecision: Bool
+    private var physicalDetails: KPCAAPhysicalSunDetails
+    
     public let diameter: Meters = 1392000000.0
     
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
+        self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
     }
     
     public init(date: NSDate, highPrecision: Bool = true) {
@@ -49,6 +52,38 @@ public struct Sun: ObjectBase {
         case .StandardJ2000:
             return KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision)
         }
+    }
+    
+    /**
+     This is the position angle of the northern extremity of the axis of rotation,
+     measured eastwards from the North Point of the solar disk.
+    
+     - returns: The position angle in degrees.
+     */
+    func positionAngleOfNorthernRotationAxisPoint() -> Degrees {
+        return self.physicalDetails.P
+    }
+    
+    /**
+     The heliographic latitude of the center of the solar disk. It represents the tilt
+     of the Sun's north pole toward (+) or away (-) from Earth. It is zero about June 6
+     and December 7, and reaches a maximum value about March 6 (-7º.25) and September 8
+     (+7º.25).
+     
+     - returns: The latitude in degrees.
+     */
+    func heliographicLatitudeOfSolarDiskCenter() -> Degrees {
+        return self.physicalDetails.B0
+    }
+    
+    /**
+     The heliographic longitude of the center of the solar disk. It decreases by about 
+     13.2 degrees per day.
+     
+     - returns: The longitude in degrees.
+     */
+    func heliographicLongitudeOfSolarDiskCenter() -> Degrees {
+        return self.physicalDetails.L0
     }
 
 }
