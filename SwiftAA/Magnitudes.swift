@@ -17,6 +17,10 @@ public extension Magnitude {
         return KPCAAStellarMagnitudes_BrightnessRatio(self, m2)
     }
 
+    public func distance(forAbsoluteMagnitude M: Magnitude, visualAbsorption Av: Double = 0.0) -> Parsec {
+        return pow(10.0, (m + 5.0 - M - Av)/5.0)
+    }
+    
     static public func magnitudeDifference(forBrightnessRatio r: Double) -> Double {
         return KPCAAStellarMagnitudes_MagnitudeDifference(r)
     }

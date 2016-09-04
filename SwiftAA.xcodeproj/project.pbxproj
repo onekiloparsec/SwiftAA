@@ -1360,8 +1360,6 @@
 			children = (
 				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
 				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
-				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
-				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
 				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
 				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB3901B48201600EF40C8 /* KPCAADate.h */,
@@ -1478,6 +1476,8 @@
 		9F2A87A61D1FF6250004ADDD /* Partly Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
+				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
 				9F48D5741B4FA7B900B7EE7F /* KPCAAPhysicalMars.h */,
 				9F48D5751B4FA7B900B7EE7F /* KPCAAPhysicalMars.mm */,
 				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,

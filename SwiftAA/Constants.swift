@@ -19,6 +19,7 @@ import Foundation
 public typealias Degrees=Double
 public typealias AU=Double // Astronomical Unit
 public typealias Meters=Double // meters
+public typealias Parsec=Double // parsecs
 public typealias Kilograms=Double // kilograms
 public typealias Days=Double // days
 public typealias Magnitude=Double // days
@@ -55,9 +56,9 @@ public extension Degrees {
 
 public extension AU {
     var AU: Double { return self }
-    var pc: Double { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
+    var pc: Parsec { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
     var km: Double { return self / 149597870.7 }
-    var m:  Double { return self / 149597870700.0 }
+    var m:  Meters { return self / 149597870700.0 }
     var ly: Double { return self / 206264.8 }
 }
 

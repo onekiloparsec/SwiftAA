@@ -76,6 +76,14 @@ public struct EquatorialCoordinates {
         let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension, self.declination, self.epoch, newEpoch)
         return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: newEpoch)
     }
+    
+    func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degrees {
+        return KPCAAAngularSeparation_Separation(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
+    }
+    
+    func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degrees {
+        return KPCAAAngularSeparation_PositionAngle(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
+    }
 }
 
 public struct EclipticCoordinates {

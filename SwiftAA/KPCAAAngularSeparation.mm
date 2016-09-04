@@ -14,7 +14,7 @@ double KPCAAAngularSeparation_Separation(double Alpha1, double Delta1, double Al
     return CAAAngularSeparation::Separation(Alpha1, Delta1, Alpha2, Delta2);
 }
 
-double KPCAngularSeparation_PositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2)
+double KPCAAAngularSeparation_PositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2)
 {
     return CAAAngularSeparation::PositionAngle(Alpha1, Delta1, Alpha2, Delta2);
 }

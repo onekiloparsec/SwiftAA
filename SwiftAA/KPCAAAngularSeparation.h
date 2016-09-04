@@ -14,7 +14,7 @@ extern "C" {
 
 double KPCAAAngularSeparation_Separation(double Alpha1, double Delta1, double Alpha2, double Delta2);
 
-double KPCAngularSeparation_PositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2);
+double KPCAAAngularSeparation_PositionAngle(double Alpha1, double Delta1, double Alpha2, double Delta2);
 
 double KPCAAAngularSeparation_DistanceFromGreatArc(double Alpha1, double Delta1, double Alpha2, double Delta2, double Alpha3, double Delta3);
 
