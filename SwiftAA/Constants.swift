@@ -58,6 +58,7 @@ public extension AU {
     var pc: Double { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
     var km: Double { return self / 149597870.7 }
     var m:  Double { return self / 149597870700.0 }
+    var ly: Double { return self / 206264.8 }
 }
 
 public extension KPCAAPlanet {

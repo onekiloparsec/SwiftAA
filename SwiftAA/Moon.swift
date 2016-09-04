@@ -12,6 +12,8 @@ public struct Moon : ObjectBase, OrbitingObject {
     public private(set) var julianDay: JulianDay
     public private(set) var highPrecision: Bool
     
+    public let diameter: Meters = 3476000.0
+
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision

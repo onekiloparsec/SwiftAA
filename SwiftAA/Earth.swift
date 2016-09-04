@@ -16,6 +16,9 @@ public struct Earth: EarthPlanet {
     public private(set) var julianDay: JulianDay
     public private(set) var highPrecision: Bool
     
+    public let equatorialRadius: Meters = 6378140.0
+    public let polarRadius: Meters = 6356760.0
+
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
