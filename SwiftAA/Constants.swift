@@ -21,6 +21,7 @@ public typealias AU=Double // Astronomical Unit
 public typealias Meters=Double // meters
 public typealias Kilograms=Double // kilograms
 public typealias Days=Double // days
+public typealias Magnitude=Double // days
 
 public enum Equinox {
     case MeanEquinoxOfTheDate

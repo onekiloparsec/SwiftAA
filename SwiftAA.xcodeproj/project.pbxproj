@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
+		9F1F129B1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F2154A61D296B4000C4DD06 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2154A51D296B4000C4DD06 /* Planets.swift */; };
 		9F2154A71D296B4000C4DD06 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2154A51D296B4000C4DD06 /* Planets.swift */; };
 		9F2A87A01D1FC4970004ADDD /* KPCAASwiftAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -888,6 +890,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F1F12991D7C6A83006FD828 /* Magnitudes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magnitudes.swift; sourceTree = "<group>"; };
 		9F2154A51D296B4000C4DD06 /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA2DCoordinate.h; path = SwiftAA/KPCAA2DCoordinate.h; sourceTree = "<group>"; };
 		9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAA2DCoordinate.mm; path = SwiftAA/KPCAA2DCoordinate.mm; sourceTree = "<group>"; };
@@ -1315,6 +1318,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1F12981D7C6A50006FD828 /* Stars */ = {
+			isa = PBXGroup;
+			children = (
+				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
+			);
+			name = Stars;
+			sourceTree = "<group>";
+		};
 		9F29B4601B47313500B64C96 = {
 			isa = PBXGroup;
 			children = (
@@ -1405,8 +1416,6 @@
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
 				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
-				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
-				9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */,
 				9F2A87A61D1FF6250004ADDD /* Partly Swifted */,
 				9F2A87A21D1FF4C20004ADDD /* Swifted */,
 			);
@@ -1456,6 +1465,8 @@
 				9F7A9DFB1B4FCB8600033B77 /* KPCAASaturnRings.mm */,
 				9F7A9E001B4FCCB600033B77 /* KPCAASidereal.h */,
 				9F7A9E011B4FCCB600033B77 /* KPCAASidereal.mm */,
+				9F7A9E061B4FCD4100033B77 /* KPCAAStellarMagnitudes.h */,
+				9F7A9E071B4FCD4100033B77 /* KPCAAStellarMagnitudes.mm */,
 				9F7A9E0C1B4FCE0300033B77 /* KPCAAUranus.h */,
 				9F7A9E0D1B4FCE0300033B77 /* KPCAAUranus.mm */,
 				9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */,
@@ -1515,6 +1526,7 @@
 				9FDA5C321D16E6B6003B9F31 /* Base */,
 				9FB70C681D25A3BD00A03C6D /* Planets Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System */,
+				9F1F12981D7C6A50006FD828 /* Stars */,
 			);
 			name = Swift;
 			path = SwiftAA;
@@ -2478,6 +2490,7 @@
 				9F694DD31D15C67300EE7492 /* KPCAAEclipticalElements.mm in Sources */,
 				9F694DD41D15C67300EE7492 /* AAGlobe.cpp in Sources */,
 				9F694DD51D15C67300EE7492 /* AAUranus.cpp in Sources */,
+				9F1F129B1D7C6A83006FD828 /* Magnitudes.swift in Sources */,
 				9F694DD61D15C67300EE7492 /* AAVSOP87C_SAT.cpp in Sources */,
 				9F694DD71D15C67300EE7492 /* KPCAASaturnMoons.mm in Sources */,
 				9F694DD81D15C67300EE7492 /* AAVSOP87A_MAR.cpp in Sources */,
@@ -2672,6 +2685,7 @@
 				9F694D2B1D1578A600EE7492 /* KPCAAEclipticalElements.mm in Sources */,
 				9FE183821D0DE730008CA0F8 /* AAGlobe.cpp in Sources */,
 				9FE183D11D0DE730008CA0F8 /* AAUranus.cpp in Sources */,
+				9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */,
 				9FE184131D0DE730008CA0F8 /* AAVSOP87C_SAT.cpp in Sources */,
 				9F694D511D157BCA00EE7492 /* KPCAASaturnMoons.mm in Sources */,
 				9FE183ED1D0DE730008CA0F8 /* AAVSOP87A_MAR.cpp in Sources */,
