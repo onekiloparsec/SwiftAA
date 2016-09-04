@@ -86,4 +86,15 @@ public struct Sun: ObjectBase {
         return self.physicalDetails.L0
     }
 
+    /**
+     A synodic rotation cycle of the Sun begins when the heliographic longitude of the
+     solar disk center is 0º.
+     
+     - parameter C: The rotation number. C = 1 on November 9, 1853.
+     
+     - returns: The julian day of the start of the cycle.
+     */
+    func timeOfStartOfSynodicRotation(rotationNumber C: Int) -> JulianDay {
+        return KPCAAPhysicalSun_TimeOfStartOfRotation(C)
+    }
 }
