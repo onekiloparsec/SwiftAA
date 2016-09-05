@@ -76,4 +76,23 @@ public struct Moon : ObjectBase, OrbitingObject {
     static func radiusVector(fromHorizontalParallax parallax: Degrees) -> AU {
         return KPCAAMoon_HorizontalParallaxToRadiusVector(parallax)
     }
+    
+    // MARK: - KPCAAMoonPhases
+
+    func timeOfPhase(forPhase ph: MoonPhase, mean: Bool = true) -> JulianDay {
+        var k = round(KPCAAMoonPhases_K(Double(self.julianDay.Date().FractionalYear())))
+        switch ph {
+        case .New:
+            k = k + 0.0
+        case .FirstQuarter:
+            k = k + 0.25
+        case .Full:
+            k = k + 0.50
+        case .LastQuarter: 
+            k = k + 0.75
+        }
+        return mean ? KPCAAMoonPhases_MeanPhase(k) : KPCAAMoonPhases_TruePhase(k)
+    }
 }
+
+

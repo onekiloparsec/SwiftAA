@@ -36,6 +36,13 @@ public enum Season {
     case Winter
 }
 
+public enum MoonPhase {
+    case New
+    case FirstQuarter
+    case Full
+    case LastQuarter
+}
+
 public let JulianYear: Days = 365.25            // See p.133 of AA.
 public let BesselianYear: Days = 365.2421988    // See p.133 of AA.
 public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.

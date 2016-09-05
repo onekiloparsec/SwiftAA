@@ -1392,8 +1392,6 @@
 				9F48D5491B4EE02600B7EE7F /* KPCAAMoonNodes.mm */,
 				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
 				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
-				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
-				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
 				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
 				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
 				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
@@ -1445,6 +1443,8 @@
 				9F48D5391B4EC1ED00B7EE7F /* KPCAAMercury.mm */,
 				9F48D53C1B4EC22F00B7EE7F /* KPCAAMoon.h */,
 				9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */,
+				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
+				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
 				9F48D5581B4EE45200B7EE7F /* KPCAANeptune.h */,
 				9F48D5591B4EE45200B7EE7F /* KPCAANeptune.mm */,
 				9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */,
@@ -1523,8 +1523,8 @@
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9FDA5C321D16E6B6003B9F31 /* Base */,
-				9FB70C681D25A3BD00A03C6D /* Planets Base */,
+				9FDA5C321D16E6B6003B9F31 /* Common */,
+				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System */,
 				9F1F12981D7C6A50006FD828 /* Stars */,
 			);
@@ -1532,7 +1532,7 @@
 			path = SwiftAA;
 			sourceTree = "<group>";
 		};
-		9FB70C681D25A3BD00A03C6D /* Planets Base */ = {
+		9FB70C681D25A3BD00A03C6D /* Solar System Base */ = {
 			isa = PBXGroup;
 			children = (
 				9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */,
@@ -1541,7 +1541,7 @@
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
 				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 			);
-			name = "Planets Base";
+			name = "Solar System Base";
 			sourceTree = "<group>";
 		};
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
@@ -1575,7 +1575,7 @@
 			name = "Solar System";
 			sourceTree = "<group>";
 		};
-		9FDA5C321D16E6B6003B9F31 /* Base */ = {
+		9FDA5C321D16E6B6003B9F31 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
@@ -1584,7 +1584,7 @@
 				9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */,
 				9F502F0D1D3EBFFF002C394F /* Coordinates.swift */,
 			);
-			name = Base;
+			name = Common;
 			sourceTree = "<group>";
 		};
 		9FE182741D0DE730008CA0F8 /* aaplus-v1.71 */ = {
