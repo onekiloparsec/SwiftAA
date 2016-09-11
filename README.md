@@ -2,7 +2,9 @@
 	<img src="http://onekilopars.ec/s/1kpcAstroComponents.png" width="100%" />
 </h3>
 <p align="center">
-<a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (<a href="https://github.com/onekiloparsec/arcsecond.swift">Swift SDK</a>) &bull;
+<a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (backend) &bull;
+<a href="https://github.com/onekiloparsec/arcsecond.swift">arcsecond.swift</a> (Swift SDK) &bull;
+<a href="https://github.com/onekiloparsec/arcsecond.js">arcsecond.js</a> (JavaScript SDK) &bull; <br/>
 <b>SwiftAA</b> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
