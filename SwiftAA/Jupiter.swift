@@ -67,11 +67,7 @@ public struct Jupiter: Planet {
         
         self.physicalDetails = KPCAAPhysicalJupiter_CalculateDetails(self.julianDay, self.highPrecision)
     }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
-    }
-    
+        
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
     
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth

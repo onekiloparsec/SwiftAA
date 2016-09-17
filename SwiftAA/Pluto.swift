@@ -19,10 +19,6 @@ public struct Pluto: DwarfPlanet {
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
-    }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }    
 }
 

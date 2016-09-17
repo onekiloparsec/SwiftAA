@@ -24,15 +24,5 @@ public protocol ObjectBase {
      
      - returns: A new instance of a ObjectBase object
      */
-    init(julianDay: JulianDay, highPrecision: Bool)
-    
-    /**
-     Initialization of an object
-     
-     - parameter date:          The date at which one will consider the object
-     - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
-     
-     - returns: A new instance of a ObjectBase object
-     */
-    init(date: Date, highPrecision: Bool)
+    init(julianDay: JulianDay, highPrecision: Bool)    
 }

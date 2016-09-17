@@ -192,7 +192,6 @@
 		9F694D501D157BC300EE7492 /* KPCAASaturnMoons.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694D511D157BCA00EE7492 /* KPCAASaturnMoons.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A9DF51B4FC89F00033B77 /* KPCAASaturnMoons.mm */; };
 		9F694D521D157BD200EE7492 /* KPCAADate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8AB3901B48201600EF40C8 /* KPCAADate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F694D531D157BD200EE7492 /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9F694D541D157BD200EE7492 /* KPCAAElliptical.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694D551D157BD200EE7492 /* KPCAAElliptical.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */; };
 		9F694D561D157BD200EE7492 /* KPCAAIlluminatedFraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F48D5241B4EBA0A00B7EE7F /* KPCAAIlluminatedFraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -404,7 +403,6 @@
 		9F694E271D15C67300EE7492 /* AAVSOP87A_SAT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1830E1D0DE730008CA0F8 /* AAVSOP87A_SAT.cpp */; };
 		9F694E281D15C67300EE7492 /* AAInterpolate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182A11D0DE730008CA0F8 /* AAInterpolate.cpp */; };
 		9F694E291D15C67300EE7492 /* KPCAAPhysicalMoon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */; };
-		9F694E2A1D15C67300EE7492 /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9F694E2B1D15C67300EE7492 /* AANearParabolic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182BB1D0DE730008CA0F8 /* AANearParabolic.cpp */; };
 		9F694E2C1D15C67300EE7492 /* AAMoon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182AD1D0DE730008CA0F8 /* AAMoon.cpp */; };
 		9F694E2D1D15C67300EE7492 /* AANutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE182C11D0DE730008CA0F8 /* AANutation.cpp */; };
@@ -598,6 +596,8 @@
 		9F7CBFB31D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
 		9F7CBFB51D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
 		9F7CBFB61D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
+		9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
+		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
@@ -1523,7 +1523,7 @@
 			children = (
 				9FDA5C321D16E6B6003B9F31 /* Common */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
-				9FDA5C311D16E6A7003B9F31 /* Solar System */,
+				9FDA5C311D16E6A7003B9F31 /* Solar System Objects */,
 				9F1F12981D7C6A50006FD828 /* Stars */,
 			);
 			name = Swift;
@@ -1555,7 +1555,7 @@
 			path = SwiftAATests;
 			sourceTree = "<group>";
 		};
-		9FDA5C311D16E6A7003B9F31 /* Solar System */ = {
+		9FDA5C311D16E6A7003B9F31 /* Solar System Objects */ = {
 			isa = PBXGroup;
 			children = (
 				9F525B291D3CB53400041696 /* Sun.swift */,
@@ -1570,7 +1570,7 @@
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,
 			);
-			name = "Solar System";
+			name = "Solar System Objects";
 			sourceTree = "<group>";
 		};
 		9FDA5C321D16E6B6003B9F31 /* Common */ = {
@@ -2543,6 +2543,7 @@
 				9F694DFF1D15C67300EE7492 /* KPCAAElliptical.mm in Sources */,
 				9F694E001D15C67300EE7492 /* KPCAAGlobe.mm in Sources */,
 				9F694E011D15C67300EE7492 /* AAJewishCalendar.cpp in Sources */,
+				9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */,
 				9F694E021D15C67300EE7492 /* AAEaster.cpp in Sources */,
 				9F694E031D15C67300EE7492 /* AAVSOP87_SAT.cpp in Sources */,
 				9F694E041D15C67300EE7492 /* KPCAAVenus.mm in Sources */,
@@ -2590,7 +2591,6 @@
 				9F694E271D15C67300EE7492 /* AAVSOP87A_SAT.cpp in Sources */,
 				9F694E281D15C67300EE7492 /* AAInterpolate.cpp in Sources */,
 				9F694E291D15C67300EE7492 /* KPCAAPhysicalMoon.mm in Sources */,
-				9F694E2A1D15C67300EE7492 /* KPCAADate.mm in Sources */,
 				9F694E2B1D15C67300EE7492 /* AANearParabolic.cpp in Sources */,
 				9F694E2C1D15C67300EE7492 /* AAMoon.cpp in Sources */,
 				9F694E2D1D15C67300EE7492 /* AANutation.cpp in Sources */,
@@ -2738,6 +2738,7 @@
 				9F694D551D157BD200EE7492 /* KPCAAElliptical.mm in Sources */,
 				9F694D381D1579DB00EE7492 /* KPCAAGlobe.mm in Sources */,
 				9FE183881D0DE730008CA0F8 /* AAJewishCalendar.cpp in Sources */,
+				9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */,
 				9FE1836E1D0DE730008CA0F8 /* AAEaster.cpp in Sources */,
 				9FE183E11D0DE730008CA0F8 /* AAVSOP87_SAT.cpp in Sources */,
 				9F694D4D1D157B0400EE7492 /* KPCAAVenus.mm in Sources */,
@@ -2785,7 +2786,6 @@
 				9FE183F31D0DE730008CA0F8 /* AAVSOP87A_SAT.cpp in Sources */,
 				9FE183861D0DE730008CA0F8 /* AAInterpolate.cpp in Sources */,
 				9F694D771D157BD200EE7492 /* KPCAAPhysicalMoon.mm in Sources */,
-				9F694D531D157BD200EE7492 /* KPCAADate.mm in Sources */,
 				9FE183A01D0DE730008CA0F8 /* AANearParabolic.cpp in Sources */,
 				9FE183921D0DE730008CA0F8 /* AAMoon.cpp in Sources */,
 				9FE183A61D0DE730008CA0F8 /* AANutation.cpp in Sources */,

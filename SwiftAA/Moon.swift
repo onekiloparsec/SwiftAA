@@ -18,11 +18,7 @@ public struct Moon : ObjectBase, OrbitingObject {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
     }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
-    }
-    
+        
     // MARK: - OrbitingObject
     
     public var eclipticLongitude: Degrees {
@@ -80,7 +76,7 @@ public struct Moon : ObjectBase, OrbitingObject {
     // MARK: - KPCAAMoonPhases
 
     func timeOfPhase(forPhase ph: MoonPhase, mean: Bool = true) -> JulianDay {
-        var k = round(KPCAAMoonPhases_K(Double(self.julianDay.AADate().fractionalYear())))
+        var k = round(KPCAAMoonPhases_K(Double(self.julianDay.date().fractionalYear)))
         switch ph {
         case .new:
             k = k + 0.0

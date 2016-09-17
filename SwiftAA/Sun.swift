@@ -20,11 +20,7 @@ public struct Sun: ObjectBase {
         self.highPrecision = highPrecision
         self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
     }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
-    }
-    
+        
     /**
      Computes the time of the next start of the synodic rotation of the Sun
      (used to follow sunspots).

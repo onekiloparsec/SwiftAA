@@ -124,11 +124,7 @@ public struct Saturn: Planet {
         let ringDetails = KPCAASaturnRings_Calculate(self.julianDay, self.highPrecision)
         self.ringSystem = SaturnRingSystem(ringDetails)
     }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
-    }
-    
+        
     /// Includes the contribution from the ring.
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.ringSystem.details.DeltaU, self.ringSystem.details.B) } }
 }

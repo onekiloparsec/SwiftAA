@@ -20,10 +20,6 @@ public struct Mercury: Planet {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
     }
-    
-    public init(date: Date, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
-    }
-    
+        
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
 }
