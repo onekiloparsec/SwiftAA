@@ -17,7 +17,7 @@ public extension JulianDay {
      
      - returns: The corresponding Date instance.
      */
-    func Date() -> KPCAADate {
+    func AADate() -> KPCAADate {
         return KPCAADate(julianDay: self, usingGregorianCalendar: true)
     }
     
