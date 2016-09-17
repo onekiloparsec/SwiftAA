@@ -598,6 +598,7 @@
 		9F7CBFB61D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
 		9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
+		9FAA86511D8D85C800DF095E /* JulianDayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTest.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
@@ -1019,6 +1020,7 @@
 		9F8AB39D1B48385C00EF40C8 /* KPCAAEarth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEarth.mm; path = SwiftAA/KPCAAEarth.mm; sourceTree = "<group>"; };
 		9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipses.h; path = SwiftAA/KPCAAEclipses.h; sourceTree = "<group>"; };
 		9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = SwiftAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
+		9FAA86501D8D85C800DF095E /* JulianDayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDayTest.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1549,6 +1551,7 @@
 				9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */,
 				9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */,
 				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
+				9FAA86501D8D85C800DF095E /* JulianDayTest.swift */,
 				9FC340311D156A5D0069E7C4 /* Info.plist */,
 			);
 			name = Tests;
@@ -2800,6 +2803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FFA29031D156E1500034972 /* KPCAAAberrationTests.swift in Sources */,
+				9FAA86511D8D85C800DF095E /* JulianDayTest.swift in Sources */,
 				9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */,
 				9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */,
 				9F7A56FF1D15F2F40033CDC5 /* VenusTests.swift in Sources */,

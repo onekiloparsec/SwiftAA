@@ -19,14 +19,14 @@ SwiftAA
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
 
-*The most comprehensive and accurate collection of astronomical algorithms written in Swift, period.*
+*The most comprehensive and accurate collection of astronomical algorithms written in Swift3.*
 
 Using AA+ version 1.71 (released 28 April 2016)
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
 These algorithms also make use of the VSOP87 framework making it the most complete and accurate collection of algorithms for all things astronomical.
 
-On top of this, SwiftAA provides swifty APIs taking advantage of the expressiveness of Swift and its various modern
+On top of this, SwiftAA provides *modern APIs* taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
 completeness and ease of use. Moreover, SwiftAA intends to provide a much improved unit tests coverage.
 
@@ -76,7 +76,8 @@ Notes and Conventions
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
 is to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
-C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
+C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 
+'b' for boolean etc').
 
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
 Objective-C. KPC stands for "kiloparsec"... and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
@@ -87,7 +88,7 @@ And Swift doesn't have the header/implementation split into different files. Hen
 around it, with name prefixes.
 
 The first version of SwiftAA (tags 1.0+) was written with NSObject class methods, which is probably no more efficient 
-that pure C-functions.  It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate 
+that pure C-functions. It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate 
 thousands of coordinates instances one might need for plotting/storing some curves. Hence, I decided to remove 
 KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C class methods to pure C-functions wrappers 
 and structs, everywhere it was possible. The most notable exception is KPCAADate which remains an NSObject subclass.

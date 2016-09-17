@@ -17,7 +17,7 @@ public extension JulianDay {
      
      - returns: The corresponding Date instance.
      */
-    func date() -> Date {
+    public func date() -> Date {
         let X: Double = self+0.5
         let Z: Double = floor(X)
         let F: Double = X - Z
@@ -54,6 +54,10 @@ public extension JulianDay {
         return calendar.date(from: components)!
     }
     
+    public var modified: Double {
+        get { return self - ModifiedJulianDayZero }
+    }
+    
     /**
      Computes the mean sidereal time for the Greenwich meridian.
      That is, the Greenwich hour angle of the mean vernal point (the intersection of the ecliptic
@@ -61,7 +65,7 @@ public extension JulianDay {
      
      - returns: The sidereal time in hours.
      */
-    func meanGreenwichSiderealTime() -> Hour {
+    public func meanGreenwichSiderealTime() -> Hour {
         return KPCAASidereal_MeanGreenwichSiderealTime(self)
     }
 
@@ -74,7 +78,7 @@ public extension JulianDay {
      
      - returns: The sidereal time in hours.
      */
-    func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
+    public func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
         return self.meanGreenwichSiderealTime() - RadiansToHours(DegreesToRadians(longitude))
     }
 
@@ -85,7 +89,7 @@ public extension JulianDay {
      
      - returns: The sidereal time in hours.
      */
-    func apparentGreenwichSiderealTime() -> Hour {
+    public func apparentGreenwichSiderealTime() -> Hour {
         return KPCAASidereal_ApparentGreenwichSiderealTime(self)
     }
 }
