@@ -6,6 +6,7 @@
 //  Copyright © 2016 onekiloparsec. All rights reserved.
 //
 
+import Foundation
 import XCTest
 @testable import SwiftAA
 
@@ -24,10 +25,13 @@ class VenusTests: XCTestCase {
     // See AA p.284
     func testAAIlluminationFraction() {
         // Months going from 1 to 12
-        let date = KPCAADate(year: 1992, month: 12, day: 20, usingGregorianCalendar: true)
-        let jd = date.Julian()
+        var components = DateComponents()
+        components.year = 1992
+        components.month = 12
+        components.day = 20
+        let date = Calendar(identifier: .gregorian).date(from: components)!
         // Both radius vector are correct. Not Delta! Check.
-        let frac = Venus(julianDay: jd).illuminatedFraction()
+        let frac = Venus(julianDay: date.julianDay()).illuminatedFraction
         XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)
     }
 
