@@ -43,6 +43,15 @@ class JulianDayTest: XCTestCase {
     }
 
     func testJulianDayToDateComponents() {
+        let julianDay = 2421123.585469
+        let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date())
+        XCTAssertEqual(components.year!, 1916)
+        XCTAssertEqual(components.month!, 9)
+        XCTAssertEqual(components.day!, 17)
+        XCTAssertEqual(components.hour!, 2)
+        XCTAssertEqual(components.minute!, 3)
+        XCTAssertEqual(components.second!, 4)
+        XCTAssertEqual(components.nanosecond!, 521659)
     }
 
 }
