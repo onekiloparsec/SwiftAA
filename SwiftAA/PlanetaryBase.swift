@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum PlanetError: ErrorType {
-    case InvalidSubtype
-    case InvalidCase
+enum PlanetError: Error {
+    case invalidSubtype
+    case invalidCase
 }
 
 public protocol PlanetaryBase: ObjectBase, OrbitingObject {
@@ -74,7 +74,7 @@ public extension PlanetaryBase {
     }
     
     var name: String {
-        get { return String(self.dynamicType) }
+        get { return String(describing: type(of: self)) }
     }
     
     var eclipticLongitude: Degrees {
@@ -90,10 +90,10 @@ public extension PlanetaryBase {
     }
 
     var perihelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planetStrict), self.planetStrict) }
+        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.AADate().year()), self.planetStrict), self.planetStrict) }
     }
     
     var aphelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.Date().Year()), self.planetStrict), self.planetStrict) }
+        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.AADate().year()), self.planetStrict), self.planetStrict) }
     }
 }

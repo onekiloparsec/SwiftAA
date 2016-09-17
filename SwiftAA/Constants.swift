@@ -25,22 +25,22 @@ public typealias Days=Double // days
 public typealias Magnitude=Double // days
 
 public enum Equinox {
-    case MeanEquinoxOfTheDate
-    case StandardJ2000
+    case meanEquinoxOfTheDate
+    case standardJ2000
 }
 
 public enum Season {
-    case Spring
-    case Summer
-    case Autumn
-    case Winter
+    case spring
+    case summer
+    case autumn
+    case winter
 }
 
 public enum MoonPhase {
-    case New
-    case FirstQuarter
-    case Full
-    case LastQuarter
+    case new
+    case firstQuarter
+    case full
+    case lastQuarter
 }
 
 public let JulianYear: Days = 365.25            // See p.133 of AA.
@@ -70,7 +70,7 @@ public extension AU {
 }
 
 public extension KPCAAPlanet {
-    static func fromString(string: String) -> KPCAAPlanet {
+    static func fromString(_ string: String) -> KPCAAPlanet {
         if string == "Mercury" {
             return .Mercury
         }
@@ -105,25 +105,25 @@ public extension KPCAAPlanet {
     
     func toString() -> String {
         switch self {
-        case Mercury:
+        case .Mercury:
             return "Mercury"
-        case Venus:
+        case .Venus:
             return "Venus"
-        case Earth:
+        case .Earth:
             return "Earth"
-        case Mars:
+        case .Mars:
             return "Mars"
-        case Jupiter:
+        case .Jupiter:
             return "Jupiter"
-        case Saturn:
+        case .Saturn:
             return "Saturn"
-        case Uranus:
+        case .Uranus:
             return "Uranus"
-        case Neptune:
+        case .Neptune:
             return "Neptune"
-        case Pluto:
+        case .Pluto:
             return "Pluto"
-        case Undefined:
+        case .Undefined:
             return ""
         }
     }

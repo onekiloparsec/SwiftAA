@@ -24,7 +24,7 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
      
      - returns: A julian day.
      */
-    func inferiorConjunction(mean: Bool) -> JulianDay
+    func inferiorConjunction(_ mean: Bool) -> JulianDay
     
     /**
      Compute the julian day of the superior conjunction of the planet after the given julian day.
@@ -37,13 +37,13 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
      
      - returns: A julian day.
      */
-    func superiorConjunction(mean: Bool) -> JulianDay    
+    func superiorConjunction(_ mean: Bool) -> JulianDay    
 }
 
 public extension PlanetaryPhenomena {
         
-    func inferiorConjunction(mean: Bool = true) -> JulianDay {
-        let year = Double(self.julianDay.Date().Year())
+    func inferiorConjunction(_ mean: Bool = true) -> JulianDay {
+        let year = Double(self.julianDay.AADate().year())
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .INFERIOR_CONJUNCTION)
         if mean == true {
             return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
@@ -53,8 +53,8 @@ public extension PlanetaryPhenomena {
         }
     }
 
-    func superiorConjunction(mean: Bool = true) -> JulianDay {
-        let year = Double(self.julianDay.Date().Year())
+    func superiorConjunction(_ mean: Bool = true) -> JulianDay {
+        let year = Double(self.julianDay.AADate().year())
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .SUPERIOR_CONJUNCTION)
         if mean == true {
             return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)

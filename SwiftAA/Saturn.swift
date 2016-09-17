@@ -16,28 +16,28 @@ import Foundation
 // http://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html
 
 public struct SaturnianMoon {
-    private var details: KPCAASaturnMoonDetails
+    fileprivate var details: KPCAASaturnMoonDetails
     
     public var name: String
     
-    public var inTransit: Bool { get { return Bool(self.details.inTransit) } }
-    public var inOccultation: Bool { get { return Bool(self.details.inOccultation) } }
-    public var inEclipse: Bool { get { return Bool(self.details.inEclipse) } }
-    public var inShadowTransit: Bool { get { return Bool(self.details.inShadowTransit) } }
+    public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
+    public var inOccultation: Bool { get { return self.details.inOccultation.boolValue } }
+    public var inEclipse: Bool { get { return self.details.inEclipse.boolValue } }
+    public var inShadowTransit: Bool { get { return self.details.inShadowTransit.boolValue } }
     
     init(name: String, details: KPCAASaturnMoonDetails) {
         self.name = name
         self.details = details
     }
     
-    public func rectangularCoordinates(apparent: Bool = true) -> KPCAA3DCoordinateComponents {
+    public func rectangularCoordinates(_ apparent: Bool = true) -> KPCAA3DCoordinateComponents {
         return (apparent == true) ? self.details.ApparentRectangularCoordinateComponents : self.details.TrueRectangularCoordinateComponents
     }
 }
 
 // Saturn has many rings. Here we consider the ring system as a whole.
 public struct SaturnRingSystem {
-    private var details: KPCAASaturnRingDetails
+    fileprivate var details: KPCAASaturnRingDetails
 
     /**
      The Saturnicentric latitude of the Earth referred to the plane of the ring (B),
@@ -91,18 +91,18 @@ public struct Saturn: Planet {
         get { return Color(red: 0.941, green:0.827, blue:0.616, alpha: 1.0) }
     }
 
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
     
-    public private(set) var Mimas: SaturnianMoon
-    public private(set) var Enceladus: SaturnianMoon
-    public private(set) var Tethys: SaturnianMoon
-    public private(set) var Dione: SaturnianMoon
-    public private(set) var Rhea: SaturnianMoon
-    public private(set) var Titan: SaturnianMoon
-    public private(set) var Iapetus: SaturnianMoon
+    public fileprivate(set) var Mimas: SaturnianMoon
+    public fileprivate(set) var Enceladus: SaturnianMoon
+    public fileprivate(set) var Tethys: SaturnianMoon
+    public fileprivate(set) var Dione: SaturnianMoon
+    public fileprivate(set) var Rhea: SaturnianMoon
+    public fileprivate(set) var Titan: SaturnianMoon
+    public fileprivate(set) var Iapetus: SaturnianMoon
 
-    public private(set) var ringSystem: SaturnRingSystem
+    public fileprivate(set) var ringSystem: SaturnRingSystem
 
     public var moons: [SaturnianMoon] {
         get { return [self.Mimas, self.Enceladus, self.Tethys, self.Dione, self.Rhea, self.Titan, self.Iapetus] }
@@ -125,8 +125,8 @@ public struct Saturn: Planet {
         self.ringSystem = SaturnRingSystem(ringDetails)
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }
     
     /// Includes the contribution from the ring.

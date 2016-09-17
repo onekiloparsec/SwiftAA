@@ -13,8 +13,8 @@ public struct Earth: EarthPlanet {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
     
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
     
     public let equatorialRadius: Meters = 6378140.0
     public let polarRadius: Meters = 6356760.0
@@ -24,16 +24,16 @@ public struct Earth: EarthPlanet {
         self.highPrecision = highPrecision
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }
     
     // Additional methods for Earth to deal with the baryCentric parameter
-    func perihelion(year: Double, baryCentric: Bool = true) -> JulianDay {
+    func perihelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }
     
-    func aphelion(year: Double, baryCentric: Bool = true) -> JulianDay {
+    func aphelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
         return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }
     
@@ -50,8 +50,8 @@ public struct Earth: EarthPlanet {
      
      - returns: A julian day
      */
-    func equinox(northward: Bool) -> JulianDay {
-        let year = self.julianDay.Date().Year()
+    func equinox(_ northward: Bool) -> JulianDay {
+        let year = self.julianDay.AADate().year()
         if northward == true {
             return KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision)
         }
@@ -68,8 +68,8 @@ public struct Earth: EarthPlanet {
      
      - returns: A julian day
      */
-    func solstice(northern: Bool) -> JulianDay {
-        let year = self.julianDay.Date().Year()
+    func solstice(_ northern: Bool) -> JulianDay {
+        let year = self.julianDay.AADate().year()
         if northern == true {
             return KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision)
         }
@@ -86,16 +86,16 @@ public struct Earth: EarthPlanet {
      
      - returns: A length in (Julian) Days.
      */
-    func lengthOfSeason(season: Season, northernHemisphere: Bool) -> Double {
-        let year = self.julianDay.Date().Year()
+    func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Double {
+        let year = self.julianDay.AADate().year()
         switch season {
-        case .Spring:
+        case .spring:
             return KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision)
-        case .Summer:
+        case .summer:
             return KPCAAEquinoxesAndSolstices_LengthOfSummer(year, northernHemisphere, self.highPrecision)
-        case .Autumn:
+        case .autumn:
             return KPCAAEquinoxesAndSolstices_LengthOfAutumn(year, northernHemisphere, self.highPrecision)
-        case .Winter:
+        case .winter:
             return KPCAAEquinoxesAndSolstices_LengthOfWinter(year, northernHemisphere, self.highPrecision)
         }
     }

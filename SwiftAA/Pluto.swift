@@ -13,16 +13,16 @@ public struct Pluto: DwarfPlanet {
         get { return Color(red: 0.776, green:0.620, blue:0.486, alpha: 1.0) }
     }
 
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
     
     public init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }    
 }
 

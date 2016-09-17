@@ -429,7 +429,6 @@
 		9F694E421D15C67300EE7492 /* AAVSOP87C_MAR.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183291D0DE730008CA0F8 /* AAVSOP87C_MAR.h */; };
 		9F694E431D15C67300EE7492 /* AAVSOP87A_MER.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE1830B1D0DE730008CA0F8 /* AAVSOP87A_MER.h */; };
 		9F694E441D15C67300EE7492 /* KPCAAEquinoxesAndSolstices.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F694E451D15C67300EE7492 /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */; };
 		9F694E461D15C67300EE7492 /* AAVSOP87C_EAR.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183251D0DE730008CA0F8 /* AAVSOP87C_EAR.h */; };
 		9F694E471D15C67300EE7492 /* AAPrecession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182D81D0DE730008CA0F8 /* AAPrecession.h */; };
 		9F694E481D15C67300EE7492 /* AAPhysicalMars.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE182CC1D0DE730008CA0F8 /* AAPhysicalMars.h */; };
@@ -587,7 +586,6 @@
 		9F694EE91D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379C91C26B9D4007EF484 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F737A7A1C26BA98007EF484 /* SwiftAA-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */; };
 		9F737A7B1C26DA49007EF484 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F7A56FC1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
 		9F7A56FD1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
@@ -1851,7 +1849,6 @@
 				9F694E421D15C67300EE7492 /* AAVSOP87C_MAR.h in Headers */,
 				9F694E431D15C67300EE7492 /* AAVSOP87A_MER.h in Headers */,
 				9F694E441D15C67300EE7492 /* KPCAAEquinoxesAndSolstices.h in Headers */,
-				9F694E451D15C67300EE7492 /* SwiftAA-Bridging-Header.h in Headers */,
 				9F694E461D15C67300EE7492 /* AAVSOP87C_EAR.h in Headers */,
 				9F694E471D15C67300EE7492 /* AAPrecession.h in Headers */,
 				9F694E481D15C67300EE7492 /* AAPhysicalMars.h in Headers */,
@@ -2030,7 +2027,6 @@
 				9FE1840E1D0DE730008CA0F8 /* AAVSOP87C_MAR.h in Headers */,
 				9FE183F01D0DE730008CA0F8 /* AAVSOP87A_MER.h in Headers */,
 				9F694D321D15797300EE7492 /* KPCAAEquinoxesAndSolstices.h in Headers */,
-				9F737A7A1C26BA98007EF484 /* SwiftAA-Bridging-Header.h in Headers */,
 				9FE1840A1D0DE730008CA0F8 /* AAVSOP87C_EAR.h in Headers */,
 				9FE183BD1D0DE730008CA0F8 /* AAPrecession.h in Headers */,
 				9FE183B11D0DE730008CA0F8 /* AAPhysicalMars.h in Headers */,
@@ -2224,9 +2220,9 @@
 			productReference = 9F525B401D3CDEDC00041696 /* swiftaa */;
 			productType = "com.apple.product-type.tool";
 		};
-		9F694D891D15C67300EE7492 /* SwiftAA iOS */ = {
+		9F694D891D15C67300EE7492 /* SwiftAA-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA iOS" */;
+			buildConfigurationList = 9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA-iOS" */;
 			buildPhases = (
 				9F694D8A1D15C67300EE7492 /* Sources */,
 				9F694E311D15C67300EE7492 /* Frameworks */,
@@ -2238,14 +2234,14 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftAA iOS";
+			name = "SwiftAA-iOS";
 			productName = SwiftAA;
 			productReference = 9F694EE21D15C67300EE7492 /* SwiftAA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9F7379871C26B79F007EF484 /* SwiftAA macOS */ = {
+		9F7379871C26B79F007EF484 /* SwiftAA-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F73798D1C26B79F007EF484 /* Build configuration list for PBXNativeTarget "SwiftAA macOS" */;
+			buildConfigurationList = 9F73798D1C26B79F007EF484 /* Build configuration list for PBXNativeTarget "SwiftAA-macOS" */;
 			buildPhases = (
 				9F7379831C26B79F007EF484 /* Sources */,
 				9F7379841C26B79F007EF484 /* Frameworks */,
@@ -2256,7 +2252,7 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftAA macOS";
+			name = "SwiftAA-macOS";
 			productName = SwiftAA;
 			productReference = 9F7379881C26B79F007EF484 /* SwiftAA.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2303,7 +2299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
 					9F51D0C11D3D5D6E00895295 = {
@@ -2311,6 +2307,9 @@
 					};
 					9F525B3F1D3CDEDC00041696 = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					9F694D891D15C67300EE7492 = {
+						LastSwiftMigration = 0800;
 					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2338,8 +2337,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F7379871C26B79F007EF484 /* SwiftAA macOS */,
-				9F694D891D15C67300EE7492 /* SwiftAA iOS */,
+				9F7379871C26B79F007EF484 /* SwiftAA-macOS */,
+				9F694D891D15C67300EE7492 /* SwiftAA-iOS */,
 				9FC3402C1D156A5D0069E7C4 /* SwiftAATests */,
 				9FFA29291D15710F00034972 /* AAPlusTests */,
 				9F51D0C11D3D5D6E00895295 /* libswiftaa */,
@@ -2930,7 +2929,7 @@
 /* Begin PBXTargetDependency section */
 		9FC340341D156A5D0069E7C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9F7379871C26B79F007EF484 /* SwiftAA macOS */;
+			target = 9F7379871C26B79F007EF484 /* SwiftAA-macOS */;
 			targetProxy = 9FC340331D156A5D0069E7C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2949,8 +2948,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -2996,8 +2997,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -3016,6 +3019,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3076,6 +3080,7 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3095,6 +3100,7 @@
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -3108,6 +3114,7 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3126,6 +3133,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -3158,6 +3166,7 @@
 				PRODUCT_NAME = SwiftAA;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -3189,6 +3198,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -3272,7 +3282,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA iOS" */ = {
+		9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F694EE01D15C67300EE7492 /* Debug */,
@@ -3281,7 +3291,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F73798D1C26B79F007EF484 /* Build configuration list for PBXNativeTarget "SwiftAA macOS" */ = {
+		9F73798D1C26B79F007EF484 /* Build configuration list for PBXNativeTarget "SwiftAA-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F73798E1C26B79F007EF484 /* Debug */,

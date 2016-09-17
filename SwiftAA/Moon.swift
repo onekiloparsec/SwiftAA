@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Moon : ObjectBase, OrbitingObject {
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
     
     public let diameter: Meters = 3476000.0
 
@@ -19,8 +19,8 @@ public struct Moon : ObjectBase, OrbitingObject {
         self.highPrecision = highPrecision
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }
     
     // MARK: - OrbitingObject
@@ -80,15 +80,15 @@ public struct Moon : ObjectBase, OrbitingObject {
     // MARK: - KPCAAMoonPhases
 
     func timeOfPhase(forPhase ph: MoonPhase, mean: Bool = true) -> JulianDay {
-        var k = round(KPCAAMoonPhases_K(Double(self.julianDay.Date().FractionalYear())))
+        var k = round(KPCAAMoonPhases_K(Double(self.julianDay.AADate().fractionalYear())))
         switch ph {
-        case .New:
+        case .new:
             k = k + 0.0
-        case .FirstQuarter:
+        case .firstQuarter:
             k = k + 0.25
-        case .Full:
+        case .full:
             k = k + 0.50
-        case .LastQuarter: 
+        case .lastQuarter: 
             k = k + 0.75
         }
         return mean ? KPCAAMoonPhases_MeanPhase(k) : KPCAAMoonPhases_TruePhase(k)

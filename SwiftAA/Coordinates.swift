@@ -9,8 +9,8 @@
 import Foundation
 
 public struct GeographicCoordinates {
-    private(set) var longitude: Degrees
-    private(set) var latitude: Degrees
+    fileprivate(set) var longitude: Degrees
+    fileprivate(set) var latitude: Degrees
     var altitude: Meters
     
     init(positivelyWestwardLongitude longitude: Degrees, latitude: Degrees, altitude: Meters = 0) {
@@ -21,8 +21,8 @@ public struct GeographicCoordinates {
 }
 
 public struct EquatorialCoordinates {
-    private(set) var rightAscension: Hour
-    private(set) var declination: Degrees
+    fileprivate(set) var rightAscension: Hour
+    fileprivate(set) var declination: Degrees
     public let epoch: Double
     
     var alpha: Hour {
@@ -87,8 +87,8 @@ public struct EquatorialCoordinates {
 }
 
 public struct EclipticCoordinates {
-    private(set) var celestialLongitude: Degrees
-    private(set) var celestialLatitude: Degrees
+    fileprivate(set) var celestialLongitude: Degrees
+    fileprivate(set) var celestialLatitude: Degrees
     public let epoch: Double
     
     var lambda: Degrees {
@@ -119,8 +119,8 @@ public struct EclipticCoordinates {
 }
 
 public struct GalacticCoordinates {
-    private(set) var galacticLongitude: Degrees
-    private(set) var galacticLatitude: Degrees
+    fileprivate(set) var galacticLongitude: Degrees
+    fileprivate(set) var galacticLatitude: Degrees
     public let epoch: Double = StandardEpoch_B1950_0
 
     var l: Degrees {
@@ -151,11 +151,11 @@ public struct GalacticCoordinates {
 }
 
 public struct HorizontalCoordinates {
-    private(set) var azimuth: Degrees // westward from the South see AA. p91
-    private(set) var altitude: Degrees
-    private(set) var geographicCoordinates: GeographicCoordinates
-    private(set) var julianDay: JulianDay
-    private(set) var epoch: Double
+    fileprivate(set) var azimuth: Degrees // westward from the South see AA. p91
+    fileprivate(set) var altitude: Degrees
+    fileprivate(set) var geographicCoordinates: GeographicCoordinates
+    fileprivate(set) var julianDay: JulianDay
+    fileprivate(set) var epoch: Double
     
     init(azimuth: Degrees, altitude: Degrees, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: Double) {
         self.azimuth = azimuth

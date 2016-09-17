@@ -9,7 +9,7 @@
 import Foundation
 
 public struct GalileanMoon {
-    private var details: KPCAAGalileanMoonDetails
+    fileprivate var details: KPCAAGalileanMoonDetails
 
     public var name: String
     
@@ -20,10 +20,10 @@ public struct GalileanMoon {
 
     public var radiusVector: AU { get { return self.details.r } }
 
-    public var inTransit: Bool { get { return Bool(self.details.inTransit) } }
-    public var inOccultation: Bool { get { return Bool(self.details.inOccultation) } }
-    public var inEclipse: Bool { get { return Bool(self.details.inEclipse) } }
-    public var inShadowTransit: Bool { get { return Bool(self.details.inShadowTransit) } }
+    public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
+    public var inOccultation: Bool { get { return self.details.inOccultation.boolValue } }
+    public var inEclipse: Bool { get { return self.details.inEclipse.boolValue } }
+    public var inShadowTransit: Bool { get { return self.details.inShadowTransit.boolValue } }
 
     init(name: String, details: KPCAAGalileanMoonDetails) {
         self.name = name
@@ -31,25 +31,25 @@ public struct GalileanMoon {
     }
     
     // TODO: Improve this by not returning KPCAA3DCoordinateComponents and also add doc.
-    public func rectangularCoordinates(apparent: Bool = true) -> KPCAA3DCoordinateComponents {
+    public func rectangularCoordinates(_ apparent: Bool = true) -> KPCAA3DCoordinateComponents {
         return (apparent == true) ? self.details.ApparentRectangularCoordinateComponents : self.details.TrueRectangularCoordinateComponents
     }
 }
 
 public struct Jupiter: Planet {
-    private var physicalDetails: KPCAAPhysicalJupiterDetails
+    fileprivate var physicalDetails: KPCAAPhysicalJupiterDetails
 
     public static var color: Color {
         get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
     }
     
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
 
-    public private(set) var Io: GalileanMoon
-    public private(set) var Europa: GalileanMoon
-    public private(set) var Ganymede: GalileanMoon
-    public private(set) var Callisto: GalileanMoon
+    public fileprivate(set) var Io: GalileanMoon
+    public fileprivate(set) var Europa: GalileanMoon
+    public fileprivate(set) var Ganymede: GalileanMoon
+    public fileprivate(set) var Callisto: GalileanMoon
     
     public var moons: [GalileanMoon] {
         get { return [self.Io, self.Europa, self.Ganymede, self.Callisto] }
@@ -68,8 +68,8 @@ public struct Jupiter: Planet {
         self.physicalDetails = KPCAAPhysicalJupiter_CalculateDetails(self.julianDay, self.highPrecision)
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }
     
     public var magnitude: Double { get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }

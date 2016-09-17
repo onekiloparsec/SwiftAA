@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Sun: ObjectBase {
-    public private(set) var julianDay: JulianDay
-    public private(set) var highPrecision: Bool
-    private var physicalDetails: KPCAAPhysicalSunDetails
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
+    fileprivate var physicalDetails: KPCAAPhysicalSunDetails
     
     public let diameter: Meters = 1392000000.0
     
@@ -21,8 +21,8 @@ public struct Sun: ObjectBase {
         self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
     }
     
-    public init(date: NSDate, highPrecision: Bool = true) {
-        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).Julian(), highPrecision: highPrecision)
+    public init(date: Date, highPrecision: Bool = true) {
+        self.init(julianDay: KPCAADate(gregorianCalendarDate: date).julian(), highPrecision: highPrecision)
     }
     
     /**
@@ -36,20 +36,20 @@ public struct Sun: ObjectBase {
         return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
     }
     
-    func geocentricLongitude(equinox: Equinox) -> Degrees {
+    func geocentricLongitude(_ equinox: Equinox) -> Degrees {
         switch equinox {
-        case .MeanEquinoxOfTheDate:
+        case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision)
-        case .StandardJ2000:
+        case .standardJ2000:
             return KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay, self.highPrecision)
         }
     }
     
-    func geocentricLatitude(equinox: Equinox) -> Degrees {
+    func geocentricLatitude(_ equinox: Equinox) -> Degrees {
         switch equinox {
-        case .MeanEquinoxOfTheDate:
+        case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision)
-        case .StandardJ2000:
+        case .standardJ2000:
             return KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision)
         }
     }

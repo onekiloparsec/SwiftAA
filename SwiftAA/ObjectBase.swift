@@ -34,5 +34,5 @@ public protocol ObjectBase {
      
      - returns: A new instance of a ObjectBase object
      */
-    init(date: NSDate, highPrecision: Bool)
+    init(date: Date, highPrecision: Bool)
 }
