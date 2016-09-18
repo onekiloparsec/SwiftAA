@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 typedef NS_ENUM(NSUInteger, KPCPlanetaryObject) {
-    MERCURY,
+    MERCURY = 1, // AA+ starts with SUN!
     VENUS,
     MARS,
     JUPITER,
