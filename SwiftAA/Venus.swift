@@ -21,5 +21,7 @@ public struct Venus: Planet {
         self.highPrecision = highPrecision
     }
         
-    public var magnitude: Double { get { return KPCAAIlluminatedFraction_VenusMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
+    public var magnitude: Double {
+        get { return KPCAAIlluminatedFraction_VenusMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
+    }
 }
