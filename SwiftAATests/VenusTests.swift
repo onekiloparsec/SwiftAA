@@ -22,8 +22,23 @@ class VenusTests: XCTestCase {
         super.tearDown()
     }
 
+    // See AA p.225
+    func testApparentGeocentricCoordinates() {
+        // Months going from 1 to 12
+        var components = DateComponents()
+        components.year = 1992
+        components.month = 12
+        components.day = 20
+        let date = Calendar(identifier: .gregorian).date(from: components)!
+        let venus = Venus(julianDay: date.julianDay())
+        
+        XCTAssertEqualWithAccuracy(venus.planetaryDetails.ApparentGeocentricRA, 21.078181, accuracy: 0.000001)
+        XCTAssertEqualWithAccuracy(venus.planetaryDetails.ApparentGeocentricDeclination, -18.88801, accuracy: 0.000001)
+    }
+    
+    
     // See AA p.284
-    func testAAIlluminationFraction() {
+    func testIlluminationFraction() {
         // Months going from 1 to 12
         var components = DateComponents()
         components.year = 1992
