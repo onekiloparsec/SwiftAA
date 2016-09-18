@@ -56,6 +56,7 @@ KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double
 double KPCAAElliptical_SemiMajorAxisFromPerihelionDistance(double q, double e);
 double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a);
 KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, BOOL highPrecision);
 double KPCAAElliptical_InstantaneousVelocity(double r, double a);
 double KPCAAElliptical_VelocityAtPerihelion(double e, double a);
 double KPCAAElliptical_VelocityAtAphelion(double e, double a);

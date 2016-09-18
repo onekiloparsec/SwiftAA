@@ -43,6 +43,14 @@ KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, K
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
     CAAEllipticalObjectDetails detailsPlus = CAAElliptical::Calculate(JD, elementsPlus, highPrecision);
+    
+    (*elements).a = elementsPlus.a;
+    (*elements).e = elementsPlus.e;
+    (*elements).i = elementsPlus.i;
+    (*elements).w = elementsPlus.w;
+    (*elements).omega = elementsPlus.omega;
+    (*elements).JDEquinox = elementsPlus.JDEquinox;
+    (*elements).T = elementsPlus.T;
 
     struct KPCAAEllipticalObjectDetails details;
     
@@ -68,6 +76,12 @@ KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, K
     details.PhaseAngle = detailsPlus.PhaseAngle;
     
     return details;
+}
+
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, BOOL highPrecision)
+{
+    KPCAAEllipticalObjectElements elements;
+    return KPCAAElliptical_CalculateObjectDetails(JD, &elements, highPrecision);
 }
 
 double KPCAAElliptical_InstantaneousVelocity(double r, double a)
