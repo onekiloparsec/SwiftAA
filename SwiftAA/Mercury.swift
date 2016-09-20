@@ -8,18 +8,14 @@
 
 import Foundation
 
-public struct Mercury: Planet {
-    public static var color: Color {
+public class Mercury: Planet {
+    public class override var averageColor: Color {
         get { return Color(red: 0.569, green:0.545, blue:0.506, alpha: 1.0) }
     }
     
-    public fileprivate(set) var julianDay: JulianDay
-    public fileprivate(set) var highPrecision: Bool
-    
-    public init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.julianDay = julianDay
-        self.highPrecision = highPrecision
+    public var magnitude: Double {
+        get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector,
+                                                                 self.apparentGeocentricDistance,
+                                                                 self.phaseAngle) }
     }
-        
-    public var magnitude: Double { get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F058A141D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
+		9F058A151D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
 		9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F1F129B1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F2154A61D296B4000C4DD06 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2154A51D296B4000C4DD06 /* Planets.swift */; };
@@ -889,6 +891,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticalPlanetaryDetails.swift; sourceTree = "<group>"; };
 		9F1F12991D7C6A83006FD828 /* Magnitudes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magnitudes.swift; sourceTree = "<group>"; };
 		9F2154A51D296B4000C4DD06 /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA2DCoordinate.h; path = SwiftAA/KPCAA2DCoordinate.h; sourceTree = "<group>"; };
@@ -1538,6 +1541,7 @@
 				9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */,
 				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
+				9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
 				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 			);
@@ -2476,6 +2480,7 @@
 				9F694DC31D15C67300EE7492 /* AAParallactic.cpp in Sources */,
 				9F694DC41D15C67300EE7492 /* AABinaryStar.cpp in Sources */,
 				9F694DC51D15C67300EE7492 /* KPCAAMoonPhases.mm in Sources */,
+				9F058A151D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */,
 				9F694DC61D15C67300EE7492 /* KPCAAPluto.mm in Sources */,
 				9F694DC71D15C67300EE7492 /* KPCAABinaryStar.mm in Sources */,
 				9F694DC81D15C67300EE7492 /* KPCAASidereal.mm in Sources */,
@@ -2671,6 +2676,7 @@
 				9FE183AA1D0DE730008CA0F8 /* AAParallactic.cpp in Sources */,
 				9FE183621D0DE730008CA0F8 /* AABinaryStar.cpp in Sources */,
 				9F694D631D157BD200EE7492 /* KPCAAMoonPhases.mm in Sources */,
+				9F058A141D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */,
 				9F694D7F1D157BD200EE7492 /* KPCAAPluto.mm in Sources */,
 				9F694D1F1D15754600EE7492 /* KPCAABinaryStar.mm in Sources */,
 				9F694D451D157B0400EE7492 /* KPCAASidereal.mm in Sources */,

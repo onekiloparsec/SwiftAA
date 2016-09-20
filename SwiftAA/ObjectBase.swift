@@ -16,6 +16,9 @@ public protocol ObjectBase {
     var julianDay: JulianDay { get }
     var highPrecision: Bool { get }
     
+    // The object name
+    static var name: String { get }
+
     /**
      Initialization of an object
      
@@ -25,4 +28,18 @@ public protocol ObjectBase {
      - returns: A new instance of a ObjectBase object
      */
     init(julianDay: JulianDay, highPrecision: Bool)    
+}
+
+open class Object : ObjectBase {
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
+    
+    public static var name: String {
+         return String(describing: type(of: self)) 
+    }
+
+    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
+        self.julianDay = julianDay
+        self.highPrecision = highPrecision
+    }
 }

@@ -130,6 +130,47 @@ public extension KPCAAPlanet {
     }
 }
 
+// Tricky Swiftness tricks to use the 3 partly-overlapping enums with as few
+// code lines as possible. There must be some other way round to force correct
+// planet enum parameters in Obj-C functions. The code here is the consequence of
+// choosing to make switch statments inside Obj-C layer, rather than in Swift one.
+
+public extension KPCAAPlanetStrict {
+    static func fromPlanet(_ planet: KPCAAPlanet) -> KPCAAPlanetStrict {
+        switch planet {
+        case .Pluto:
+            return .undefined
+        default:
+            return KPCAAPlanetStrict(rawValue: planet.rawValue)!
+        }
+    }
+}
+
+public extension KPCPlanetaryObject {
+    static func fromPlanet(_ planet: KPCAAPlanet) -> KPCPlanetaryObject {
+        switch planet {
+        case .Mercury:
+            return .MERCURY
+        case .Venus:
+            return .VENUS
+        case .Mars:
+            return .MARS
+        case .Jupiter:
+            return .JUPITER
+        case .Saturn:
+            return .SATURN
+        case .Uranus:
+            return .URANUS
+        case .Neptune:
+            return .NEPTUNE
+        default:
+//        see what god himself says https://forums.developer.apple.com/thread/4289#11819 about throwing errors in computed properties
+//        throw PlanetError.InvalidSubtype
+            return .UNDEFINED
+        }
+    }
+}
+
 #if os(OSX)
     extension NSColor {
         convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
