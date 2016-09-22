@@ -14,8 +14,6 @@ public class Mercury: Planet {
     }
     
     public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector,
-                                                                 self.apparentGeocentricDistance,
-                                                                 self.phaseAngle) }
+        get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
     }
 }

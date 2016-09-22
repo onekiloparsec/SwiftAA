@@ -8,23 +8,21 @@
 
 import Foundation
 
-public struct Mars: Planet {
+public class Mars: Planet {
     fileprivate var physicalDetails: KPCAAPhysicalMarsDetails
-    
-    public static var color: Color {
+
+    public class override var averageColor: Color {
         get { return Color(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
     }
-    
-    public fileprivate(set) var julianDay: JulianDay
-    public fileprivate(set) var highPrecision: Bool
-    
-    public init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.julianDay = julianDay
-        self.highPrecision = highPrecision
-        self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay, highPrecision)
+
+    public var magnitude: Double {
+        get { return KPCAAIlluminatedFraction_MarsMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
     }
-        
-    public var magnitude: Double { get { return KPCAAIlluminatedFraction_MarsMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) } }
+
+    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
+        self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay, highPrecision)
+        super.init(julianDay: julianDay, highPrecision: highPrecision)
+    }
     
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
     public var planetocentricDeclinationEarth: Degrees {

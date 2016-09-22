@@ -1493,6 +1493,31 @@
 			name = "Partly Swifted";
 			sourceTree = "<group>";
 		};
+		9F3D51041D947DC900F03766 /* Earth */ = {
+			isa = PBXGroup;
+			children = (
+				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
+				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
+			);
+			name = Earth;
+			sourceTree = "<group>";
+		};
+		9F3D51051D947DCF00F03766 /* Jupiter */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
+			);
+			name = Jupiter;
+			sourceTree = "<group>";
+		};
+		9F3D51061D947DD900F03766 /* Saturn */ = {
+			isa = PBXGroup;
+			children = (
+				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
+			);
+			name = Saturn;
+			sourceTree = "<group>";
+		};
 		9F51D0C31D3D5D6E00895295 /* libswiftaa */ = {
 			isa = PBXGroup;
 			children = (
@@ -1568,11 +1593,10 @@
 				9F525B291D3CB53400041696 /* Sun.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
-				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
-				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
+				9F3D51041D947DC900F03766 /* Earth */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
-				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
-				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
+				9F3D51051D947DCF00F03766 /* Jupiter */,
+				9F3D51061D947DD900F03766 /* Saturn */,
 				9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */,
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,

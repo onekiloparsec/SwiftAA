@@ -8,17 +8,14 @@
 
 import Foundation
 
-public struct Sun: ObjectBase {
-    public fileprivate(set) var julianDay: JulianDay
-    public fileprivate(set) var highPrecision: Bool
+public class Sun: Object {
     fileprivate var physicalDetails: KPCAAPhysicalSunDetails
     
     public let diameter: Meters = 1392000000.0
     
-    public init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.julianDay = julianDay
-        self.highPrecision = highPrecision
+    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
+        super.init(julianDay: julianDay, highPrecision: highPrecision)
     }
         
     /**

@@ -8,18 +8,12 @@
 
 import Foundation
 
-public struct Uranus: Planet {
-    public static var color: Color {
+public class Uranus: Planet {
+    public class override var averageColor: Color {
         get { return Color(red: 0.639, green:0.804, blue:0.839, alpha: 1.0) }
     }
  
-    public fileprivate(set) var julianDay: JulianDay
-    public fileprivate(set) var highPrecision: Bool
-    
-    public init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.julianDay = julianDay
-        self.highPrecision = highPrecision
+    public var magnitude: Double {
+        get { return KPCAAIlluminatedFraction_UranusMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance) }
     }
-        
-    public var magnitude: Double { get { return KPCAAIlluminatedFraction_UranusMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance) } }
 }
