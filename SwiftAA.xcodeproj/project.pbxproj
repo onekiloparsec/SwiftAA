@@ -584,6 +584,8 @@
 		9F694EE61D15C7CA00EE7492 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE41D15C7CA00EE7492 /* Venus.swift */; };
 		9F694EE81D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
 		9F694EE91D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
+		9F6B38CC1D9FCED0008A2D96 /* Nutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */; };
+		9F6B38CD1D9FCED0008A2D96 /* Nutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379C91C26B9D4007EF484 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F737A7B1C26DA49007EF484 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -979,6 +981,7 @@
 		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/onekiloparsec/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutation.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
 		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
@@ -1387,16 +1390,12 @@
 				9F48D5291B4EBCFC00B7EE7F /* KPCAAInterpolate.mm */,
 				9F48D5301B4EC10200B7EE7F /* KPCAAKepler.h */,
 				9F48D5311B4EC10200B7EE7F /* KPCAAKepler.mm */,
-				9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */,
-				9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */,
 				9F48D5481B4EE02600B7EE7F /* KPCAAMoonNodes.h */,
 				9F48D5491B4EE02600B7EE7F /* KPCAAMoonNodes.mm */,
 				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
 				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
 				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
 				9F48D55D1B4EE4B200B7EE7F /* KPCAANodes.mm */,
-				9F48D5641B4EF07F00B7EE7F /* KPCAANutation.h */,
-				9F48D5651B4EF07F00B7EE7F /* KPCAANutation.mm */,
 				9F48D5601B4EE63000B7EE7F /* KPCAAParabolic.h */,
 				9F48D5611B4EE63000B7EE7F /* KPCAAParabolic.mm */,
 				9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */,
@@ -1440,12 +1439,14 @@
 				9F48D5391B4EC1ED00B7EE7F /* KPCAAMercury.mm */,
 				9F48D53C1B4EC22F00B7EE7F /* KPCAAMoon.h */,
 				9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */,
-				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
-				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
-				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
-				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
+				9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */,
+				9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */,
 				9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */,
 				9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */,
+				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
+				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
+				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
+				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
 				9F48D5581B4EE45200B7EE7F /* KPCAANeptune.h */,
 				9F48D5591B4EE45200B7EE7F /* KPCAANeptune.mm */,
 				9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */,
@@ -1479,16 +1480,18 @@
 			children = (
 				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
 				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
+				9F48D5641B4EF07F00B7EE7F /* KPCAANutation.h */,
+				9F48D5651B4EF07F00B7EE7F /* KPCAANutation.mm */,
 				9F48D5741B4FA7B900B7EE7F /* KPCAAPhysicalMars.h */,
 				9F48D5751B4FA7B900B7EE7F /* KPCAAPhysicalMars.mm */,
+				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
+				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 				9F48D5801B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.h */,
 				9F48D5811B4FAD6100B7EE7F /* KPCAAPlanetaryPhenomena.mm */,
 				9F48D58C1B4FB01C00B7EE7F /* KPCAAPrecession.h */,
 				9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */,
 				9F7A9E181B4FCE8100033B77 /* KPCAASun.h */,
 				9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */,
-				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
-				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 			);
 			name = "Partly Swifted";
 			sourceTree = "<group>";
@@ -1496,8 +1499,8 @@
 		9F3D51041D947DC900F03766 /* Earth & Moon */ = {
 			isa = PBXGroup;
 			children = (
-				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
+				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 			);
 			name = "Earth & Moon";
 			sourceTree = "<group>";
@@ -1577,6 +1580,7 @@
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
 				9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
+				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
 			);
 			name = "Solar System Base";
 			sourceTree = "<group>";
@@ -2607,6 +2611,7 @@
 				9F694E141D15C67300EE7492 /* KPCAASaturnRings.mm in Sources */,
 				9F694E151D15C67300EE7492 /* AAVSOP87_EMB.cpp in Sources */,
 				9FD71F6C1D736F4100E6F656 /* Moon.swift in Sources */,
+				9F6B38CD1D9FCED0008A2D96 /* Nutation.swift in Sources */,
 				9F694E161D15C67300EE7492 /* AAGalileanMoons.cpp in Sources */,
 				9F694E171D15C67300EE7492 /* KPCAASun.mm in Sources */,
 				9F694E181D15C67300EE7492 /* KPCAAAberration.mm in Sources */,
@@ -2803,6 +2808,7 @@
 				9F694D4E1D157BB500EE7492 /* KPCAASaturnRings.mm in Sources */,
 				9FE183D71D0DE730008CA0F8 /* AAVSOP87_EMB.cpp in Sources */,
 				9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */,
+				9F6B38CC1D9FCED0008A2D96 /* Nutation.swift in Sources */,
 				9FE183801D0DE730008CA0F8 /* AAGalileanMoons.cpp in Sources */,
 				9F694D491D157B0400EE7492 /* KPCAASun.mm in Sources */,
 				9FFA29011D156DD200034972 /* KPCAAAberration.mm in Sources */,

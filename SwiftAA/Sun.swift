@@ -24,12 +24,12 @@ public class Sun: Object {
      
      - returns: The julian day of the next stary
      */
-    func nextStartOfTimeOfRotation() -> JulianDay {
+    public func nextStartOfTimeOfRotation() -> JulianDay {
         let C = ceil((self.julianDay - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
         return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
     }
     
-    func geocentricLongitude(_ equinox: Equinox) -> Degrees {
+    public func eclipticLongitude(_ equinox: Equinox) -> Degrees {
         switch equinox {
         case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision)
@@ -38,13 +38,21 @@ public class Sun: Object {
         }
     }
     
-    func geocentricLatitude(_ equinox: Equinox) -> Degrees {
+    public func eclipticLatitude(_ equinox: Equinox) -> Degrees {
         switch equinox {
         case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision)
         case .standardJ2000:
             return KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision)
         }
+    }
+    
+    public func eclipticCoordinates() -> EclipticCoordinates {
+        // To compute the _apparent_ RA and Dec, the true obliquity must be used.
+        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        return EclipticCoordinates(lambda: self.eclipticLongitude(.meanEquinoxOfTheDate).Hours,
+                                   beta: self.eclipticLatitude(.meanEquinoxOfTheDate),
+                                   epsilon: epsilon)
     }
     
     /**

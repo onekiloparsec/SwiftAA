@@ -20,7 +20,6 @@ double KPCAAMoonIlluminatedFraction_IlluminatedFraction(double PhaseAngle);
 
 double KPCAAMoonIlluminatedFraction_PositionAngle(double Alpha0, double Delta0, double Alpha, double Delta);
 
-
 #if __cplusplus
 }
 #endif

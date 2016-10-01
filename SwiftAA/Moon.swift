@@ -31,8 +31,19 @@ public class Moon : Object, OrbitingObject {
         get { return KPCAAMoon_EclipticLatitude(self.julianDay) }
     }
     
-    public var radiusVector: AU {
-        get { return KPCAAMoon_RadiusVector(self.julianDay) }
+    public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            return EclipticCoordinates(lambda: self.eclipticLongitude.Hours, beta: self.eclipticLatitude, epsilon: epsilon)
+        }
+    }
+    
+    /// Radius vector of the Moon, that is, its distance from Earth.
+    /// AA+ uses the Eq. for Delta written in p.342 of AA book.
+    /// According to that Eq., the result is in Kilometers!
+    public var radiusVector: Meters {
+        get { return KPCAAMoon_RadiusVector(self.julianDay)*1000.0 }
     }
     
     // MARK: - KPCAAMoon
@@ -66,7 +77,7 @@ public class Moon : Object, OrbitingObject {
         }
     }
 
-    // MARK: - Statics
+    // MARK: - Static Methods
     
     static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degrees {
         return KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector)
@@ -92,9 +103,13 @@ public class Moon : Object, OrbitingObject {
         }
         return mean ? KPCAAMoonPhases_MeanPhase(k) : KPCAAMoonPhases_TruePhase(k)
     }
+
+    // MARK: - KPCAAMoonPhysicalDetails
+
+    // TODO: Complete PhysicalMoon details APIs
     
-    // TODO: Complete PhysicalMoon details APIs 
-    
+    // MARK: - KPCAAMoonPerigeeApogee
+
     // TODO: Check Apogee Perigee Units
     
     public func perigee(_ mean: Bool = true) -> Double {
@@ -128,7 +143,7 @@ public class Moon : Object, OrbitingObject {
         return KPCAAMoonPerigeeApogee_ApogeeParallax(k)
     }
 
-    // Maximum declinations
+    // MARK: - KPCAAMoonMaxDeclinations
  
     /// Compute the date of the maximum declination of the Moon. 
     ///
@@ -179,6 +194,55 @@ public class Moon : Object, OrbitingObject {
         }
     }
 
+    
+    /// Compute the geocentric elongation of the Moon
+    ///
+    /// - returns: The geocentric elongation of the Moon
+    public func geocentricElongation() -> Degrees {
+        let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
+        let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
+        let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
+
+        return KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha,
+                                                                 moonEquatorialCoords.delta,
+                                                                 sunEquatorialCoords.alpha,
+                                                                 sunEquatorialCoords.delta)
+    }
+    
+    /// The phase angle of the Moon
+    ///
+    /// - returns: The phase angle of the Moon
+    public func phaseAngle() -> Degrees {
+        let earth = Earth(julianDay: self.julianDay, highPrecision: self.highPrecision)
+        
+        // Both must be in the same unit
+        let moonEarthDistance = self.radiusVector.AU
+        let earthSunDistance = earth.radiusVector // in AU by default
+        
+        return KPCAAMoonIlluminatedFraction_PhaseAngle(self.geocentricElongation(), moonEarthDistance, earthSunDistance)
+    }
+    
+    /// The illuminated fraction of the Moon
+    ///
+    /// - returns: A number between 0. and 1. representing the illuminated fraction of the Moon
+    public func illuminatedFraction() -> Double {
+        return KPCAAMoonIlluminatedFraction_IlluminatedFraction(self.phaseAngle())
+    }
+    
+    /// The position angle of the Moon's bright limb is the position angle of the midpoint of the illuminated limb of
+    /// the Moon, reckoned eastward from the North Point of the disk (not from the axis of rotation of the lunar globe).
+    ///
+    /// - returns: The position angle of the Moon's bright limb.
+    public func positionAngleOfTheBrightLimb() -> Degrees {
+        let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
+        let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
+        let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
+
+        return KPCAAMoonIlluminatedFraction_PositionAngle(sunEquatorialCoords.alpha,
+                                                          sunEquatorialCoords.delta,
+                                                          moonEquatorialCoords.alpha,
+                                                          moonEquatorialCoords.delta)
+    }
 }
 
 

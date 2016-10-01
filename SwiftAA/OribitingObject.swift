@@ -19,5 +19,8 @@ public protocol OrbitingObject : ObjectBase {
     
     /// The radius vector (=distance to the Sun)
     var radiusVector: AU { get }
+    
+    /// The ecliptic coordinates of the object
+    var eclipticCoordinates: EclipticCoordinates { get }
 }
 
