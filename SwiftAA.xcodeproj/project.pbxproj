@@ -1389,12 +1389,8 @@
 				9F48D5311B4EC10200B7EE7F /* KPCAAKepler.mm */,
 				9F48D5401B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.h */,
 				9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */,
-				9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */,
-				9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */,
 				9F48D5481B4EE02600B7EE7F /* KPCAAMoonNodes.h */,
 				9F48D5491B4EE02600B7EE7F /* KPCAAMoonNodes.mm */,
-				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
-				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
 				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
 				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
 				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
@@ -1407,8 +1403,6 @@
 				9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */,
 				9F48D56C1B4EFB2C00B7EE7F /* KPCAAParallax.h */,
 				9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */,
-				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
-				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 				9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */,
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
@@ -1448,6 +1442,10 @@
 				9F48D53D1B4EC22F00B7EE7F /* KPCAAMoon.mm */,
 				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
 				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
+				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
+				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
+				9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */,
+				9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */,
 				9F48D5581B4EE45200B7EE7F /* KPCAANeptune.h */,
 				9F48D5591B4EE45200B7EE7F /* KPCAANeptune.mm */,
 				9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */,
@@ -1489,17 +1487,19 @@
 				9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */,
 				9F7A9E181B4FCE8100033B77 /* KPCAASun.h */,
 				9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */,
+				9F48D5781B4FA9F300B7EE7F /* KPCAAPhysicalMoon.h */,
+				9F48D5791B4FA9F300B7EE7F /* KPCAAPhysicalMoon.mm */,
 			);
 			name = "Partly Swifted";
 			sourceTree = "<group>";
 		};
-		9F3D51041D947DC900F03766 /* Earth */ = {
+		9F3D51041D947DC900F03766 /* Earth & Moon */ = {
 			isa = PBXGroup;
 			children = (
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
 			);
-			name = Earth;
+			name = "Earth & Moon";
 			sourceTree = "<group>";
 		};
 		9F3D51051D947DCF00F03766 /* Jupiter */ = {
@@ -1548,12 +1548,21 @@
 			name = Auxiliary;
 			sourceTree = "<group>";
 		};
+		9F6B38CA1D9F9FAC008A2D96 /* Sun */ = {
+			isa = PBXGroup;
+			children = (
+				9F525B291D3CB53400041696 /* Sun.swift */,
+			);
+			name = Sun;
+			sourceTree = "<group>";
+		};
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				9FDA5C321D16E6B6003B9F31 /* Common */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
-				9FDA5C311D16E6A7003B9F31 /* Solar System Objects */,
+				9F6B38CA1D9F9FAC008A2D96 /* Sun */,
+				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
 				9F1F12981D7C6A50006FD828 /* Stars */,
 			);
 			name = Swift;
@@ -1568,7 +1577,6 @@
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
 				9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
-				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 			);
 			name = "Solar System Base";
 			sourceTree = "<group>";
@@ -1587,13 +1595,13 @@
 			path = SwiftAATests;
 			sourceTree = "<group>";
 		};
-		9FDA5C311D16E6A7003B9F31 /* Solar System Objects */ = {
+		9FDA5C311D16E6A7003B9F31 /* Solar System Planets */ = {
 			isa = PBXGroup;
 			children = (
-				9F525B291D3CB53400041696 /* Sun.swift */,
+				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
-				9F3D51041D947DC900F03766 /* Earth */,
+				9F3D51041D947DC900F03766 /* Earth & Moon */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
 				9F3D51051D947DCF00F03766 /* Jupiter */,
 				9F3D51061D947DD900F03766 /* Saturn */,
@@ -1601,7 +1609,7 @@
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,
 			);
-			name = "Solar System Objects";
+			name = "Solar System Planets";
 			sourceTree = "<group>";
 		};
 		9FDA5C321D16E6B6003B9F31 /* Common */ = {

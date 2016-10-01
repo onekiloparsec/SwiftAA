@@ -8,8 +8,6 @@
 
 import Foundation
 
-// IlluminatedFraction
-
 // To be understood as a "non-Earth" planet
 public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails  {
 
@@ -26,13 +24,8 @@ public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanet
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay, self.highPrecision)
         }()
-    
-
 }
 
-// Earth special case 
-public protocol EarthPlanet: PlanetaryBase, ElementsOfPlanetaryOrbit {}
-
 // special Pluto:
-public protocol DwarfPlanet: PlanetaryBase {}
+public protocol DwarfPlanet: ObjectBase, PlanetaryBase {}
 

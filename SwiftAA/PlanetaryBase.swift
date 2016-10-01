@@ -54,11 +54,11 @@ public extension PlanetaryBase {
     }
     
     var perihelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.date().year), self.planetStrict), self.planetStrict) }
+        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict), self.planetStrict) }
     }
     
     var aphelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(Double(self.julianDay.date().year), self.planetStrict), self.planetStrict) }
+        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict), self.planetStrict) }
     }
     
     // MARK: OribitingObject

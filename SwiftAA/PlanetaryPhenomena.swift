@@ -43,7 +43,7 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
 public extension PlanetaryPhenomena {
         
     func inferiorConjunction(_ mean: Bool = true) -> JulianDay {
-        let year = Double(self.julianDay.date().year)
+        let year = self.julianDay.date().fractionalYear
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .INFERIOR_CONJUNCTION)
         if mean == true {
             return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
@@ -54,7 +54,7 @@ public extension PlanetaryPhenomena {
     }
 
     func superiorConjunction(_ mean: Bool = true) -> JulianDay {
-        let year = Double(self.julianDay.date().year)
+        let year = self.julianDay.date().fractionalYear
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .SUPERIOR_CONJUNCTION)
         if mean == true {
             return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
