@@ -9,15 +9,19 @@
 import Foundation
 
 public class Sun: Object {
-    fileprivate var physicalDetails: KPCAAPhysicalSunDetails
+    
+    public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalSunDetails = {
+        [unowned self] in
+        return KPCAAPhysicalSun_CalculateDetails(self.julianDay, self.highPrecision)
+        }()
+    
+    public fileprivate(set) lazy var eclipseDetails: KPCAASolarEclipseDetails = {
+        [unowned self] in
+        KPCAAEclipses_CalculateSolar(KPCAAMoonPhases_K(self.julianDay.date().fractionalYear))
+        }()
     
     public let diameter: Meter = 1392000000.0
     
-    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
-        super.init(julianDay: julianDay, highPrecision: highPrecision)
-    }
-        
     /**
      Computes the time of the next start of the synodic rotation of the Sun
      (used to follow sunspots).

@@ -9,17 +9,24 @@
 import Foundation
 
 public class Moon : Object, OrbitingObject {
-    public fileprivate(set) var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails
 //    public fileprivate(set) var topocentricPhysicalDetails: KPCAAPhysicalMoonDetails
-    public fileprivate(set) var selenographicDetails: KPCAASelenographicMoonDetails
     
-    public let diameter: Meter = 3476000.0
+    public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
+        [unowned self] in
+        return KPCPhysicalMoon_CalculateGeocentric(self.julianDay)
+        }()
+    
+    public fileprivate(set) lazy var selenographicDetails: KPCAASelenographicMoonDetails = {
+        [unowned self] in
+        return KPCPhysicalMoon_SelenographicPositionOfSun(self.julianDay, self.highPrecision)
+        }()
+    
+    public fileprivate(set) lazy var eclipseDetails: KPCAALunarEclipseDetails = {
+        [unowned self] in
+        return KPCAAEclipses_CalculateLunar(KPCAAMoonPhases_K(self.julianDay.date().fractionalYear))
+        }()
 
-    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.geocentricPhysicalDetails = KPCPhysicalMoon_CalculateGeocentric(julianDay)
-        self.selenographicDetails = KPCPhysicalMoon_SelenographicPositionOfSun(julianDay, highPrecision)
-        super.init(julianDay: julianDay, highPrecision: highPrecision)
-    }
+    public let diameter: Meter = 3476000.0
         
     // MARK: - OrbitingObject (Complement)
     
