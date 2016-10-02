@@ -27,5 +27,6 @@ public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanet
 }
 
 // special Pluto:
-public protocol DwarfPlanet: ObjectBase, PlanetaryBase {}
+public class DwarfPlanet: Object, PlanetaryBase {}
+
 
