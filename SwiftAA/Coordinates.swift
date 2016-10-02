@@ -101,7 +101,7 @@ public struct EclipticCoordinates {
         set { self.celestialLatitude = newValue }
     }
     
-    init(lambda: Hour, beta: Degrees, epsilon: Double) {
+    init(lambda: Degrees, beta: Degrees, epsilon: Double) {
         self.celestialLongitude = lambda
         self.celestialLatitude = beta
         self.epoch = epsilon

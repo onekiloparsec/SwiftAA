@@ -14,7 +14,7 @@ public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanet
     public class var averageColor: Color {
         get { return Color.white }
     }
-    
+        
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planetaryObject, self.highPrecision)

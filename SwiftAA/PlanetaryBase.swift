@@ -71,7 +71,17 @@ public extension PlanetaryBase {
         get { return KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision) }
     }
     
+    public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec from Ecl. coords, the true obliquity must be used (hence mean: false)
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            return EclipticCoordinates(lambda: self.eclipticLongitude, beta: self.eclipticLatitude, epsilon: epsilon)
+        }
+    }
+
     var radiusVector: AU {
         get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
     }
 }
+
+

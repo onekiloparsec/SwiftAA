@@ -47,10 +47,12 @@ public class Sun: Object {
         }
     }
     
+    // TODO: Refactor the ecliptic coords func into a single protocol, as in Planets/OrbitingObject?
+
     public func eclipticCoordinates() -> EclipticCoordinates {
         // To compute the _apparent_ RA and Dec, the true obliquity must be used.
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-        return EclipticCoordinates(lambda: self.eclipticLongitude(.meanEquinoxOfTheDate).Hours,
+        return EclipticCoordinates(lambda: self.eclipticLongitude(.meanEquinoxOfTheDate),
                                    beta: self.eclipticLatitude(.meanEquinoxOfTheDate),
                                    epsilon: epsilon)
     }

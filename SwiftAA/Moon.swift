@@ -21,7 +21,7 @@ public class Moon : Object, OrbitingObject {
         super.init(julianDay: julianDay, highPrecision: highPrecision)
     }
         
-    // MARK: - OrbitingObject
+    // MARK: - OrbitingObject (Complement)
     
     public var eclipticLongitude: Degrees {
         get { return KPCAAMoon_EclipticLongitude(self.julianDay) }
@@ -35,7 +35,7 @@ public class Moon : Object, OrbitingObject {
         get {
             // To compute the _apparent_ RA and Dec, the true obliquity must be used.
             let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: self.eclipticLongitude.Hours, beta: self.eclipticLatitude, epsilon: epsilon)
+            return EclipticCoordinates(lambda: self.eclipticLongitude, beta: self.eclipticLatitude, epsilon: epsilon)
         }
     }
     
