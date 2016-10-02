@@ -104,4 +104,15 @@ public class Sun: Object {
     func timeOfStartOfSynodicRotation(rotationNumber C: Int) -> JulianDay {
         return KPCAAPhysicalSun_TimeOfStartOfRotation(C)
     }
+    
+    // MARK: - Equation of Time
+    
+    /// Compute the equation of time, that is, the difference between the apparent and the mean time. Or, in other
+    /// words, the difference between the hour angle of the true Sun and the mean Sun.
+    ///
+    /// - returns: The equation of time, in days.
+    public func equationOfTime() -> Day {
+        // KPCAA result is in minutes of time.
+        return KPCAAEquationOfTime_Calculate(self.julianDay, self.highPrecision) / 24.0 / 60.0
+    }
 }
