@@ -79,7 +79,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
-        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreeToRadians(longitude))
+        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreesToRadians(longitude))
     }
 
     /**
@@ -91,6 +91,44 @@ public extension JulianDay {
      */
     public func apparentGreenwichSiderealTime() -> Hour {
         return KPCAASidereal_ApparentGreenwichSiderealTime(self)
+    }
+    
+    // MARK: - Dynamical Times
+    
+    public func deltaT() -> JulianDay {
+        return KPCAADynamicalTime_DeltaT(self)
+    }
+    
+    public func cumulativeLeapSeconds() -> JulianDay {
+        return KPCAADynamicalTime_CumulativeLeapSeconds(self)
+    }
+
+    public func TTtoUTC() -> JulianDay {
+        return KPCAADynamicalTime_TT2UTC(self)
+    }
+
+    public func UTCtoTT() -> JulianDay {
+        return KPCAADynamicalTime_UTC2TT(self)
+    }
+
+    public func TTtoTAI() -> JulianDay {
+        return KPCAADynamicalTime_TT2TAI(self)
+    }
+
+    public func TAItoTT() -> JulianDay {
+        return KPCAADynamicalTime_TAI2TT(self)
+    }
+
+    public func TTtoUT1() -> JulianDay {
+        return KPCAADynamicalTime_TT2UT1(self)
+    }
+
+    public func UT1toTT() -> JulianDay {
+        return KPCAADynamicalTime_UT12TT(self)
+    }
+
+    public func UT1minusUTC() -> JulianDay {
+        return KPCAADynamicalTime_UT1MinusUTC(self)
     }
 }
 
