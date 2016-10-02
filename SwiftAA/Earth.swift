@@ -13,8 +13,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
     
-    public let equatorialRadius: Meters = 6378140.0
-    public let polarRadius: Meters = 6356760.0
+    public let equatorialRadius: Meter = 6378140.0
+    public let polarRadius: Meter = 6356760.0
 
     // Additional methods for Earth to deal with the baryCentric parameter
     func perihelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
@@ -25,7 +25,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
     }
     
-    func longitudeOfAscendingNode() -> Degrees {
+    func longitudeOfAscendingNode() -> Degree {
         // There is no method for .MeanEquinoxOfTheDate, hence defaulting to J2000
         return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
     }

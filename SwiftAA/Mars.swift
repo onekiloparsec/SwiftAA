@@ -25,12 +25,12 @@ public class Mars: Planet {
     }
     
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
-    public var planetocentricDeclinationEarth: Degrees {
+    public var planetocentricDeclinationEarth: Degree {
         return self.physicalDetails.DE
     }
 
     /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
-    public var planetocentricDeclinationSun: Degrees {
+    public var planetocentricDeclinationSun: Degree {
         return self.physicalDetails.DS
     }
 }

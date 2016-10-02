@@ -11,7 +11,7 @@ import Foundation
 public class Sun: Object {
     fileprivate var physicalDetails: KPCAAPhysicalSunDetails
     
-    public let diameter: Meters = 1392000000.0
+    public let diameter: Meter = 1392000000.0
     
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.physicalDetails = KPCAAPhysicalSun_CalculateDetails(julianDay, highPrecision)
@@ -29,7 +29,7 @@ public class Sun: Object {
         return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
     }
     
-    public func eclipticLongitude(_ equinox: Equinox) -> Degrees {
+    public func eclipticLongitude(_ equinox: Equinox) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision)
@@ -38,7 +38,7 @@ public class Sun: Object {
         }
     }
     
-    public func eclipticLatitude(_ equinox: Equinox) -> Degrees {
+    public func eclipticLatitude(_ equinox: Equinox) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:
             return KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision)
@@ -63,7 +63,7 @@ public class Sun: Object {
     
      - returns: The position angle in degrees.
      */
-    func positionAngleOfNorthernRotationAxisPoint() -> Degrees {
+    func positionAngleOfNorthernRotationAxisPoint() -> Degree {
         return self.physicalDetails.P
     }
     
@@ -75,7 +75,7 @@ public class Sun: Object {
      
      - returns: The latitude in degrees.
      */
-    func heliographicLatitudeOfSolarDiskCenter() -> Degrees {
+    func heliographicLatitudeOfSolarDiskCenter() -> Degree {
         return self.physicalDetails.B0
     }
     
@@ -85,7 +85,7 @@ public class Sun: Object {
      
      - returns: The longitude in degrees.
      */
-    func heliographicLongitudeOfSolarDiskCenter() -> Degrees {
+    func heliographicLongitudeOfSolarDiskCenter() -> Degree {
         return self.physicalDetails.L0
     }
 

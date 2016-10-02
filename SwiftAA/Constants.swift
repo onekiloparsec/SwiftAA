@@ -16,13 +16,15 @@ import Foundation
     public typealias Color=UIColor
 #endif
 
-public typealias Degrees=Double
+public typealias Degree=Double
 public typealias AU=Double // Astronomical Unit
-public typealias Meters=Double // meters
+public typealias Meter=Double // meters
 public typealias Parsec=Double // parsecs
-public typealias Kilograms=Double // kilograms
-public typealias Days=Double // days
-public typealias Magnitude=Double // days
+public typealias Kilogram=Double
+public typealias Day=Double
+public typealias Magnitude=Double
+public typealias Celsius=Double
+public typealias Millibar=Double
 
 public enum Equinox {
     case meanEquinoxOfTheDate
@@ -44,8 +46,8 @@ public enum MoonPhase {
 }
 
 public let ModifiedJulianDayZero = 2400000.5
-public let JulianYear: Days = 365.25            // See p.133 of AA.
-public let BesselianYear: Days = 365.2421988    // See p.133 of AA.
+public let JulianYear: Day = 365.25            // See p.133 of AA.
+public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
 public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
 
 public let StandardEpoch_J2000_0 = 2451545.0 // See p.133 of AA.
@@ -54,19 +56,19 @@ public let StandardEpoch_B1950_0 = 2433282.4235 // See p.133 of AA.
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
-public extension Degrees {
-    var Degrees: Double { return self }
-    var Minutes: Double { return self * 60.0 }
-    var Seconds: Double { return self * 3600.0 }
-    var Radians: Double { return self * 0.017453292519943295769236907684886 }
-    var Hours:   Double { return self / 15.0 }
+public extension Degree {
+    var Degree: Double { return self }
+    var Minute: Double { return self * 60.0 }
+    var Second: Double { return self * 3600.0 }
+    var Radian: Double { return self * 0.017453292519943295769236907684886 }
+    var Hour:   Double { return self / 15.0 }
 }
 
 public extension AU {
     var AU: Double { return self }
     var pc: Parsec { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
     var km: Double { return self / 149597870.7 }
-    var m:  Meters { return self / 149597870700.0 }
+    var m:  Meter  { return self / 149597870700.0 }
     var ly: Double { return self / 206264.8 }
 }
 

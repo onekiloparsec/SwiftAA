@@ -13,7 +13,7 @@ public class Moon : Object, OrbitingObject {
 //    public fileprivate(set) var topocentricPhysicalDetails: KPCAAPhysicalMoonDetails
     public fileprivate(set) var selenographicDetails: KPCAASelenographicMoonDetails
     
-    public let diameter: Meters = 3476000.0
+    public let diameter: Meter = 3476000.0
 
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.geocentricPhysicalDetails = KPCPhysicalMoon_CalculateGeocentric(julianDay)
@@ -23,11 +23,11 @@ public class Moon : Object, OrbitingObject {
         
     // MARK: - OrbitingObject (Complement)
     
-    public var eclipticLongitude: Degrees {
+    public var eclipticLongitude: Degree {
         get { return KPCAAMoon_EclipticLongitude(self.julianDay) }
     }
     
-    public var eclipticLatitude: Degrees {
+    public var eclipticLatitude: Degree {
         get { return KPCAAMoon_EclipticLatitude(self.julianDay) }
     }
     
@@ -42,33 +42,33 @@ public class Moon : Object, OrbitingObject {
     /// Radius vector of the Moon, that is, its distance from Earth.
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers!
-    public var radiusVector: Meters {
+    public var radiusVector: Meter {
         get { return KPCAAMoon_RadiusVector(self.julianDay)*1000.0 }
     }
     
     // MARK: - KPCAAMoon
 
-    public var meanLongitude: Degrees {
+    public var meanLongitude: Degree {
         get { return KPCAAMoon_MeanLongitude(self.julianDay) }
     }
 
-    public var meanElongation: Degrees {
+    public var meanElongation: Degree {
         get { return KPCAAMoon_MeanElongation(self.julianDay) }
     }
 
-    public var meanAnomaly: Degrees {
+    public var meanAnomaly: Degree {
         get { return KPCAAMoon_MeanAnomaly(self.julianDay) }
     }
 
-    public var argumentOfLatitude: Degrees {
+    public var argumentOfLatitude: Degree {
         get { return KPCAAMoon_ArgumentOfLatitude(self.julianDay) }
     }
 
-    public var meanLongitudeOfPerigee: Degrees {
+    public var meanLongitudeOfPerigee: Degree {
         get { return KPCAAMoon_MeanLongitudePerigee(self.julianDay) }
     }
 
-    public func longitudeOfAscendingNode(_ mean: Bool = true) -> Degrees {
+    public func longitudeOfAscendingNode(_ mean: Bool = true) -> Degree {
         if mean {
             return KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay)
         }
@@ -79,11 +79,11 @@ public class Moon : Object, OrbitingObject {
 
     // MARK: - Static Methods
     
-    static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degrees {
+    static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degree {
         return KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector)
     }
     
-    static func radiusVector(fromHorizontalParallax parallax: Degrees) -> AU {
+    static func radiusVector(fromHorizontalParallax parallax: Degree) -> AU {
         return KPCAAMoon_HorizontalParallaxToRadiusVector(parallax)
     }
     
@@ -184,7 +184,7 @@ public class Moon : Object, OrbitingObject {
     /// - parameter northernly: If true, computes the date of the mean greatest dec. for the Earth northern hemisphere.
     ///
     /// - returns: The greatest declination of the Moon
-    public func greatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> Degrees {
+    public func greatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> Degree {
         let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date().fractionalYear)
         if mean {
             return KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(k)
@@ -198,7 +198,7 @@ public class Moon : Object, OrbitingObject {
     /// Compute the geocentric elongation of the Moon
     ///
     /// - returns: The geocentric elongation of the Moon
-    public func geocentricElongation() -> Degrees {
+    public func geocentricElongation() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
         let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
@@ -212,7 +212,7 @@ public class Moon : Object, OrbitingObject {
     /// The phase angle of the Moon
     ///
     /// - returns: The phase angle of the Moon
-    public func phaseAngle() -> Degrees {
+    public func phaseAngle() -> Degree {
         let earth = Earth(julianDay: self.julianDay, highPrecision: self.highPrecision)
         
         // Both must be in the same unit
@@ -233,7 +233,7 @@ public class Moon : Object, OrbitingObject {
     /// the Moon, reckoned eastward from the North Point of the disk (not from the axis of rotation of the lunar globe).
     ///
     /// - returns: The position angle of the Moon's bright limb.
-    public func positionAngleOfTheBrightLimb() -> Degrees {
+    public func positionAngleOfTheBrightLimb() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
         let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
@@ -242,6 +242,15 @@ public class Moon : Object, OrbitingObject {
                                                           sunEquatorialCoords.delta,
                                                           moonEquatorialCoords.alpha,
                                                           moonEquatorialCoords.delta)
+    }
+    
+    // MARK: - Moon Nodes
+    
+    // TODO: Check Units
+
+    public func passageThroughNode() -> Double {
+        let k = KPCAAMoonNodes_K(self.julianDay.date().fractionalYear)
+        return KPCAAMoonNodes_PassageThroNode(k)
     }
 }
 

@@ -13,10 +13,10 @@ import Foundation
 //
 //    public var name: String
 //    
-//    public var MeanLongitude: Degrees { get { return self.details.MeanLongitude } }
-//    public var TrueLongitude: Degrees { get { return self.details.TrueLongitude } }
-//    public var TropicalLongitude: Degrees { get { return self.details.TropicalLongitude } }
-//    public var EquatorialLatitude: Degrees { get { return self.details.EquatorialLatitude } }
+//    public var MeanLongitude: Degree { get { return self.details.MeanLongitude } }
+//    public var TrueLongitude: Degree { get { return self.details.TrueLongitude } }
+//    public var TropicalLongitude: Degree { get { return self.details.TropicalLongitude } }
+//    public var EquatorialLatitude: Degree { get { return self.details.EquatorialLatitude } }
 //
 //    public var radiusVector: AU { get { return self.details.r } }
 //
@@ -70,35 +70,35 @@ public class Jupiter: Planet {
     }
 
 //    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
-//    public var planetocentricDeclinationEarth: Degrees {
+//    public var planetocentricDeclinationEarth: Degree {
 //        return self.physicalDetails.DE
 //    }
 //    
 //    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
-//    public var planetocentricDeclinationSun: Degrees {
+//    public var planetocentricDeclinationSun: Degree {
 //        return self.physicalDetails.DS
 //    }
 //
 //    /// See AA. ch 43, pp. 293-
 //    
-//    public var geometricCentralMeridianLongitudeSystemI: Degrees {
+//    public var geometricCentralMeridianLongitudeSystemI: Degree {
 //        return self.physicalDetails.Geometricw1
 //    }
 //
-//    public var geometricCentralMeridianLongitudeSystemII: Degrees {
+//    public var geometricCentralMeridianLongitudeSystemII: Degree {
 //        return self.physicalDetails.Geometricw2
 //    }
 //
-//    public var apparentCentralMeridianLongitudeSystemI: Degrees {
+//    public var apparentCentralMeridianLongitudeSystemI: Degree {
 //        return self.physicalDetails.Apparentw1
 //    }
 //    
-//    public var apparentCentralMeridianLongitudeSystemII: Degrees {
+//    public var apparentCentralMeridianLongitudeSystemII: Degree {
 //        return self.physicalDetails.Apparentw2
 //    }
 //
 //    /// The position angle of the northern rotation pole of the planet
-//    public var positionAngleOfNorthernRotationPole: Degrees {
+//    public var positionAngleOfNorthernRotationPole: Degree {
 //        return self.physicalDetails.P
 //    }
 }

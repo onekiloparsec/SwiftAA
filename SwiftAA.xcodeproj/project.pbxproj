@@ -838,6 +838,8 @@
 		9FE184381D0DE730008CA0F8 /* AAVSOP87E_URA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183531D0DE730008CA0F8 /* AAVSOP87E_URA.h */; };
 		9FE184391D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */; };
 		9FE1843A1D0DE730008CA0F8 /* AAVSOP87E_VEN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */; };
+		9FEA1DD01DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */; };
+		9FEA1DD11DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */; };
 		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1257,6 +1259,7 @@
 		9FE183531D0DE730008CA0F8 /* AAVSOP87E_URA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVSOP87E_URA.h; sourceTree = "<group>"; };
 		9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVSOP87E_VEN.cpp; sourceTree = "<group>"; };
 		9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVSOP87E_VEN.h; sourceTree = "<group>"; };
+		9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthmosphericRefraction.swift; sourceTree = "<group>"; };
 		9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipticalElements.h; path = SwiftAA/KPCAAEclipticalElements.h; sourceTree = "<group>"; };
 		9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = SwiftAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
 		9FF028241B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElementsPlanetaryOrbit.h; path = SwiftAA/KPCAAElementsPlanetaryOrbit.h; sourceTree = "<group>"; };
@@ -1390,8 +1393,6 @@
 				9F48D5291B4EBCFC00B7EE7F /* KPCAAInterpolate.mm */,
 				9F48D5301B4EC10200B7EE7F /* KPCAAKepler.h */,
 				9F48D5311B4EC10200B7EE7F /* KPCAAKepler.mm */,
-				9F48D5481B4EE02600B7EE7F /* KPCAAMoonNodes.h */,
-				9F48D5491B4EE02600B7EE7F /* KPCAAMoonNodes.mm */,
 				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
 				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
 				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
@@ -1443,6 +1444,8 @@
 				9F48D5411B4EDE3E00B7EE7F /* KPCAAMoonIlluminatedFraction.mm */,
 				9F48D5441B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.h */,
 				9F48D5451B4EDF3800B7EE7F /* KPCAAMoonMaxDeclinations.mm */,
+				9F48D5481B4EE02600B7EE7F /* KPCAAMoonNodes.h */,
+				9F48D5491B4EE02600B7EE7F /* KPCAAMoonNodes.mm */,
 				9F48D54C1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.h */,
 				9F48D54D1B4EE0A400B7EE7F /* KPCAAMoonPerigeeApogee.mm */,
 				9F48D5501B4EE14F00B7EE7F /* KPCAAMoonPhases.h */,
@@ -1501,6 +1504,7 @@
 			children = (
 				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
+				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
 			);
 			name = "Earth & Moon";
 			sourceTree = "<group>";
@@ -2471,6 +2475,7 @@
 				9F694D981D15C67300EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9F694D991D15C67300EE7492 /* AAMoonIlluminatedFraction.cpp in Sources */,
 				9F694D9A1D15C67300EE7492 /* AAVSOP87A_VEN.cpp in Sources */,
+				9FEA1DD11DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */,
 				9F694D9B1D15C67300EE7492 /* KPCAAIlluminatedFraction.mm in Sources */,
 				9F694D9C1D15C67300EE7492 /* KPCAAStellarMagnitudes.mm in Sources */,
 				9F694D9D1D15C67300EE7492 /* KPCAANodes.mm in Sources */,
@@ -2668,6 +2673,7 @@
 				9F694D7B1D157BD200EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9FE183941D0DE730008CA0F8 /* AAMoonIlluminatedFraction.cpp in Sources */,
 				9FE183F71D0DE730008CA0F8 /* AAVSOP87A_VEN.cpp in Sources */,
+				9FEA1DD01DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */,
 				9F694D571D157BD200EE7492 /* KPCAAIlluminatedFraction.mm in Sources */,
 				9F694D471D157B0400EE7492 /* KPCAAStellarMagnitudes.mm in Sources */,
 				9F694D691D157BD200EE7492 /* KPCAANodes.mm in Sources */,

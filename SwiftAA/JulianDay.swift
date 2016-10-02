@@ -79,7 +79,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
-        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreesToRadians(longitude))
+        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreeToRadians(longitude))
     }
 
     /**

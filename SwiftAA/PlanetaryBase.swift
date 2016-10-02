@@ -63,11 +63,11 @@ public extension PlanetaryBase {
     
     // MARK: OribitingObject
     
-    var eclipticLongitude: Degrees {
+    var eclipticLongitude: Degree {
         get { return KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, self.highPrecision) }
     }
     
-    var eclipticLatitude: Degrees {
+    var eclipticLatitude: Degree {
         get { return KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision) }
     }
     

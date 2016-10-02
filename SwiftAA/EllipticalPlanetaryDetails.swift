@@ -21,7 +21,7 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
     var trueGeocentricDistance: AU { get }
     
     /// The angle (Sun-planet-Earth).
-    var phaseAngle: Degrees { get }
+    var phaseAngle: Degree { get }
 }
 
 public extension EllipticalPlanetaryDetails {
@@ -34,7 +34,7 @@ public extension EllipticalPlanetaryDetails {
         get { return self.ellipticalObjectDetails.TrueGeocentricDistance }
     }
     
-    var phaseAngle: Degrees {
+    var phaseAngle: Degree {
         get { return KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector,
                                                          Earth(julianDay: self.julianDay).radiusVector,
                                                          self.apparentGeocentricDistance) }

@@ -12,10 +12,10 @@ import Foundation
 /// Default implementation for planets is located in PlanetaryBase extension.
 public protocol OrbitingObject : ObjectBase {
     /// The ecliptic (=heliocentric) longitude of the object
-    var eclipticLongitude: Degrees { get }
+    var eclipticLongitude: Degree { get }
     
     /// The ecliptic (=heliocentric) latitude of the object
-    var eclipticLatitude: Degrees { get }
+    var eclipticLatitude: Degree { get }
     
     /// The radius vector (=distance to the Sun)
     var radiusVector: AU { get }

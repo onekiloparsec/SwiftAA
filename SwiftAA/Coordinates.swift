@@ -9,11 +9,11 @@
 import Foundation
 
 public struct GeographicCoordinates {
-    fileprivate(set) var longitude: Degrees
-    fileprivate(set) var latitude: Degrees
-    var altitude: Meters
+    fileprivate(set) var longitude: Degree
+    fileprivate(set) var latitude: Degree
+    var altitude: Meter
     
-    init(positivelyWestwardLongitude longitude: Degrees, latitude: Degrees, altitude: Meters = 0) {
+    init(positivelyWestwardLongitude longitude: Degree, latitude: Degree, altitude: Meter = 0) {
         self.longitude = longitude
         self.latitude = latitude
         self.altitude = altitude
@@ -22,7 +22,7 @@ public struct GeographicCoordinates {
 
 public struct EquatorialCoordinates {
     fileprivate(set) var rightAscension: Hour
-    fileprivate(set) var declination: Degrees
+    fileprivate(set) var declination: Degree
     public let epoch: Double
     
     var alpha: Hour {
@@ -30,12 +30,12 @@ public struct EquatorialCoordinates {
         set { self.rightAscension = newValue }
     }
     
-    var delta: Degrees {
+    var delta: Degree {
         get { return self.declination }
         set { self.declination = newValue }
     }
     
-    init(alpha: Hour, delta: Degrees, epsilon: Double) {
+    init(alpha: Hour, delta: Degree, epsilon: Double) {
         self.rightAscension = alpha
         self.declination = delta
         self.epoch = epsilon
@@ -51,7 +51,7 @@ public struct EquatorialCoordinates {
      
      The galactic coordinates system has been defined by the International Astronomical Union 
      in 1959. In the standard equatorial system of B1950.0, the galactic North Pole
-     has the coordinates: alpha = 192.25 Degrees, and delta = 27.4 Degrees, and the origin
+     has the coordinates: alpha = 192.25 Degree, and delta = 27.4 Degree, and the origin
      of the galactic longitude is the point (in western Sagittarius) of the galactic equator 
      which is 33º distant from the ascending node (in western Aquila) of the galactic equator
      with the equator of B1950.0.
@@ -77,31 +77,31 @@ public struct EquatorialCoordinates {
         return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: newEpoch)
     }
     
-    func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degrees {
+    func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degree {
         return KPCAAAngularSeparation_Separation(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
     }
     
-    func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degrees {
+    func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degree {
         return KPCAAAngularSeparation_PositionAngle(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
     }
 }
 
 public struct EclipticCoordinates {
-    fileprivate(set) var celestialLongitude: Degrees
-    fileprivate(set) var celestialLatitude: Degrees
+    fileprivate(set) var celestialLongitude: Degree
+    fileprivate(set) var celestialLatitude: Degree
     public let epoch: Double
     
-    var lambda: Degrees {
+    var lambda: Degree {
         get { return self.celestialLongitude }
         set { self.celestialLongitude = newValue }
     }
     
-    var beta: Degrees {
+    var beta: Degree {
         get { return self.celestialLatitude }
         set { self.celestialLatitude = newValue }
     }
     
-    init(lambda: Degrees, beta: Degrees, epsilon: Double) {
+    init(lambda: Degree, beta: Degree, epsilon: Double) {
         self.celestialLongitude = lambda
         self.celestialLatitude = beta
         self.epoch = epsilon
@@ -119,21 +119,21 @@ public struct EclipticCoordinates {
 }
 
 public struct GalacticCoordinates {
-    fileprivate(set) var galacticLongitude: Degrees
-    fileprivate(set) var galacticLatitude: Degrees
+    fileprivate(set) var galacticLongitude: Degree
+    fileprivate(set) var galacticLatitude: Degree
     public let epoch: Double = StandardEpoch_B1950_0
 
-    var l: Degrees {
+    var l: Degree {
         get { return self.galacticLongitude }
         set { self.galacticLongitude = newValue }
     }
     
-    var b: Degrees {
+    var b: Degree {
         get { return self.galacticLatitude }
         set { self.galacticLatitude = newValue }
     }
 
-    init(l: Degrees, b: Degrees) {
+    init(l: Degree, b: Degree) {
         self.galacticLongitude = l
         self.galacticLatitude = b
     }
@@ -151,13 +151,13 @@ public struct GalacticCoordinates {
 }
 
 public struct HorizontalCoordinates {
-    fileprivate(set) var azimuth: Degrees // westward from the South see AA. p91
-    fileprivate(set) var altitude: Degrees
+    fileprivate(set) var azimuth: Degree // westward from the South see AA. p91
+    fileprivate(set) var altitude: Degree
     fileprivate(set) var geographicCoordinates: GeographicCoordinates
     fileprivate(set) var julianDay: JulianDay
     fileprivate(set) var epoch: Double
     
-    init(azimuth: Degrees, altitude: Degrees, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: Double) {
+    init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: Double) {
         self.azimuth = azimuth
         self.altitude = altitude
         self.geographicCoordinates = geographicCoordinates
