@@ -9,8 +9,8 @@
 import Foundation
 
 public class Pluto: DwarfPlanet {
-//    public class override var color: Color {
-//        get { return Color(red: 0.776, green:0.620, blue:0.486, alpha: 1.0) }
-//    }
+    public class var averageColor: Color {
+        get { return Color(red: 0.776, green:0.620, blue:0.486, alpha: 1.0) }
+    }
 }
 
