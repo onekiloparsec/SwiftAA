@@ -605,6 +605,8 @@
 		9FAA86511D8D85C800DF095E /* JulianDayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTest.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
+		9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
+		9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
 		9FD71F6C1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
 		9FD71F6E1D736FCB00E6F656 /* OribitingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */; };
@@ -1032,6 +1034,7 @@
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OribitingObject.swift; sourceTree = "<group>"; };
 		9FDA5C251D16E5E2003B9F31 /* Neptune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
@@ -1331,6 +1334,7 @@
 			isa = PBXGroup;
 			children = (
 				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
+				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
 			);
 			name = Stars;
 			sourceTree = "<group>";
@@ -1367,8 +1371,6 @@
 		9F29B5811B47319D00B64C96 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
-				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
-				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
 				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
 				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */,
@@ -1474,6 +1476,8 @@
 		9F2A87A61D1FF6250004ADDD /* Partly Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
+				9F29B58E1B47B43400B64C96 /* KPCAAAberration.mm */,
 				9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */,
 				9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */,
 				9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */,
@@ -2514,6 +2518,7 @@
 				9F694DB41D15C67300EE7492 /* AAPrecession.cpp in Sources */,
 				9F694DB51D15C67300EE7492 /* KPCAAAngularSeparation.mm in Sources */,
 				9F694DB61D15C67300EE7492 /* AAVSOP87_MER.cpp in Sources */,
+				9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */,
 				9F694DB71D15C67300EE7492 /* AAVSOP87D_VEN.cpp in Sources */,
 				9F694DB81D15C67300EE7492 /* AAVSOP87E_JUP.cpp in Sources */,
 				9F694DB91D15C67300EE7492 /* AADynamicalTime.cpp in Sources */,
@@ -2712,6 +2717,7 @@
 				9FE183BC1D0DE730008CA0F8 /* AAPrecession.cpp in Sources */,
 				9F694D1D1D15745D00EE7492 /* KPCAAAngularSeparation.mm in Sources */,
 				9FE183DD1D0DE730008CA0F8 /* AAVSOP87_MER.cpp in Sources */,
+				9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */,
 				9FE184271D0DE730008CA0F8 /* AAVSOP87D_VEN.cpp in Sources */,
 				9FE1842B1D0DE730008CA0F8 /* AAVSOP87E_JUP.cpp in Sources */,
 				9FE1836A1D0DE730008CA0F8 /* AADynamicalTime.cpp in Sources */,

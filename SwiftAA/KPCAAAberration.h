@@ -18,8 +18,8 @@ extern "C" {
 KPCAA3DCoordinateComponents KPCAAAberration_EarthVelocity(double JD, BOOL highPrecision);
 
 // 2D
-KPCAA2DCoordinateComponents KPCAAAberration_EclipticAberration(double Alpha, double Delta, double JD, BOOL highPrecision);
-KPCAA2DCoordinateComponents KPCAAAberration_EquatorialAberration(double Lambda, double Beta, double JD, BOOL highPrecision);
+KPCAA2DCoordinateComponents KPCAAAberration_EquatorialAberration(double Alpha, double Delta, double JD, BOOL highPrecision);
+KPCAA2DCoordinateComponents KPCAAAberration_EclipticAberration(double Lambda, double Beta, double JD, BOOL highPrecision);
 
 #if __cplusplus
 }

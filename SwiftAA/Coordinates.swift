@@ -116,6 +116,10 @@ public struct EclipticCoordinates {
         set { self.celestialLatitude = newValue }
     }
     
+    var epsilon: Double {
+        get { return self.epoch }
+    }
+    
     init(lambda: Degree, beta: Degree, epsilon: Double) {
         self.celestialLongitude = lambda
         self.celestialLatitude = beta
