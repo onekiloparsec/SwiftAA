@@ -59,11 +59,11 @@ public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 public extension Degree {
-    var Degree: Double { return self }
-    var Minute: Double { return self * 60.0 }
-    var Second: Double { return self * 3600.0 }
-    var Radian: Double { return self * 0.017453292519943295769236907684886 }
-    var Hour:   Double { return self / 15.0 }
+    var degree: Double { return self }
+    var minute: Double { return self * 60.0 }
+    var second: Double { return self * 3600.0 }
+    var radian: Double { return self * 0.017453292519943295769236907684886 }
+    var hour:   Double { return self / 15.0 }
 }
 
 public extension AU {

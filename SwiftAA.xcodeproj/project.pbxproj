@@ -603,6 +603,8 @@
 		9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA86511D8D85C800DF095E /* JulianDayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTest.swift */; };
+		9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
+		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
 		9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
@@ -1034,6 +1036,7 @@
 		9F8AB3A41B4867C900EF40C8 /* KPCAAEclipses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipses.h; path = SwiftAA/KPCAAEclipses.h; sourceTree = "<group>"; };
 		9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = SwiftAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
 		9FAA86501D8D85C800DF095E /* JulianDayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDayTest.swift; sourceTree = "<group>"; };
+		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1340,6 +1343,7 @@
 			children = (
 				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
 				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
+				9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */,
 			);
 			name = Stars;
 			sourceTree = "<group>";
@@ -1376,8 +1380,6 @@
 		9F29B5811B47319D00B64C96 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
-				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
-				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */,
 				9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */,
 				9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */,
@@ -1414,6 +1416,8 @@
 				9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */,
 				9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */,
 				9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */,
+				9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */,
+				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
 				9F8AB3981B48373A00EF40C8 /* KPCAADynamicalTime.h */,
@@ -2479,6 +2483,7 @@
 				9F2154A71D296B4000C4DD06 /* Planets.swift in Sources */,
 				9F694D8C1D15C67300EE7492 /* AAVSOP87E_EAR.cpp in Sources */,
 				9F694D8D1D15C67300EE7492 /* AAVSOP87A_EMB.cpp in Sources */,
+				9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */,
 				9F694D8E1D15C67300EE7492 /* stdafx.cpp in Sources */,
 				9F694D8F1D15C67300EE7492 /* KPCAAMars.mm in Sources */,
 				9F694D901D15C67300EE7492 /* AANodes.cpp in Sources */,
@@ -2810,6 +2815,7 @@
 				9FE183B21D0DE730008CA0F8 /* AAPhysicalMoon.cpp in Sources */,
 				9FE183F11D0DE730008CA0F8 /* AAVSOP87A_NEP.cpp in Sources */,
 				9FE183DF1D0DE730008CA0F8 /* AAVSOP87_NEP.cpp in Sources */,
+				9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */,
 				9F694D551D157BD200EE7492 /* KPCAAElliptical.mm in Sources */,
 				9F694D381D1579DB00EE7492 /* KPCAAGlobe.mm in Sources */,
 				9FE183881D0DE730008CA0F8 /* AAJewishCalendar.cpp in Sources */,
