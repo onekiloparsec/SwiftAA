@@ -8,8 +8,9 @@
 
 import Foundation
 
-/// Basic properties of an orbiting object. Used by planets and the Moon.
+/// Basic properties of an orbiting object. Used by solar system planets and the Moon.
 /// Default implementation for planets is located in PlanetaryBase extension.
+
 public protocol OrbitingObject : ObjectBase {
     /// The ecliptic (=heliocentric) longitude of the object
     var eclipticLongitude: Degree { get }
