@@ -8,33 +8,6 @@
 
 import Foundation
 
-public struct GeographicCoordinates {
-    fileprivate(set) var longitude: Degree
-    fileprivate(set) var latitude: Degree
-    var altitude: Meter
-    
-    init(positivelyWestwardLongitude longitude: Degree, latitude: Degree, altitude: Meter = 0) {
-        self.longitude = longitude
-        self.latitude = latitude
-        self.altitude = altitude
-    }
-    
-    
-    /// High accuracy computation of the distance between two points on Earth's surface, taking into account
-    /// the Earth flattening.
-    ///
-    /// - parameter otherCoordinates: The coordinates of the second point.
-    ///
-    /// - returns: The distance, in meters, between the two points, along Earth's surface.
-    public func globeDistance(to otherCoordinates: GeographicCoordinates) -> Meter {
-        // KPCAA result is in kilometers.
-        return KPCAAGlobe_DistanceBetweenPoints(self.latitude,
-                                                self.longitude,
-                                                otherCoordinates.latitude,
-                                                otherCoordinates.longitude) * 1000
-    }
-}
-
 public struct EquatorialCoordinates {
     fileprivate(set) var rightAscension: Hour
     fileprivate(set) var declination: Degree
