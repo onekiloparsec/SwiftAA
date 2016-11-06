@@ -10,7 +10,7 @@ import Foundation
 
 /**
  *  This protocol aims at providing the base used by all types of astronomical objects considered in SwiftAA,
- *  planets, moons etc.
+ *  planets, moons, the Earth, the Sun etc.
  */
 public protocol ObjectBase {
     var julianDay: JulianDay { get }
