@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KPCAASwiftAdditions.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,9 +35,8 @@ double KPCAAIlluminatedFraction_SaturnMagnitudeAA(double r, double Delta, double
 double KPCAAIlluminatedFraction_UranusMagnitudeAA(double r, double Delta);
 double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta);
     
-//AA+ No idea where this comes from
-double KPCAAIlluminatedFraction_PlutoMagnitudeAA(double r, double Delta);
-
+// SwiftAddition
+double KPCAAIlluminatedFraction_MagnitudeAA(KPCPlanetaryObject planet, double r, double Delta, double i);
     
 #if __cplusplus
 }

@@ -8,23 +8,10 @@
 
 import Foundation
 
-public protocol IlluminatedFraction: PlanetaryBase {
-    // The details of the planet configuration
-    var planetaryDetails: KPCAAEllipticalPlanetaryDetails { get }
+public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
     
-    var ellipticalObjectDetails: KPCAAEllipticalObjectDetails { get }
-
-    /// The ApparentGeocentricDistance
-    var apparentGeocentricDistance: AU { get }
-    
-    /// The TrueGeocentricDistance
-    var trueGeocentricDistance: AU { get }
-
-//    /// The angle (Sun-planet-Earth).
-//    var phaseAngle: Double { get }
-    
-//    // The illuminated fraction of the planet as seen from the Earth. Between 0 and 1
-//    var illuminatedFraction: Double { get }
+    // The illuminated fraction of the planet as seen from the Earth. Between 0 and 1
+    var illuminatedFraction: Double { get }
     
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,
     /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
@@ -33,21 +20,14 @@ public protocol IlluminatedFraction: PlanetaryBase {
 }
 
 public extension IlluminatedFraction {
-    
-    
-    var apparentGeocentricDistance: AU {
-        get { return self.planetaryDetails.ApparentGeocentricDistance }
+    var illuminatedFraction: Double {
+        get { return KPCAAIlluminatedFraction_IlluminatedFraction(self.phaseAngle) }
     }
     
-    var trueGeocentricDistance: AU {
-        get { return self.ellipticalObjectDetails.TrueGeocentricDistance }
+    var magnitude: Double {
+        get { return KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
+                                                          self.radiusVector,
+                                                          self.trueGeocentricDistance,
+                                                          self.phaseAngle) }
     }
-
-//    var phaseAngle: Double {
-//        get { return KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector, Earth(julianDay: self.julianDay).radiusVector, self.apparentGeocentricDistance) }
-//    }
-    
-//    var illuminatedFraction: Double {
-//        get { return KPCAAIlluminatedFraction_IlluminatedFraction(self.phaseAngle) }
-//    }
 }

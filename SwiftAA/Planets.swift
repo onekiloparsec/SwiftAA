@@ -9,7 +9,7 @@
 import Foundation
 
 // To be understood as a "non-Earth" planet
-public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails  {
+public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails, IlluminatedFraction  {
 
     public class var averageColor: Color {
         get { return Color.white }
