@@ -12,8 +12,4 @@ public class Mercury: Planet {
     public class override var averageColor: Color {
         get { return Color(red: 0.569, green:0.545, blue:0.506, alpha: 1.0) }
     }
-    
-    public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_MercuryMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
-    }
 }

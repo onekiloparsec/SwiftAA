@@ -15,10 +15,6 @@ public class Mars: Planet {
         get { return Color(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
     }
 
-    public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_MarsMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
-    }
-
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay, highPrecision)
         super.init(julianDay: julianDay, highPrecision: highPrecision)

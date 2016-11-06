@@ -11,9 +11,5 @@ import Foundation
 public class Uranus: Planet {
     public class override var averageColor: Color {
         get { return Color(red: 0.639, green:0.804, blue:0.839, alpha: 1.0) }
-    }
- 
-    public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_UranusMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance) }
-    }
+    } 
 }

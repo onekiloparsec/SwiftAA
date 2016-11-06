@@ -12,9 +12,5 @@ public class Neptune: Planet {
     public class override var averageColor: Color {
         get { return Color(red: 0.392, green:0.518, blue:0.871, alpha: 1.0) }
     }
-
-    public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_NeptuneMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance) }
-    }
 }
 
