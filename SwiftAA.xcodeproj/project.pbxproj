@@ -858,6 +858,10 @@
 		9FFA29031D156E1500034972 /* KPCAAAberrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */; };
 		9FFA29061D156E5800034972 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29041D156E5800034972 /* stdafx.cpp */; };
 		9FFA29071D156E5800034972 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FFA29051D156E5800034972 /* stdafx.h */; };
+		9FFC4A4B1DCF872400382049 /* SaturnMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */; };
+		9FFC4A4C1DCF872400382049 /* SaturnMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */; };
+		9FFC4A4E1DCF875F00382049 /* SaturnRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4D1DCF875F00382049 /* SaturnRings.swift */; };
+		9FFC4A4F1DCF875F00382049 /* SaturnRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4D1DCF875F00382049 /* SaturnRings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1289,6 +1293,8 @@
 		9FFA29051D156E5800034972 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		9FFA29091D15704900034972 /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
 		9FFA292A1D15710F00034972 /* AAPlusTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AAPlusTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaturnMoons.swift; sourceTree = "<group>"; };
+		9FFC4A4D1DCF875F00382049 /* SaturnRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaturnRings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1532,6 +1538,8 @@
 			isa = PBXGroup;
 			children = (
 				9F7CBFB41D16E56800E13FB1 /* Saturn.swift */,
+				9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */,
+				9FFC4A4D1DCF875F00382049 /* SaturnRings.swift */,
 			);
 			name = Saturn;
 			sourceTree = "<group>";
@@ -2507,6 +2515,7 @@
 				9F694D9F1D15C67300EE7492 /* AASaturnMoons.cpp in Sources */,
 				9F694DA01D15C67300EE7492 /* AAMars.cpp in Sources */,
 				9F694EE61D15C7CA00EE7492 /* Venus.swift in Sources */,
+				9FFC4A4F1DCF875F00382049 /* SaturnRings.swift in Sources */,
 				9F694DA11D15C67300EE7492 /* KPCAANeptune.mm in Sources */,
 				9F694DA21D15C67300EE7492 /* AARefraction.cpp in Sources */,
 				9F694DA31D15C67300EE7492 /* KPCAAParabolic.mm in Sources */,
@@ -2594,6 +2603,7 @@
 				9F694DED1D15C67300EE7492 /* KPCAAMoon.mm in Sources */,
 				9F694DEE1D15C67300EE7492 /* KPCAAPhysicalSun.mm in Sources */,
 				9FDA5C2D1D16E612003B9F31 /* Mars.swift in Sources */,
+				9FFC4A4C1DCF872400382049 /* SaturnMoons.swift in Sources */,
 				9F694DEF1D15C67300EE7492 /* KPCAAPhysicalMars.mm in Sources */,
 				9FDA5C301D16E625003B9F31 /* Jupiter.swift in Sources */,
 				9FDA5C271D16E5E2003B9F31 /* Neptune.swift in Sources */,
@@ -2737,6 +2747,7 @@
 				9FE1836A1D0DE730008CA0F8 /* AADynamicalTime.cpp in Sources */,
 				9FE184211D0DE730008CA0F8 /* AAVSOP87D_NEP.cpp in Sources */,
 				9FE183CC1D0DE730008CA0F8 /* AASun.cpp in Sources */,
+				9FFC4A4B1DCF872400382049 /* SaturnMoons.swift in Sources */,
 				9FE183D31D0DE730008CA0F8 /* AAVenus.cpp in Sources */,
 				9FE183641D0DE730008CA0F8 /* AACoordinateTransformation.cpp in Sources */,
 				9FE1840D1D0DE730008CA0F8 /* AAVSOP87C_MAR.cpp in Sources */,
@@ -2869,6 +2880,7 @@
 				9FE183F31D0DE730008CA0F8 /* AAVSOP87A_SAT.cpp in Sources */,
 				9FE183861D0DE730008CA0F8 /* AAInterpolate.cpp in Sources */,
 				9F694D771D157BD200EE7492 /* KPCAAPhysicalMoon.mm in Sources */,
+				9FFC4A4E1DCF875F00382049 /* SaturnRings.swift in Sources */,
 				9FE183A01D0DE730008CA0F8 /* AANearParabolic.cpp in Sources */,
 				9FE183921D0DE730008CA0F8 /* AAMoon.cpp in Sources */,
 				9FE183A61D0DE730008CA0F8 /* AANutation.cpp in Sources */,
