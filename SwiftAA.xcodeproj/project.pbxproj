@@ -840,6 +840,9 @@
 		9FE184381D0DE730008CA0F8 /* AAVSOP87E_URA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183531D0DE730008CA0F8 /* AAVSOP87E_URA.h */; };
 		9FE184391D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */; };
 		9FE1843A1D0DE730008CA0F8 /* AAVSOP87E_VEN.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */; };
+		9FE80D791DCF488600CC6623 /* JupiterMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE80D781DCF488600CC6623 /* JupiterMoons.swift */; };
+		9FE80D7B1DCF585A00CC6623 /* PlanetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */; };
+		9FE80D7C1DCF585A00CC6623 /* PlanetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */; };
 		9FEA1DD01DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */; };
 		9FEA1DD11DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */; };
 		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
@@ -1262,6 +1265,8 @@
 		9FE183531D0DE730008CA0F8 /* AAVSOP87E_URA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVSOP87E_URA.h; sourceTree = "<group>"; };
 		9FE183541D0DE730008CA0F8 /* AAVSOP87E_VEN.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVSOP87E_VEN.cpp; sourceTree = "<group>"; };
 		9FE183551D0DE730008CA0F8 /* AAVSOP87E_VEN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAVSOP87E_VEN.h; sourceTree = "<group>"; };
+		9FE80D781DCF488600CC6623 /* JupiterMoons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JupiterMoons.swift; sourceTree = "<group>"; };
+		9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetConstants.swift; sourceTree = "<group>"; };
 		9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthmosphericRefraction.swift; sourceTree = "<group>"; };
 		9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEclipticalElements.h; path = SwiftAA/KPCAAEclipticalElements.h; sourceTree = "<group>"; };
 		9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipticalElements.mm; path = SwiftAA/KPCAAEclipticalElements.mm; sourceTree = "<group>"; };
@@ -1514,6 +1519,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDA5C2E1D16E625003B9F31 /* Jupiter.swift */,
+				9FE80D781DCF488600CC6623 /* JupiterMoons.swift */,
 			);
 			name = Jupiter;
 			sourceTree = "<group>";
@@ -1608,6 +1614,7 @@
 			isa = PBXGroup;
 			children = (
 				9F2154A51D296B4000C4DD06 /* Planets.swift */,
+				9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
 				9F3D51041D947DC900F03766 /* Earth & Moon */,
@@ -2610,6 +2617,7 @@
 				9F694E031D15C67300EE7492 /* AAVSOP87_SAT.cpp in Sources */,
 				9F694E041D15C67300EE7492 /* KPCAAVenus.mm in Sources */,
 				9F694E051D15C67300EE7492 /* AAVSOP87E_MER.cpp in Sources */,
+				9FE80D7C1DCF585A00CC6623 /* PlanetConstants.swift in Sources */,
 				9F7A56FD1D15E6890033CDC5 /* Earth.swift in Sources */,
 				9F694E061D15C67300EE7492 /* KPCAAMercury.mm in Sources */,
 				9F694E071D15C67300EE7492 /* AAMoonNodes.cpp in Sources */,
@@ -2695,6 +2703,7 @@
 				9FE1838E1D0DE730008CA0F8 /* AAMars.cpp in Sources */,
 				9F694EE51D15C7CA00EE7492 /* Venus.swift in Sources */,
 				9F694D671D157BD200EE7492 /* KPCAANeptune.mm in Sources */,
+				9FE80D791DCF488600CC6623 /* JupiterMoons.swift in Sources */,
 				9FE183BE1D0DE730008CA0F8 /* AARefraction.cpp in Sources */,
 				9F694D6D1D157BD200EE7492 /* KPCAAParabolic.mm in Sources */,
 				9FE1837E1D0DE730008CA0F8 /* AAFK5.cpp in Sources */,
@@ -2843,6 +2852,7 @@
 				9F7CBFAF1D16B8E100E13FB1 /* PlanetaryBase.swift in Sources */,
 				9FE183D91D0DE730008CA0F8 /* AAVSOP87_JUP.cpp in Sources */,
 				9FE183B01D0DE730008CA0F8 /* AAPhysicalMars.cpp in Sources */,
+				9FE80D7B1DCF585A00CC6623 /* PlanetConstants.swift in Sources */,
 				9F694D6B1D157BD200EE7492 /* KPCAANutation.mm in Sources */,
 				9F694D2D1D1578EF00EE7492 /* KPCAAElementsPlanetaryOrbit.mm in Sources */,
 				9FE183A21D0DE730008CA0F8 /* AANeptune.cpp in Sources */,

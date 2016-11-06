@@ -53,6 +53,8 @@ public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
 public let StandardEpoch_J2000_0 = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0 = 2433282.4235 // See p.133 of AA.
 
+public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
+
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
@@ -166,8 +168,6 @@ public extension KPCPlanetaryObject {
         case .Neptune:
             return .NEPTUNE
         default:
-//        see what god himself says https://forums.developer.apple.com/thread/4289#11819 about throwing errors in computed properties
-//        throw PlanetError.InvalidSubtype
             return .UNDEFINED
         }
     }
