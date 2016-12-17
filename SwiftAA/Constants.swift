@@ -60,8 +60,8 @@ public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 
 public extension Degree {
     var degree: Double { return self }
-    var minute: Double { return self * 60.0 }
-    var second: Double { return self * 3600.0 }
+    var arcminute: Double { return self * 60.0 }
+    var arcsecond: Double { return self * 3600.0 }
     var radian: Double { return self * 0.017453292519943295769236907684886 }
     var hour:   Double { return self / 15.0 }
 }

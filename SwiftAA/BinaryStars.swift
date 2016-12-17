@@ -41,7 +41,7 @@ public struct BinaryStarDetails {
 
 public func binaryStarsApparentEccentricityDetails(time: Double, elements: BinaryStarOrbitalElements) -> BinaryStarDetails {
     // Note the semiMajorAxis in expressed in arcseconds.
-    let details = KPCAABinaryStar_CalculateDetails(time, elements.P, elements.T, elements.e, elements.a.second, elements.i, elements.Omega, elements.w)
+    let details = KPCAABinaryStar_CalculateDetails(time, elements.P, elements.T, elements.e, elements.a.arcsecond, elements.i, elements.Omega, elements.w)
     return BinaryStarDetails(radiusVector: details.r, apparentPositionAngle: details.Theta, angularDistance: details.Rho)
 }
 
