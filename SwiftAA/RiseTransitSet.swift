@@ -54,9 +54,28 @@ public struct RiseTransitSetTimesDetails {
 ///   - equCoords3: the equatorial coordinates of the body at Date + 1 Day.
 ///   - geoCoords: the location on Earth, with its altitude set to the standard one (see above)
 /// - Returns: the times of rise, transit and set, with an indication if it is actually valid or not.
-public func riseTransitSet(forJulianDay julianDay: JulianDay, equCoords1: EquatorialCoordinates, equCoords2: EquatorialCoordinates, equCoords3: EquatorialCoordinates, geoCoords: GeographicCoordinates) -> RiseTransitSetTimesDetails
+public func riseTransitSet(forJulianDay julianDay: JulianDay,
+                           equCoords1: EquatorialCoordinates,
+                           equCoords2: EquatorialCoordinates,
+                           equCoords3: EquatorialCoordinates,
+                           geoCoords: GeographicCoordinates) -> RiseTransitSetTimesDetails
 {
-    let details = KPCAARiseTransitSet_Calculate(julianDay, equCoords1.alpha, equCoords1.delta, equCoords2.alpha, equCoords2.delta, equCoords3.alpha, equCoords3.delta, geoCoords.longitude, geoCoords.latitude, geoCoords.altitude)
-    return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue, riseTime: details.Rise, isTransitAboveHorizon: details.isTransitAboveHorizon.boolValue, transitTime: details.Transit, isSetValid: details.isSetValid.boolValue, setTime: details.Set)
+    let details = KPCAARiseTransitSet_Calculate(julianDay.value,
+                                                equCoords1.alpha,
+                                                equCoords1.delta.value,
+                                                equCoords2.alpha,
+                                                equCoords2.delta.value,
+                                                equCoords3.alpha,
+                                                equCoords3.delta.value,
+                                                geoCoords.longitude.value,
+                                                geoCoords.latitude.value,
+                                                geoCoords.altitude)
+    
+    return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
+                                      riseTime: JulianDay(details.Rise),
+                                      isTransitAboveHorizon: details.isTransitAboveHorizon.boolValue,
+                                      transitTime: JulianDay(details.Transit),
+                                      isSetValid: details.isSetValid.boolValue,
+                                      setTime: JulianDay(details.Set))
 }
 

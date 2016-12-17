@@ -41,8 +41,18 @@ public struct BinaryStarDetails {
 
 public func binaryStarsApparentEccentricityDetails(time: Double, elements: BinaryStarOrbitalElements) -> BinaryStarDetails {
     // Note the semiMajorAxis in expressed in arcseconds.
-    let details = KPCAABinaryStar_CalculateDetails(time, elements.P, elements.T, elements.e, elements.a.arcsecond, elements.i, elements.Omega, elements.w)
-    return BinaryStarDetails(radiusVector: details.r, apparentPositionAngle: details.Theta, angularDistance: details.Rho)
+    let details = KPCAABinaryStar_CalculateDetails(time,
+                                                   elements.P,
+                                                   elements.T,
+                                                   elements.e,
+                                                   elements.a.arcsecond,
+                                                   elements.i.value,
+                                                   elements.Omega.value,
+                                                   elements.w.value)
+    
+    return BinaryStarDetails(radiusVector: Degree(details.r),
+                             apparentPositionAngle: Degree(details.Theta),
+                             angularDistance: Degree(details.Rho))
 }
 
 /// Return the apparent eccentricity of the binary stars orbit.
@@ -53,5 +63,5 @@ public func binaryStarsApparentEccentricityDetails(time: Double, elements: Binar
 ///   - omega: The longitude of periastron
 /// - Returns: The apparent eccentricity of the orbit, as seen on the sky.
 public func binaryStarsApparentEccentricity(eccentricity: Double, inclination: Degree, omega: Degree) -> Double {
-    return KPCAABinaryStar_ApparentEccentricity(eccentricity, inclination, omega)
+    return KPCAABinaryStar_ApparentEccentricity(eccentricity, inclination.value, omega.value)
 }

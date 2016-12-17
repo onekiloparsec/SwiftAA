@@ -8,8 +8,26 @@
 
 import Foundation
 
-public typealias JulianDay=Double
 public typealias Hour=Double
+
+public struct JulianDay: NumericType {
+    public var value: Double
+    public init(_ value: Double) {
+        self.value = value
+    }
+}
+
+extension JulianDay: ExpressibleByIntegerLiteral {
+    public init(integerLiteral: IntegerLiteralType) {
+        self.init(Double(integerLiteral))
+    }
+}
+
+extension JulianDay: ExpressibleByFloatLiteral {
+    public init(floatLiteral: FloatLiteralType) {
+        self.init(Double(floatLiteral))
+    }
+}
 
 public extension JulianDay {
     /**
@@ -18,7 +36,7 @@ public extension JulianDay {
      - returns: The corresponding Date instance.
      */
     public func date() -> Date {
-        let X: Double = self+0.5
+        let X: Double = self.value+0.5
         let Z: Double = floor(X)
         let F: Double = X - Z
         let Y: Double = floor((Z-1867216.25)/36524.25)
@@ -54,8 +72,8 @@ public extension JulianDay {
         return calendar.date(from: components)!
     }
     
-    public var modified: Double {
-        get { return self - ModifiedJulianDayZero }
+    public var modified: JulianDay {
+        get { return JulianDay(self.value - ModifiedJulianDayZero) }
     }
     
     /**
@@ -66,7 +84,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func meanGreenwichSiderealTime() -> Hour {
-        return KPCAASidereal_MeanGreenwichSiderealTime(self)
+        return KPCAASidereal_MeanGreenwichSiderealTime(self.value)
     }
 
     /**
@@ -90,45 +108,45 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func apparentGreenwichSiderealTime() -> Hour {
-        return KPCAASidereal_ApparentGreenwichSiderealTime(self)
+        return KPCAASidereal_ApparentGreenwichSiderealTime(self.value)
     }
     
     // MARK: - Dynamical Times
     
     public func deltaT() -> JulianDay {
-        return KPCAADynamicalTime_DeltaT(self)
+        return JulianDay(KPCAADynamicalTime_DeltaT(self.value))
     }
     
     public func cumulativeLeapSeconds() -> JulianDay {
-        return KPCAADynamicalTime_CumulativeLeapSeconds(self)
+        return JulianDay(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
     }
 
     public func TTtoUTC() -> JulianDay {
-        return KPCAADynamicalTime_TT2UTC(self)
+        return JulianDay(KPCAADynamicalTime_TT2UTC(self.value))
     }
 
     public func UTCtoTT() -> JulianDay {
-        return KPCAADynamicalTime_UTC2TT(self)
+        return JulianDay(KPCAADynamicalTime_UTC2TT(self.value))
     }
 
     public func TTtoTAI() -> JulianDay {
-        return KPCAADynamicalTime_TT2TAI(self)
+        return JulianDay(KPCAADynamicalTime_TT2TAI(self.value))
     }
 
     public func TAItoTT() -> JulianDay {
-        return KPCAADynamicalTime_TAI2TT(self)
+        return JulianDay(KPCAADynamicalTime_TAI2TT(self.value))
     }
 
     public func TTtoUT1() -> JulianDay {
-        return KPCAADynamicalTime_TT2UT1(self)
+        return JulianDay(KPCAADynamicalTime_TT2UT1(self.value))
     }
 
     public func UT1toTT() -> JulianDay {
-        return KPCAADynamicalTime_UT12TT(self)
+        return JulianDay(KPCAADynamicalTime_UT12TT(self.value))
     }
 
     public func UT1minusUTC() -> JulianDay {
-        return KPCAADynamicalTime_UT1MinusUTC(self)
+        return JulianDay(KPCAADynamicalTime_UT1MinusUTC(self.value))
     }
 }
 
@@ -155,7 +173,7 @@ public extension Date {
         jd += floor(275.0*month/9.0) + day + 1721028.5
         jd += (hour + minute/60.0 + (second+nanosecond/1e6)/3600.0)/24.0
         
-        return jd
+        return JulianDay(jd)
     }
     
     public var year: Int {
@@ -204,7 +222,7 @@ public extension Date {
     public var fractionalYear: Double {
         get {
             let daysCount = (self.isLeap) ? 366.0 : 365.0
-            return Double(self.year) + ((self.julianDay() - self.januaryFirstDate().julianDay()) / daysCount)
+            return Double(self.year) + ((self.julianDay().value - self.januaryFirstDate().julianDay().value) / daysCount)
         }
     }
 }

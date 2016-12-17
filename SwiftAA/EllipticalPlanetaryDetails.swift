@@ -35,8 +35,8 @@ public extension EllipticalPlanetaryDetails {
     }
     
     var phaseAngle: Degree {
-        get { return KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector,
-                                                         Earth(julianDay: self.julianDay).radiusVector,
-                                                         self.apparentGeocentricDistance) }
+        get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector,
+                                                                Earth(julianDay: self.julianDay).radiusVector,
+                                                                self.apparentGeocentricDistance)) }
     }
 }

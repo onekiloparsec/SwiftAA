@@ -16,17 +16,17 @@ public class Mars: Planet {
     }
 
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay, highPrecision)
+        self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay.value, highPrecision)
         super.init(julianDay: julianDay, highPrecision: highPrecision)
     }
     
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
     public var planetocentricDeclinationEarth: Degree {
-        return self.physicalDetails.DE
+        return Degree(self.physicalDetails.DE)
     }
 
     /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
     public var planetocentricDeclinationSun: Degree {
-        return self.physicalDetails.DS
+        return Degree(self.physicalDetails.DS)
     }
 }

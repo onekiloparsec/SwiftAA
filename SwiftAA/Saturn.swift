@@ -28,7 +28,7 @@ public class Saturn: Planet {
     }
     
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        let details = KPCAASaturnMoonsDetails_Calculate(julianDay, highPrecision)
+        let details = KPCAASaturnMoonsDetails_Calculate(julianDay.value, highPrecision)
         self.Mimas = SaturnianMoon(name: "Mimas", details: details.Satellite1)
         self.Enceladus = SaturnianMoon(name: "Enceladus", details: details.Satellite2)
         self.Tethys = SaturnianMoon(name: "Tethys", details: details.Satellite3)
@@ -37,7 +37,7 @@ public class Saturn: Planet {
         self.Titan = SaturnianMoon(name: "Titan", details: details.Satellite6)
         self.Iapetus = SaturnianMoon(name: "Iapetus", details: details.Satellite7)
         
-        let ringDetails = KPCAASaturnRings_Calculate(julianDay, highPrecision)
+        let ringDetails = KPCAASaturnRings_Calculate(julianDay.value, highPrecision)
         self.ringSystem = SaturnRingSystem(ringDetails)
         
         super.init(julianDay: julianDay, highPrecision: highPrecision)
@@ -47,7 +47,7 @@ public class Saturn: Planet {
     public var magnitude: Double {
         get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector,
                                                                 self.apparentGeocentricDistance,
-                                                                self.ringSystem.saturnicentricSunEarthLongitudesDifference,
-                                                                self.ringSystem.saturnicentricEarthLatitude) } }
+                                                                self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
+                                                                self.ringSystem.saturnicentricEarthLatitude.value) } }
 }
 

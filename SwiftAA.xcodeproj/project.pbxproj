@@ -605,6 +605,10 @@
 		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA86511D8D85C800DF095E /* JulianDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTests.swift */; };
 		9FB755251E05A6C700EC7617 /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755241E05A6C700EC7617 /* ConstantsTests.swift */; };
+		9FB755291E05B59D00EC7617 /* Distances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755271E05B59D00EC7617 /* Distances.swift */; };
+		9FB7552A1E05B59D00EC7617 /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755281E05B59D00EC7617 /* NumericType.swift */; };
+		9FB7552C1E05E47100EC7617 /* Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7552B1E05E47100EC7617 /* Angles.swift */; };
+		9FB7552D1E05E47100EC7617 /* Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7552B1E05E47100EC7617 /* Angles.swift */; };
 		9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
@@ -1051,6 +1055,9 @@
 		9F8AB3A51B4867C900EF40C8 /* KPCAAEclipses.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEclipses.mm; path = SwiftAA/KPCAAEclipses.mm; sourceTree = "<group>"; };
 		9FAA86501D8D85C800DF095E /* JulianDayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDayTests.swift; sourceTree = "<group>"; };
 		9FB755241E05A6C700EC7617 /* ConstantsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsTests.swift; sourceTree = "<group>"; };
+		9FB755271E05B59D00EC7617 /* Distances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distances.swift; sourceTree = "<group>"; };
+		9FB755281E05B59D00EC7617 /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
+		9FB7552B1E05E47100EC7617 /* Angles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angles.swift; sourceTree = "<group>"; };
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
@@ -1369,6 +1376,7 @@
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
@@ -1632,6 +1640,17 @@
 			name = "Solar System Base";
 			sourceTree = "<group>";
 		};
+		9FB755261E05B59000EC7617 /* Numeric Types */ = {
+			isa = PBXGroup;
+			children = (
+				9FB755281E05B59D00EC7617 /* NumericType.swift */,
+				9F2A87A31D1FF5030004ADDD /* JulianDay.swift */,
+				9FB7552B1E05E47100EC7617 /* Angles.swift */,
+				9FB755271E05B59D00EC7617 /* Distances.swift */,
+			);
+			name = "Numeric Types";
+			sourceTree = "<group>";
+		};
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1669,7 +1688,6 @@
 			isa = PBXGroup;
 			children = (
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
-				9F2A87A31D1FF5030004ADDD /* JulianDay.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
 				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 			);
@@ -2180,6 +2198,7 @@
 				9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */,
 				9F877A961E052A74006FC6E5 /* AAEaster.cpp in Sources */,
 				9F694D8F1D15C67300EE7492 /* KPCAAMars.mm in Sources */,
+				9FB7552D1E05E47100EC7617 /* Angles.swift in Sources */,
 				9F7A57021D15F5CE0033CDC5 /* PlanetaryPhenomena.swift in Sources */,
 				9F877ADE1E052A74006FC6E5 /* AAVSOP87B_MER.cpp in Sources */,
 				9F877AE21E052A74006FC6E5 /* AAVSOP87B_VEN.cpp in Sources */,
@@ -2397,6 +2416,7 @@
 				9F694D571D157BD200EE7492 /* KPCAAIlluminatedFraction.mm in Sources */,
 				9F694D471D157B0400EE7492 /* KPCAAStellarMagnitudes.mm in Sources */,
 				9F8779E81E0529A2006FC6E5 /* AAMoonPerigeeApogee.cpp in Sources */,
+				9FB7552A1E05B59D00EC7617 /* NumericType.swift in Sources */,
 				9F8779C21E0529A2006FC6E5 /* AAElementsPlanetaryOrbit.cpp in Sources */,
 				9F694D691D157BD200EE7492 /* KPCAANodes.mm in Sources */,
 				9F877A651E0529A2006FC6E5 /* AAVSOP87C_VEN.cpp in Sources */,
@@ -2421,6 +2441,7 @@
 				9F694D231D15777C00EE7492 /* KPCAADiameters.mm in Sources */,
 				9F694D591D157BD200EE7492 /* KPCAAInterpolate.mm in Sources */,
 				9F2A87AB1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift in Sources */,
+				9FB7552C1E05E47100EC7617 /* Angles.swift in Sources */,
 				9F694D7D1D157BD200EE7492 /* KPCAAPlanetPerihelionAphelion.mm in Sources */,
 				9F877A1A1E0529A2006FC6E5 /* AASun.cpp in Sources */,
 				9F877A161E0529A2006FC6E5 /* AASidereal.cpp in Sources */,
@@ -2551,6 +2572,7 @@
 				9F8779DA1E0529A2006FC6E5 /* AAKepler.cpp in Sources */,
 				9F877A531E0529A2006FC6E5 /* AAVSOP87B_URA.cpp in Sources */,
 				9F877A791E0529A2006FC6E5 /* AAVSOP87E_JUP.cpp in Sources */,
+				9FB755291E05B59D00EC7617 /* Distances.swift in Sources */,
 				9F877A711E0529A2006FC6E5 /* AAVSOP87D_SAT.cpp in Sources */,
 				9FC501721E0571B2005CA6FC /* AstronomicalObject.swift in Sources */,
 				9F877A231E0529A2006FC6E5 /* AAVSOP87.cpp in Sources */,

@@ -46,10 +46,10 @@ public extension PlanetaryPhenomena {
         let year = self.julianDay.date().fractionalYear
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .INFERIOR_CONJUNCTION)
         if mean == true {
-            return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
+            return JulianDay(KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .INFERIOR_CONJUNCTION))
         }
         else {
-            return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .INFERIOR_CONJUNCTION)
+            return JulianDay(KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .INFERIOR_CONJUNCTION))
         }
     }
 
@@ -57,10 +57,10 @@ public extension PlanetaryPhenomena {
         let year = self.julianDay.date().fractionalYear
         let k = KPCAAPlanetaryPhenomena_K(year, self.planetaryObject, .SUPERIOR_CONJUNCTION)
         if mean == true {
-            return KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
+            return JulianDay(KPCAAPlanetaryPhenomena_Mean(k, self.planetaryObject, .SUPERIOR_CONJUNCTION))
         }
         else {
-            return KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .SUPERIOR_CONJUNCTION)
+            return JulianDay(KPCAAPlanetaryPhenomena_True(k, self.planetaryObject, .SUPERIOR_CONJUNCTION))
         }
     }
 }

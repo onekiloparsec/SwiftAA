@@ -16,8 +16,6 @@ import Foundation
     public typealias Color=UIColor
 #endif
 
-public typealias Degree=Double
-public typealias ArcSecond=Double
 public typealias AU=Double // Astronomical Unit
 public typealias Meter=Double // meters
 public typealias Parsec=Double // parsecs
@@ -59,20 +57,6 @@ public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
-public extension Degree {
-    var degree: Double { return self }
-    var arcminute: Double { return self * 60.0 }
-    var arcsecond: ArcSecond { return self * 3600.0 }
-    var radian: Double { return self * 0.017453292519943295769236907684886 }
-    var hour:   Double { return self / 15.0 }
-}
-
-public extension ArcSecond {
-    public func distance() -> AU {
-        return KPCAAParallax_ParallaxToDistance(self / 3600.0)
-    }
-}
-
 public extension AU {
     var AU: Double { return self }
     var pc: Parsec { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
@@ -80,8 +64,8 @@ public extension AU {
     var m:  Meter  { return self / 149597870700.0 }
     var ly: Double { return self / 206264.8 }
     
-    public func parallax() -> ArcSecond {
-        return KPCAAParallax_DistanceToParallax(self).arcsecond
+    public func parallax() -> Double {
+        return Degree(KPCAAParallax_DistanceToParallax(self)).arcsecond
     }
 }
 

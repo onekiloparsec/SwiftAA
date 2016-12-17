@@ -19,7 +19,7 @@ import Foundation
 /// - returns: The refraction amplitude, in degrees.
 public func refraction(fromApparentAltitude h0: Degree, pressure: Millibar = 1010, temperature: Celsius = 10) -> Degree {
     // KPCAA result is in arcminutes
-    return KPCAARefraction_RefractionFromApparentWithAltitude(h0, pressure, temperature) / 60.0
+    return Degree(KPCAARefraction_RefractionFromApparentWithAltitude(h0.value, pressure, temperature) / 60.0)
 }
 
 /// Compute the atmospheric refraction from the true "airless" altitude of a celestial body h that has been already
@@ -32,5 +32,5 @@ public func refraction(fromApparentAltitude h0: Degree, pressure: Millibar = 101
 /// - returns: The refraction amplitude, in degrees.
 public func refraction(fromTrueAltitude h: Degree, pressure: Millibar = 1010, temperature: Celsius = 10) -> Degree {
     // KPCAA result is in arcminutes
-    return KPCAARefraction_RefractionFromTrueWithAltitude(h, pressure, temperature) / 60.0
+    return Degree(KPCAARefraction_RefractionFromTrueWithAltitude(h.value, pressure, temperature) / 60.0)
 }

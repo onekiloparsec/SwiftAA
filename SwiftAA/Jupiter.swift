@@ -11,7 +11,7 @@ import Foundation
 public class Jupiter: Planet {
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalJupiterDetails = {
         [unowned self] in
-        return KPCAAPhysicalJupiter_CalculateDetails(self.julianDay, self.highPrecision)
+        return KPCAAPhysicalJupiter_CalculateDetails(self.julianDay.value, self.highPrecision)
         }()
     
     public class override var averageColor: Color {
@@ -28,7 +28,7 @@ public class Jupiter: Planet {
     }
 
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        let details = KPCAAGalileanMoons_CalculateDetails(julianDay, highPrecision)
+        let details = KPCAAGalileanMoons_CalculateDetails(julianDay.value, highPrecision)
         self.Io = GalileanMoon(name: "Io", details: details.Satellite1)
         self.Europa = GalileanMoon(name: "Europa", details: details.Satellite2)
         self.Ganymede = GalileanMoon(name: "Ganymede", details: details.Satellite3)
@@ -38,39 +38,39 @@ public class Jupiter: Planet {
     }
 
     public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle) }
+        get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle.value) }
     }
 
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
     public var planetocentricDeclinationEarth: Degree {
-        return self.physicalDetails.DE
+        return Degree(self.physicalDetails.DE)
     }
     
     /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
     public var planetocentricDeclinationSun: Degree {
-        return self.physicalDetails.DS
+        return Degree(self.physicalDetails.DS)
     }
 
     /// See AA. ch 43, pp. 293-
     
     public var geometricCentralMeridianLongitudeSystemI: Degree {
-        return self.physicalDetails.Geometricw1
+        return Degree(self.physicalDetails.Geometricw1)
     }
 
     public var geometricCentralMeridianLongitudeSystemII: Degree {
-        return self.physicalDetails.Geometricw2
+        return Degree(self.physicalDetails.Geometricw2)
     }
 
     public var apparentCentralMeridianLongitudeSystemI: Degree {
-        return self.physicalDetails.Apparentw1
+        return Degree(self.physicalDetails.Apparentw1)
     }
     
     public var apparentCentralMeridianLongitudeSystemII: Degree {
-        return self.physicalDetails.Apparentw2
+        return Degree(self.physicalDetails.Apparentw2)
     }
 
     /// The position angle of the northern rotation pole of the planet
     public var positionAngleOfNorthernRotationPole: Degree {
-        return self.physicalDetails.P
+        return Degree(self.physicalDetails.P)
     }
 }

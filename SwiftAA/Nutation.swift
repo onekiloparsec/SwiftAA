@@ -9,11 +9,11 @@
 import Foundation
 
 public func nutationInLongitude(julianDay: JulianDay) -> Double {
-    return KPCAANutation_NutationInLongitude(julianDay)
+    return KPCAANutation_NutationInLongitude(julianDay.value)
 }
 
 public func nutationInObliquity(julianDay: JulianDay) -> Double {
-    return KPCAANutation_NutationInObliquity(julianDay)
+    return KPCAANutation_NutationInObliquity(julianDay.value)
 }
 
 //public func nutationInRightAscension(julianDay: JulianDay) -> Double {
@@ -30,9 +30,9 @@ public func nutationInObliquity(julianDay: JulianDay) -> Double {
 // affected by the aberration and the nutation, the true obliquity should be used.
 public func obliquityOfEcliptic(julianDay: JulianDay, mean: Bool = true) -> Double {
     if mean {
-        return KPCAANutation_MeanObliquityOfEcliptic(julianDay)
+        return KPCAANutation_MeanObliquityOfEcliptic(julianDay.value)
     }
     else {
-        return KPCAANutation_TrueObliquityOfEcliptic(julianDay)
+        return KPCAANutation_TrueObliquityOfEcliptic(julianDay.value)
     }
 }

@@ -21,13 +21,13 @@ public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
 
 public extension IlluminatedFraction {
     var illuminatedFraction: Double {
-        get { return KPCAAIlluminatedFraction_IlluminatedFraction(self.phaseAngle) }
+        get { return KPCAAIlluminatedFraction_IlluminatedFraction(self.phaseAngle.value) }
     }
     
     var magnitude: Double {
         get { return KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
                                                           self.radiusVector,
                                                           self.trueGeocentricDistance,
-                                                          self.phaseAngle) }
+                                                          self.phaseAngle.value) }
     }
 }

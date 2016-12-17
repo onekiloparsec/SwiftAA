@@ -40,10 +40,10 @@ public struct GalileanMoon {
 
     public var name: String
 
-    public var MeanLongitude: Degree { get { return self.details.MeanLongitude } }
-    public var TrueLongitude: Degree { get { return self.details.TrueLongitude } }
-    public var TropicalLongitude: Degree { get { return self.details.TropicalLongitude } }
-    public var EquatorialLatitude: Degree { get { return self.details.EquatorialLatitude } }
+    public var MeanLongitude: Degree { get { return Degree(self.details.MeanLongitude) } }
+    public var TrueLongitude: Degree { get { return Degree(self.details.TrueLongitude) } }
+    public var TropicalLongitude: Degree { get { return Degree(self.details.TropicalLongitude) } }
+    public var EquatorialLatitude: Degree { get { return Degree(self.details.EquatorialLatitude) } }
 
     public var radiusVector: AU { get { return self.details.r } }
 

@@ -57,15 +57,21 @@ public extension PlanetaryBase {
     }
     
     var perihelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Perihelion(KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict), self.planetStrict) }
+        get {
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict)
+            return JulianDay(KPCAAPlanetPerihelionAphelion_Perihelion(k, self.planetStrict))
+        }
     }
     
     var aphelion: JulianDay {
-        get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict), self.planetStrict) }
+        get {
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict)
+            return JulianDay(KPCAAPlanetPerihelionAphelion_Aphelion(k, self.planetStrict))
+        }
     }
     
     var radiusVector: AU {
-        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
+        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision) }
     }
 }
 

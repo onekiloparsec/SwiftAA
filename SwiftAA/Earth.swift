@@ -18,16 +18,16 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
 
     // Additional methods for Earth to deal with the baryCentric parameter
     func perihelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
+        return JulianDay(KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric))
     }
     
     func aphelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
-        return KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric)
+        return JulianDay(KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric))
     }
     
     func longitudeOfAscendingNode() -> Degree {
         // There is no method for .MeanEquinoxOfTheDate, hence defaulting to J2000
-        return KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay)
+        return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value))
     }
 
     /**
@@ -41,10 +41,10 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     func equinox(_ northward: Bool) -> JulianDay {
         let year = self.julianDay.date().year
         if northward == true {
-            return KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision)
+            return JulianDay(KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision))
         }
         else {
-            return KPCAAEquinoxesAndSolstices_SouthwardEquinox(year, self.highPrecision)
+            return JulianDay(KPCAAEquinoxesAndSolstices_SouthwardEquinox(year, self.highPrecision))
         }
     }
     
@@ -59,10 +59,10 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     func solstice(_ northern: Bool) -> JulianDay {
         let year = self.julianDay.date().year
         if northern == true {
-            return KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision)
+            return JulianDay(KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision))
         }
         else {
-            return KPCAAEquinoxesAndSolstices_SouthernSolstice(year, self.highPrecision)
+            return JulianDay(KPCAAEquinoxesAndSolstices_SouthernSolstice(year, self.highPrecision))
         }
     }
     

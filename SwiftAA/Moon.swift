@@ -13,12 +13,12 @@ public class Moon : Object, CelestialBody {
     
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
         [unowned self] in
-        return KPCPhysicalMoon_CalculateGeocentric(self.julianDay)
+        return KPCPhysicalMoon_CalculateGeocentric(self.julianDay.value)
         }()
     
     public fileprivate(set) lazy var selenographicDetails: KPCAASelenographicMoonDetails = {
         [unowned self] in
-        return KPCPhysicalMoon_SelenographicPositionOfSun(self.julianDay, self.highPrecision)
+        return KPCPhysicalMoon_SelenographicPositionOfSun(self.julianDay.value, self.highPrecision)
         }()
     
     public fileprivate(set) lazy var eclipseDetails: KPCAALunarEclipseDetails = {
@@ -34,7 +34,7 @@ public class Moon : Object, CelestialBody {
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers!
     public var radiusVector: Meter {
-        get { return KPCAAMoon_RadiusVector(self.julianDay)*1000.0 }
+        get { return KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0 }
     }
 
     public var eclipticCoordinates: EclipticCoordinates {
@@ -51,12 +51,12 @@ public class Moon : Object, CelestialBody {
     
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var equatorialSemiDiameter: Degree {
-        get { return KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector) }
+        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector)) }
     }
     
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var polarSemiDiameter: Degree {
-        get { return KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector) }
+        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector)) }
     }
 
     // TODO: add topocentric semi diameters
@@ -65,42 +65,42 @@ public class Moon : Object, CelestialBody {
     // MARK: - KPCAAMoon
 
     public var meanLongitude: Degree {
-        get { return KPCAAMoon_MeanLongitude(self.julianDay) }
+        get { return Degree(KPCAAMoon_MeanLongitude(self.julianDay.value)) }
     }
 
     public var meanElongation: Degree {
-        get { return KPCAAMoon_MeanElongation(self.julianDay) }
+        get { return Degree(KPCAAMoon_MeanElongation(self.julianDay.value)) }
     }
 
     public var meanAnomaly: Degree {
-        get { return KPCAAMoon_MeanAnomaly(self.julianDay) }
+        get { return Degree(KPCAAMoon_MeanAnomaly(self.julianDay.value)) }
     }
 
     public var argumentOfLatitude: Degree {
-        get { return KPCAAMoon_ArgumentOfLatitude(self.julianDay) }
+        get { return Degree(KPCAAMoon_ArgumentOfLatitude(self.julianDay.value)) }
     }
 
     public var meanLongitudeOfPerigee: Degree {
-        get { return KPCAAMoon_MeanLongitudePerigee(self.julianDay) }
+        get { return Degree(KPCAAMoon_MeanLongitudePerigee(self.julianDay.value)) }
     }
 
     public func longitudeOfAscendingNode(_ mean: Bool = true) -> Degree {
         if mean {
-            return KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay)
+            return Degree(KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay.value))
         }
         else {
-            return KPCAAMoon_TrueLongitudeAscendingNode(self.julianDay)
+            return Degree(KPCAAMoon_TrueLongitudeAscendingNode(self.julianDay.value))
         }
     }
 
     // MARK: - Static Methods
     
     static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degree {
-        return KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector)
+        return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector))
     }
     
     static func radiusVector(fromHorizontalParallax parallax: Degree) -> AU {
-        return KPCAAMoon_HorizontalParallaxToRadiusVector(parallax)
+        return KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value)
     }
     
     // MARK: - KPCAAMoonPhases
@@ -117,7 +117,7 @@ public class Moon : Object, CelestialBody {
         case .lastQuarter: 
             k = k + 0.75
         }
-        return mean ? KPCAAMoonPhases_MeanPhase(k) : KPCAAMoonPhases_TruePhase(k)
+        return mean ? JulianDay(KPCAAMoonPhases_MeanPhase(k)) : JulianDay(KPCAAMoonPhases_TruePhase(k))
     }
 
     // MARK: - KPCAAMoonPhysicalDetails
@@ -187,10 +187,10 @@ public class Moon : Object, CelestialBody {
     public func dateOfGreatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> JulianDay {
         let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date().fractionalYear)
         if mean {
-            return KPCAAMoonMaxDeclinations_MeanGreatestDeclination(k, northernly)
+            return JulianDay(KPCAAMoonMaxDeclinations_MeanGreatestDeclination(k, northernly))
         }
         else {
-            return KPCAAMoonMaxDeclinations_TrueGreatestDeclination(k, northernly)
+            return JulianDay(KPCAAMoonMaxDeclinations_TrueGreatestDeclination(k, northernly))
         }
     }
     
@@ -203,10 +203,10 @@ public class Moon : Object, CelestialBody {
     public func greatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> Degree {
         let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date().fractionalYear)
         if mean {
-            return KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(k)
+            return Degree(KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(k))
         }
         else {
-            return KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(k, northernly)
+            return Degree(KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(k, northernly))
         }
     }
 
@@ -219,10 +219,10 @@ public class Moon : Object, CelestialBody {
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
         /// Moon coordinates first.
-        return KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha,
-                                                                 moonEquatorialCoords.delta,
-                                                                 sun.equatorialCoordinates.alpha,
-                                                                 sun.equatorialCoordinates.delta)
+        return Degree(KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha,
+                                                                        moonEquatorialCoords.delta.value,
+                                                                        sun.equatorialCoordinates.alpha,
+                                                                        sun.equatorialCoordinates.delta.value))
     }
     
     /// The phase angle of the Moon
@@ -235,14 +235,14 @@ public class Moon : Object, CelestialBody {
         let moonEarthDistance = self.radiusVector.AU
         let earthSunDistance = earth.radiusVector // in AU by default
         
-        return KPCAAMoonIlluminatedFraction_PhaseAngle(self.geocentricElongation(), moonEarthDistance, earthSunDistance)
+        return Degree(KPCAAMoonIlluminatedFraction_PhaseAngle(self.geocentricElongation().value, moonEarthDistance, earthSunDistance))
     }
     
     /// The illuminated fraction of the Moon
     ///
     /// - returns: A number between 0. and 1. representing the illuminated fraction of the Moon
     public func illuminatedFraction() -> Double {
-        return KPCAAMoonIlluminatedFraction_IlluminatedFraction(self.phaseAngle())
+        return KPCAAMoonIlluminatedFraction_IlluminatedFraction(self.phaseAngle().value)
     }
     
     /// The position angle of the Moon's bright limb is the position angle of the midpoint of the illuminated limb of
@@ -254,10 +254,10 @@ public class Moon : Object, CelestialBody {
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
         /// Sun coordinates first. See AA p. 345
-        return KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha,
-                                                          sun.equatorialCoordinates.delta,
-                                                          moonEquatorialCoords.alpha,
-                                                          moonEquatorialCoords.delta)
+        return Degree(KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha,
+                                                                 sun.equatorialCoordinates.delta.value,
+                                                                 moonEquatorialCoords.alpha,
+                                                                 moonEquatorialCoords.delta.value))
     }
     
     // MARK: - Moon Nodes

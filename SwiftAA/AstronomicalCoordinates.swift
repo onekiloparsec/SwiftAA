@@ -30,8 +30,8 @@ public struct EquatorialCoordinates {
     }
     
     func toEclipticCoordinates() -> EclipticCoordinates {
-        let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension, self.declination, self.epoch)
-        return EclipticCoordinates(lambda: components.X, beta: components.Y, epsilon: self.epoch)
+        let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension, self.declination.value, self.epoch)
+        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: self.epoch)
     }
     
     /**
@@ -50,27 +50,31 @@ public struct EquatorialCoordinates {
      */
     func toGalacticCoordinates() -> GalacticCoordinates {
         let precessedCoords = self.precessedCoordinates(to: StandardEpoch_B1950_0)
-        let components = KPCAACoordinateTransformation_Equatorial2Galactic(precessedCoords.rightAscension, precessedCoords.declination)
-        return GalacticCoordinates(l: components.X, b: components.Y)
+        let components = KPCAACoordinateTransformation_Equatorial2Galactic(precessedCoords.rightAscension, precessedCoords.declination.value)
+        return GalacticCoordinates(l: Degree(components.X), b: Degree(components.Y))
     }
     
     func toHorizontalCoordinates(forGeographicalCoordinates coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
-        let lha = julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude)
-        let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha, self.declination, coords.latitude)
-        return HorizontalCoordinates(azimuth: components.X, altitude: components.Y, geographicCoordinates: coords, julianDay: julianDay, epoch: self.epoch)
+        let lha = julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude.value)
+        let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha, self.declination.value, coords.latitude.value)
+        return HorizontalCoordinates(azimuth: Degree(components.X),
+                                     altitude: Degree(components.Y),
+                                     geographicCoordinates: coords,
+                                     julianDay: julianDay,
+                                     epoch: self.epoch)
     }
     
     func precessedCoordinates(to newEpoch: Double) -> EquatorialCoordinates {
-        let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension, self.declination, self.epoch, newEpoch)
-        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: newEpoch)
+        let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension, self.declination.value, self.epoch, newEpoch)
+        return EquatorialCoordinates(alpha: components.X, delta: Degree(components.Y), epsilon: newEpoch)
     }
     
     func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degree {
-        return KPCAAAngularSeparation_Separation(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
+        return Degree(KPCAAAngularSeparation_Separation(self.alpha, self.delta.value, otherCoordinates.alpha, otherCoordinates.delta.value))
     }
     
     func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degree {
-        return KPCAAAngularSeparation_PositionAngle(self.alpha, self.delta, otherCoordinates.alpha, otherCoordinates.delta)
+        return Degree(KPCAAAngularSeparation_PositionAngle(self.alpha, self.delta.value, otherCoordinates.alpha, otherCoordinates.delta.value))
     }
 }
 
@@ -100,13 +104,13 @@ public struct EclipticCoordinates {
     }
     
     func toEquatorialCoordinates() -> EquatorialCoordinates {
-        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude, self.celestialLatitude, self.epoch)
-        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch)
+        return EquatorialCoordinates(alpha: components.X, delta: Degree(components.Y), epsilon: self.epoch)
     }
     
     func precessedCoordinates(to newEpoch: Double) -> EclipticCoordinates {
-        let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude, self.celestialLatitude, self.epoch, newEpoch)
-        return EclipticCoordinates(lambda: components.X, beta: components.Y, epsilon: newEpoch)
+        let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch, newEpoch)
+        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: newEpoch)
     }
 }
 
@@ -137,8 +141,8 @@ public struct GalacticCoordinates {
      - returns: The corresponding equatorial coordinates.
      */
     func toEquatorialCoordinates() -> EquatorialCoordinates {
-        let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude, self.galacticLatitude)
-        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+        let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude.value, self.galacticLatitude.value)
+        return EquatorialCoordinates(alpha: components.X, delta: Degree(components.Y), epsilon: self.epoch)
     }
 }
 
@@ -158,8 +162,8 @@ public struct HorizontalCoordinates {
     }
     
     func toEquatorialCoordinates() -> EquatorialCoordinates {
-        let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth, self.altitude, self.geographicCoordinates.latitude)
-        return EquatorialCoordinates(alpha: components.X, delta: components.Y, epsilon: self.epoch)
+        let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth.value, self.altitude.value, self.geographicCoordinates.latitude.value)
+        return EquatorialCoordinates(alpha: components.X, delta: Degree(components.Y), epsilon: self.epoch)
     }
 
 }

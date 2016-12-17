@@ -17,12 +17,12 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay, self.planetaryObject, self.highPrecision)
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.planetaryObject, self.highPrecision)
         }()
     
     public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay, self.highPrecision)
+        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
         }()
     
     public var equatorialCoordinates: EquatorialCoordinates {
@@ -33,22 +33,22 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         get {
             // To compute the _apparent_ RA and Dec from Ecl. coords, the true obliquity must be used (hence mean: false)
             let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, self.highPrecision)
-            let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision)
-            return EclipticCoordinates(lambda: longitude, beta: latitude, epsilon: epsilon)
+            let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)
+            let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay.value, self.planet, self.highPrecision)
+            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude), epsilon: epsilon)
         }
     }
 
     public var radiusVector: AU {
-        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
+        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision) }
     }
     
     public var equatorialSemiDiameter: Degree {
-        get { return KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector) }
+        get { return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector)) }
     }
     
     public var polarSemiDiameter: Degree {
-        get { return KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector) }
+        get { return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector)) }
     }
 }
 

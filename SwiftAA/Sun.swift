@@ -12,7 +12,7 @@ public class Sun: Object, CelestialBody {
     
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalSunDetails = {
         [unowned self] in
-        return KPCAAPhysicalSun_CalculateDetails(self.julianDay, self.highPrecision)
+        return KPCAAPhysicalSun_CalculateDetails(self.julianDay.value, self.highPrecision)
         }()
     
     public fileprivate(set) lazy var eclipseDetails: KPCAASolarEclipseDetails = {
@@ -25,7 +25,7 @@ public class Sun: Object, CelestialBody {
     // Celestial Body
     
     public var equatorialSemiDiameter: Degree {
-        get { return KPCAADiameters_SunSemidiameterA(self.radiusVector) }
+        get { return Degree(KPCAADiameters_SunSemidiameterA(self.radiusVector)) }
     }
     
     public var polarSemiDiameter: Degree {
@@ -39,8 +39,8 @@ public class Sun: Object, CelestialBody {
      - returns: The julian day of the next stary
      */
     public func nextStartOfTimeOfRotation() -> JulianDay {
-        let C = ceil((self.julianDay - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
-        return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
+        let C = ceil((self.julianDay.value - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
+        return JulianDay(KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C)))
     }
     
     /// Celestial Body
@@ -51,8 +51,8 @@ public class Sun: Object, CelestialBody {
         get {
             // To compute the _apparent_ RA and Dec, the true obliquity must be used.
             let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision),
-                                       beta: KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision),
+            return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
+                                       beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision)),
                                        epsilon: epsilon)
         }
     }
@@ -70,8 +70,8 @@ public class Sun: Object, CelestialBody {
         get {
             // To compute the _apparent_ RA and Dec, the true obliquity must be used.
             let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay, self.highPrecision),
-                                       beta: KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision),
+            return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay.value, self.highPrecision)),
+                                       beta: Degree(KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay.value, self.highPrecision)),
                                        epsilon: epsilon)
             }
     }
@@ -83,7 +83,7 @@ public class Sun: Object, CelestialBody {
      - returns: The position angle in degrees.
      */
     func positionAngleOfNorthernRotationAxisPoint() -> Degree {
-        return self.physicalDetails.P
+        return Degree(self.physicalDetails.P)
     }
     
     /**
@@ -95,7 +95,7 @@ public class Sun: Object, CelestialBody {
      - returns: The latitude in degrees.
      */
     func heliographicLatitudeOfSolarDiskCenter() -> Degree {
-        return self.physicalDetails.B0
+        return Degree(self.physicalDetails.B0)
     }
     
     /**
@@ -105,7 +105,7 @@ public class Sun: Object, CelestialBody {
      - returns: The longitude in degrees.
      */
     func heliographicLongitudeOfSolarDiskCenter() -> Degree {
-        return self.physicalDetails.L0
+        return Degree(self.physicalDetails.L0)
     }
 
     /**
@@ -117,7 +117,7 @@ public class Sun: Object, CelestialBody {
      - returns: The julian day of the start of the cycle.
      */
     func timeOfStartOfSynodicRotation(rotationNumber C: Int) -> JulianDay {
-        return KPCAAPhysicalSun_TimeOfStartOfRotation(C)
+        return JulianDay(KPCAAPhysicalSun_TimeOfStartOfRotation(C))
     }
     
     // MARK: - Equation of Time
@@ -128,6 +128,6 @@ public class Sun: Object, CelestialBody {
     /// - returns: The equation of time, in days.
     public func equationOfTime() -> Day {
         // KPCAA result is in minutes of time.
-        return KPCAAEquationOfTime_Calculate(self.julianDay, self.highPrecision) / 24.0 / 60.0
+        return KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / 24.0 / 60.0
     }
 }
