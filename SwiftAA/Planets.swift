@@ -23,7 +23,11 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay, self.highPrecision)
-        }()    
+        }()
+    
+    public var equatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+    }
 }
 
 // special Pluto:

@@ -45,6 +45,10 @@ public class Moon : Object, CelestialBody {
         }
     }
     
+    public var equatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+    }
+
     // MARK: - KPCAAMoon
 
     public var meanLongitude: Degree {

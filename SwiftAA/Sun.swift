@@ -47,6 +47,10 @@ public class Sun: Object, CelestialBody {
         }
     }
     
+    public var equatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+    }
+
     /// Celestial Body Supplement
     
     /// See AA, p.164. In some instances, for example in meteor work, it is necessary to have the Sun's longitude

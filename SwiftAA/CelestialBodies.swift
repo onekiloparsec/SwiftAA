@@ -23,16 +23,45 @@ public protocol CelestialBody: ObjectBase {
     var equatorialCoordinates: EquatorialCoordinates { get }
     
     func riseTransitSetTimes(geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
+    
+    func parallacticAngle(geographicCoordinates: GeographicCoordinates) -> Degree
+    
+    func eclipticLongitudeOnHorizon(geographicCoordinates: GeographicCoordinates) -> Degree
+    
+    func angleBetweenEclipticAndHorizon(geographicCoordinates: GeographicCoordinates) -> Degree
+    
+    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(geographicCoordinates: GeographicCoordinates) -> Degree
 }
 
 public extension CelestialBody {
-    var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
-    }
-    
     public func riseTransitSetTimes(geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
         return RiseTransitSetTimes(celestialBody: self, geographicCoordinates: geographicCoordinates)
     }
+    
+    func parallacticAngle(geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
+        return KPCAAParallactic_ParallacticAngle(lha, geographicCoordinates.latitude, self.equatorialCoordinates.delta)
+    }
+    
+    func eclipticLongitudeOnHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
+        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        return KPCAAParallactic_EclipticLongitudeOnHorizon(lha, epsilon, geographicCoordinates.latitude)
+    }
+    
+    func angleBetweenEclipticAndHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
+        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        return KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha, epsilon, geographicCoordinates.latitude)
+    }
+    
+    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(geographicCoordinates: GeographicCoordinates) -> Degree {
+        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        return KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(self.eclipticCoordinates.lambda,
+                                                                                     self.eclipticCoordinates.beta,
+                                                                                     epsilon)
+    }
+
 }
 
 public class RiseTransitSetTimes {

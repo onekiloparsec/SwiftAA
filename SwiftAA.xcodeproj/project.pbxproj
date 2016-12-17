@@ -608,12 +608,14 @@
 		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
+		9FC501721E0571B2005CA6FC /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */; };
+		9FC501731E0571B2005CA6FC /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */; };
 		9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
 		9FD71F6C1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
-		9FD71F6E1D736FCB00E6F656 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */; };
-		9FD71F6F1D736FCB00E6F656 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */; };
+		9FD71F6E1D736FCB00E6F656 /* CelestialBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */; };
+		9FD71F6F1D736FCB00E6F656 /* CelestialBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */; };
 		9FDA5C261D16E5E2003B9F31 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C251D16E5E2003B9F31 /* Neptune.swift */; };
 		9FDA5C271D16E5E2003B9F31 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C251D16E5E2003B9F31 /* Neptune.swift */; };
 		9FDA5C291D16E60B003B9F31 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C281D16E60B003B9F31 /* Mercury.swift */; };
@@ -1049,9 +1051,10 @@
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
-		9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBody.swift; sourceTree = "<group>"; };
+		9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBodies.swift; sourceTree = "<group>"; };
 		9FDA5C251D16E5E2003B9F31 /* Neptune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
 		9FDA5C281D16E60B003B9F31 /* Mercury.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
 		9FDA5C2B1D16E612003B9F31 /* Mars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mars.swift; sourceTree = "<group>"; };
@@ -1126,15 +1129,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F1F12981D7C6A50006FD828 /* Stars */ = {
+		9F1F12981D7C6A50006FD828 /* Astronomical Objects */ = {
 			isa = PBXGroup;
 			children = (
+				9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */,
 				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
 				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
 				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
 				9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */,
 			);
-			name = Stars;
+			name = "Astronomical Objects";
 			sourceTree = "<group>";
 		};
 		9F29B4601B47313500B64C96 = {
@@ -1185,12 +1189,8 @@
 				9F48D55D1B4EE4B200B7EE7F /* KPCAANodes.mm */,
 				9F48D5601B4EE63000B7EE7F /* KPCAAParabolic.h */,
 				9F48D5611B4EE63000B7EE7F /* KPCAAParabolic.mm */,
-				9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */,
-				9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */,
 				9F48D56C1B4EFB2C00B7EE7F /* KPCAAParallax.h */,
 				9F48D56D1B4EFB2C00B7EE7F /* KPCAAParallax.mm */,
-				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
-				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
 				9F2A87A61D1FF6250004ADDD /* Partly Swifted */,
 				9F2A87A21D1FF4C20004ADDD /* Swifted */,
 				9FEA1DD21DA1679B00F7E346 /* Not Swifted */,
@@ -1243,6 +1243,8 @@
 				9F48D5511B4EE14F00B7EE7F /* KPCAAMoonPhases.mm */,
 				9F48D5581B4EE45200B7EE7F /* KPCAANeptune.h */,
 				9F48D5591B4EE45200B7EE7F /* KPCAANeptune.mm */,
+				9F48D5681B4EF16A00B7EE7F /* KPCAAParallactic.h */,
+				9F48D5691B4EF16A00B7EE7F /* KPCAAParallactic.mm */,
 				9F48D5701B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.h */,
 				9F48D5711B4FA62B00B7EE7F /* KPCAAPhysicalJupiter.mm */,
 				9F48D57C1B4FAC5500B7EE7F /* KPCAAPhysicalSun.h */,
@@ -1253,6 +1255,8 @@
 				9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */,
 				9F7A9DE21B4FC4D400033B77 /* KPCAARefraction.h */,
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
+				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
+				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
 				9F7A9DEE1B4FC7A800033B77 /* KPCAASaturn.h */,
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
 				9F7A9DF41B4FC89F00033B77 /* KPCAASaturnMoons.h */,
@@ -1373,7 +1377,7 @@
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
 				9F6B38CA1D9F9FAC008A2D96 /* Sun */,
-				9F1F12981D7C6A50006FD828 /* Stars */,
+				9F1F12981D7C6A50006FD828 /* Astronomical Objects */,
 			);
 			name = Swift;
 			path = SwiftAA;
@@ -1670,7 +1674,7 @@
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
 				9F2A87A31D1FF5030004ADDD /* JulianDay.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
-				9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */,
+				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -2252,7 +2256,7 @@
 				9F877ABB1E052A74006FC6E5 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F877AA51E052A74006FC6E5 /* AAKepler.cpp in Sources */,
 				9F877AB91E052A74006FC6E5 /* AAPhysicalSun.cpp in Sources */,
-				9FD71F6F1D736FCB00E6F656 /* CelestialBody.swift in Sources */,
+				9FD71F6F1D736FCB00E6F656 /* CelestialBodies.swift in Sources */,
 				9F694DEB1D15C67300EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F694DED1D15C67300EE7492 /* KPCAAMoon.mm in Sources */,
 				9F694DEE1D15C67300EE7492 /* KPCAAPhysicalSun.mm in Sources */,
@@ -2310,6 +2314,7 @@
 				9F877AFA1E052A74006FC6E5 /* AAVSOP87E_URA.cpp in Sources */,
 				9F877AEA1E052A74006FC6E5 /* AAVSOP87C_VEN.cpp in Sources */,
 				9F877A9B1E052A74006FC6E5 /* AAELP2000.cpp in Sources */,
+				9FC501731E0571B2005CA6FC /* AstronomicalObject.swift in Sources */,
 				9F877AF41E052A74006FC6E5 /* AAVSOP87E_JUP.cpp in Sources */,
 				9F694E0E1D15C67300EE7492 /* KPCAA2DCoordinate.mm in Sources */,
 				9F877A971E052A74006FC6E5 /* AAEclipses.cpp in Sources */,
@@ -2465,7 +2470,7 @@
 				9F877A271E0529A2006FC6E5 /* AAVSOP87_JUP.cpp in Sources */,
 				9F694D611D157BD200EE7492 /* KPCAAMoonPerigeeApogee.mm in Sources */,
 				9F877A731E0529A2006FC6E5 /* AAVSOP87D_URA.cpp in Sources */,
-				9FD71F6E1D736FCB00E6F656 /* CelestialBody.swift in Sources */,
+				9FD71F6E1D736FCB00E6F656 /* CelestialBodies.swift in Sources */,
 				9F694D331D15797600EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F877A0C1E0529A2006FC6E5 /* AARefraction.cpp in Sources */,
 				9F877A371E0529A2006FC6E5 /* AAVSOP87A_EMB.cpp in Sources */,
@@ -2538,6 +2543,7 @@
 				9F877A531E0529A2006FC6E5 /* AAVSOP87B_URA.cpp in Sources */,
 				9F877A791E0529A2006FC6E5 /* AAVSOP87E_JUP.cpp in Sources */,
 				9F877A711E0529A2006FC6E5 /* AAVSOP87D_SAT.cpp in Sources */,
+				9FC501721E0571B2005CA6FC /* AstronomicalObject.swift in Sources */,
 				9F877A231E0529A2006FC6E5 /* AAVSOP87.cpp in Sources */,
 				9F694D731D157BD200EE7492 /* KPCAAPhysicalJupiter.mm in Sources */,
 				9F877A691E0529A2006FC6E5 /* AAVSOP87D_JUP.cpp in Sources */,
