@@ -17,7 +17,7 @@ import Foundation
 #endif
 
 public typealias Degree=Double
-public typealias Arcsecond=Double
+public typealias ArcSecond=Double
 public typealias AU=Double // Astronomical Unit
 public typealias Meter=Double // meters
 public typealias Parsec=Double // parsecs
@@ -62,12 +62,14 @@ public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 public extension Degree {
     var degree: Double { return self }
     var arcminute: Double { return self * 60.0 }
-    var arcsecond: Arcsecond { return self * 3600.0 }
+    var arcsecond: ArcSecond { return self * 3600.0 }
     var radian: Double { return self * 0.017453292519943295769236907684886 }
     var hour:   Double { return self / 15.0 }
-    
-    public func distance() -> Parsec {
-        return KPCAAParallax_ParallaxToDistance(self.arcsecond)
+}
+
+public extension ArcSecond {
+    public func distance() -> AU {
+        return KPCAAParallax_ParallaxToDistance(self / 3600.0)
     }
 }
 
@@ -78,8 +80,8 @@ public extension AU {
     var m:  Meter  { return self / 149597870700.0 }
     var ly: Double { return self / 206264.8 }
     
-    public func parallax() -> Arcsecond {
-        return KPCAAParallax_DistanceToParallax(self.pc)
+    public func parallax() -> ArcSecond {
+        return KPCAAParallax_DistanceToParallax(self).arcsecond
     }
 }
 
