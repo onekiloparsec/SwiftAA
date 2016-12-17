@@ -71,7 +71,7 @@ public extension ElementsOfPlanetaryOrbit {
     }
     
     func semimajorAxis() -> AU {
-        return KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay.value)
+        return AU(KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay.value))
     }
     
     func eccentricity() -> Double {

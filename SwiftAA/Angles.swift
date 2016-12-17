@@ -20,7 +20,7 @@ public struct Degree: NumericType {
     public var hour: Hour { return Hour(self.value / 15.0) }
     
     public func distance() -> AU {
-        return KPCAAParallax_ParallaxToDistance(self.arcsecond.value)
+        return AU(KPCAAParallax_ParallaxToDistance(self.arcsecond.value))
     }
 }
 
@@ -49,7 +49,7 @@ public struct ArcSecond: NumericType {
     public var arcminute: Double { return self.value / 60.0 }
     
     public func distance() -> AU {
-        return KPCAAParallax_ParallaxToDistance(self.degree.value)
+        return AU(KPCAAParallax_ParallaxToDistance(self.degree.value))
     }
 }
 

@@ -16,8 +16,6 @@ import Foundation
     public typealias Color=UIColor
 #endif
 
-public typealias AU=Double // Astronomical Unit
-public typealias Meter=Double // meters
 public typealias Parsec=Double // parsecs
 public typealias Kilogram=Double
 public typealias Day=Double
@@ -56,18 +54,6 @@ public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
-
-public extension AU {
-    var AU: Double { return self }
-    var pc: Parsec { return self / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
-    var km: Double { return self / 149597870.7 }
-    var m:  Meter  { return self / 149597870700.0 }
-    var ly: Double { return self / 206264.8 }
-    
-    public func parallax() -> ArcSecond {
-        return Degree(KPCAAParallax_DistanceToParallax(self)).arcsecond
-    }
-}
 
 public extension KPCAAPlanet {
     static func fromString(_ string: String) -> KPCAAPlanet {

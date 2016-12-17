@@ -25,7 +25,7 @@ public class Sun: Object, CelestialBody {
     // Celestial Body
     
     public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_SunSemidiameterA(self.radiusVector)) }
+        get { return Degree(KPCAADiameters_SunSemidiameterA(self.radiusVector.value)) }
     }
     
     public var polarSemiDiameter: Degree {

@@ -45,7 +45,7 @@ public struct GalileanMoon {
     public var TropicalLongitude: Degree { get { return Degree(self.details.TropicalLongitude) } }
     public var EquatorialLatitude: Degree { get { return Degree(self.details.EquatorialLatitude) } }
 
-    public var radiusVector: AU { get { return self.details.r } }
+    public var radiusVector: AU { get { return AU(self.details.r) } }
 
     public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
     public var inOccultation: Bool { get { return self.details.inOccultation.boolValue } }

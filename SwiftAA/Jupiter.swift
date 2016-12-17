@@ -38,7 +38,9 @@ public class Jupiter: Planet {
     }
 
     public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector, self.apparentGeocentricDistance, self.phaseAngle.value) }
+        get { return KPCAAIlluminatedFraction_JupiterMagnitudeAA(self.radiusVector.value,
+                                                                 self.apparentGeocentricDistance.value,
+                                                                 self.phaseAngle.value) }
     }
 
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth

@@ -28,10 +28,10 @@ public struct GeographicCoordinates {
     /// - returns: The distance, in meters, between the two points, along Earth's surface.
     public func globeDistance(to otherCoordinates: GeographicCoordinates) -> Meter {
         // KPCAA result is in kilometers.
-        return KPCAAGlobe_DistanceBetweenPoints(self.latitude.value,
-                                                self.longitude.value,
-                                                otherCoordinates.latitude.value,
-                                                otherCoordinates.longitude.value) * 1000
+        return Meter(KPCAAGlobe_DistanceBetweenPoints(self.latitude.value,
+                                                      self.longitude.value,
+                                                      otherCoordinates.latitude.value,
+                                                      otherCoordinates.longitude.value) * 1000)
     }
 }
 

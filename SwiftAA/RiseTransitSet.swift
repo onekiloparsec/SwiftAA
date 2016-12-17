@@ -69,7 +69,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 equCoords3.delta.value,
                                                 geoCoords.longitude.value,
                                                 geoCoords.latitude.value,
-                                                geoCoords.altitude)
+                                                geoCoords.altitude.value)
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: JulianDay(details.Rise),

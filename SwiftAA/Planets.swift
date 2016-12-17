@@ -40,15 +40,15 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     }
 
     public var radiusVector: AU {
-        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision) }
+        get { return AU(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
     
     public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector)) }
+        get { return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector.value)) }
     }
     
     public var polarSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector)) }
+        get { return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector.value)) }
     }
 }
 

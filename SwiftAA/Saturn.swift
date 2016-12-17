@@ -45,8 +45,8 @@ public class Saturn: Planet {
         
     /// Includes the contribution from the ring.
     public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector,
-                                                                self.apparentGeocentricDistance,
+        get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector.value,
+                                                                self.apparentGeocentricDistance.value,
                                                                 self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
                                                                 self.ringSystem.saturnicentricEarthLatitude.value) } }
 }

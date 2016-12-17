@@ -27,16 +27,16 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
 public extension EllipticalPlanetaryDetails {
     
     var apparentGeocentricDistance: AU {
-        get { return self.planetaryDetails.ApparentGeocentricDistance }
+        get { return AU(self.planetaryDetails.ApparentGeocentricDistance) }
     }
     
     var trueGeocentricDistance: AU {
-        get { return self.ellipticalObjectDetails.TrueGeocentricDistance }
+        get { return AU(self.ellipticalObjectDetails.TrueGeocentricDistance) }
     }
     
     var phaseAngle: Degree {
-        get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector,
-                                                                Earth(julianDay: self.julianDay).radiusVector,
-                                                                self.apparentGeocentricDistance)) }
+        get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector.value,
+                                                                Earth(julianDay: self.julianDay).radiusVector.value,
+                                                                self.apparentGeocentricDistance.value)) }
     }
 }

@@ -71,7 +71,7 @@ public extension PlanetaryBase {
     }
     
     var radiusVector: AU {
-        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision) }
+        get { return AU(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
 }
 

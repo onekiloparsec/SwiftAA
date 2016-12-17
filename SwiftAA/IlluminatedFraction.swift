@@ -26,8 +26,8 @@ public extension IlluminatedFraction {
     
     var magnitude: Double {
         get { return KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
-                                                          self.radiusVector,
-                                                          self.trueGeocentricDistance,
+                                                          self.radiusVector.value,
+                                                          self.trueGeocentricDistance.value,
                                                           self.phaseAngle.value) }
     }
 }

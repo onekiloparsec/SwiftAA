@@ -24,7 +24,7 @@ class ConstantsTests: XCTestCase {
     /// That's the Geocentric to Topocentric parallax correction. See AA p280.
     func testParallaxToDistance() {
         let parallax1: ArcSecond = 23.592
-        XCTAssertEqualWithAccuracy(parallax1.distance(), 0.37276, accuracy: 0.0005)
+        XCTAssertEqualWithAccuracy(parallax1.distance().value, 0.37276, accuracy: 0.0005)
     }
     
     func testDistanceToParallax() {

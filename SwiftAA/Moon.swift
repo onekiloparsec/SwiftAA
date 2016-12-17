@@ -33,8 +33,8 @@ public class Moon : Object, CelestialBody {
     /// Radius vector of the Moon, that is, its distance from Earth.
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers!
-    public var radiusVector: Meter {
-        get { return KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0 }
+    public var radiusVector: AU {
+        get { return Meter(KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0).AstronomicalUnit }
     }
 
     public var eclipticCoordinates: EclipticCoordinates {
@@ -51,12 +51,12 @@ public class Moon : Object, CelestialBody {
     
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector)) }
+        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
     }
     
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var polarSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector)) }
+        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
     }
 
     // TODO: add topocentric semi diameters
@@ -96,11 +96,11 @@ public class Moon : Object, CelestialBody {
     // MARK: - Static Methods
     
     static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degree {
-        return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector))
+        return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector.value))
     }
     
     static func radiusVector(fromHorizontalParallax parallax: Degree) -> AU {
-        return KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value)
+        return AU(KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value))
     }
     
     // MARK: - KPCAAMoonPhases
@@ -232,8 +232,8 @@ public class Moon : Object, CelestialBody {
         let earth = Earth(julianDay: self.julianDay, highPrecision: self.highPrecision)
         
         // Both must be in the same unit
-        let moonEarthDistance = self.radiusVector.AU
-        let earthSunDistance = earth.radiusVector // in AU by default
+        let moonEarthDistance = self.radiusVector.value
+        let earthSunDistance = earth.radiusVector.value // in AU by default
         
         return Degree(KPCAAMoonIlluminatedFraction_PhaseAngle(self.geocentricElongation().value, moonEarthDistance, earthSunDistance))
     }

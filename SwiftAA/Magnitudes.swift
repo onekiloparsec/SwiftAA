@@ -18,7 +18,7 @@ public extension Magnitude {
     }
 
     public func distance(forAbsoluteMagnitude M: Magnitude, visualAbsorption Av: Double = 0.0) -> Parsec {
-        return pow(10.0, (m + 5.0 - M - Av)/5.0)
+        return pow(10.0, (self + 5.0 - M - Av)/5.0)
     }
     
     static public func magnitudeDifference(forBrightnessRatio r: Double) -> Double {
