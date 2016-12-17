@@ -79,3 +79,43 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                       setTime: JulianDay(details.Set))
 }
 
+public class RiseTransitSetTimes {
+    private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
+        [unowned self] in
+        let jd = self.celestialBody.julianDay
+        let hp = self.celestialBody.highPrecision
+        
+        let celestialBodyType = type(of: self.celestialBody)
+        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
+        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
+        
+        return riseTransitSet(forJulianDay: jd,
+                              equCoords1: body1.equatorialCoordinates,
+                              equCoords2: self.celestialBody.equatorialCoordinates,
+                              equCoords3: body3.equatorialCoordinates,
+                              geoCoords: self.geographicCoordinates)
+        }()
+    
+    public fileprivate(set) var geographicCoordinates: GeographicCoordinates
+    public fileprivate(set) var celestialBody: CelestialBody
+    
+    required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates) {
+        self.celestialBody = celestialBody
+        self.geographicCoordinates = geographicCoordinates
+    }
+    
+    public var riseTime: JulianDay? {
+        get { return self.riseTransiteSetTimesDetails.isRiseValid ? self.riseTransiteSetTimesDetails.riseTime : nil }
+    }
+    
+    public var transitTime: JulianDay? {
+        get { return self.riseTransiteSetTimesDetails.isTransitAboveHorizon ? self.riseTransiteSetTimesDetails.transitTime : nil }
+    }
+    
+    public var setTime: JulianDay? {
+        get { return self.riseTransiteSetTimesDetails.isSetValid ? self.riseTransiteSetTimesDetails.setTime : nil }
+    }
+}
+
+
+

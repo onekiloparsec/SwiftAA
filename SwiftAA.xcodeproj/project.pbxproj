@@ -1384,6 +1384,7 @@
 			children = (
 				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
+				9FB755361E05F28A00EC7617 /* Celestial Bodies */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
 				9F6B38CA1D9F9FAC008A2D96 /* Sun */,
@@ -1641,7 +1642,6 @@
 				9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
 				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
-				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
 			);
 			name = "Solar System Base";
 			sourceTree = "<group>";
@@ -1658,15 +1658,40 @@
 			name = "Numeric Types";
 			sourceTree = "<group>";
 		};
-		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
+		9FB755341E05F23800EC7617 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
 				9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */,
 				9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */,
 				9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */,
+			);
+			name = "Obj-C";
+			sourceTree = "<group>";
+		};
+		9FB755351E05F23F00EC7617 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
 				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
 				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		9FB755361E05F28A00EC7617 /* Celestial Bodies */ = {
+			isa = PBXGroup;
+			children = (
+				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
+				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
+			);
+			name = "Celestial Bodies";
+			sourceTree = "<group>";
+		};
+		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9FB755341E05F23800EC7617 /* Obj-C */,
+				9FB755351E05F23F00EC7617 /* Swift */,
 				9FC340311D156A5D0069E7C4 /* Info.plist */,
 			);
 			name = Tests;
@@ -1697,7 +1722,6 @@
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
 				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
-				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
