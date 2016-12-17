@@ -2,13 +2,13 @@
 
 <head>
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
-<title>AA+ v1.71</title>
+<title>AA+ v1.73</title>
 <link href="./naughter.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-<h2>AA+ v1.71</h2>
+<h2>AA+ v1.73</h2>
 <p>Welcome to <strong>AA+</strong>, a collection of freeware C++ classes which provide 
 an implementation of the algorithms as presented in the book &quot;Astronomical 
 Algorithms&quot; (2nd Edition) by Jean Meeus.</p>
@@ -1094,6 +1094,37 @@ of Jupiter and Saturn as well as many other algorithms presented in the book.</p
 	CVSOP87::Calculate_Dash methods. A spot check of the VSOP87 sample values in 
 	AATest.cpp now match exactly with the published VSOP87 test values. Thanks 
 	to &quot;Pavel&quot; for reporting this issue.</li>
+</ul>
+<p><strong>v1.72 (7 July 2016) </strong></p>
+<ul>
+	<li>Fixed a bug in the documentation for the Alpha and Delta parameters to 
+	the CAAPrecession::PrecessEquatorial method. Thanks to &quot;Luigi&quot; for reporting 
+	this issue.</li>
+	<li>Fixed a bug in the documentation for the PMAlpha parameter to the 
+	CAAPrecession::AdjustPositionUsingMotionInSpace method. Thanks to &quot;Luigi&quot; 
+	for reporting this issue.</li>
+	<li>Updated the CAADynamicalTime::CumulativeLeapSeconds method as taken from
+	<a href="http://maia.usno.navy.mil/ser7/tai-utc.dat">
+	http://maia.usno.navy.mil/ser7/tai-utc.dat</a> 
+	to include the leap second which will occur on 1 January 2017.</li>
+	<li>Updated the observed DeltaT values from <a href="http://maia.usno.navy.mil/ser7/deltat.data">http://maia.usno.navy.mil/ser7/deltat.data</a> 
+	to 1st July 2016</li>
+	<li>Updated the predicted DeltaT values from <a href="http://maia.usno.navy.mil/ser7/deltat.preds">http://maia.usno.navy.mil/ser7/deltat.preds</a> to July 2026 </li>
+	<li>Fixed a compiler warning in CAAEaster::Calculate as reported at
+	<a href="http://stackoverflow.com/questions/2348415/objective-c-astronomy-library">
+	http://stackoverflow.com/questions/2348415/objective-c-astronomy-library</a>. </li>
+</ul>
+<p><strong>v1.73 (16 October 2016) </strong></p>
+<ul>
+	<li>Improved the accuracy of CAASun::ApparentEclipticLongitude when the 
+	bHighPrecision parameter is true. The code now uses a new 
+	VariationGeometricEclipticLongitude method which provides a new higher 
+	precision method to calculate the effect of aberration. This takes into 
+	account that Earth's orbit around the Sun is not a purely unperturbed 
+	elliptical orbit. This improves the accuracy of the sample 25.a/b from the 
+	book by a couple of hundreds of arc seconds. The results now are exactly in 
+	sync with the results as reported in the book. Thanks to &quot;Pavel&quot; for 
+	reporting this issue. </li>
 </ul>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -5537,8 +5568,8 @@ double </strong><i>Delta</i><strong>, double</strong><i> JD0</i><strong>, double
 x value in the class corresponds to the right ascension as an hour angle and the 
 y value corresponds to the declination in degrees.</p>
 <p><strong>Parameters</strong></p>
-<p><em>Alpha </em>The right ascension in hours of the object at time JD.</p>
-<p><i>Delta </i>The declination in degrees of the object at time JD.</p>
+<p><em>Alpha </em>The right ascension in hours of the object at time JD0.</p>
+<p><i>Delta </i>The declination in degrees of the object at time JD0.</p>
 <p><em>JD0</em> The date in Dynamical time corresponding to the initial epoch.</p>
 <p><em>JD</em> The date in Dynamical time corresponding to the final epoch.</p>
 <p>&nbsp;</p>
@@ -5625,7 +5656,7 @@ and the y value corresponds to the declination in degrees.</p>
 positive in the future.</p>
 <p><em>Alpha </em>The right ascension expression as an hour angle.</p>
 <p><i>Delta </i>The declination in degrees. </p>
-<p><em>PMAlpha </em>The proper motion in right ascension in arc seconds per year.
+<p><em>PMAlpha </em>The proper motion in right ascension in seconds of time per year.
 </p>
 <p><i>PMDelta </i>The proper motion in declination in arc seconds per year.</p>
 <p>&nbsp;</p>
@@ -5975,6 +6006,8 @@ refers to Chapter 25 &amp; 26 in the book.</p>
 <p><a href="#CAASun_EquatorialRectangularCoordinatesJ2000">EquatorialRectangularCoordinatesJ2000</a></p>
 <p><a href="#CAASun_EquatorialRectangularCoordinatesB1950">EquatorialRectangularCoordinatesB1950</a></p>
 <p><a href="#CAASun_EquatorialRectangularCoordinatesAnyEquinox">EquatorialRectangularCoordinatesAnyEquinox</a></p>
+<p><a href="#CAASun_VariationGeometricEclipticLongitude">
+VariationGeometricEclipticLongitude</a></p>
 <p>&nbsp;</p>
 <p><strong><a name="CAASun_GeometricEclipticLongitude"></a>CAASun::GeometricEclipticLongitude</strong></p>
 <p><strong>static double GeometricEclipticLongitude(double </strong><i>JD</i><strong>, 
@@ -6098,6 +6131,17 @@ units referred to the specified equinox defined in the FK5 theory.</p>
 <p>JDEquinox The date in Dynamical time specifying the equinox to use.</p>
 <p><em>bHighPrecision</em> If true then use the full VSOP87 theory instead of 
 the truncated version as provided in Meeus's book.</p>
+<p>&nbsp;</p>
+<p><strong><a name="CAASun_VariationGeometricEclipticLongitude"></a>CAASun::VariationGeometricEclipticLongitude</strong></p>
+<p><strong>static double VariationGeometricEclipticLongitude(double </strong><i>
+JD</i><strong>)</strong></p>
+<p><strong>Return Value</strong></p>
+<p>The variation in ecliptic longitude in arcseconds per day of the Sun due to 
+aberation. </p>
+<p><strong>Parameters</strong></p>
+<p><em>JD</em> The date in Dynamical time to calculate for. The value returned 
+by this method is used to convert the geometric ecliptic longitude of the Sun to 
+the apparent longitude. This refers to equation on page 168.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><strong><a name="CAAUranus"></a>CAAUranus</strong></p>
@@ -9071,7 +9115,7 @@ Algorithms&quot;.</p>
 <p>&nbsp;</p>
 <h2><a name="Contact"></a>Contacting the Author</h2>
 <p>PJ Naughter<br>Email: <a href="mailto:pjna@naughter.com">pjna@naughter.com</a><br>
-Web: <a href="http://www.naughter.com">http://www.naughter.com</a><br>28 April 2016</p>
+Web: <a href="http://www.naughter.com">http://www.naughter.com</a><br>16 October 2016</p>
 
 </body>
 

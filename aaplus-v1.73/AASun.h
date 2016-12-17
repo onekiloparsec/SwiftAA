@@ -51,6 +51,7 @@ public:
   static double GeometricFK5EclipticLatitude(double JD, bool bHighPrecision);
   static double ApparentEclipticLongitude(double JD, bool bHighPrecision);
   static double ApparentEclipticLatitude(double JD, bool bHighPrecision);
+  static double VariationGeometricEclipticLongitude(double JD);
   static CAA3DCoordinate EquatorialRectangularCoordinatesMeanEquinox(double JD, bool bHighPrecision);
   static CAA3DCoordinate EclipticRectangularCoordinatesJ2000(double JD, bool bHighPrecision);
   static CAA3DCoordinate EquatorialRectangularCoordinatesJ2000(double JD, bool bHighPrecision);

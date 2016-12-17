@@ -52,7 +52,7 @@ class AAPLUS_EXT_CLASS CAAEaster
 {
 public:
 //Static methods
-  static CAAEasterDetails Calculate(int nYear, bool GregorianCalendar);
+  static CAAEasterDetails Calculate(long nYear, bool GregorianCalendar);
 };
 
 

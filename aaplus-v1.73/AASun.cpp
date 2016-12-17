@@ -15,6 +15,13 @@ History: PJN / 17-01-2007 1. Changed name of CAASun::ApparentEclipticLongtitude 
          PJN / 16-09-2015 1. All the methods in CAASun now include a "bool bHighPrecision" parameter
                           which if set to true means the code uses the full VSOP87 theory rather than the
                           truncated theory as presented in Meeus's book.
+         PJN / 16-10-2016 1. Improved the accuracy of CAASun::ApparentEclipticLongitude when the bHighPrecision
+                          parameter is true. The code now uses a new VariationGeometricEclipticLongitude method
+                          which provides a new higher precision method to calculate the effect of aberration.
+                          This takes into account that Earth's orbit around the Sun is not a purely unperturbed
+                          elliptical orbit. This improves the accuracy of the sample 25.a/b from the book by
+                          a couple of hundreds of arc seconds. The results now are exactly in sync with the 
+                          results as reported in the book. Thanks to "Pavel" for reporting this issue.
 
 Copyright (c) 2003 - 2016 by PJ Naughter (Web: www.naughter.com, Email: pjna@naughter.com)
 
@@ -95,7 +102,10 @@ double CAASun::ApparentEclipticLongitude(double JD, bool bHighPrecision)
 
   //Apply the correction in longitude due to aberration
   double R = CAAEarth::RadiusVector(JD, bHighPrecision);
-  Longitude -= CAACoordinateTransformation::DMSToDegrees(0, 0, 20.4898 / R);
+  if (bHighPrecision)
+    Longitude -= (0.005775518 * R * CAACoordinateTransformation::DMSToDegrees(0, 0, VariationGeometricEclipticLongitude(JD)));
+  else
+    Longitude -= CAACoordinateTransformation::DMSToDegrees(0, 0, 20.4898 / R);
 
   return Longitude;
 }
@@ -159,4 +169,38 @@ CAA3DCoordinate CAASun::EquatorialRectangularCoordinatesAnyEquinox(double JD, do
   value = CAAFK5::ConvertVSOPToFK5AnyEquinox(value, JDEquinox);
 
   return value;
+}
+
+double CAASun::VariationGeometricEclipticLongitude(double JD)
+{
+  //D is the number of days since the epoch
+  double D = JD - 2451545.00;
+  double tau = (D / 365250);
+  double tau2 = tau * tau;
+  double tau3 = tau2 * tau;
+
+  double deltaLambda = 3548.193
+                       + 118.568 * sin(CAACoordinateTransformation::DegreesToRadians(87.5287 + 359993.7286 * tau))
+                       + 2.476 * sin(CAACoordinateTransformation::DegreesToRadians(85.0561 + 719987.4571 * tau))
+                       + 1.376 * sin(CAACoordinateTransformation::DegreesToRadians(27.8502 + 4452671.1152 * tau))
+                       + 0.119 * sin(CAACoordinateTransformation::DegreesToRadians(73.1375 + 450368.8564 * tau))
+                       + 0.114 * sin(CAACoordinateTransformation::DegreesToRadians(337.2264 + 329644.6718 * tau))
+                       + 0.086 * sin(CAACoordinateTransformation::DegreesToRadians(222.5400 + 659289.3436 * tau))
+                       + 0.078 * sin(CAACoordinateTransformation::DegreesToRadians(162.8136 + 9224659.7915 * tau))
+                       + 0.054 * sin(CAACoordinateTransformation::DegreesToRadians(82.5823 + 1079981.1857 * tau))
+                       + 0.052 * sin(CAACoordinateTransformation::DegreesToRadians(171.5189 + 225184.4282 * tau))
+                       + 0.034 * sin(CAACoordinateTransformation::DegreesToRadians(30.3214 + 4092677.3866 * tau))
+                       + 0.033 * sin(CAACoordinateTransformation::DegreesToRadians(119.8105 + 337181.4711 * tau))
+                       + 0.023 * sin(CAACoordinateTransformation::DegreesToRadians(247.5418 + 299295.6151 * tau))
+                       + 0.023 * sin(CAACoordinateTransformation::DegreesToRadians(325.1526 + 315559.5560 * tau))
+                       + 0.021 * sin(CAACoordinateTransformation::DegreesToRadians(155.1241 + 675553.2846 * tau))
+                       + 7.311 * tau * sin(CAACoordinateTransformation::DegreesToRadians(333.4515 + 359993.7286 * tau))
+                       + 0.305 * tau * sin(CAACoordinateTransformation::DegreesToRadians(330.9814 + 719987.4571 * tau))
+                       + 0.010 * tau * sin(CAACoordinateTransformation::DegreesToRadians(328.5170 + 1079981.1857 * tau))
+                       + 0.309 * tau2 * sin(CAACoordinateTransformation::DegreesToRadians(241.4518 + 359993.7286 * tau))
+                       + 0.021 * tau2 * sin(CAACoordinateTransformation::DegreesToRadians(205.0482 + 719987.4571 * tau))
+                       + 0.004 * tau2 * sin(CAACoordinateTransformation::DegreesToRadians(297.8610 + 4452671.1152 * tau))
+                       + 0.010 * tau3 * sin(CAACoordinateTransformation::DegreesToRadians(154.7066 + 359993.7286 * tau));
+
+  return deltaLambda;
 }
