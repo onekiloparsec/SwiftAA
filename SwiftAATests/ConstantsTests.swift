@@ -29,6 +29,6 @@ class ConstantsTests: XCTestCase {
     
     func testDistanceToParallax() {
         let distance1: AU = 0.37276
-        XCTAssertEqualWithAccuracy(distance1.parallax(), 23.592, accuracy: 0.0005)
+        XCTAssertEqualWithAccuracy(distance1.parallax().value, 23.592, accuracy: 0.0005)
     }
 }

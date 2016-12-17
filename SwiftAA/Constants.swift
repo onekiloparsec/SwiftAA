@@ -64,7 +64,7 @@ public extension AU {
     var m:  Meter  { return self / 149597870700.0 }
     var ly: Double { return self / 206264.8 }
     
-    public func parallax() -> Double {
+    public func parallax() -> ArcSecond {
         return Degree(KPCAAParallax_DistanceToParallax(self)).arcsecond
     }
 }

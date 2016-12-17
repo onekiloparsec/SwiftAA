@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SwiftAA
 
 class JulianDayTest: XCTestCase {
 
@@ -39,11 +40,11 @@ class JulianDayTest: XCTestCase {
         components.second = 4
         components.nanosecond = 500000
         let date = Calendar(identifier: .gregorian).date(from: components)!
-        XCTAssertEqualWithAccuracy(date.julianDay(), 2421123.585469, accuracy: 0.000001)
+        XCTAssertEqualWithAccuracy(date.julianDay().value, 2421123.585469, accuracy: 0.000001)
     }
 
     func testJulianDayToDateComponents() {
-        let julianDay = 2421123.585469
+        let julianDay = JulianDay(2421123.585469)
         let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date())
         XCTAssertEqual(components.year!, 1916)
         XCTAssertEqual(components.month!, 9)

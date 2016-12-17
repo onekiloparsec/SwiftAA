@@ -45,7 +45,7 @@ public func binaryStarsApparentEccentricityDetails(time: Double, elements: Binar
                                                    elements.P,
                                                    elements.T,
                                                    elements.e,
-                                                   elements.a.arcsecond,
+                                                   elements.a.arcsecond.value,
                                                    elements.i.value,
                                                    elements.Omega.value,
                                                    elements.w.value)

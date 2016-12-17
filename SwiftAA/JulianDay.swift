@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias Hour=Double
-
 public struct JulianDay: NumericType {
     public var value: Double
     public init(_ value: Double) {
@@ -84,7 +82,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func meanGreenwichSiderealTime() -> Hour {
-        return KPCAASidereal_MeanGreenwichSiderealTime(self.value)
+        return Hour(KPCAASidereal_MeanGreenwichSiderealTime(self.value))
     }
 
     /**
@@ -97,7 +95,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func meanLocalSiderealTime(forGeographicLongitude longitude: Double) -> Hour {
-        return self.meanGreenwichSiderealTime() - RadiansToHours(DegreesToRadians(longitude))
+        return Hour(self.meanGreenwichSiderealTime().value - RadiansToHours(DegreesToRadians(longitude)))
     }
 
     /**
@@ -108,7 +106,7 @@ public extension JulianDay {
      - returns: The sidereal time in hours.
      */
     public func apparentGreenwichSiderealTime() -> Hour {
-        return KPCAASidereal_ApparentGreenwichSiderealTime(self.value)
+        return Hour(KPCAASidereal_ApparentGreenwichSiderealTime(self.value))
     }
     
     // MARK: - Dynamical Times

@@ -219,9 +219,9 @@ public class Moon : Object, CelestialBody {
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
         /// Moon coordinates first.
-        return Degree(KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha,
+        return Degree(KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha.value,
                                                                         moonEquatorialCoords.delta.value,
-                                                                        sun.equatorialCoordinates.alpha,
+                                                                        sun.equatorialCoordinates.alpha.value,
                                                                         sun.equatorialCoordinates.delta.value))
     }
     
@@ -254,9 +254,9 @@ public class Moon : Object, CelestialBody {
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
         /// Sun coordinates first. See AA p. 345
-        return Degree(KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha,
+        return Degree(KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha.value,
                                                                  sun.equatorialCoordinates.delta.value,
-                                                                 moonEquatorialCoords.alpha,
+                                                                 moonEquatorialCoords.alpha.value,
                                                                  moonEquatorialCoords.delta.value))
     }
     
