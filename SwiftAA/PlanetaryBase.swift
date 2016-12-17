@@ -15,7 +15,7 @@ enum PlanetError: Error {
 
 // MARK: -
 
-public protocol PlanetaryBase: OrbitingObject {    
+public protocol PlanetaryBase: ObjectBase {
     // The planet name
     var name: String { get }
     

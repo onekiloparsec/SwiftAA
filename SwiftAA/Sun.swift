@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Sun: Object {
+public class Sun: Object, CelestialBody {
     
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalSunDetails = {
         [unowned self] in
@@ -33,32 +33,33 @@ public class Sun: Object {
         return KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C))
     }
     
-    public func eclipticLongitude(_ equinox: Equinox) -> Degree {
-        switch equinox {
-        case .meanEquinoxOfTheDate:
-            return KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision)
-        case .standardJ2000:
-            return KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay, self.highPrecision)
+    /// Celestial Body
+    
+    public var radiusVector: AU { return 0.0 }
+    
+    public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            return EclipticCoordinates(lambda: KPCAASun_GeometricEclipticLongitude(self.julianDay, self.highPrecision),
+                                       beta: KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision),
+                                       epsilon: epsilon)
         }
     }
     
-    public func eclipticLatitude(_ equinox: Equinox) -> Degree {
-        switch equinox {
-        case .meanEquinoxOfTheDate:
-            return KPCAASun_GeometricEclipticLatitude(self.julianDay, self.highPrecision)
-        case .standardJ2000:
-            return KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision)
-        }
-    }
+    /// Celestial Body Supplement
     
-    // TODO: Refactor the ecliptic coords func into a single protocol, as in Planets/OrbitingObject?
-
-    public func eclipticCoordinates() -> EclipticCoordinates {
-        // To compute the _apparent_ RA and Dec, the true obliquity must be used.
-        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-        return EclipticCoordinates(lambda: self.eclipticLongitude(.meanEquinoxOfTheDate),
-                                   beta: self.eclipticLatitude(.meanEquinoxOfTheDate),
-                                   epsilon: epsilon)
+    /// See AA, p.164. In some instances, for example in meteor work, it is necessary to have the Sun's longitude
+    /// referred to the standard equinox of J2000.0. Between, 1900 and 2100, this can be performed with sufficient
+    /// accuracy.
+    public var eclipticCoordinatesStandardJ2000: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            return EclipticCoordinates(lambda: KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay, self.highPrecision),
+                                       beta: KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay, self.highPrecision),
+                                       epsilon: epsilon)
+            }
     }
     
     /**

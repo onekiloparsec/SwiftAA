@@ -9,7 +9,7 @@
 import Foundation
 
 // To be understood as a "non-Earth" planet
-public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails, IlluminatedFraction  {
+public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails, IlluminatedFraction  {
 
     public class var averageColor: Color {
         get { return Color.white }
@@ -23,7 +23,7 @@ public class Planet: Object, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanet
     public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay, self.highPrecision)
-        }()
+        }()    
 }
 
 // special Pluto:

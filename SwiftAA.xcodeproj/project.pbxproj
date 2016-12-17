@@ -612,8 +612,8 @@
 		9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
 		9FD71F6C1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
-		9FD71F6E1D736FCB00E6F656 /* OribitingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */; };
-		9FD71F6F1D736FCB00E6F656 /* OribitingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */; };
+		9FD71F6E1D736FCB00E6F656 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */; };
+		9FD71F6F1D736FCB00E6F656 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */; };
 		9FDA5C261D16E5E2003B9F31 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C251D16E5E2003B9F31 /* Neptune.swift */; };
 		9FDA5C271D16E5E2003B9F31 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C251D16E5E2003B9F31 /* Neptune.swift */; };
 		9FDA5C291D16E60B003B9F31 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA5C281D16E60B003B9F31 /* Mercury.swift */; };
@@ -1051,7 +1051,7 @@
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
-		9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OribitingObject.swift; sourceTree = "<group>"; };
+		9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBody.swift; sourceTree = "<group>"; };
 		9FDA5C251D16E5E2003B9F31 /* Neptune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
 		9FDA5C281D16E60B003B9F31 /* Mercury.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
 		9FDA5C2B1D16E612003B9F31 /* Mars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mars.swift; sourceTree = "<group>"; };
@@ -1670,7 +1670,7 @@
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
 				9F2A87A31D1FF5030004ADDD /* JulianDay.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
-				9FD71F6D1D736FCB00E6F656 /* OribitingObject.swift */,
+				9FD71F6D1D736FCB00E6F656 /* CelestialBody.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -2252,7 +2252,7 @@
 				9F877ABB1E052A74006FC6E5 /* AAPlanetPerihelionAphelion.cpp in Sources */,
 				9F877AA51E052A74006FC6E5 /* AAKepler.cpp in Sources */,
 				9F877AB91E052A74006FC6E5 /* AAPhysicalSun.cpp in Sources */,
-				9FD71F6F1D736FCB00E6F656 /* OribitingObject.swift in Sources */,
+				9FD71F6F1D736FCB00E6F656 /* CelestialBody.swift in Sources */,
 				9F694DEB1D15C67300EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F694DED1D15C67300EE7492 /* KPCAAMoon.mm in Sources */,
 				9F694DEE1D15C67300EE7492 /* KPCAAPhysicalSun.mm in Sources */,
@@ -2465,7 +2465,7 @@
 				9F877A271E0529A2006FC6E5 /* AAVSOP87_JUP.cpp in Sources */,
 				9F694D611D157BD200EE7492 /* KPCAAMoonPerigeeApogee.mm in Sources */,
 				9F877A731E0529A2006FC6E5 /* AAVSOP87D_URA.cpp in Sources */,
-				9FD71F6E1D736FCB00E6F656 /* OribitingObject.swift in Sources */,
+				9FD71F6E1D736FCB00E6F656 /* CelestialBody.swift in Sources */,
 				9F694D331D15797600EE7492 /* KPCAAEquinoxesAndSolstices.mm in Sources */,
 				9F877A0C1E0529A2006FC6E5 /* AARefraction.cpp in Sources */,
 				9F877A371E0529A2006FC6E5 /* AAVSOP87A_EMB.cpp in Sources */,

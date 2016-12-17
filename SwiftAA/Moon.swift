@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Moon : Object, OrbitingObject {
+public class Moon : Object, CelestialBody {
 //    public fileprivate(set) var topocentricPhysicalDetails: KPCAAPhysicalMoonDetails
     
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
@@ -28,29 +28,21 @@ public class Moon : Object, OrbitingObject {
 
     public let diameter: Meter = 3476000.0
         
-    // MARK: - OrbitingObject (Complement)
-    
-    public var eclipticLongitude: Degree {
-        get { return KPCAAMoon_EclipticLongitude(self.julianDay) }
-    }
-    
-    public var eclipticLatitude: Degree {
-        get { return KPCAAMoon_EclipticLatitude(self.julianDay) }
-    }
-    
-    public var eclipticCoordinates: EclipticCoordinates {
-        get {
-            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: self.eclipticLongitude, beta: self.eclipticLatitude, epsilon: epsilon)
-        }
-    }
+    // MARK: - CelestialBody
     
     /// Radius vector of the Moon, that is, its distance from Earth.
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers!
     public var radiusVector: Meter {
         get { return KPCAAMoon_RadiusVector(self.julianDay)*1000.0 }
+    }
+
+    public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            return EclipticCoordinates(lambda: self.eclipticCoordinates.lambda, beta: self.eclipticCoordinates.beta, epsilon: epsilon)
+        }
     }
     
     // MARK: - KPCAAMoon
@@ -207,13 +199,13 @@ public class Moon : Object, OrbitingObject {
     /// - returns: The geocentric elongation of the Moon
     public func geocentricElongation() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
-        let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
+        /// Moon coordinates first.
         return KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha,
                                                                  moonEquatorialCoords.delta,
-                                                                 sunEquatorialCoords.alpha,
-                                                                 sunEquatorialCoords.delta)
+                                                                 sun.equatorialCoordinates.alpha,
+                                                                 sun.equatorialCoordinates.delta)
     }
     
     /// The phase angle of the Moon
@@ -242,11 +234,11 @@ public class Moon : Object, OrbitingObject {
     /// - returns: The position angle of the Moon's bright limb.
     public func positionAngleOfTheBrightLimb() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
-        let sunEquatorialCoords = sun.eclipticCoordinates().toEquatorialCoordinates()
         let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
 
-        return KPCAAMoonIlluminatedFraction_PositionAngle(sunEquatorialCoords.alpha,
-                                                          sunEquatorialCoords.delta,
+        /// Sun coordinates first. See AA p. 345
+        return KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha,
+                                                          sun.equatorialCoordinates.delta,
                                                           moonEquatorialCoords.alpha,
                                                           moonEquatorialCoords.delta)
     }
