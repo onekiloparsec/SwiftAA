@@ -28,7 +28,10 @@ public protocol PlanetaryBase: ObjectBase {
     var perihelion: JulianDay { get }
     
     /// The julian day of the aphelion of the planet the after the given julian day
-    var aphelion: JulianDay { get }    
+    var aphelion: JulianDay { get }
+    
+    /// Distance to the Sun
+    var radiusVector: AU { get }
 }
 
 // MARK: -
@@ -61,24 +64,6 @@ public extension PlanetaryBase {
         get { return KPCAAPlanetPerihelionAphelion_Aphelion(KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict), self.planetStrict) }
     }
     
-    // MARK: OribitingObject
-    
-    var eclipticLongitude: Degree {
-        get { return KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, self.highPrecision) }
-    }
-    
-    var eclipticLatitude: Degree {
-        get { return KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision) }
-    }
-    
-    public var eclipticCoordinates: EclipticCoordinates {
-        get {
-            // To compute the _apparent_ RA and Dec from Ecl. coords, the true obliquity must be used (hence mean: false)
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: self.eclipticLongitude, beta: self.eclipticLatitude, epsilon: epsilon)
-        }
-    }
-
     var radiusVector: AU {
         get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
     }
