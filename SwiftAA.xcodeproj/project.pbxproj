@@ -611,6 +611,8 @@
 		9FB7552D1E05E47100EC7617 /* Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7552B1E05E47100EC7617 /* Angles.swift */; };
 		9FB7552F1E05EAAF00EC7617 /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7552E1E05EAAF00EC7617 /* Times.swift */; };
 		9FB755301E05EAAF00EC7617 /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB7552E1E05EAAF00EC7617 /* Times.swift */; };
+		9FB755321E05F14A00EC7617 /* ScientificConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755311E05F14A00EC7617 /* ScientificConstants.swift */; };
+		9FB755331E05F14A00EC7617 /* ScientificConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755311E05F14A00EC7617 /* ScientificConstants.swift */; };
 		9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
@@ -1061,6 +1063,7 @@
 		9FB755281E05B59D00EC7617 /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
 		9FB7552B1E05E47100EC7617 /* Angles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angles.swift; sourceTree = "<group>"; };
 		9FB7552E1E05EAAF00EC7617 /* Times.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
+		9FB755311E05F14A00EC7617 /* ScientificConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificConstants.swift; sourceTree = "<group>"; };
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
@@ -1692,6 +1695,7 @@
 			isa = PBXGroup;
 			children = (
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
+				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
 				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 			);
@@ -2319,6 +2323,7 @@
 				9F7CBFB61D16E56800E13FB1 /* Saturn.swift in Sources */,
 				9F877ACB1E052A74006FC6E5 /* AAVSOP87_JUP.cpp in Sources */,
 				9F877AEC1E052A74006FC6E5 /* AAVSOP87D_JUP.cpp in Sources */,
+				9FB755331E05F14A00EC7617 /* ScientificConstants.swift in Sources */,
 				9F877ACE1E052A74006FC6E5 /* AAVSOP87_NEP.cpp in Sources */,
 				9F694DFB1D15C67300EE7492 /* KPCAAParallactic.mm in Sources */,
 				9F877AD11E052A74006FC6E5 /* AAVSOP87_VEN.cpp in Sources */,
@@ -2477,6 +2482,7 @@
 				9F877A491E0529A2006FC6E5 /* AAVSOP87B_JUP.cpp in Sources */,
 				9F877A2F1E0529A2006FC6E5 /* AAVSOP87_SAT.cpp in Sources */,
 				9F694D271D15783A00EE7492 /* KPCAAEarth.mm in Sources */,
+				9FB755321E05F14A00EC7617 /* ScientificConstants.swift in Sources */,
 				9F877A7F1E0529A2006FC6E5 /* AAVSOP87E_NEP.cpp in Sources */,
 				9F877A631E0529A2006FC6E5 /* AAVSOP87C_URA.cpp in Sources */,
 				9F694D301D15794900EE7492 /* KPCAAEquationOfTime.mm in Sources */,
