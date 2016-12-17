@@ -12,6 +12,9 @@ class AstronomicalObject: Object, CelestialBody {
     public private(set) var name: String = ""
     public private(set) var equatorialCoordinates: EquatorialCoordinates
     
+    public var equatorialSemiDiameter: Degree = 0.0
+    public var polarSemiDiameter: Degree = 0.0
+    
     public init(name: String, coordinates: EquatorialCoordinates, julianDay: JulianDay) {
         self.name = name
         self.equatorialCoordinates = coordinates

@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- *  The Planet protocol specializes the EclipticObject for planets that are not the Earth!
+ *  The Planet protocol specializes the PlanetaryBase for planets that are not the Earth!
  */
 public protocol PlanetaryPhenomena: PlanetaryBase {
         

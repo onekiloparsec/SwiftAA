@@ -31,6 +31,10 @@ public protocol CelestialBody: ObjectBase {
     func angleBetweenEclipticAndHorizon(geographicCoordinates: GeographicCoordinates) -> Degree
     
     func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(geographicCoordinates: GeographicCoordinates) -> Degree
+    
+    var equatorialSemiDiameter: Degree { get }
+    
+    var polarSemiDiameter: Degree { get }
 }
 
 public extension CelestialBody {

@@ -28,6 +28,28 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     public var equatorialCoordinates: EquatorialCoordinates {
         get { return self.eclipticCoordinates.toEquatorialCoordinates() }
     }
+    
+    public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            // To compute the _apparent_ RA and Dec from Ecl. coords, the true obliquity must be used (hence mean: false)
+            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+            let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay, self.planet, self.highPrecision)
+            let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay, self.planet, self.highPrecision)
+            return EclipticCoordinates(lambda: longitude, beta: latitude, epsilon: epsilon)
+        }
+    }
+
+    public var radiusVector: AU {
+        get { return KPCAAEclipticalElement_RadiusVector(self.julianDay, self.planet, self.highPrecision) }
+    }
+    
+    public var equatorialSemiDiameter: Degree {
+        get { return KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector) }
+    }
+    
+    public var polarSemiDiameter: Degree {
+        get { return KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector) }
+    }
 }
 
 // special Pluto:

@@ -22,6 +22,16 @@ public class Sun: Object, CelestialBody {
     
     public let diameter: Meter = 1392000000.0
     
+    // Celestial Body
+    
+    public var equatorialSemiDiameter: Degree {
+        get { return KPCAADiameters_SunSemidiameterA(self.radiusVector) }
+    }
+    
+    public var polarSemiDiameter: Degree {
+        get { return self.equatorialSemiDiameter }
+    }
+    
     /**
      Computes the time of the next start of the synodic rotation of the Sun
      (used to follow sunspots).
