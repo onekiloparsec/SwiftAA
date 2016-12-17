@@ -610,6 +610,8 @@
 		9FC340321D156A5D0069E7C4 /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7379881C26B79F007EF484 /* SwiftAA.framework */; };
 		9FC501721E0571B2005CA6FC /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */; };
 		9FC501731E0571B2005CA6FC /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */; };
+		9FC501751E0582C9005CA6FC /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501741E0582C9005CA6FC /* Asteroids.swift */; };
+		9FC501761E0582C9005CA6FC /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501741E0582C9005CA6FC /* Asteroids.swift */; };
 		9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
@@ -1052,6 +1054,7 @@
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
+		9FC501741E0582C9005CA6FC /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
 		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBodies.swift; sourceTree = "<group>"; };
@@ -1137,6 +1140,7 @@
 				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
 				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
 				9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */,
+				9FC501741E0582C9005CA6FC /* Asteroids.swift */,
 			);
 			name = "Astronomical Objects";
 			sourceTree = "<group>";
@@ -1173,8 +1177,6 @@
 		9F29B5811B47319D00B64C96 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
-				9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */,
-				9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */,
 				9FF55F941B4B0AC300A99DA2 /* KPCAAFK5.h */,
 				9FF55F951B4B0AC300A99DA2 /* KPCAAFK5.mm */,
 				9F48D5301B4EC10200B7EE7F /* KPCAAKepler.h */,
@@ -1199,6 +1201,8 @@
 				9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */,
 				9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */,
 				9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */,
+				9F8AB3941B4828F500EF40C8 /* KPCAADiameters.h */,
+				9F8AB3951B4828F500EF40C8 /* KPCAADiameters.mm */,
 				9F8AB3981B48373A00EF40C8 /* KPCAADynamicalTime.h */,
 				9F8AB3991B48373A00EF40C8 /* KPCAADynamicalTime.mm */,
 				9F8AB39C1B48385C00EF40C8 /* KPCAAEarth.h */,
@@ -2340,6 +2344,7 @@
 				9F877AB51E052A74006FC6E5 /* AAParallax.cpp in Sources */,
 				9F694E191D15C67300EE7492 /* KPCAANearParabolic.mm in Sources */,
 				9F877AA31E052A74006FC6E5 /* AAJewishCalendar.cpp in Sources */,
+				9FC501761E0582C9005CA6FC /* Asteroids.swift in Sources */,
 				9F877AD91E052A74006FC6E5 /* AAVSOP87A_URA.cpp in Sources */,
 				9FFC4A521DCF891F00382049 /* GeographicCoordinates.swift in Sources */,
 				9F2A87AF1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */,
@@ -2531,6 +2536,7 @@
 				9F694D491D157B0400EE7492 /* KPCAASun.mm in Sources */,
 				9F8779DC1E0529A2006FC6E5 /* AAMars.cpp in Sources */,
 				9FFA29011D156DD200034972 /* KPCAAAberration.mm in Sources */,
+				9FC501751E0582C9005CA6FC /* Asteroids.swift in Sources */,
 				9F694D651D157BD200EE7492 /* KPCAANearParabolic.mm in Sources */,
 				9F2A87AE1D20662F0004ADDD /* IlluminatedFraction.swift in Sources */,
 				9F8779FE1E0529A2006FC6E5 /* AAPhysicalMars.cpp in Sources */,
