@@ -143,3 +143,86 @@ double KPCAADiameters_ApparentAsteroidDiameter(double H, double A)
     return CAADiameters::ApparentAsteroidDiameter(H, A);
 }
 
+double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAADiameters_MercurySemidiameterB(Delta);
+            break;
+        }
+        case Venus: {
+            return KPCAADiameters_VenusSemidiameterB(Delta);
+            break;
+        }
+        case Mars: {
+            return KPCAADiameters_MarsSemidiameterB(Delta);
+            break;
+        }
+        case Jupiter: {
+            return KPCAADiameters_JupiterEquatorialSemidiameterB(Delta);
+            break;
+        }
+        case Saturn: {
+            return KPCAADiameters_SaturnEquatorialSemidiameterB(Delta);
+            break;
+        }
+        case Uranus: {
+            return KPCAADiameters_UranusSemidiameterB(Delta);
+            break;
+        }
+        case Neptune: {
+            return KPCAADiameters_NeptuneSemidiameterB(Delta);
+            break;
+        }
+        case Pluto: {
+            return KPCAADiameters_PlutoSemidiameterB(Delta);
+            break;
+        }
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
+            break;
+    }
+}
+
+double KPCAADiameters_PolarSemiDiameterB(KPCAAPlanet planet, double Delta)
+{
+    switch (planet) {
+        case Mercury: {
+            return KPCAADiameters_MercurySemidiameterB(Delta);
+            break;
+        }
+        case Venus: {
+            return KPCAADiameters_VenusSemidiameterB(Delta);
+            break;
+        }
+        case Mars: {
+            return KPCAADiameters_MarsSemidiameterB(Delta);
+            break;
+        }
+        case Jupiter: {
+            return KPCAADiameters_JupiterPolarSemidiameterB(Delta);
+            break;
+        }
+        case Saturn: {
+            return KPCAADiameters_SaturnPolarSemidiameterB(Delta);
+            break;
+        }
+        case Uranus: {
+            return KPCAADiameters_UranusSemidiameterB(Delta);
+            break;
+        }
+        case Neptune: {
+            return KPCAADiameters_NeptuneSemidiameterB(Delta);
+            break;
+        }
+        case Pluto: {
+            return KPCAADiameters_PlutoSemidiameterB(Delta);
+            break;
+        }
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
+            return 0.0;
+            break;
+    }
+}

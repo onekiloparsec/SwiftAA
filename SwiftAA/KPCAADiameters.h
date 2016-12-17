@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KPCAASwiftAdditions.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -41,6 +42,11 @@ double KPCAADiameters_TopocentricMoonSemidiameter(double DistanceDelta, double D
 double KPCAADiameters_AsteroidDiameter(double H, double A);
 double KPCAADiameters_ApparentAsteroidDiameter(double H, double A);
 
+// SwiftAA Additions
+    
+double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta);
+double KPCAADiameters_PolarSemiDiameterB(KPCAAPlanet planet, double Delta);
+    
 #if __cplusplus
 }
 #endif
