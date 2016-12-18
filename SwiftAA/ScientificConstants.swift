@@ -8,13 +8,15 @@
 
 import Foundation
 
-public let ModifiedJulianDayZero = 2400000.5
+public let ModifiedJulianDayZero: Double = 2400000.5
+
 public let JulianYear: Day = 365.25            // See p.133 of AA.
 public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
+
 public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
 
-public let StandardEpoch_J2000_0 = 2451545.0 // See p.133 of AA.
-public let StandardEpoch_B1950_0 = 2433282.4235 // See p.133 of AA.
+public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
+public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
 
 public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
 
@@ -28,6 +30,18 @@ public typealias Millibar=Double
 public enum Equinox {
     case meanEquinoxOfTheDate
     case standardJ2000
+//    case standardB1950
+    
+    func julianDay() -> JulianDay {
+        switch self {
+        case .meanEquinoxOfTheDate:
+            return 0
+        case .standardJ2000:
+            return StandardEpoch_J2000_0
+//        case .standardB1950:
+//            return StandardEpoch_B1950_0
+        }
+    }
 }
 
 public enum Season {

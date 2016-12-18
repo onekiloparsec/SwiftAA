@@ -31,11 +31,9 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     
     public var eclipticCoordinates: EclipticCoordinates {
         get {
-            // To compute the _apparent_ RA and Dec from Ecl. coords, the true obliquity must be used (hence mean: false)
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
             let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)
             let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay.value, self.planet, self.highPrecision)
-            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude), epsilon: epsilon)
+            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude))
         }
     }
 

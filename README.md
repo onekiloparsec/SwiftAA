@@ -73,6 +73,15 @@ to print out some values to be checked by eye. This is human-readable, hence err
 such unit testing, all on top of the Swift layer.
 
 
+Caution
+========
+
+The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the
+textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
+should be careful. For a good example of a complete implementation of such transformations, see the 
+[AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html)
+
+
 Notes and Conventions
 =====================
 
@@ -95,6 +104,6 @@ thousands of coordinates instances one might need for plotting/storing some curv
 KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C class methods to pure C-functions wrappers 
 and structs, everywhere it was possible. The most notable exception is KPCAADate which remains an NSObject subclass.
 
-Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.71 or later (with the new 
+Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.73 or later (with the new 
 [VSOP](https://en.wikipedia.org/wiki/VSOP_(planets)) implementation!). The tagged versions 1.0+ will remain as such, 
 with AA+ v1.60.

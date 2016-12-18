@@ -48,13 +48,8 @@ public class Sun: Object, CelestialBody {
     public var radiusVector: AU { return 0.0 }
     
     public var eclipticCoordinates: EclipticCoordinates {
-        get {
-            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
-                                       beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision)),
-                                       epsilon: epsilon)
-        }
+        get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
+                                         beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision))) }
     }
     
     public var equatorialCoordinates: EquatorialCoordinates {
@@ -67,13 +62,8 @@ public class Sun: Object, CelestialBody {
     /// referred to the standard equinox of J2000.0. Between, 1900 and 2100, this can be performed with sufficient
     /// accuracy.
     public var eclipticCoordinatesStandardJ2000: EclipticCoordinates {
-        get {
-            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay.value, self.highPrecision)),
-                                       beta: Degree(KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay.value, self.highPrecision)),
-                                       epsilon: epsilon)
-            }
+        get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay.value, self.highPrecision)),
+                                         beta: Degree(KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay.value, self.highPrecision))) }
     }
     
     /**

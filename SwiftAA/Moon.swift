@@ -38,11 +38,7 @@ public class Moon : Object, CelestialBody {
     }
 
     public var eclipticCoordinates: EclipticCoordinates {
-        get {
-            // To compute the _apparent_ RA and Dec, the true obliquity must be used.
-            let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
-            return EclipticCoordinates(lambda: self.eclipticCoordinates.lambda, beta: self.eclipticCoordinates.beta, epsilon: epsilon)
-        }
+        get { return EclipticCoordinates(lambda: self.eclipticCoordinates.lambda, beta: self.eclipticCoordinates.beta) }
     }
     
     public var equatorialCoordinates: EquatorialCoordinates {
