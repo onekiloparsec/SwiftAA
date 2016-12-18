@@ -1194,18 +1194,15 @@
 		9F29B5811B47319D00B64C96 /* Obj-C */ = {
 			isa = PBXGroup;
 			children = (
-				9FF55F941B4B0AC300A99DA2 /* KPCAAFK5.h */,
-				9FF55F951B4B0AC300A99DA2 /* KPCAAFK5.mm */,
-				9F48D5301B4EC10200B7EE7F /* KPCAAKepler.h */,
-				9F48D5311B4EC10200B7EE7F /* KPCAAKepler.mm */,
-				9F2A87A61D1FF6250004ADDD /* Partly Swifted */,
-				9F2A87A21D1FF4C20004ADDD /* Swifted */,
+				9F8FC29A1E06DA930012B4DA /* To Be Swifted v2.1 */,
+				9F2A87A61D1FF6250004ADDD /* Partly Swifted v2.0 */,
+				9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */,
 				9FEA1DD21DA1679B00F7E346 /* Not Swifted */,
 			);
 			name = "Obj-C";
 			sourceTree = "<group>";
 		};
-		9F2A87A21D1FF4C20004ADDD /* Swifted */ = {
+		9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */ = {
 			isa = PBXGroup;
 			children = (
 				9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */,
@@ -1281,10 +1278,10 @@
 				9F7A9E121B4FCE1500033B77 /* KPCAAVenus.h */,
 				9F7A9E131B4FCE1500033B77 /* KPCAAVenus.mm */,
 			);
-			name = Swifted;
+			name = "Swifted v2.0";
 			sourceTree = "<group>";
 		};
-		9F2A87A61D1FF6250004ADDD /* Partly Swifted */ = {
+		9F2A87A61D1FF6250004ADDD /* Partly Swifted v2.0 */ = {
 			isa = PBXGroup;
 			children = (
 				9F29B58D1B47B43400B64C96 /* KPCAAAberration.h */,
@@ -1310,7 +1307,7 @@
 				9F7A9E181B4FCE8100033B77 /* KPCAASun.h */,
 				9F7A9E191B4FCE8100033B77 /* KPCAASun.mm */,
 			);
-			name = "Partly Swifted";
+			name = "Partly Swifted v2.0";
 			sourceTree = "<group>";
 		};
 		9F3D51041D947DC900F03766 /* Earth & Moon */ = {
@@ -1635,6 +1632,27 @@
 			path = "aaplus-v1.73";
 			sourceTree = "<group>";
 		};
+		9F8FC29A1E06DA930012B4DA /* To Be Swifted v2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */,
+				9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */,
+				9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */,
+				9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */,
+				9FF55F941B4B0AC300A99DA2 /* KPCAAFK5.h */,
+				9FF55F951B4B0AC300A99DA2 /* KPCAAFK5.mm */,
+				9F48D5301B4EC10200B7EE7F /* KPCAAKepler.h */,
+				9F48D5311B4EC10200B7EE7F /* KPCAAKepler.mm */,
+				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
+				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
+				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
+				9F48D55D1B4EE4B200B7EE7F /* KPCAANodes.mm */,
+				9F48D5601B4EE63000B7EE7F /* KPCAAParabolic.h */,
+				9F48D5611B4EE63000B7EE7F /* KPCAAParabolic.mm */,
+			);
+			name = "To Be Swifted v2.1";
+			sourceTree = "<group>";
+		};
 		9FB70C681D25A3BD00A03C6D /* Solar System Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1734,18 +1752,8 @@
 			children = (
 				9F8AB3901B48201600EF40C8 /* KPCAADate.h */,
 				9F8AB3911B48201600EF40C8 /* KPCAADate.mm */,
-				9FF028201B4900AF008B28A6 /* KPCAAEclipticalElements.h */,
-				9FF028211B4900AF008B28A6 /* KPCAAEclipticalElements.mm */,
-				9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */,
-				9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */,
 				9F48D5281B4EBCFC00B7EE7F /* KPCAAInterpolate.h */,
 				9F48D5291B4EBCFC00B7EE7F /* KPCAAInterpolate.mm */,
-				9F48D5541B4EE1FD00B7EE7F /* KPCAANearParabolic.h */,
-				9F48D5551B4EE1FD00B7EE7F /* KPCAANearParabolic.mm */,
-				9F48D55C1B4EE4B200B7EE7F /* KPCAANodes.h */,
-				9F48D55D1B4EE4B200B7EE7F /* KPCAANodes.mm */,
-				9F48D5601B4EE63000B7EE7F /* KPCAAParabolic.h */,
-				9F48D5611B4EE63000B7EE7F /* KPCAAParabolic.mm */,
 			);
 			name = "Not Swifted";
 			sourceTree = "<group>";
