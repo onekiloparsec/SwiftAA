@@ -19,6 +19,7 @@ SwiftAA
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
+![](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)
 
 *The most comprehensive and accurate collection of astronomical algorithms written in Swift3.*
 
