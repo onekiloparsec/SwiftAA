@@ -53,7 +53,7 @@ public extension CelestialBody {
         let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
         return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(lha.value,
-                                                                  epsilon,
+                                                                  epsilon.value,
                                                                   geographicCoordinates.latitude.value))
     }
     
@@ -61,7 +61,7 @@ public extension CelestialBody {
         let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
         return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha.value,
-                                                                      epsilon,
+                                                                      epsilon.value,
                                                                       geographicCoordinates.latitude.value))
     }
     
@@ -69,7 +69,7 @@ public extension CelestialBody {
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
         return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(self.eclipticCoordinates.lambda.value,
                                                                                             self.eclipticCoordinates.beta.value,
-                                                                                            epsilon))
+                                                                                            epsilon.value))
     }
 
 }
