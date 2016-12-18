@@ -28,11 +28,11 @@ public func nutationInObliquity(julianDay: JulianDay) -> Double {
 
 // Note (p 92): if the _apparent_ right ascension and declination are used, that is
 // affected by the aberration and the nutation, the true obliquity should be used.
-public func obliquityOfEcliptic(julianDay: JulianDay, mean: Bool = true) -> Double {
+public func obliquityOfEcliptic(julianDay: JulianDay, mean: Bool = true) -> Degree {
     if mean {
-        return KPCAANutation_MeanObliquityOfEcliptic(julianDay.value)
+        return Degree(KPCAANutation_MeanObliquityOfEcliptic(julianDay.value))
     }
     else {
-        return KPCAANutation_TrueObliquityOfEcliptic(julianDay.value)
+        return Degree(KPCAANutation_TrueObliquityOfEcliptic(julianDay.value))
     }
 }
