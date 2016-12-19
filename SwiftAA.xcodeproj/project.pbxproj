@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F5C3ED61E073BAA00F572F6 /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755281E05B59D00EC7617 /* NumericType.swift */; };
+		6F5C3ED71E073BB200F572F6 /* Distances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755271E05B59D00EC7617 /* Distances.swift */; };
+		6F5C3ED81E073BC600F572F6 /* RiseTransitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */; };
+		6F5C3ED91E073BE100F572F6 /* JupiterMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE80D781DCF488600CC6623 /* JupiterMoons.swift */; };
 		9F058A141D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
 		9F058A151D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
 		9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
@@ -2130,7 +2134,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					9F694D891D15C67300EE7492 = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2252,6 +2256,7 @@
 				9F694D971D15C67300EE7492 /* KPCAACoordinateTransformation.mm in Sources */,
 				9F877AB71E052A74006FC6E5 /* AAPhysicalMars.cpp in Sources */,
 				9F877AF91E052A74006FC6E5 /* AAVSOP87E_SUN.cpp in Sources */,
+				6F5C3ED61E073BAA00F572F6 /* NumericType.swift in Sources */,
 				9F877AAB1E052A74006FC6E5 /* AAMoonNodes.cpp in Sources */,
 				9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */,
 				9F694D981D15C67300EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
@@ -2271,6 +2276,7 @@
 				9F694DA61D15C67300EE7492 /* KPCAARefraction.mm in Sources */,
 				9F877AE61E052A74006FC6E5 /* AAVSOP87C_MER.cpp in Sources */,
 				9F694DA81D15C67300EE7492 /* KPCAADiameters.mm in Sources */,
+				6F5C3ED81E073BC600F572F6 /* RiseTransitSet.swift in Sources */,
 				9F877AF31E052A74006FC6E5 /* AAVSOP87E_EAR.cpp in Sources */,
 				9F694DAC1D15C67300EE7492 /* KPCAAInterpolate.mm in Sources */,
 				9F877AA91E052A74006FC6E5 /* AAMoonIlluminatedFraction.cpp in Sources */,
@@ -2318,6 +2324,7 @@
 				9F694DE51D15C67300EE7492 /* KPCAAJupiter.mm in Sources */,
 				9F877A8F1E052A74006FC6E5 /* AAAngularSeparation.cpp in Sources */,
 				9F877AC01E052A74006FC6E5 /* AASaturn.cpp in Sources */,
+				6F5C3ED91E073BE100F572F6 /* JupiterMoons.swift in Sources */,
 				9F694EE91D15CDF500EE7492 /* Constants.swift in Sources */,
 				9F877ABF1E052A74006FC6E5 /* AARiseTransitSet.cpp in Sources */,
 				9F877A8E1E052A74006FC6E5 /* AAAberration.cpp in Sources */,
@@ -2347,6 +2354,7 @@
 				9F877AD61E052A74006FC6E5 /* AAVSOP87A_MER.cpp in Sources */,
 				9FDA5C301D16E625003B9F31 /* Jupiter.swift in Sources */,
 				9F877ADF1E052A74006FC6E5 /* AAVSOP87B_NEP.cpp in Sources */,
+				6F5C3ED71E073BB200F572F6 /* Distances.swift in Sources */,
 				9FDA5C271D16E5E2003B9F31 /* Neptune.swift in Sources */,
 				9F502F0F1D3EBFFF002C394F /* AstronomicalCoordinates.swift in Sources */,
 				9F877AAF1E052A74006FC6E5 /* AANearParabolic.cpp in Sources */,
