@@ -9,11 +9,11 @@
 import Foundation
 
 public struct GeographicCoordinates {
-    fileprivate(set) var longitude: Degree
-    fileprivate(set) var latitude: Degree
-    var altitude: Meter
+    public fileprivate(set) var longitude: Degree
+    public fileprivate(set) var latitude: Degree
+    public fileprivate(set) var altitude: Meter
     
-    init(positivelyWestwardLongitude longitude: Degree, latitude: Degree, altitude: Meter = 0) {
+    public init(positivelyWestwardLongitude longitude: Degree, latitude: Degree, altitude: Meter = 0) {
         self.longitude = longitude
         self.latitude = latitude
         self.altitude = altitude
