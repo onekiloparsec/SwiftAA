@@ -2211,7 +2211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -Rf ${BUILT_PRODUCTS_DIR}/SwiftAA.framework ${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/";
+			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
