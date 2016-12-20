@@ -224,3 +224,9 @@ public extension Date {
         }
     }
 }
+
+extension JulianDay: CustomStringConvertible {
+    public var description: String { return String(format: "JD %.2f", value) }
+}
+
+

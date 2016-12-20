@@ -36,6 +36,15 @@ extension Degree: ExpressibleByFloatLiteral {
     }
 }
 
+extension Degree: CustomStringConvertible {
+    public var description: String {
+        let deg = value.rounded(.towardZero)
+        let min = ((value - deg) * 60.0).rounded(.towardZero)
+        let sec = ((value - deg) * 60.0 - min) * 60.0
+        return String(format: "%+.0f°%02.0f'%04.1f\"", deg, abs(min), abs(sec))
+    }
+}
+
 
 // --
 
