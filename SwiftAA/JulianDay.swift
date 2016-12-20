@@ -226,7 +226,13 @@ public extension Date {
 }
 
 extension JulianDay: CustomStringConvertible {
-    public var description: String { return String(format: "JD %.2f", value) }
+    public var description: String {
+        switch self {
+        case StandardEpoch_J2000_0: return "J2000.0"
+        case StandardEpoch_B1950_0: return "B1950.0"
+        default: return String(format: "JD %.2f", value)
+        }
+    }
 }
 
 
