@@ -38,7 +38,11 @@ public class Moon : Object, CelestialBody {
     }
 
     public var eclipticCoordinates: EclipticCoordinates {
-        get { return EclipticCoordinates(lambda: self.eclipticCoordinates.lambda, beta: self.eclipticCoordinates.beta) }
+        get {
+            let latitude = Degree.init(KPCAAMoon_EclipticLatitude(julianDay.value))
+            let longitude = Degree.init(KPCAAMoon_EclipticLongitude(julianDay.value))
+            return EclipticCoordinates(lambda: longitude, beta: latitude)
+        }
     }
     
     public var equatorialCoordinates: EquatorialCoordinates {
