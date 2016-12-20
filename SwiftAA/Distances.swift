@@ -46,7 +46,7 @@ public struct Meter: NumericType {
         self.value = value
     }
     
-    public var AstronomicalUnit: AU { return AU(self.value * 149597870700.0) }
+    public var AstronomicalUnit: AU { return AU(self.value / 149597870700.0) }
 }
 
 extension Meter: ExpressibleByIntegerLiteral {
