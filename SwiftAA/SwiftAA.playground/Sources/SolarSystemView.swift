@@ -17,9 +17,9 @@ public struct PlanetPosition {
 public class PlanetView : UIView {
     
     let circleView: UIView = {
-        let view = UIView(frame: CGRectZero)
+        let view = UIView(frame: CGRect.zero)
 //        view.wantsLayer = true
-        view.layer.borderColor = UIColor.whiteColor().CGColor
+        view.layer.borderColor = UIColor.white.cgColor
         view.layer.borderWidth = 2.0
         view.layer.cornerRadius = 25.0
         return view
@@ -31,20 +31,21 @@ public class PlanetView : UIView {
 //        label.editable = false
 //        label.bezeled = false
 //        label.bezelStyle = .SquareBezel
-        label.backgroundColor = UIColor.clearColor()
-        label.font = UIFont.boldSystemFontOfSize(10.0)
-        label.textAlignment = .Center
+        label.backgroundColor = UIColor.clear
+        label.font = UIFont.boldSystemFont(ofSize: 10.0)
+        label.textAlignment = .center
         return label
     }()
     
     public init(name: String, color: UIColor) {
-        super.init(frame: CGRectMake(0, 0, 50, 50))
+        super.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         self.nameLabel.text = name
         self.circleView.backgroundColor = color
         self.addSubview(self.circleView)
         self.addSubview(self.nameLabel)
-        self.circleView.frame = CGRectMake(bounds.midX - 25.0, 35.0, 50.0, 50.0)
-        self.nameLabel.frame = CGRectMake(0, 0, bounds.width, 35)
+
+        self.circleView.frame = CGRect(x: bounds.midX - 25.0, y: 35.0, width: 50.0, height: 50.0)
+        self.nameLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 35)
     }
     
     required public init?(coder: NSCoder) {
@@ -52,7 +53,7 @@ public class PlanetView : UIView {
     }
     
     public func hideLabel(flag: Bool) {
-        self.nameLabel.hidden = flag;
+        self.nameLabel.isHidden = flag;
     }
 }
 
@@ -64,7 +65,7 @@ public class SolarSystemView : UIView {
         self.planetPositions = [:]
         self.planetColors = [:]
         super.init(frame: CGRect(x: 0, y: 0, width: 680, height: 420))
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -72,27 +73,28 @@ public class SolarSystemView : UIView {
     }
     
     public func drawPlanet(name: String, withColor color: UIColor, atPosition pos: CGPoint) {
-        let viewCenter = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        let viewCenter = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.planetPositions[name] = CGPoint(x: viewCenter.x+pos.x, y: viewCenter.y+pos.y)
         self.planetColors[name] = color
         self.setNeedsDisplay()
     }
     
-    override public func drawRect(dirtyRect: CGRect) {
-        let viewCenter = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+    override public func draw(_ dirtyRect: CGRect) {
+        let viewCenter = CGPoint(x: self.frame.midX, y: self.frame.midY)
         
         let sunRadius: CGFloat = 3.0
-        UIColor.yellowColor().setFill()
-        UIBezierPath(ovalInRect: CGRectMake(viewCenter.x-sunRadius, viewCenter.y-sunRadius, 2*sunRadius, 2*sunRadius)).fill()
+        UIColor.yellow.setFill()
+
+        UIBezierPath(ovalIn: CGRect(x: viewCenter.x-sunRadius, y: viewCenter.y-sunRadius, width: 2*sunRadius, height: 2*sunRadius)).fill()
         
-        super.drawRect(dirtyRect);
+        super.draw(dirtyRect);
         
         let radius: CGFloat = 1.0
 
         for key in self.planetPositions.keys {
             self.planetColors[key]!.setFill()
             let pos = self.planetPositions[key]!
-            UIBezierPath(ovalInRect: CGRectMake(pos.x-radius, pos.y-radius, 2*radius, 2*radius)).fill()
+            UIBezierPath(ovalIn: CGRect(x: pos.x-radius, y: pos.y-radius, width: 2*radius, height: 2*radius)).fill()
         }        
     }
 }
