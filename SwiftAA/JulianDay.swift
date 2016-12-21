@@ -66,7 +66,7 @@ public extension JulianDay {
         components.second = Int(floor(second))
         components.nanosecond = Int((second-floor(second))*1e6)
         
-        let calendar = Calendar(identifier: .gregorian)
+        var calendar = Calendar.gregorianGMT
         return calendar.date(from: components)!
     }
     
@@ -155,7 +155,7 @@ public extension Date {
      - returns: The value of the Julian Day, as a fractional (double) number.
      */
     public func julianDay() -> JulianDay {
-        let calendar = Calendar(identifier: .gregorian)
+        var calendar = Calendar.gregorianGMT
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: self)
         
         let year = Double(components.year!)
@@ -175,31 +175,31 @@ public extension Date {
     }
     
     public var year: Int {
-        get { return Calendar(identifier: .gregorian).component(.year, from: self) }
+        get { return Calendar.gregorianGMT.component(.year, from: self) }
     }
     
     public var month: Int {
-        get { return Calendar(identifier: .gregorian).component(.month, from: self) }
+        get { return Calendar.gregorianGMT.component(.month, from: self) }
     }
 
     public var day: Int {
-        get { return Calendar(identifier: .gregorian).component(.day, from: self) }
+        get { return Calendar.gregorianGMT.component(.day, from: self) }
     }
 
     public var hour: Int {
-        get { return Calendar(identifier: .gregorian).component(.hour, from: self) }
+        get { return Calendar.gregorianGMT.component(.hour, from: self) }
     }
 
     public var minute: Int {
-        get { return Calendar(identifier: .gregorian).component(.minute, from: self) }
+        get { return Calendar.gregorianGMT.component(.minute, from: self) }
     }
 
     public var second: Int {
-        get { return Calendar(identifier: .gregorian).component(.second, from: self) }
+        get { return Calendar.gregorianGMT.component(.second, from: self) }
     }
 
     public var nanosecond: Int {
-        get { return Calendar(identifier: .gregorian).component(.nanosecond, from: self) }
+        get { return Calendar.gregorianGMT.component(.nanosecond, from: self) }
     }
     
     public var isLeap : Bool {
@@ -214,7 +214,7 @@ public extension Date {
         components.hour = 0
         components.minute = 0
         components.second = 0
-        return Calendar(identifier: .gregorian).date(from: components)!
+        return Calendar.gregorianGMT.date(from: components)!
     }
     
     public var fractionalYear: Double {
@@ -225,6 +225,15 @@ public extension Date {
     }
 }
 
+
+extension Calendar {
+    static let gregorianGMT: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar
+    }()
+}
+  
 extension JulianDay: CustomStringConvertible {
     public var description: String {
         switch self {
