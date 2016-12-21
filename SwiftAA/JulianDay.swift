@@ -66,7 +66,7 @@ public extension JulianDay {
         components.second = Int(floor(second))
         components.nanosecond = Int((second-floor(second))*1e6)
         
-        var calendar = Calendar.gregorianGMT
+        let calendar = Calendar.gregorianGMT
         return calendar.date(from: components)!
     }
     
@@ -155,7 +155,7 @@ public extension Date {
      - returns: The value of the Julian Day, as a fractional (double) number.
      */
     public func julianDay() -> JulianDay {
-        var calendar = Calendar.gregorianGMT
+        let calendar = Calendar.gregorianGMT
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: self)
         
         let year = Double(components.year!)
