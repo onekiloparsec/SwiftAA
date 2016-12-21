@@ -30,3 +30,14 @@ extension Hour: ExpressibleByFloatLiteral {
         self.init(Double(floatLiteral))
     }
 }
+
+extension Hour: CustomStringConvertible {
+    public var description: String {
+        let hrs = value.rounded(.towardZero)
+        let min = ((value - hrs) * 60.0).rounded(.towardZero)
+        let sec = ((value - hrs) * 60.0 - min) * 60.0
+        return String(format: "%.0fh%02.0fm%04.1fs", hrs, abs(min), abs(sec))
+    }
+}
+
+
