@@ -26,7 +26,7 @@ class JulianDayTest: XCTestCase {
         components.year = 2016
         components.month = 9
         components.day = 17
-        let date = Calendar(identifier: .gregorian).date(from: components)
+        let date = Calendar.gregorianGMT.date(from: components)
         XCTAssertEqual(date?.julianDay(), 2457648.500000)
     }
 
@@ -39,13 +39,13 @@ class JulianDayTest: XCTestCase {
         components.minute = 3
         components.second = 4
         components.nanosecond = 500000
-        let date = Calendar(identifier: .gregorian).date(from: components)!
+        let date = Calendar.gregorianGMT.date(from: components)!
         XCTAssertEqualWithAccuracy(date.julianDay().value, 2421123.585469, accuracy: 0.000001)
     }
 
     func testJulianDayToDateComponents() {
         let julianDay = JulianDay(2421123.585469)
-        let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date())
+        let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date())
         XCTAssertEqual(components.year!, 1916)
         XCTAssertEqual(components.month!, 9)
         XCTAssertEqual(components.day!, 17)
