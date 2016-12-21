@@ -225,12 +225,23 @@ public extension Date {
     }
 }
 
+
 extension Calendar {
     static let gregorianGMT: Calendar = {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         return calendar
     }()
+}
+  
+extension JulianDay: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case StandardEpoch_J2000_0: return "J2000.0"
+        case StandardEpoch_B1950_0: return "B1950.0"
+        default: return String(format: "JD %.2f", value)
+        }
+    }
 }
 
 
