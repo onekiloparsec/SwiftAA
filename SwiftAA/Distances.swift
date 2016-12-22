@@ -16,8 +16,8 @@ public struct AU: NumericType {
     }
     
     public var pc: Parsec { return self.value / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
-    public var km: Double { return self.value / 149597870.7 }
-    public var m:  Meter  { return Meter(self.value / 149597870700.0) }
+    public var km: Double { return self.value * 149597870.7 }
+    public var m:  Meter  { return Meter(self.value * 149597870700.0) }
     public var ly: Double { return self.value / 206264.8 }
     
     public func parallax() -> ArcSecond {
@@ -46,7 +46,7 @@ public struct Meter: NumericType {
         self.value = value
     }
     
-    public var AstronomicalUnit: AU { return AU(self.value * 149597870700.0) }
+    public var AstronomicalUnit: AU { return AU(self.value / 149597870700.0) }
 }
 
 extension Meter: ExpressibleByIntegerLiteral {
