@@ -44,7 +44,7 @@ public extension JulianDay {
     public func date() -> Date {
         let fractionalSeconds = _date.second()
         let roundedSeconds = fractionalSeconds.rounded(.towardZero)
-        let nanoseconds = (fractionalSeconds - roundedSeconds) * 10e9
+        let nanoseconds = (fractionalSeconds - roundedSeconds) * 1e9
         let components = DateComponents(year: _date.year(), month: _date.month(), day: _date.day(), hour: _date.hour(), minute: _date.minute(), second: Int(roundedSeconds), nanosecond: Int(nanoseconds))
         let date = Calendar.gregorianGMT.date(from: components)!
         return date
@@ -141,7 +141,7 @@ public extension Date {
         let day = Double(components.day!)
         let hour = Double(components.hour!)
         let minute = Double(components.minute!)
-        let second = Double(components.second!) + Double(components.nanosecond!) / 10e9
+        let second = Double(components.second!) + Double(components.nanosecond!) / 1e9
         let date = KPCAADate(year: year, month: month, day: day, hour: hour, minute: minute, second: second, usingGregorianCalendar: true)!
         let julian = JulianDay(date.julian())
         return julian
