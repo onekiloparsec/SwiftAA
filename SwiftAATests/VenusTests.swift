@@ -29,7 +29,7 @@ class VenusTests: XCTestCase {
         components.year = 1992
         components.month = 12
         components.day = 20
-        let date = Calendar(identifier: .gregorian).date(from: components)!
+        let date = Calendar.gregorianGMT.date(from: components)!
         let venus = Venus(julianDay: date.julianDay())
         
         XCTAssertEqualWithAccuracy(venus.planetaryDetails.ApparentGeocentricRA, 21.078181, accuracy: 0.000001)
@@ -44,7 +44,7 @@ class VenusTests: XCTestCase {
         components.year = 1992
         components.month = 12
         components.day = 20
-        let date = Calendar(identifier: .gregorian).date(from: components)!
+        let date = Calendar.gregorianGMT.date(from: components)!
         // Both radius vector are correct. Not Delta! Check.
         let frac = Venus(julianDay: date.julianDay()).illuminatedFraction
         XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)

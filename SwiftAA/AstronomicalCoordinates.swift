@@ -30,7 +30,8 @@ public struct EquatorialCoordinates {
     }
     
     func toEclipticCoordinates() -> EclipticCoordinates {
-        let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension.value, self.declination.value, self.epoch.value)
+        let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(epoch.value)
+        let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension.value, self.declination.value, eclipticObliquity)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: self.epoch)
     }
     
@@ -110,7 +111,8 @@ public struct EclipticCoordinates {
     }
     
     func toEquatorialCoordinates() -> EquatorialCoordinates {
-        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value)
+        let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(epoch.value)
+        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
     
