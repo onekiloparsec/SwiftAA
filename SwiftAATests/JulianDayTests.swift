@@ -38,9 +38,10 @@ class JulianDayTest: XCTestCase {
         components.hour = 2
         components.minute = 3
         components.second = 4
-        components.nanosecond = 500000
+        components.nanosecond = 500000000
         let date = Calendar.gregorianGMT.date(from: components)!
-        XCTAssertEqualWithAccuracy(date.julianDay().value, 2421123.585469, accuracy: 1.0/86400.0)
+        let jd = 2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0
+        XCTAssertEqualWithAccuracy(date.julianDay().value, jd, accuracy: 0.001/86400.0)
     }
 
     func testJulianDayToDateComponents() {
@@ -52,10 +53,11 @@ class JulianDayTest: XCTestCase {
         XCTAssertEqual(components.hour!, 2)
         XCTAssertEqual(components.minute!, 3)
         XCTAssertEqual(components.second!, 4)
+        XCTAssertEqualWithAccuracy(Double(components.nanosecond!)/1e9, 521659000/1e9, accuracy: 0.001)
     }
     
     func testJulian2016() {
-        let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*10e9))
+        let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*1e9))
         let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)
         testJulian(components, jd)
     }
@@ -78,7 +80,7 @@ class JulianDayTest: XCTestCase {
         let jd1 = date.julianDay()
         let date2 = jd1.date()
         let jd2 = date1.julianDay()
-        let accuracy = TimeInterval(1.0)
+        let accuracy = TimeInterval(0.001)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
         XCTAssertEqualWithAccuracy(jd.value, jd1.value, accuracy: accuracy / 86400.0)
