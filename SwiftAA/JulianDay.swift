@@ -21,18 +21,6 @@ public struct JulianDay: NumericType {
     
 }
 
-extension JulianDay: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension JulianDay: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
-
 public extension JulianDay {
     /**
      Transform a julian day into a Date.

@@ -24,18 +24,6 @@ public struct Degree: NumericType {
     }
 }
 
-extension Degree: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension Degree: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
-
 extension Degree: CustomStringConvertible {
     public var description: String {
         let deg = value.rounded(.towardZero)
@@ -62,15 +50,4 @@ public struct ArcSecond: NumericType {
     }
 }
 
-extension ArcSecond: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension ArcSecond: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
 

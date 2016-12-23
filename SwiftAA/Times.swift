@@ -19,18 +19,6 @@ public struct Hour: NumericType {
     public var degree: Degree { return Degree(self.value * 15.0) }
 }
 
-extension Hour: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension Hour: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
-
 extension Hour: CustomStringConvertible {
     public var description: String {
         let hrs = value.rounded(.towardZero)

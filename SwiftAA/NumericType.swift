@@ -10,9 +10,21 @@
 
 import Foundation
 
-public protocol NumericType: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumber {
+
+public protocol NumericType: _NumericType, Comparable, SignedNumber, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral { /* intentionally left blank */ }
+
+public protocol _NumericType {
     var value: Double { get }
     init(_ value: Double)
+}
+
+extension _NumericType {
+    public init(floatLiteral: FloatLiteralType) {
+        self.init(Double(floatLiteral))
+    }
+    public init(integerLiteral: IntegerLiteralType) {
+        self.init(Double(integerLiteral))
+    }
 }
 
 public func + <T: NumericType> (lhs: T, rhs: T) -> T {

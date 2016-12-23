@@ -26,18 +26,6 @@ public struct AU: NumericType {
 
 }
 
-extension AU: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension AU: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
-
 // --
 
 public struct Meter: NumericType {
@@ -49,14 +37,4 @@ public struct Meter: NumericType {
     public var AstronomicalUnit: AU { return AU(self.value / 149597870700.0) }
 }
 
-extension Meter: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
 
-extension Meter: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
