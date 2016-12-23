@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Hour: NumericType {
-    public var value: Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }

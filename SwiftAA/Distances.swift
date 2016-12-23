@@ -10,7 +10,7 @@ import Foundation
 
 
 public struct AU: NumericType {
-    public var value :Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -41,7 +41,7 @@ extension AU: ExpressibleByFloatLiteral {
 // --
 
 public struct Meter: NumericType {
-    public var value :Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }

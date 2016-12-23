@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Degree: NumericType {
-    public var value: Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -49,7 +49,7 @@ extension Degree: CustomStringConvertible {
 // --
 
 public struct ArcSecond: NumericType {
-    public var value: Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
