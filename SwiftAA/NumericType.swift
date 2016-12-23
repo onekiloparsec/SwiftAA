@@ -10,14 +10,10 @@
 
 import Foundation
 
-public protocol NumericType : Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumber {
-    var value :Double { set get }
+public protocol NumericType: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, SignedNumber {
+    var value: Double { get }
     init(_ value: Double)
 }
-
-//public func % <T :NumericType> (lhs: T, rhs: T) -> T {
-//    return T(lhs.value % rhs.value)
-//}
 
 public func + <T: NumericType> (lhs: T, rhs: T) -> T {
     return T(lhs.value + rhs.value)
@@ -37,14 +33,6 @@ public func == <T: NumericType> (lhs: T, rhs: T) -> Bool {
 
 public prefix func - <T: NumericType> (number: T) -> T {
     return T(-number.value)
-}
-
-public func += <T: NumericType> (lhs: inout T, rhs: T) {
-    lhs.value = lhs.value + rhs.value
-}
-
-public func -= <T: NumericType> (lhs: inout T, rhs: T) {
-    lhs.value = lhs.value - rhs.value
 }
 
 
