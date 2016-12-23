@@ -10,7 +10,7 @@ import Foundation
 
 
 public struct AU: NumericType {
-    public var value :Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -26,22 +26,10 @@ public struct AU: NumericType {
 
 }
 
-extension AU: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension AU: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
-
 // --
 
 public struct Meter: NumericType {
-    public var value :Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -49,14 +37,4 @@ public struct Meter: NumericType {
     public var AstronomicalUnit: AU { return AU(self.value / 149597870700.0) }
 }
 
-extension Meter: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
 
-extension Meter: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}

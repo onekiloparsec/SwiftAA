@@ -10,29 +10,15 @@ import Foundation
 
 public struct JulianDay: NumericType {
     
-    public var value: Double {
-        didSet { _date = KPCAADate(julianDay: value, usingGregorianCalendar: true) }
-    }
+    public let value: Double
     
-    fileprivate var _date: KPCAADate!
+    fileprivate let _date: KPCAADate
     
     public init(_ value: Double) {
         self.value = value
-        defer { self.value = value } // triggers didSet http://stackoverflow.com/a/33979852/2432781
+        _date = KPCAADate(julianDay: value, usingGregorianCalendar: true)
     }
     
-}
-
-extension JulianDay: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension JulianDay: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
 }
 
 public extension JulianDay {

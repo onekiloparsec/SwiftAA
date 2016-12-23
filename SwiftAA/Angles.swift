@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Degree: NumericType {
-    public var value: Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -21,18 +21,6 @@ public struct Degree: NumericType {
     
     public func distance() -> AU {
         return AU(KPCAAParallax_ParallaxToDistance(self.arcsecond.value))
-    }
-}
-
-extension Degree: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension Degree: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
     }
 }
 
@@ -49,7 +37,7 @@ extension Degree: CustomStringConvertible {
 // --
 
 public struct ArcSecond: NumericType {
-    public var value: Double
+    public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
@@ -62,15 +50,4 @@ public struct ArcSecond: NumericType {
     }
 }
 
-extension ArcSecond: ExpressibleByIntegerLiteral {
-    public init(integerLiteral: IntegerLiteralType) {
-        self.init(Double(integerLiteral))
-    }
-}
-
-extension ArcSecond: ExpressibleByFloatLiteral {
-    public init(floatLiteral: FloatLiteralType) {
-        self.init(Double(floatLiteral))
-    }
-}
 
