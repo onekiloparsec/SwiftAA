@@ -19,6 +19,9 @@ public struct Degree: NumericType {
     public var radian: Double { return self.value * 0.017453292519943295769236907684886 }
     public var hour: Hour { return Hour(self.value / 15.0) }
     
+    /// Returns self reduced to 0..<360 range 
+    public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
+    
     public func distance() -> AU {
         return AU(KPCAAParallax_ParallaxToDistance(self.arcsecond.value))
     }
