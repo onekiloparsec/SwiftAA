@@ -56,7 +56,7 @@ public struct EquatorialCoordinates {
     }
     
     func toHorizontalCoordinates(forGeographicalCoordinates coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
-        let lha = julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude.value) - rightAscension
+        let lha = (julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude.value) - rightAscension).reduced
         let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha.value, self.declination.value, coords.latitude.value)
         return HorizontalCoordinates(azimuth: Degree(components.X),
                                      altitude: Degree(components.Y),
@@ -174,7 +174,7 @@ public struct HorizontalCoordinates {
                                                                              self.altitude.value,
                                                                              self.geographicCoordinates.latitude.value)
         let lst = julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
-        return EquatorialCoordinates(alpha: Hour(lst.value - components.X), delta: Degree(components.Y), epsilon: self.epoch)
+        return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epsilon: self.epoch)
     }
 
 }
