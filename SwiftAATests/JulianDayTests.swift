@@ -87,6 +87,25 @@ class JulianDayTest: XCTestCase {
         XCTAssertEqualWithAccuracy(jd.value, jd2.value, accuracy: accuracy / 86400.0)
     }
     
+    func testMeanSiderealTime1() {
+        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 00, minute: 00, second: 00))!
+        let gmst = date.julianDay().meanGreenwichSiderealTime()
+        XCTAssertEqualWithAccuracy(gmst.value, 13.0 + 10.0/60.0 + 46.3668/3600.0, accuracy: 0.001 / 3600.0) // p.88
+    }
+    
+    func testMeanSiderealTime2() {
+        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00))!
+        let gmst = date.julianDay().meanGreenwichSiderealTime()
+        XCTAssertEqualWithAccuracy(gmst.value, 8.0 + 34.0/60.0 + 57.0898/3600.0, accuracy: 0.001 / 3600.0) // p.89
+    }
+    
+    func testMeanLocalSiderealTime1() {
+        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 2016, month: 12, day: 01, hour: 14, minute: 15, second: 03))!
+        let geographic = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
+        let lmst = date.julianDay().meanLocalSiderealTime(forGeographicLongitude: geographic.longitude.value)
+        XCTAssertEqualWithAccuracy(lmst.value, 21.0 + 28.0/60.0 + 59.0/3600.0, accuracy: 1.0/3600.0) // SkySafari
+    }
+    
 }
 
 
