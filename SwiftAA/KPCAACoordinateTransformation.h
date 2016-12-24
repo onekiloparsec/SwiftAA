@@ -13,10 +13,10 @@
 extern "C" {
 #endif
 
-// Alpha=R.A., Delta=Declination, Epsilon=Epoch
+// Alpha=R.A., Delta=Declination, Epsilon=Obliquity (not epoch)
 KPCAA2DCoordinateComponents KPCAACoordinateTransformation_Equatorial2Ecliptic(double Alpha, double Delta, double Epsilon);
 
-// Lambda=Celestial Longitude, Beta=Celestial Latitude, Epsilon=Epoch
+// Lambda=Celestial Longitude, Beta=Celestial Latitude, Epsilon=Obliquity (not epoch)
 KPCAA2DCoordinateComponents KPCAACoordinateTransformation_Ecliptic2Equatorial(double Lambda, double Beta, double Epsilon);
 
 // lha=Local Hour Angle, Delta=Declination, latitude=Latitude
