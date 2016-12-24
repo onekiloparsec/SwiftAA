@@ -173,8 +173,8 @@ public struct HorizontalCoordinates {
         let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth.value,
                                                                              self.altitude.value,
                                                                              self.geographicCoordinates.latitude.value)
-        
-        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
+        let lst = julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
+        return EquatorialCoordinates(alpha: Hour(lst.value - components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
 
 }
