@@ -43,7 +43,7 @@ class VenusTests: XCTestCase {
     func testEquatorialCoordinates() { // p.103
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 00, minute: 00, second: 00))!
         let equatorial = Venus(julianDay: date.julianDay()).equatorialCoordinates
-        XCTAssertEqualWithAccuracy(equatorial.rightAscension.degree.value, 41.73129, accuracy: 0.1/60.0)
+        XCTAssertEqualWithAccuracy(equatorial.rightAscension.inDegrees().value, 41.73129, accuracy: 0.1/60.0)
         XCTAssertEqualWithAccuracy(equatorial.declination.value, 18.44092, accuracy: 0.1/60.0)
     }
 

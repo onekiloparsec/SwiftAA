@@ -21,7 +21,7 @@ public struct AU: NumericType {
     public var ly: Double { return self.value / 206264.8 }
     
     public func parallax() -> ArcSecond {
-        return Degree(KPCAAParallax_DistanceToParallax(self.value)).arcsecond
+        return Degree(KPCAAParallax_DistanceToParallax(self.value)).inArcseconds()
     }
 
 }
