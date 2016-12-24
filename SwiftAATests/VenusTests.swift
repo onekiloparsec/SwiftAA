@@ -12,16 +12,6 @@ import XCTest
 
 class VenusTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // See AA p.225
     func testApparentGeocentricCoordinates() {
         // Months going from 1 to 12
@@ -48,6 +38,13 @@ class VenusTests: XCTestCase {
         // Both radius vector are correct. Not Delta! Check.
         let frac = Venus(julianDay: date.julianDay()).illuminatedFraction
         XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)
+    }
+    
+    func testEquatorialCoordinates() { // p.103
+        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 00, minute: 00, second: 00))!
+        let equatorial = Venus(julianDay: date.julianDay()).equatorialCoordinates
+        XCTAssertEqualWithAccuracy(equatorial.rightAscension.degree.value, 41.73129, accuracy: 0.1/60.0)
+        XCTAssertEqualWithAccuracy(equatorial.declination.value, 18.44092, accuracy: 0.1/60.0)
     }
 
 }
