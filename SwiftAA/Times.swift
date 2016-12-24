@@ -17,6 +17,10 @@ public struct Hour: NumericType {
     public var minute: Double { return self.value * 60.0 }
     public var second: Double { return self.value * 3600.0 }
     public var degree: Degree { return Degree(self.value * 15.0) }
+    
+    /// Returns self reduced to 0..<24 range
+    public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
+    
 }
 
 extension Hour: CustomStringConvertible {

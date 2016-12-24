@@ -48,3 +48,14 @@ public prefix func - <T: NumericType> (number: T) -> T {
 }
 
 
+extension FloatingPoint {
+    
+    func positiveTruncatingRemainder(dividingBy other: Self) -> Self {
+        let truncated = truncatingRemainder(dividingBy: other)
+        let positive = truncated.sign == .minus ? truncated + other : truncated
+        return positive
+    }
+    
+}
+
+
