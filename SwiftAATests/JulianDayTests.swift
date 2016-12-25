@@ -27,7 +27,7 @@ class JulianDayTest: XCTestCase {
         components.month = 9
         components.day = 17
         let date = Calendar.gregorianGMT.date(from: components)
-        XCTAssertEqual(date?.julianDay(), 2457648.500000)
+        XCTAssertEqual(date?.julianDay, 2457648.500000)
     }
 
     func testDate2ToJulianDay() {
@@ -41,12 +41,12 @@ class JulianDayTest: XCTestCase {
         components.nanosecond = 500000000
         let date = Calendar.gregorianGMT.date(from: components)!
         let jd = 2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0
-        XCTAssertEqualWithAccuracy(date.julianDay().value, jd, accuracy: 0.001/86400.0)
+        XCTAssertEqualWithAccuracy(date.julianDay.value, jd, accuracy: 0.001/86400.0)
     }
 
     func testJulianDayToDateComponents() {
         let julianDay = JulianDay(2421123.585469)
-        let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date())
+        let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: julianDay.date)
         XCTAssertEqual(components.year!, 1916)
         XCTAssertEqual(components.month!, 9)
         XCTAssertEqual(components.day!, 17)
@@ -78,10 +78,10 @@ class JulianDayTest: XCTestCase {
     
     func testJulian(_ components: DateComponents, _ jd: JulianDay) {
         let date = Calendar.gregorianGMT.date(from: components)!
-        let date1 = jd.date()
-        let jd1 = date.julianDay()
-        let date2 = jd1.date()
-        let jd2 = date1.julianDay()
+        let date1 = jd.date
+        let jd1 = date.julianDay
+        let date2 = jd1.date
+        let jd2 = date1.julianDay
         let accuracy = TimeInterval(0.001)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
@@ -91,20 +91,20 @@ class JulianDayTest: XCTestCase {
     
     func testMeanSiderealTime1() {
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 00, minute: 00, second: 00))!
-        let gmst = date.julianDay().meanGreenwichSiderealTime()
+        let gmst = date.julianDay.meanGreenwichSiderealTime()
         XCTAssertEqualWithAccuracy(gmst.value, 13.0 + 10.0/60.0 + 46.3668/3600.0, accuracy: 0.001 / 3600.0) // p.88
     }
     
     func testMeanSiderealTime2() {
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00))!
-        let gmst = date.julianDay().meanGreenwichSiderealTime()
+        let gmst = date.julianDay.meanGreenwichSiderealTime()
         XCTAssertEqualWithAccuracy(gmst.value, 8.0 + 34.0/60.0 + 57.0898/3600.0, accuracy: 0.001 / 3600.0) // p.89
     }
     
     func testMeanLocalSiderealTime1() {
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 2016, month: 12, day: 01, hour: 14, minute: 15, second: 03))!
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
-        let lmst = date.julianDay().meanLocalSiderealTime(forGeographicLongitude: geographic.longitude.value)
+        let lmst = date.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographic.longitude.value)
         XCTAssertEqualWithAccuracy(lmst.value, 21.0 + 28.0/60.0 + 59.0/3600.0, accuracy: 1.0/3600.0) // SkySafari
     }
     

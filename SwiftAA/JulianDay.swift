@@ -35,7 +35,7 @@ public extension JulianDay {
      
      - returns: The corresponding Date instance.
      */
-    public func date() -> Date {
+    public var date: Date {
         let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
         let decimalSeconds = aaDate.second()
         let roundedSeconds = decimalSeconds.rounded(.towardZero)
@@ -129,7 +129,7 @@ public extension Date {
      
      - returns: The value of the Julian Day, as a fractional (double) number.
      */
-    public func julianDay() -> JulianDay {
+    public var julianDay: JulianDay {
         return JulianDay(self)
     }
     
@@ -179,7 +179,7 @@ public extension Date {
     public var fractionalYear: Double {
         get {
             let daysCount = (self.isLeap) ? 366.0 : 365.0
-            return Double(self.year) + ((self.julianDay().value - self.januaryFirstDate().julianDay().value) / daysCount)
+            return Double(self.year) + ((self.julianDay.value - self.januaryFirstDate().julianDay.value) / daysCount)
         }
     }
 }

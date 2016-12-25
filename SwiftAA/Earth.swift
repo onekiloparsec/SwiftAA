@@ -39,7 +39,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      - returns: A julian day
      */
     func equinox(_ northward: Bool) -> JulianDay {
-        let year = self.julianDay.date().year
+        let year = self.julianDay.date.year
         if northward == true {
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision))
         }
@@ -57,7 +57,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      - returns: A julian day
      */
     func solstice(_ northern: Bool) -> JulianDay {
-        let year = self.julianDay.date().year
+        let year = self.julianDay.date.year
         if northern == true {
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision))
         }
@@ -75,7 +75,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      - returns: A length in (Julian) Days.
      */
     func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Double {
-        let year = self.julianDay.date().year
+        let year = self.julianDay.date.year
         switch season {
         case .spring:
             return KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision)

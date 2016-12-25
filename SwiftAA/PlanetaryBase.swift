@@ -58,14 +58,14 @@ public extension PlanetaryBase {
     
     var perihelion: JulianDay {
         get {
-            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict)
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
             return JulianDay(KPCAAPlanetPerihelionAphelion_Perihelion(k, self.planetStrict))
         }
     }
     
     var aphelion: JulianDay {
         get {
-            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date().fractionalYear, self.planetStrict)
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
             return JulianDay(KPCAAPlanetPerihelionAphelion_Aphelion(k, self.planetStrict))
         }
     }

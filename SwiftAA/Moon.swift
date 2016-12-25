@@ -23,7 +23,7 @@ public class Moon : Object, CelestialBody {
     
     public fileprivate(set) lazy var eclipseDetails: KPCAALunarEclipseDetails = {
         [unowned self] in
-        return KPCAAEclipses_CalculateLunar(KPCAAMoonPhases_K(self.julianDay.date().fractionalYear))
+        return KPCAAEclipses_CalculateLunar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         }()
 
     public let diameter: Meter = 3476000.0
@@ -106,7 +106,7 @@ public class Moon : Object, CelestialBody {
     // MARK: - KPCAAMoonPhases
 
     func timeOfPhase(forPhase ph: MoonPhase, mean: Bool = true) -> JulianDay {
-        var k = round(KPCAAMoonPhases_K(self.julianDay.date().fractionalYear))
+        var k = round(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         switch ph {
         case .new:
             k = k + 0.0
@@ -129,7 +129,7 @@ public class Moon : Object, CelestialBody {
     // TODO: Check Apogee Perigee Units
     
     public func perigee(_ mean: Bool = true) -> Double {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         if mean {
             return KPCAAMoonPerigeeApogee_MeanPerigee(k)
         }
@@ -139,7 +139,7 @@ public class Moon : Object, CelestialBody {
     }
 
     public func apogee(_ mean: Bool = true) -> Double {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         if mean {
             return KPCAAMoonPerigeeApogee_MeanApogee(k)
         }
@@ -150,12 +150,12 @@ public class Moon : Object, CelestialBody {
     }
     
     public func perigeeParallax() -> Double {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         return KPCAAMoonPerigeeApogee_PerigeeParallax(k)
     }
 
     public func apogeeParallax() -> Double {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         return KPCAAMoonPerigeeApogee_ApogeeParallax(k)
     }
 
@@ -185,7 +185,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - returns: The date of the greatest declination of the Moon
     public func dateOfGreatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> JulianDay {
-        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear)
         if mean {
             return JulianDay(KPCAAMoonMaxDeclinations_MeanGreatestDeclination(k, northernly))
         }
@@ -201,7 +201,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - returns: The greatest declination of the Moon
     public func greatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> Degree {
-        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear)
         if mean {
             return Degree(KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(k))
         }
@@ -265,7 +265,7 @@ public class Moon : Object, CelestialBody {
     // TODO: Check Units
 
     public func passageThroughNode() -> Double {
-        let k = KPCAAMoonNodes_K(self.julianDay.date().fractionalYear)
+        let k = KPCAAMoonNodes_K(self.julianDay.date.fractionalYear)
         return KPCAAMoonNodes_PassageThroNode(k)
     }
 }
