@@ -1705,15 +1705,15 @@
 		9FB755351E05F23F00EC7617 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
-				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
-				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
-				9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */,
-				6F2141161E0E1783005E1913 /* NutationTests.swift */,
 				6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */,
-				6F21411C1E0E4CD5005E1913 /* SunTests.swift */,
+				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
+				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
 				6F21411E1E0E5076005E1913 /* MoonTests.swift */,
+				6F2141161E0E1783005E1913 /* NutationTests.swift */,
+				9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */,
 				6F2141201E0F13D0005E1913 /* RiseTransitSetTests.swift */,
+				6F21411C1E0E4CD5005E1913 /* SunTests.swift */,
+				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -1730,8 +1730,8 @@
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9FB755341E05F23800EC7617 /* Obj-C */,
 				9FB755351E05F23F00EC7617 /* Swift */,
+				9FB755341E05F23800EC7617 /* Obj-C */,
 				9FC340311D156A5D0069E7C4 /* Info.plist */,
 			);
 			name = Tests;

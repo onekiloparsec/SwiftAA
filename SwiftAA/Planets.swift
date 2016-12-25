@@ -29,6 +29,10 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         get { return self.eclipticCoordinates.toEquatorialCoordinates() }
     }
     
+    public var apparentEquatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+    }
+    
     public var eclipticCoordinates: EclipticCoordinates {
         get {
             let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)

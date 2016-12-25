@@ -49,6 +49,10 @@ public class Moon : Object, CelestialBody {
         get { return self.eclipticCoordinates.toEquatorialCoordinates() }
     }
     
+    public var apparentEquatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+    }
+
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var equatorialSemiDiameter: Degree {
         get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }

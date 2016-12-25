@@ -111,11 +111,17 @@ public struct EclipticCoordinates {
     }
     
     func toEquatorialCoordinates() -> EquatorialCoordinates {
-        let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(epoch.value)
+        let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(StandardEpoch_J2000_0.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
-    
+
+    func toApparentEquatorialCoordinates() -> EquatorialCoordinates {
+        let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(epoch.value)
+        let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
+        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
+    }
+
     func precessedCoordinates(to newEpoch: JulianDay) -> EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value, newEpoch.value)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: newEpoch)

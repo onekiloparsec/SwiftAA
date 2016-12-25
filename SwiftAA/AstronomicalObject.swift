@@ -32,4 +32,8 @@ class AstronomicalObject: Object, CelestialBody {
     public var eclipticCoordinates: EclipticCoordinates {
         get { return self.equatorialCoordinates.toEclipticCoordinates() }
     }
+    
+    public var apparentEquatorialCoordinates: EquatorialCoordinates {
+        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+    }
 }

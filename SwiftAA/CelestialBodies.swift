@@ -22,6 +22,8 @@ public protocol CelestialBody: ObjectBase {
     /// The equatorial coordinates of the object
     var equatorialCoordinates: EquatorialCoordinates { get }
     
+    var apparentEquatorialCoordinates: EquatorialCoordinates { get }
+    
     func riseTransitSetTimes(geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
     
     func parallacticAngle(geographicCoordinates: GeographicCoordinates) -> Degree
