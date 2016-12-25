@@ -40,6 +40,15 @@ class VenusTests: XCTestCase {
         XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)
     }
     
+    func testHeliocentricEclipticCoordinates() { // AA p.225
+        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1992, month: 12, day: 20))!.julianDay()
+        let venus = Venus(julianDay: date, highPrecision: false)
+        let heliocentricEcliptic = venus.eclipticCoordinates
+        XCTAssertEqualWithAccuracy(heliocentricEcliptic.celestialLatitude.value, -2.62070, accuracy: 0.00001)
+        XCTAssertEqualWithAccuracy(heliocentricEcliptic.celestialLongitude.value, 26.11428, accuracy: 0.00001)
+        XCTAssertEqualWithAccuracy(venus.radiusVector.value, 0.724603, accuracy: 0.00001)
+    }
+    
     func testEquatorialCoordinates() { // p.103
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 00, minute: 00, second: 00))!
         let equatorial = Venus(julianDay: date.julianDay()).equatorialCoordinates
