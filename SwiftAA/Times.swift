@@ -44,7 +44,7 @@ public struct Minute: NumericType {
     public func inSeconds() -> Second { return Second(self.value * 60.0) }
     public func inDegrees() -> Degree { return Degree(self.value / 60.0 * 15.0) }
     
-    /// Returns self reduced to 0..<24 range
+    /// Returns self reduced to 0..<60 range
     public var reduced: Minute { return Minute(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
     
 }
@@ -61,7 +61,7 @@ public struct Second: NumericType {
     public func inMinutes() -> Minute { return Minute(self.value / 60.0) }
     public func inDegrees() -> Degree { return Degree(self.value / 3600.0 * 15.0) }
     
-    /// Returns self reduced to 0..<24 range
+    /// Returns self reduced to 0..<60 range
     public var reduced: Second { return Second(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
     
 }

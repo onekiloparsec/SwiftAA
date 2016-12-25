@@ -1,5 +1,5 @@
 //
-//  JulianDay.swift
+//  Distances.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 26/06/16.

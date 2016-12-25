@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  NumericType.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 18/06/16.
