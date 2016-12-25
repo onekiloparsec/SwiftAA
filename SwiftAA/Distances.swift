@@ -15,13 +15,13 @@ public struct AU: NumericType {
         self.value = value
     }
     
-    public var pc: Parsec { return self.value / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
-    public var km: Double { return self.value * 149597870.7 }
-    public var m:  Meter  { return Meter(self.value * 149597870700.0) }
-    public var ly: Double { return self.value / 206264.8 }
+    public var pc: Parsec { return value / 206264.80624548031 } // tan(1./3600.0*M_PI/180.)
+    public var km: Double { return value * 149597870.7 }
+    public var m:  Meter  { return Meter(value * 149597870700.0) }
+    public var ly: Double { return value / 206264.8 }
     
     public func parallax() -> ArcSecond {
-        return Degree(KPCAAParallax_DistanceToParallax(self.value)).inArcseconds()
+        return Degree(KPCAAParallax_DistanceToParallax(value)).inArcseconds
     }
 
 }
@@ -34,7 +34,7 @@ public struct Meter: NumericType {
         self.value = value
     }
     
-    public var AstronomicalUnit: AU { return AU(self.value / 149597870700.0) }
+    public var AstronomicalUnit: AU { return AU(value / 149597870700.0) }
 }
 
 
