@@ -26,7 +26,7 @@ public struct AU: NumericType {
 
 }
 
-// --
+// MARK: -
 
 public struct Meter: NumericType {
     public let value: Double

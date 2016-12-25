@@ -32,7 +32,7 @@ extension Hour: CustomStringConvertible {
     }
 }
 
-//--
+// MARK: -
 
 public struct Minute: NumericType {
     public let value: Double
@@ -49,7 +49,7 @@ public struct Minute: NumericType {
     
 }
 
-//-- 
+// MARK: -
 
 public struct Second: NumericType {
     public let value: Double
