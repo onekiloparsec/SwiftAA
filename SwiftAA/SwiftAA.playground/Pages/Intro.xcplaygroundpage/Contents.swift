@@ -1,5 +1,5 @@
-//: # Swift AA Playground
-//: ### A world to play with at your fingertips!
+//: # Swift Astronomical Algorithms Playground
+//: ### A universe to play with, at your fingertips!
 //: ### Developed by Cédric Foellmi, Ph.D. ([@onekiloparsec](https://twitter.com/onekiloparsec))
 //:
 //: ----

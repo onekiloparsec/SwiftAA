@@ -32,3 +32,5 @@ DerivedData
 
 Carthage/Build
 SwiftAA/SwiftAA.playground/Resources/SwiftAA.framework/
+SwiftAA/SwiftAA.playground/*.remap
+

@@ -799,7 +799,7 @@
 		9F525B401D3CDEDC00041696 /* swiftaa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftaa; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F525B421D3CDEDC00041696 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/onekiloparsec/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
+		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutation.swift; sourceTree = "<group>"; };
@@ -2068,6 +2068,7 @@
 				9F694E311D15C67300EE7492 /* Frameworks */,
 				9F694E321D15C67300EE7492 /* Headers */,
 				9F694EDE1D15C67300EE7492 /* Resources */,
+				9FF9C89D1E10184100205702 /* Copy SwiftAA Framework into Playground */,
 			);
 			buildRules = (
 			);
@@ -2211,6 +2212,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FF9C89D1E10184100205702 /* Copy SwiftAA Framework into Playground */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy SwiftAA Framework into Playground";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/SwiftAA.framework/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F51D0BE1D3D5D6E00895295 /* Sources */ = {
