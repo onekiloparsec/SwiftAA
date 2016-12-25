@@ -2068,7 +2068,6 @@
 				9F694E311D15C67300EE7492 /* Frameworks */,
 				9F694E321D15C67300EE7492 /* Headers */,
 				9F694EDE1D15C67300EE7492 /* Resources */,
-				9F8D13851D1EED0300DF309D /* Copy SwiftAA Framework into Playground */,
 			);
 			buildRules = (
 			);
@@ -2212,23 +2211,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9F8D13851D1EED0300DF309D /* Copy SwiftAA Framework into Playground */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy SwiftAA Framework into Playground";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/SwiftAA.framework/\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F51D0BE1D3D5D6E00895295 /* Sources */ = {
