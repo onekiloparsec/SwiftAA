@@ -60,6 +60,8 @@ class JulianDayTest: XCTestCase {
         let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*1e9))
         let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)
         testJulian(components, jd)
+        let jd2 = JulianDay(year: 2016, month: 12, day: 21, hour: 1, minute: 4, second: 9.1035)
+        XCTAssertEqualWithAccuracy(jd.value, jd2.value, accuracy: 0.0001/86400)
     }
     
     func testJulian1980() {

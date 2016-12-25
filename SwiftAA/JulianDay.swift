@@ -12,11 +12,19 @@ public struct JulianDay: NumericType {
     
     public let value: Double
     
-    fileprivate let _date: KPCAADate
-    
     public init(_ value: Double) {
         self.value = value
-        _date = KPCAADate(julianDay: value, usingGregorianCalendar: true)
+    }
+    
+    public init(year: Int, month: Int, day: Int, hour: Int = 0, minute: Int = 0, second: Double = 0.0) {
+        let aaDate = KPCAADate(year: year, month: month, day: Double(day), hour: Double(hour), minute: Double(minute), second: second, usingGregorianCalendar: true)!
+        self.init(aaDate.julian())
+    }
+    
+    public init(_ date: Date) {
+        let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date)
+        let decimalSeconds = Double(components.second!) + Double(components.nanosecond!)/1e9
+        self.init(year: components.year!, month: components.month!, day: components.day!, hour: components.hour!, minute: components.minute!, second: decimalSeconds)
     }
     
 }
@@ -28,10 +36,11 @@ public extension JulianDay {
      - returns: The corresponding Date instance.
      */
     public func date() -> Date {
-        let fractionalSeconds = _date.second()
-        let roundedSeconds = fractionalSeconds.rounded(.towardZero)
-        let nanoseconds = (fractionalSeconds - roundedSeconds) * 1e9
-        let components = DateComponents(year: _date.year(), month: _date.month(), day: _date.day(), hour: _date.hour(), minute: _date.minute(), second: Int(roundedSeconds), nanosecond: Int(nanoseconds))
+        let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
+        let decimalSeconds = aaDate.second()
+        let roundedSeconds = decimalSeconds.rounded(.towardZero)
+        let nanoseconds = (decimalSeconds - roundedSeconds) * 1e9
+        let components = DateComponents(year: aaDate.year(), month: aaDate.month(), day: aaDate.day(), hour: aaDate.hour(), minute: aaDate.minute(), second: Int(roundedSeconds), nanosecond: Int(nanoseconds))
         let date = Calendar.gregorianGMT.date(from: components)!
         return date
     }
@@ -121,16 +130,7 @@ public extension Date {
      - returns: The value of the Julian Day, as a fractional (double) number.
      */
     public func julianDay() -> JulianDay {
-        let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: self)
-        let year = components.year!
-        let month = components.month!
-        let day = Double(components.day!)
-        let hour = Double(components.hour!)
-        let minute = Double(components.minute!)
-        let second = Double(components.second!) + Double(components.nanosecond!) / 1e9
-        let date = KPCAADate(year: year, month: month, day: day, hour: hour, minute: minute, second: second, usingGregorianCalendar: true)!
-        let julian = JulianDay(date.julian())
-        return julian
+        return JulianDay(self)
     }
     
     public var year: Int {
