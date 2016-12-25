@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  NumericType.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 18/06/16.
@@ -13,6 +13,7 @@ import Foundation
 
 public protocol NumericType: _NumericType, Comparable, SignedNumber, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral { /* intentionally left blank */ }
 
+// note: we use two separate protocols because it's impossible to declare conformance *and* provide default implementation at the same time 
 public protocol _NumericType {
     var value: Double { get }
     init(_ value: Double)

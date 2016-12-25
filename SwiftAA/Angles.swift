@@ -32,7 +32,7 @@ extension Degree: CustomStringConvertible {
     }
 }
 
-// --
+// MARK: -
 
 public struct ArcMinute: NumericType {
     public let value: Double
@@ -44,9 +44,7 @@ public struct ArcMinute: NumericType {
     public func inArcseconds() -> ArcSecond { return ArcSecond(self.value * 60.0) }
 }
 
-
-
-// --
+// MARK: -
 
 public struct ArcSecond: NumericType {
     public let value: Double

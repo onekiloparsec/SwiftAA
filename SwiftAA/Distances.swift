@@ -1,5 +1,5 @@
 //
-//  JulianDay.swift
+//  Distances.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 26/06/16.
@@ -26,7 +26,7 @@ public struct AU: NumericType {
 
 }
 
-// --
+// MARK: -
 
 public struct Meter: NumericType {
     public let value: Double
