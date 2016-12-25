@@ -14,10 +14,10 @@ public struct Degree: NumericType {
         self.value = value
     }
     
-    public func inArcminutes() -> ArcMinute { return ArcMinute(self.value * 60.0) }
-    public func inArcseconds() -> ArcSecond { return ArcSecond(self.value * 3600.0) }
-    public func inRadians() -> Double { return self.value * 0.017453292519943295769236907684886 }
-    public func inHours() -> Hour { return Hour(self.value / 15.0) }
+    public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
+    public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }
+    public var inRadians: Double { return value * 0.017453292519943295769236907684886 }
+    public var inHours: Hour { return Hour(value / 15.0) }
     
     /// Returns self reduced to 0..<360 range 
     public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
@@ -40,8 +40,8 @@ public struct ArcMinute: NumericType {
         self.value = value
     }
     
-    public func inDegrees() -> Degree { return Degree(self.value / 60.0) }
-    public func inArcseconds() -> ArcSecond { return ArcSecond(self.value * 60.0) }
+    public var inDegrees: Degree { return Degree(value / 60.0) }
+    public var inArcseconds: ArcSecond { return ArcSecond(value * 60.0) }
 }
 
 // MARK: -
@@ -52,11 +52,11 @@ public struct ArcSecond: NumericType {
         self.value = value
     }
     
-    public func inDegrees() -> Degree { return Degree(self.value / 3600.0) }
-    public func inArcminutes() -> ArcMinute { return ArcMinute(self.value / 60.0) }
+    public var inDegrees: Degree { return Degree(value / 3600.0) }
+    public var inArcminutes: ArcMinute { return ArcMinute(value / 60.0) }
 
     public func distance() -> AU {
-        return AU(KPCAAParallax_ParallaxToDistance(self.inDegrees().value))
+        return AU(KPCAAParallax_ParallaxToDistance(inDegrees.value))
     }
 }
 

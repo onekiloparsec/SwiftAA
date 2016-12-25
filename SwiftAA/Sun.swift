@@ -17,7 +17,7 @@ public class Sun: Object, CelestialBody {
     
     public fileprivate(set) lazy var eclipseDetails: KPCAASolarEclipseDetails = {
         [unowned self] in
-        KPCAAEclipses_CalculateSolar(KPCAAMoonPhases_K(self.julianDay.date().fractionalYear))
+        KPCAAEclipses_CalculateSolar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         }()
     
     public let diameter: Meter = 1392000000.0

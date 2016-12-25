@@ -25,7 +25,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00))!
         let equatorial = EquatorialCoordinates(alpha: Hour(23.0 + 9.0/60.0 + 16.641/3600.0), delta: Degree( -6.0 - 43.0/60.0 - 11.61/3600.0))
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: Degree(77.0 + 3.0/60.0 + 56.0/3600.0), latitude: Degree(38.0 + 55.0/60.0 + 17.0/3600.0))
-        let horizontal = equatorial.toHorizontalCoordinates(forGeographicalCoordinates: geographic, julianDay: date.julianDay())
+        let horizontal = equatorial.toHorizontalCoordinates(forGeographicalCoordinates: geographic, julianDay: date.julianDay)
         XCTAssertEqualWithAccuracy(horizontal.altitude.value, 15.1249, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(horizontal.azimuth.value, 68.0337, accuracy: 0.001)
         let eqBack = horizontal.toEquatorialCoordinates()
