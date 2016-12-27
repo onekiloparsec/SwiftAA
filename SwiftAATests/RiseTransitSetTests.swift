@@ -13,7 +13,7 @@ class RiseTransitSetTests: XCTestCase {
     
     func testVenusAtBoston1988() { // See AA p.103
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
-        let venus = Venus(julianDay: JulianDay(year: 1988, month: 3, day: 20))
+        let venus = Venus(julianDay: JulianDay(year: 1988, month: 3, day: 20, hour: 1, minute: 5, second: 38))
         let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: boston)
         let accuracy = Minute(1.0).inDays
         let expectedRise = JulianDay(year: 1988, month: 03, day: 20, hour: 12, minute: 25)

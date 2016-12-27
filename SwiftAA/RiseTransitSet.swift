@@ -88,16 +88,17 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
-        let jd = self.celestialBody.julianDay
+        let midnight = self.celestialBody.julianDay.midnight
         let hp = self.celestialBody.highPrecision
         
         let celestialBodyType = type(of: self.celestialBody)
-        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
-        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
+        let body1: CelestialBody = celestialBodyType.init(julianDay: midnight-1, highPrecision: hp)
+        let body2: CelestialBody = celestialBodyType.init(julianDay: midnight, highPrecision: hp)
+        let body3: CelestialBody = celestialBodyType.init(julianDay: midnight+1, highPrecision: hp)
         
-        return riseTransitSet(forJulianDay: jd,
+        return riseTransitSet(forJulianDay: midnight,
                               equCoords1: body1.apparentEquatorialCoordinates,
-                              equCoords2: self.celestialBody.apparentEquatorialCoordinates,
+                              equCoords2: body2.apparentEquatorialCoordinates,
                               equCoords3: body3.apparentEquatorialCoordinates,
                               geoCoords: self.geographicCoordinates,
                               apparentRiseSetAltitude: self.celestialBody.apparentRiseSetAltitude)
