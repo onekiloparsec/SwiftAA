@@ -9,27 +9,26 @@
 import Foundation
 
 public struct EquatorialCoordinates: CustomStringConvertible {
-    fileprivate(set) var rightAscension: Hour
-    fileprivate(set) var declination: Degree
+    
+    public let rightAscension: Hour
+    public let declination: Degree
     public let epoch: JulianDay
     
-    var alpha: Hour {
-        get { return self.rightAscension }
-        set { self.rightAscension = newValue }
+    public var alpha: Hour { return rightAscension }
+    public var delta: Degree { return declination }
+    public var epsilon: JulianDay { return epoch }
+    
+    public init(rightAscension: Hour, declination: Degree, epoch: JulianDay = StandardEpoch_J2000_0) {
+        self.rightAscension = rightAscension
+        self.declination = declination
+        self.epoch = epoch
     }
     
-    var delta: Degree {
-        get { return self.declination }
-        set { self.declination = newValue }
+    public init(alpha: Hour, delta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
+        self.init(rightAscension: alpha, declination: delta, epoch: epsilon)
     }
     
-    init(alpha: Hour, delta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
-        self.rightAscension = alpha
-        self.declination = delta
-        self.epoch = epsilon
-    }
-    
-    func toEclipticCoordinates() -> EclipticCoordinates {
+    public func toEclipticCoordinates() -> EclipticCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(epoch.value)
         let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension.value, self.declination.value, eclipticObliquity)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: self.epoch)
@@ -49,13 +48,13 @@ public struct EquatorialCoordinates: CustomStringConvertible {
      
      - returns: The corresponding galactic coordinates.
      */
-    func toGalacticCoordinates() -> GalacticCoordinates {
+    public func toGalacticCoordinates() -> GalacticCoordinates {
         let precessedCoords = self.precessedCoordinates(to: StandardEpoch_B1950_0)
         let components = KPCAACoordinateTransformation_Equatorial2Galactic(precessedCoords.rightAscension.value, precessedCoords.declination.value)
         return GalacticCoordinates(l: Degree(components.X), b: Degree(components.Y))
     }
     
-    func toHorizontalCoordinates(forGeographicalCoordinates coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
+    public func toHorizontalCoordinates(forGeographicalCoordinates coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
         let lha = (julianDay.meanLocalSiderealTime(forGeographicLongitude: coords.longitude.value) - rightAscension).reduced
         let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha.value, self.declination.value, coords.latitude.value)
         return HorizontalCoordinates(azimuth: Degree(components.X),
@@ -65,19 +64,19 @@ public struct EquatorialCoordinates: CustomStringConvertible {
                                      epoch: self.epoch)
     }
     
-    func precessedCoordinates(to newEpoch: JulianDay) -> EquatorialCoordinates {
+    public func precessedCoordinates(to newEpoch: JulianDay) -> EquatorialCoordinates {
         let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension.value, self.declination.value, self.epoch.value, newEpoch.value)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: newEpoch)
     }
     
-    func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degree {
+    public func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degree {
         return Degree(KPCAAAngularSeparation_Separation(self.alpha.value,
                                                         self.delta.value,
                                                         otherCoordinates.alpha.value,
                                                         otherCoordinates.delta.value))
     }
     
-    func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degree {
+    public func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degree {
         return Degree(KPCAAAngularSeparation_PositionAngle(self.alpha.value,
                                                            self.delta.value,
                                                            otherCoordinates.alpha.value,
@@ -88,44 +87,41 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     
 }
 
+// MARK: -
+
 public struct EclipticCoordinates: CustomStringConvertible {
-    fileprivate(set) var celestialLongitude: Degree
-    fileprivate(set) var celestialLatitude: Degree
+    
+    public let celestialLongitude: Degree
+    public let celestialLatitude: Degree
     public let epoch: JulianDay
     
-    var lambda: Degree {
-        get { return self.celestialLongitude }
-        set { self.celestialLongitude = newValue }
+    public var lambda: Degree { return celestialLongitude }
+    public var beta: Degree { return celestialLatitude }
+    public var epsilon: JulianDay { return epoch }
+    
+    public init(celestialLongitude: Degree, celestialLatitude: Degree, epoch: JulianDay = StandardEpoch_J2000_0) {
+        self.celestialLongitude = celestialLongitude
+        self.celestialLatitude = celestialLatitude
+        self.epoch = epoch
     }
     
-    var beta: Degree {
-        get { return self.celestialLatitude }
-        set { self.celestialLatitude = newValue }
+    public init(lambda: Degree, beta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
+        self.init(celestialLongitude: lambda, celestialLatitude: beta, epoch: epsilon)
     }
     
-    var epsilon: JulianDay {
-        get { return self.epoch }
-    }
-    
-    init(lambda: Degree, beta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
-        self.celestialLongitude = lambda
-        self.celestialLatitude = beta
-        self.epoch = epsilon
-    }
-    
-    func toEquatorialCoordinates() -> EquatorialCoordinates {
+    public func toEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(StandardEpoch_J2000_0.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
 
-    func toApparentEquatorialCoordinates() -> EquatorialCoordinates {
+    public func toApparentEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(epoch.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
 
-    func precessedCoordinates(to newEpoch: JulianDay) -> EclipticCoordinates {
+    public func precessedCoordinates(to newEpoch: JulianDay) -> EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value, newEpoch.value)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: newEpoch)
     }
@@ -134,24 +130,26 @@ public struct EclipticCoordinates: CustomStringConvertible {
     
 }
 
-public struct GalacticCoordinates: CustomStringConvertible {
-    fileprivate(set) var galacticLongitude: Degree
-    fileprivate(set) var galacticLatitude: Degree
-    public let epoch: JulianDay = StandardEpoch_B1950_0
+// MARK: -
 
-    var l: Degree {
-        get { return self.galacticLongitude }
-        set { self.galacticLongitude = newValue }
+public struct GalacticCoordinates: CustomStringConvertible {
+    
+    public let galacticLongitude: Degree
+    public let galacticLatitude: Degree
+    public let epoch: JulianDay
+
+    public var l: Degree { return galacticLongitude }
+    public var b: Degree { return galacticLatitude }
+    public var epsilon: JulianDay { return epoch }
+    
+    public init(galacticLongitude: Degree, galacticLatitude: Degree, epoch: JulianDay = StandardEpoch_B1950_0) {
+        self.galacticLongitude = galacticLongitude
+        self.galacticLatitude = galacticLatitude
+        self.epoch = epoch
     }
     
-    var b: Degree {
-        get { return self.galacticLatitude }
-        set { self.galacticLatitude = newValue }
-    }
-
-    init(l: Degree, b: Degree) {
-        self.galacticLongitude = l
-        self.galacticLatitude = b
+    public init(l: Degree, b: Degree, epsilon: JulianDay = StandardEpoch_B1950_0) {
+        self.init(galacticLongitude: l, galacticLatitude: b, epoch: epsilon)
     }
     
     /**
@@ -160,7 +158,7 @@ public struct GalacticCoordinates: CustomStringConvertible {
      
      - returns: The corresponding equatorial coordinates.
      */
-    func toEquatorialCoordinates() -> EquatorialCoordinates {
+    public func toEquatorialCoordinates() -> EquatorialCoordinates {
         let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude.value, self.galacticLatitude.value)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
@@ -169,14 +167,16 @@ public struct GalacticCoordinates: CustomStringConvertible {
     
 }
 
+// MARK: -
+
 public struct HorizontalCoordinates: CustomStringConvertible {
-    fileprivate(set) var azimuth: Degree // westward from the South see AA. p91
-    fileprivate(set) var altitude: Degree
-    fileprivate(set) var geographicCoordinates: GeographicCoordinates
-    fileprivate(set) var julianDay: JulianDay
-    fileprivate(set) var epoch: JulianDay
+    public let azimuth: Degree // westward from the South see AA. p91
+    public let altitude: Degree
+    public let geographicCoordinates: GeographicCoordinates
+    public let julianDay: JulianDay
+    public let epoch: JulianDay
     
-    init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: JulianDay) {
+    public init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: JulianDay = StandardEpoch_J2000_0) {
         self.azimuth = azimuth
         self.altitude = altitude
         self.geographicCoordinates = geographicCoordinates
@@ -195,4 +195,5 @@ public struct HorizontalCoordinates: CustomStringConvertible {
     public var description: String { return String(format: "A=%@, h=%@", azimuth.description, altitude.description) }
     
 }
+
 
