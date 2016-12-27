@@ -46,6 +46,9 @@ public struct ArcMinute: NumericType {
     
     public var inDegrees: Degree { return Degree(value / 60.0) }
     public var inArcseconds: ArcSecond { return ArcSecond(value * 60.0) }
+    public var inHours: Hour { return inDegrees.inHours }
+    public var inRadians: Double { return inDegrees.inRadians }
+    
 }
 
 // MARK: -
@@ -58,6 +61,8 @@ public struct ArcSecond: NumericType {
     
     public var inDegrees: Degree { return Degree(value / 3600.0) }
     public var inArcminutes: ArcMinute { return ArcMinute(value / 60.0) }
+    public var inHours: Hour { return inDegrees.inHours }
+    public var inRadians: Double { return inDegrees.inRadians }
 
     public func distance() -> AU {
         return AU(KPCAAParallax_ParallaxToDistance(inDegrees.value))

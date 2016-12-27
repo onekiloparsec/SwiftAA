@@ -21,6 +21,7 @@ public struct Hour: NumericType {
     public var inMinutes: Minute { return Minute(value * 60.0) }
     public var inSeconds: Second { return Second(value * 3600.0) }
     public var inDegrees: Degree { return Degree(value * 15.0) }
+    public var inDays: JulianDay { return JulianDay(value / 24.0) }
     
     /// Returns self reduced to 0..<24 range
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
@@ -47,6 +48,7 @@ public struct Minute: NumericType {
     public var inHours: Hour { return Hour(value / 60.0) }
     public var inSeconds: Second { return Second(value * 60.0) }
     public var inDegrees: Degree { return Degree(value / 60.0 * 15.0) }
+    public var inDays: JulianDay { return JulianDay(value / 1440.0) }
     
     /// Returns self reduced to 0..<60 range
     public var reduced: Minute { return Minute(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
@@ -64,6 +66,7 @@ public struct Second: NumericType {
     public var inHours: Hour { return Hour(value / 3600.0) }
     public var inMinutes: Minute { return Minute(value / 60.0) }
     public var inDegrees: Degree { return Degree(value / 3600.0 * 15.0) }
+    public var inDays: JulianDay { return JulianDay(value / 86400.0) }
     
     /// Returns self reduced to 0..<60 range
     public var reduced: Second { return Second(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
