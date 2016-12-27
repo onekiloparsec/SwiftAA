@@ -30,7 +30,12 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     }
     
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+        get {
+            let ra = Hour(planetaryDetails.ApparentGeocentricRA)
+            let dec = Degree(planetaryDetails.ApparentGeocentricDeclination)
+            let result = EquatorialCoordinates(alpha: ra, delta: dec)
+            return result
+        }
     }
     
     public var eclipticCoordinates: EclipticCoordinates {
