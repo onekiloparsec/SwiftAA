@@ -11,17 +11,17 @@ import XCTest
 
 class RiseTransitSetTests: XCTestCase {
     
-    func testVenusAtBoston1988() { // AA p.103
+    func testVenusAtBoston1988() { // See AA p.103
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20))!
-        let venus = Venus(julianDay: date.julianDay)
+        let venus = Venus(julianDay: JulianDay(year: 1988, month: 3, day: 20))
         let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: boston)
-        let expectedRise = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 12, minute: 25))!
-        let expectedTransit = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 19, minute: 41))!
-        let expectedSet = Calendar.gregorianGMT.date(from: DateComponents(year: 1988, month: 03, day: 20, hour: 2, minute: 55))!
-        XCTAssertEqualWithAccuracy(details.riseTime!.value, expectedRise.julianDay.value, accuracy: 1.0/1440.0)
-        XCTAssertEqualWithAccuracy(details.transitTime!.value, expectedTransit.julianDay.value, accuracy: 1.0/1440.0)
-        XCTAssertEqualWithAccuracy(details.setTime!.value, expectedSet.julianDay.value, accuracy: 1.0/1440.0)
+        let accuracy = Minute(1.0).inDays
+        let expectedRise = JulianDay(year: 1988, month: 03, day: 20, hour: 12, minute: 25)
+        AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
+        let expectedTransit = JulianDay(year: 1988, month: 03, day: 20, hour: 19, minute: 41)
+        AssertEqual(details.transitTime!, expectedTransit, accuracy: accuracy)
+        let expectedSet = JulianDay(year: 1988, month: 03, day: 20, hour: 2, minute: 55)
+        AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
     }
     
 }
