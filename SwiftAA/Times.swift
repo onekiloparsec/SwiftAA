@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Hour: NumericType {
+public struct Hour: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -26,9 +26,6 @@ public struct Hour: NumericType {
     /// Returns self reduced to 0..<24 range
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
     
-}
-
-extension Hour: CustomStringConvertible {
     public var description: String {
         let hrs = value.rounded(.towardZero)
         let min = ((value - hrs) * 60.0).rounded(.towardZero)
@@ -39,7 +36,7 @@ extension Hour: CustomStringConvertible {
 
 // MARK: -
 
-public struct Minute: NumericType {
+public struct Minute: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -53,11 +50,12 @@ public struct Minute: NumericType {
     /// Returns self reduced to 0..<60 range
     public var reduced: Minute { return Minute(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
     
+    public var description: String { return String(format: "%.2f min", value) }
 }
 
 // MARK: -
 
-public struct Second: NumericType {
+public struct Second: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -71,5 +69,6 @@ public struct Second: NumericType {
     /// Returns self reduced to 0..<60 range
     public var reduced: Second { return Second(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
     
+    public var description: String { return String(format: "%.2f sec", value) }
 }
 

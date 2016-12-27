@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct EquatorialCoordinates {
+public struct EquatorialCoordinates: CustomStringConvertible {
     fileprivate(set) var rightAscension: Hour
     fileprivate(set) var declination: Degree
     public let epoch: JulianDay
@@ -83,9 +83,12 @@ public struct EquatorialCoordinates {
                                                            otherCoordinates.alpha.value,
                                                            otherCoordinates.delta.value))
     }
+    
+    public var description: String { return String(format: "α=%@, δ=%@", alpha.description, delta.description) }
+    
 }
 
-public struct EclipticCoordinates {
+public struct EclipticCoordinates: CustomStringConvertible {
     fileprivate(set) var celestialLongitude: Degree
     fileprivate(set) var celestialLatitude: Degree
     public let epoch: JulianDay
@@ -126,9 +129,12 @@ public struct EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value, newEpoch.value)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: newEpoch)
     }
+    
+    public var description: String { return String(format: "λ=%@, β=%@", lambda.description, beta.description) }
+    
 }
 
-public struct GalacticCoordinates {
+public struct GalacticCoordinates: CustomStringConvertible {
     fileprivate(set) var galacticLongitude: Degree
     fileprivate(set) var galacticLatitude: Degree
     public let epoch: JulianDay = StandardEpoch_B1950_0
@@ -158,9 +164,12 @@ public struct GalacticCoordinates {
         let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude.value, self.galacticLatitude.value)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
+    
+    public var description: String { return String(format: "l=%@, b=%@", l.description, b.description) }
+    
 }
 
-public struct HorizontalCoordinates {
+public struct HorizontalCoordinates: CustomStringConvertible {
     fileprivate(set) var azimuth: Degree // westward from the South see AA. p91
     fileprivate(set) var altitude: Degree
     fileprivate(set) var geographicCoordinates: GeographicCoordinates
@@ -182,6 +191,8 @@ public struct HorizontalCoordinates {
         let lst = julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
         return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epsilon: self.epoch)
     }
-
+    
+    public var description: String { return String(format: "A=%@, h=%@", azimuth.description, altitude.description) }
+    
 }
 

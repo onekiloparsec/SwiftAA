@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Degree: NumericType {
+public struct Degree: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -25,9 +25,6 @@ public struct Degree: NumericType {
     
     /// Returns self reduced to 0..<360 range 
     public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
-}
-
-extension Degree: CustomStringConvertible {
     public var description: String {
         let deg = value.rounded(.towardZero)
         let min = ((value - deg) * 60.0).rounded(.towardZero)
@@ -38,7 +35,7 @@ extension Degree: CustomStringConvertible {
 
 // MARK: -
 
-public struct ArcMinute: NumericType {
+public struct ArcMinute: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -49,11 +46,12 @@ public struct ArcMinute: NumericType {
     public var inHours: Hour { return inDegrees.inHours }
     public var inRadians: Double { return inDegrees.inRadians }
     
+    public var description: String { return String(format: "%.2f arcmin", value) }
 }
 
 // MARK: -
 
-public struct ArcSecond: NumericType {
+public struct ArcSecond: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -67,6 +65,7 @@ public struct ArcSecond: NumericType {
     public func distance() -> AU {
         return AU(KPCAAParallax_ParallaxToDistance(inDegrees.value))
     }
+    public var description: String { return String(format: "%.2f arcsec", value) }
 }
 
 
