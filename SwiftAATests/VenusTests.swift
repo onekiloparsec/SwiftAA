@@ -12,48 +12,30 @@ import XCTest
 
 class VenusTests: XCTestCase {
 
-    // See AA p.225
-    func testApparentGeocentricCoordinates() {
-        // Months going from 1 to 12
-        var components = DateComponents()
-        components.year = 1992
-        components.month = 12
-        components.day = 20
-        let date = Calendar.gregorianGMT.date(from: components)!
-        let venus = Venus(julianDay: date.julianDay)
-        
-        XCTAssertEqualWithAccuracy(venus.planetaryDetails.ApparentGeocentricRA, 21.078181, accuracy: 0.000001)
-        XCTAssertEqualWithAccuracy(venus.planetaryDetails.ApparentGeocentricDeclination, -18.88801, accuracy: 0.000001)
+    func testApparentGeocentricCoordinates() { // See AA p.225
+        let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20))
+        AssertEqual(Hour(venus.planetaryDetails.ApparentGeocentricRA), Hour(21.078181), accuracy: ArcSecond(0.1).inHours)
+        AssertEqual(Degree(venus.planetaryDetails.ApparentGeocentricDeclination), Degree(-18.88801), accuracy: ArcSecond(0.1).inDegrees)
     }
     
-    
-    // See AA p.284
-    func testIlluminationFraction() {
-        // Months going from 1 to 12
-        var components = DateComponents()
-        components.year = 1992
-        components.month = 12
-        components.day = 20
-        let date = Calendar.gregorianGMT.date(from: components)!
-        // Both radius vector are correct. Not Delta! Check.
-        let frac = Venus(julianDay: date.julianDay).illuminatedFraction
-        XCTAssertEqualWithAccuracy(frac, 0.647, accuracy: 0.005)
+    func testIlluminationFraction() { // See AA p.284
+        let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20))
+        XCTAssertEqualWithAccuracy(venus.illuminatedFraction, 0.647, accuracy: 0.005)
     }
     
-    func testHeliocentricEclipticCoordinates() { // AA p.225
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1992, month: 12, day: 20))!.julianDay
-        let venus = Venus(julianDay: date, highPrecision: false)
+    func testHeliocentricEclipticCoordinates() { // See AA p.225
+        let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20), highPrecision: false)
         let heliocentricEcliptic = venus.eclipticCoordinates
-        XCTAssertEqualWithAccuracy(heliocentricEcliptic.celestialLatitude.value, -2.62070, accuracy: 0.00001)
-        XCTAssertEqualWithAccuracy(heliocentricEcliptic.celestialLongitude.value, 26.11428, accuracy: 0.00001)
-        XCTAssertEqualWithAccuracy(venus.radiusVector.value, 0.724603, accuracy: 0.00001)
+        AssertEqual(heliocentricEcliptic.celestialLatitude, Degree(-2.62070), accuracy: ArcSecond(0.1).inDegrees)
+        AssertEqual(heliocentricEcliptic.celestialLongitude, Degree(26.11428), accuracy: ArcSecond(0.1).inDegrees)
+        AssertEqual(venus.radiusVector, AU(0.724603), accuracy: AU(0.00001))
     }
     
-    func testEquatorialCoordinates() { // p.103
-        let jd = JulianDay(year: 1988, month: 03, day: 20, hour: 00, minute: 00, second: 00)
-        let equatorial = Venus(julianDay: jd).apparentEquatorialCoordinates
-        XCTAssertEqualWithAccuracy(equatorial.rightAscension.inDegrees.value, 41.73129, accuracy: 0.1/60.0)
-        XCTAssertEqualWithAccuracy(equatorial.declination.value, 18.44092, accuracy: 0.1/60.0)
+    func testGeocentricEquatorialCoordinates() { // See AA p.103
+        let venus = Venus(julianDay: JulianDay(year: 1988, month: 03, day: 20))
+        let equatorial = venus.apparentEquatorialCoordinates
+        AssertEqual(equatorial.rightAscension.inDegrees, Degree(41.73129), accuracy: ArcSecond(0.1).inDegrees)
+        AssertEqual(equatorial.declination, Degree(18.44092), accuracy: ArcSecond(0.1).inDegrees)
     }
-
+    
 }

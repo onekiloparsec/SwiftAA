@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct AU: NumericType {
+public struct AU: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
@@ -24,17 +24,19 @@ public struct AU: NumericType {
         return Degree(KPCAAParallax_DistanceToParallax(value)).inArcseconds
     }
 
+    public var description: String { return String(format: "%.2f au", value) }
 }
 
 // MARK: -
 
-public struct Meter: NumericType {
+public struct Meter: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
         self.value = value
     }
     
     public var AstronomicalUnit: AU { return AU(value / 149597870700.0) }
+    public var description: String { return String(format: "%.0f meters", value) }
 }
 
 

@@ -11,13 +11,12 @@ import XCTest
 
 class SunTests: XCTestCase {
     
-    func testPosition() { // p.165
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1993, month: 10, day: 13, hour: 00, minute: 00, second: 00))!
-        let sun = Sun(julianDay: date.julianDay)
+    func testPosition() { // See AA p.165
+        let sun = Sun(julianDay: JulianDay(year: 1993, month: 10, day: 13))
         let equatorial = sun.equatorialCoordinates
         // FIXME: the reason for very bad accuracy we use *mean* position instead of *apparent* in the book
-        XCTAssertEqualWithAccuracy(equatorial.rightAscension.value, 13.225389, accuracy: 1.0/60.0)
-        XCTAssertEqualWithAccuracy(equatorial.declination.value, -7.78507, accuracy: 0.1)
+        AssertEqual(equatorial.rightAscension, Hour(13.225389), accuracy: Degree(0.5).inHours)
+        AssertEqual(equatorial.declination, Degree(-7.78507), accuracy: Degree(0.1))
     }
     
 }

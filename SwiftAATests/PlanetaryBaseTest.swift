@@ -12,16 +12,6 @@ import XCTest
 class PlanetaryBaseTest: XCTestCase {
     var jd: JulianDay = 0.0
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testMercuryTypes() {
         let mercury = Mercury(julianDay: self.jd)
         XCTAssertEqual(mercury.name, "Mercury")

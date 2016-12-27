@@ -11,12 +11,12 @@ import XCTest
 
 class NutationTests: XCTestCase {
     
-    func testObliquity() { // p.148
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 00, minute: 00, second: 00))!
-        let meanObliquity = obliquityOfEcliptic(julianDay: date.julianDay, mean: true)
-        XCTAssertEqualWithAccuracy(meanObliquity.value, 23.0 + 26.0/60.0 + 27.407/3600.0, accuracy: 0.01/3600.0)
-        let trueObliquity = obliquityOfEcliptic(julianDay: date.julianDay, mean: false)
-        XCTAssertEqualWithAccuracy(trueObliquity.value, 23.0 + 26.0/60.0 + 36.850/3600.0, accuracy: 0.01/3600.0)
+    func testObliquity() { // See AA p.148
+        let jd = JulianDay(year: 1987, month: 4, day: 10, hour: 0, minute: 0, second: 0)
+        let meanObliquity = obliquityOfEcliptic(julianDay: jd, mean: true)
+        AssertEqual(meanObliquity, Degree(23, 26, 27.407), accuracy: ArcSecond(0.01).inDegrees)
+        let trueObliquity = obliquityOfEcliptic(julianDay: jd, mean: false)
+        AssertEqual(trueObliquity, Degree(23, 26, 36.850), accuracy: ArcSecond(0.01).inDegrees)
     }
     
 }

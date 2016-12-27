@@ -10,17 +10,7 @@ import XCTest
 @testable import SwiftAA
 
 class JulianDayTest: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testDate1ToJulianDay() {
         var components = DateComponents()
         components.year = 2016
@@ -40,8 +30,8 @@ class JulianDayTest: XCTestCase {
         components.second = 4
         components.nanosecond = 500000000
         let date = Calendar.gregorianGMT.date(from: components)!
-        let jd = 2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0
-        XCTAssertEqualWithAccuracy(date.julianDay.value, jd, accuracy: 0.001/86400.0)
+        let jd = JulianDay(2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0)
+        AssertEqual(date.julianDay, jd, accuracy: Second(0.001).inDays)
     }
 
     func testJulianDayToDateComponents() {
@@ -61,7 +51,7 @@ class JulianDayTest: XCTestCase {
         let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)
         testJulian(components, jd)
         let jd2 = JulianDay(year: 2016, month: 12, day: 21, hour: 1, minute: 4, second: 9.1035)
-        XCTAssertEqualWithAccuracy(jd.value, jd2.value, accuracy: 0.0001/86400)
+        AssertEqual(jd, jd2, accuracy: Second(0.001).inDays)
     }
     
     func testJulian1980() {
@@ -85,27 +75,27 @@ class JulianDayTest: XCTestCase {
         let accuracy = TimeInterval(0.001)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(jd.value, jd1.value, accuracy: accuracy / 86400.0)
-        XCTAssertEqualWithAccuracy(jd.value, jd2.value, accuracy: accuracy / 86400.0)
+        AssertEqual(jd, jd1, accuracy: Second(accuracy).inDays)
+        AssertEqual(jd, jd2, accuracy: Second(accuracy).inDays)
     }
     
-    func testMeanSiderealTime1() {
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 00, minute: 00, second: 00))!
-        let gmst = date.julianDay.meanGreenwichSiderealTime()
-        XCTAssertEqualWithAccuracy(gmst.value, 13.0 + 10.0/60.0 + 46.3668/3600.0, accuracy: 0.001 / 3600.0) // p.88
+    func testMeanSiderealTime1() { // See AA p.88
+        let jd = JulianDay(year: 1987, month: 04, day: 10)
+        let gmst = jd.meanGreenwichSiderealTime()
+        AssertEqual(gmst, Hour(13, 10, 46.3668), accuracy: Second(0.001).inHours)
     }
     
-    func testMeanSiderealTime2() {
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00))!
-        let gmst = date.julianDay.meanGreenwichSiderealTime()
-        XCTAssertEqualWithAccuracy(gmst.value, 8.0 + 34.0/60.0 + 57.0898/3600.0, accuracy: 0.001 / 3600.0) // p.89
+    func testMeanSiderealTime2() { // See AA p.89
+        let jd = JulianDay(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00)
+        let gmst = jd.meanGreenwichSiderealTime()
+        AssertEqual(gmst, Hour(8, 34, 57.0898), accuracy: Second(0.001).inHours)
     }
     
-    func testMeanLocalSiderealTime1() {
-        let date = Calendar.gregorianGMT.date(from: DateComponents(year: 2016, month: 12, day: 01, hour: 14, minute: 15, second: 03))!
+    func testMeanLocalSiderealTime1() { // Data from SkySafari
+        let jd = JulianDay(year: 2016, month: 12, day: 1, hour: 14, minute: 15, second: 3)
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
-        let lmst = date.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographic.longitude.value)
-        XCTAssertEqualWithAccuracy(lmst.value, 21.0 + 28.0/60.0 + 59.0/3600.0, accuracy: 1.0/3600.0) // SkySafari
+        let lmst = jd.meanLocalSiderealTime(forGeographicLongitude: geographic.longitude.value)
+        AssertEqual(lmst, Hour(21, 28, 59.0), accuracy: Second(1.0).inHours)
     }
     
 }
