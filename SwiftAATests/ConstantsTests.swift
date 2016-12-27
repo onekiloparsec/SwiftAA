@@ -10,25 +10,16 @@ import XCTest
 @testable import SwiftAA
 
 class ConstantsTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     /// That's the Geocentric to Topocentric parallax correction. See AA p280.
     func testParallaxToDistance() {
         let parallax1: ArcSecond = 23.592
-        XCTAssertEqualWithAccuracy(parallax1.distance().value, 0.37276, accuracy: 0.0005)
+        AssertEqual(parallax1.distance(), AU(0.37276), accuracy: AU(0.0005))
     }
     
     func testDistanceToParallax() {
         let distance1: AU = 0.37276
-        XCTAssertEqualWithAccuracy(distance1.parallax().value, 23.592, accuracy: 0.0005)
+        AssertEqual(distance1.parallax(), ArcSecond(23.592), accuracy: ArcSecond(0.0005))
     }
+    
 }
