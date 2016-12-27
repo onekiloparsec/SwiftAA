@@ -98,6 +98,13 @@ class JulianDayTest: XCTestCase {
         AssertEqual(lmst, Hour(21, 28, 59.0), accuracy: Second(1.0).inHours)
     }
     
+    func testMidnight() {
+        let jd1 = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
+        AssertEqual(jd1.midnight, JulianDay(year: 2016, month: 12, day: 20))
+        let jd2 = JulianDay(year: 2016, month: 12, day: 19, hour: 23, minute: 13, second: 39.1)
+        AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
+    }
+    
 }
 
 
