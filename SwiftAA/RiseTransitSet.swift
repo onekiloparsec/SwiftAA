@@ -90,9 +90,9 @@ public class RiseTransitSetTimes {
         let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
         
         return riseTransitSet(forJulianDay: jd,
-                              equCoords1: body1.equatorialCoordinates,
-                              equCoords2: self.celestialBody.equatorialCoordinates,
-                              equCoords3: body3.equatorialCoordinates,
+                              equCoords1: body1.apparentEquatorialCoordinates,
+                              equCoords2: self.celestialBody.apparentEquatorialCoordinates,
+                              equCoords3: body3.apparentEquatorialCoordinates,
                               geoCoords: self.geographicCoordinates)
         }()
     
