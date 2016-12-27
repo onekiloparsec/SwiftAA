@@ -71,12 +71,17 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 geoCoords.latitude.value,
                                                 geoCoords.altitude.value)
     
+    let midnight = julianDay.midnight
+    let rise = midnight + Hour(details.Rise).inDays
+    let transit = midnight + Hour(details.Transit).inDays
+    let set = midnight + Hour(details.Set).inDays
+    
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
-                                      riseTime: JulianDay(details.Rise),
+                                      riseTime: rise,
                                       isTransitAboveHorizon: details.isTransitAboveHorizon.boolValue,
-                                      transitTime: JulianDay(details.Transit),
+                                      transitTime: transit,
                                       isSetValid: details.isSetValid.boolValue,
-                                      setTime: JulianDay(details.Set))
+                                      setTime: set)
 }
 
 public class RiseTransitSetTimes {
