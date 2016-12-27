@@ -58,7 +58,8 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                            equCoords1: EquatorialCoordinates,
                            equCoords2: EquatorialCoordinates,
                            equCoords3: EquatorialCoordinates,
-                           geoCoords: GeographicCoordinates) -> RiseTransitSetTimesDetails
+                           geoCoords: GeographicCoordinates,
+                           apparentRiseSetAltitude: Degree) -> RiseTransitSetTimesDetails
 {
     let details = KPCAARiseTransitSet_Calculate(julianDay.value,
                                                 equCoords1.alpha.value,
@@ -69,7 +70,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 equCoords3.delta.value,
                                                 geoCoords.longitude.value,
                                                 geoCoords.latitude.value,
-                                                geoCoords.altitude.value)
+                                                apparentRiseSetAltitude.value)
     
     let midnight = julianDay.midnight
     let rise = midnight + Hour(details.Rise).inDays
@@ -98,7 +99,8 @@ public class RiseTransitSetTimes {
                               equCoords1: body1.apparentEquatorialCoordinates,
                               equCoords2: self.celestialBody.apparentEquatorialCoordinates,
                               equCoords3: body3.apparentEquatorialCoordinates,
-                              geoCoords: self.geographicCoordinates)
+                              geoCoords: self.geographicCoordinates,
+                              apparentRiseSetAltitude: self.celestialBody.apparentRiseSetAltitude)
         }()
     
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
