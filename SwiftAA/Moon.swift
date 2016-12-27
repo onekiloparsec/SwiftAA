@@ -272,6 +272,9 @@ public class Moon : Object, CelestialBody {
         let k = KPCAAMoonNodes_K(self.julianDay.date.fractionalYear)
         return KPCAAMoonNodes_PassageThroNode(k)
     }
+    
+    public let apparentRiseSetAltitude = Degree(0.125) // Mean value, see AA p.102
+    
 }
 
 

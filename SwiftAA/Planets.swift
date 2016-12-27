@@ -57,6 +57,9 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     public var polarSemiDiameter: Degree {
         get { return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector.value)) }
     }
+    
+    public let apparentRiseSetAltitude = ArcMinute(-34).inDegrees // See AA p.101
+    
 }
 
 // special Pluto:
