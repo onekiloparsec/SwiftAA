@@ -176,6 +176,8 @@ public struct HorizontalCoordinates: CustomStringConvertible {
     public let julianDay: JulianDay
     public let epoch: JulianDay
     
+    public var northBasedAzimuth: Degree { return (azimuth + 180).reduced }
+    
     public init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: JulianDay = StandardEpoch_J2000_0) {
         self.azimuth = azimuth
         self.altitude = altitude
