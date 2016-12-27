@@ -13,6 +13,10 @@ public struct Degree: NumericType {
     public init(_ value: Double) {
         self.value = value
     }
+    public init(_ degrees: Double, _ arcminutes: Double, _ arcseconds: Double) {
+        guard degrees.sign == arcminutes.sign && degrees.sign == arcseconds.sign else { fatalError("degrees/arcminutes/arcseconds must have the same sign") }
+        self.init(degrees + arcminutes/60.0 + arcseconds/3600.0)
+    }
     
     public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
     public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }

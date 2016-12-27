@@ -13,6 +13,10 @@ public struct Hour: NumericType {
     public init(_ value: Double) {
         self.value = value
     }
+    public init(_ hours: Double, _ minutes: Double, _ seconds: Double) {
+        guard hours.sign == minutes.sign && hours.sign == seconds.sign else { fatalError("hours/minutes/seconds must have the same sign") }
+        self.init(hours + minutes/60.0 + seconds/3600.0)
+    }
     
     public var inMinutes: Minute { return Minute(value * 60.0) }
     public var inSeconds: Second { return Second(value * 3600.0) }
