@@ -124,4 +124,7 @@ public class Sun: Object, CelestialBody {
         // KPCAA result is in minutes of time.
         return KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / 24.0 / 60.0
     }
+    
+    public let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
+    
 }

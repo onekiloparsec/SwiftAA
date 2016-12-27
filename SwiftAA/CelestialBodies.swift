@@ -37,6 +37,10 @@ public protocol CelestialBody: ObjectBase {
     var equatorialSemiDiameter: Degree { get }
     
     var polarSemiDiameter: Degree { get }
+    
+    /// Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)
+    var apparentRiseSetAltitude: Degree { get }
+    
 }
 
 public extension CelestialBody {

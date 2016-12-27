@@ -49,6 +49,8 @@ public extension JulianDay {
         get { return JulianDay(self.value - ModifiedJulianDayZero) }
     }
     
+    public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
+    
     /**
      Computes the mean sidereal time for the Greenwich meridian.
      That is, the Greenwich hour angle of the mean vernal point (the intersection of the ecliptic

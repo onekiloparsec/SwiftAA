@@ -58,7 +58,8 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                            equCoords1: EquatorialCoordinates,
                            equCoords2: EquatorialCoordinates,
                            equCoords3: EquatorialCoordinates,
-                           geoCoords: GeographicCoordinates) -> RiseTransitSetTimesDetails
+                           geoCoords: GeographicCoordinates,
+                           apparentRiseSetAltitude: Degree) -> RiseTransitSetTimesDetails
 {
     let details = KPCAARiseTransitSet_Calculate(julianDay.value,
                                                 equCoords1.alpha.value,
@@ -69,31 +70,38 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 equCoords3.delta.value,
                                                 geoCoords.longitude.value,
                                                 geoCoords.latitude.value,
-                                                geoCoords.altitude.value)
+                                                apparentRiseSetAltitude.value)
+    
+    let midnight = julianDay.midnight
+    let rise = midnight + Hour(details.Rise).inDays
+    let transit = midnight + Hour(details.Transit).inDays
+    let set = midnight + Hour(details.Set).inDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
-                                      riseTime: JulianDay(details.Rise),
+                                      riseTime: rise,
                                       isTransitAboveHorizon: details.isTransitAboveHorizon.boolValue,
-                                      transitTime: JulianDay(details.Transit),
+                                      transitTime: transit,
                                       isSetValid: details.isSetValid.boolValue,
-                                      setTime: JulianDay(details.Set))
+                                      setTime: set)
 }
 
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
-        let jd = self.celestialBody.julianDay
+        let midnight = self.celestialBody.julianDay.midnight
         let hp = self.celestialBody.highPrecision
         
         let celestialBodyType = type(of: self.celestialBody)
-        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
-        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
+        let body1: CelestialBody = celestialBodyType.init(julianDay: midnight-1, highPrecision: hp)
+        let body2: CelestialBody = celestialBodyType.init(julianDay: midnight, highPrecision: hp)
+        let body3: CelestialBody = celestialBodyType.init(julianDay: midnight+1, highPrecision: hp)
         
-        return riseTransitSet(forJulianDay: jd,
-                              equCoords1: body1.equatorialCoordinates,
-                              equCoords2: self.celestialBody.equatorialCoordinates,
-                              equCoords3: body3.equatorialCoordinates,
-                              geoCoords: self.geographicCoordinates)
+        return riseTransitSet(forJulianDay: midnight,
+                              equCoords1: body1.apparentEquatorialCoordinates,
+                              equCoords2: body2.apparentEquatorialCoordinates,
+                              equCoords3: body3.apparentEquatorialCoordinates,
+                              geoCoords: self.geographicCoordinates,
+                              apparentRiseSetAltitude: self.celestialBody.apparentRiseSetAltitude)
         }()
     
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
