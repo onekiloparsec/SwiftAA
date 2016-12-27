@@ -24,6 +24,19 @@ class RiseTransitSetTests: XCTestCase {
         AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
     }
     
+    func testVenusAtMoscow2016() { // Data from SkySafari
+        let moscow = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
+        let venus = Venus(julianDay: JulianDay(year: 2016, month: 12, day: 27, hour: 6, minute: 29, second: 55))
+        let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: moscow)
+        let accuracy = Minute(2.0).inDays
+        let expectedRise = JulianDay(year: 2016, month: 12, day: 27, hour: 8, minute: 18, second: 13)
+        AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
+        let expectedTransit = JulianDay(year: 2016, month: 12, day: 27, hour: 12, minute: 45, second: 0)
+        AssertEqual(details.transitTime!, expectedTransit, accuracy: accuracy)
+        let expectedSet = JulianDay(year: 2016, month: 12, day: 27, hour: 17, minute: 12, second: 50)
+        AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
+    }
+    
 }
 
 
