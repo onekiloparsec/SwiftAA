@@ -2229,7 +2229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/SwiftAA.framework/\"\n";
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources\" && cp -Rf \"${BUILT_PRODUCTS_DIR}/SwiftAA.framework/\" \"${SRCROOT}/SwiftAA/SwiftAA.playground/Resources/SwiftAA.framework/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
