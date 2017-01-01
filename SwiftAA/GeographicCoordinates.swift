@@ -7,16 +7,30 @@
 //
 
 import Foundation
+import CoreLocation
 
 public struct GeographicCoordinates {
-    public fileprivate(set) var longitude: Degree
-    public fileprivate(set) var latitude: Degree
-    public fileprivate(set) var altitude: Meter
+    public let longitude: Degree
+    public let latitude: Degree
+    public let altitude: Meter
+    
+    public var location: CLLocation {
+        let coordinates = CLLocationCoordinate2D(latitude: latitude.value, longitude: -longitude.value)
+        let location = CLLocation(coordinate: coordinates, altitude: altitude.value, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: Date())
+        return location
+    }
     
     public init(positivelyWestwardLongitude longitude: Degree, latitude: Degree, altitude: Meter = 0) {
         self.longitude = longitude
         self.latitude = latitude
         self.altitude = altitude
+    }
+    
+    public init(_ location: CLLocation) {
+        let lon = Degree(-location.coordinate.longitude)
+        let lat = Degree(location.coordinate.latitude)
+        let alt = Meter(location.altitude)
+        self.init(positivelyWestwardLongitude: lon, latitude: lat, altitude: alt)
     }
     
     
