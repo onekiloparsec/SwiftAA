@@ -35,6 +35,9 @@ public struct Meter: NumericType, CustomStringConvertible {
         self.value = value
     }
     
+    public var mkm: Double { return value * 1e+6 }
+    public var mm: Double { return value * 1e+3 }
+    public var km: Double { return value * 1e-3 }
     public var AstronomicalUnit: AU { return AU(value / 149597870700.0) }
     public var description: String { return String(format: "%.0f meters", value) }
 }

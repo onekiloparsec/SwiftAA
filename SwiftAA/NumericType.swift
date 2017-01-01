@@ -11,7 +11,7 @@
 import Foundation
 
 
-public protocol NumericType: _NumericType, Comparable, SignedNumber, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral { /* intentionally left blank */ }
+public protocol NumericType: _NumericType, Comparable, SignedNumber, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Hashable { /* intentionally left blank */ }
 
 // note: we use two separate protocols because it's impossible to declare conformance *and* provide default implementation at the same time 
 public protocol _NumericType {
@@ -26,6 +26,7 @@ extension _NumericType {
     public init(integerLiteral: IntegerLiteralType) {
         self.init(Double(integerLiteral))
     }
+    public var hashValue: Int { return value.hashValue }
 }
 
 public func + <T: NumericType> (lhs: T, rhs: T) -> T {
