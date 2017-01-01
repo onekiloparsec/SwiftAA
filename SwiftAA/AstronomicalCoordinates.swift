@@ -186,7 +186,7 @@ public struct HorizontalCoordinates: CustomStringConvertible {
         self.epoch = epoch
     }
     
-    func toEquatorialCoordinates() -> EquatorialCoordinates {
+    public func toEquatorialCoordinates() -> EquatorialCoordinates {
         let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth.value,
                                                                              self.altitude.value,
                                                                              self.geographicCoordinates.latitude.value)
