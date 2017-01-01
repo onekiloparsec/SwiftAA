@@ -43,6 +43,15 @@ class AstronomicalCoordinatesTests: XCTestCase {
         AssertEqual(eqBack.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }
     
+    func testHorizontalSeparation() {
+        let horizontal1 = HorizontalCoordinates(azimuth: 0, altitude: 0)
+        let horizontal2 = HorizontalCoordinates(azimuth: 0, altitude: 45)
+        let horizontal3 = HorizontalCoordinates(azimuth: 90, altitude: 45)
+        AssertEqual(horizontal1.angularSeparation(from: horizontal2), Degree(45), accuracy: ArcSecond(0.0001).inDegrees)
+        AssertEqual(horizontal2.angularSeparation(from: horizontal3), Degree(60), accuracy: ArcSecond(0.0001).inDegrees)
+        AssertEqual(horizontal3.angularSeparation(from: horizontal1), Degree(90), accuracy: ArcSecond(0.0001).inDegrees)
+    }
+    
 }
 
 

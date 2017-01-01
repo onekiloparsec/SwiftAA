@@ -195,6 +195,11 @@ public struct HorizontalCoordinates: CustomStringConvertible {
         return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epsilon: self.epoch)
     }
     
+    public func angularSeparation(from otherCoordinates: HorizontalCoordinates) -> Degree {
+        // note: we actually use AA method for *equatorial* coordinates separation (works fine for horizontal coordinates)
+        return Degree(KPCAAAngularSeparation_Separation(self.azimuth.inHours.value, self.altitude.value, otherCoordinates.azimuth.inHours.value, otherCoordinates.altitude.value))
+    }
+    
     public var description: String { return String(format: "A=%@, h=%@", azimuth.description, altitude.description) }
     
 }
