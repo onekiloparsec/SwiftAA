@@ -172,13 +172,13 @@ public struct GalacticCoordinates: CustomStringConvertible {
 public struct HorizontalCoordinates: CustomStringConvertible {
     public let azimuth: Degree // westward from the South see AA. p91
     public let altitude: Degree
-    public let geographicCoordinates: GeographicCoordinates
-    public let julianDay: JulianDay
+    public let geographicCoordinates: GeographicCoordinates?
+    public let julianDay: JulianDay?
     public let epoch: JulianDay
     
     public var northBasedAzimuth: Degree { return (azimuth + 180).reduced }
     
-    public init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates, julianDay: JulianDay, epoch: JulianDay = StandardEpoch_J2000_0) {
+    public init(azimuth: Degree, altitude: Degree, geographicCoordinates: GeographicCoordinates? = nil, julianDay: JulianDay? = nil, epoch: JulianDay = StandardEpoch_J2000_0) {
         self.azimuth = azimuth
         self.altitude = altitude
         self.geographicCoordinates = geographicCoordinates
@@ -186,12 +186,18 @@ public struct HorizontalCoordinates: CustomStringConvertible {
         self.epoch = epoch
     }
     
-    public func toEquatorialCoordinates() -> EquatorialCoordinates {
+    public func toEquatorialCoordinates() -> EquatorialCoordinates? {
+        guard julianDay != nil && geographicCoordinates != nil else { return nil }
         let components = KPCAACoordinateTransformation_Horizontal2Equatorial(self.azimuth.value,
                                                                              self.altitude.value,
-                                                                             self.geographicCoordinates.latitude.value)
-        let lst = julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
+                                                                             self.geographicCoordinates!.latitude.value)
+        let lst = julianDay!.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates!.longitude.value)
         return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epsilon: self.epoch)
+    }
+    
+    public func angularSeparation(from otherCoordinates: HorizontalCoordinates) -> Degree {
+        // note: we actually use AA method for *equatorial* coordinates separation (works fine for horizontal coordinates)
+        return Degree(KPCAAAngularSeparation_Separation(self.azimuth.inHours.value, self.altitude.value, otherCoordinates.azimuth.inHours.value, otherCoordinates.altitude.value))
     }
     
     public var description: String { return String(format: "A=%@, h=%@", azimuth.description, altitude.description) }

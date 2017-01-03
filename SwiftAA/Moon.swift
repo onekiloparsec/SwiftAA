@@ -231,7 +231,7 @@ public class Moon : Object, CelestialBody {
     
     /// The phase angle of the Moon
     ///
-    /// - returns: The phase angle of the Moon
+    /// - returns: The phase angle of the Moon (full moon = 0°, first/last quarter = +90°, new moon = +180°)
     public func phaseAngle() -> Degree {
         let earth = Earth(julianDay: self.julianDay, highPrecision: self.highPrecision)
         

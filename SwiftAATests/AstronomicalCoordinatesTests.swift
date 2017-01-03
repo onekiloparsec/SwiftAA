@@ -29,8 +29,8 @@ class AstronomicalCoordinatesTests: XCTestCase {
         AssertEqual(horizontal.altitude, Degree(15.1249), accuracy: ArcSecond(5.0).inDegrees)
         AssertEqual(horizontal.azimuth, Degree(68.0337), accuracy: ArcSecond(5.0).inDegrees)
         let eqBack = horizontal.toEquatorialCoordinates()
-        AssertEqual(eqBack.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
-        AssertEqual(eqBack.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
+        AssertEqual(eqBack!.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
+        AssertEqual(eqBack!.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }
     
     func testEquatorial2Galactic() { // p.95
@@ -41,6 +41,15 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let eqBack = galactic.toEquatorialCoordinates()
         AssertEqual(eqBack.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
         AssertEqual(eqBack.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
+    }
+    
+    func testHorizontalSeparation() {
+        let horizontal1 = HorizontalCoordinates(azimuth: 0, altitude: 0)
+        let horizontal2 = HorizontalCoordinates(azimuth: 0, altitude: 45)
+        let horizontal3 = HorizontalCoordinates(azimuth: 90, altitude: 45)
+        AssertEqual(horizontal1.angularSeparation(from: horizontal2), Degree(45), accuracy: ArcSecond(0.0001).inDegrees)
+        AssertEqual(horizontal2.angularSeparation(from: horizontal3), Degree(60), accuracy: ArcSecond(0.0001).inDegrees)
+        AssertEqual(horizontal3.angularSeparation(from: horizontal1), Degree(90), accuracy: ArcSecond(0.0001).inDegrees)
     }
     
 }

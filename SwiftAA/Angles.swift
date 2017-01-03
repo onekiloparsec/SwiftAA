@@ -25,6 +25,19 @@ public struct Degree: NumericType, CustomStringConvertible {
     
     /// Returns self reduced to 0..<360 range 
     public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
+    
+    /// Returns true if self is within circular [from,to] interval. Interval is opened by default. All values reduced to 0..<360 range.
+    public func isWithinCircularInterval(from: Degree, to: Degree, isIntervalOpen: Bool = true) -> Bool {
+        let isIntervalIntersectsZero = from.reduced < to.reduced
+        let isFromLessThenSelf = isIntervalOpen ? from.reduced < self.reduced : from.reduced <= self.reduced
+        let isSelfLessThenTo = isIntervalOpen ? self.reduced < to.reduced : self.reduced <= to.reduced
+        switch (isIntervalIntersectsZero,  isFromLessThenSelf, isSelfLessThenTo) {
+        case (true, true, true): return true
+        case (false, true, false), (false, false, true): return true
+        default: return false
+        }
+    }
+    
     public var description: String {
         let deg = value.rounded(.towardZero)
         let min = ((value - deg) * 60.0).rounded(.towardZero)
