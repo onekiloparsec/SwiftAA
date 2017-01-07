@@ -109,7 +109,7 @@ public class Moon : Object, CelestialBody {
     
     // MARK: - KPCAAMoonPhases
 
-    func timeOfPhase(forPhase ph: MoonPhase, mean: Bool = true) -> JulianDay {
+    public func timeOfPhase(forPhase ph: MoonPhase, isNext: Bool = true, mean: Bool = true) -> JulianDay {
         var k = round(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         switch ph {
         case .new:
@@ -121,7 +121,20 @@ public class Moon : Object, CelestialBody {
         case .lastQuarter: 
             k = k + 0.75
         }
-        return mean ? JulianDay(KPCAAMoonPhases_MeanPhase(k)) : JulianDay(KPCAAMoonPhases_TruePhase(k))
+        let preliminary = timeOfPhase(k, isMean: mean)
+        let isActuallyNext = preliminary > julianDay
+        switch (isNext, isActuallyNext) {
+        case (true, true), (false, false):
+            return preliminary
+        case (true, false):
+            return timeOfPhase(k+1.0, isMean: mean)
+        case (false, true):
+            return timeOfPhase(k-1.0, isMean: mean)
+        }
+    }
+    
+    fileprivate func timeOfPhase(_ k: Double, isMean: Bool) -> JulianDay {
+        return isMean ? JulianDay(KPCAAMoonPhases_MeanPhase(k)) : JulianDay(KPCAAMoonPhases_TruePhase(k))
     }
 
     // MARK: - KPCAAMoonPhysicalDetails
