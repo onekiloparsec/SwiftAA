@@ -19,6 +19,19 @@ class MoonTests: XCTestCase {
         AssertEqual(equatorial.declination, Degree(13.768368), accuracy: ArcMinute(0.1).inDegrees)
     }
     
+    func testTimeOfPhase() { // AA p.353
+        let date1 = Moon(julianDay: JulianDay(year: 1977, month: 1, day: 20)).timeOfPhase(forPhase: .new, isNext: true, mean: false)
+        let date2 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 17)).timeOfPhase(forPhase: .new, isNext: true, mean: false)
+        let date3 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 19)).timeOfPhase(forPhase: .new, isNext: false, mean: false)
+        let date4 = Moon(julianDay: JulianDay(year: 1977, month: 3, day: 19)).timeOfPhase(forPhase: .new, isNext: false, mean: false)
+        let expected = JulianDay(year: 1977, month: 2, day: 18, hour: 3, minute: 37, second: 42)
+        let accuracy = JulianDay(1.0/86400.0)
+        AssertEqual(date1, expected, accuracy: accuracy)
+        AssertEqual(date2, expected, accuracy: accuracy)
+        AssertEqual(date3, expected, accuracy: accuracy)
+        AssertEqual(date4, expected, accuracy: accuracy)
+    }
+    
 }
 
 
