@@ -17,6 +17,7 @@ public protocol NumericType: _NumericType, Comparable, SignedNumber, Expressible
 public protocol _NumericType {
     var value: Double { get }
     init(_ value: Double)
+    func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule) -> Self
 }
 
 extension _NumericType {
@@ -25,6 +26,10 @@ extension _NumericType {
     }
     public init(integerLiteral: IntegerLiteralType) {
         self.init(Double(integerLiteral))
+    }
+    public func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
+        let roundedValue = self.value.rounded(toIncrement: increment.value, rule: rule)
+        return type(of: self).init(roundedValue)
     }
     public var hashValue: Int { return value.hashValue }
 }
@@ -56,6 +61,10 @@ extension FloatingPoint {
         let truncated = truncatingRemainder(dividingBy: other)
         let positive = truncated.sign == .minus ? truncated + other : truncated
         return positive
+    }
+    
+    func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
+        return (self / increment).rounded(rule) * increment
     }
     
 }

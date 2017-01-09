@@ -22,6 +22,14 @@ class NumericTypeTests: XCTestCase {
         XCTAssertTrue(Degree(340).isWithinCircularInterval(from: 340, to: 20, isIntervalOpen: false))
     }
     
+    func testRoundingToIncrement() {
+        let accuracy = Second(1e-3).inDays
+        let jd = JulianDay(year: 2017, month: 1, day: 9, hour: 13, minute: 53, second: 39.87)
+        AssertEqual(jd.rounded(toIncrement: Minute(1).inDays), JulianDay(year: 2017, month: 1, day: 9, hour: 13, minute: 54), accuracy: accuracy)
+        AssertEqual(jd.rounded(toIncrement: Minute(15).inDays), JulianDay(year: 2017, month: 1, day: 9, hour: 14), accuracy: accuracy)
+        AssertEqual(jd.rounded(toIncrement: Hour(3).inDays), JulianDay(year: 2017, month: 1, day: 9, hour: 15), accuracy: accuracy)
+    }
+    
 }
 
 
