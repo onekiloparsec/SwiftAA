@@ -635,6 +635,8 @@
 		9FBA89AC1E324ACE0096FEAC /* RiseTransitSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2141201E0F13D0005E1913 /* RiseTransitSetTests.swift */; };
 		9FBA89AD1E324ACE0096FEAC /* SunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21411C1E0E4CD5005E1913 /* SunTests.swift */; };
 		9FBA89AE1E324ACE0096FEAC /* VenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */; };
+		9FBA89AF1E324C490096FEAC /* NumericTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BB4D1E1C302D00377C7B /* NumericTypeTests.swift */; };
+		9FBA89B01E324C500096FEAC /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */; };
 		9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
@@ -1219,7 +1221,6 @@
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
 				9F525B411D3CDEDC00041696 /* swiftaa */,
-				9FBA899C1E324A930096FEAC /* SwiftAATests-iOS */,
 				9F29B46B1B47313500B64C96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1760,13 +1761,6 @@
 				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
 			);
 			name = "Celestial Bodies";
-			sourceTree = "<group>";
-		};
-		9FBA899C1E324A930096FEAC /* SwiftAATests-iOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "SwiftAATests-iOS";
 			sourceTree = "<group>";
 		};
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
@@ -2752,11 +2746,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FBA89AA1E324ACE0096FEAC /* NutationTests.swift in Sources */,
+				9FBA89AF1E324C490096FEAC /* NumericTypeTests.swift in Sources */,
 				9FBA89AE1E324ACE0096FEAC /* VenusTests.swift in Sources */,
 				9FBA89A81E324ACE0096FEAC /* JulianDayTests.swift in Sources */,
 				9FBA89AD1E324ACE0096FEAC /* SunTests.swift in Sources */,
 				9FBA89AC1E324ACE0096FEAC /* RiseTransitSetTests.swift in Sources */,
 				9FBA89A61E324ACE0096FEAC /* AstronomicalCoordinatesTests.swift in Sources */,
+				9FBA89B01E324C500096FEAC /* XCTestExtensions.swift in Sources */,
 				9FBA89A91E324ACE0096FEAC /* MoonTests.swift in Sources */,
 				9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */,
 				9FBA89AB1E324ACE0096FEAC /* PlanetaryBaseTest.swift in Sources */,
@@ -3216,6 +3212,7 @@
 				9FBA89A51E324A930096FEAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FC340351D156A5D0069E7C4 /* Build configuration list for PBXNativeTarget "SwiftAATests-macOS" */ = {
 			isa = XCConfigurationList;
