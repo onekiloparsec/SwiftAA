@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F694D891D15C67300EE7492"
-               BuildableName = "SwiftAA.framework"
-               BlueprintName = "SwiftAA-iOS"
-               ReferencedContainer = "container:SwiftAA.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FBA899A1E324A930096FEAC"
-               BuildableName = "SwiftAATests-iOS.xctest"
-               BlueprintName = "SwiftAATests-iOS"
+               BlueprintIdentifier = "9F525B3F1D3CDEDC00041696"
+               BuildableName = "swiftaa"
+               BlueprintName = "swiftaa"
                ReferencedContainer = "container:SwiftAA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FBA899A1E324A930096FEAC"
-               BuildableName = "SwiftAATests-iOS.xctest"
-               BlueprintName = "SwiftAATests-iOS"
-               ReferencedContainer = "container:SwiftAA.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-iOS"
+            BlueprintIdentifier = "9F525B3F1D3CDEDC00041696"
+            BuildableName = "swiftaa"
+            BlueprintName = "swiftaa"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-iOS"
+            BlueprintIdentifier = "9F525B3F1D3CDEDC00041696"
+            BuildableName = "swiftaa"
+            BlueprintName = "swiftaa"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -93,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F694D891D15C67300EE7492"
-            BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-iOS"
+            BlueprintIdentifier = "9F525B3F1D3CDEDC00041696"
+            BuildableName = "swiftaa"
+            BlueprintName = "swiftaa"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

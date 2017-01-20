@@ -625,6 +625,16 @@
 		9FB755321E05F14A00EC7617 /* ScientificConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755311E05F14A00EC7617 /* ScientificConstants.swift */; };
 		9FB755331E05F14A00EC7617 /* ScientificConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755311E05F14A00EC7617 /* ScientificConstants.swift */; };
 		9FB755381E05F34B00EC7617 /* PlanetaryBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */; };
+		9FBA89A01E324A930096FEAC /* SwiftAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F694EE21D15C67300EE7492 /* SwiftAA.framework */; };
+		9FBA89A61E324ACE0096FEAC /* AstronomicalCoordinatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */; };
+		9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755241E05A6C700EC7617 /* ConstantsTests.swift */; };
+		9FBA89A81E324ACE0096FEAC /* JulianDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTests.swift */; };
+		9FBA89A91E324ACE0096FEAC /* MoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21411E1E0E5076005E1913 /* MoonTests.swift */; };
+		9FBA89AA1E324ACE0096FEAC /* NutationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2141161E0E1783005E1913 /* NutationTests.swift */; };
+		9FBA89AB1E324ACE0096FEAC /* PlanetaryBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */; };
+		9FBA89AC1E324ACE0096FEAC /* RiseTransitSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2141201E0F13D0005E1913 /* RiseTransitSetTests.swift */; };
+		9FBA89AD1E324ACE0096FEAC /* SunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21411C1E0E4CD5005E1913 /* SunTests.swift */; };
+		9FBA89AE1E324ACE0096FEAC /* VenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */; };
 		9FBB4AC71DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FBB4AC81DCF7D6D00E9ADD9 /* BinaryStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */; };
 		9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
@@ -670,6 +680,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9FBA89A11E324A930096FEAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F29B4611B47313500B64C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F694D891D15C67300EE7492;
+			remoteInfo = "SwiftAA-iOS";
+		};
 		9FC340331D156A5D0069E7C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F29B4611B47313500B64C96 /* Project object */;
@@ -1084,8 +1101,10 @@
 		9FB7552E1E05EAAF00EC7617 /* Times.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
 		9FB755311E05F14A00EC7617 /* ScientificConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificConstants.swift; sourceTree = "<group>"; };
 		9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBaseTest.swift; sourceTree = "<group>"; };
+		9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FBA899F1E324A930096FEAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SwiftAATests-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
-		9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
 		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
@@ -1149,6 +1168,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FBA89981E324A930096FEAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FBA89A01E324A930096FEAC /* SwiftAA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FC3402A1D156A5D0069E7C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1192,6 +1219,7 @@
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
 				9F525B411D3CDEDC00041696 /* swiftaa */,
+				9FBA899C1E324A930096FEAC /* SwiftAATests-iOS */,
 				9F29B46B1B47313500B64C96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1200,11 +1228,12 @@
 			isa = PBXGroup;
 			children = (
 				9F7379881C26B79F007EF484 /* SwiftAA.framework */,
-				9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */,
+				9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */,
 				9FFA292A1D15710F00034972 /* AAPlusTests */,
 				9F694EE21D15C67300EE7492 /* SwiftAA.framework */,
 				9F525B401D3CDEDC00041696 /* swiftaa */,
 				9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */,
+				9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1733,12 +1762,20 @@
 			name = "Celestial Bodies";
 			sourceTree = "<group>";
 		};
+		9FBA899C1E324A930096FEAC /* SwiftAATests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "SwiftAATests-iOS";
+			sourceTree = "<group>";
+		};
 		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9FB755351E05F23F00EC7617 /* Swift */,
 				9FB755341E05F23800EC7617 /* Obj-C */,
 				9FC340311D156A5D0069E7C4 /* Info.plist */,
+				9FBA899F1E324A930096FEAC /* Info.plist */,
 			);
 			name = Tests;
 			path = SwiftAATests;
@@ -2103,9 +2140,27 @@
 			productReference = 9F7379881C26B79F007EF484 /* SwiftAA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9FC3402C1D156A5D0069E7C4 /* SwiftAATests */ = {
+		9FBA899A1E324A930096FEAC /* SwiftAATests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FC340351D156A5D0069E7C4 /* Build configuration list for PBXNativeTarget "SwiftAATests" */;
+			buildConfigurationList = 9FBA89A31E324A930096FEAC /* Build configuration list for PBXNativeTarget "SwiftAATests-iOS" */;
+			buildPhases = (
+				9FBA89971E324A930096FEAC /* Sources */,
+				9FBA89981E324A930096FEAC /* Frameworks */,
+				9FBA89991E324A930096FEAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FBA89A21E324A930096FEAC /* PBXTargetDependency */,
+			);
+			name = "SwiftAATests-iOS";
+			productName = "SwiftAATests-iOS";
+			productReference = 9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9FC3402C1D156A5D0069E7C4 /* SwiftAATests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FC340351D156A5D0069E7C4 /* Build configuration list for PBXNativeTarget "SwiftAATests-macOS" */;
 			buildPhases = (
 				9FC340291D156A5D0069E7C4 /* Sources */,
 				9FC3402A1D156A5D0069E7C4 /* Frameworks */,
@@ -2116,9 +2171,9 @@
 			dependencies = (
 				9FC340341D156A5D0069E7C4 /* PBXTargetDependency */,
 			);
-			name = SwiftAATests;
+			name = "SwiftAATests-macOS";
 			productName = SwiftAATests;
-			productReference = 9FC3402D1D156A5D0069E7C4 /* SwiftAATests.xctest */;
+			productReference = 9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9FFA29291D15710F00034972 /* AAPlusTests */ = {
@@ -2144,7 +2199,7 @@
 		9F29B4611B47313500B64C96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
@@ -2160,6 +2215,11 @@
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 0820;
+					};
+					9FBA899A1E324A930096FEAC = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = MD266WQ2E2;
+						ProvisioningStyle = Automatic;
 					};
 					9FC3402C1D156A5D0069E7C4 = {
 						CreatedOnToolsVersion = 8.0;
@@ -2187,7 +2247,8 @@
 			targets = (
 				9F7379871C26B79F007EF484 /* SwiftAA-macOS */,
 				9F694D891D15C67300EE7492 /* SwiftAA-iOS */,
-				9FC3402C1D156A5D0069E7C4 /* SwiftAATests */,
+				9FC3402C1D156A5D0069E7C4 /* SwiftAATests-macOS */,
+				9FBA899A1E324A930096FEAC /* SwiftAATests-iOS */,
 				9FFA29291D15710F00034972 /* AAPlusTests */,
 				9F51D0C11D3D5D6E00895295 /* libswiftaa */,
 				9F525B3F1D3CDEDC00041696 /* swiftaa */,
@@ -2204,6 +2265,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9F7379861C26B79F007EF484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FBA89991E324A930096FEAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2679,6 +2747,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FBA89971E324A930096FEAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FBA89AA1E324ACE0096FEAC /* NutationTests.swift in Sources */,
+				9FBA89AE1E324ACE0096FEAC /* VenusTests.swift in Sources */,
+				9FBA89A81E324ACE0096FEAC /* JulianDayTests.swift in Sources */,
+				9FBA89AD1E324ACE0096FEAC /* SunTests.swift in Sources */,
+				9FBA89AC1E324ACE0096FEAC /* RiseTransitSetTests.swift in Sources */,
+				9FBA89A61E324ACE0096FEAC /* AstronomicalCoordinatesTests.swift in Sources */,
+				9FBA89A91E324ACE0096FEAC /* MoonTests.swift in Sources */,
+				9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */,
+				9FBA89AB1E324ACE0096FEAC /* PlanetaryBaseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FC340291D156A5D0069E7C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2711,6 +2795,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9FBA89A21E324A930096FEAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F694D891D15C67300EE7492 /* SwiftAA-iOS */;
+			targetProxy = 9FBA89A11E324A930096FEAC /* PBXContainerItemProxy */;
+		};
 		9FC340341D156A5D0069E7C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F7379871C26B79F007EF484 /* SwiftAA-macOS */;
@@ -2986,6 +3075,42 @@
 			};
 			name = Release;
 		};
+		9FBA89A41E324A930096FEAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MD266WQ2E2;
+				INFOPLIST_FILE = "SwiftAATests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9FBA89A51E324A930096FEAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MD266WQ2E2;
+				INFOPLIST_FILE = "SwiftAATests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		9FC340361D156A5D0069E7C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3084,7 +3209,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FC340351D156A5D0069E7C4 /* Build configuration list for PBXNativeTarget "SwiftAATests" */ = {
+		9FBA89A31E324A930096FEAC /* Build configuration list for PBXNativeTarget "SwiftAATests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FBA89A41E324A930096FEAC /* Debug */,
+				9FBA89A51E324A930096FEAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FC340351D156A5D0069E7C4 /* Build configuration list for PBXNativeTarget "SwiftAATests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FC340361D156A5D0069E7C4 /* Debug */,
