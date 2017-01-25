@@ -11,7 +11,7 @@ import XCTest
 
 class EarthTests: XCTestCase {
     
-    func testValidTwilight() { // See AA p.165
+    func testValidTwilightNorthernHemisphereWestLongitude() {
         
         let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(-2.3508333333),
                                           latitude: Degree(48.8566666667),
