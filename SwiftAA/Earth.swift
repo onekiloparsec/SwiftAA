@@ -8,6 +8,18 @@
 
 import Foundation
 
+public enum TwilightSunAltitude: Degree {
+    case riseAndSet = -0.5833333333333333333333 // -35/60
+    case civilian = -6.0
+    case nautical = -12.0
+    case astronomical = -18.0
+}
+
+public enum TwilightError: Error {
+    case alwaysBelowAltitude
+    case alwaysAboveAltitude
+}
+
 public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     public static var color: Color {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
@@ -86,5 +98,44 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         case .winter:
             return KPCAAEquinoxesAndSolstices_LengthOfWinter(year, northernHemisphere, self.highPrecision)
         }
+    }
+    
+    func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: Hour?, set: Hour?, error: TwilightError?) {
+        // ALgorithm is using positive eastward longitude.
+
+        let sun = Sun(julianDay: self.julianDay)
+        let siderealTime = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: coordinates.longitude)
+        let tSouth = (sun.equatorialCoordinates.rightAscension - siderealTime).reduced
+        
+//        if sunAltitude == TwilightSunAltitude.riseAndSet.rawValue {
+//            sunAltitude -= 0.2666 / sun.radiusVector
+//        }
+        
+        // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
+        
+        let sinAlt = sin(sunAltitude.inRadians)
+        let sinLat = sin(coordinates.latitude.inRadians)
+        let sinDec = sin(sun.equatorialCoordinates.declination.inRadians)
+        let cosLat = cos(coordinates.latitude.inRadians)
+        let cosDec = cos(sun.equatorialCoordinates.declination.inRadians)
+        
+        let cost = (sinAlt - sinLat * sinDec) / (cosLat * cosDec)
+        
+        var error: TwilightError? = nil
+        var rise: Hour? = nil
+        var set: Hour? = nil
+        
+        if (cost >= 1.0 ) {
+            error = .alwaysBelowAltitude
+        }
+        else if (cost <= -1.0) {
+            error = .alwaysAboveAltitude
+        }
+        else {
+            rise = tSouth - Degree(acos(cost)).inHours
+            set = tSouth + Degree(acos(cost)).inHours
+        }
+        
+        return (rise, set, error)
     }
 }
