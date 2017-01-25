@@ -34,6 +34,10 @@ extension _NumericType {
     public var hashValue: Int { return value.hashValue }
 }
 
+public func * <T: NumericType> (lhs: Double, rhs: T) -> T {
+    return T(lhs + rhs.value)
+}
+
 public func + <T: NumericType> (lhs: T, rhs: T) -> T {
     return T(lhs.value + rhs.value)
 }
