@@ -132,8 +132,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             error = .alwaysAboveAltitude
         }
         else {
-            rise = tSouth - Degree(acos(cost)).inHours
-            set = tSouth + Degree(acos(cost)).inHours
+            rise = tSouth - Degree(acos(cost)/0.017453292519943295769236907684886).inHours
+            set  = tSouth + Degree(acos(cost)/0.017453292519943295769236907684886).inHours
         }
         
         return (rise, set, error)
