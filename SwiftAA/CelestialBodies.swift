@@ -49,14 +49,14 @@ public extension CelestialBody {
     }
     
     func parallacticAngle(geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
         return Degree(KPCAAParallactic_ParallacticAngle(lha.value,
                                                         geographicCoordinates.latitude.value,
                                                         self.equatorialCoordinates.delta.value))
     }
     
     func eclipticLongitudeOnHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
         return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(lha.value,
                                                                   epsilon.value,
@@ -64,7 +64,7 @@ public extension CelestialBody {
     }
     
     func angleBetweenEclipticAndHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude.value)
+        let lha = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: geographicCoordinates.longitude)
         let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
         return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha.value,
                                                                       epsilon.value,
