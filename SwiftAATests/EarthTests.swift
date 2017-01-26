@@ -24,6 +24,8 @@ class EarthTests: XCTestCase {
         XCTAssertNotNil(twilights.rise)
         XCTAssertNotNil(twilights.set)
         XCTAssertNil(twilights.error)
+
+        XCTAssertTrue(twilights.rise! > twilights.set!)
     }
     
 }
