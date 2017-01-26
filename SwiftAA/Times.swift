@@ -27,10 +27,15 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
     
     public var description: String {
+        let (hrs, min, sec) = self.sexagesimalNotation()
+        return String(format: "%.0fh%02.0fm%04.1fs", hrs.value, abs(min.value), abs(sec.value))
+    }
+    
+    public func sexagesimalNotation() -> (Hour, Minute, Second) {
         let hrs = value.rounded(.towardZero)
         let min = ((value - hrs) * 60.0).rounded(.towardZero)
         let sec = ((value - hrs) * 60.0 - min) * 60.0
-        return String(format: "%.0fh%02.0fm%04.1fs", hrs, abs(min), abs(sec))
+        return (Hour(hrs), Minute(min), Second(sec))
     }
 }
 

@@ -19,6 +19,7 @@ public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
 
 public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
+public let DEG2RAD = 0.017453292519943295769236907684886
 
 public typealias Parsec=Double // parsecs
 public typealias Kilogram=Double
