@@ -100,6 +100,15 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         }
     }
     
+    
+    /**
+     Computes the hours of twilights
+     
+     - parameter sunAltitude: The altitude of the Sun below, or at the, horizon. See TwilightSunAltitude enum for default values.
+     - parameter coordinates: The coordinates on Earth where the twilights should be computed.
+     
+     - returns: A length in (Julian) Days.
+     */
     func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: Hour?, set: Hour?, error: TwilightError?) {
         // ALgorithm is using positive eastward longitude.
 
@@ -113,11 +122,11 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
-        let sinAlt = sin(sunAltitude.inRadians)
-        let sinLat = sin(coordinates.latitude.inRadians)
-        let sinDec = sin(sun.equatorialCoordinates.declination.inRadians)
-        let cosLat = cos(coordinates.latitude.inRadians)
-        let cosDec = cos(sun.equatorialCoordinates.declination.inRadians)
+        let sinAlt = sin(sunAltitude.inRadians.value)
+        let sinLat = sin(coordinates.latitude.inRadians.value)
+        let sinDec = sin(sun.equatorialCoordinates.declination.inRadians.value)
+        let cosLat = cos(coordinates.latitude.inRadians.value)
+        let cosDec = cos(sun.equatorialCoordinates.declination.inRadians.value)
         
         let cost = (sinAlt - sinLat * sinDec) / (cosLat * cosDec)
         
@@ -132,8 +141,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             error = .alwaysAboveAltitude
         }
         else {
-            rise = tSouth - Degree(acos(cost)/0.017453292519943295769236907684886).inHours
-            set  = tSouth + Degree(acos(cost)/0.017453292519943295769236907684886).inHours
+            rise = tSouth - Degree(acos(cost)/DEG2RAD).inHours
+            set  = tSouth + Degree(acos(cost)/DEG2RAD).inHours
         }
         
         return (rise, set, error)
