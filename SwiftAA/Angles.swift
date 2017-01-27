@@ -13,11 +13,18 @@ public struct Degree: NumericType, CustomStringConvertible {
     public init(_ value: Double) {
         self.value = value
     }
+    
     public init(_ degrees: Double, _ arcminutes: Double, _ arcseconds: Double) {
-        guard degrees.sign == arcminutes.sign && degrees.sign == arcseconds.sign else { fatalError("degrees/arcminutes/arcseconds must have the same sign") }
+        guard degrees.sign == arcminutes.sign && degrees.sign == arcseconds.sign else {
+            fatalError("degrees/arcminutes/arcseconds must have the same sign")
+        }
         self.init(degrees + arcminutes/60.0 + arcseconds/3600.0)
     }
-    
+
+    public init(_ sexagesimal: (Degree, ArcMinute, ArcSecond)) {
+        self.init(sexagesimal.0.value + sexagesimal.1.value/60.0 + sexagesimal.2.value/3600.0)
+    }
+
     public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
     public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }
     public var inRadians: Radian { return Radian(value * DEG2RAD) }
@@ -31,24 +38,31 @@ public struct Degree: NumericType, CustomStringConvertible {
         let isIntervalIntersectsZero = from.reduced < to.reduced
         let isFromLessThenSelf = isIntervalOpen ? from.reduced < self.reduced : from.reduced <= self.reduced
         let isSelfLessThenTo = isIntervalOpen ? self.reduced < to.reduced : self.reduced <= to.reduced
+        
         switch (isIntervalIntersectsZero,  isFromLessThenSelf, isSelfLessThenTo) {
-        case (true, true, true): return true
-        case (false, true, false), (false, false, true): return true
-        default: return false
+        case (true, true, true):
+            return true
+        case (false, true, false), (false, false, true):
+            return true
+        default:
+            return false
         }
     }
     
     public var description: String {
-        let (deg, min, sec) = self.sexagesimalNotation()
-        return String(format: "%+.0f°%02.0f'%04.1f\"", deg.value, abs(min.value), abs(sec.value))
+        let (sign, deg, min, sec) = self.sexagesimalNotation()
+        let signSymbol = (sign == true) ? "+" : "-"
+        return String(format: "%s%+.0f°%02.0f'%04.1f\"", signSymbol, abs(deg.value), abs(min.value), abs(sec.value))
     }
     
-    public func sexagesimalNotation() -> (Degree, ArcMinute, ArcSecond) {
-        let deg = value.rounded(.towardZero)
-        let min = ((value - deg) * 60.0).rounded(.towardZero)
-        let sec = ((value - deg) * 60.0 - min) * 60.0
-        return (Degree(deg), ArcMinute(min), ArcSecond(sec))
+    public func sexagesimalNotation() -> (Bool, Degree, ArcMinute, ArcSecond) {
+        let deg = abs(value.rounded(.towardZero))
+        let min = ((abs(value) - deg) * 60.0).rounded(.towardZero)
+        let sec = ((abs(value) - deg) * 60.0 - min) * 60.0
+        return (value > 0.0, Degree(deg), ArcMinute(min), ArcSecond(sec))
     }
+    
+    
 }
 
 // MARK: -

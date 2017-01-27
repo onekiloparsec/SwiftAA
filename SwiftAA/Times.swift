@@ -14,7 +14,9 @@ public struct Hour: NumericType, CustomStringConvertible {
         self.value = value
     }
     public init(_ hours: Double, _ minutes: Double, _ seconds: Double) {
-        guard hours.sign == minutes.sign && hours.sign == seconds.sign else { fatalError("hours/minutes/seconds must have the same sign") }
+        guard hours.sign == minutes.sign && hours.sign == seconds.sign else {
+            fatalError("hours/minutes/seconds must have the same sign")
+        }
         self.init(hours + minutes/60.0 + seconds/3600.0)
     }
     
@@ -27,15 +29,16 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
     
     public var description: String {
-        let (hrs, min, sec) = self.sexagesimalNotation()
-        return String(format: "%.0fh%02.0fm%04.1fs", hrs.value, abs(min.value), abs(sec.value))
+        let (sign, hrs, min, sec) = self.sexagesimalNotation()
+        let signSymbol = (sign == true) ? "+" : "-"
+        return String(format: "%s%.0fh%02.0fm%04.1fs", signSymbol, abs(hrs.value), abs(min.value), abs(sec.value))
     }
     
-    public func sexagesimalNotation() -> (Hour, Minute, Second) {
-        let hrs = value.rounded(.towardZero)
-        let min = ((value - hrs) * 60.0).rounded(.towardZero)
-        let sec = ((value - hrs) * 60.0 - min) * 60.0
-        return (Hour(hrs), Minute(min), Second(sec))
+    public func sexagesimalNotation() -> (Bool, Hour, Minute, Second) {
+        let hrs = abs(value.rounded(.towardZero))
+        let min = ((abs(value) - hrs) * 60.0).rounded(.towardZero)
+        let sec = ((abs(value) - hrs) * 60.0 - min) * 60.0
+        return (value > 0.0, Hour(hrs), Minute(min), Second(sec))
     }
 }
 
