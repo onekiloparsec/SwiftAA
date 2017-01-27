@@ -25,7 +25,7 @@ class EarthTests: XCTestCase {
         XCTAssertNotNil(twilights.set)
         XCTAssertNil(twilights.error)
 
-        XCTAssertTrue(twilights.rise! > twilights.set!)
+        XCTAssertTrue(twilights.rise! < twilights.set!)
     }
 
     func testValidTwilightSouthernHemisphereWestLongitude() {
@@ -42,7 +42,7 @@ class EarthTests: XCTestCase {
         XCTAssertNotNil(twilights.set)
         XCTAssertNil(twilights.error)
         
-        XCTAssertTrue(twilights.rise! > twilights.set!)
+        XCTAssertTrue(twilights.rise! < twilights.set!)
     }
 }
 

@@ -100,16 +100,15 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         }
     }
     
-    
     /**
      Computes the hours of twilights
      
-     - parameter sunAltitude: The altitude of the Sun below, or at the, horizon. See TwilightSunAltitude enum for default values.
+     - parameter sunAltitude: The altitude of the Sun below, or at, the horizon. See TwilightSunAltitude enum for default values.
      - parameter coordinates: The coordinates on Earth where the twilights should be computed.
      
-     - returns: A length in (Julian) Days.
+     - returns: A tuple containing the julian days of sunrise and sunset, if meaningful, and an error code, in case.
      */
-    func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: Hour?, set: Hour?, error: TwilightError?) {
+    func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, set: JulianDay?, error: TwilightError?) {
         // When the Local Sidereal Time equals the Sun's RA, then the Sun is in the south
 
         // Algorithm is using positive eastward longitude
@@ -120,19 +119,21 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
 
         /* Compute the local sidereal time of this moment */
         let siderealTime = (GMST0(day: d) + Degree(180.0) + positiveEastwardLongitude).reduced
-
-        let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
         
-        let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees
+        /* Compute time when Sun is at south - in hours UT */
+        let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
+        let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced-180.0
         let time_Sun_at_South = Hour(12.0 - ((siderealTime - sunRa).reduced-180.0).value/15.0)
         
-//        if sunAltitude == TwilightSunAltitude.riseAndSet.rawValue {
-//            sunAltitude -= 0.2666 / sun.radiusVector
-//        }
+        /* Compute the Sun's apparent radius in degrees and do correction to upper limb, if necessary */
+        var correctedSunAltitude = sunAltitude
+        if sunAltitude == TwilightSunAltitude.riseAndSet.rawValue {
+            correctedSunAltitude = sunAltitude - Degree(0.2666 / self.radiusVector.value)
+        }
         
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
-        let sinAlt = sin(sunAltitude.inRadians.value)
+        let sinAlt = sin(correctedSunAltitude.inRadians.value)
         let sinLat = sin(coordinates.latitude.inRadians.value)
         let sinDec = sin(sun.equatorialCoordinates.declination.inRadians.value)
         let cosLat = cos(coordinates.latitude.inRadians.value)
@@ -141,8 +142,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         let cost = (sinAlt - sinLat * sinDec) / (cosLat * cosDec)
         
         var error: TwilightError? = nil
-        var rise: Hour? = nil
-        var set: Hour? = nil
+        var riseDate: Date? = nil
+        var setDate: Date? = nil
         
         if (cost >= 1.0 ) {
             error = .alwaysBelowAltitude
@@ -151,10 +152,14 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             error = .alwaysAboveAltitude
         }
         else {
-            rise = time_Sun_at_South - Degree(acos(cost)/DEG2RAD).inHours
-            set  = time_Sun_at_South + Degree(acos(cost)/DEG2RAD).inHours
+            let riseHour = time_Sun_at_South - Radian(acos(cost)).inDegrees.inHours
+            let setHour  = time_Sun_at_South + Radian(acos(cost)).inDegrees.inHours
+
+            let date = self.julianDay.date
+            riseDate = Calendar.gregorianGMT.date(bySettingHour: riseHour.value, of: date)
+            setDate = Calendar.gregorianGMT.date(bySettingHour: setHour.value, of: date)
         }
         
-        return (rise, set, error)
+        return (riseDate?.julianDay, setDate?.julianDay, error)
     }
 }

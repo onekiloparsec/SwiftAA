@@ -669,6 +669,8 @@
 		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FF037A11E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
+		9FF037A21E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
 		9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */; };
 		9FFA28FE1D156D0900034972 /* KPCAA3DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5891B47B37A00B64C96 /* KPCAA3DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFA28FF1D156D0900034972 /* KPCAA3DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B58A1B47B37A00B64C96 /* KPCAA3DCoordinate.mm */; };
@@ -1130,6 +1132,7 @@
 		9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElementsPlanetaryOrbit.mm; path = SwiftAA/KPCAAElementsPlanetaryOrbit.mm; sourceTree = "<group>"; };
 		9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElliptical.h; path = SwiftAA/KPCAAElliptical.h; sourceTree = "<group>"; };
 		9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElliptical.mm; path = SwiftAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
+		9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquationOfTime.h; path = SwiftAA/KPCAAEquationOfTime.h; sourceTree = "<group>"; };
 		9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquationOfTime.mm; path = SwiftAA/KPCAAEquationOfTime.mm; sourceTree = "<group>"; };
 		9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquinoxesAndSolstices.h; path = SwiftAA/KPCAAEquinoxesAndSolstices.h; sourceTree = "<group>"; };
@@ -1801,6 +1804,7 @@
 			isa = PBXGroup;
 			children = (
 				9F694EE71D15CDF500EE7492 /* Constants.swift */,
+				9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */,
 				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
 			);
@@ -2346,6 +2350,7 @@
 				6F5C3ED61E073BAA00F572F6 /* NumericType.swift in Sources */,
 				9F877AAB1E052A74006FC6E5 /* AAMoonNodes.cpp in Sources */,
 				9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */,
+				9FF037A21E3BF5BC00460D6F /* DateExtensions.swift in Sources */,
 				9F694D981D15C67300EE7492 /* KPCAAPlanetaryPhenomena.mm in Sources */,
 				9FEA1DD11DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */,
 				9F877AE51E052A74006FC6E5 /* AAVSOP87C_MAR.cpp in Sources */,
@@ -2559,6 +2564,7 @@
 				9FB7552A1E05B59D00EC7617 /* NumericType.swift in Sources */,
 				9F8779C21E0529A2006FC6E5 /* AAElementsPlanetaryOrbit.cpp in Sources */,
 				9F694D691D157BD200EE7492 /* KPCAANodes.mm in Sources */,
+				9FF037A11E3BF5BC00460D6F /* DateExtensions.swift in Sources */,
 				9F877A651E0529A2006FC6E5 /* AAVSOP87C_VEN.cpp in Sources */,
 				9F877A571E0529A2006FC6E5 /* AAVSOP87C_EAR.cpp in Sources */,
 				9F8779B81E0529A2006FC6E5 /* AADynamicalTime.cpp in Sources */,
