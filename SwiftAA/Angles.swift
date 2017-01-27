@@ -52,7 +52,7 @@ public struct Degree: NumericType, CustomStringConvertible {
     public var description: String {
         let (sign, deg, min, sec) = self.sexagesimalNotation()
         let signSymbol = (sign == true) ? "+" : "-"
-        return String(format: "%s%+.0f°%02.0f'%04.1f\"", signSymbol, abs(deg.value), abs(min.value), abs(sec.value))
+        return signSymbol + String(format: "%+.0f°%02.0f'%04.1f\"", abs(deg.value), abs(min.value), abs(sec.value))
     }
     
     public func sexagesimalNotation() -> (Bool, Degree, ArcMinute, ArcSecond) {

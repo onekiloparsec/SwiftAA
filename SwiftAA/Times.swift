@@ -31,7 +31,7 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var description: String {
         let (sign, hrs, min, sec) = self.sexagesimalNotation()
         let signSymbol = (sign == true) ? "+" : "-"
-        return String(format: "%s%.0fh%02.0fm%04.1fs", signSymbol, abs(hrs.value), abs(min.value), abs(sec.value))
+        return signSymbol + String(format: "%.0fh%02.0fm%04.1fs", abs(hrs.value), abs(min.value), abs(sec.value))
     }
     
     public func sexagesimalNotation() -> (Bool, Hour, Minute, Second) {
