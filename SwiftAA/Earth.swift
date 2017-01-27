@@ -122,8 +122,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         
         /* Compute time when Sun is at south - in hours UT */
         let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
-        let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced-180.0
-        let time_Sun_at_South = Hour(12.0 - ((siderealTime - sunRa).reduced-180.0).value/15.0)
+        let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced0
+        let time_Sun_at_South = Hour(12.0 - ((siderealTime - sunRa).reduced0).value/15.0)
         
         /* Compute the Sun's apparent radius in degrees and do correction to upper limb, if necessary */
         var correctedSunAltitude = sunAltitude
@@ -152,8 +152,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             error = .alwaysAboveAltitude
         }
         else {
-            let riseHour = time_Sun_at_South - Radian(acos(cost)).inDegrees.inHours
-            let setHour  = time_Sun_at_South + Radian(acos(cost)).inDegrees.inHours
+            let riseHour = time_Sun_at_South - Radian(acos(cost)).inHours
+            let setHour  = time_Sun_at_South + Radian(acos(cost)).inHours
 
             let date = self.julianDay.date
             riseDate = Calendar.gregorianGMT.date(bySettingHour: riseHour.value, of: date)

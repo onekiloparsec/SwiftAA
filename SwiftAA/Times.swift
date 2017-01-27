@@ -27,6 +27,8 @@ public struct Hour: NumericType, CustomStringConvertible {
     
     /// Returns self reduced to 0..<24 range
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
+    /// Returns self reduced to -12..<12 range (around 0)
+    public var reduced0: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)-12.0) }
     
     public var description: String {
         let (sign, hrs, min, sec) = self.sexagesimalNotation()
