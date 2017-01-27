@@ -27,7 +27,23 @@ class EarthTests: XCTestCase {
 
         XCTAssertTrue(twilights.rise! > twilights.set!)
     }
-    
+
+    func testValidTwilightSouthernHemisphereWestLongitude() {
+        
+        let parisSouth = GeographicCoordinates(positivelyWestwardLongitude: Degree(-2.3508333333),
+                                               latitude: Degree(-48.8566666667),
+                                               altitude: Meter(30))
+        
+        let earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 30))
+        
+        let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: parisSouth)
+        
+        XCTAssertNotNil(twilights.rise)
+        XCTAssertNotNil(twilights.set)
+        XCTAssertNil(twilights.error)
+        
+        XCTAssertTrue(twilights.rise! > twilights.set!)
+    }
 }
 
 

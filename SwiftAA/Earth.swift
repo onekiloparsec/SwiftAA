@@ -110,11 +110,21 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      - returns: A length in (Julian) Days.
      */
     func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: Hour?, set: Hour?, error: TwilightError?) {
-        // ALgorithm is using positive eastward longitude.
+        // When the Local Sidereal Time equals the Sun's RA, then the Sun is in the south
 
-        let sun = Sun(julianDay: self.julianDay)
-        let siderealTime = self.julianDay.meanLocalSiderealTime(forGeographicLongitude: coordinates.longitude)
-        let tSouth = (sun.equatorialCoordinates.rightAscension - siderealTime).reduced
+        // Algorithm is using positive eastward longitude
+        let positiveEastwardLongitude = -coordinates.longitude
+
+        /* Compute d of 12h local mean solar time */
+        let d = Double(self.julianDay.date.daysSince2000January0()) + 0.5 - positiveEastwardLongitude.value/360.0
+
+        /* Compute the local sidereal time of this moment */
+        let siderealTime = (GMST0(day: d) + Degree(180.0) + positiveEastwardLongitude).reduced
+
+        let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
+        
+        let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees
+        let time_Sun_at_South = Hour(12.0 - ((siderealTime - sunRa).reduced-180.0).value/15.0)
         
 //        if sunAltitude == TwilightSunAltitude.riseAndSet.rawValue {
 //            sunAltitude -= 0.2666 / sun.radiusVector
@@ -141,8 +151,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             error = .alwaysAboveAltitude
         }
         else {
-            rise = tSouth - Degree(acos(cost)/DEG2RAD).inHours
-            set  = tSouth + Degree(acos(cost)/DEG2RAD).inHours
+            rise = time_Sun_at_South - Degree(acos(cost)/DEG2RAD).inHours
+            set  = time_Sun_at_South + Degree(acos(cost)/DEG2RAD).inHours
         }
         
         return (rise, set, error)
