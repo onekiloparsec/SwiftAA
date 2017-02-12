@@ -109,7 +109,7 @@ class JulianDayTest: XCTestCase {
     func testMeanLocalSiderealTime1() { // Data from SkySafari
         let jd = JulianDay(year: 2016, month: 12, day: 1, hour: 14, minute: 15, second: 3)
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
-        let lmst = jd.meanLocalSiderealTime(forGeographicLongitude: geographic.longitude)
+        let lmst = jd.meanLocalSiderealTime(longitude: geographic.longitude)
         AssertEqual(lmst, Hour(21, 28, 59.0), accuracy: Second(1.0).inHours)
     }
     
