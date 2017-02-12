@@ -37,7 +37,15 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
      
      - returns: A julian day.
      */
-    func superiorConjunction(_ mean: Bool) -> JulianDay    
+    func superiorConjunction(_ mean: Bool) -> JulianDay
+    
+    func opposition(_ mean: Bool) -> JulianDay
+    func conjunction(_ mean: Bool) -> JulianDay
+    func easternElongation(_ mean: Bool) -> JulianDay
+    func westernElongation(_ mean: Bool) -> JulianDay
+    func station1(_ mean: Bool) -> JulianDay
+    func station2(_ mean: Bool) -> JulianDay
+    func elongationValue(eastern: Bool) -> Degree
 }
 
 public extension PlanetaryPhenomena {
