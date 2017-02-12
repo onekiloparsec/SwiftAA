@@ -45,6 +45,15 @@ class JulianDayTest: XCTestCase {
         XCTAssertEqual(components.second!, 4)
         XCTAssertEqualWithAccuracy(Double(components.nanosecond!)/1e9, 521659000/1e9, accuracy: 0.001)
     }
+
+    func testDate1ToModifiedJulianDay() {
+        var components = DateComponents()
+        components.year = 2016
+        components.month = 9
+        components.day = 17
+        let date = Calendar.gregorianGMT.date(from: components)
+        XCTAssertEqual(date?.julianDay.modified, 57648.0)
+    }
     
     func testJulian2016() {
         let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*1e9))
@@ -79,13 +88,19 @@ class JulianDayTest: XCTestCase {
         AssertEqual(jd, jd2, accuracy: Second(accuracy).inDays)
     }
     
-    func testMeanSiderealTime1() { // See AA p.88
+    func testMeanGreenwichSiderealTime1() { // See AA p.88
         let jd = JulianDay(year: 1987, month: 04, day: 10)
         let gmst = jd.meanGreenwichSiderealTime()
         AssertEqual(gmst, Hour(13, 10, 46.3668), accuracy: Second(0.001).inHours)
     }
-    
-    func testMeanSiderealTime2() { // See AA p.89
+
+    func testApparentGreenwichSiderealTime1() { // See also AA p.88
+        let jd = JulianDay(year: 1987, month: 04, day: 10)
+        let gmst = jd.apparentGreenwichSiderealTime()
+        AssertEqual(gmst, Hour(13, 10, 46.1351), accuracy: Second(0.001).inHours)
+    }
+
+    func testMeanGreenwichSiderealTime2() { // See AA p.89
         let jd = JulianDay(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00)
         let gmst = jd.meanGreenwichSiderealTime()
         AssertEqual(gmst, Hour(8, 34, 57.0898), accuracy: Second(0.001).inHours)
@@ -103,8 +118,7 @@ class JulianDayTest: XCTestCase {
         AssertEqual(jd1.midnight, JulianDay(year: 2016, month: 12, day: 20))
         let jd2 = JulianDay(year: 2016, month: 12, day: 19, hour: 23, minute: 13, second: 39.1)
         AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
-    }
-    
+    }    
 }
 
 
