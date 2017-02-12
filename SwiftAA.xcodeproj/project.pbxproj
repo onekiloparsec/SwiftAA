@@ -1112,7 +1112,7 @@
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
-		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftAATests/Info.plist; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9FC501741E0582C9005CA6FC /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
 		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
@@ -1392,6 +1392,28 @@
 			name = Saturn;
 			sourceTree = "<group>";
 		};
+		9F4277CD1E504BC100D1BA8D /* SwiftAA */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
+				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
+				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
+				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
+				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
+				9F737A7C1C26DBCE007EF484 /* README.md */,
+			);
+			name = SwiftAA;
+			sourceTree = "<group>";
+		};
+		9F4277CE1E504BC700D1BA8D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9FC340311D156A5D0069E7C4 /* Info.plist */,
+				9FBA899F1E324A930096FEAC /* Info.plist */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		9F51D0C31D3D5D6E00895295 /* libswiftaa */ = {
 			isa = PBXGroup;
 			children = (
@@ -1412,12 +1434,8 @@
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
-				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
-				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
-				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
-				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
-				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
-				9F737A7C1C26DBCE007EF484 /* README.md */,
+				9F4277CD1E504BC100D1BA8D /* SwiftAA */,
+				9F4277CE1E504BC700D1BA8D /* Tests */,
 			);
 			name = Auxiliary;
 			sourceTree = "<group>";
@@ -1774,8 +1792,6 @@
 			children = (
 				9FB755351E05F23F00EC7617 /* Swift */,
 				9FB755341E05F23800EC7617 /* Obj-C */,
-				9FC340311D156A5D0069E7C4 /* Info.plist */,
-				9FBA899F1E324A930096FEAC /* Info.plist */,
 			);
 			name = Tests;
 			path = SwiftAATests;
