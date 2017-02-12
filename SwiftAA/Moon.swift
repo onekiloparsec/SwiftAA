@@ -46,11 +46,11 @@ public class Moon : Object, CelestialBody {
     }
     
     public var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+        get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
     }
     
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
 
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
@@ -233,7 +233,7 @@ public class Moon : Object, CelestialBody {
     /// - returns: The geocentric elongation of the Moon
     public func geocentricElongation() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
-        let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
+        let moonEquatorialCoords = self.eclipticCoordinates.makeEquatorialCoordinates()
 
         /// Moon coordinates first.
         return Degree(KPCAAMoonIlluminatedFraction_GeocentricElongation(moonEquatorialCoords.alpha.value,
@@ -268,7 +268,7 @@ public class Moon : Object, CelestialBody {
     /// - returns: The position angle of the Moon's bright limb.
     public func positionAngleOfTheBrightLimb() -> Degree {
         let sun = Sun(julianDay: self.julianDay, highPrecision: self.highPrecision)
-        let moonEquatorialCoords = self.eclipticCoordinates.toEquatorialCoordinates()
+        let moonEquatorialCoords = self.eclipticCoordinates.makeEquatorialCoordinates()
 
         /// Sun coordinates first. See AA p. 345
         return Degree(KPCAAMoonIlluminatedFraction_PositionAngle(sun.equatorialCoordinates.alpha.value,

@@ -53,11 +53,11 @@ public class Sun: Object, CelestialBody {
     }
     
     public var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+        get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
     }
 
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toApparentEquatorialCoordinates() }
+        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
 
     /// Celestial Body Supplement

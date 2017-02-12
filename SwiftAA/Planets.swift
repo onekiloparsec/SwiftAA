@@ -26,7 +26,7 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         }()
     
     public var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.toEquatorialCoordinates() }
+        get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
     }
     
     public var apparentEquatorialCoordinates: EquatorialCoordinates {

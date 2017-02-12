@@ -16,7 +16,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let ecliptic = equatorial.toEclipticCoordinates()
         AssertEqual(ecliptic.lambda, Degree(113.215630), accuracy: ArcSecond(0.01).inDegrees)
         AssertEqual(ecliptic.beta, Degree(6.684170), accuracy: ArcSecond(0.01).inDegrees)
-        let eqBack = ecliptic.toEquatorialCoordinates()
+        let eqBack = ecliptic.makeEquatorialCoordinates()
         AssertEqual(eqBack.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
         AssertEqual(eqBack.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }
@@ -28,7 +28,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let horizontal = equatorial.toHorizontalCoordinates(forGeographicalCoordinates: geographic, julianDay: jd)
         AssertEqual(horizontal.altitude, Degree(15.1249), accuracy: ArcSecond(5.0).inDegrees)
         AssertEqual(horizontal.azimuth, Degree(68.0337), accuracy: ArcSecond(5.0).inDegrees)
-        let eqBack = horizontal.toEquatorialCoordinates()
+        let eqBack = horizontal.makeEquatorialCoordinates()
         AssertEqual(eqBack!.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
         AssertEqual(eqBack!.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }
@@ -38,7 +38,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let galactic = equatorial.toGalacticCoordinates()
         AssertEqual(galactic.l, Degree(12.9593), accuracy: ArcSecond(1.0).inDegrees)
         AssertEqual(galactic.b, Degree(6.0463), accuracy: ArcSecond(1.0).inDegrees)
-        let eqBack = galactic.toEquatorialCoordinates()
+        let eqBack = galactic.makeEquatorialCoordinates()
         AssertEqual(eqBack.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
         AssertEqual(eqBack.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }
