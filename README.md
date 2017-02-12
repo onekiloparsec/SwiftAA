@@ -23,7 +23,7 @@ SwiftAA
 
 *The most comprehensive and accurate collection of astronomical algorithms written in Swift3.*
 
-Ongoing development version 2.0 written in Swift3 and using AA+ version 1.73 (released October 16th, 2016).
+Ongoing development version 2.0 written in Swift3 and using AA+ version 1.76 (released February 12th, 2017).
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
 These algorithms also make use of the VSOP87 framework making it the most complete and accurate collection of algorithms for all things astronomical.
@@ -104,6 +104,6 @@ thousands of coordinates instances one might need for plotting/storing some curv
 KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C class methods to pure C-functions wrappers 
 and structs, everywhere it was possible. The most notable exception is KPCAADate which remains an NSObject subclass.
 
-Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.73 or later (with the new 
+Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.76 or later (with the new 
 [VSOP](https://en.wikipedia.org/wiki/VSOP_(planets)) implementation!). The tagged versions 1.0+ will remain as such, 
 with AA+ v1.60.
