@@ -47,5 +47,32 @@ public struct GeographicCoordinates {
                                                       otherCoordinates.latitude.value,
                                                       otherCoordinates.longitude.value) * 1000)
     }
+    
+    /// Returns the radius of the curvature of the Earth's meridian
+    /// See AA p.82-83 Symbol: Rm
+    public var globeRadiusOfCurvature: Meter {
+        // Returned AA value is in kilometers.
+        get { return Meter(KPCAAGlobe_RadiusOfCurvature(self.latitude.value)*1000.0) }
+    }
+    
+    /// Returns the radius of the circle made at a constant latitude
+    /// Uses the Earth ellipsoid as defined by IAU in 1976.
+    /// See AA p.82-83. Symbol: Rp
+    public var globeRadiusOfParallelOfLatitude: Meter {
+        // Returned AA value is in kilometers.
+        get { return Meter(KPCAAGlobe_RadiusOfParallelOfLatitude(self.latitude.value)*1000.0) }
+    }
+    
+    /// Note: rho is the observer's distance to center of the Earth (for an equatorial radius set to unity). Theta (or phi) prime is the geocentric (not geographic) latitude.
+    /// See AA p.81
+    public func rhoSinThetaPrime(forObserverHeight height: Double) -> Double {
+        return KPCAAGlobe_RhoSinThetaPrime(self.latitude.value, height)
+    }
+    
+    /// Note: rho is the observer's distance to center of the Earth (for an equatorial radius set to unity). Theta (or phi) prime is the geocentric (not geographic) latitude.
+    /// See AA p.81
+    public func rhoCosThetaPrime(forObserverHeight height: Double) -> Double {
+        return KPCAAGlobe_RhoCosThetaPrime(self.latitude.value, height)
+    }
 }
 
