@@ -39,3 +39,13 @@ double KPCAANutation_TrueObliquityOfEcliptic(double JD)
     return CAANutation::TrueObliquityOfEcliptic(JD);
 }
 
+double KPCAANutation_ObliquityOfEcliptic(BOOL mean, double JD)
+{
+    if (mean) {
+        return CAANutation::MeanObliquityOfEcliptic(JD);
+    }
+    else {
+        return CAANutation::TrueObliquityOfEcliptic(JD);
+    }
+}
+

@@ -57,7 +57,7 @@ public extension CelestialBody {
     
     func eclipticLongitudeOnHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
         let lha = self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude)
-        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(lha.value,
                                                                   epsilon.value,
                                                                   geographicCoordinates.latitude.value))
@@ -65,14 +65,14 @@ public extension CelestialBody {
     
     func angleBetweenEclipticAndHorizon(geographicCoordinates: GeographicCoordinates) -> Degree {
         let lha = self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude)
-        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha.value,
                                                                       epsilon.value,
                                                                       geographicCoordinates.latitude.value))
     }
     
     func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(geographicCoordinates: GeographicCoordinates) -> Degree {
-        let epsilon = obliquityOfEcliptic(julianDay: self.julianDay, mean: false)
+        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(self.eclipticCoordinates.lambda.value,
                                                                                             self.eclipticCoordinates.beta.value,
                                                                                             epsilon.value))

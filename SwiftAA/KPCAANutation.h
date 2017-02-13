@@ -19,6 +19,10 @@ double KPCAANutation_NutationInDeclination(double Alpha, double Obliquity, doubl
 double KPCAANutation_MeanObliquityOfEcliptic(double JD);
 double KPCAANutation_TrueObliquityOfEcliptic(double JD);
 
+/* SwiftAA Additions */
+    
+double KPCAANutation_ObliquityOfEcliptic(BOOL mean, double JD);
+    
 #if __cplusplus
 }
 #endif

@@ -613,7 +613,6 @@
 		9F7CBFB31D16C4BE00E13FB1 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */; };
 		9F7CBFB51D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
 		9F7CBFB61D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
-		9F877A8D1E0529B9006FC6E5 /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F8779371E0529A1006FC6E5 /* AATest.cpp */; };
 		9F877AFF1E052B83006FC6E5 /* RiseTransitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */; };
 		9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
@@ -874,7 +873,7 @@
 		9F4278431E50D06100D1BA8D /* AAStellarMagnitudes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAStellarMagnitudes.h; sourceTree = "<group>"; };
 		9F4278441E50D06100D1BA8D /* AASun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASun.cpp; sourceTree = "<group>"; };
 		9F4278451E50D06100D1BA8D /* AASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASun.h; sourceTree = "<group>"; };
-		9F4278461E50D06100D1BA8D /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
+		9F4278461E50D06100D1BA8D /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AATest.cpp; path = "../aaplus-v1.76/AATest.cpp"; sourceTree = "<group>"; };
 		9F4278491E50D06100D1BA8D /* AAUranus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAUranus.cpp; sourceTree = "<group>"; };
 		9F42784A1E50D06100D1BA8D /* AAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAUranus.h; sourceTree = "<group>"; };
 		9F42784B1E50D06100D1BA8D /* AAVenus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVenus.cpp; sourceTree = "<group>"; };
@@ -1087,7 +1086,6 @@
 		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
 		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
 		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
-		9F8779371E0529A1006FC6E5 /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
 		9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiseTransitSet.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
@@ -1221,9 +1219,9 @@
 			children = (
 				9F7379891C26B79F007EF484 /* Swift */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
+				9FC3402E1D156A5D0069E7C4 /* Unit Tests */,
 				9F4277D11E50D06000D1BA8D /* aaplus-v1.76 */,
 				9F877AFD1E052A80006FC6E5 /* AA+ Tests */,
-				9FC3402E1D156A5D0069E7C4 /* Tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
 				9F525B411D3CDEDC00041696 /* swiftaa */,
@@ -1371,6 +1369,7 @@
 				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
 				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
 				9FFC4A501DCF891F00382049 /* GeographicCoordinates.swift */,
+				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
 			);
 			name = "Earth & Moon";
 			sourceTree = "<group>";
@@ -1534,7 +1533,6 @@
 				9F4278431E50D06100D1BA8D /* AAStellarMagnitudes.h */,
 				9F4278441E50D06100D1BA8D /* AASun.cpp */,
 				9F4278451E50D06100D1BA8D /* AASun.h */,
-				9F4278461E50D06100D1BA8D /* AATest.cpp */,
 				9F4278491E50D06100D1BA8D /* AAUranus.cpp */,
 				9F42784A1E50D06100D1BA8D /* AAUranus.h */,
 				9F42784B1E50D06100D1BA8D /* AAVenus.cpp */,
@@ -1700,10 +1698,10 @@
 		9F877AFD1E052A80006FC6E5 /* AA+ Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9F8779371E0529A1006FC6E5 /* AATest.cpp */,
+				9F4278461E50D06100D1BA8D /* AATest.cpp */,
 			);
 			name = "AA+ Tests";
-			path = "aaplus-v1.73";
+			path = "aaplus-v1.76";
 			sourceTree = "<group>";
 		};
 		9F8FC29A1E06DA930012B4DA /* To Be Swifted v2.1 */ = {
@@ -1735,7 +1733,6 @@
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
 				9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */,
 				9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */,
-				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
 			);
 			name = "Solar System Base";
 			sourceTree = "<group>";
@@ -1790,13 +1787,13 @@
 			name = "Celestial Bodies";
 			sourceTree = "<group>";
 		};
-		9FC3402E1D156A5D0069E7C4 /* Tests */ = {
+		9FC3402E1D156A5D0069E7C4 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9FB755351E05F23F00EC7617 /* Swift */,
 				9FB755341E05F23800EC7617 /* Obj-C */,
 			);
-			name = Tests;
+			name = "Unit Tests";
 			path = SwiftAATests;
 			sourceTree = "<group>";
 		};
@@ -2813,7 +2810,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F877A8D1E0529B9006FC6E5 /* AATest.cpp in Sources */,
 				9F42799C1E50D08D00D1BA8D /* AATest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
