@@ -56,18 +56,12 @@ To make the most of this code, you'd rather have a copy of the book with you.
 
 As the author of the app iObserve (for [Mac](http://onekilopars.ec/apps#iobserve) and [iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
 myself worked a lot on implementing some of the AA algorithms for my needs. However, to push iObserve to the next level,
-I need to put a lot more work on these algorithms. And it is pointless (as well as very hard) to reach the fantastic level and quality the AA+ framework
-has already reached, after years of development and tests. Moreover, AA+ make use of the VSOP87 framework, hence making it
-the most complete and accurate collection of astronomical algorithms available.
+I need to put a lot more work on these algorithms. 
 
 P.J. Naughter has kindly agreed to let me create a public repo with his code. My intention is to write a wrapper around it,
-to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests will be accepted (if by any chance
-it happens) only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
+to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests will be accepted 
+only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
 to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
-
-One thing however that AA+ lacks are modern unit tests. The available tests do not assert anything, and appears only
-to print out some values to be checked by eye. This is human-readable, hence error prone. Here, we intend to provide
-such unit testing, all on top of the Swift layer.
 
 
 Caution
@@ -88,19 +82,10 @@ C++ library. Only the name of some variables were a bit "Objective-C-fied" (to a
 'b' for boolean etc').
 
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
-Objective-C. KPC stands for "kiloparsec"... and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
+Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
 library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
 
-These naming constraints come from the fact that no C++ code can be written directly alongside Swift code (in the same file). 
+These constraints come from the fact that no C++ code can be written directly alongside Swift code (in the same file). 
 And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper
 around it, with name prefixes.
 
-The first version of SwiftAA (tags 1.0+) was written with NSObject class methods, which is probably no more efficient 
-that pure C-functions. It just happened that I wrote this with objects. However, it *is* totally inefficient to allocate 
-thousands of coordinates instances one might need for plotting/storing some curves. Hence, I decided to remove 
-KPCAA2DCoordinates and KPCAA3DCoordinates classes, and move from Objective-C class methods to pure C-functions wrappers 
-and structs, everywhere it was possible. The most notable exception is KPCAADate which remains an NSObject subclass.
-
-Upon completion, this new version will be tagged 2.0+. It will contain the AA+ v1.76 or later (with the new 
-[VSOP](https://en.wikipedia.org/wiki/VSOP_(planets)) implementation!). The tagged versions 1.0+ will remain as such, 
-with AA+ v1.60.
