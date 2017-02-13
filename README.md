@@ -50,7 +50,8 @@ Introduction
 ============
 
 The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
-"Astronomical Algorithms", by Jean Meeus (purchasable from [Amazon](http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011)).
+"Astronomical Algorithms", found in the reference textbook by Jean Meeus 
+(purchasable from [Amazon](http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011)).
 To make the most of this code, you'd rather have a copy of the book with you.
 
 As the author of the app iObserve (for [Mac](http://onekilopars.ec/apps#iobserve) and [iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
