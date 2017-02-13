@@ -33,11 +33,6 @@ On top of this, SwiftAA provides *modern APIs* taking advantage of the expressiv
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
 completeness and ease of use. Moreover, SwiftAA intends to provide a much improved unit tests coverage.
 
-Finally, a Swift Playground is being written and made available for distribution. This playground could easily be used
-**for educational purposes**, especially in the [Swift coding app on iPad](https://www.apple.com/swift/playgrounds/) coming with iOS10.
-With SwiftAA, teachers and educators could easily propose exercices and fun little computations on stars, sun, moon, 
-planets, seasons, coordinates etc.
-
 
 Licence
 =======
