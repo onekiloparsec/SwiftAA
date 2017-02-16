@@ -614,6 +614,8 @@
 		9F7CBFB51D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
 		9F7CBFB61D16E56800E13FB1 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB41D16E56800E13FB1 /* Saturn.swift */; };
 		9F877AFF1E052B83006FC6E5 /* RiseTransitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */; };
+		9F89264B1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */; };
+		9F89264C1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */; };
 		9FAA864E1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA864F1D8D840600DF095E /* KPCAADate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AB3911B48201600EF40C8 /* KPCAADate.mm */; };
 		9FAA86511D8D85C800DF095E /* JulianDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA86501D8D85C800DF095E /* JulianDayTests.swift */; };
@@ -1087,6 +1089,7 @@
 		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
 		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
 		9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiseTransitSet.swift; sourceTree = "<group>"; };
+		9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IlluminatedFractionTests.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = SwiftAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = SwiftAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
 		9F8AB3901B48201600EF40C8 /* KPCAADate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAADate.h; path = SwiftAA/KPCAADate.h; sourceTree = "<group>"; };
@@ -1370,6 +1373,7 @@
 				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
 				9FFC4A501DCF891F00382049 /* GeographicCoordinates.swift */,
 				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
+				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
 			);
 			name = "Earth & Moon";
 			sourceTree = "<group>";
@@ -1684,7 +1688,6 @@
 			children = (
 				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
-				9FB755361E05F28A00EC7617 /* Celestial Bodies */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
 				9F3D51041D947DC900F03766 /* Earth & Moon */,
@@ -1728,6 +1731,7 @@
 		9FB70C681D25A3BD00A03C6D /* Solar System Base */ = {
 			isa = PBXGroup;
 			children = (
+				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 				9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */,
 				9F7A57001D15F5CE0033CDC5 /* PlanetaryPhenomena.swift */,
 				9F2A87AA1D2063710004ADDD /* ElementsOfPlanetaryOrbit.swift */,
@@ -1765,6 +1769,7 @@
 				6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
 				9F5E3D451E395A0E0039B998 /* EarthTests.swift */,
+				9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */,
 				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
 				6F21411E1E0E5076005E1913 /* MoonTests.swift */,
 				6F67BB4D1E1C302D00377C7B /* NumericTypeTests.swift */,
@@ -1776,15 +1781,6 @@
 				6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */,
 			);
 			name = Swift;
-			sourceTree = "<group>";
-		};
-		9FB755361E05F28A00EC7617 /* Celestial Bodies */ = {
-			isa = PBXGroup;
-			children = (
-				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
-				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
-			);
-			name = "Celestial Bodies";
 			sourceTree = "<group>";
 		};
 		9FC3402E1D156A5D0069E7C4 /* Unit Tests */ = {
@@ -2778,6 +2774,7 @@
 				9FBA89A61E324ACE0096FEAC /* AstronomicalCoordinatesTests.swift in Sources */,
 				9FBA89B01E324C500096FEAC /* XCTestExtensions.swift in Sources */,
 				9FBA89A91E324ACE0096FEAC /* MoonTests.swift in Sources */,
+				9F89264C1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */,
 				9F5E3D491E395A290039B998 /* EarthTests.swift in Sources */,
 				9FBA89AB1E324ACE0096FEAC /* PlanetaryBaseTest.swift in Sources */,
@@ -2798,6 +2795,7 @@
 				6F21411B1E0E1AA5005E1913 /* AstronomicalCoordinatesTests.swift in Sources */,
 				6FBCF9381E12210C00786EB4 /* XCTestExtensions.swift in Sources */,
 				9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */,
+				9F89264B1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9F5E3D481E395A280039B998 /* EarthTests.swift in Sources */,
 				9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */,
 				6F21411D1E0E4CD5005E1913 /* SunTests.swift in Sources */,

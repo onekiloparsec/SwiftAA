@@ -36,6 +36,7 @@ double KPCAAIlluminatedFraction_UranusMagnitudeAA(double r, double Delta);
 double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta);
     
 // SwiftAddition
+double KPCAAIlluminatedFraction_MagnitudeMuller(KPCPlanetaryObject planet, double r, double Delta, double i);
 double KPCAAIlluminatedFraction_MagnitudeAA(KPCPlanetaryObject planet, double r, double Delta, double i);
     
 #if __cplusplus

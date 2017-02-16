@@ -107,6 +107,36 @@ double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta)
     return CAAIlluminatedFraction::NeptuneMagnitudeAA(r, Delta);
 }
 
+
+double KPCAAIlluminatedFraction_MagnitudeMuller(KPCPlanetaryObject planet, double r, double Delta, double i)
+{
+    switch (planet) {
+        case MERCURY:
+            return KPCAAIlluminatedFraction_MercuryMagnitudeMuller(r, Delta, i);
+            break;
+        case VENUS:
+            return KPCAAIlluminatedFraction_VenusMagnitudeMuller(r, Delta, i);
+            break;
+        case MARS:
+            return KPCAAIlluminatedFraction_MarsMagnitudeMuller(r, Delta, i);
+            break;
+        case JUPITER:
+            return KPCAAIlluminatedFraction_JupiterMagnitudeMuller(r, Delta);
+            break;
+        case SATURN:
+            return NAN;
+            break;
+        case URANUS:
+            return KPCAAIlluminatedFraction_UranusMagnitudeMuller(r, Delta);
+            break;
+        case NEPTUNE:
+            return KPCAAIlluminatedFraction_NeptuneMagnitudeMuller(r, Delta);
+            break;
+        default:
+            return NAN;
+    }
+}
+
 double KPCAAIlluminatedFraction_MagnitudeAA(KPCPlanetaryObject planet, double r, double Delta, double i)
 {
     switch (planet) {
@@ -124,6 +154,9 @@ double KPCAAIlluminatedFraction_MagnitudeAA(KPCPlanetaryObject planet, double r,
             break;
         case SATURN:
             return NAN;
+            break;
+        case URANUS:
+            return KPCAAIlluminatedFraction_UranusMagnitudeAA(r, Delta);
             break;
         case NEPTUNE:
             return KPCAAIlluminatedFraction_NeptuneMagnitudeAA(r, Delta);
