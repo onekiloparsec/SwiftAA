@@ -20,13 +20,13 @@
 
 - (void)testPlanetaryPhenomena
 {
-    XCTAssertEqual((NSUInteger)_MERCURY, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::MERCURY);
-    XCTAssertEqual((NSUInteger)_VENUS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::VENUS);
-    XCTAssertEqual((NSUInteger)_MARS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::MARS);
-    XCTAssertEqual((NSUInteger)_JUPITER, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::JUPITER);
-    XCTAssertEqual((NSUInteger)_SATURN, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::SATURN);
-    XCTAssertEqual((NSUInteger)_URANUS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::URANUS);
-    XCTAssertEqual((NSUInteger)_NEPTUNE, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::NEPTUNE);
+    XCTAssertEqual((NSUInteger)MERCURY, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::MERCURY);
+    XCTAssertEqual((NSUInteger)VENUS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::VENUS);
+    XCTAssertEqual((NSUInteger)MARS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::MARS);
+    XCTAssertEqual((NSUInteger)JUPITER, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::JUPITER);
+    XCTAssertEqual((NSUInteger)SATURN, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::SATURN);
+    XCTAssertEqual((NSUInteger)URANUS, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::URANUS);
+    XCTAssertEqual((NSUInteger)NEPTUNE, (NSUInteger)CAAPlanetaryPhenomena::PlanetaryObject::NEPTUNE);
 }
 
 

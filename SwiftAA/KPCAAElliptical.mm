@@ -12,25 +12,25 @@
 CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object);
 CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object) {
     switch (object) {
-        case _MERCURY:
+        case MERCURY:
             return CAAElliptical::EllipticalObject::MERCURY;
             break;
-        case _VENUS:
+        case VENUS:
             return CAAElliptical::EllipticalObject::VENUS;
             break;
-        case _MARS:
+        case MARS:
             return CAAElliptical::EllipticalObject::MARS;
             break;
-        case _JUPITER:
+        case JUPITER:
             return CAAElliptical::EllipticalObject::JUPITER;
             break;
-        case _SATURN:
+        case SATURN:
             return CAAElliptical::EllipticalObject::SATURN;
             break;
-        case _URANUS:
+        case URANUS:
             return CAAElliptical::EllipticalObject::URANUS;
             break;
-        case _NEPTUNE:
+        case NEPTUNE:
             return CAAElliptical::EllipticalObject::NEPTUNE;
             break;
             
