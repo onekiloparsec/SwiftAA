@@ -24,7 +24,7 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
      
      - returns: A julian day.
      */
-    func inferiorConjunction(_ mean: Bool) -> JulianDay
+    func inferiorConjunction(mean: Bool) -> JulianDay
     
     /**
      Compute the julian day of the superior conjunction of the planet after the given julian day.
@@ -37,48 +37,48 @@ public protocol PlanetaryPhenomena: PlanetaryBase {
      
      - returns: A julian day.
      */
-    func superiorConjunction(_ mean: Bool) -> JulianDay
+    func superiorConjunction(mean: Bool) -> JulianDay
     
-    func opposition(_ mean: Bool) -> JulianDay
-    func conjunction(_ mean: Bool) -> JulianDay
-    func easternElongation(_ mean: Bool) -> JulianDay
-    func westernElongation(_ mean: Bool) -> JulianDay
-    func station1(_ mean: Bool) -> JulianDay
-    func station2(_ mean: Bool) -> JulianDay
+    func opposition(mean: Bool) -> JulianDay
+    func conjunction(mean: Bool) -> JulianDay
+    func easternElongation(mean: Bool) -> JulianDay
+    func westernElongation(mean: Bool) -> JulianDay
+    func station1(mean: Bool) -> JulianDay
+    func station2(mean: Bool) -> JulianDay
     func elongationValue(eastern: Bool) -> Degree
 }
 
 public extension PlanetaryPhenomena {
     
-    func inferiorConjunction(_ mean: Bool = true) -> JulianDay {
+    func inferiorConjunction(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .INFERIOR_CONJUNCTION))
     }
 
-    func superiorConjunction(_ mean: Bool = true) -> JulianDay {
+    func superiorConjunction(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .SUPERIOR_CONJUNCTION))
     }
 
-    func opposition(_ mean: Bool = true) -> JulianDay {
+    func opposition(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .OPPOSITION))
     }
 
-    func conjunction(_ mean: Bool = true) -> JulianDay {
+    func conjunction(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .CONJUNCTION))
     }
 
-    func easternElongation(_ mean: Bool = true) -> JulianDay {
+    func easternElongation(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .EASTERN_ELONGATION))
     }
 
-    func westernElongation(_ mean: Bool = true) -> JulianDay {
+    func westernElongation(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .WESTERN_ELONGATION))
     }
 
-    func station1(_ mean: Bool = true) -> JulianDay {
+    func station1(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .STATION1))
     }
 
-    func station2(_ mean: Bool = true) -> JulianDay {
+    func station2(mean: Bool = true) -> JulianDay {
         return JulianDay(KPCAAPlanetaryPhenomena(mean, self.julianDay.date.fractionalYear, self.planetaryObject, .STATION2))
     }
 
