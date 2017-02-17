@@ -31,8 +31,8 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
         get {
-            let ra = Hour(planetaryDetails.ApparentGeocentricRA)
-            let dec = Degree(planetaryDetails.ApparentGeocentricDeclination)
+            let ra = Hour(self.planetaryDetails.ApparentGeocentricRA)
+            let dec = Degree(self.planetaryDetails.ApparentGeocentricDeclination)
             let result = EquatorialCoordinates(alpha: ra, delta: dec)
             return result
         }

@@ -9,6 +9,37 @@
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
 
+CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object);
+CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object) {
+    switch (object) {
+        case _MERCURY:
+            return CAAElliptical::EllipticalObject::MERCURY;
+            break;
+        case _VENUS:
+            return CAAElliptical::EllipticalObject::VENUS;
+            break;
+        case _MARS:
+            return CAAElliptical::EllipticalObject::MARS;
+            break;
+        case _JUPITER:
+            return CAAElliptical::EllipticalObject::JUPITER;
+            break;
+        case _SATURN:
+            return CAAElliptical::EllipticalObject::SATURN;
+            break;
+        case _URANUS:
+            return CAAElliptical::EllipticalObject::URANUS;
+            break;
+        case _NEPTUNE:
+            return CAAElliptical::EllipticalObject::NEPTUNE;
+            break;
+            
+        default:
+            throw NSInvalidArgumentException;
+            break;
+    }
+}
+
 double KPCAAElliptical_DistanceToLightTime(double Distance)
 {
     return CAAElliptical::DistanceToLightTime(Distance);
@@ -16,7 +47,8 @@ double KPCAAElliptical_DistanceToLightTime(double Distance)
 
 KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision)
 {
-    CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, (CAAElliptical::EllipticalObject)object, highPrecision);
+    CAAElliptical::EllipticalObject ellipticalObject = ellipticalObjectFromPlanetaryObject(object);
+    CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, ellipticalObject, highPrecision);
     
     struct KPCAAEllipticalPlanetaryDetails details;
     details.ApparentGeocentricLongitude = detailsPlus.ApparentGeocentricLongitude;
