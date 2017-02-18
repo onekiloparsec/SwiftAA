@@ -47,6 +47,16 @@ which retains its own licence. Quoting the [original](http://www.naughter.com/aa
 * You are allowed to modify the source code in any way you want except you cannot modify the copyright details at the top of each module.
 * If you want to distribute source code with your application, then you are only allowed to distribute versions released by the author. This is to maintain a single distribution point for the source code.
 
+
+Installation
+============
+
+Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile` and then run `carthage update`.
+
+Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` and then run `pod update`. 
+
+
+
 Introduction
 ============
 
