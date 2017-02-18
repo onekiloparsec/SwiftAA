@@ -366,6 +366,7 @@
 		9F427A081E50D0CD00D1BA8D /* AAVSOP87E_URA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4278AF1E50D06100D1BA8D /* AAVSOP87E_URA.cpp */; };
 		9F427A091E50D0CD00D1BA8D /* AAVSOP87E_VEN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4278B11E50D06100D1BA8D /* AAVSOP87E_VEN.cpp */; };
 		9F427A0A1E50D0CD00D1BA8D /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4278B51E50D06100D1BA8D /* stdafx.cpp */; };
+		9F4E65131E582C20008B667E /* SwiftAA.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E65121E582C20008B667E /* SwiftAA.podspec */; };
 		9F502F0E1D3EBFFF002C394F /* AstronomicalCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */; };
 		9F502F0F1D3EBFFF002C394F /* AstronomicalCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */; };
 		9F51D0C51D3D5D6E00895295 /* libswiftaa.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F51D0C41D3D5D6E00895295 /* libswiftaa.h */; };
@@ -601,7 +602,7 @@
 		9F6B38CD1D9FCED0008A2D96 /* Nutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */; };
 		9F7379911C26B9BA007EF484 /* KPCAA2DCoordinate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5831B47320200B64C96 /* KPCAA2DCoordinate.mm */; };
 		9F7379C91C26B9D4007EF484 /* KPCAA2DCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F737A7B1C26DA49007EF484 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F737A7B1C26DA49007EF484 /* SwiftAA-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA-Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F7A56FC1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
 		9F7A56FD1D15E6890033CDC5 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FB1D15E6890033CDC5 /* Earth.swift */; };
 		9F7A56FF1D15F2F40033CDC5 /* VenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */; };
@@ -676,7 +677,7 @@
 		9FEA1DD11DA1625500F7E346 /* AthmosphericRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */; };
 		9FEEDE7A1D1708B400983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
-		9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FEEDE7C1D1719E300983CB7 /* SwiftAA-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA-Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FF037A11E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
 		9FF037A21E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
 		9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */; };
@@ -1048,6 +1049,7 @@
 		9F48D5891B4FAFCF00B7EE7F /* KPCAAPluto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPluto.mm; path = SwiftAA/KPCAAPluto.mm; sourceTree = "<group>"; };
 		9F48D58C1B4FB01C00B7EE7F /* KPCAAPrecession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAPrecession.h; path = SwiftAA/KPCAAPrecession.h; sourceTree = "<group>"; };
 		9F48D58D1B4FB01C00B7EE7F /* KPCAAPrecession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAPrecession.mm; path = SwiftAA/KPCAAPrecession.mm; sourceTree = "<group>"; };
+		9F4E65121E582C20008B667E /* SwiftAA.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftAA.podspec; sourceTree = "<group>"; };
 		9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalCoordinates.swift; sourceTree = "<group>"; };
 		9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibswiftaa.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F51D0C41D3D5D6E00895295 /* libswiftaa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libswiftaa.h; sourceTree = "<group>"; };
@@ -1063,7 +1065,7 @@
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutation.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
+		9F73798A1C26B79F007EF484 /* SwiftAA-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SwiftAA-Swift.h"; path = "SwiftAA/SwiftAA-Swift.h"; sourceTree = "<group>"; };
 		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
 		9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftAA-Bridging-Header.h"; path = "SwiftAA/SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F737A7C1C26DBCE007EF484 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1412,11 +1414,12 @@
 			isa = PBXGroup;
 			children = (
 				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
-				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
+				9F73798A1C26B79F007EF484 /* SwiftAA-Swift.h */,
 				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
 				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
 				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
 				9F737A7C1C26DBCE007EF484 /* README.md */,
+				9F4E65121E582C20008B667E /* SwiftAA.podspec */,
 			);
 			name = SwiftAA;
 			sourceTree = "<group>";
@@ -1885,7 +1888,7 @@
 				9F694E751D15C67300EE7492 /* KPCAAPrecession.h in Headers */,
 				9F694E791D15C67300EE7492 /* KPCAAMoonPhases.h in Headers */,
 				9F694E7A1D15C67300EE7492 /* KPCAADynamicalTime.h in Headers */,
-				9FEEDE7C1D1719E300983CB7 /* SwiftAA.h in Headers */,
+				9FEEDE7C1D1719E300983CB7 /* SwiftAA-Swift.h in Headers */,
 				9F694E7C1D15C67300EE7492 /* KPCAANearParabolic.h in Headers */,
 				9F694E7E1D15C67300EE7492 /* KPCAABinaryStar.h in Headers */,
 				9F694E881D15C67300EE7492 /* KPCAAFK5.h in Headers */,
@@ -1940,7 +1943,7 @@
 				9F694D3F1D157A0800EE7492 /* KPCAAMars.h in Headers */,
 				9F694D321D15797300EE7492 /* KPCAAEquinoxesAndSolstices.h in Headers */,
 				9F4279391E50D06100D1BA8D /* AAVSOP87_MAR.h in Headers */,
-				9F737A7B1C26DA49007EF484 /* SwiftAA.h in Headers */,
+				9F737A7B1C26DA49007EF484 /* SwiftAA-Swift.h in Headers */,
 				9F4278CA1E50D06100D1BA8D /* AAEarth.h in Headers */,
 				9F4278F01E50D06100D1BA8D /* AAMoon.h in Headers */,
 				9F42795D1E50D06100D1BA8D /* AAVSOP87B_MER.h in Headers */,
@@ -2305,6 +2308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4E65131E582C20008B667E /* SwiftAA.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
