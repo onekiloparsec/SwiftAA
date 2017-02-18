@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftAA"
-  s.version      = "2.0-alpha1"
+  s.version      = "2.0-alpha2"
   s.summary      = "The most comprehensive and accurate collection of astronomical algorithms in Swift."
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ to become the most reliable source of astronomical computations.
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   #s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "MIT-LICENSE.txt" }
 
 
   s.author             = { "onekiloparsec (a.k.a. Cédric Foellmi)" => "cedric@onekilopars.ec" }
