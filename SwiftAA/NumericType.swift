@@ -60,7 +60,6 @@ public prefix func - <T: NumericType> (number: T) -> T {
 
 
 extension FloatingPoint {
-    
     func positiveTruncatingRemainder(dividingBy other: Self) -> Self {
         let truncated = truncatingRemainder(dividingBy: other)
         let positive = truncated.sign == .minus ? truncated + other : truncated
@@ -70,7 +69,6 @@ extension FloatingPoint {
     func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
         return (self / increment).rounded(rule) * increment
     }
-    
 }
 
 
