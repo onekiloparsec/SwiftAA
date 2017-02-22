@@ -91,26 +91,26 @@ class JulianDayTest: XCTestCase {
     func testMeanGreenwichSiderealTime1() { // See AA p.88
         let jd = JulianDay(year: 1987, month: 04, day: 10)
         let gmst = jd.meanGreenwichSiderealTime()
-        AssertEqual(gmst, Hour(13, 10, 46.3668), accuracy: Second(0.001).inHours)
+        AssertEqual(gmst, Hour(.plus, 13, 10, 46.3668), accuracy: Second(0.001).inHours)
     }
 
     func testApparentGreenwichSiderealTime1() { // See also AA p.88
         let jd = JulianDay(year: 1987, month: 04, day: 10)
         let gmst = jd.apparentGreenwichSiderealTime()
-        AssertEqual(gmst, Hour(13, 10, 46.1351), accuracy: Second(0.001).inHours)
+        AssertEqual(gmst, Hour(.plus, 13, 10, 46.1351), accuracy: Second(0.001).inHours)
     }
 
     func testMeanGreenwichSiderealTime2() { // See AA p.89
         let jd = JulianDay(year: 1987, month: 04, day: 10, hour: 19, minute: 21, second: 00)
         let gmst = jd.meanGreenwichSiderealTime()
-        AssertEqual(gmst, Hour(8, 34, 57.0898), accuracy: Second(0.001).inHours)
+        AssertEqual(gmst, Hour(.plus, 8, 34, 57.0898), accuracy: Second(0.001).inHours)
     }
     
     func testMeanLocalSiderealTime1() { // Data from SkySafari
         let jd = JulianDay(year: 2016, month: 12, day: 1, hour: 14, minute: 15, second: 3)
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
         let lmst = jd.meanLocalSiderealTime(longitude: geographic.longitude)
-        AssertEqual(lmst, Hour(21, 28, 59.0), accuracy: Second(1.0).inHours)
+        AssertEqual(lmst, Hour(.plus, 21, 28, 59.0), accuracy: Second(1.0).inHours)
     }
     
     func testMidnight() {

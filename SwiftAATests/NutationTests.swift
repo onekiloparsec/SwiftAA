@@ -15,9 +15,9 @@ class NutationTests: XCTestCase {
         let jd = JulianDay(year: 1987, month: 4, day: 10, hour: 0, minute: 0, second: 0)
         let earth = Earth(julianDay: jd)
         let meanObliquity = earth.obliquityOfEcliptic(mean: true)
-        AssertEqual(meanObliquity, Degree(23, 26, 27.407), accuracy: ArcSecond(0.01).inDegrees)
+        AssertEqual(meanObliquity, Degree(.plus, 23, 26, 27.407), accuracy: ArcSecond(0.01).inDegrees)
         let trueObliquity = earth.obliquityOfEcliptic(mean: false)
-        AssertEqual(trueObliquity, Degree(23, 26, 36.850), accuracy: ArcSecond(0.01).inDegrees)
+        AssertEqual(trueObliquity, Degree(.plus, 23, 26, 36.850), accuracy: ArcSecond(0.01).inDegrees)
     }
     
 }

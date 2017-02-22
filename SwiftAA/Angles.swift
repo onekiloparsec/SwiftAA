@@ -14,11 +14,11 @@ public struct Degree: NumericType, CustomStringConvertible {
         self.value = value
     }
     
-    public init(_ degrees: Double, _ arcminutes: Double, _ arcseconds: Double) {
-        guard degrees.sign == arcminutes.sign && degrees.sign == arcseconds.sign else {
-            fatalError("degrees/arcminutes/arcseconds must have the same sign")
-        }
-        self.init(degrees + arcminutes/60.0 + arcseconds/3600.0)
+    public init(_ sign: FloatingPointSign = .plus, _ degrees: Int, _ arcminutes: Int, _ arcseconds: Double) {
+        let absDegree = abs(Double(degrees))
+        let absMinutes = abs(Double(arcminutes))/60.0
+        let absSeconds = abs(arcseconds)/3600.0
+        self.init(Double(sign) * (absDegree + absMinutes + absSeconds))
     }
 
     public init(_ sexagesimal: (Degree, ArcMinute, ArcSecond)) {
@@ -53,15 +53,14 @@ public struct Degree: NumericType, CustomStringConvertible {
     
     public var description: String {
         let (sign, deg, min, sec) = self.sexagesimalNotation()
-        let signSymbol = (sign == true) ? "+" : "-"
-        return signSymbol + String(format: "%+.0f°%02.0f'%04.1f\"", abs(deg.value), abs(min.value), abs(sec.value))
+        return sign.string + String(format: "%+.0f°%02.0f'%04.1f\"", deg.value, min.value, sec.value)
     }
     
-    public func sexagesimalNotation() -> (Bool, Degree, ArcMinute, ArcSecond) {
+    public func sexagesimalNotation() -> (FloatingPointSign, Degree, ArcMinute, ArcSecond) {
         let deg = abs(value.rounded(.towardZero))
         let min = ((abs(value) - deg) * 60.0).rounded(.towardZero)
         let sec = ((abs(value) - deg) * 60.0 - min) * 60.0
-        return (value > 0.0, Degree(deg), ArcMinute(min), ArcSecond(sec))
+        return (value > 0.0 ? .plus : .minus, Degree(deg), ArcMinute(min), ArcSecond(sec))
     }
     
     

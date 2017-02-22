@@ -36,14 +36,14 @@ class GeographicCoordinatesTests: XCTestCase {
 
     // See AA p.85
     func testGlobeDistanceBetweenGeographicPoints() {
-        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(-2, -20, -14.0), latitude: Degree(48, 50, 11.0))
-        let washington = GeographicCoordinates(positivelyWestwardLongitude: Degree(77, 03, 56), latitude: Degree(38, 55, 17.0))
+        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 20, 14.0), latitude: Degree(.plus, 48, 50, 11.0))
+        let washington = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 77, 03, 56), latitude: Degree(.plus, 38, 55, 17.0))
         XCTAssertEqualWithAccuracy(paris.globeDistance(to: washington).value, 6181630.0, accuracy: 10.0)
     }
     
     // See AA p.82
     func testRelativeGlobeDistancesToEarthCenter() {
-        let palomar = GeographicCoordinates(positivelyWestwardLongitude: Degree(116, 51, 54.0), latitude: Degree(33, 21, 22.0))
+        let palomar = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 116, 51, 54.0), latitude: Degree(.plus, 33, 21, 22.0))
         XCTAssertEqualWithAccuracy(palomar.rhoSinThetaPrime(forObserverHeight: 1706.0), 0.546861, accuracy: 0.000001)
         XCTAssertEqualWithAccuracy(palomar.rhoCosThetaPrime(forObserverHeight: 1706.0), 0.836339, accuracy: 0.000001)
     }
