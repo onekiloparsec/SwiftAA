@@ -8,6 +8,7 @@
 
 import Foundation
 
+// AstronomicalObject inherits from CelestialBody to benefit from the generic calculation of Rise and Set Times.
 class AstronomicalObject: Object, CelestialBody {
     public private(set) var name: String = ""
     public private(set) var equatorialCoordinates: EquatorialCoordinates
