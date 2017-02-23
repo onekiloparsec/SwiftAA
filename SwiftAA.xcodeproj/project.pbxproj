@@ -378,8 +378,8 @@
 		9F525B2D1D3CB58300041696 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B2C1D3CB58300041696 /* ObjectBase.swift */; };
 		9F525B2E1D3CB58300041696 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B2C1D3CB58300041696 /* ObjectBase.swift */; };
 		9F525B431D3CDEDC00041696 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B421D3CDEDC00041696 /* main.swift */; };
-		9F5E3D481E395A280039B998 /* EarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E3D451E395A0E0039B998 /* EarthTests.swift */; };
-		9F5E3D491E395A290039B998 /* EarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E3D451E395A0E0039B998 /* EarthTests.swift */; };
+		9F5E3D481E395A280039B998 /* EarthTwilightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */; };
+		9F5E3D491E395A290039B998 /* EarthTwilightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */; };
 		9F694D1C1D15744700EE7492 /* KPCAAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694D1D1D15745D00EE7492 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 		9F694D1E1D15754000EE7492 /* KPCAABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1063,7 +1063,7 @@
 		9F525B2C1D3CB58300041696 /* ObjectBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
 		9F525B401D3CDEDC00041696 /* swiftaa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftaa; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F525B421D3CDEDC00041696 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		9F5E3D451E395A0E0039B998 /* EarthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTests.swift; sourceTree = "<group>"; };
+		9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTwilightsTests.swift; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
@@ -1799,7 +1799,7 @@
 				9FE687E01E5E3B2F0038C81F /* AnglesTests.swift */,
 				6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
-				9F5E3D451E395A0E0039B998 /* EarthTests.swift */,
+				9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */,
 				9F8926571E572D81005C8932 /* GeographicCoordinatesTests.swift */,
 				9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */,
 				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
@@ -2817,7 +2817,7 @@
 				9F89264F1E564BE0005C8932 /* PlanetaryPhenomenaTests.swift in Sources */,
 				9FE687E21E5E3B2F0038C81F /* AnglesTests.swift in Sources */,
 				9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */,
-				9F5E3D491E395A290039B998 /* EarthTests.swift in Sources */,
+				9F5E3D491E395A290039B998 /* EarthTwilightsTests.swift in Sources */,
 				9F470DB31E5AD3D8003624D2 /* TimesTests.swift in Sources */,
 				9FBA89AB1E324ACE0096FEAC /* PlanetaryBaseTest.swift in Sources */,
 			);
@@ -2841,7 +2841,7 @@
 				6FBCF9381E12210C00786EB4 /* XCTestExtensions.swift in Sources */,
 				9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */,
 				9F89264B1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
-				9F5E3D481E395A280039B998 /* EarthTests.swift in Sources */,
+				9F5E3D481E395A280039B998 /* EarthTwilightsTests.swift in Sources */,
 				9FFA28FD1D156CC600034972 /* KPCAA3DCoordinateTests.swift in Sources */,
 				9F89264E1E564BE0005C8932 /* PlanetaryPhenomenaTests.swift in Sources */,
 				6F21411D1E0E4CD5005E1913 /* SunTests.swift in Sources */,
