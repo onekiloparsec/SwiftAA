@@ -71,4 +71,24 @@ extension FloatingPoint {
     }
 }
 
+extension Double {
+    init(_ sign: FloatingPointSign) {
+        if case .plus = sign { self.init(1.0) }
+        else { self.init(-1.0) }
+    }
+}
 
+extension FloatingPointSign {
+    var string: String {
+        get {
+            if case .plus = self { return "+" }
+            else { return "-" }
+        }
+    }
+}
+
+public typealias SexagesimalNotation = (sign: FloatingPointSign, radical: Int, minute: Int, second: Double)
+
+public func == (lhs: SexagesimalNotation, rhs: SexagesimalNotation) -> Bool {
+    return lhs.sign == rhs.sign && lhs.radical == rhs.radical && lhs.minute == rhs.minute && lhs.second == rhs.second
+}

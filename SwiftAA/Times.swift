@@ -8,22 +8,6 @@
 
 import Foundation
 
-extension Double {
-    init(_ sign: FloatingPointSign) {
-        if case .plus = sign { self.init(1.0) }
-        else { self.init(-1.0) }
-    }
-}
-
-extension FloatingPointSign {
-    var string: String {
-        get {
-            if case .plus = self { return "+" }
-            else { return "-" }
-        }
-    }
-}
-
 public struct Hour: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
@@ -42,21 +26,23 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var inDegrees: Degree { return Degree(value * 15.0) }
     public var inDays: JulianDay { return JulianDay(value / 24.0) }
     
+    public var sexagesimalNotation: SexagesimalNotation {
+        get {
+            let hrs = abs(value.rounded(.towardZero))
+            let min = ((abs(value) - hrs) * 60.0).rounded(.towardZero)
+            let sec = ((abs(value) - hrs) * 60.0 - min) * 60.0
+            return (value > 0.0 ? .plus : .minus, Int(hrs), Int(min), Double(sec))
+        }
+    }
+
     /// Returns self reduced to 0..<24 range
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
     /// Returns self reduced to -12..<12 range (around 0)
     public var reduced0: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)-12.0) }
     
     public var description: String {
-        let (sign, hrs, min, sec) = self.sexagesimalNotation()
-        return sign.string + String(format: "%.0fh%02.0fm%04.1fs", hrs.value, min.value, sec.value)
-    }
-    
-    public func sexagesimalNotation() -> (FloatingPointSign, Hour, Minute, Second) {
-        let hrs = abs(value.rounded(.towardZero))
-        let min = ((abs(value) - hrs) * 60.0).rounded(.towardZero)
-        let sec = ((abs(value) - hrs) * 60.0 - min) * 60.0
-        return (value > 0.0 ? .plus : .minus, Hour(hrs), Minute(min), Second(sec))
+        let (sign, hrs, min, sec) = self.sexagesimalNotation
+        return sign.string + String(format: "%.0fh%02.0fm%04.1fs", hrs, min, sec)
     }
 }
 

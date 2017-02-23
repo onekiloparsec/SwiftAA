@@ -30,7 +30,16 @@ public struct Degree: NumericType, CustomStringConvertible {
     public var inRadians: Radian { return Radian(value * DEG2RAD) }
     public var inHours: Hour { return Hour(value / 15.0) }
     
-    /// Returns self reduced to 0..<360 range 
+    public var sexagesimalNotation: SexagesimalNotation {
+        get {
+            let deg = abs(value.rounded(.towardZero))
+            let min = ((abs(value) - deg) * 60.0).rounded(.towardZero)
+            let sec = ((abs(value) - deg) * 60.0 - min) * 60.0
+            return (value > 0.0 ? .plus : .minus, Int(deg), Int(min), Double(sec))
+        }
+    }
+
+    /// Returns self reduced to 0..<360 range
     public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
     /// Returns self reduced to -180..<180 range (around 0)
     public var reduced0: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)-180.0) }
@@ -52,18 +61,9 @@ public struct Degree: NumericType, CustomStringConvertible {
     }
     
     public var description: String {
-        let (sign, deg, min, sec) = self.sexagesimalNotation()
-        return sign.string + String(format: "%+.0f°%02.0f'%04.1f\"", deg.value, min.value, sec.value)
+        let (sign, deg, min, sec) = self.sexagesimalNotation
+        return sign.string + String(format: "%+.0f°%02.0f'%04.1f\"", deg, min, sec)
     }
-    
-    public func sexagesimalNotation() -> (FloatingPointSign, Degree, ArcMinute, ArcSecond) {
-        let deg = abs(value.rounded(.towardZero))
-        let min = ((abs(value) - deg) * 60.0).rounded(.towardZero)
-        let sec = ((abs(value) - deg) * 60.0 - min) * 60.0
-        return (value > 0.0 ? .plus : .minus, Degree(deg), ArcMinute(min), ArcSecond(sec))
-    }
-    
-    
 }
 
 // MARK: -
