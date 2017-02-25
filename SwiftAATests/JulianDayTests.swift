@@ -118,7 +118,16 @@ class JulianDayTest: XCTestCase {
         AssertEqual(jd1.midnight, JulianDay(year: 2016, month: 12, day: 20))
         let jd2 = JulianDay(year: 2016, month: 12, day: 19, hour: 23, minute: 13, second: 39.1)
         AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
-    }    
+    }
+    
+    // See AA p.78
+    func testDeltaTWithNewMoon() {
+        // See AA. p353, ex. 49.a for the value.
+        // This is the value of the Dynamical Time (TD) of the New Moon on Feb. 1997
+        // To me, the value given by AA of 48 seconds is probably too cautious.
+        let jd_td = JulianDay(2443192.65118)
+        AssertEqual(jd_td.deltaT(), Second(48.0), accuracy: Second(0.5))
+    }
 }
 
 

@@ -88,8 +88,8 @@ public extension JulianDay {
     
     // MARK: Dynamical Times
     
-    public func deltaT() -> JulianDay {
-        return JulianDay(KPCAADynamicalTime_DeltaT(self.value))
+    public func deltaT() -> Second {
+        return Second(KPCAADynamicalTime_DeltaT(self.value))
     }
     
     public func cumulativeLeapSeconds() -> JulianDay {
