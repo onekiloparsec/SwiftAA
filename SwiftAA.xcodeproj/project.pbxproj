@@ -386,6 +386,9 @@
 		9F6043741E6176FA00395C0E /* RefractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6043721E6176FA00395C0E /* RefractionTests.swift */; };
 		9F6043761E61799E00395C0E /* AngularSeparationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6043751E61799E00395C0E /* AngularSeparationTests.swift */; };
 		9F6043771E61799E00395C0E /* AngularSeparationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6043751E61799E00395C0E /* AngularSeparationTests.swift */; };
+		9F6043781E6180B200395C0E /* KPCAA2DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */; };
+		9F6043791E6180B200395C0E /* KPCAA3DCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */; };
+		9F60437A1E6180B200395C0E /* KPCAAAberrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */; };
 		9F694D1C1D15744700EE7492 /* KPCAAAngularSeparation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5911B47BA7C00B64C96 /* KPCAAAngularSeparation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694D1D1D15745D00EE7492 /* KPCAAAngularSeparation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */; };
 		9F694D1E1D15754000EE7492 /* KPCAABinaryStar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2816,6 +2819,8 @@
 			files = (
 				9F6043741E6176FA00395C0E /* RefractionTests.swift in Sources */,
 				9F6043771E61799E00395C0E /* AngularSeparationTests.swift in Sources */,
+				9F6043781E6180B200395C0E /* KPCAA2DCoordinateTests.swift in Sources */,
+				9F6043791E6180B200395C0E /* KPCAA3DCoordinateTests.swift in Sources */,
 				9F3849CB1E60BA990013D9A3 /* CelestialBodiesTests.swift in Sources */,
 				9FBA89AA1E324ACE0096FEAC /* NutationTests.swift in Sources */,
 				9FBA89AF1E324C490096FEAC /* NumericTypeTests.swift in Sources */,
@@ -2827,6 +2832,7 @@
 				9F8926551E56D51B005C8932 /* EnumsTests.mm in Sources */,
 				9FBA89A61E324ACE0096FEAC /* AstronomicalCoordinatesTests.swift in Sources */,
 				9FBA89B01E324C500096FEAC /* XCTestExtensions.swift in Sources */,
+				9F60437A1E6180B200395C0E /* KPCAAAberrationTests.swift in Sources */,
 				9FBA89A91E324ACE0096FEAC /* MoonTests.swift in Sources */,
 				9F89264C1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9F89264F1E564BE0005C8932 /* PlanetaryPhenomenaTests.swift in Sources */,
