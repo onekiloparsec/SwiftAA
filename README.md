@@ -20,7 +20,7 @@ SwiftAA
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
 ![](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)
-![](https://img.shields.io/badge/coverage-28%25-yellow.svg)
+[![Codecov](https://img.shields.io/codecov/c/github/onekiloparsec/SwiftAA.svg)](https://codecov.io/gh/onekiloparsec/SwiftAA)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
 
 *The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.*
