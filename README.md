@@ -89,6 +89,8 @@ textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement
 should be careful. For a good example of a complete implementation of such transformations, see the 
 [AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html)
 
+The implementation of modern convention for coordinates, as in AstroPy, as planned for v2.1.
+
 
 Notes and Conventions
 =====================
