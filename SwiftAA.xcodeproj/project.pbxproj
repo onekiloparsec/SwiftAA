@@ -1141,11 +1141,11 @@
 		9FB755311E05F14A00EC7617 /* ScientificConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificConstants.swift; sourceTree = "<group>"; };
 		9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBaseTest.swift; sourceTree = "<group>"; };
 		9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FBA899F1E324A930096FEAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SwiftAATests-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
+		9FBA899F1E324A930096FEAC /* SwiftAATests-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-iOS-Info.plist"; path = "SwiftAATests/SwiftAATests-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
-		9FC340311D156A5D0069E7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftAATests/Info.plist; sourceTree = "<group>"; };
+		9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-macOS-Info.plist"; path = "SwiftAATests/SwiftAATests-macOS-Info.plist"; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9FC501741E0582C9005CA6FC /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
 		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
@@ -1445,8 +1445,8 @@
 		9F4277CE1E504BC700D1BA8D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9FC340311D156A5D0069E7C4 /* Info.plist */,
-				9FBA899F1E324A930096FEAC /* Info.plist */,
+				9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */,
+				9FBA899F1E324A930096FEAC /* SwiftAATests-iOS-Info.plist */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -3156,7 +3156,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MD266WQ2E2;
-				INFOPLIST_FILE = "SwiftAATests-iOS/Info.plist";
+				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3176,7 +3176,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MD266WQ2E2;
-				INFOPLIST_FILE = "SwiftAATests-iOS/Info.plist";
+				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3195,7 +3195,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SwiftAATests/Info.plist;
+				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3214,7 +3214,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SwiftAATests/Info.plist;
+				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
