@@ -77,31 +77,31 @@ extension Double {
         else { self.init(-1.0) }
     }
     
-    var asDegrees: Degree {
+    var degrees: Degree {
         return Degree(self)
     }
     
-    var asArcMinute: ArcMinute {
+    var arcminutes: ArcMinute {
         return ArcMinute(self)
     }
 
-    var asArcSecond: ArcSecond {
+    var arcseconds: ArcSecond {
         return ArcSecond(self)
     }
 
-    var asRadians: Radian {
+    var radians: Radian {
         return Radian(self)
     }
     
-    var asHours: Hour {
+    var hours: Hour {
         return Hour(self)
     }
     
-    var asMinutes: Minute {
+    var minutes: Minute {
         return Minute(self)
     }
     
-    var asSeconds: Second {
+    var seconds: Second {
         return Second(self)
     }
 }
