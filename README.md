@@ -33,9 +33,9 @@ SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation
 These algorithms also make use of the [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework making it the
 most complete and accurate collection of algorithms for all things astronomical.
 
-On top of this, SwiftAA provides *modern APIs* taking advantage of the expressiveness of Swift and its various modern
+On top of this, SwiftAA provides **modern APIs** taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. In particular, SwiftAA provides a lot strong *units safety* than C++ APIs. 
+completeness and ease of use. In particular, SwiftAA provides a lot strong **units safety** than C++ APIs. 
 
 Moreover, SwiftAA intends to provide a much improved unit tests coverage. The target is about 50% of code coverage
 for the milestone 2.0.
