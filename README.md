@@ -26,7 +26,8 @@ SwiftAA
 
 *The most comprehensive and accurate collection of astronomical algorithms written in Swift3.*
 
-Ongoing development version 2.0 written in Swift3 and using AA+ version 1.76 (released February 12th, 2017).
+Ongoing development is written in Swift3 and using AA+ version 1.76 (released February 12th, 2017). It will soon reach
+version 2.0. But it is already usable (and used) in production apps. 
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
 These algorithms also make use of the [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework making it the
@@ -34,7 +35,10 @@ most complete and accurate collection of algorithms for all things astronomical.
 
 On top of this, SwiftAA provides *modern APIs* taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. Moreover, SwiftAA intends to provide a much improved unit tests coverage.
+completeness and ease of use. In particular, SwiftAA provides a lot strong *units safety* than C++ APIs. 
+
+Moreover, SwiftAA intends to provide a much improved unit tests coverage. The target is about 50% of code coverage
+for the milestone 2.0.
 
 
 Licence
