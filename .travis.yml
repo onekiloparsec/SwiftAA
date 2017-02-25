@@ -1,8 +1,8 @@
 language: swift
 xcode_project: SwiftAA.xcodeproj
-xcode_scheme: "SwiftAA iOS"
+xcode_scheme: "SwiftAATests iOS"
 osx_image: xcode8.2
-xcode_sdk: iphonesimulator10.1
+xcode_sdk: iphonesimulator10.2
 
 cache: bundler
 before_install: 
