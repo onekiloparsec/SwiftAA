@@ -87,9 +87,9 @@ Caution
 The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the
 textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
 should be careful. For a good example of a complete implementation of such transformations, see the 
-[AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html)
+[AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html).
 
-The implementation of modern convention for coordinates, as in AstroPy, as planned for v2.1.
+The implementation of modern convention for coordinates, as in AstroPy, is planned for v2.1.
 
 
 Notes and Conventions
