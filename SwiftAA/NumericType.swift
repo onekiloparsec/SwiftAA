@@ -76,6 +76,34 @@ extension Double {
         if case .plus = sign { self.init(1.0) }
         else { self.init(-1.0) }
     }
+    
+    var asDegrees: Degree {
+        return Degree(self)
+    }
+    
+    var asArcMinute: ArcMinute {
+        return ArcMinute(self)
+    }
+
+    var asArcSecond: ArcSecond {
+        return ArcSecond(self)
+    }
+
+    var asRadians: Radian {
+        return Radian(self)
+    }
+    
+    var asHours: Hour {
+        return Hour(self)
+    }
+    
+    var asMinutes: Minute {
+        return Minute(self)
+    }
+    
+    var asSeconds: Second {
+        return Second(self)
+    }
 }
 
 extension FloatingPointSign {
