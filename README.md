@@ -23,7 +23,7 @@ SwiftAA
 ![](https://img.shields.io/badge/coverage-28%25-yellow.svg)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
 
-*The most comprehensive and accurate collection of astronomical algorithms written in Swift3.*
+*The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.*
 
 Ongoing development is written in Swift3 and using AA+ version 1.76 (released February 12th, 2017). It will soon reach
 version 2.0. But it is already usable (and used) in production apps. 
