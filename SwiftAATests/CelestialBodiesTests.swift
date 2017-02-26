@@ -25,7 +25,7 @@ class CelestialBodiesTests: XCTestCase {
         // See https://www.eso.org/sci/observing/tools/calendar/ParAng.html to check values.
         let refAngle = -77.6.degrees
         
-        AssertEqual(gro_j1655_40.parallacticAngle(geographicCoordinates: la_silla_dfosc), refAngle, accuracy: Degree(0.1))
+        AssertEqual(gro_j1655_40.parallacticAngle(with: la_silla_dfosc), refAngle, accuracy: Degree(0.1))
     }
 
     func testParalacticAngleAfterMeridian() {
@@ -42,6 +42,6 @@ class CelestialBodiesTests: XCTestCase {
         // See https://www.eso.org/sci/observing/tools/calendar/ParAng.html to check values.
         let refAngle = 74.4.degrees
         
-        AssertEqual(gro_j1655_40.parallacticAngle(geographicCoordinates: la_silla_dfosc), refAngle, accuracy: Degree(0.1))
+        AssertEqual(gro_j1655_40.parallacticAngle(with: la_silla_dfosc), refAngle, accuracy: Degree(0.1))
     }
 }
