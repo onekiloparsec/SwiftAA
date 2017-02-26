@@ -127,4 +127,9 @@ public class Sun: Object, CelestialBody {
     
     public let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
     
+    
+    public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
+        return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(with: geographicCoordinates, julianDay: self.julianDay)
+    }
 }
+
