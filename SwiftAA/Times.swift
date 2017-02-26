@@ -42,7 +42,7 @@ public struct Hour: NumericType, CustomStringConvertible {
     
     public var description: String {
         let (sign, hrs, min, sec) = self.sexagesimalNotation
-        return sign.string + String(format: "%.0fh%02.0fm%04.1fs", hrs, min, sec)
+        return sign.string + String(format: "%ih%im%06.3fs", hrs, min, sec)
     }
 }
 

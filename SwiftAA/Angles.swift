@@ -62,9 +62,10 @@ public struct Degree: NumericType, CustomStringConvertible {
     
     public var description: String {
         let (sign, deg, min, sec) = self.sexagesimalNotation
-        return sign.string + String(format: "%+.0f°%02.0f'%04.1f\"", deg, min, sec)
+        return sign.string + String(format: "%i°%i'%06.3f\"", deg, min, sec)
     }
 }
+
 
 // MARK: -
 
