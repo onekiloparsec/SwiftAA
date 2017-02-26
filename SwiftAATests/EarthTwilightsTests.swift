@@ -50,21 +50,22 @@ class EarthTests: XCTestCase {
     // See http://aa.usno.navy.mil/cgi-bin/aa_rstablew.pl?ID=AA&year=2017&task=4&place=&lon_sign=1&lon_deg=2&lon_min=21&lat_sign=1&lat_deg=48&lat_min=52&tz=0&tz_sign=-1
     // for a table for the 2017 table.
     func testValidTwilightNorthernHemisphereWestLongitude() {
-        let accuracy = 1.0.seconds.inDays
         
-        let gregorianCalendar = Calendar.gregorianGMT
-
         let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
                                           latitude: Degree(.plus, 48, 52, 0.0),
                                           altitude: Meter(30))
         
-        var date = JulianDay(year: 2017, month: 1, day: 1).date
+        let date = JulianDay(year: 2017, month: 1, day: 1).date
         let earth = Earth(julianDay: JulianDay(date))
         let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
 
+        let accuracy = 0.5.seconds.inDays
         AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 1, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
         AssertEqual(twilights.set!, JulianDay(year: 2017, month: 1, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
         
+        
+//        let gregorianCalendar = Calendar.gregorianGMT
+
 //        for _ in 1...10 {
 //            let sun = Sun(julianDay: JulianDay(date).midnight+0.5)
 //            let horiz = sun.equatorialCoordinates.makeHorizontalCoordinates(with: paris, julianDay: sun.julianDay)
