@@ -125,7 +125,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
 
         /* Compute the local sidereal time of this moment */
         let siderealTime = (GMST0(day: d) + Degree(180.0) + positiveEastwardLongitude).reduced
-        
+                
         /* Compute time when Sun is at south - in hours UT */
         let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
         let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced0
@@ -183,29 +183,30 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             return (nil, nil, .alwaysBelowAltitude)
         }
 
+        // Start at noon.
         let jd_start = self.julianDay.midnight + 0.5
         var jd_rise = jd_start
         var jd_set  = jd_start
+        
         let accuracy = 1.0.seconds.inDays
         var jd_diff  = 10*accuracy
         
-        let radiusVector = self.radiusVector
         let UT_sun_crossing_meridian = find_time_Sun_at_South(forJulianDay: julianDay, coordinates: coordinates)
         
         var security = 0
         while abs(jd_diff) > accuracy && security < 10 {
             security += 1
 
-            let arc1 = diurnalArc(forJulianDay: jd_rise, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: radiusVector)
-            let arc2 = diurnalArc(forJulianDay: jd_set, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: radiusVector)
+            let arc1 = Sun(julianDay: jd_rise).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
+            let arc2 = Sun(julianDay: jd_set).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
             
             if arc1.error != nil || arc2.error != nil {
                 security = 10
                 break
             }
             
-            let new_jd_rise = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian - arc1.value!, of: jd_rise.date).julianDay
-            jd_set = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian + arc2.value!, of: jd_set.date).julianDay
+            let new_jd_rise = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian - arc1.value!.inHours, of: jd_rise.date).julianDay
+            jd_set = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian + arc2.value!.inHours, of: jd_set.date).julianDay
 
             jd_diff = new_jd_rise-jd_rise
             jd_rise = new_jd_rise
@@ -220,71 +221,13 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     }
 }
 
-func diurnalArc(forJulianDay jd: JulianDay, sunAltitude: Degree, coordinates: GeographicCoordinates, radiusVector: AU) -> (value: Hour?, error: TwilightError?) {
-    // When the Local Sidereal Time equals the Sun's RA, then the Sun is in the south
-    
-    // Algorithm is using positive eastward longitude
-//    let positiveEastwardLongitude = -coordinates.longitude
-//    Swift.print("-- long: \(positiveEastwardLongitude)")
-
-    /* Compute d of 12h local mean solar time */
-//    let d = Double(jd.date.daysSince2000January0()) + 0.5 - positiveEastwardLongitude.value/360.0
-//    Swift.print("-- d: \(d)")
-
-    /* Compute time when Sun is at south - in hours UT */
-//    let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
-    let sun = Sun(julianDay: jd)
-    
-    /* Compute the Sun's apparent radius in degrees and do correction to upper limb, if necessary */
-    var correctedSunAltitude = sunAltitude
-    if sunAltitude == TwilightSunAltitude.riseAndSet.rawValue {
-        correctedSunAltitude = sunAltitude - Degree(0.2666 / radiusVector.value)
-    }
-    
-    // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
-    
-    let sinAlt = sin(correctedSunAltitude.inRadians.value)
-    let sinLat = sin(coordinates.latitude.inRadians.value)
-    let sinDec = sin(sun.equatorialCoordinates.declination.inRadians.value)
-    let cosLat = cos(coordinates.latitude.inRadians.value)
-    let cosDec = cos(sun.equatorialCoordinates.declination.inRadians.value)
-    
-    let cost = (sinAlt - sinLat * sinDec) / (cosLat * cosDec)
-    
-    if (cost >= 1.0 ) {
-        return (nil, .alwaysBelowAltitude)
-    }
-    else if (cost <= -1.0) {
-        return (nil, .alwaysAboveAltitude)
-    }
-    else {
-        return (Radian(acos(cost)).inHours, nil)
-    }
-}
-
 func find_time_Sun_at_South(forJulianDay jd: JulianDay, coordinates: GeographicCoordinates) -> Hour {
-    // Algorithm is using positive eastward longitude
-    let positiveEastwardLongitude = -coordinates.longitude
-    
-    /* Compute d of 12h local mean solar time */
-//    let d = Double(jd.date.daysSince2000January0()) + 0.5 - positiveEastwardLongitude.value/360.0
-    
-//    /* Compute the local sidereal time of this moment */
-//    let siderealTime = (GMST0(day: d) + Degree(180.0) + positiveEastwardLongitude).reduced
-    
-//    let siderealTime = jd.meanLocalSiderealTime(longitude: coordinates.longitude).inDegrees.reduced
-//    Swift.print("-- siderealTime: \(siderealTime)")
-
-//    let jd_local_noon = StandardEpoch_J2000_0 + JulianDay(d)
-    let jd_local_noon_2 = jd.midnight - positiveEastwardLongitude.inHours.inDays
-    let siderealTime_2 = jd_local_noon_2.meanLocalSiderealTime(longitude: coordinates.longitude)
-    
-    /* Compute time when Sun is at south - in hours UT */
-//    let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
-    let sun = Sun(julianDay: jd_local_noon_2)
-    let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced0
-    
+    // Somehow, there is a 0.5 day shift (midnight instead of noon) compared to explanations given by Paul Schylter.
     // See http://www.stjarnhimlen.se/comp/riset.html
-    // divide by 15.04107 instead of 15.0, this accounts for the difference between the solar day and the sidereal day
-    return Hour((siderealTime_2.inDegrees-sunRa).reduced0.value/15.04107)
+    // But the values are correct like this.
+    let localMidnight = jd.localMidnight(longitude: coordinates.longitude)
+    let siderealTime = localMidnight.meanLocalSiderealTime(longitude: coordinates.longitude)
+    let sun = Sun(julianDay: localMidnight)
+    let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced0
+    return Hour((siderealTime.inDegrees-sunRa).reduced0.value/15.04107)    
 }
