@@ -116,8 +116,28 @@ class JulianDayTest: XCTestCase {
     func testMidnight() {
         let jd1 = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
         AssertEqual(jd1.midnight, JulianDay(year: 2016, month: 12, day: 20))
+        
         let jd2 = JulianDay(year: 2016, month: 12, day: 19, hour: 23, minute: 13, second: 39.1)
         AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
+    }
+    
+    func testLocalMidnight() {
+        let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
+        
+        let longitude1 = 0.0.degrees
+        AssertEqual(jd.localMidnight(longitude: longitude1), jd.midnight)
+        
+        let longitude2 = 15.0.degrees
+        AssertEqual(jd.localMidnight(longitude: longitude2), jd.midnight + 1.0.hours.inDays)
+        
+        let longitude3 = -15.0.degrees
+        AssertEqual(jd.localMidnight(longitude: longitude3), jd.midnight - 1.0.hours.inDays)
+        
+        let longitude4 = 90.0.degrees
+        AssertEqual(jd.localMidnight(longitude: longitude4), jd.midnight + 6.0.hours.inDays)
+        
+        let longitude5 = -90.0.degrees
+        AssertEqual(jd.localMidnight(longitude: longitude5), jd.midnight - 6.0.hours.inDays)
     }
     
     // See AA p.78
