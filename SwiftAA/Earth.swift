@@ -108,7 +108,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      
      - returns: A tuple containing the julian days of sunrise and sunset, if meaningful, and an error code, in case.
      */
-    func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, set: JulianDay?, error: TwilightError?) {
+    func twilightsLowAccuracy(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, set: JulianDay?, error: TwilightError?) {
+        
         // When the Local Sidereal Time equals the Sun's RA, then the Sun is in the south
 
         // Algorithm is using positive eastward longitude
@@ -156,8 +157,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
             let setHour  = time_Sun_at_South + Radian(acos(cost)).inHours
 
             let date = self.julianDay.date
-            riseDate = Calendar.gregorianGMT.date(bySettingHour: riseHour.value, of: date)
-            setDate = Calendar.gregorianGMT.date(bySettingHour: setHour.value, of: date)
+            riseDate = Calendar.gregorianGMT.date(bySettingHour: riseHour, of: date)
+            setDate = Calendar.gregorianGMT.date(bySettingHour: setHour, of: date)
         }
         
         return (riseDate?.julianDay, setDate?.julianDay, error)
