@@ -9,9 +9,13 @@
 import Foundation
 
 public enum TwilightSunAltitude: Degree {
-    case riseAndSet = -0.5833333333333333333333 // -35/60
+    case diskCenterOnGeometricHorizon = 0
+    case upperLimbOnGeometricHorizon = -0.25
+    case riseAndSet = -0.5833333333333333333333 // -35/60 // diskCenterOnHorizonWithRefraction
+    case upperLimbOnHorizonWithRefraction = -0.833
     case civilian = -6.0
     case nautical = -12.0
+    case amateurAstronomical = -15.0
     case astronomical = -18.0
 }
 
