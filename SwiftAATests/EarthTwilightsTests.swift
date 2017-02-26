@@ -65,28 +65,28 @@ class EarthTests: XCTestCase {
         AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 1, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
         AssertEqual(twilights.set!, JulianDay(year: 2017, month: 1, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
         
-        for _ in 1...10 {
+//        for _ in 1...10 {
 //            let sun = Sun(julianDay: JulianDay(date).midnight+0.5)
 //            let horiz = sun.equatorialCoordinates.makeHorizontalCoordinates(with: paris, julianDay: sun.julianDay)
 //            print("alt: \(horiz.altitude) \(horiz.azimuth)")
             
-            let earth = Earth(julianDay: JulianDay(date))
-            
-            let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-            
-            if let rise = twilights.rise {
-                print("dawn: \(rise.date)")
-            } else {
-                print("dawn: ---")
-            }
-            if let set = twilights.set {
-                print("dusk: \(set.date)")
-            } else {
-                print("dusk: ---")
-            }
-            
-            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
-        }
+//            let earth = Earth(julianDay: JulianDay(date))
+//            
+//            let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+//            
+//            if let rise = twilights.rise {
+//                print("dawn: \(rise.date)")
+//            } else {
+//                print("dawn: ---")
+//            }
+//            if let set = twilights.set {
+//                print("dusk: \(set.date)")
+//            } else {
+//                print("dusk: ---")
+//            }
+//            
+//            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
+//        }
 
 //        let earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 1))
 //        

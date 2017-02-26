@@ -183,20 +183,31 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         var jd_rise = jd_start
         var jd_set  = jd_start
         let accuracy = 1.0.seconds.inDays
+        var jd_diff  = 10*accuracy
         
+        let radiusVector = self.radiusVector
         let UT_sun_crossing_meridian = find_time_Sun_at_South(forJulianDay: julianDay, coordinates: coordinates)
         
         var security = 0
-        while (jd_start == jd_rise || abs(jd_start-jd_rise) > accuracy) && security < 10 {
+        while abs(jd_diff) > accuracy && security < 10 {
             security += 1
-            let arc1 = diurnalArc(forJulianDay: jd_rise, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: self.radiusVector)
-            jd_rise = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian - arc1.value!, of: jd_rise.date).julianDay
+
+            let arc1 = diurnalArc(forJulianDay: jd_rise, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: radiusVector)
+            let arc2 = diurnalArc(forJulianDay: jd_set, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: radiusVector)
             
-            let arc2 = diurnalArc(forJulianDay: jd_set, sunAltitude: sunAltitude, coordinates: coordinates, radiusVector: self.radiusVector)
+            if arc1.error != nil || arc2.error != nil {
+                security = 10
+                break
+            }
+            
+            let new_jd_rise = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian - arc1.value!, of: jd_rise.date).julianDay
             jd_set = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian + arc2.value!, of: jd_set.date).julianDay
+
+            jd_diff = new_jd_rise-jd_rise
+            jd_rise = new_jd_rise
         }
         
-        if security == 9 {
+        if security >= 9 {
             return (nil, nil, .accuracyNotReached)
         }
         else {
@@ -205,7 +216,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     }
 }
 
-func diurnalArc(forJulianDay jd: JulianDay, sunAltitude: Degree, coordinates: GeographicCoordinates, radiusVector: AU) -> (value: Hour?, TwilightError?) {
+func diurnalArc(forJulianDay jd: JulianDay, sunAltitude: Degree, coordinates: GeographicCoordinates, radiusVector: AU) -> (value: Hour?, error: TwilightError?) {
     // When the Local Sidereal Time equals the Sun's RA, then the Sun is in the south
     
     // Algorithm is using positive eastward longitude
