@@ -9,7 +9,7 @@
 import Foundation
 
 
-/// Basic properties of an orbiting object. Used by solar system planets, and the Earth Moon, and the Sun.
+/// Basic properties of an orbiting object. Used by solar system planets, and the Earth' Moon, and the Sun.
 /// Default implementation for planets is located in PlanetaryBase extension.
 
 public protocol CelestialBody: ObjectBase {
