@@ -85,12 +85,12 @@ extension Calendar {
         return calendar
     }()
     
-    func date(bySettingHour hour: Double, of date: Date) -> Date {
+    func date(bySettingHour hour: Hour, of date: Date) -> Date {
         // No check for when hour < 0???
-        let h = abs(hour.rounded(.towardZero))
-        let m = ((abs(hour) - h) * 60.0).rounded(.towardZero)
-        let s = (((abs(hour) - h) * 60.0 - m) * 60.0).rounded(.towardZero)
-        let nano = hour - h - m*60 - s*3600
+        let h = abs(hour.value.rounded(.towardZero))
+        let m = ((abs(hour.value) - h) * 60.0).rounded(.towardZero)
+        let s = (((abs(hour.value) - h) * 60.0 - m) * 60.0).rounded(.towardZero)
+        let nano = hour.value - h - m*60 - s*3600
         let newDate = self.date(bySettingHour: Int(h), minute: Int(m), second: Int(s), of: date)!
         return newDate.addingTimeInterval(nano/1e9)
     }
