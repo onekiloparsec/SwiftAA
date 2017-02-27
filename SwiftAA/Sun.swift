@@ -122,7 +122,7 @@ public class Sun: Object, CelestialBody {
     /// - returns: The equation of time, in days.
     public func equationOfTime() -> Day {
         // KPCAA result is in minutes of time.
-        return KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / 24.0 / 60.0
+        return Day(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / (24.0 * 60.0))
     }
     
     public let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101

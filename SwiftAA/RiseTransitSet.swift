@@ -73,9 +73,9 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 apparentRiseSetAltitude.value)
     
     let midnight = julianDay.midnight
-    let rise = midnight + Hour(details.Rise).inDays
-    let transit = midnight + Hour(details.Transit).inDays
-    let set = midnight + Hour(details.Set).inDays
+    let rise = midnight + Hour(details.Rise).inJulianDays
+    let transit = midnight + Hour(details.Transit).inJulianDays
+    let set = midnight + Hour(details.Set).inJulianDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: rise,

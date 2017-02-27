@@ -93,6 +93,14 @@ extension Double {
         return Radian(self)
     }
     
+    var julianDays: JulianDay {
+        return JulianDay(self)
+    }
+
+    var days: Day {
+        return Day(self)
+    }
+
     var hours: Hour {
         return Hour(self)
     }

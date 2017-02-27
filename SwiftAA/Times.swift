@@ -8,6 +8,21 @@
 
 import Foundation
 
+// MARK: -
+
+public struct Day: NumericType, CustomStringConvertible {
+    public let value: Double
+    public init(_ value: Double) {
+        self.value = value
+    }
+    
+    public var inHours: Hour { return Hour(value * 24.0) }
+    public var inMinutes: Minute { return Minute(value * 24.0 * 60.0) }
+    public var inSeconds: Second { return Second(value * 24.0 * 3600.0) }
+    public var inJulianDays: JulianDay { return JulianDay(value) }
+    public var description: String { return String(format: "%.2f d", value) }
+}
+
 public struct Hour: NumericType, CustomStringConvertible {
     public let value: Double
     public init(_ value: Double) {
@@ -21,10 +36,11 @@ public struct Hour: NumericType, CustomStringConvertible {
         self.init(Double(sign) * (absHour + absMinutes + absSeconds))
     }
     
+    public var inDays: Day { return Day(value / 24.0) }
     public var inMinutes: Minute { return Minute(value * 60.0) }
     public var inSeconds: Second { return Second(value * 3600.0) }
     public var inDegrees: Degree { return Degree(value * 15.0) }
-    public var inDays: JulianDay { return JulianDay(value / 24.0) }
+    public var inJulianDays: JulianDay { return JulianDay(value / 24.0) }
     
     public var sexagesimalNotation: SexagesimalNotation {
         get {
@@ -54,10 +70,11 @@ public struct Minute: NumericType, CustomStringConvertible {
         self.value = value
     }
     
+    public var inDays: Day { return Day(value / (24.0 * 60.0)) }
     public var inHours: Hour { return Hour(value / 60.0) }
     public var inSeconds: Second { return Second(value * 60.0) }
     public var inDegrees: Degree { return Degree(value / 60.0 * 15.0) }
-    public var inDays: JulianDay { return JulianDay(value / 1440.0) }
+    public var inJulianDays: JulianDay { return JulianDay(value / 1440.0) }
     
     /// Returns self reduced to 0..<60 range
     public var reduced: Minute { return Minute(value.positiveTruncatingRemainder(dividingBy: 60.0)) }
@@ -73,10 +90,11 @@ public struct Second: NumericType, CustomStringConvertible {
         self.value = value
     }
     
+    public var inDays: Day { return Day(value / (24.0 * 3600.0)) }
     public var inHours: Hour { return Hour(value / 3600.0) }
     public var inMinutes: Minute { return Minute(value / 60.0) }
     public var inDegrees: Degree { return Degree(value / 3600.0 * 15.0) }
-    public var inDays: JulianDay { return JulianDay(value / 86400.0) }
+    public var inJulianDays: JulianDay { return JulianDay(value / 86400.0) }
     
     /// Returns self reduced to 0..<60 range
     public var reduced: Second { return Second(value.positiveTruncatingRemainder(dividingBy: 60.0)) }

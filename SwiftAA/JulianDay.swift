@@ -52,7 +52,7 @@ public extension JulianDay {
     public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
     public func localMidnight(longitude: Degree) -> JulianDay {
-        return self.midnight + longitude.inHours.inDays
+        return self.midnight + longitude.inHours.inJulianDays
     }
     
     /**

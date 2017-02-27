@@ -10,8 +10,8 @@ import Foundation
 
 public let ModifiedJulianDayZero: Double = 2400000.5
 
-public let JulianYear: Day = 365.25            // See p.133 of AA.
-public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
+public let JulianYear: Double = 365.25            // See p.133 of AA.
+public let BesselianYear: Double = 365.2421988    // See p.133 of AA.
 
 public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
 
@@ -23,7 +23,6 @@ public let DEG2RAD = 0.017453292519943295769236907684886
 
 public typealias Parsec=Double // parsecs
 public typealias Kilogram=Double
-public typealias Day=Double
 public typealias Magnitude=Double
 public typealias Celsius=Double
 public typealias Millibar=Double

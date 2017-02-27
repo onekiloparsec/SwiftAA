@@ -188,7 +188,7 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         var jd_rise = jd_start
         var jd_set  = jd_start
         
-        let accuracy = 1.0.seconds.inDays
+        let accuracy = 1.0.seconds.inJulianDays
         var jd_diff  = 10*accuracy
         
         var security = 0
