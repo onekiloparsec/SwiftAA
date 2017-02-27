@@ -195,8 +195,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         while abs(jd_diff) > accuracy && security < 10 {
             security += 1
             
-            let ut1 = find_time_Sun_at_South_Schylter(forJulianDay: jd_rise, coordinates: coordinates)
-            let ut2 = find_time_Sun_at_South_Schylter(forJulianDay: jd_set, coordinates: coordinates)
+            let ut1 = find_time_Sun_at_South_SwiftAA(forJulianDay: jd_rise, coordinates: coordinates)
+            let ut2 = find_time_Sun_at_South_SwiftAA(forJulianDay: jd_set, coordinates: coordinates)
 
             let arc1 = Sun(julianDay: jd_rise).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
             let arc2 = Sun(julianDay: jd_set).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
