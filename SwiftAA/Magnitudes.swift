@@ -10,15 +10,15 @@ import Foundation
 
 public extension Magnitude {
     public func combine(withMagnitude m2: Magnitude) -> Magnitude {
-        return KPCAAStellarMagnitudes_CombinedMagnitude(self, m2)
+        return Magnitude(KPCAAStellarMagnitudes_CombinedMagnitude(self.value, m2.value))
     }
     
     public func brightnessRatio(withMagnitude m2: Magnitude) -> Double {
-        return KPCAAStellarMagnitudes_BrightnessRatio(self, m2)
+        return KPCAAStellarMagnitudes_BrightnessRatio(self.value, m2.value)
     }
 
     public func distance(forAbsoluteMagnitude M: Magnitude, visualAbsorption Av: Double = 0.0) -> Parsec {
-        return pow(10.0, (self + 5.0 - M - Av)/5.0)
+        return Parsec(pow(10.0, (self.value + 5.0 - M.value - Av)/5.0))
     }
     
     static public func magnitudeDifference(forBrightnessRatio r: Double) -> Double {

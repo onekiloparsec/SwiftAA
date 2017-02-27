@@ -10,10 +10,10 @@ import Foundation
 
 /// See AA p. 391. Result is given in kilometers
 public func asteroidDiameter(magnitude: Magnitude, albedo: Double) -> Meter {
-    return Meter(KPCAADiameters_AsteroidDiameter(magnitude, albedo) * 1000.0)
+    return Meter(KPCAADiameters_AsteroidDiameter(magnitude.value, albedo) * 1000.0)
 }
 
 /// See AA p. 391. Result is given in kilometers
 public func apparentAsteroidDiameter(magnitude: Magnitude, albedo: Double) -> Meter {
-    return Meter(KPCAADiameters_ApparentAsteroidDiameter(magnitude, albedo) * 1000.0)
+    return Meter(KPCAADiameters_ApparentAsteroidDiameter(magnitude.value, albedo) * 1000.0)
 }
