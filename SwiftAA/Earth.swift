@@ -191,11 +191,12 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         let accuracy = 1.0.seconds.inDays
         var jd_diff  = 10*accuracy
         
-        let UT_sun_crossing_meridian = find_time_Sun_at_South(forJulianDay: julianDay, coordinates: coordinates)
-        
         var security = 0
         while abs(jd_diff) > accuracy && security < 10 {
             security += 1
+            
+            let ut1 = find_time_Sun_at_South_Schylter(forJulianDay: jd_rise, coordinates: coordinates)
+            let ut2 = find_time_Sun_at_South_Schylter(forJulianDay: jd_set, coordinates: coordinates)
 
             let arc1 = Sun(julianDay: jd_rise).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
             let arc2 = Sun(julianDay: jd_set).diurnalArcAngle(forObjectAltitude: sunAltitude, coordinates: coordinates)
@@ -205,8 +206,8 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
                 break
             }
             
-            let new_jd_rise = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian - arc1.value!.inHours, of: jd_rise.date).julianDay
-            jd_set = Calendar.gregorianGMT.date(bySettingHour: UT_sun_crossing_meridian + arc2.value!.inHours, of: jd_set.date).julianDay
+            let new_jd_rise = Calendar.gregorianGMT.date(bySettingHour: ut1 - arc1.value!.inHours, of: jd_rise.date).julianDay
+            jd_set = Calendar.gregorianGMT.date(bySettingHour: ut2 + arc2.value!.inHours, of: jd_set.date).julianDay
 
             jd_diff = new_jd_rise-jd_rise
             jd_rise = new_jd_rise
@@ -221,7 +222,16 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     }
 }
 
-func find_time_Sun_at_South(forJulianDay jd: JulianDay, coordinates: GeographicCoordinates) -> Hour {
+func find_time_Sun_at_South_Schylter(forJulianDay jd: JulianDay, coordinates: GeographicCoordinates) -> Hour {
+    let positiveEastwardLongitude = -coordinates.longitude
+    let d = Double(jd.date.daysSince2000January0()) + 0.5 - positiveEastwardLongitude.value/360.0
+    let siderealTime = (GMST0(day: d) + Degree(180.0) + positiveEastwardLongitude).reduced
+    let sun = Sun(julianDay: StandardEpoch_J2000_0 + JulianDay(d))
+    let sunRa = sun.equatorialCoordinates.rightAscension.inDegrees.reduced0
+    return Hour(12.0 - ((siderealTime - sunRa).reduced0).value/15.04107)
+}
+
+func find_time_Sun_at_South_SwiftAA(forJulianDay jd: JulianDay, coordinates: GeographicCoordinates) -> Hour {
     // Somehow, there is a 0.5 day shift (midnight instead of noon) compared to explanations given by Paul Schylter.
     // See http://www.stjarnhimlen.se/comp/riset.html
     // But the values are correct like this.
