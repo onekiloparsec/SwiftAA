@@ -31,7 +31,7 @@ class JulianDayTest: XCTestCase {
         components.nanosecond = 500000000
         let date = Calendar.gregorianGMT.date(from: components)!
         let jd = JulianDay(2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0)
-        AssertEqual(date.julianDay, jd, accuracy: Second(0.001).inDays)
+        AssertEqual(date.julianDay, jd, accuracy: Second(0.001).inJulianDays)
     }
 
     func testJulianDayToDateComponents() {
@@ -60,7 +60,7 @@ class JulianDayTest: XCTestCase {
         let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)
         testJulian(components, jd)
         let jd2 = JulianDay(year: 2016, month: 12, day: 21, hour: 1, minute: 4, second: 9.1035)
-        AssertEqual(jd, jd2, accuracy: Second(0.001).inDays)
+        AssertEqual(jd, jd2, accuracy: Second(0.001).inJulianDays)
     }
     
     func testJulian1980() {
@@ -84,8 +84,8 @@ class JulianDayTest: XCTestCase {
         let accuracy = TimeInterval(0.001)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
-        AssertEqual(jd, jd1, accuracy: Second(accuracy).inDays)
-        AssertEqual(jd, jd2, accuracy: Second(accuracy).inDays)
+        AssertEqual(jd, jd1, accuracy: Second(accuracy).inJulianDays)
+        AssertEqual(jd, jd2, accuracy: Second(accuracy).inJulianDays)
     }
     
     func testMeanGreenwichSiderealTime1() { // See AA p.88
@@ -128,16 +128,16 @@ class JulianDayTest: XCTestCase {
         AssertEqual(jd.localMidnight(longitude: longitude1), jd.midnight)
         
         let longitude2 = 15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude2), jd.midnight + 1.0.hours.inDays)
+        AssertEqual(jd.localMidnight(longitude: longitude2), jd.midnight + 1.0.hours.inJulianDays)
         
         let longitude3 = -15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude3), jd.midnight - 1.0.hours.inDays)
+        AssertEqual(jd.localMidnight(longitude: longitude3), jd.midnight - 1.0.hours.inJulianDays)
         
         let longitude4 = 90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude4), jd.midnight + 6.0.hours.inDays)
+        AssertEqual(jd.localMidnight(longitude: longitude4), jd.midnight + 6.0.hours.inJulianDays)
         
         let longitude5 = -90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude5), jd.midnight - 6.0.hours.inDays)
+        AssertEqual(jd.localMidnight(longitude: longitude5), jd.midnight - 6.0.hours.inJulianDays)
     }
     
     // See AA p.78

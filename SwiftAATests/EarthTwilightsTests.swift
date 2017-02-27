@@ -53,7 +53,7 @@ class EarthTests: XCTestCase {
                                           latitude: Degree(.plus, 48, 52, 0.0),
                                           altitude: Meter(30))
         
-        let accuracy = 0.5.seconds.inDays
+        let accuracy = 0.5.seconds.inJulianDays
 
         // See http://aa.usno.navy.mil/cgi-bin/aa_rstablew.pl?ID=AA&year=2017&task=4&place=&lon_sign=1&lon_deg=2&lon_min=21&lat_sign=1&lat_deg=48&lat_min=52&tz=0&tz_sign=-1
         // for a reference table for the 2017 year

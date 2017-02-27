@@ -17,7 +17,7 @@ class RiseTransitSetTests: XCTestCase {
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
         let venus = Venus(julianDay: JulianDay(year: 1988, month: 3, day: 20, hour: 1, minute: 5, second: 38))
         let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: boston)
-        let accuracy = Minute(1.0).inDays
+        let accuracy = Minute(1.0).inJulianDays
         let expectedRise = JulianDay(year: 1988, month: 03, day: 20, hour: 12, minute: 25)
         AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
         let expectedTransit = JulianDay(year: 1988, month: 03, day: 20, hour: 19, minute: 41)
@@ -29,7 +29,7 @@ class RiseTransitSetTests: XCTestCase {
     func testVenusAtMoscow2016() { // Data from SkySafari
         let venus = Venus(julianDay: JulianDay(year: 2016, month: 12, day: 27, hour: 6, minute: 29, second: 55))
         let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: moscow)
-        let accuracy = Minute(2.0).inDays
+        let accuracy = Minute(2.0).inJulianDays
         let expectedRise = JulianDay(year: 2016, month: 12, day: 27, hour: 8, minute: 18, second: 13)
         AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
         let expectedTransit = JulianDay(year: 2016, month: 12, day: 27, hour: 12, minute: 45, second: 0)
@@ -41,7 +41,7 @@ class RiseTransitSetTests: XCTestCase {
     func testSunAtMoscow2016() { // Data from SkySafari
         let sun = Sun(julianDay: JulianDay(year: 2016, month: 12, day: 27, hour: 3, minute: 1, second: 34))
         let details = RiseTransitSetTimes(celestialBody: sun, geographicCoordinates: moscow)
-        let accuracy = Minute(2.0).inDays
+        let accuracy = Minute(2.0).inJulianDays
         let expectedRise = JulianDay(year: 2016, month: 12, day: 27, hour: 5, minute: 58, second: 24)
         AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
         let expectedTransit = JulianDay(year: 2016, month: 12, day: 27, hour: 9, minute: 29, second: 41)
@@ -53,7 +53,7 @@ class RiseTransitSetTests: XCTestCase {
     func testMoonAtMoscow2016() { // Data from SkySafari
         let moon = Moon(julianDay: JulianDay(year: 2016, month: 12, day: 27, hour: 23, minute: 10, second: 14))
         let details = RiseTransitSetTimes(celestialBody: moon, geographicCoordinates: moscow)
-        let accuracy = Minute(2.0).inDays
+        let accuracy = Minute(2.0).inJulianDays
         let expectedRise = JulianDay(year: 2016, month: 12, day: 27, hour: 3, minute: 38, second: 32)
         AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
         let expectedTransit = JulianDay(year: 2016, month: 12, day: 27, hour: 7, minute: 57, second: 43)
