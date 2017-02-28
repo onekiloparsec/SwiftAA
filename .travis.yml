@@ -1,4 +1,4 @@
-language: swift
+language: objective-c
 xcode_project: SwiftAA.xcodeproj
 xcode_scheme: SwiftAA-iOS
 osx_image: xcode8.1
