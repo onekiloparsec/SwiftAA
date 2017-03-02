@@ -8,49 +8,104 @@
 
 import Foundation
 
+
+/// The Julian Day if a continuous count of days and fractions thereof from the beginning of the year -4712.
+/// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.
+/// Julian Day structs conform to SwiftAA Numeric type protocol.
 public struct JulianDay: NumericType {
     
+    /// The Julian Day value
     public let value: Double
     
+    /// Returns a Julian Day struct initialized to contain the given value.
+    ///
+    /// - Parameter value: The value for the new Julian Day.
     public init(_ value: Double) {
         self.value = value
     }
     
+    /// Returns a Julian Day struct initialized from a given Gregorian calendar date, in the UT reference frame,
+    /// provided by its date components. Hour, minute and second are optional (and set to 0 by default).
+    ///
+    /// - Parameters:
+    ///   - year: The year of the date.
+    ///   - month: The month of the date (january = 1)
+    ///   - day: The day of the date
+    ///   - hour: The hour of the date
+    ///   - minute: The minute of the date
+    ///   - second: The second of the date. Precision goes to the nanosecond.
     public init(year: Int, month: Int, day: Int, hour: Int = 0, minute: Int = 0, second: Double = 0.0) {
         let aaDate = KPCAADate(year: year, month: month, day: Double(day), hour: Double(hour), minute: Double(minute), second: second, usingGregorianCalendar: true)!
         self.init(aaDate.julian())
     }
     
+    /// Returns a Julian Day struct initialized from a given Gregorian calendar date, in the UT reference frame,
+    /// provided as a Date instance.
+    ///
+    /// - Parameter date: The date object.
     public init(_ date: Date) {
         let components = Calendar.gregorianGMT.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date)
         let decimalSeconds = Double(components.second!) + Double(components.nanosecond!)/1e9
         self.init(year: components.year!, month: components.month!, day: components.day!, hour: components.hour!, minute: components.minute!, second: decimalSeconds)
     }
     
+    /// Returns a Julian Day struct initialized from a Modified Julian Day (MJD) value.
+    ///
+    /// - Parameter modified: The Modified Julian Day value.
+    public init(modified: Double) {
+        self.init(modified + ModifiedJulianDayZero)
+    }
 }
 
 public extension JulianDay {
     /**
-     Transform a julian day into a Date.
+     Returns a new Date object corresponding to the Julian Day value.
      
-     - returns: The corresponding Date instance.
+     - returns: A new Date object, in the gregorian calendar, corresponding to to the Julian Day value.
      */
     public var date: Date {
         let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
         let decimalSeconds = aaDate.second()
         let roundedSeconds = decimalSeconds.rounded(.towardZero)
         let nanoseconds = (decimalSeconds - roundedSeconds) * 1e9
-        let components = DateComponents(year: aaDate.year(), month: aaDate.month(), day: aaDate.day(), hour: aaDate.hour(), minute: aaDate.minute(), second: Int(roundedSeconds), nanosecond: Int(nanoseconds))
+        let components = DateComponents(year: aaDate.year(),
+                                        month: aaDate.month(), 
+                                        day: aaDate.day(),
+                                        hour: aaDate.hour(),
+                                        minute: aaDate.minute(),
+                                        second: Int(roundedSeconds),
+                                        nanosecond: Int(nanoseconds))
+        
         let date = Calendar.gregorianGMT.date(from: components)!
         return date
     }
     
-    public var modified: JulianDay {
-        get { return JulianDay(self.value - ModifiedJulianDayZero) }
+    /**
+     Returns the so-called Modified Julian Day corresponding to the Julian Day value.
+     Contrary to the JD, the Modified Julian Day begins at Greenwhich mean midnight.
+     It is equal to JD - 2400 000.5
+     
+     - returns: A Double value, corresponding to to the modified Julian Day value.
+     */
+    public var modified: Double {
+        get { return self.value - ModifiedJulianDayZero }
     }
     
+
+    /**
+     Returns the Julian Day corresponding to the Greenwhich midnight before the actual value.
+     
+     - returns: A Julian Day struct, corresponding to the Greenwhich midnight before the actual value.
+     */
     public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
+    /**
+     Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude.
+     It is a direct and linear function of the longitude, and makes reference to time zone whatsoever.
+     Once transformed to a Date object, it will rarely corresponds to the normal "midnight" date & hour.
+     
+     - returns: A Julian Day struct, corresponding to the geometric midnight local to a given Earth longitude.
+     */
     public func localMidnight(longitude: Degree) -> JulianDay {
         return self.midnight + longitude.inHours.inJulianDays
     }
@@ -92,6 +147,11 @@ public extension JulianDay {
     
     // MARK: Dynamical Times
     
+    
+    /// Returns the difference bewteeen TD (the 'Time Dynamical'), and UT (the Universal Time).
+    /// TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate naming...).
+    ///
+    /// - Returns: The number of seconds (and fraction of thereof) between TD and UT.
     public func deltaT() -> Second {
         return Second(KPCAADynamicalTime_DeltaT(self.value))
     }
@@ -99,7 +159,7 @@ public extension JulianDay {
     public func cumulativeLeapSeconds() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
     }
-
+    
     public func TTtoUTC() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2UTC(self.value))
     }
@@ -131,6 +191,8 @@ public extension JulianDay {
 
   
 extension JulianDay: CustomStringConvertible {
+    
+    /// The description of the Julian Day.
     public var description: String {
         switch self {
         case StandardEpoch_J2000_0: return "J2000.0"
