@@ -41,6 +41,12 @@ Moreover, SwiftAA intends to provide a much improved unit tests coverage. The ta
 for the milestone 2.0.
 
 
+Documentation
+=======
+
+The documentation generated from the code itself is available at [http://onekiloparsec.github.io/SwiftAA](http://onekiloparsec.github.io/SwiftAA).
+
+
 Licence
 =======
 
