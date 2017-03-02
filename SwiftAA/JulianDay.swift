@@ -9,7 +9,7 @@
 import Foundation
 
 
-/// The Julian Day if a continuous count of days and fractions thereof from the beginning of the year -4712.
+/// The Julian Day is a continuous count of days and fractions thereof from the beginning of the year -4712.
 /// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.
 /// Julian Day structs conform to SwiftAA Numeric type protocol.
 public struct JulianDay: NumericType {
