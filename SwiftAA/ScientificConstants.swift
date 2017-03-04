@@ -55,8 +55,8 @@ public enum MoonPhase {
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
-public extension KPCAAPlanet {
-    static func fromString(_ string: String) -> KPCAAPlanet {
+extension KPCAAPlanet: CustomStringConvertible {
+    public static func fromString(_ string: String) -> KPCAAPlanet {
         if string == "Mercury" {
             return .Mercury
         }
@@ -89,7 +89,7 @@ public extension KPCAAPlanet {
         }
     }
     
-    func toString() -> String {
+    public var description: String {
         switch self {
         case .Mercury:
             return "Mercury"
