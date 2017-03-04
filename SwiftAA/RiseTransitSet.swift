@@ -101,15 +101,17 @@ public class RiseTransitSetTimes {
                               equCoords2: body2.apparentEquatorialCoordinates,
                               equCoords3: body3.apparentEquatorialCoordinates,
                               geoCoords: self.geographicCoordinates,
-                              apparentRiseSetAltitude: self.celestialBody.apparentRiseSetAltitude)
-        }()
+                              apparentRiseSetAltitude: self.riseSetAltitude)
+    }()
     
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
     public fileprivate(set) var celestialBody: CelestialBody
+    private let riseSetAltitude: Degree
     
-    required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates) {
+    required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates,  riseSetAltitude: Degree? = nil) {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
+        self.riseSetAltitude = riseSetAltitude ?? celestialBody.apparentRiseSetAltitude
     }
     
     public var riseTime: JulianDay? {
