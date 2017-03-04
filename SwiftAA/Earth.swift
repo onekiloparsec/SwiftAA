@@ -107,20 +107,23 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     /// - Returns: The rise, transit and set times, in Julian Day, and an error, if relevant.
     func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, transit: JulianDay?, set: JulianDay?, error: CelestialBodyTransitError?) {
         
+        var error: CelestialBodyTransitError? = nil
+        
         let jd_midnight = self.julianDay.localMidnight(longitude: coordinates.longitude)
         let sun_midnight = Sun(julianDay: jd_midnight)
         if sun_midnight.makeHorizontalCoordinates(with: coordinates).altitude > sunAltitude {
-            return (nil, nil, nil, .alwaysAboveAltitude)
+            error = .alwaysAboveAltitude
         }
 
         let jd_noon = self.julianDay.localMidnight(longitude: coordinates.longitude) + 0.5
         let sun_noon = Sun(julianDay: jd_noon)
         if sun_noon.makeHorizontalCoordinates(with: coordinates).altitude < sunAltitude {
-            return (nil, nil, nil, .alwaysBelowAltitude)
+            error = .alwaysBelowAltitude
         }
 
-        let times = RiseTransitSetTimes(celestialBody: self as! CelestialBody, geographicCoordinates: coordinates, riseSetAltitude: sunAltitude)
-        return (times.riseTime, times.transitTime, times.setTime, nil)
+        let sun = Sun(julianDay: self.julianDay)
+        let times = RiseTransitSetTimes(celestialBody: sun, geographicCoordinates: coordinates, riseSetAltitude: sunAltitude)
+        return (times.riseTime, times.transitTime, times.setTime, error)
     }
     
     

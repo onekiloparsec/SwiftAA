@@ -11,7 +11,7 @@ import XCTest
 
 class EarthTests: XCTestCase {
     
-    func testValidLowAccuracyTwilightNorthernHemisphereWestLongitude() {
+    func testValidTwilightNorthernHemisphereWestLongitude() {
         
         let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
                                           latitude: Degree(.plus, 48, 52, 0.0),
@@ -19,9 +19,10 @@ class EarthTests: XCTestCase {
         
         let earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 30))
         
-        let twilights = earth.twilightsLowAccuracy(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
         
         XCTAssertNotNil(twilights.rise)
+        XCTAssertNotNil(twilights.transit)
         XCTAssertNotNil(twilights.set)
         XCTAssertNil(twilights.error)
 
@@ -36,9 +37,10 @@ class EarthTests: XCTestCase {
         
         let earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 30))
         
-        let twilights = earth.twilightsLowAccuracy(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: parisSouth)
+        let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: parisSouth)
         
         XCTAssertNotNil(twilights.rise)
+        XCTAssertNotNil(twilights.transit)
         XCTAssertNotNil(twilights.set)
         XCTAssertNil(twilights.error)
         
@@ -46,120 +48,144 @@ class EarthTests: XCTestCase {
     }
     
 
-    func testPrintTwilights() {
-        var date = JulianDay(year: 2017, month: 1, day: 1).date
-        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
-                                          latitude: Degree(.plus, 48, 52, 0.0),
-                                          altitude: Meter(30))
-
-        let gregorianCalendar = Calendar.gregorianGMT
-
-        for _ in 1...365 {
-
-            let sun = Sun(julianDay: JulianDay(date))
-
-            let riseTransitSetTimes = RiseTransitSetTimes(celestialBody: sun, geographicCoordinates: paris, riseSetAltitude: TwilightSunAltitude.astronomical.rawValue)
-
-            print("dawn: \(riseTransitSetTimes.riseTime?.date) | dusk: \(riseTransitSetTimes.setTime?.date)")
-
-            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
-        }
-    }
+//    func testPrintTwilights() {
+//        var date = JulianDay(year: 2017, month: 1, day: 1).date
+//        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
+//                                          latitude: Degree(.plus, 48, 52, 0.0),
+//                                          altitude: Meter(30))
+//
+//        let gregorianCalendar = Calendar.gregorianGMT
+//
+//        for _ in 1...365 {
+//
+//            let sun = Sun(julianDay: JulianDay(date))
+//
+//            let riseTransitSetTimes = RiseTransitSetTimes(celestialBody: sun, geographicCoordinates: paris, riseSetAltitude: TwilightSunAltitude.astronomical.rawValue)
+//
+//            print("dawn: \(riseTransitSetTimes.riseTime?.date) | dusk: \(riseTransitSetTimes.setTime?.date)")
+//
+//            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
+//        }
+//    }
     
     
-    func testValidTwilightNorthernHemisphereWestLongitude() {
+    // See http://aa.usno.navy.mil/cgi-bin/aa_rstablew.pl?ID=AA&year=2017&task=4&place=&lon_sign=1&lon_deg=2&lon_min=21&lat_sign=1&lat_deg=48&lat_min=52&tz=0&tz_sign=-1
+    // for a reference table for the 2017 year
+    func testValidTwilightNorthernHemisphereWestLongitudeAgainstUSNOReference() {
         
         let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
                                           latitude: Degree(.plus, 48, 52, 0.0),
                                           altitude: Meter(30))
         
-        let accuracy = 0.5.seconds.inJulianDays
-
-        // See http://aa.usno.navy.mil/cgi-bin/aa_rstablew.pl?ID=AA&year=2017&task=4&place=&lon_sign=1&lon_deg=2&lon_min=21&lat_sign=1&lat_deg=48&lat_min=52&tz=0&tz_sign=-1
-        // for a reference table for the 2017 year
+        let accuracy = 1.0.minutes.inJulianDays
 
         var date = JulianDay(year: 2017, month: 1, day: 1).date // january 1st
         var twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 1, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 1, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 1, day: 1, hour: 5, minute: 48), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 1, day: 1, hour: 18, minute: 00), accuracy: accuracy)
 
-//        date = JulianDay(year: 2017, month: 2, day: 1).date // february 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 2, day: 1, hour: 5, minute: 32, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 2, day: 1, hour: 18, minute: 37, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 3, day: 1).date // march 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 3, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 3, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 4, day: 1).date // april 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 4, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 4, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 5, day: 1).date // may 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 5, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 5, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 6, day: 1).date // june 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 6, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 6, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 7, day: 1).date // july 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 7, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 7, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 8, day: 1).date // august 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 8, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 8, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 9, day: 1).date // september 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 9, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 9, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 10, day: 1).date // october 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 10, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 10, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 11, day: 1).date // november 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 11, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 11, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
-//
-//        date = JulianDay(year: 2017, month: 12, day: 1).date // december 1st
-//        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-//        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 12, day: 1, hour: 5, minute: 48, second: 55.0), accuracy: accuracy)
-//        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 12, day: 1, hour: 18, minute: 00, second: 25.0), accuracy: accuracy)
+        date = JulianDay(year: 2017, month: 2, day: 1).date // february 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 2, day: 1, hour: 5, minute: 32), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 2, day: 1, hour: 18, minute: 37), accuracy: accuracy)
 
+        date = JulianDay(year: 2017, month: 3, day: 1).date // march 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 3, day: 1, hour: 4, minute: 48), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 3, day: 1, hour: 19, minute: 19), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 4, day: 1).date // april 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 4, day: 1, hour: 3, minute: 37), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 4, day: 1, hour: 20, minute: 13), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 5, day: 1).date // may 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 5, day: 1, hour: 2, minute: 17), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 5, day: 1, hour: 21, minute: 21), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 6, day: 1).date // june 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 6, day: 1, hour: 0, minute: 44), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 6, day: 1, hour: 22, minute: 56), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 7, day: 1).date // july 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 7, day: 1, hour: 0, minute: 3), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 7, day: 1, hour: 23, minute: 38), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 8, day: 1).date // august 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 8, day: 1, hour: 1, minute: 57), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 8, day: 1, hour: 21, minute: 55), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 9, day: 1).date // september 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 9, day: 1, hour: 3, minute: 11), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 9, day: 1, hour: 20, minute: 28), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 10, day: 1).date // october 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 10, day: 1, hour: 4, minute: 5), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 10, day: 1, hour: 19, minute: 15), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 11, day: 1).date // november 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 11, day: 1, hour: 4, minute: 51), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 11, day: 1, hour: 18, minute: 17), accuracy: accuracy)
+
+        date = JulianDay(year: 2017, month: 12, day: 1).date // december 1st
+        twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+        AssertEqual(twilights.rise!, JulianDay(year: 2017, month: 12, day: 1, hour: 5, minute: 29), accuracy: accuracy)
+        AssertEqual(twilights.set!,  JulianDay(year: 2017, month: 12, day: 1, hour: 17, minute: 50), accuracy: accuracy)
+    }
+    
+    func testValidTwilightNorthernHemisphereAboveArticCircle() {
         
-        let gregorianCalendar = Calendar.gregorianGMT
+        // Latitude must be > 66º33'.
+        let north = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
+                                          latitude: Degree(75.0),
+                                          altitude: Meter(30))
+        
+        // Winter
+        var earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 30))
+        var twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.riseAndSet.rawValue, coordinates: north)
+        XCTAssertNil(twilights.rise)
+        XCTAssertNil(twilights.transit)
+        XCTAssertNil(twilights.set)
+        XCTAssertTrue(twilights.error == .alwaysBelowAltitude)
+        
+        // Summer
+        earth = Earth(julianDay: JulianDay(year: 2017, month: 7, day: 30))
+        twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.riseAndSet.rawValue, coordinates: north)
+        XCTAssertNil(twilights.rise)
+        XCTAssertNotNil(twilights.transit)
+        XCTAssertNil(twilights.set)
+        XCTAssertTrue(twilights.error == .alwaysAboveAltitude)
+    }
 
-        for _ in 1...365 {
-//            let sun = Sun(julianDay: JulianDay(date).midnight+0.5)
-//            let horiz = sun.equatorialCoordinates.makeHorizontalCoordinates(with: paris, julianDay: sun.julianDay)
-//            print("alt: \(horiz.altitude) \(horiz.azimuth)")
-            
-            let earth = Earth(julianDay: JulianDay(date))
-            
-//            print("date: \(date)")
-
-            let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
-            
-            print("dawn: \(twilights.rise?.date) | dusk: \(twilights.set?.date)")
-            
-            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
-        }
-
-//        let earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 1))
-//
-//        let twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)
+    func testValidTwilightSouthernHemisphereBelowAntarcticCircle() {
+        
+        // Latitude must be < 66º33'.
+        let north = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
+                                          latitude: Degree(-75.0),
+                                          altitude: Meter(30))
+        
+        // Summer
+        var earth = Earth(julianDay: JulianDay(year: 2017, month: 1, day: 30))
+        var twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.riseAndSet.rawValue, coordinates: north)
+        XCTAssertNil(twilights.rise)
+        XCTAssertNotNil(twilights.transit)
+        XCTAssertNil(twilights.set)
+        XCTAssertTrue(twilights.error == .alwaysAboveAltitude)
+        
+        // Winter
+        earth = Earth(julianDay: JulianDay(year: 2017, month: 7, day: 30))
+        twilights = earth.twilights(forSunAltitude: TwilightSunAltitude.riseAndSet.rawValue, coordinates: north)
+        XCTAssertNil(twilights.rise)
+        XCTAssertNil(twilights.transit)
+        XCTAssertNil(twilights.set)
+        XCTAssertTrue(twilights.error == .alwaysBelowAltitude)
     }
 }
 
