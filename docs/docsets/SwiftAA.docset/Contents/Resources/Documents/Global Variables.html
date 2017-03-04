@@ -13,7 +13,7 @@
     <a title="Global Variables  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (28% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (32% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -82,16 +82,13 @@
             <a href="Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v7SwiftAA13BesselianYearSd">BesselianYear</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v7SwiftAA7DEG2RADSd">DEG2RAD</a>
+                <a href="Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
               </li>
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v7SwiftAA10JulianYearSd">JulianYear</a>
+                <a href="Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA21ModifiedJulianDayZeroSd">ModifiedJulianDayZero</a>
@@ -102,14 +99,14 @@
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v7SwiftAA26UNDEFINED_SCIENTIFIC_VALUESd">UNDEFINED_SCIENTIFIC_VALUE</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Enums/Equinox.html">Equinox</a>
               </li>
@@ -118,9 +115,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Season.html">Season</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/TwilightError.html">TwilightError</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/TwilightSunAltitude.html">TwilightSunAltitude</a>
@@ -167,9 +161,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAAoi2eeuRxS_11NumericTyperFTxx_Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:F7SwiftAA5GMST0FT3daySd_VS_6Degree">GMST0(day:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAA24apparentAsteroidDiameterFT9magnitudeVS_9Magnitude6albedoSd_VS_5Meter">apparentAsteroidDiameter(magnitude:albedo:)</a>
@@ -337,11 +328,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Constant value substracted from Julian Day to create so-called modified julian days.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">ModifiedJulianDayZero</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">2400000.5</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L12">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -349,9 +348,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v7SwiftAA10JulianYearSd"></a>
+                    <a name="/s:v7SwiftAA10JulianYearVS_3Day"></a>
                     <a name="//apple_ref/swift/Global/JulianYear" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v7SwiftAA10JulianYearSd">JulianYear</a>
+                    <a class="token" href="#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -359,11 +358,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The length of Julian Years, in days.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">JulianYear</span><span class="p">:</span> <span class="kt"><a href="Structs/Day.html">Day</a></span> <span class="o">=</span> <span class="mf">365.25</span>            <span class="c1">// See p.133 of AA.</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -371,9 +378,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v7SwiftAA13BesselianYearSd"></a>
+                    <a name="/s:v7SwiftAA13BesselianYearVS_3Day"></a>
                     <a name="//apple_ref/swift/Global/BesselianYear" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v7SwiftAA13BesselianYearSd">BesselianYear</a>
+                    <a class="token" href="#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -381,11 +388,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The length of Besselian Years, in days.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">BesselianYear</span><span class="p">:</span> <span class="kt"><a href="Structs/Day.html">Day</a></span> <span class="o">=</span> <span class="mf">365.2421988</span>    <span class="c1">// See p.133 of AA.</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -407,7 +422,7 @@
 
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -425,11 +440,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The new standard epoch, as decided by the IAU in 1984.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StandardEpoch_J2000_0</span><span class="p">:</span> <span class="kt"><a href="Structs/JulianDay.html">JulianDay</a></span> <span class="o">=</span> <span class="mf">2451545.0</span> <span class="c1">// See p.133 of AA.</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -451,51 +474,7 @@
 
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v7SwiftAA26UNDEFINED_SCIENTIFIC_VALUESd"></a>
-                    <a name="//apple_ref/swift/Global/UNDEFINED_SCIENTIFIC_VALUE" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v7SwiftAA26UNDEFINED_SCIENTIFIC_VALUESd">UNDEFINED_SCIENTIFIC_VALUE</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v7SwiftAA7DEG2RADSd"></a>
-                    <a name="//apple_ref/swift/Global/DEG2RAD" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v7SwiftAA7DEG2RADSd">DEG2RAD</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -505,7 +484,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-02)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

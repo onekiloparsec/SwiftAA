@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TwilightError Enum Reference</title>
+    <title>CelestialBodyTransitError Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/TwilightError" class="dashAnchor"></a>
-    <a title="TwilightError Enum Reference"></a>
+    <a name="//apple_ref/swift/Enum/CelestialBodyTransitError" class="dashAnchor"></a>
+    <a title="CelestialBodyTransitError Enum Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (28% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (32% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SwiftAA Reference</a>
         <img id="carat" src="../img/carat.png" />
-        TwilightError Enum Reference
+        CelestialBodyTransitError Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -83,16 +83,13 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearSd">BesselianYear</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA7DEG2RADSd">DEG2RAD</a>
+                <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearSd">JulianYear</a>
+                <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21ModifiedJulianDayZeroSd">ModifiedJulianDayZero</a>
@@ -103,14 +100,14 @@
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA26UNDEFINED_SCIENTIFIC_VALUESd">UNDEFINED_SCIENTIFIC_VALUE</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Enums/Equinox.html">Equinox</a>
               </li>
@@ -119,9 +116,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Season.html">Season</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/TwilightError.html">TwilightError</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/TwilightSunAltitude.html">TwilightSunAltitude</a>
@@ -168,9 +162,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi2eeuRxS_11NumericTyperFTxx_Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:F7SwiftAA5GMST0FT3daySd_VS_6Degree">GMST0(day:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA24apparentAsteroidDiameterFT9magnitudeVS_9Magnitude6albedoSd_VS_5Meter">apparentAsteroidDiameter(magnitude:albedo:)</a>
@@ -318,8 +309,19 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>TwilightError</h1>
-            <p>Undocumented</p>
+            <h1>CelestialBodyTransitError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CelestialBodyTransitError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>Error used when computing Rise Transit and Set times (see Earth twilights and planetary rise, transit and set times).</p>
+
+<ul>
+<li>alwaysBelowAltitude: The object for which times are computed is always below the given altitude.</li>
+<li>alwaysAboveAltitude: The object for which times are computed is always above the given altitude.</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -328,9 +330,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7SwiftAA13TwilightError19alwaysBelowAltitudeFMS0_S0_"></a>
+                    <a name="/s:FO7SwiftAA25CelestialBodyTransitError19alwaysBelowAltitudeFMS0_S0_"></a>
                     <a name="//apple_ref/swift/Element/alwaysBelowAltitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7SwiftAA13TwilightError19alwaysBelowAltitudeFMS0_S0_">alwaysBelowAltitude</a>
+                    <a class="token" href="#/s:FO7SwiftAA25CelestialBodyTransitError19alwaysBelowAltitudeFMS0_S0_">alwaysBelowAltitude</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -341,8 +343,16 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CelestialBodyTransitError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Earth.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -354,9 +364,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7SwiftAA13TwilightError19alwaysAboveAltitudeFMS0_S0_"></a>
+                    <a name="/s:FO7SwiftAA25CelestialBodyTransitError19alwaysAboveAltitudeFMS0_S0_"></a>
                     <a name="//apple_ref/swift/Element/alwaysAboveAltitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7SwiftAA13TwilightError19alwaysAboveAltitudeFMS0_S0_">alwaysAboveAltitude</a>
+                    <a class="token" href="#/s:FO7SwiftAA25CelestialBodyTransitError19alwaysAboveAltitudeFMS0_S0_">alwaysAboveAltitude</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -367,34 +377,16 @@
                         <p>Undocumented</p>
 
                       </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Earth.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FO7SwiftAA13TwilightError18accuracyNotReachedFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/accuracyNotReached" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7SwiftAA13TwilightError18accuracyNotReachedFMS0_S0_">accuracyNotReached</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CelestialBodyTransitError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
 
+                        </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Earth.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/ScientificConstants.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -404,7 +396,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-02)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

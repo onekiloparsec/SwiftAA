@@ -14,7 +14,7 @@
     <a title="Planet Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (28% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (32% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -83,16 +83,13 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearSd">BesselianYear</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA7DEG2RADSd">DEG2RAD</a>
+                <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearSd">JulianYear</a>
+                <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21ModifiedJulianDayZeroSd">ModifiedJulianDayZero</a>
@@ -103,14 +100,14 @@
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA26UNDEFINED_SCIENTIFIC_VALUESd">UNDEFINED_SCIENTIFIC_VALUE</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Enums/Equinox.html">Equinox</a>
               </li>
@@ -119,9 +116,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Season.html">Season</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/TwilightError.html">TwilightError</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/TwilightSunAltitude.html">TwilightSunAltitude</a>
@@ -168,9 +162,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi2eeuRxS_11NumericTyperFTxx_Sb">==(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Functions.html#/s:F7SwiftAA5GMST0FT3daySd_VS_6Degree">GMST0(day:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA24apparentAsteroidDiameterFT9magnitudeVS_9Magnitude6albedoSd_VS_5Meter">apparentAsteroidDiameter(magnitude:albedo:)</a>
@@ -319,7 +310,13 @@
         <section>
           <section class="section">
             <h1>Planet</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Planet</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/CelestialBody.html">CelestialBody</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/IlluminatedFraction.html">IlluminatedFraction</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The Planet class encompasses all the shared properties of the planets, to be understood as <q>non-Earth</q> planets.</p>
 
           </section>
           <section class="section task-group-section">
@@ -338,11 +335,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accesor for the average color of the planet, making it easier to draw a solar system. :-)</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">averageColor</span><span class="p">:</span> <span class="kt">Color</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L14-L16">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L16-L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -363,8 +368,16 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Planet</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/CelestialBody.html">CelestialBody</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/IlluminatedFraction.html">IlluminatedFraction</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -385,8 +398,16 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Planet</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/CelestialBody.html">CelestialBody</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/IlluminatedFraction.html">IlluminatedFraction</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -394,9 +415,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody21equatorialCoordinatesVS_21EquatorialCoordinates"></a>
+                    <a name="/s:vC7SwiftAA6Planet21equatorialCoordinatesVS_21EquatorialCoordinates"></a>
                     <a name="//apple_ref/swift/Property/equatorialCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody21equatorialCoordinatesVS_21EquatorialCoordinates">equatorialCoordinates</a>
+                    <a class="token" href="#/s:vC7SwiftAA6Planet21equatorialCoordinatesVS_21EquatorialCoordinates">equatorialCoordinates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -404,7 +425,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The equatorial coordinates of the planet. That is, its position on the celestial sphere, as it would be seen
+by an observer at rest at the barycenter of the solar system – See AA.149).</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -415,7 +438,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L28-L30">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L33-L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -433,11 +456,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The apparent equatorial coordinates of the planet. That is, its apparent position on the celestial sphere, as 
+it is actually seen from the center of the moving Earth, and referred to the instantaneous equator, ecliptic
+and equinox.
+It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">apparentEquatorialCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/EquatorialCoordinates.html">EquatorialCoordinates</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L32-L39">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L41-L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -445,9 +479,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody19eclipticCoordinatesVS_19EclipticCoordinates"></a>
+                    <a name="/s:vC7SwiftAA6Planet19eclipticCoordinatesVS_19EclipticCoordinates"></a>
                     <a name="//apple_ref/swift/Property/eclipticCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody19eclipticCoordinatesVS_19EclipticCoordinates">eclipticCoordinates</a>
+                    <a class="token" href="#/s:vC7SwiftAA6Planet19eclipticCoordinatesVS_19EclipticCoordinates">eclipticCoordinates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -455,7 +489,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The ecliptic (or celestial) coordinates of the planet</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -466,7 +501,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L41-L47">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L51-L57">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -474,9 +509,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody12radiusVectorVS_2AU"></a>
+                    <a name="/s:vC7SwiftAA6Planet12radiusVectorVS_2AU"></a>
                     <a name="//apple_ref/swift/Property/radiusVector" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody12radiusVectorVS_2AU">radiusVector</a>
+                    <a class="token" href="#/s:vC7SwiftAA6Planet12radiusVectorVS_2AU">radiusVector</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -484,7 +519,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The radius vector of the planet (that is, its distance to the Sun).</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -495,7 +531,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L49-L51">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L60-L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -513,11 +549,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The equatorial semi diameter of the planet</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">equatorialSemiDiameter</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L53-L55">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L65-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -535,11 +579,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The polar semi diameter of the planet</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">polarSemiDiameter</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L57-L59">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L70-L72">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -547,9 +599,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree"></a>
+                    <a name="/s:vC7SwiftAA6Planet23apparentRiseSetAltitudeVS_9ArcMinute"></a>
                     <a name="//apple_ref/swift/Property/apparentRiseSetAltitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree">apparentRiseSetAltitude</a>
+                    <a class="token" href="#/s:vC7SwiftAA6Planet23apparentRiseSetAltitudeVS_9ArcMinute">apparentRiseSetAltitude</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -557,18 +609,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>the standard altitude of the planet, that is, the geometric altitude of the center of the body at the time
+of apparent rising or setting. There is a value for the stars and planets, and one for the Sun.
+See AA p.101 for more explanations</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">apparentRiseSetAltitude</span> <span class="o">=</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span><span class="p">(</span><span class="o">-</span><span class="mi">34</span><span class="p">)</span><span class="o">.</span><span class="n">inDegrees</span> <span class="c1">// See AA p.101</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">apparentRiseSetAltitude</span> <span class="o">=</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span><span class="p">(</span><span class="o">-</span><span class="mi">34</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha2/SwiftAA/Planets.swift#L55">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/Planets.swift#L77">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -578,7 +633,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-02)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
