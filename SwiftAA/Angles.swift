@@ -27,7 +27,7 @@ public struct Degree: NumericType, CustomStringConvertible {
 
     public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
     public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }
-    public var inRadians: Radian { return Radian(value * DEG2RAD) }
+    public var inRadians: Radian { return Radian(value * 0.017453292519943295769236907684886) }
     public var inHours: Hour { return Hour(value / 15.0) }
     
     public var sexagesimalNotation: SexagesimalNotation {
@@ -110,7 +110,7 @@ public struct Radian: NumericType, CustomStringConvertible {
         self.value = value
     }
     
-    public var inDegrees: Degree { return Degree(value / DEG2RAD) }
+    public var inDegrees: Degree { return Degree(value / 0.017453292519943295769236907684886) }
     public var inHours: Hour { return self.inDegrees.inHours }
     
     /// Returns self reduced to 0..<2PI range

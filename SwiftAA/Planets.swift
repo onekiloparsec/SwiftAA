@@ -74,7 +74,7 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     /// the standard altitude of the planet, that is, the geometric altitude of the center of the body at the time
     /// of apparent rising or setting. There is a value for the stars and planets, and one for the Sun.
     /// See AA p.101 for more explanations
-    public let apparentRiseSetAltitude = ArcMinute(-34)
+    public let apparentRiseSetAltitude = ArcMinute(-34).inDegrees
     
 }
 
