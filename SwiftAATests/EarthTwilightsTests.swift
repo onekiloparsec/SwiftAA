@@ -45,6 +45,26 @@ class EarthTests: XCTestCase {
         XCTAssertTrue(twilights.rise! < twilights.set!)
     }
     
+
+    func testPrintTwilights() {
+        var date = JulianDay(year: 2017, month: 1, day: 1).date
+        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 0.0),
+                                          latitude: Degree(.plus, 48, 52, 0.0),
+                                          altitude: Meter(30))
+
+        let gregorianCalendar = Calendar.gregorianGMT
+
+        for _ in 1...365 {
+
+            let sun = Sun(julianDay: JulianDay(date))
+
+            let riseTransitSetTimes = RiseTransitSetTimes(celestialBody: sun, geographicCoordinates: paris, riseSetAltitude: TwilightSunAltitude.astronomical.rawValue)
+
+            print("dawn: \(riseTransitSetTimes.riseTime?.date) | dusk: \(riseTransitSetTimes.setTime?.date)")
+
+            date = gregorianCalendar.date(byAdding: .day, value: 1, to: date)!
+        }
+    }
     
     
     func testValidTwilightNorthernHemisphereWestLongitude() {
