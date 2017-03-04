@@ -53,6 +53,11 @@ public enum MoonPhase {
     case lastQuarter
 }
 
+public enum CelestialBodyTransitError: Error {
+    case alwaysBelowAltitude
+    case alwaysAboveAltitude
+}
+
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 extension KPCAAPlanet: CustomStringConvertible {
