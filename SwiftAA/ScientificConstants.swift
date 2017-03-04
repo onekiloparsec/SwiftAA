@@ -28,16 +28,13 @@ public typealias Millibar=Double
 public enum Equinox {
     case meanEquinoxOfTheDate
     case standardJ2000
-//    case standardB1950
     
-    func julianDay() -> JulianDay {
+    var julianDay: JulianDay {
         switch self {
         case .meanEquinoxOfTheDate:
             return 0
         case .standardJ2000:
             return StandardEpoch_J2000_0
-//        case .standardB1950:
-//            return StandardEpoch_B1950_0
         }
     }
 }
