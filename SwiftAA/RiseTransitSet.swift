@@ -85,6 +85,8 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                       setTime: set)
 }
 
+
+/// Convenient class for storing the Rise, Transit and Set times of a celestial body.
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
@@ -108,20 +110,30 @@ public class RiseTransitSetTimes {
     public fileprivate(set) var celestialBody: CelestialBody
     private let riseSetAltitude: Degree
     
+    
+    /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
+    ///
+    /// - Parameters:
+    ///   - celestialBody: The celestialbody for which to compute the times.
+    ///   - geographicCoordinates: The geographic coordinates for which to compute the times.
+    ///   - riseSetAltitude: The altitude considered for rise and set times.
     required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates,  riseSetAltitude: Degree? = nil) {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? celestialBody.apparentRiseSetAltitude
     }
     
+    /// The rise time of the celestial body, in Julian Day.
     public var riseTime: JulianDay? {
         get { return self.riseTransiteSetTimesDetails.isRiseValid ? self.riseTransiteSetTimesDetails.riseTime : nil }
     }
     
+    /// The transit time of the celestial body, in Julian Day.
     public var transitTime: JulianDay? {
         get { return self.riseTransiteSetTimesDetails.isTransitAboveHorizon ? self.riseTransiteSetTimesDetails.transitTime : nil }
     }
     
+    /// The set time of the celestial body, in Julian Day.
     public var setTime: JulianDay? {
         get { return self.riseTransiteSetTimesDetails.isSetValid ? self.riseTransiteSetTimesDetails.setTime : nil }
     }
