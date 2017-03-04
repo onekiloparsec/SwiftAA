@@ -10,7 +10,7 @@ import Foundation
 
 public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
     
-    // The illuminated fraction of the planet as seen from the Earth. Between 0 and 1
+    /// The illuminated fraction of the planet as seen from the Earth. Between 0 and 1.
     var illuminatedFraction: Double { get }
     
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,

@@ -8,27 +8,32 @@
 
 import Foundation
 
+/// Constant value substracted from Julian Day to create so-called modified julian days.
 public let ModifiedJulianDayZero: Double = 2400000.5
 
-public let JulianYear: Double = 365.25            // See p.133 of AA.
-public let BesselianYear: Double = 365.2421988    // See p.133 of AA.
+/// The length of Julian Years, in days.
+public let JulianYear: Day = 365.25            // See p.133 of AA.
+/// The length of Besselian Years, in days.
+public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
 
 public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
 
+/// The new standard epoch, as decided by the IAU in 1984.
 public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
-
-public let UNDEFINED_SCIENTIFIC_VALUE = -999999999999.0
-public let DEG2RAD = 0.017453292519943295769236907684886
 
 public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
 
+/// Standard equinox values
 public enum Equinox {
+    
+    /// The mean equinox of the date is the intersection of the ecliptic of the date with the mean equator of the date.
     case meanEquinoxOfTheDate
     case standardJ2000
     
+    /// The Julian Day of the given equinox.
     var julianDay: JulianDay {
         switch self {
         case .meanEquinoxOfTheDate:
@@ -39,6 +44,13 @@ public enum Equinox {
     }
 }
 
+
+/// Earth seasons
+///
+/// - spring: Sprint
+/// - summer: Summer
+/// - autumn: Authumn
+/// - winter: Winter
 public enum Season {
     case spring
     case summer
@@ -46,6 +58,13 @@ public enum Season {
     case winter
 }
 
+
+/// Moon phases
+///
+/// - new: New Moon
+/// - firstQuarter: First Quarter
+/// - full: Full Moon
+/// - lastQuarter: Last Quarter
 public enum MoonPhase {
     case new
     case firstQuarter
@@ -53,12 +72,17 @@ public enum MoonPhase {
     case lastQuarter
 }
 
+/// Error used when computing Rise Transit and Set times (see Earth twilights and planetary rise, transit and set times).
+///
+/// - alwaysBelowAltitude: The object for which times are computed is always below the given altitude.
+/// - alwaysAboveAltitude: The object for which times are computed is always above the given altitude.
 public enum CelestialBodyTransitError: Error {
     case alwaysBelowAltitude
     case alwaysAboveAltitude
 }
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
+
 
 extension KPCAAPlanet: CustomStringConvertible {
     public static func fromString(_ string: String) -> KPCAAPlanet {
@@ -137,6 +161,10 @@ public extension KPCAAPlanetStrict {
 }
 
 public extension KPCPlanetaryObject {
+    /// Returns the planetary object index from a given planet index.
+    ///
+    /// - Parameter planet: The planet index.
+    /// - Returns: The corresponding planetary object index.
     static func fromPlanet(_ planet: KPCAAPlanet) -> KPCPlanetaryObject {
         switch planet {
         case .Mercury:
@@ -158,6 +186,7 @@ public extension KPCPlanetaryObject {
         }
     }
     
+    /// Returns the SwiftAA Class type for the given planetary object.
     public var objectType: Planet.Type? {
         switch self {
         case .MERCURY:

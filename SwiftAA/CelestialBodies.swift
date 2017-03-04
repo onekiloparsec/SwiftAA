@@ -26,6 +26,12 @@ public protocol CelestialBody: ObjectBase {
     
     func riseTransitSetTimes(with geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
 
+    
+    /// Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
+    /// and its right ascension.
+    ///
+    /// - Parameter geographicCoordinates: The geographic coordinates of the place.
+    /// - Returns: The Hour Angle of the body.
     func hourAngle(with geographicCoordinates: GeographicCoordinates) -> Hour
 
     func parallacticAngle(with geographicCoordinates: GeographicCoordinates) -> Degree
@@ -52,7 +58,7 @@ public protocol CelestialBody: ObjectBase {
     var polarSemiDiameter: Degree { get }
     
     /// Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)
-    var apparentRiseSetAltitude: Degree { get }
+    var apparentRiseSetAltitude: ArcMinute { get }
     
 }
 
