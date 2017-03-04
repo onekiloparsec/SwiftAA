@@ -45,7 +45,7 @@ public protocol CelestialBody: ObjectBase {
     ///   - altitude: The crossing altitude
     ///   - coordinates: The point on Earth from which one computes the arc.
     /// - Returns: The angle of the so-called diurnal arc
-    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: TwilightError?)
+    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?)
 
     var equatorialSemiDiameter: Degree { get }
     
@@ -95,16 +95,10 @@ public extension CelestialBody {
                                                                                             epsilon.value))
     }
 
-    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: TwilightError?) {
-        /* Compute the Sun's apparent radius in degrees and do correction to upper limb, if necessary */
-        var correctedAltitude = altitude
-        if altitude == TwilightSunAltitude.riseAndSet.rawValue {
-            correctedAltitude = altitude - Degree(0.2666 / Earth(julianDay: self.julianDay).radiusVector.value)
-        }
-        
+    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {        
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
-        let sinAlt = sin(correctedAltitude.inRadians.value)
+        let sinAlt = sin(altitude.inRadians.value)
         let sinLat = sin(coordinates.latitude.inRadians.value)
         let sinDec = sin(self.equatorialCoordinates.declination.inRadians.value)
         let cosLat = cos(coordinates.latitude.inRadians.value)
