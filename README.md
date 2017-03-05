@@ -117,4 +117,4 @@ around it, with name prefixes.
 Author
 ======
 Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
-(Ph.D. in astrophysics, and former *support astronomer* at [European Southern Observatory](http://www.eso.org) in Chile).
+(Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile).
