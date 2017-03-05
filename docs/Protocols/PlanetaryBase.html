@@ -14,7 +14,7 @@
     <a title="PlanetaryBase Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (32% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (52% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -310,42 +310,18 @@
         <section>
           <section class="section">
             <h1>PlanetaryBase</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PlanetaryBase</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ObjectBase.html">ObjectBase</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The PlanetaryBase extends the simple ObjectBase protocol to provide specific accesors for solar-system planets.</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vP7SwiftAA13PlanetaryBase4nameSS"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13PlanetaryBase4nameSS">name</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -362,16 +338,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the historical list of all 9 planets: from Mercury to Pluto, including the Earth.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the historical list of all 9 planets: from Mercury to Pluto, including the Earth.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">planet</span><span class="p">:</span> <span class="kt">KPCAAPlanet</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -392,16 +376,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the official list of 8 planets, that is, not accounting the dwarf planet, Pluto.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the official list of 8 planets, that is, not accounting the dwarf planet, Pluto.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">planetStrict</span><span class="p">:</span> <span class="kt">KPCAAPlanetStrict</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L26">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -422,16 +414,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the list of all planets, but the Earth.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The index of the planet in the list of all planets, but the Earth.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">planetaryObject</span><span class="p">:</span> <span class="kt">KPCPlanetaryObject</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -452,12 +452,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The julian day of the perihelion of the planet the after the given julian day</p>
+                        <p>The julian day of the perihelion of the planet the after the given julian day of the object.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The julian day of the perihelion of the planet the after the given julian day of the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -469,7 +469,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L28">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -490,12 +490,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The julian day of the aphelion of the planet the after the given julian day</p>
+                        <p>The julian day of the aphelion of the planet the after the given julian day of the object.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The julian day of the aphelion of the planet the after the given julian day of the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -507,7 +507,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L31">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -528,12 +528,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Distance to the Sun</p>
+                        <p>The distance to the Sun.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>The distance to the Sun.</p>
 
                       </div>
                       <div class="declaration">
@@ -545,7 +545,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/PlanetaryBase.swift#L34">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/PlanetaryBase.swift#L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -555,7 +555,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-04)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-05)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

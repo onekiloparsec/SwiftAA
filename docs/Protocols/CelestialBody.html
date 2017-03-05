@@ -14,7 +14,7 @@
     <a title="CelestialBody Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (32% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (52% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -348,7 +348,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L17">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -378,7 +378,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L20">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -408,7 +408,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L23">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -438,7 +438,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -459,24 +459,49 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns the Rise, Transit and Set times of the body for a given location on Earth.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CelestialBody</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ObjectBase.html">ObjectBase</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">riseTransitSetTimes</span><span class="p">(</span><span class="n">with</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>geographicCoordinates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The coordinates of the location on Earth.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A RiseTransitSetTimes object.</p>
+
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -540,7 +565,7 @@ and its right ascension.</p>
 
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L35">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -578,7 +603,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -616,7 +641,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -654,7 +679,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -692,7 +717,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -771,7 +796,7 @@ sunrise and sunset.</p>
 
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L54">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L58">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -789,19 +814,19 @@ sunrise and sunset.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The equatorial semi diameter of the object</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CelestialBody</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ObjectBase.html">ObjectBase</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">equatorialSemiDiameter</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L61">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -819,19 +844,19 @@ sunrise and sunset.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The polar semi diameter of the object.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CelestialBody</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ObjectBase.html">ObjectBase</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">polarSemiDiameter</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -839,9 +864,9 @@ sunrise and sunset.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_9ArcMinute"></a>
+                    <a name="/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree"></a>
                     <a name="//apple_ref/swift/Property/apparentRiseSetAltitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_9ArcMinute">apparentRiseSetAltitude</a>
+                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree">apparentRiseSetAltitude</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -856,12 +881,12 @@ sunrise and sunset.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">apparentRiseSetAltitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">apparentRiseSetAltitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha3/SwiftAA/CelestialBodies.swift#L61">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -871,7 +896,7 @@ sunrise and sunset.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-04)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-05)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
