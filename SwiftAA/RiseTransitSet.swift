@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The RiseTransitSetTimesDetails struct encompasses all elements of the times of rise, transit and set.
 public struct RiseTransitSetTimesDetails {
     public private(set) var isRiseValid: Bool
     public private(set) var riseTime: JulianDay

@@ -24,6 +24,10 @@ public protocol CelestialBody: ObjectBase {
     
     var apparentEquatorialCoordinates: EquatorialCoordinates { get }
     
+    /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
+    ///
+    /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
+    /// - Returns: A RiseTransitSetTimes object.
     func riseTransitSetTimes(with geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
 
     
@@ -53,8 +57,10 @@ public protocol CelestialBody: ObjectBase {
     /// - Returns: The angle of the so-called diurnal arc
     func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?)
 
+    /// The equatorial semi diameter of the object
     var equatorialSemiDiameter: Degree { get }
     
+    /// The polar semi diameter of the object.
     var polarSemiDiameter: Degree { get }
     
     /// Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)

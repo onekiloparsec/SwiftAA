@@ -35,9 +35,11 @@ public struct GalileanMoonRectangularCoordinates {
     }
 }
 
+/// The GalileanMoon struct encompasses all properties of Galilean moons
 public struct GalileanMoon {
     fileprivate var details: KPCAAGalileanMoonDetails
 
+    /// The name of the Moon
     public var name: String
 
     public var MeanLongitude: Degree { get { return Degree(self.details.MeanLongitude) } }
@@ -47,11 +49,23 @@ public struct GalileanMoon {
 
     public var radiusVector: AU { get { return AU(self.details.r) } }
 
+    /// Returns whether the Moon is in transit or not (i.e. in front of Jupiter disk).
     public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
+    
+    /// Returns whether the Moon is in occultation or not (i.e. behind the Jupiter disk).
     public var inOccultation: Bool { get { return self.details.inOccultation.boolValue } }
+
+    /// Returns whether the Moon is eclipsing Jupiter.
     public var inEclipse: Bool { get { return self.details.inEclipse.boolValue } }
+    
+    /// Returns whether the Moon is eclipsed by Jupiter.
     public var inShadowTransit: Bool { get { return self.details.inShadowTransit.boolValue } }
 
+    /// Returns a GalileanMoon object
+    ///
+    /// - Parameters:
+    ///   - name: the name of the Moon
+    ///   - details: the details of the moon. See Jupiter class.
     init(name: String, details: KPCAAGalileanMoonDetails) {
         self.name = name
         self.details = details

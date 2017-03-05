@@ -13,11 +13,15 @@ import Foundation
  *  planets, moons, the Earth, the Sun etc.
  */
 public protocol ObjectBase {
+    
+    /// The julian day at which one considers the object.
     var julianDay: JulianDay { get }
+    
+    /// A boolean indicating whether high precision (i.e. VSOP87 theory) must be used.
     var highPrecision: Bool { get }
     
-    // The object name
-    static var name: String { get }
+    /// The object name
+    var name: String { get }
 
     /**
      Initialization of an object
@@ -30,14 +34,22 @@ public protocol ObjectBase {
     init(julianDay: JulianDay, highPrecision: Bool)    
 }
 
+/// The base class of all objects (Planets, Sun, Moons etc.).
 open class Object : ObjectBase {
     public fileprivate(set) var julianDay: JulianDay
     public fileprivate(set) var highPrecision: Bool
     
-    public static var name: String {
+    /// A convenience accesor returning the name of the object class.
+    public var name: String {
          return String(describing: type(of: self)) 
     }
 
+    /// Returns a new instance of the object.
+    ///
+    /// - Parameters:
+    ///   - julianDay: The julian day at which one will consider the object
+    ///   - highPrecision: A optional boolean indicating whether high precision (i.e. VSOP87 theory) must be used. 
+    ///     Default is true.
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         self.julianDay = julianDay
         self.highPrecision = highPrecision

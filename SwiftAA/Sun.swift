@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The Sun.
 public class Sun: Object, CelestialBody {
     
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalSunDetails = {
@@ -20,6 +21,7 @@ public class Sun: Object, CelestialBody {
         KPCAAEclipses_CalculateSolar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         }()
     
+    /// The (constant) diameter of the Sun.
     public let diameter: Meter = 1392000000.0
     
     // Celestial Body
@@ -45,17 +47,21 @@ public class Sun: Object, CelestialBody {
     
     /// Celestial Body
     
+    /// The radius vector (distance to the Sun... here to conform to CelestialBody protocol).
     public var radiusVector: AU { return 0.0 }
     
+    /// The ecliptic coordinates of the Sun
     public var eclipticCoordinates: EclipticCoordinates {
         get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
                                          beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision))) }
     }
-    
+
+    /// The equatorial coordinates of the Sun
     public var equatorialCoordinates: EquatorialCoordinates {
         get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
     }
 
+    /// The apparent equatorial coordinates of the Sun
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
         get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
     }

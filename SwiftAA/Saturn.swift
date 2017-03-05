@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// The Saturn planet.
 public class Saturn: Planet {
+    
+    /// The average color of the planet.
     public class override var averageColor: Color {
         get { return Color(red: 0.941, green:0.827, blue:0.616, alpha: 1.0) }
     }
@@ -23,10 +26,16 @@ public class Saturn: Planet {
 
     public fileprivate(set) var ringSystem: SaturnRingSystem
 
+    /// The list of saturnian moons, in increasing order of distance from the planet.
     public var moons: [SaturnianMoon] {
         get { return [self.Mimas, self.Enceladus, self.Tethys, self.Dione, self.Rhea, self.Titan, self.Iapetus] }
     }
     
+    /// Returns a Saturn object.
+    ///
+    /// - Parameters:
+    ///   - julianDay: The julian day at which the planet is considered.
+    ///   - highPrecision: A boolean indicating whether high precision (VSOP87 theory) must be used. Default is true.
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         let details = KPCAASaturnMoonsDetails_Calculate(julianDay.value, highPrecision)
         self.Mimas = SaturnianMoon(name: "Mimas", details: details.Satellite1)
@@ -42,15 +51,15 @@ public class Saturn: Planet {
         
         super.init(julianDay: julianDay, highPrecision: highPrecision)
     }
-        
-    /// Includes the contribution from the ring.
+    
+    /// The magnitude of the planet. Includes the contribution from the ring.
     public var magnitude: Double {
         get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector.value,
                                                                 self.apparentGeocentricDistance.value,
                                                                 self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
                                                                 self.ringSystem.saturnicentricEarthLatitude.value) } }
     
-    /// Includes the contribution from the ring.
+    /// The magnitude 'Muller' of the planet. Includes the contribution from the ring.
     public var magnitudeMuller: Double {
         get { return KPCAAIlluminatedFraction_SaturnMagnitudeMuller(self.radiusVector.value,
                                                                     self.apparentGeocentricDistance.value,

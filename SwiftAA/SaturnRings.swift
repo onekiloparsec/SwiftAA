@@ -50,6 +50,9 @@ public struct SaturnRingSystem {
     */
     public var saturnicentricSunEarthLongitudesDifference: Degree { get { return Degree(self.details.DeltaU) } }
 
+    /// Returns a Saturn Ring system object.
+    ///
+    /// - Parameter details: The details of the ring system.
     init(_ details: KPCAASaturnRingDetails) {
         self.details = details
     }

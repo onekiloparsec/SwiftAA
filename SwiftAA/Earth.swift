@@ -28,17 +28,20 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
     public static let polarRadius: Meter = 6356760.0
 
     // Additional methods for Earth to deal with the baryCentric parameter
-    func perihelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
-        return JulianDay(KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric))
+    
+    /// The Julian Day of the perihelion of the Earth-Moon system. See AA p273.
+    var barycentricPerihelion: JulianDay {
+        get { return JulianDay(KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(self.julianDay.date.fractionalYear), true)) }
     }
     
-    func aphelion(_ year: Double, baryCentric: Bool = true) -> JulianDay {
-        return JulianDay(KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(year), baryCentric))
+    /// The Julian Day of the aphelion of the Earth-Moon system. See AA p273.
+    var barycentricAphelion: JulianDay {
+        get { return JulianDay(KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(self.julianDay.date.fractionalYear), true)) }
     }
     
-    func longitudeOfAscendingNode() -> Degree {
-        // There is no method for .MeanEquinoxOfTheDate, hence defaulting to J2000
-        return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value))
+    /// The longitude of the ascnending node.
+    var longitudeOfAscendingNode: Degree {
+        get { return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value)) }
     }
 
     /**

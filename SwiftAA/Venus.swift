@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// The Venus planet
 public class Venus: Planet {
+    
+    /// The average color of the planet.
     public class override var averageColor: Color {
         get { return Color(red: 0.784, green:0.471, blue:0.137, alpha: 1.0) }
     }

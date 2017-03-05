@@ -25,10 +25,15 @@ public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
 }
 
 public extension IlluminatedFraction {
+
+    /// The illuminated fraction of the planet as seen from the Earth. Between 0 and 1.
     var illuminatedFraction: Double {
         get { return KPCAAIlluminatedFraction_IlluminatedFraction(self.phaseAngle.value) }
     }
 
+    /// The magnitude of the planet, which depends on the planet's distance to the Earth,
+    /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
+    /// Implementation return the modern American Astronomical Almanac value instead of Mueller's
     var magnitude: Double {
         get { return KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
                                                           self.radiusVector.value,
@@ -36,6 +41,9 @@ public extension IlluminatedFraction {
                                                           self.phaseAngle.value) }
     }
     
+    /// The magnitude of the planet, which depends on the planet's distance to the Earth,
+    /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
+    /// Implementation return the old Muller's values.
     var magnitudeMuller: Double {
         get { return KPCAAIlluminatedFraction_MagnitudeMuller(self.planetaryObject,
                                                               self.radiusVector.value,

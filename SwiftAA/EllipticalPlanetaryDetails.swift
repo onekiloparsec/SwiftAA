@@ -8,8 +8,9 @@
 
 import Foundation
 
+/// The EllipticalPlanetaryDetails encompasses various elliptical details of solar-system planets.
 public protocol EllipticalPlanetaryDetails: PlanetaryBase {
-    // The details of the planet configuration
+    /// The details of the planet configuration
     var planetaryDetails: KPCAAEllipticalPlanetaryDetails { get }
     
     var ellipticalObjectDetails: KPCAAEllipticalObjectDetails { get }
@@ -20,7 +21,7 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
     /// The TrueGeocentricDistance
     var trueGeocentricDistance: AU { get }
     
-    /// The angle (Sun-planet-Earth).
+    /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree { get }
 }
 

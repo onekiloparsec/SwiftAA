@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// The Jupiter planet.
 public class Jupiter: Planet {
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalJupiterDetails = {
         [unowned self] in
         return KPCAAPhysicalJupiter_CalculateDetails(self.julianDay.value, self.highPrecision)
         }()
     
+    /// The average color of the planet.
     public class override var averageColor: Color {
         get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
     }

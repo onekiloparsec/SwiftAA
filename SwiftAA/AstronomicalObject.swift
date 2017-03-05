@@ -10,14 +10,16 @@ import Foundation
 
 // AstronomicalObject inherits from CelestialBody to benefit from the generic calculation of Rise and Set Times.
 class AstronomicalObject: Object, CelestialBody {
-    public private(set) var name: String = ""
+    private var objectName: String = ""
     public private(set) var equatorialCoordinates: EquatorialCoordinates
     
     public var equatorialSemiDiameter: Degree = 0.0
     public var polarSemiDiameter: Degree = 0.0
     
+    public override var name: String { get { return self.objectName } }
+    
     public init(name: String, coordinates: EquatorialCoordinates, julianDay: JulianDay) {
-        self.name = name
+        self.objectName = name
         self.equatorialCoordinates = coordinates
         super.init(julianDay: julianDay)
     }
@@ -26,6 +28,7 @@ class AstronomicalObject: Object, CelestialBody {
         fatalError("init(julianDay:highPrecision:) has not been implemented")
     }
     
+    /// The radius vector (i.e. the distance to the Sun). Returns -1. Only for conformance to CelestialBody.
     public var radiusVector: AU {
         get { return -1 }
     }

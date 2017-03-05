@@ -9,7 +9,8 @@
 import Foundation
 
 /**
- *  The Planet protocol specializes the PlanetaryBase for planets that are not the Earth!
+ *  The PlanetaryPhenomena protocol encompass all methods associated with planetary phenomena in the solar system:
+ *  conjunction, oppotisions, etc.
  */
 public protocol PlanetaryPhenomena: PlanetaryBase {
         

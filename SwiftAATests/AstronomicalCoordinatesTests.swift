@@ -28,7 +28,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let horizontal = equatorial.makeHorizontalCoordinates(with: geographic, julianDay: jd)
         AssertEqual(horizontal.altitude, Degree(15.1249), accuracy: ArcSecond(5.0).inDegrees)
         AssertEqual(horizontal.azimuth, Degree(68.0337), accuracy: ArcSecond(5.0).inDegrees)
-        let eqBack = horizontal.makeEquatorialCoordinates()
+        let eqBack = horizontal.makeEquatorialCoordinates(julianDay: jd)
         AssertEqual(eqBack!.rightAscension, equatorial.rightAscension, accuracy: ArcSecond(0.01).inHours)
         AssertEqual(eqBack!.declination, equatorial.declination, accuracy: ArcSecond(0.01).inDegrees)
     }

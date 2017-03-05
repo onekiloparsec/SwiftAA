@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The Earth's Moon object.
 public class Moon : Object, CelestialBody {
 //    public fileprivate(set) var topocentricPhysicalDetails: KPCAAPhysicalMoonDetails
     
@@ -26,6 +27,7 @@ public class Moon : Object, CelestialBody {
         return KPCAAEclipses_CalculateLunar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         }()
 
+    /// The diameter of the Moon.
     public let diameter: Meter = 3476000.0
         
     // MARK: - CelestialBody
@@ -109,6 +111,14 @@ public class Moon : Object, CelestialBody {
     
     // MARK: - KPCAAMoonPhases
 
+    
+    /// Returns the Julian Day of the Moon phase.
+    ///
+    /// - Parameters:
+    ///   - ph: The phase of the moon we are looking for.
+    ///   - isNext: A boolean indicating whether one wants the result after the input date, or not.
+    ///   - mean: A boolean indicating one wans the mean or the true (instantaneous) value. Default is mean=true.
+    /// - Returns: The Julian Day of the Moon phase.
     public func timeOfPhase(forPhase ph: MoonPhase, isNext: Bool = true, mean: Bool = true) -> JulianDay {
         var k = round(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         switch ph {

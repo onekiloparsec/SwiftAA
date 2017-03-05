@@ -15,22 +15,26 @@ enum PlanetError: Error {
 
 // MARK: -
 
+
+/// The PlanetaryBase extends the simple ObjectBase protocol to provide specific accesors for solar-system planets.
 public protocol PlanetaryBase: ObjectBase {
-    // The planet name
-    var name: String { get }
     
-    // The planet type indexes
+    /// The index of the planet in the historical list of all 9 planets: from Mercury to Pluto, including the Earth.
     var planet: KPCAAPlanet { get }
+    
+    /// The index of the planet in the official list of 8 planets, that is, not accounting the dwarf planet, Pluto.
     var planetStrict: KPCAAPlanetStrict { get }
+    
+    /// The index of the planet in the list of all planets, but the Earth.
     var planetaryObject: KPCPlanetaryObject { get }
     
-    /// The julian day of the perihelion of the planet the after the given julian day
+    /// The julian day of the perihelion of the planet the after the given julian day of the object.
     var perihelion: JulianDay { get }
     
-    /// The julian day of the aphelion of the planet the after the given julian day
+    /// The julian day of the aphelion of the planet the after the given julian day of the object.
     var aphelion: JulianDay { get }
     
-    /// Distance to the Sun
+    /// The distance to the Sun.
     var radiusVector: AU { get }
 }
 
@@ -38,24 +42,22 @@ public protocol PlanetaryBase: ObjectBase {
 
 public extension PlanetaryBase {
     
-    var name: String {
-        get { return String(describing: type(of: self)) }
-    }
-
-    // MARK: Object Base
-    
+    /// The index of the planet in the historical list of all 9 planets: from Mercury to Pluto, including the Earth.
     var planet: KPCAAPlanet {
         return KPCAAPlanet.fromString(self.name)
     }
     
+    /// The index of the planet in the official list of 8 planets, that is, not accounting the dwarf planet, Pluto.
     var planetStrict: KPCAAPlanetStrict {
         return KPCAAPlanetStrict.fromPlanet(self.planet)
     }
     
+    /// The index of the planet in the list of all planets, but the Earth.
     var planetaryObject: KPCPlanetaryObject {
         return KPCPlanetaryObject.fromPlanet(self.planet)
     }
     
+    /// The julian day of the perihelion of the planet the after the given julian day of the object.
     var perihelion: JulianDay {
         get {
             let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
@@ -63,6 +65,7 @@ public extension PlanetaryBase {
         }
     }
     
+    /// The julian day of the aphelion of the planet the after the given julian day of the object.
     var aphelion: JulianDay {
         get {
             let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
@@ -70,6 +73,7 @@ public extension PlanetaryBase {
         }
     }
     
+    /// The distance to the Sun.
     var radiusVector: AU {
         get { return AU(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
