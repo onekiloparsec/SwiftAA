@@ -114,3 +114,7 @@ These constraints come from the fact that no C++ code can be written directly al
 And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper
 around it, with name prefixes.
 
+Author
+======
+Cédric Foellmi, a.k.a. **onekiloparsec** ([twitter](https://twitter.com/onekiloparsec), [website](https://onekilopars.ec)). <br/>
+(Ph.D. in astrophysics, and former *support astronomer* at [European Southern Observatory](http://www.eso.org) in Chile).
