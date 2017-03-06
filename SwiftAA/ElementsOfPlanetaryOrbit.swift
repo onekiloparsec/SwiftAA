@@ -23,7 +23,7 @@ public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
      
      - returns: The semi major axis in astronomical units
      */
-    func semimajorAxis() -> AU
+    func semimajorAxis() -> AstronomicalUnit
     
     /**
      Computes the eccentricity of the orbit
@@ -70,8 +70,8 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
-    func semimajorAxis() -> AU {
-        return AU(KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay.value))
+    func semimajorAxis() -> AstronomicalUnit {
+        return AstronomicalUnit(KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay.value))
     }
     
     func eccentricity() -> Double {

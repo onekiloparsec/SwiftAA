@@ -16,10 +16,10 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
     var ellipticalObjectDetails: KPCAAEllipticalObjectDetails { get }
  
     /// The ApparentGeocentricDistance
-    var apparentGeocentricDistance: AU { get }
+    var apparentGeocentricDistance: AstronomicalUnit { get }
     
     /// The TrueGeocentricDistance
-    var trueGeocentricDistance: AU { get }
+    var trueGeocentricDistance: AstronomicalUnit { get }
     
     /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree { get }
@@ -27,12 +27,12 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
 
 public extension EllipticalPlanetaryDetails {
     
-    var apparentGeocentricDistance: AU {
-        get { return AU(self.planetaryDetails.ApparentGeocentricDistance) }
+    var apparentGeocentricDistance: AstronomicalUnit {
+        get { return AstronomicalUnit(self.planetaryDetails.ApparentGeocentricDistance) }
     }
     
-    var trueGeocentricDistance: AU {
-        get { return AU(self.ellipticalObjectDetails.TrueGeocentricDistance) }
+    var trueGeocentricDistance: AstronomicalUnit {
+        get { return AstronomicalUnit(self.ellipticalObjectDetails.TrueGeocentricDistance) }
     }
     
     var phaseAngle: Degree {

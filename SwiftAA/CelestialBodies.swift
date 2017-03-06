@@ -14,7 +14,7 @@ import Foundation
 
 public protocol CelestialBody: ObjectBase {
     /// The radius vector (=distance to the Sun)
-    var radiusVector: AU { get }
+    var radiusVector: AstronomicalUnit { get }
     
     /// The ecliptic (=heliocentric) coordinates of the object
     var eclipticCoordinates: EclipticCoordinates { get }

@@ -8,12 +8,26 @@
 
 import Foundation
 
+/// The Degree is a unit of angle.
+/// Degree structs conform to SwiftAA Numeric type protocol.
 public struct Degree: NumericType, CustomStringConvertible {
+    /// The Degree value
     public let value: Double
+    
+    /// Returns a new Degree object.
+    ///
+    /// - Parameter value: The value of Degree.
     public init(_ value: Double) {
         self.value = value
     }
     
+    /// Returns a new Degree object, from sexagesimal components.
+    ///
+    /// - Parameters:
+    ///   - sign: The sign of the final value.
+    ///   - degrees: The integral degree component of the value. Sign is ignored.
+    ///   - arcminutes: The integral arcminute component of the value. Sign is ignored.
+    ///   - arcseconds: The fractional arcsecond component of the value. Sign is ignored.
     public init(_ sign: FloatingPointSign = .plus, _ degrees: Int, _ arcminutes: Int, _ arcseconds: Double) {
         let absDegree = abs(Double(degrees))
         let absMinutes = abs(Double(arcminutes))/60.0
@@ -21,15 +35,23 @@ public struct Degree: NumericType, CustomStringConvertible {
         self.init(Double(sign) * (absDegree + absMinutes + absSeconds))
     }
 
+    /// Returns a new Degree object, from a sexagesimal tuple.
+    ///
+    /// - Parameter sexagesimal: The sexagesimal tuple
     public init(_ sexagesimal: (Degree, ArcMinute, ArcSecond)) {
         self.init(sexagesimal.0.value + sexagesimal.1.value/60.0 + sexagesimal.2.value/3600.0)
     }
 
+    /// Transform the current Degree in ArcMinutes
     public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
+    /// Transform the current Degree in ArcSeconds
     public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }
+    /// Transform the current Degree in Radians
     public var inRadians: Radian { return Radian(value * 0.017453292519943295769236907684886) }
+    /// Transform the current Degree in Hours
     public var inHours: Hour { return Hour(value / 15.0) }
     
+    /// The sexagesimal notation of the Degree.
     public var sexagesimalNotation: SexagesimalNotation {
         get {
             let deg = abs(value.rounded(.towardZero))
@@ -69,15 +91,26 @@ public struct Degree: NumericType, CustomStringConvertible {
 
 // MARK: -
 
+/// The ArcMinute is a unit of angle.
+/// ArcMinute structs conform to SwiftAA Numeric type protocol.
 public struct ArcMinute: NumericType, CustomStringConvertible {
+    /// The ArcMinute value
     public let value: Double
+
+    /// Returns a new ArcMinute object.
+    ///
+    /// - Parameter value: The value of ArcMinute.
     public init(_ value: Double) {
         self.value = value
     }
     
+    /// Transform the current ArcMinute in Degree
     public var inDegrees: Degree { return Degree(value / 60.0) }
+    /// Transform the current ArcMinute in ArcSeconds
     public var inArcseconds: ArcSecond { return ArcSecond(value * 60.0) }
+    /// Transform the current ArcMinute in Hours
     public var inHours: Hour { return inDegrees.inHours }
+    /// Transform the current ArcMinute in Radians
     public var inRadians: Radian { return inDegrees.inRadians }
     
     public var description: String { return String(format: "%.2f arcmin", value) }
@@ -85,32 +118,56 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
 
 // MARK: -
 
+/// The ArcSecond is a unit of angle.
+/// ArcSecond structs conform to SwiftAA Numeric type protocol.
 public struct ArcSecond: NumericType, CustomStringConvertible {
+    /// The ArcSecond value
     public let value: Double
+    
+    /// Returns a new ArcSecond object.
+    ///
+    /// - Parameter value: The value of ArcSecond.
     public init(_ value: Double) {
         self.value = value
     }
     
+    /// Transform the current ArcSecond in Degrees
     public var inDegrees: Degree { return Degree(value / 3600.0) }
+    /// Transform the current ArcSecond in ArcMinutes
     public var inArcminutes: ArcMinute { return ArcMinute(value / 60.0) }
+    /// Transform the current ArcSecond in Hours
     public var inHours: Hour { return inDegrees.inHours }
+    /// Transform the current ArcSecond in Radians
     public var inRadians: Radian { return inDegrees.inRadians }
 
-    public func distance() -> AU {
-        return AU(KPCAAParallax_ParallaxToDistance(inDegrees.value))
+    /// Returns a new distance in Astronomical Units, the arcsecond being understood as a parallax.
+    ///
+    /// - Returns: The AU object.
+    public func distance() -> AstronomicalUnit {
+        return AstronomicalUnit(KPCAAParallax_ParallaxToDistance(inDegrees.value))
     }
+    
     public var description: String { return String(format: "%.2f arcsec", value) }
 }
 
 // MARK: -
 
+/// The Radian is a unit of angle.
+/// Radian structs conform to SwiftAA Numeric type protocol.
 public struct Radian: NumericType, CustomStringConvertible {
+    /// The Radian value
     public let value: Double
+
+    /// Returns a new Radian object.
+    ///
+    /// - Parameter value: The value of Radian.
     public init(_ value: Double) {
         self.value = value
     }
     
+    /// Transform the current Radian in Degrees
     public var inDegrees: Degree { return Degree(value / 0.017453292519943295769236907684886) }
+    /// Transform the current Radian in Hours
     public var inHours: Hour { return self.inDegrees.inHours }
     
     /// Returns self reduced to 0..<2PI range

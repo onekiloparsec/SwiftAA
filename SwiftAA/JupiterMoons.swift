@@ -47,7 +47,7 @@ public struct GalileanMoon {
     public var TropicalLongitude: Degree { get { return Degree(self.details.TropicalLongitude) } }
     public var EquatorialLatitude: Degree { get { return Degree(self.details.EquatorialLatitude) } }
 
-    public var radiusVector: AU { get { return AU(self.details.r) } }
+    public var radiusVector: AstronomicalUnit { get { return AstronomicalUnit(self.details.r) } }
 
     /// Returns whether the Moon is in transit or not (i.e. in front of Jupiter disk).
     public var inTransit: Bool { get { return self.details.inTransit.boolValue } }

@@ -57,8 +57,8 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     }
 
     /// The radius vector of the planet (that is, its distance to the Sun).
-    public var radiusVector: AU {
-        get { return AU(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
+    public var radiusVector: AstronomicalUnit {
+        get { return AstronomicalUnit(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
     
     /// The equatorial semi diameter of the planet

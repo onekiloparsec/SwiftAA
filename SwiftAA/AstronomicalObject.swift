@@ -29,7 +29,7 @@ class AstronomicalObject: Object, CelestialBody {
     }
     
     /// The radius vector (i.e. the distance to the Sun). Returns -1. Only for conformance to CelestialBody.
-    public var radiusVector: AU {
+    public var radiusVector: AstronomicalUnit {
         get { return -1 }
     }
     

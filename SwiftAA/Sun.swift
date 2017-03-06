@@ -48,7 +48,7 @@ public class Sun: Object, CelestialBody {
     /// Celestial Body
     
     /// The radius vector (distance to the Sun... here to conform to CelestialBody protocol).
-    public var radiusVector: AU { return 0.0 }
+    public var radiusVector: AstronomicalUnit { return 0.0 }
     
     /// The ecliptic coordinates of the Sun
     public var eclipticCoordinates: EclipticCoordinates {

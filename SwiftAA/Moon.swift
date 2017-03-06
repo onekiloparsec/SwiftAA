@@ -35,8 +35,8 @@ public class Moon : Object, CelestialBody {
     /// Radius vector of the Moon, that is, its distance from Earth.
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers!
-    public var radiusVector: AU {
-        get { return Meter(KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0).AstronomicalUnit }
+    public var radiusVector: AstronomicalUnit {
+        get { return Meter(KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0).AU }
     }
 
     public var eclipticCoordinates: EclipticCoordinates {
@@ -101,12 +101,12 @@ public class Moon : Object, CelestialBody {
 
     // MARK: - Static Methods
     
-    static func horizontalParallax(fromRadiusVector radiusVector: AU) -> Degree {
+    static func horizontalParallax(fromRadiusVector radiusVector: AstronomicalUnit) -> Degree {
         return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector.value))
     }
     
-    static func radiusVector(fromHorizontalParallax parallax: Degree) -> AU {
-        return AU(KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value))
+    static func radiusVector(fromHorizontalParallax parallax: Degree) -> AstronomicalUnit {
+        return AstronomicalUnit(KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value))
     }
     
     // MARK: - KPCAAMoonPhases

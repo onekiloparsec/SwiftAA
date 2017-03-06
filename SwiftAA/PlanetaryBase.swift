@@ -35,7 +35,7 @@ public protocol PlanetaryBase: ObjectBase {
     var aphelion: JulianDay { get }
     
     /// The distance to the Sun.
-    var radiusVector: AU { get }
+    var radiusVector: AstronomicalUnit { get }
 }
 
 // MARK: -
@@ -74,8 +74,8 @@ public extension PlanetaryBase {
     }
     
     /// The distance to the Sun.
-    var radiusVector: AU {
-        get { return AU(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
+    var radiusVector: AstronomicalUnit {
+        get { return AstronomicalUnit(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
 }
 
