@@ -88,17 +88,17 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
      
      - returns: A length in (Julian) Days.
      */
-    func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Double {
+    func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Day {
         let year = self.julianDay.date.year
         switch season {
         case .spring:
-            return KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision)
+            return Day(KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision))
         case .summer:
-            return KPCAAEquinoxesAndSolstices_LengthOfSummer(year, northernHemisphere, self.highPrecision)
+            return Day(KPCAAEquinoxesAndSolstices_LengthOfSummer(year, northernHemisphere, self.highPrecision))
         case .autumn:
-            return KPCAAEquinoxesAndSolstices_LengthOfAutumn(year, northernHemisphere, self.highPrecision)
+            return Day(KPCAAEquinoxesAndSolstices_LengthOfAutumn(year, northernHemisphere, self.highPrecision))
         case .winter:
-            return KPCAAEquinoxesAndSolstices_LengthOfWinter(year, northernHemisphere, self.highPrecision)
+            return Day(KPCAAEquinoxesAndSolstices_LengthOfWinter(year, northernHemisphere, self.highPrecision))
         }
     }
     
