@@ -28,7 +28,7 @@ class VenusTests: XCTestCase {
         let heliocentricEcliptic = venus.eclipticCoordinates
         AssertEqual(heliocentricEcliptic.celestialLatitude, Degree(-2.62070), accuracy: ArcSecond(0.1).inDegrees)
         AssertEqual(heliocentricEcliptic.celestialLongitude, Degree(26.11428), accuracy: ArcSecond(0.1).inDegrees)
-        AssertEqual(venus.radiusVector, AU(0.724603), accuracy: AU(0.00001))
+        AssertEqual(venus.radiusVector, AstronomicalUnit(0.724603), accuracy: AstronomicalUnit(0.00001))
     }
     
     func testGeocentricEquatorialCoordinates() { // See AA p.103
