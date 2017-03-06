@@ -14,7 +14,7 @@
     <a title="Degree Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (52% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (61% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -225,13 +225,13 @@
             <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/AU.html">AU</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/ArcMinute.html">ArcMinute</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ArcSecond.html">ArcSecond</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/BinaryStarDetails.html">BinaryStarDetails</a>
@@ -310,7 +310,14 @@
         <section>
           <section class="section">
             <h1>Degree</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Degree</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>The Degree is a unit of angle.
+Degree structs conform to SwiftAA Numeric type protocol.</p>
 
           </section>
           <section class="section task-group-section">
@@ -329,11 +336,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The Degree value</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -351,11 +366,39 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a new Degree object.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value of Degree.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L13-L15">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L20-L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -373,11 +416,78 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a new Degree object, from sexagesimal components.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">sign</span><span class="p">:</span> <span class="kt">FloatingPointSign</span> <span class="o">=</span> <span class="o">.</span><span class="n">plus</span><span class="p">,</span> <span class="n">_</span> <span class="nv">degrees</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arcminutes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arcseconds</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sign</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sign of the final value.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>degrees</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The integral degree component of the value. Sign is ignored.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arcminutes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The integral arcminute component of the value. Sign is ignored.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arcseconds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fractional arcsecond component of the value. Sign is ignored.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L17-L22">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L31-L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -395,11 +505,39 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a new Degree object, from a sexagesimal tuple.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">sexagesimal</span><span class="p">:</span> <span class="p">(</span><span class="kt">Degree</span><span class="p">,</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/ArcSecond.html">ArcSecond</a></span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sexagesimal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sexagesimal tuple</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L24-L26">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L41-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -417,11 +555,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current Degree in ArcMinutes</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inArcminutes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -439,11 +585,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current Degree in ArcSeconds</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inArcseconds</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcSecond.html">ArcSecond</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -461,11 +615,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current Degree in Radians</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inRadians</span><span class="p">:</span> <span class="kt"><a href="../Structs/Radian.html">Radian</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -483,11 +645,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current Degree in Hours</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inHours</span><span class="p">:</span> <span class="kt"><a href="../Structs/Hour.html">Hour</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -505,11 +675,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The sexagesimal notation of the Degree.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sexagesimalNotation</span><span class="p">:</span> <span class="kt">SexagesimalNotation</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L33-L40">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L55-L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -539,7 +717,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L43">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -569,7 +747,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L45">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -599,7 +777,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L48-L61">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L70-L83">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -629,7 +807,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L63-L66">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L85-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -639,7 +817,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-05)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -14,7 +14,7 @@
     <a title="ArcSecond Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (52% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (61% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -225,13 +225,13 @@
             <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/AU.html">AU</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/ArcMinute.html">ArcMinute</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ArcSecond.html">ArcSecond</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/BinaryStarDetails.html">BinaryStarDetails</a>
@@ -310,7 +310,14 @@
         <section>
           <section class="section">
             <h1>ArcSecond</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ArcSecond</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>The ArcSecond is a unit of angle.
+ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
 
           </section>
           <section class="section task-group-section">
@@ -329,11 +336,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The ArcSecond value</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L125">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -351,11 +366,39 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a new ArcSecond object.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value of ArcSecond.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L90-L92">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L130-L132">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -373,11 +416,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current ArcSecond in Degrees</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inDegrees</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L135">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -395,11 +446,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current ArcSecond in ArcMinutes</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inArcminutes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L137">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -417,11 +476,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current ArcSecond in Hours</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inHours</span><span class="p">:</span> <span class="kt"><a href="../Structs/Hour.html">Hour</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L139">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -439,11 +506,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform the current ArcSecond in Radians</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inRadians</span><span class="p">:</span> <span class="kt"><a href="../Structs/Radian.html">Radian</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L141">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -451,9 +526,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA9ArcSecond8distanceFT_VS_2AU"></a>
+                    <a name="/s:FV7SwiftAA9ArcSecond8distanceFT_VS_16AstronomicalUnit"></a>
                     <a name="//apple_ref/swift/Method/distance()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA9ArcSecond8distanceFT_VS_2AU">distance()</a>
+                    <a class="token" href="#/s:FV7SwiftAA9ArcSecond8distanceFT_VS_16AstronomicalUnit">distance()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -461,11 +536,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a new distance in Astronomical Units, the arcsecond being understood as a parallax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distance</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The AU object.</p>
 
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L99-L101">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/Angles.swift#L146-L148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -483,7 +571,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns a new distance in Astronomical Units, the arcsecond being understood as a parallax.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -504,7 +593,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-05)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
