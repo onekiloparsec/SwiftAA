@@ -12,6 +12,10 @@ import XCTest
 
 class VenusTests: XCTestCase {
 
+    func testAverageColorPresence() {
+        XCTAssertNotNil(Venus.averageColor)
+    }
+    
     func testApparentGeocentricCoordinates() { // See AA p.225
         let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20))
         AssertEqual(Hour(venus.planetaryDetails.ApparentGeocentricRA), Hour(21.078181), accuracy: ArcSecond(0.1).inHours)

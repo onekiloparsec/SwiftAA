@@ -32,6 +32,45 @@ class MoonTests: XCTestCase {
         AssertEqual(date4, expected, accuracy: accuracy)
     }
     
+    // Based on AA+ Tests. It says that an interesting case of moon rise occur on that date, on that place.
+    // I've googled around, but found nothing. That position is close to Jan Mayen Island in the Norway sea.
+    func testMoonRiseSetsAboveArticCircle() {
+        
+        let coords = GeographicCoordinates(positivelyWestwardLongitude: -5.6306649983214818.degrees, latitude: 71.646778771324804.degrees)
+        
+        let moon = Moon(julianDay: JulianDay(year: 2012, month: 10, day: 30))
+        let times = moon.riseTransitSetTimes(with: coords)
+
+        XCTAssertNotNil(times.riseTime)
+        AssertEqual(times.riseTime!,
+                    JulianDay(year: 2012, month: 10, day: 30, hour: 13, minute: 13, second: 12.0),
+                    accuracy: 10.0.seconds.inJulianDays)
+        
+        XCTAssertNotNil(times.setTime)
+        AssertEqual(times.setTime!,
+                    JulianDay(year: 2012, month: 10, day: 30, hour: 10, minute: 11, second: 01.0),
+                    accuracy: 10.0.seconds.inJulianDays)
+    }
+    
+    // Based on AA+ Tests.
+    func testMoonTransitSetsAboveArticCircle() {
+
+        let coords = GeographicCoordinates(positivelyWestwardLongitude: -5.6306649983214818.degrees, latitude: 71.646778771324804.degrees)
+
+        let moon = Moon(julianDay: JulianDay(year: 2012, month: 10, day: 31))
+        let times = moon.riseTransitSetTimes(with: coords)
+        
+        XCTAssertNotNil(times.transitTime)
+        AssertEqual(times.transitTime!,
+                    JulianDay(year: 2012, month: 10, day: 31, hour: 0, minute: 11, second: 59.0),
+                    accuracy: 10.0.seconds.inJulianDays)
+        
+        XCTAssertNotNil(times.setTime)
+        AssertEqual(times.setTime!,
+                    JulianDay(year: 2012, month: 10, day: 31, hour: 11, minute: 41, second: 8.0),
+                    accuracy: 100.0.seconds.inJulianDays)
+    }
+    
 }
 
 

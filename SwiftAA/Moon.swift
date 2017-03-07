@@ -34,7 +34,7 @@ public class Moon : Object, CelestialBody {
     
     /// Radius vector of the Moon, that is, its distance from Earth.
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
-    /// According to that Eq., the result is in Kilometers!
+    /// According to that Eq., the result is in Kilometers. For consistency with others, we return AU.
     public var radiusVector: AstronomicalUnit {
         get { return Meter(KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0).AU }
     }

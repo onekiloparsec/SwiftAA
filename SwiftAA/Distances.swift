@@ -35,7 +35,7 @@ public struct AstronomicalUnit: NumericType, CustomStringConvertible {
     ///
     /// - Returns: The parallax value.
     public func parallax() -> ArcSecond {
-        return Degree(KPCAAParallax_DistanceToParallax(value)).inArcseconds
+        return Degree(KPCAAParallax_DistanceToParallax(value)).inArcSeconds
     }
 
     public var description: String { return String(format: "%.2f AU", value) }

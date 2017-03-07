@@ -43,9 +43,9 @@ public struct Degree: NumericType, CustomStringConvertible {
     }
 
     /// Transform the current Degree in ArcMinutes
-    public var inArcminutes: ArcMinute { return ArcMinute(value * 60.0) }
+    public var inArcMinutes: ArcMinute { return ArcMinute(value * 60.0) }
     /// Transform the current Degree in ArcSeconds
-    public var inArcseconds: ArcSecond { return ArcSecond(value * 3600.0) }
+    public var inArcSeconds: ArcSecond { return ArcSecond(value * 3600.0) }
     /// Transform the current Degree in Radians
     public var inRadians: Radian { return Radian(value * 0.017453292519943295769236907684886) }
     /// Transform the current Degree in Hours
