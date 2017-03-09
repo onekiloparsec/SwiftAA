@@ -73,10 +73,10 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 geoCoords.latitude.value,
                                                 apparentRiseSetAltitude.value)
     
-    let midnight = julianDay.midnight
-    let rise = midnight + Hour(details.Rise).inJulianDays
-    let transit = midnight + Hour(details.Transit).inJulianDays
-    let set = midnight + Hour(details.Set).inJulianDays
+    let base = julianDay
+    let rise = base + Hour(details.Rise).inJulianDays
+    let transit = base + Hour(details.Transit).inJulianDays
+    let set = base + Hour(details.Set).inJulianDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: rise,
@@ -91,7 +91,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
-        let midnight = self.celestialBody.julianDay.midnight
+        let midnight = self.celestialBody.julianDay.localMidnight(timeZone: self.timeZone)
         let hp = self.celestialBody.highPrecision
         
         let celestialBodyType = type(of: self.celestialBody)
@@ -110,18 +110,20 @@ public class RiseTransitSetTimes {
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
     public fileprivate(set) var celestialBody: CelestialBody
     private let riseSetAltitude: Degree
+    private let timeZone: TimeZone
     
-    
+
     /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
     ///
     /// - Parameters:
     ///   - celestialBody: The celestialbody for which to compute the times.
     ///   - geographicCoordinates: The geographic coordinates for which to compute the times.
     ///   - riseSetAltitude: The altitude considered for rise and set times.
-    required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates,  riseSetAltitude: Degree? = nil) {
+    required public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, timeZone: TimeZone? = nil, riseSetAltitude: Degree? = nil) {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? celestialBody.apparentRiseSetAltitude
+        self.timeZone = timeZone ?? TimeZone(secondsFromGMT: 0)!
     }
     
     /// The rise time of the celestial body, in Julian Day.
