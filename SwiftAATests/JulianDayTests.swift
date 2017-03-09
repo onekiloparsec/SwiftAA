@@ -121,7 +121,7 @@ class JulianDayTest: XCTestCase {
         AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
     }
     
-    func testLocalMidnight() {
+    func testLocalMidnightForLongitude() {
         let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
         
         let longitude1 = 0.0.degrees
@@ -138,6 +138,25 @@ class JulianDayTest: XCTestCase {
 
         let longitude5 = -90.0.degrees
         AssertEqual(jd.localMidnight(longitude: longitude5), JulianDay(year: 2016, month: 12, day: 19, hour: 18))
+    }
+
+    func testLocalMidnightForTimeZone() {
+        let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
+
+        let timeZone0 = TimeZone(secondsFromGMT: 0)!
+        AssertEqual(jd.localMidnight(timeZone: timeZone0), JulianDay(year: 2016, month: 12, day: 20, hour: 0))
+
+        let timeZone1 = TimeZone(secondsFromGMT: -1 * 60 * 60)!
+        AssertEqual(jd.localMidnight(timeZone: timeZone1), JulianDay(year: 2016, month: 12, day: 20, hour: 1))
+
+        let timeZone2 = TimeZone(secondsFromGMT: +1 * 60 * 60)!
+        AssertEqual(jd.localMidnight(timeZone: timeZone2), JulianDay(year: 2016, month: 12, day: 19, hour: 23))
+
+        let timeZone3 = TimeZone(secondsFromGMT: -6 * 60 * 60)!
+        AssertEqual(jd.localMidnight(timeZone: timeZone3), JulianDay(year: 2016, month: 12, day: 19, hour: 6))
+
+        let timeZone4 = TimeZone(secondsFromGMT: +6 * 60 * 60)!
+        AssertEqual(jd.localMidnight(timeZone: timeZone4), JulianDay(year: 2016, month: 12, day: 19, hour: 18))
     }
     
     // See AA p.78

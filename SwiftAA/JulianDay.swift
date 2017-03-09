@@ -109,7 +109,12 @@ public extension JulianDay {
     public func localMidnight(longitude: Degree) -> JulianDay {
         return (self - longitude.inHours.inJulianDays).midnight + longitude.inHours.inJulianDays
     }
-    
+
+    public func localMidnight(timeZone: TimeZone) -> JulianDay {
+        let offsetFromGMT = JulianDay(Double(timeZone.secondsFromGMT(for: self.date)) / (60*60*24))
+        return (self + offsetFromGMT).midnight - offsetFromGMT
+    }
+
     /**
      Computes the mean sidereal time for the Greenwich meridian.
      That is, the Greenwich hour angle of the mean vernal point (the intersection of the ecliptic
