@@ -125,19 +125,19 @@ class JulianDayTest: XCTestCase {
         let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
         
         let longitude1 = 0.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude1), jd.midnight)
+        AssertEqual(jd.localMidnight(longitude: longitude1), JulianDay(year: 2016, month: 12, day: 20, hour: 0))
         
         let longitude2 = 15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude2), jd.midnight + 1.0.hours.inJulianDays)
-        
+        AssertEqual(jd.localMidnight(longitude: longitude2), JulianDay(year: 2016, month: 12, day: 20, hour: 1))
+
         let longitude3 = -15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude3), jd.midnight - 1.0.hours.inJulianDays)
-        
+        AssertEqual(jd.localMidnight(longitude: longitude3), JulianDay(year: 2016, month: 12, day: 19, hour: 23))
+
         let longitude4 = 90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude4), jd.midnight + 6.0.hours.inJulianDays)
-        
+        AssertEqual(jd.localMidnight(longitude: longitude4), JulianDay(year: 2016, month: 12, day: 19, hour: 6))
+
         let longitude5 = -90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude5), jd.midnight - 6.0.hours.inJulianDays)
+        AssertEqual(jd.localMidnight(longitude: longitude5), JulianDay(year: 2016, month: 12, day: 19, hour: 18))
     }
     
     // See AA p.78

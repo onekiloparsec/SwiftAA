@@ -107,7 +107,7 @@ public extension JulianDay {
      - returns: A Julian Day struct, corresponding to the geometric midnight local to a given Earth longitude.
      */
     public func localMidnight(longitude: Degree) -> JulianDay {
-        return self.midnight + longitude.inHours.inJulianDays
+        return (self - longitude.inHours.inJulianDays).midnight + longitude.inHours.inJulianDays
     }
     
     /**
