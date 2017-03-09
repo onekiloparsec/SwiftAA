@@ -12,6 +12,7 @@ import XCTest
 class RiseTransitSetTests: XCTestCase {
     
     let moscow = GeographicCoordinates(positivelyWestwardLongitude: -37.615559, latitude: 55.752220)
+    let sydney = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 151, 12, 0), latitude: Degree(.minus, 33, 52, 0), altitude: Meter(0))
     
     func testVenusAtBoston1988() { // See AA p.103
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
@@ -59,6 +60,16 @@ class RiseTransitSetTests: XCTestCase {
         let expectedTransit = JulianDay(year: 2016, month: 12, day: 27, hour: 7, minute: 57, second: 43)
         AssertEqual(details.transitTime!, expectedTransit, accuracy: accuracy)
         let expectedSet = JulianDay(year: 2016, month: 12, day: 27, hour: 12, minute: 12, second: 46)
+        AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
+    }
+
+    func testMoonAtSydney2017() { // Data from USNO
+        let moon = Moon(julianDay: JulianDay(year: 2016, month: 12, day: 31, hour: 13, minute: 0, second: 0))
+        let details = RiseTransitSetTimes(celestialBody: moon, geographicCoordinates: sydney, timeZone: TimeZone(identifier: "Australia/Sydney"))
+        let accuracy = Minute(2.0).inJulianDays
+        let expectedRise = JulianDay(year: 2016, month: 12, day: 31, hour: 21, minute: 19, second: 0)
+        AssertEqual(details.riseTime!, expectedRise, accuracy: accuracy)
+        let expectedSet = JulianDay(year: 2017, month: 1, day: 1, hour: 11, minute: 7, second: 0)
         AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
     }
     
