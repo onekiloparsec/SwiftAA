@@ -38,6 +38,11 @@ public extension Date {
         get { return Calendar.gregorianGMT.component(.hour, from: self) }
     }
     
+    /// The fractional hour of the date
+    public var fractionalHour: Double {
+        get { return Double(self.hour) + Double(self.minute)/60.0 + Double(self.second)/3600.0 + Double(self.nanosecond)/1e9/3600.0 }
+    }
+    
     /// The minute component of the date.
     public var minute: Int {
         get { return Calendar.gregorianGMT.component(.minute, from: self) }
@@ -83,7 +88,7 @@ public extension Date {
     
     /// Returns the number of integral days since January 1st, 2000.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: The number of integral days since January 1st, 2000.
     public func daysSince2000January0() -> Int {
         let A = 367*self.year
         let B = (7*(self.year + (self.month+9)/12))/4

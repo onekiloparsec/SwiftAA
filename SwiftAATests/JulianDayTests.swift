@@ -125,19 +125,63 @@ class JulianDayTest: XCTestCase {
         let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
         
         let longitude1 = 0.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude1), jd.midnight)
+        XCTAssertEqual(jd.localMidnight(longitude: longitude1).date, JulianDay(year: 2016, month: 12, day: 20, hour: 0).date)
+    }
+    
+    func testLocalMidnightWestward() {
+        let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
         
-        let longitude2 = 15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude2), jd.midnight + 1.0.hours.inJulianDays)
+        let longitude1 = 0.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude1).date, JulianDay(year: 2016, month: 12, day: 20, hour: 0).date)
+
+        let longitude2 = 15.0.degrees // positive = going west, midnight is "later" than UTC hour of input jd
+        XCTAssertEqual(jd.localMidnight(longitude: longitude2).date, JulianDay(year: 2016, month: 12, day: 20, hour: 1).date)
         
-        let longitude3 = -15.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude3), jd.midnight - 1.0.hours.inJulianDays)
+        let longitude3 = 30.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude3).date, JulianDay(year: 2016, month: 12, day: 20, hour: 2).date)
         
-        let longitude4 = 90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude4), jd.midnight + 6.0.hours.inJulianDays)
+        let longitude4 = 60.0.degrees // from now on, jump back by one day, degree(60)=hour(4) is greater than input 3hm5s3.5
+        XCTAssertEqual(jd.localMidnight(longitude: longitude4).date, JulianDay(year: 2016, month: 12, day: 19, hour: 4).date)
+        
+        let longitude5 = 90.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude5).date, JulianDay(year: 2016, month: 12, day: 19, hour: 6).date)
+
+        let longitude6 = 180.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude6).date, JulianDay(year: 2016, month: 12, day: 19, hour: 12).date)
+        
+        let longitude7 = 270.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude7).date, JulianDay(year: 2016, month: 12, day: 19, hour: 18).date)
+
+        let longitude8 = 360.0.degrees // back to Dec 20.
+        XCTAssertEqual(jd.localMidnight(longitude: longitude8).date, JulianDay(year: 2016, month: 12, day: 20, hour: 0).date)
+    }
+    
+    func testLocalMidnightEastward() {
+        let jd = JulianDay(year: 2016, month: 12, day: 20, hour: 3, minute: 5, second: 3.5)
+        
+        let longitude1 = 0.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude1).date, JulianDay(year: 2016, month: 12, day: 20, hour: 0).date)
+    
+        let longitude2 = -15.0.degrees // negative = going east, midnight is "earlier" than UTC hour of input jd
+        XCTAssertEqual(jd.localMidnight(longitude: longitude2).date, JulianDay(year: 2016, month: 12, day: 19, hour: 23).date)
+        
+        let longitude3 = -30.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude3).date, JulianDay(year: 2016, month: 12, day: 19, hour: 22).date)
+        
+        let longitude4 = -60.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude4).date, JulianDay(year: 2016, month: 12, day: 19, hour: 20).date)
         
         let longitude5 = -90.0.degrees
-        AssertEqual(jd.localMidnight(longitude: longitude5), jd.midnight - 6.0.hours.inJulianDays)
+        XCTAssertEqual(jd.localMidnight(longitude: longitude5).date, JulianDay(year: 2016, month: 12, day: 19, hour: 18).date)
+    
+        let longitude6 = -180.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude6).date, JulianDay(year: 2016, month: 12, day: 19, hour: 12).date)
+        
+        let longitude7 = -270.0.degrees // From now on, jump forward by one day, since we crossed the line.
+        XCTAssertEqual(jd.localMidnight(longitude: longitude7).date, JulianDay(year: 2016, month: 12, day: 20, hour: 6).date)
+
+        let longitude8 = -360.0.degrees
+        XCTAssertEqual(jd.localMidnight(longitude: longitude8).date, JulianDay(year: 2016, month: 12, day: 20, hour: 0).date)
     }
     
     // See AA p.78
