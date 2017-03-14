@@ -95,7 +95,7 @@ public extension JulianDay {
     /**
      Returns the Julian Day corresponding to the Greenwhich midnight before the actual value.
      
-     - returns: A Julian Day struct, corresponding to the Greenwhich midnight before the actual value.
+     - returns: A Julian Day object, corresponding to the Greenwhich midnight before the actual value.
      */
     public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
