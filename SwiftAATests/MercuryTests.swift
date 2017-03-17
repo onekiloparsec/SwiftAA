@@ -16,17 +16,19 @@ class MercuryTests: XCTestCase {
     }
     
     // Taken from AA+ tests
-    func testRiseTransitSetTimesLowPrecision() {
+    func testRiseTransitSetTimes() {
         let jd = JulianDay(2465483.5000000000) // 1st of March in 2038
-        let mercury = Mercury(julianDay: jd, highPrecision: false)
+        let mercury = Mercury(julianDay: jd, highPrecision: true)
         let times = mercury.riseTransitSetTimes(with: GeographicCoordinates(positivelyWestwardLongitude: 0.0.degrees, latitude: 0.0.degrees))
-        let expected_rise = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 10, minute: 5, second: 52)
-        AssertEqual(times.riseTime!, expected_rise.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
-    }
+        
+        let expectedRise = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 10, minute: 5, second: 52)
+        AssertEqual(times.riseTime!, expectedRise.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
+        
+        let expectedTransit = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 16, minute: 13, second: 1)
+        AssertEqual(times.transitTime!, expectedTransit.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
+        
+        let expectedSet = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 22, minute: 20, second: 15)
+        AssertEqual(times.setTime!, expectedSet.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
 
-//    func testRiseTransitSetTimesHighPrecision() {
-//        let jd = JulianDay(2465483.5000000000) // 1st of March in 2038
-//        let mercury = Mercury(julianDay: jd, highPrecision: true)
-//        let times = mercury.riseTransitSetTimes(with: GeographicCoordinates(positivelyWestwardLongitude: 0.0.degrees, latitude: 0.0.degrees))
-//    }
+    }
 }
