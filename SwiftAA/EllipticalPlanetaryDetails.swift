@@ -23,6 +23,12 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
     
     /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree { get }
+    
+    /// The apparent equatorial coordinates of the planet. That is, its apparent position on the celestial sphere, as
+    /// it is actually seen from the center of the moving Earth, and referred to the instantaneous equator, ecliptic
+    /// and equinox.
+    /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
+    var apparentGeocentricEquatorialCoordinates: EquatorialCoordinates { get }
 }
 
 public extension EllipticalPlanetaryDetails {
@@ -39,5 +45,18 @@ public extension EllipticalPlanetaryDetails {
         get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector.value,
                                                                 Earth(julianDay: self.julianDay).radiusVector.value,
                                                                 self.apparentGeocentricDistance.value)) }
+    }
+    
+    /// The apparent equatorial coordinates of the planet. That is, its apparent position on the celestial sphere, as
+    /// it is actually seen from the center of the moving Earth, and referred to the instantaneous equator, ecliptic
+    /// and equinox.
+    /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
+    public var apparentGeocentricEquatorialCoordinates: EquatorialCoordinates {
+        get {
+            let ra = Hour(self.planetaryDetails.ApparentGeocentricRA)
+            let dec = Degree(self.planetaryDetails.ApparentGeocentricDeclination)
+            let result = EquatorialCoordinates(alpha: ra, delta: dec)
+            return result
+        }
     }
 }
