@@ -150,8 +150,13 @@ public extension JulianDay {
         return Hour(KPCAASidereal_ApparentGreenwichSiderealTime(self.value))
     }
     
-    // MARK: Dynamical Times
+    // Obliquity
     
+    public func obliquityOfEcliptic(mean: Bool = true) -> Degree {
+        return Degree(KPCAANutation_ObliquityOfEcliptic(mean, self.value))
+    }
+    
+    // MARK: Dynamical Times
     
     /// Returns the difference bewteeen TD (the 'Time Dynamical'), and UT (the Universal Time).
     /// TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate naming...).
