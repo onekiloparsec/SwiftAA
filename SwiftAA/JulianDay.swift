@@ -100,11 +100,13 @@ public extension JulianDay {
     public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
     /**
-     Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude.
-     It is a direct and linear function of the longitude, and makes reference to time zone whatsoever.
-     Once transformed to a Date object, it will rarely corresponds to the normal "midnight" date & hour.
+     Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude,
+     before the actual value. It is a direct function of the longitude, and makes no reference to time zone whatsoever.
+     Once transformed to a Date object, it will most probably not corresponds to the normal "midnight" date & hour,
+     since the latter is identical by convention on a given timezone. The local date however is always respected 
+     (since you may cross the new-date line depending on longitude).
      
-     - returns: A Julian Day struct, corresponding to the geometric midnight local to a given Earth longitude.
+     - returns: A Julian Day object, corresponding to the geometric midnight local to a given Earth longitude.
      */
     public func localMidnight(longitude: Degree) -> JulianDay {
         var shift = 0.0
