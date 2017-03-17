@@ -157,14 +157,20 @@ public struct EclipticCoordinates: CustomStringConvertible {
         self.init(celestialLongitude: lambda, celestialLatitude: beta, epoch: epsilon)
     }
     
+    /// Returns the equatorial coordinates corresponding to the current ecliptic ones.
+    ///
+    /// - Returns: A new equatorial coordinates object
     public func makeEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(StandardEpoch_J2000_0.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
 
+    /// Returns the apparent equatorial coordinates corresponding to the current ecliptic ones.
+    ///
+    /// - Returns: A new equatorial coordinates object
     public func makeApparentEquatorialCoordinates() -> EquatorialCoordinates {
-        let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(epoch.value)
+        let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(self.epoch.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
     }
