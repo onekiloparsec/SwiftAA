@@ -45,7 +45,7 @@ extension Earth {
     /// If the _apparent_ right ascension and declination are used, that is
     /// affected by the aberration and the nutation, the true obliquity should be used.
     public func obliquityOfEcliptic(mean: Bool = true) -> Degree {
-        return Degree(KPCAANutation_ObliquityOfEcliptic(mean, julianDay.value))
+        return Degree(KPCAANutation_ObliquityOfEcliptic(mean, self.julianDay.value))
     }
 }
 
