@@ -77,7 +77,7 @@ class EarthTests: XCTestCase {
                                           latitude: Degree(.plus, 48, 52, 0.0),
                                           altitude: Meter(30))
         
-        let accuracy = 1.0.minutes.inJulianDays
+        let accuracy = 2.0.minutes.inJulianDays
 
         var date = JulianDay(year: 2017, month: 1, day: 1).date // january 1st
         var twilights = Earth(julianDay: JulianDay(date)).twilights(forSunAltitude: TwilightSunAltitude.astronomical.rawValue, coordinates: paris)

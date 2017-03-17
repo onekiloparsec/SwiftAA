@@ -62,7 +62,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                            geoCoords: GeographicCoordinates,
                            apparentRiseSetAltitude: Degree) -> RiseTransitSetTimesDetails
 {
-    let details = KPCAARiseTransitSet_Calculate(julianDay.value,
+    let details = KPCAARiseTransitSet_Calculate(julianDay.UTCtoTT().value,
                                                 equCoords1.alpha.value,
                                                 equCoords1.delta.value,
                                                 equCoords2.alpha.value,
@@ -73,10 +73,9 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 geoCoords.latitude.value,
                                                 apparentRiseSetAltitude.value)
     
-    let midnight = julianDay.midnight
-    let rise = midnight + Hour(details.Rise).inJulianDays
-    let transit = midnight + Hour(details.Transit).inJulianDays
-    let set = midnight + Hour(details.Set).inJulianDays
+    let rise = julianDay + Hour(details.Rise).inJulianDays
+    let transit = julianDay + Hour(details.Transit).inJulianDays
+    let set = julianDay + Hour(details.Set).inJulianDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: rise,
@@ -91,15 +90,15 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
-        let midnight = self.celestialBody.julianDay.midnight
+        let jd = self.celestialBody.julianDay
         let hp = self.celestialBody.highPrecision
         
         let celestialBodyType = type(of: self.celestialBody)
-        let body1: CelestialBody = celestialBodyType.init(julianDay: midnight-1, highPrecision: hp)
-        let body2: CelestialBody = celestialBodyType.init(julianDay: midnight, highPrecision: hp)
-        let body3: CelestialBody = celestialBodyType.init(julianDay: midnight+1, highPrecision: hp)
+        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
+        let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
+        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
         
-        return riseTransitSet(forJulianDay: midnight,
+        return riseTransitSet(forJulianDay: jd,
                               equCoords1: body1.apparentEquatorialCoordinates,
                               equCoords2: body2.apparentEquatorialCoordinates,
                               equCoords3: body3.apparentEquatorialCoordinates,
