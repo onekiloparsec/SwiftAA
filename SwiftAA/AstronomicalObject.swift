@@ -37,6 +37,10 @@ class AstronomicalObject: Object, CelestialBody {
         get { return self.equatorialCoordinates.makeEclipticCoordinates() }
     }
     
+    public var apparentEclipticCoordinates: EclipticCoordinates {
+        get { return self.eclipticCoordinates }
+    }
+
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
         get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
