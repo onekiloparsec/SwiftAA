@@ -50,8 +50,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         AssertEqual(horizontal1.angularSeparation(with: horizontal2), Degree(45), accuracy: ArcSecond(0.0001).inDegrees)
         AssertEqual(horizontal2.angularSeparation(with: horizontal3), Degree(60), accuracy: ArcSecond(0.0001).inDegrees)
         AssertEqual(horizontal3.angularSeparation(with: horizontal1), Degree(90), accuracy: ArcSecond(0.0001).inDegrees)
-    }
-    
+    }    
 }
 
 
