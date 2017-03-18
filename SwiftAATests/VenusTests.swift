@@ -37,7 +37,7 @@ class VenusTests: XCTestCase {
     
     func testGeocentricEquatorialCoordinates() { // See AA p.103
         let venus = Venus(julianDay: JulianDay(year: 1988, month: 03, day: 20))
-        let equatorial = venus.apparentEquatorialCoordinates
+        let equatorial = venus.apparentGeocentricEquatorialCoordinates
         AssertEqual(equatorial.rightAscension.inDegrees, Degree(41.73129), accuracy: ArcSecond(0.1).inDegrees)
         AssertEqual(equatorial.declination, Degree(18.44092), accuracy: ArcSecond(0.1).inDegrees)
     }
