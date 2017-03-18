@@ -98,10 +98,14 @@ public class RiseTransitSetTimes {
         let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
         let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
         
+        let coords1 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body1) : body1.apparentEquatorialCoordinates
+        let coords2 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body2) : body2.apparentEquatorialCoordinates
+        let coords3 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body3) : body3.apparentEquatorialCoordinates
+        
         return riseTransitSet(forJulianDay: jd,
-                              equCoords1: self.apparentEquatorialCoordinatesBlock(body1),
-                              equCoords2: self.apparentEquatorialCoordinatesBlock(body2),
-                              equCoords3: self.apparentEquatorialCoordinatesBlock(body3),
+                              equCoords1: body1.apparentEquatorialCoordinates,
+                              equCoords2: body2.apparentEquatorialCoordinates,
+                              equCoords3: body3.apparentEquatorialCoordinates,
                               geoCoords: self.geographicCoordinates,
                               apparentRiseSetAltitude: self.riseSetAltitude)
     }()
@@ -110,7 +114,7 @@ public class RiseTransitSetTimes {
     public fileprivate(set) var celestialBody: CelestialBody
     
     private let riseSetAltitude: Degree
-    private let apparentEquatorialCoordinatesBlock: (CelestialBody) -> EquatorialCoordinates
+    private let apparentEquatorialCoordinatesBlock: ((CelestialBody) -> EquatorialCoordinates)?
     
     
     /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
@@ -130,7 +134,7 @@ public class RiseTransitSetTimes {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? type(of: celestialBody).apparentRiseSetAltitude
-        self.apparentEquatorialCoordinatesBlock = apparentEquatorialCoordinatesBlock ?? { _ in celestialBody.apparentEquatorialCoordinates }
+        self.apparentEquatorialCoordinatesBlock = apparentEquatorialCoordinatesBlock
     }
     
     /// The rise time of the celestial body, in Julian Day.
