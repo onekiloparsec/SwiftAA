@@ -39,11 +39,21 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     /// instantaneous equator, ecliptic and equinox.
     /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
+        get { return self.apparentEclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
 
     /// The ecliptic (or celestial) coordinates of the planet
     public var eclipticCoordinates: EclipticCoordinates {
+        get {
+            let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)
+            let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay.value, self.planet, self.highPrecision)
+            // Using standard epoch, thus standard value for the equinox, thus the mean obliquity.
+            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude))
+        }
+    }
+
+    /// The apparent ecliptic (or celestial) coordinates of the planet
+    public var apparentEclipticCoordinates: EclipticCoordinates {
         get {
             let jdPlanet = self.julianDay.UTCtoTT() // See usage in AATests.cpp.
             let longitude = KPCAAEclipticalElement_EclipticLongitude(jdPlanet.value, self.planet, self.highPrecision)
