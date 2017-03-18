@@ -22,8 +22,6 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     public var alpha: Hour { return rightAscension }
     /// Convenience accessor of the declination
     public var delta: Degree { return declination }
-    /// Convenience accessor of the epoch.
-    public var epsilon: JulianDay { return epoch }
     
     /// Returns an EquatorialCoordinates oject.
     ///
@@ -42,9 +40,9 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     /// - Parameters:
     ///   - alpha: The alpha (R.A.) value
     ///   - delta: The delta (Dec.) value
-    ///   - epsilon: The optional epsilon value, default to J2000.0
-    public init(alpha: Hour, delta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
-        self.init(rightAscension: alpha, declination: delta, epoch: epsilon)
+    ///   - epoch: The optional epoch value, default to J2000.0. It is not called 'epsilon' to avoid confusion with equinox.
+    public init(alpha: Hour, delta: Degree, epoch: JulianDay = StandardEpoch_J2000_0) {
+        self.init(rightAscension: alpha, declination: delta, epoch: epoch)
     }
     
     /// Returns the coordinates transformed into the ecliptic (celestial) system.
@@ -132,8 +130,6 @@ public struct EclipticCoordinates: CustomStringConvertible {
     public var lambda: Degree { return celestialLongitude }
     /// A convenience accessor for the celestial latitude
     public var beta: Degree { return celestialLatitude }
-    /// A convenience accessor for the epoch.
-    public var epsilon: JulianDay { return epoch }
     
     /// Returns a new EclipticCoordinates object.
     ///
@@ -152,9 +148,9 @@ public struct EclipticCoordinates: CustomStringConvertible {
     /// - Parameters:
     ///   - lambda: The longitude value.
     ///   - beta: The latitude value
-    ///   - epsilon: The optional epoch value, default to J2000.0
-    public init(lambda: Degree, beta: Degree, epsilon: JulianDay = StandardEpoch_J2000_0) {
-        self.init(celestialLongitude: lambda, celestialLatitude: beta, epoch: epsilon)
+    ///   - epoch: The optional epoch value, default to J2000.0. It is not called 'epsilon' to avoid confusion with equinox.
+    public init(lambda: Degree, beta: Degree, epoch: JulianDay = StandardEpoch_J2000_0) {
+        self.init(celestialLongitude: lambda, celestialLatitude: beta, epoch: epoch)
     }
     
     /// Returns the equatorial coordinates corresponding to the current ecliptic ones.
@@ -163,7 +159,7 @@ public struct EclipticCoordinates: CustomStringConvertible {
     public func makeEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(StandardEpoch_J2000_0.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
-        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
+        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: self.epoch)
     }
 
     /// Returns the apparent equatorial coordinates corresponding to the current ecliptic ones.
@@ -172,7 +168,7 @@ public struct EclipticCoordinates: CustomStringConvertible {
     public func makeApparentEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(self.epoch.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
-        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
+        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: self.epoch)
     }
 
     /// Returns new EclipticCoordinates precessed to a new given epoch.
@@ -181,10 +177,12 @@ public struct EclipticCoordinates: CustomStringConvertible {
     /// - Returns: A new EclipticCoordinates object
     public func precessedCoordinates(to newEpoch: JulianDay) -> EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value, newEpoch.value)
-        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: newEpoch)
+        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epoch: newEpoch)
     }
     
-    public var description: String { return String(format: "λ=%@, β=%@", lambda.description, beta.description) }
+    public var description: String {
+        return String(format: "λ=%@, β=%@ (epoch %@)", lambda.description, beta.description, epoch.description)
+    }
     
 }
 
@@ -193,36 +191,50 @@ public struct EclipticCoordinates: CustomStringConvertible {
 /// The Galactic coordinates are the coordinates of an object in the Milky Way galactic system.
 public struct GalacticCoordinates: CustomStringConvertible {
     
+    /// The galactic longitude
     public let galacticLongitude: Degree
+    /// The galactic latitude
     public let galacticLatitude: Degree
+    /// The epoch of the coordinates
     public let epoch: JulianDay
 
+    /// A convenience accessor for the galactic longitude
     public var l: Degree { return galacticLongitude }
+    /// A convenience accessor for the galactic latitude
     public var b: Degree { return galacticLatitude }
-    public var epsilon: JulianDay { return epoch }
     
+    /// Returns a new GalacticCoordinates object
+    ///
+    /// - Parameters:
+    ///   - galacticLongitude: The galactic longitude
+    ///   - galacticLatitude: The galactic latitude
+    ///   - epoch: The epoch of coordinates. Default is B1950.0
     public init(galacticLongitude: Degree, galacticLatitude: Degree, epoch: JulianDay = StandardEpoch_B1950_0) {
         self.galacticLongitude = galacticLongitude
         self.galacticLatitude = galacticLatitude
         self.epoch = epoch
     }
     
-    public init(l: Degree, b: Degree, epsilon: JulianDay = StandardEpoch_B1950_0) {
-        self.init(galacticLongitude: l, galacticLatitude: b, epoch: epsilon)
+    /// Returns a new GalacticCoordinates object
+    ///
+    /// - Parameters:
+    ///   - l: The galactic longitude
+    ///   - b: The galactic latitude
+    ///   - epoch: The epoch of coordinates. Default is B1950.0
+    public init(l: Degree, b: Degree, epoch: JulianDay = StandardEpoch_B1950_0) {
+        self.init(galacticLongitude: l, galacticLatitude: b, epoch: epoch)
     }
     
-    /**
-     Transform the coordinates to equatorial ones.
-     Careful: the epoch is necessarily that of the galactic coordinates which is always B1950.0.
-     
-     - returns: The corresponding equatorial coordinates.
-     */
+    /// Returns the equatorial coordinates corresponding to the current galactic one.
+    /// Careful: the epoch should necessarily be that of the galactic coordinates which is always B1950.0.
+    ///
+    /// - Returns: A new EquatorialCoordinates object.
     public func makeEquatorialCoordinates() -> EquatorialCoordinates {
         let components = KPCAACoordinateTransformation_Galactic2Equatorial(self.galacticLongitude.value, self.galacticLatitude.value)
-        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: self.epoch)
+        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: self.epoch)
     }
     
-    public var description: String { return String(format: "l=%@, b=%@", l.description, b.description) }
+    public var description: String { return String(format: "l=%@, b=%@ (epoch %@)", l.description, b.description, epoch.description) }
     
 }
 
@@ -263,7 +275,7 @@ public struct HorizontalCoordinates: CustomStringConvertible {
                                                                              self.altitude.value,
                                                                              self.geographicCoordinates!.latitude.value)
         let lst = julianDay.meanLocalSiderealTime(longitude: geographicCoordinates!.longitude)
-        return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epsilon: epoch)
+        return EquatorialCoordinates(alpha: Hour(lst.value - components.X).reduced, delta: Degree(components.Y), epoch: epoch)
     }
     
     /// Returns the angular separation between two horizontal coordinates.

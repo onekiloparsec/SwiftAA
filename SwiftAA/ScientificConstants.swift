@@ -16,8 +16,6 @@ public let JulianYear: Day = 365.25            // See p.133 of AA.
 /// The length of Besselian Years, in days.
 public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
 
-public let JulianDayB1950: JulianDay = 2433282.4235	// See p.133 of AA.
-
 /// The new standard epoch, as decided by the IAU in 1984.
 public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
@@ -26,18 +24,21 @@ public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
 
-/// Standard equinox values
+/// Standard equinox values. Note: equinoxes are directions, epochs are point in time.
+/// The vernal equinox, which is the zero point of both right ascension and celestial longitude, is defined
+/// to be in the direction of the ascending node of the ecliptic on the equator.
+/// Of course, at the standard epoch of J2000 corresponds to a specific (and thus standard) equinox.
 public enum Equinox {
     
     /// The mean equinox of the date is the intersection of the ecliptic of the date with the mean equator of the date.
-    case meanEquinoxOfTheDate
+    case meanEquinoxOfTheDate(Date)
     case standardJ2000
     
     /// The Julian Day of the given equinox.
-    var julianDay: JulianDay {
+    var epoch: JulianDay {
         switch self {
-        case .meanEquinoxOfTheDate:
-            return 0
+        case .meanEquinoxOfTheDate(let date):
+            return date.julianDay
         case .standardJ2000:
             return StandardEpoch_J2000_0
         }
