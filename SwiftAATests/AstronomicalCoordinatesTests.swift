@@ -34,7 +34,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
     }
     
     func testEquatorial2Galactic() { // p.95
-        let equatorial = EquatorialCoordinates(alpha: Hour(.plus, 17, 48, 59.74), delta: Degree(.minus, 14, 43, 8.2), epsilon: StandardEpoch_B1950_0)
+        let equatorial = EquatorialCoordinates(alpha: Hour(.plus, 17, 48, 59.74), delta: Degree(.minus, 14, 43, 8.2), epoch: StandardEpoch_B1950_0)
         let galactic = equatorial.makeGalacticCoordinates()
         AssertEqual(galactic.l, Degree(12.9593), accuracy: ArcSecond(1.0).inDegrees)
         AssertEqual(galactic.b, Degree(6.0463), accuracy: ArcSecond(1.0).inDegrees)
