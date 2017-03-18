@@ -56,8 +56,7 @@ public extension EllipticalPlanetaryDetails {
         get {
             let ra = Hour(self.planetaryDetails.ApparentGeocentricRA)
             let dec = Degree(self.planetaryDetails.ApparentGeocentricDeclination)
-            let result = EquatorialCoordinates(alpha: ra, delta: dec)
-            return result
+            return EquatorialCoordinates(alpha: ra, delta: dec, epoch: self.julianDay)
         }
     }
 }
