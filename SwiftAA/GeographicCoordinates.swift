@@ -22,6 +22,11 @@ public struct GeographicCoordinates {
         return location
     }
     
+    /// Convenience method
+    public static var zero: GeographicCoordinates {
+        return GeographicCoordinates(positivelyWestwardLongitude: 0.0.degrees, latitude: 0.0.degrees)
+    }
+        
     /// Returns a GeographicCoordinates object.
     ///
     /// - Parameters:
