@@ -131,7 +131,7 @@ public class Sun: Object, CelestialBody {
         return Day(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / (24.0 * 60.0))
     }
     
-    public let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
+    public static let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
     
     
     public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {

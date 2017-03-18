@@ -41,6 +41,6 @@ class AstronomicalObject: Object, CelestialBody {
         get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
     
-    public let apparentRiseSetAltitude = ArcMinute(-34).inDegrees // See AA p.101
+    public static let apparentRiseSetAltitude = ArcMinute(-34).inDegrees // See AA p.101
     
 }

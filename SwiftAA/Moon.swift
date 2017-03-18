@@ -296,7 +296,7 @@ public class Moon : Object, CelestialBody {
         return KPCAAMoonNodes_PassageThroNode(k)
     }
     
-    public let apparentRiseSetAltitude = Degree(0.125) // Mean value, see AA p.102
+    public static let apparentRiseSetAltitude = Degree(0.125) // Mean value, see AA p.102
     
 }
 
