@@ -63,7 +63,7 @@ public class Sun: Object, CelestialBody {
 
     /// The apparent equatorial coordinates of the Sun
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
+        get { return self.apparentEclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
 
     /// Celestial Body Supplement
