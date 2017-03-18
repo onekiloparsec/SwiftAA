@@ -1373,7 +1373,6 @@
 			isa = PBXGroup;
 			children = (
 				9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */,
-				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
 				9F1F12991D7C6A83006FD828 /* Magnitudes.swift */,
 				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
 				9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */,
@@ -2009,6 +2008,7 @@
 				9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */,
 				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
+				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
