@@ -47,6 +47,10 @@ public class Moon : Object, CelestialBody {
         }
     }
     
+    public var apparentEclipticCoordinates: EclipticCoordinates {
+        get { return self.eclipticCoordinates }
+    }
+    
     public var equatorialCoordinates: EquatorialCoordinates {
         get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
     }
