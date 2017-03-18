@@ -22,6 +22,10 @@ public protocol CelestialBody: ObjectBase {
     /// The coordinates of the object in the equatorial system (based on Earth equator).
     var equatorialCoordinates: EquatorialCoordinates { get }
     
+    /// The apparent coordinates (affected by aberration and nutation) coordinates of the object in the ecliptic (=heliocentric) system (based on Earth orbit).
+    var apparentEclipticCoordinates: EclipticCoordinates { get }
+
+    /// The apparent coordinates (affected by aberration and nutation) of the object in the equatorial system (based on Earth equator).
     var apparentEquatorialCoordinates: EquatorialCoordinates { get }
     
     /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
