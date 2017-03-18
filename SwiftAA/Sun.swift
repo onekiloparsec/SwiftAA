@@ -53,7 +53,14 @@ public class Sun: Object, CelestialBody {
     /// The ecliptic coordinates of the Sun
     public var eclipticCoordinates: EclipticCoordinates {
         get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
-                                         beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision))) }
+                                         beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision)),
+                                         epoch: self.julianDay) }
+    }
+
+    public var apparentEclipticCoordinates: EclipticCoordinates {
+        get { return EclipticCoordinates(lambda: Degree(KPCAASun_ApparentEclipticLongitude(self.julianDay.value, self.highPrecision)),
+                                         beta: Degree(KPCAASun_ApparentEclipticLatitude(self.julianDay.value, self.highPrecision)),
+                                         epoch: self.julianDay) }
     }
 
     /// The equatorial coordinates of the Sun
