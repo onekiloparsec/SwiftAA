@@ -28,7 +28,7 @@ public protocol CelestialBody: ObjectBase {
     ///
     /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
     /// - Returns: A RiseTransitSetTimes object.
-    func riseTransitSetTimes(with geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
+    func riseTransitSetTimes(for geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes
 
     
     /// Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
@@ -36,15 +36,15 @@ public protocol CelestialBody: ObjectBase {
     ///
     /// - Parameter geographicCoordinates: The geographic coordinates of the place.
     /// - Returns: The Hour Angle of the body.
-    func hourAngle(with geographicCoordinates: GeographicCoordinates) -> Hour
+    func hourAngle(for geographicCoordinates: GeographicCoordinates) -> Hour
 
-    func parallacticAngle(with geographicCoordinates: GeographicCoordinates) -> Degree
+    func parallacticAngle(for geographicCoordinates: GeographicCoordinates) -> Degree
     
-    func eclipticLongitudeOnHorizon(with geographicCoordinates: GeographicCoordinates) -> Degree
+    func eclipticLongitudeOnHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree
     
-    func angleBetweenEclipticAndHorizon(with geographicCoordinates: GeographicCoordinates) -> Degree
+    func angleBetweenEclipticAndHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree
     
-    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(with geographicCoordinates: GeographicCoordinates) -> Degree
+    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for geographicCoordinates: GeographicCoordinates) -> Degree
     
     /// The angle the Earth must make between the time at which the object is at a given altitude, then rotate,
     /// produce a diurnal arc, and reach a time at which the object reached again the same altitude.
@@ -69,54 +69,53 @@ public protocol CelestialBody: ObjectBase {
 }
 
 public extension CelestialBody {
-    public func riseTransitSetTimes(with geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
     /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
     ///
     /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
     /// - Returns: A RiseTransitSetTimes object.
+    public func riseTransitSetTimes(for geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
         return RiseTransitSetTimes(celestialBody: self, geographicCoordinates: geographicCoordinates)
     }
     
-    func hourAngle(with geographicCoordinates: GeographicCoordinates) -> Hour {
     /// Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
     /// and its right ascension.
     ///
     /// - Parameter geographicCoordinates: The geographic coordinates of the place.
     /// - Returns: The Hour Angle of the body.
+    func hourAngle(for geographicCoordinates: GeographicCoordinates) -> Hour {
         return self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude) - self.equatorialCoordinates.alpha
     }
 
-    func parallacticAngle(with geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.hourAngle(with: geographicCoordinates)
+    func parallacticAngle(for geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.hourAngle(for: geographicCoordinates)
         return Degree(KPCAAParallactic_ParallacticAngle(lha.value,
                                                         geographicCoordinates.latitude.value,
                                                         self.equatorialCoordinates.delta.value))
     }
     
-    func eclipticLongitudeOnHorizon(with geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.hourAngle(with: geographicCoordinates)
-        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
+    func eclipticLongitudeOnHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.hourAngle(for: geographicCoordinates)
+        let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(lha.value,
                                                                   epsilon.value,
                                                                   geographicCoordinates.latitude.value))
     }
     
-    func angleBetweenEclipticAndHorizon(with geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.hourAngle(with: geographicCoordinates)
-        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
+    func angleBetweenEclipticAndHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree {
+        let lha = self.hourAngle(for: geographicCoordinates)
+        let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha.value,
                                                                       epsilon.value,
                                                                       geographicCoordinates.latitude.value))
     }
     
-    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(with geographicCoordinates: GeographicCoordinates) -> Degree {
-        let epsilon = Earth(julianDay: self.julianDay).obliquityOfEcliptic(mean: false)
+    func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for geographicCoordinates: GeographicCoordinates) -> Degree {
+        let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
         return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(self.eclipticCoordinates.lambda.value,
                                                                                             self.eclipticCoordinates.beta.value,
                                                                                             epsilon.value))
     }
 
-    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {        
     /// The angle the Earth must make between the time at which the object is at a given altitude, then rotate,
     /// produce a diurnal arc, and reach a time at which the object reached again the same altitude.
     /// Basically, for the object being the Sun, and the altitude being 0=horizon, compute the angle between
@@ -126,6 +125,7 @@ public extension CelestialBody {
     ///   - altitude: The crossing altitude
     ///   - coordinates: The point on Earth from which one computes the arc.
     /// - Returns: The angle of the so-called diurnal arc
+    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
         let sinAlt = sin(altitude.inRadians.value)

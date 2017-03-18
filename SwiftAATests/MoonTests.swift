@@ -39,7 +39,7 @@ class MoonTests: XCTestCase {
         let coords = GeographicCoordinates(positivelyWestwardLongitude: -5.6306649983214818.degrees, latitude: 71.646778771324804.degrees)
         
         let moon = Moon(julianDay: JulianDay(year: 2012, month: 10, day: 30))
-        let times = moon.riseTransitSetTimes(with: coords)
+        let times = moon.riseTransitSetTimes(for: coords)
 
         XCTAssertNotNil(times.riseTime)
         AssertEqual(times.riseTime!,
@@ -58,7 +58,7 @@ class MoonTests: XCTestCase {
         let coords = GeographicCoordinates(positivelyWestwardLongitude: -5.6306649983214818.degrees, latitude: 71.646778771324804.degrees)
 
         let moon = Moon(julianDay: JulianDay(year: 2012, month: 10, day: 31))
-        let times = moon.riseTransitSetTimes(with: coords)
+        let times = moon.riseTransitSetTimes(for: coords)
         
         XCTAssertNotNil(times.transitTime)
         AssertEqual(times.transitTime!,
