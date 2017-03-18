@@ -19,6 +19,6 @@ public extension EclipticCoordinates {
     /// - returns: Corected ecliptic coordinates of the star.
     public func correctedForAnnualAberration(julianDay: JulianDay, highPrecision: Bool = true) -> EclipticCoordinates {
         let diff = KPCAAAberration_EclipticAberration(self.lambda.value, self.beta.value, julianDay.value, highPrecision)
-        return EclipticCoordinates(lambda: Degree(self.lambda.value+diff.X), beta: Degree(self.beta.value+diff.Y), epsilon: self.epsilon)
+        return EclipticCoordinates(lambda: Degree(self.lambda.value+diff.X), beta: Degree(self.beta.value+diff.Y), epoch: self.epoch)
     }
 }
