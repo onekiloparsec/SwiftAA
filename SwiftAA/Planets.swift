@@ -48,11 +48,12 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
             let jdPlanet = self.julianDay.UTCtoTT() // See usage in AATests.cpp.
             let longitude = KPCAAEclipticalElement_EclipticLongitude(jdPlanet.value, self.planet, self.highPrecision)
             let latitude = KPCAAEclipticalElement_EclipticLatitude(jdPlanet.value, self.planet, self.highPrecision)
-            // Epsilon must be used as epoch to compute the true obliquity
-            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude), epsilon: jdPlanet)
+            // Providing the actual epoch value to compute the true obliquity of the date.
+            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude), epoch: jdPlanet)
         }
     }
 
+    
     /// The radius vector of the planet (that is, its distance to the Sun).
     public var radiusVector: AstronomicalUnit {
         get { return AstronomicalUnit(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
