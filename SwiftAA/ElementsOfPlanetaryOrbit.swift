@@ -9,58 +9,46 @@
 import Foundation
 
 public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
-    /**
-     Computes the mean longitude of the orbit
-     
-     - parameter equinox: The equinox for which the computation is made
-     
-     - returns: The longitude in degrees
-     */
+    /// Computes the mean longitude of the orbit
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func meanLongitude(_ equinox: Equinox) -> Degree
     
-    /**
-     Computes the semi major axis of the orbit
-     
-     - returns: The semi major axis in astronomical units
-     */
+    /// Computes the semi major axis of the orbit
+    ///
+    /// - Returns: The semi major axis in astronomical units
     func semimajorAxis() -> AstronomicalUnit
     
-    /**
-     Computes the eccentricity of the orbit
-     
-     - returns: The eccentricity (comprise between 0==circular, and 1).
-     */
+    /// Computes the eccentricity of the orbit
+    ///
+    /// - Returns: The eccentricity (comprise between 0==circular, and 1).
     func eccentricity() -> Double
     
-    /**
-     Computes the inclination of the planet on the plane of the ecliptic
-     
-     - parameter equinox: The equinox for which the computation is made
-     
-     - returns: The inclination in degrees
-     */
+    /// Computes the inclination of the planet on the plane of the ecliptic
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The inclination in degrees
     func inclination(_ equinox: Equinox) -> Degree
     
-    /**
-     Computes the longitude of the ascending node.
-     
-     - parameter equinox: The equinox for which the computation is made
-     
-     - returns: The longitude in degrees
-     */
+    /// Computes the longitude of the ascending node.
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func longitudeOfAscendingNode(_ equinox: Equinox) -> Degree
     
-    /**
-     Compute the longitude of the perihelion
-     
-     - parameter equinox: The equinox for which the computation is made
-     
-     - returns: The longitude in degrees
-     */
+    /// Compute the longitude of the perihelion
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func longitudeOfPerihelion(_ equinox: Equinox) -> Degree    
 }
 
 public extension ElementsOfPlanetaryOrbit {
+    /// Computes the mean longitude of the orbit
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func meanLongitude(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:
@@ -70,14 +58,24 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
+    /// Computes the semi major axis of the orbit
+    ///
+    /// - Returns: The semi major axis in astronomical units
     func semimajorAxis() -> AstronomicalUnit {
         return AstronomicalUnit(KPCAAElementsPlanetaryOrbit_SemimajorAxis(self.planetStrict, self.julianDay.value))
     }
     
+    /// Computes the eccentricity of the orbit
+    ///
+    /// - Returns: The eccentricity (comprise between 0==circular, and 1).
     func eccentricity() -> Double {
         return KPCAAElementsPlanetaryOrbit_Eccentricity(self.planetStrict, self.julianDay.value)
     }
     
+    /// Computes the inclination of the planet on the plane of the ecliptic
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The inclination in degrees
     func inclination(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:
@@ -87,6 +85,10 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
+    /// Computes the longitude of the ascending node.
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func longitudeOfAscendingNode(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:
@@ -96,6 +98,10 @@ public extension ElementsOfPlanetaryOrbit {
         }
     }
     
+    /// Compute the longitude of the perihelion
+    ///
+    /// - Parameter equinox: The equinox for which the computation is made
+    /// - Returns: The longitude in degrees
     func longitudeOfPerihelion(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
         case .meanEquinoxOfTheDate:

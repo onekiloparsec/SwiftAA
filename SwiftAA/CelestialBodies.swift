@@ -16,10 +16,10 @@ public protocol CelestialBody: ObjectBase {
     /// The radius vector (=distance to the Sun)
     var radiusVector: AstronomicalUnit { get }
     
-    /// The ecliptic (=heliocentric) coordinates of the object
+    /// The coordinates of the object in the ecliptic (=heliocentric) system (based on Earth orbit).
     var eclipticCoordinates: EclipticCoordinates { get }
     
-    /// The equatorial coordinates of the object
+    /// The coordinates of the object in the equatorial system (based on Earth equator).
     var equatorialCoordinates: EquatorialCoordinates { get }
     
     var apparentEquatorialCoordinates: EquatorialCoordinates { get }
@@ -70,10 +70,19 @@ public protocol CelestialBody: ObjectBase {
 
 public extension CelestialBody {
     public func riseTransitSetTimes(with geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
+    /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
+    ///
+    /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
+    /// - Returns: A RiseTransitSetTimes object.
         return RiseTransitSetTimes(celestialBody: self, geographicCoordinates: geographicCoordinates)
     }
     
     func hourAngle(with geographicCoordinates: GeographicCoordinates) -> Hour {
+    /// Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
+    /// and its right ascension.
+    ///
+    /// - Parameter geographicCoordinates: The geographic coordinates of the place.
+    /// - Returns: The Hour Angle of the body.
         return self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude) - self.equatorialCoordinates.alpha
     }
 
@@ -108,6 +117,15 @@ public extension CelestialBody {
     }
 
     func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {        
+    /// The angle the Earth must make between the time at which the object is at a given altitude, then rotate,
+    /// produce a diurnal arc, and reach a time at which the object reached again the same altitude.
+    /// Basically, for the object being the Sun, and the altitude being 0=horizon, compute the angle between
+    /// sunrise and sunset.
+    ///
+    /// - Parameters:
+    ///   - altitude: The crossing altitude
+    ///   - coordinates: The point on Earth from which one computes the arc.
+    /// - Returns: The angle of the so-called diurnal arc
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
         let sinAlt = sin(altitude.inRadians.value)

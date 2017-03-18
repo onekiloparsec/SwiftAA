@@ -41,6 +41,7 @@ public extension EllipticalPlanetaryDetails {
         get { return AstronomicalUnit(self.ellipticalObjectDetails.TrueGeocentricDistance) }
     }
     
+    /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree {
         get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector.value,
                                                                 Earth(julianDay: self.julianDay).radiusVector.value,
