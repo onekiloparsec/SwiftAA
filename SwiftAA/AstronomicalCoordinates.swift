@@ -51,7 +51,7 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     public func makeEclipticCoordinates() -> EclipticCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(epoch.value)
         let components = KPCAACoordinateTransformation_Equatorial2Ecliptic(self.rightAscension.value, self.declination.value, eclipticObliquity)
-        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epsilon: self.epoch)
+        return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epoch: self.epoch)
     }
     
     /**
@@ -88,7 +88,7 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     /// - Returns: A new EquatorialCoordinates object
     public func precessedCoordinates(to newEpoch: JulianDay) -> EquatorialCoordinates {
         let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension.value, self.declination.value, self.epoch.value, newEpoch.value)
-        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epsilon: newEpoch)
+        return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: newEpoch)
     }
     
     /// Returns the angular separation between two equatorial coordinates.
