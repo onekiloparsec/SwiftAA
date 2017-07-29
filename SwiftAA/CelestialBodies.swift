@@ -16,17 +16,11 @@ public protocol CelestialBody: ObjectBase {
     /// The radius vector (=distance to the Sun)
     var radiusVector: AstronomicalUnit { get }
     
-    /// The coordinates of the object in the ecliptic (=heliocentric) system (based on Earth orbit).
-    var eclipticCoordinates: EclipticCoordinates { get }
-    
     /// The coordinates of the object in the equatorial system (based on Earth equator).
     var equatorialCoordinates: EquatorialCoordinates { get }
     
-    /// The apparent coordinates (affected by aberration and nutation) coordinates of the object in the ecliptic (=heliocentric) system (based on Earth orbit).
-    var apparentEclipticCoordinates: EclipticCoordinates { get }
-
-    /// The apparent coordinates (affected by aberration and nutation) of the object in the equatorial system (based on Earth equator).
-    var apparentEquatorialCoordinates: EquatorialCoordinates { get }
+    /// The coordinates of the object in the heliocentric ecliptic system.
+//    var heliocentricEclipticCoordinates: EclipticCoordinates { get }
     
     /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
     ///
@@ -115,8 +109,9 @@ public extension CelestialBody {
     
     func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for geographicCoordinates: GeographicCoordinates) -> Degree {
         let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
-        return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(self.eclipticCoordinates.lambda.value,
-                                                                                            self.eclipticCoordinates.beta.value,
+        let eclipticCoords = self.equatorialCoordinates.makeEclipticCoordinates()
+        return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(eclipticCoords.lambda.value,
+                                                                                            eclipticCoords.beta.value,
                                                                                             epsilon.value))
     }
 
