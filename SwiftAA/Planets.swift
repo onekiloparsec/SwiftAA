@@ -31,7 +31,7 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     /// The equatorial coordinates of the planet. That is, its position on the celestial sphere, as it would be seen
     /// by an observer at rest at the barycenter of the solar system, at a given epoch – See AA p.149.
     public var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
+        get { return self.apparentGeocentricEquatorialCoordinates }
     }
     
     /// The apparent equatorial coordinates of the planet. That is, its apparent position on the celestial sphere, as
