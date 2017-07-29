@@ -1,7 +1,7 @@
 language: objective-c
 xcode_project: SwiftAA.xcodeproj
 xcode_scheme: SwiftAA-iOS
-osx_image: xcode8.1
+osx_image: xcode8.3
 xcode_sdk: iphonesimulator10.1
 cache: bundler
 before_install: 
