@@ -29,7 +29,7 @@ class VenusTests: XCTestCase {
     
     func testHeliocentricEclipticCoordinates() { // See AA p.225
         let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20), highPrecision: false)
-        let heliocentricEcliptic = venus.eclipticCoordinates
+        let heliocentricEcliptic = venus.heliocentricEclipticCoordinates
         AssertEqual(heliocentricEcliptic.celestialLatitude, Degree(-2.62070), accuracy: ArcSecond(0.1).inDegrees)
         AssertEqual(heliocentricEcliptic.celestialLongitude, Degree(26.11428), accuracy: ArcSecond(0.1).inDegrees)
         AssertEqual(venus.radiusVector, AstronomicalUnit(0.724603), accuracy: AstronomicalUnit(0.00001))
