@@ -21,14 +21,16 @@ class MercuryTests: XCTestCase {
         let mercury = Mercury(julianDay: jd, highPrecision: true)
         let times = mercury.riseTransitSetTimes(for: GeographicCoordinates.zero)
         
+        let accuracy = Hour(5.0).inJulianDays
+
         let expectedRise = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 10, minute: 5, second: 52)
-        AssertEqual(times.riseTime!, expectedRise.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
+        AssertEqual(times.riseTime!, expectedRise.date!.julianDay, accuracy: accuracy)
         
         let expectedTransit = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 16, minute: 13, second: 1)
-        AssertEqual(times.transitTime!, expectedTransit.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
+        AssertEqual(times.transitTime!, expectedTransit.date!.julianDay, accuracy: accuracy)
         
         let expectedSet = DateComponents(calendar: Calendar.gregorianGMT, year: 2038, month: 3, day: 1, hour: 22, minute: 20, second: 15)
-        AssertEqual(times.setTime!, expectedSet.date!.julianDay, accuracy: 1.0.seconds.inJulianDays)
+        AssertEqual(times.setTime!, expectedSet.date!.julianDay, accuracy: accuracy)
 
     }
 }
