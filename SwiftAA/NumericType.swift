@@ -11,7 +11,7 @@
 import Foundation
 
 
-public protocol NumericType: _NumericType, Comparable, SignedNumber, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Hashable { /* intentionally left blank */ }
+public protocol NumericType: _NumericType, SignedNumber, ExpressibleByFloatLiteral, Hashable { /* intentionally left blank */ }
 
 // note: we use two separate protocols because it's impossible to declare conformance *and* provide default implementation at the same time 
 public protocol _NumericType {
