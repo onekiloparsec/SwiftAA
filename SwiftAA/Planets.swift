@@ -28,22 +28,16 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         }()
     
     
-    /// The equatorial coordinates of the planet. That is, its position on the celestial sphere, as it would be seen
-    /// by an observer at rest at the barycenter of the solar system, at a given epoch – See AA p.149.
+    /// The coordinates of the object in the equatorial system (based on Earth equator).
     public var equatorialCoordinates: EquatorialCoordinates {
         get { return self.apparentGeocentricEquatorialCoordinates }
     }
     
-    /// The apparent equatorial coordinates of the planet. That is, its apparent position on the celestial sphere, as
+    /// The heliocentric coordinates of the planet. That is, its apparent position on the celestial sphere, as
     /// as it would be seen by an observer at rest at the barycenter of the solar system, and referred to the 
     /// instantaneous equator, ecliptic and equinox.
     /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
-    public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.apparentEclipticCoordinates.makeApparentEquatorialCoordinates() }
-    }
-
-    /// The ecliptic (or celestial) coordinates of the planet
-    public var eclipticCoordinates: EclipticCoordinates {
+    public var heliocentricEclipticCoordinates: EclipticCoordinates {
         get {
             let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)
             let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay.value, self.planet, self.highPrecision)
@@ -51,18 +45,6 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
             return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude))
         }
     }
-
-    /// The apparent ecliptic (or celestial) coordinates of the planet
-    public var apparentEclipticCoordinates: EclipticCoordinates {
-        get {
-            let jdPlanet = self.julianDay.UTCtoTT() // See usage in AATests.cpp.
-            let longitude = KPCAAEclipticalElement_EclipticLongitude(jdPlanet.value, self.planet, self.highPrecision)
-            let latitude = KPCAAEclipticalElement_EclipticLatitude(jdPlanet.value, self.planet, self.highPrecision)
-            // Providing the actual epoch value to compute the true obliquity of the date.
-            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude), epoch: jdPlanet)
-        }
-    }
-
     
     /// The radius vector of the planet (that is, its distance to the Sun).
     public var radiusVector: AstronomicalUnit {
