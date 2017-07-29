@@ -49,7 +49,7 @@ public struct RiseTransitSetTimesDetails {
 /// Actually, for the moon h0 is not constant. See p.102 of AA.
 ///
 /// - Parameters:
-///   - julianDay: the date at which one want to compute the times.
+///   - julianDay: the date at which one want to compute the times. MUST BE SET AT 0h UT for the given DAY.
 ///   - equCoords1: the equatorial coordinates of the body at Date - 1 Day.
 ///   - equCoords2: the equatorial coordinates of the body at Date.
 ///   - equCoords3: the equatorial coordinates of the body at Date + 1 Day.
@@ -62,6 +62,8 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                            geoCoords: GeographicCoordinates,
                            apparentRiseSetAltitude: Degree) -> RiseTransitSetTimesDetails
 {
+    // Do NOT pass Right Ascension values in degrees, as requested by AA+. It will be transformed later.
+    // See CAARiseTransitSet::CalculateTransit, line 72.
     let details = KPCAARiseTransitSet_Calculate(julianDay.UTCtoTT().value,
                                                 equCoords1.alpha.value,
                                                 equCoords1.delta.value,
@@ -73,9 +75,35 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 geoCoords.latitude.value,
                                                 apparentRiseSetAltitude.value)
     
-    let rise = julianDay + Hour(details.Rise).inJulianDays
-    let transit = julianDay + Hour(details.Transit).inJulianDays
-    let set = julianDay + Hour(details.Set).inJulianDays
+    let date = julianDay.date
+    let sexagesimalRise = Hour(details.Rise).sexagesimalNotation
+    let sexagesimalTransit = Hour(details.Transit).sexagesimalNotation
+    let sexagesimalSet = Hour(details.Set).sexagesimalNotation
+    
+    let rise = JulianDay(year: date.year,
+                         month: date.month,
+                         day: date.day,
+                         hour: sexagesimalRise.radical,
+                         minute: sexagesimalRise.minute,
+                         second: sexagesimalRise.second)
+
+    let transit = JulianDay(year: date.year,
+                            month: date.month,
+                            day: date.day,
+                            hour: sexagesimalTransit.radical,
+                            minute: sexagesimalTransit.minute,
+                            second: sexagesimalTransit.second)
+
+    let set = JulianDay(year: date.year,
+                        month: date.month,
+                        day: date.day,
+                        hour: sexagesimalSet.radical,
+                        minute: sexagesimalSet.minute,
+                        second: sexagesimalSet.second)
+
+//    let rise = julianDay + Hour(details.Rise).inJulianDays
+//    let transit = julianDay + Hour(details.Transit).inJulianDays
+//    let set = julianDay + Hour(details.Set).inJulianDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: rise,
@@ -90,7 +118,8 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 public class RiseTransitSetTimes {
     private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
         [unowned self] in
-        let jd = self.celestialBody.julianDay
+        // AA+ p.102 indicates one need to get day D at 0h Dynamical Time, thus, midnight UT.
+        let jd = self.celestialBody.julianDay.midnight
         let hp = self.celestialBody.highPrecision
         
         let celestialBodyType = type(of: self.celestialBody)
@@ -98,14 +127,10 @@ public class RiseTransitSetTimes {
         let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
         let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
         
-        let coords1 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body1) : body1.apparentEquatorialCoordinates
-        let coords2 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body2) : body2.apparentEquatorialCoordinates
-        let coords3 = (self.apparentEquatorialCoordinatesBlock != nil) ? self.apparentEquatorialCoordinatesBlock!(body3) : body3.apparentEquatorialCoordinates
-        
         return riseTransitSet(forJulianDay: jd,
-                              equCoords1: body1.apparentEquatorialCoordinates,
-                              equCoords2: body2.apparentEquatorialCoordinates,
-                              equCoords3: body3.apparentEquatorialCoordinates,
+                              equCoords1: body1.equatorialCoordinates,
+                              equCoords2: body2.equatorialCoordinates,
+                              equCoords3: body3.equatorialCoordinates,
                               geoCoords: self.geographicCoordinates,
                               apparentRiseSetAltitude: self.riseSetAltitude)
     }()
@@ -114,7 +139,6 @@ public class RiseTransitSetTimes {
     public fileprivate(set) var celestialBody: CelestialBody
     
     private let riseSetAltitude: Degree
-    private let apparentEquatorialCoordinatesBlock: ((CelestialBody) -> EquatorialCoordinates)?
     
     
     /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
@@ -128,13 +152,11 @@ public class RiseTransitSetTimes {
     ///     function, to provide for instance the geocentric coordinates.
     required public init(celestialBody: CelestialBody,
                          geographicCoordinates: GeographicCoordinates,
-                         riseSetAltitude: Degree? = nil,
-                         apparentEquatorialCoordinatesBlock: ((CelestialBody) -> EquatorialCoordinates)? = nil)
+                         riseSetAltitude: Degree? = nil)
     {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? type(of: celestialBody).apparentRiseSetAltitude
-        self.apparentEquatorialCoordinatesBlock = apparentEquatorialCoordinatesBlock
     }
     
     /// The rise time of the celestial body, in Julian Day.
