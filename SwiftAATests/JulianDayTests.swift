@@ -119,6 +119,8 @@ class JulianDayTest: XCTestCase {
         
         let jd2 = JulianDay(year: 2016, month: 12, day: 19, hour: 23, minute: 13, second: 39.1)
         AssertEqual(jd2.midnight, JulianDay(year: 2016, month: 12, day: 19))
+        AssertEqual(jd2.midnight, jd2.midnight.midnight)
+        AssertEqual(jd2.midnight, jd2.midnight.midnight.midnight)
     }
     
     func testLocalMidnight() {
