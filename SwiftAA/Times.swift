@@ -14,14 +14,46 @@ import Foundation
 /// Day structs conform to SwiftAA Numeric type protocol.
 public struct Day: NumericType, CustomStringConvertible {
     
-    /// The Day value
-    public let value: Double
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
     
+    public static func *(lhs: Day, rhs: Day) -> Day {
+        return Day(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Day, rhs: Day) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
+    public static func +(lhs: Day, rhs: Day) -> Day {
+        return Day(lhs.value + rhs.value)
+    }
+    
+    public static func +=(lhs: inout Day, rhs: Day) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func -(lhs: Day, rhs: Day) -> Day {
+        return Day(lhs.value - rhs.value)
+    }
+    
+    public static func -=(lhs: inout Day, rhs: Day) {
+        lhs.value = rhs.value - lhs.value
+    }
+    /// The Day value
+    public var value: Double
+    public var magnitude: Double
+
     /// Returns a Day struct initialized to contain the given value.
     ///
     /// - Parameter value: The value for the new Day.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Day value into Hours.
@@ -41,14 +73,40 @@ public struct Day: NumericType, CustomStringConvertible {
 /// Hour structs conform to SwiftAA Numeric type protocol.
 public struct Hour: NumericType, CustomStringConvertible {
 
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Hour, rhs: Hour) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Hour, rhs: Hour) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Hour, rhs: Hour) -> Hour {
+        return Hour(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Hour, rhs: Hour) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
     /// The Hour value
-    public let value: Double
+    public var value: Double
     
     /// Returns a Hour struct initialized to contain the given value.
     ///
     /// - Parameter value: The value for the new Hour.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Returns a Hour struct initialized from a sexagesimal representation of the hour.
@@ -104,15 +162,40 @@ public struct Hour: NumericType, CustomStringConvertible {
 /// The Minute is physical number representing an Earth minute.
 /// Minute structs conform to SwiftAA Numeric type protocol.
 public struct Minute: NumericType, CustomStringConvertible {
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Minute, rhs: Minute) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Minute, rhs: Minute) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Minute, rhs: Minute) -> Minute {
+        return Minute(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Minute, rhs: Minute) {
+        lhs.value = rhs.value * lhs.value
+    }
     
     /// The Minute value
-    public let value: Double
+    public var value: Double
     
     /// Returns a Minute struct initialized to contain the given value.
     ///
     /// - Parameter value: The value for the new Minute.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Minute value into Days.
@@ -138,15 +221,41 @@ public struct Minute: NumericType, CustomStringConvertible {
 /// The Second is physical number representing an Earth second.
 /// Second structs conform to SwiftAA Numeric type protocol.
 public struct Second: NumericType, CustomStringConvertible {
+   
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Second, rhs: Second) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Second, rhs: Second) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Second, rhs: Second) -> Second {
+        return Second(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Second, rhs: Second) {
+        lhs.value = rhs.value * lhs.value
+    }
     
     /// The Second value
-    public let value: Double
+    public var value: Double
     
     /// Returns a Second struct initialized to contain the given value.
     ///
     /// - Parameter value: The value for the new Second.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Second value into Days.

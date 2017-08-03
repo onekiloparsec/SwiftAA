@@ -11,14 +11,40 @@ import Foundation
 /// The Degree is a unit of angle.
 /// Degree structs conform to SwiftAA Numeric type protocol.
 public struct Degree: NumericType, CustomStringConvertible {
-    /// The Degree value
-    public let value: Double
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
     
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Degree, rhs: Degree) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Degree, rhs: Degree) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Degree, rhs: Degree) -> Degree {
+        return Degree(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Degree, rhs: Degree) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
+    /// The Degree value
+    public var value: Double
+
     /// Returns a new Degree object.
     ///
     /// - Parameter value: The value of Degree.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Returns a new Degree object, from sexagesimal components.
@@ -94,14 +120,43 @@ public struct Degree: NumericType, CustomStringConvertible {
 /// The ArcMinute is a unit of angle.
 /// ArcMinute structs conform to SwiftAA Numeric type protocol.
 public struct ArcMinute: NumericType, CustomStringConvertible {
+
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+
+    public static func -=(lhs: inout ArcMinute, rhs: ArcMinute) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout ArcMinute, rhs: ArcMinute) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: ArcMinute, rhs: ArcMinute) -> ArcMinute {
+        return ArcMinute(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout ArcMinute, rhs: ArcMinute) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
+//    public typealias Magnitude = Double
+    
     /// The ArcMinute value
-    public let value: Double
+    public var value: Double
 
     /// Returns a new ArcMinute object.
     ///
     /// - Parameter value: The value of ArcMinute.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current ArcMinute in Degree
@@ -121,14 +176,40 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
 /// The ArcSecond is a unit of angle.
 /// ArcSecond structs conform to SwiftAA Numeric type protocol.
 public struct ArcSecond: NumericType, CustomStringConvertible {
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout ArcSecond, rhs: ArcSecond) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout ArcSecond, rhs: ArcSecond) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: ArcSecond, rhs: ArcSecond) -> ArcSecond {
+        return ArcSecond(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout ArcSecond, rhs: ArcSecond) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
     /// The ArcSecond value
-    public let value: Double
+    public var value: Double
     
     /// Returns a new ArcSecond object.
     ///
     /// - Parameter value: The value of ArcSecond.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current ArcSecond in Degrees
@@ -155,14 +236,43 @@ public struct ArcSecond: NumericType, CustomStringConvertible {
 /// The Radian is a unit of angle.
 /// Radian structs conform to SwiftAA Numeric type protocol.
 public struct Radian: NumericType, CustomStringConvertible {
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Radian, rhs: Radian) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Radian, rhs: Radian) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Radian, rhs: Radian) -> Radian {
+        return Radian(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Radian, rhs: Radian) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
+//    public typealias Magnitude = Double
+    
+    
     /// The Radian value
-    public let value: Double
+    public var value: Double
 
     /// Returns a new Radian object.
     ///
     /// - Parameter value: The value of Radian.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Radian in Degrees

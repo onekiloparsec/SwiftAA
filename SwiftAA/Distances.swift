@@ -12,14 +12,40 @@ import Foundation
 /// The AstronomicalUnit is a unit of distance.
 /// AstronomicalUnit structs conform to SwiftAA Numeric type protocol.
 public struct AstronomicalUnit: NumericType, CustomStringConvertible {
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout AstronomicalUnit, rhs: AstronomicalUnit) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout AstronomicalUnit, rhs: AstronomicalUnit) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: AstronomicalUnit, rhs: AstronomicalUnit) -> AstronomicalUnit {
+        return AstronomicalUnit(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout AstronomicalUnit, rhs: AstronomicalUnit) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
     /// The AstronomicalUnit value
-    public let value: Double
+    public var value: Double
     
     /// Returns a new AstronomicalUnit object.
     ///
     /// - Parameter value: The value of AstronomicalUnit.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current AstronomicalUnit in Parsecs
@@ -46,14 +72,39 @@ public struct AstronomicalUnit: NumericType, CustomStringConvertible {
 /// The Parsec is a unit of distance.
 /// Parsec structs conform to SwiftAA Numeric type protocol.
 public struct Parsec: NumericType, CustomStringConvertible {
+    public static func -=(lhs: inout Parsec, rhs: Parsec) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Parsec, rhs: Parsec) {
+        lhs.value = lhs.value + rhs.value
+    }
+    
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        self.init(1.0)
+    }
+    
+    public var magnitude: Double
+    
+    public static func *(lhs: Parsec, rhs: Parsec) -> Parsec {
+        return Parsec(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Parsec, rhs: Parsec) {
+        lhs.value = lhs.value * rhs.value
+    }
+    
+//    public typealias Magnitude = Double
+    
     /// The Parsec value
-    public let value: Double
+    public var value: Double
     
     /// Returns a new Parsec object.
     ///
     /// - Parameter value: The value of Parsec.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Parsec in AstronomicalUnits
@@ -68,14 +119,41 @@ public struct Parsec: NumericType, CustomStringConvertible {
 /// The Meter is a unit of angle.
 /// Meter structs conform to SwiftAA Numeric type protocol.
 public struct Meter: NumericType, CustomStringConvertible {
+    
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleT = source as? Double else {
+            return nil
+        }
+        self.init(doubleT)
+    }
+    
+    public var magnitude: Double
+    
+    public static func -=(lhs: inout Meter, rhs: Meter) {
+        lhs.value = lhs.value - rhs.value
+    }
+    
+    public static func +=(lhs: inout Meter, rhs: Meter) {
+        lhs.value = rhs.value + lhs.value
+    }
+    
+    public static func *(lhs: Meter, rhs: Meter) -> Meter {
+        return Meter(lhs.value * rhs.value)
+    }
+    
+    public static func *=(lhs: inout Meter, rhs: Meter) {
+        lhs.value = rhs.value * lhs.value
+    }
+    
     /// The Meter value
-    public let value: Double
+    public var value: Double
     
     /// Returns a new Meter object.
     ///
     /// - Parameter value: The value of Meter.
     public init(_ value: Double) {
         self.value = value
+        self.magnitude = value
     }
     
     /// Transform the current Meter in Microns
