@@ -26,9 +26,9 @@ class MagnitudeTests: XCTestCase {
         let m1 = SpaceMagnitude(2.0)
         let m2 = SpaceMagnitude(0.0)
         let m3 = SpaceMagnitude(-2.0)
-        XCTAssertEqualWithAccuracy(m.brightnessRatio(with: m1), 2.511886, accuracy: 0.000001)
-        XCTAssertEqualWithAccuracy(m.brightnessRatio(with: m2), 0.398107, accuracy: 0.000001)
-        XCTAssertEqualWithAccuracy(m.brightnessRatio(with: m3), 0.063095, accuracy: 0.000001)
+        XCTAssertEqual(m.brightnessRatio(with: m1), 2.511886, accuracy: 0.000001)
+        XCTAssertEqual(m.brightnessRatio(with: m2), 0.398107, accuracy: 0.000001)
+        XCTAssertEqual(m.brightnessRatio(with: m3), 0.063095, accuracy: 0.000001)
     }
     
     func testMagnitudeDistance() {

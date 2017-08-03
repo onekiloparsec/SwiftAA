@@ -24,7 +24,7 @@ class VenusTests: XCTestCase {
     
     func testIlluminationFraction() { // See AA p.284
         let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20))
-        XCTAssertEqualWithAccuracy(venus.illuminatedFraction, 0.647, accuracy: 0.005)
+        XCTAssertEqual(venus.illuminatedFraction, 0.647, accuracy: 0.005)
     }
     
     func testHeliocentricEclipticCoordinates() { // See AA p.225
