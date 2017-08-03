@@ -13,12 +13,6 @@ import Foundation
 /// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.
 /// Julian Day structs conform to SwiftAA Numeric type protocol.
 public struct JulianDay: NumericType {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public static func +(lhs: JulianDay, rhs: JulianDay) -> JulianDay {
         return JulianDay(lhs.value + rhs.value)

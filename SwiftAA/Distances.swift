@@ -12,12 +12,6 @@ import Foundation
 /// The AstronomicalUnit is a unit of distance.
 /// AstronomicalUnit structs conform to SwiftAA Numeric type protocol.
 public struct AstronomicalUnit: NumericType, CustomStringConvertible {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
     
@@ -119,13 +113,6 @@ public struct Parsec: NumericType, CustomStringConvertible {
 /// The Meter is a unit of angle.
 /// Meter structs conform to SwiftAA Numeric type protocol.
 public struct Meter: NumericType, CustomStringConvertible {
-    
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
     

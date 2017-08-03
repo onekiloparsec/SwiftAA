@@ -12,6 +12,15 @@ import Foundation
 
 public protocol NumericType: _NumericType, Comparable, SignedNumeric, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Hashable { /* intentionally left blank */ }
 
+extension NumericType {
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let doubleSource = source as? Double else {
+            return nil
+        }
+        self.init(doubleSource)
+    }
+    
+}
 // note: we use two separate protocols because it's impossible to declare conformance *and* provide default implementation at the same time 
 public protocol _NumericType {
     var value: Double { get }

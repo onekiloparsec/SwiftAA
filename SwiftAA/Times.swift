@@ -14,13 +14,6 @@ import Foundation
 /// Day structs conform to SwiftAA Numeric type protocol.
 public struct Day: NumericType, CustomStringConvertible {
     
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
-    
     public static func *(lhs: Day, rhs: Day) -> Day {
         return Day(lhs.value * rhs.value)
     }
@@ -73,13 +66,6 @@ public struct Day: NumericType, CustomStringConvertible {
 /// Hour structs conform to SwiftAA Numeric type protocol.
 public struct Hour: NumericType, CustomStringConvertible {
 
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
-    
     public var magnitude: Double
     
     public static func -=(lhs: inout Hour, rhs: Hour) {
@@ -162,12 +148,6 @@ public struct Hour: NumericType, CustomStringConvertible {
 /// The Minute is physical number representing an Earth minute.
 /// Minute structs conform to SwiftAA Numeric type protocol.
 public struct Minute: NumericType, CustomStringConvertible {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
     
@@ -221,13 +201,6 @@ public struct Minute: NumericType, CustomStringConvertible {
 /// The Second is physical number representing an Earth second.
 /// Second structs conform to SwiftAA Numeric type protocol.
 public struct Second: NumericType, CustomStringConvertible {
-   
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
     

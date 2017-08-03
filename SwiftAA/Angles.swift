@@ -11,12 +11,6 @@ import Foundation
 /// The Degree is a unit of angle.
 /// Degree structs conform to SwiftAA Numeric type protocol.
 public struct Degree: NumericType, CustomStringConvertible {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
     
@@ -120,13 +114,6 @@ public struct Degree: NumericType, CustomStringConvertible {
 /// The ArcMinute is a unit of angle.
 /// ArcMinute structs conform to SwiftAA Numeric type protocol.
 public struct ArcMinute: NumericType, CustomStringConvertible {
-
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
     
     public var magnitude: Double
 
@@ -176,13 +163,7 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
 /// The ArcSecond is a unit of angle.
 /// ArcSecond structs conform to SwiftAA Numeric type protocol.
 public struct ArcSecond: NumericType, CustomStringConvertible {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
-    
+
     public var magnitude: Double
     
     public static func -=(lhs: inout ArcSecond, rhs: ArcSecond) {
@@ -236,13 +217,7 @@ public struct ArcSecond: NumericType, CustomStringConvertible {
 /// The Radian is a unit of angle.
 /// Radian structs conform to SwiftAA Numeric type protocol.
 public struct Radian: NumericType, CustomStringConvertible {
-    public init?<T>(exactly source: T) where T : BinaryInteger {
-        guard let doubleT = source as? Double else {
-            return nil
-        }
-        self.init(doubleT)
-    }
-    
+
     public var magnitude: Double
     
     public static func -=(lhs: inout Radian, rhs: Radian) {
