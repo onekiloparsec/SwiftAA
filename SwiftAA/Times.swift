@@ -77,7 +77,7 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var inJulianDays: JulianDay { return JulianDay(value / 24.0) }
     
     /// Returns a sexagesimal representation of the hour.
-    public var sexagesimalNotation: SexagesimalNotation {
+    public var sexagesimal: SexagesimalNotation {
         get {
             let hrs = abs(value.rounded(.towardZero))
             let min = ((abs(value) - hrs) * 60.0).rounded(.towardZero)
@@ -94,7 +94,7 @@ public struct Hour: NumericType, CustomStringConvertible {
     
     /// A standard sexagesimal description of the Hour value.
     public var description: String {
-        let (sign, hrs, min, sec) = self.sexagesimalNotation
+        let (sign, hrs, min, sec) = self.sexagesimal
         return sign.string + String(format: "%ih%im%06.3fs", hrs, min, sec)
     }
 }

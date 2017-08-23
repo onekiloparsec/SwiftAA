@@ -52,7 +52,7 @@ public struct Degree: NumericType, CustomStringConvertible {
     public var inHours: Hour { return Hour(value / 15.0) }
     
     /// The sexagesimal notation of the Degree.
-    public var sexagesimalNotation: SexagesimalNotation {
+    public var sexagesimal: SexagesimalNotation {
         get {
             let deg = abs(value.rounded(.towardZero))
             let min = ((abs(value) - deg) * 60.0).rounded(.towardZero)
@@ -83,7 +83,7 @@ public struct Degree: NumericType, CustomStringConvertible {
     }
     
     public var description: String {
-        let (sign, deg, min, sec) = self.sexagesimalNotation
+        let (sign, deg, min, sec) = self.sexagesimal
         return sign.string + String(format: "%i°%i'%06.3f\"", deg, min, sec)
     }
 }
