@@ -76,9 +76,9 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                                                 apparentRiseSetAltitude.value)
     
     let date = julianDay.date
-    let sexagesimalRise = Hour(details.Rise).sexagesimalNotation
-    let sexagesimalTransit = Hour(details.Transit).sexagesimalNotation
-    let sexagesimalSet = Hour(details.Set).sexagesimalNotation
+    let sexagesimalRise = Hour(details.Rise).sexagesimal
+    let sexagesimalTransit = Hour(details.Transit).sexagesimal
+    let sexagesimalSet = Hour(details.Set).sexagesimal
     
     let rise = JulianDay(year: date.year,
                          month: date.month,

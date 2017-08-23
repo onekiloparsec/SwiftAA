@@ -53,10 +53,10 @@ class AnglesTests: XCTestCase {
     func testHourSexagesimalTransform() {
         let dplus = Degree(1.125)
         let dplussexagesimal: SexagesimalNotation = (.plus, 1, 7, 30.0)
-        XCTAssertTrue(dplus.sexagesimalNotation == dplussexagesimal)
+        XCTAssertTrue(dplus.sexagesimal == dplussexagesimal)
         
         let dminus = Degree(-1.125)
         let dminussexagesimal: SexagesimalNotation = (.minus, 1, 7, 30.0)
-        XCTAssertTrue(dminus.sexagesimalNotation == dminussexagesimal)
+        XCTAssertTrue(dminus.sexagesimal == dminussexagesimal)
     }
 }

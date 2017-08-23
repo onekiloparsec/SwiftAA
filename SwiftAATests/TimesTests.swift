@@ -53,11 +53,11 @@ class TimesTests: XCTestCase {
     func testHourSexagesimalTransform() {
         let hplus = Hour(1.125)
         let hplussexagesimal: SexagesimalNotation = (.plus, 1, 7, 30.0)
-        XCTAssertTrue(hplus.sexagesimalNotation == hplussexagesimal)
+        XCTAssertTrue(hplus.sexagesimal == hplussexagesimal)
         
         let hminus = Hour(-1.125)
         let hminussexagesimal: SexagesimalNotation = (.minus, 1, 7, 30.0)
-        XCTAssertTrue(hminus.sexagesimalNotation == hminussexagesimal)
+        XCTAssertTrue(hminus.sexagesimal == hminussexagesimal)
     }
     
     // See AATests.cpp

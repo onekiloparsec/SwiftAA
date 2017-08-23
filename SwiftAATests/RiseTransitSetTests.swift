@@ -29,7 +29,7 @@ class RiseTransitSetTests: XCTestCase {
     }
 
     func testVenusAtBoston2017() { // See http://aa.usno.navy.mil/data/docs/mrst.php
-        let sexagesimalLongitude = boston.longitude.inHours.sexagesimalNotation
+        let sexagesimalLongitude = boston.longitude.inHours.sexagesimal
         let venus = Venus(julianDay: JulianDay(year: 2017, month: 3, day: 20, hour: 0 + sexagesimalLongitude.radical, minute: sexagesimalLongitude.minute, second: sexagesimalLongitude.second))
         
         let details = RiseTransitSetTimes(celestialBody: venus, geographicCoordinates: boston)
