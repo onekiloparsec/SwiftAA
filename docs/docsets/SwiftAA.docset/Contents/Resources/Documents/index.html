@@ -13,7 +13,7 @@
     <a title="SwiftAA  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (61% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (67% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -85,9 +85,6 @@
                 <a href="Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
@@ -143,6 +140,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTSdx_x">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTxSd_x">*(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAAoi1puRxS_11NumericTyperFTxx_x">+(_:_:)</a>
@@ -314,15 +314,12 @@
 </h3>
 
 <p align="center">
-<a href="https://github.com/onekiloparsec/arcsecond.io">arcsecond.io</a> (backend) &bull;
-<a href="https://github.com/onekiloparsec/arcsecond.swift">arcsecond.swift</a> (Swift SDK) &bull;
-<a href="https://github.com/onekiloparsec/arcsecond.js">arcsecond.js</a> (JavaScript SDK) &bull; <br/>
 <b>SwiftAA</b> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
 </p>
-<a href='#swiftaa' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='swiftaa'>SwiftAA</h1>
+<h1 id='swiftaa' class='heading'>SwiftAA</h1>
 
 <p><img src="https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat" alt="">
 <img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="">
@@ -336,23 +333,26 @@
 
 <p><em>The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.</em></p>
 
-<p>Ongoing development is written in Swift3 and using AA+ version 1.76 (released February 12th, 2017). It will soon reach
-version 2.0. But it is already usable (and used) in production apps. </p>
+<p>Ongoing development is written in Swift3 and using AA+ version 1.91 (released August 1st, 2017).
+<strong>It is already used in production apps.</strong> In particular, 
+<a href="https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8">MeteorActive</a>, a carefully crafted iOS app to get
+everything about meteors.</p>
 
 <p>SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
-These algorithms also make use of the <a href="https://en.wikipedia.org/wiki/VSOP_(planets)">VSOP87</a> framework making it the
+This implementation make use of the <a href="https://en.wikipedia.org/wiki/VSOP_(planets)">VSOP87</a> framework,
+and includes the complete support for the ELP/MPP02 theory (for the Moon, see 
+<a href="ftp://cyrano-se.obspm.fr/pub/2_lunar_solutions/2_elpmpp02">here</a> for instance). Thus, SwiftAA, thanks to AA+, is the
 most complete and accurate collection of algorithms for all things astronomical.</p>
 
-<p>On top of this, SwiftAA provides <strong>modern APIs</strong> taking advantage of the expressiveness of Swift and its various modern
+<p>But on top of this, <strong>SwiftAA provides modern APIs</strong> taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. In particular, SwiftAA provides <strong>units safety</strong> a lot stronger than C++ APIs. </p>
+completeness and ease of use. In particular, SwiftAA provides a lot stronger <strong>units safety</strong> compared to C++ APIs. </p>
 
-<p>Moreover, SwiftAA intends to provide a much improved unit tests coverage. The target is about 50% of code coverage
-for the milestone 2.0.</p>
-<a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='documentation'>Documentation</h1>
+<p>Moreover, SwiftAA intends to provide a much improved unit tests coverage. </p>
+<h1 id='documentation' class='heading'>Documentation</h1>
 
 <p>The documentation generated from the code itself is available at <a href="http://onekiloparsec.github.io/SwiftAA">http://onekiloparsec.github.io/SwiftAA</a>.</p>
-<a href='#licence' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='licence'>Licence</h1>
+<h1 id='licence' class='heading'>Licence</h1>
 
 <p>The licence of this software is the <a href="http://opensource.org/licenses/MIT">MIT</a> licence. But it does not apply to the AA+ Framework,
 which retains its own licence. Quoting the <a href="http://www.naughter.com/aa.html">original</a>:</p>
@@ -364,12 +364,12 @@ which retains its own licence. Quoting the <a href="http://www.naughter.com/aa.h
 <li>You are allowed to modify the source code in any way you want except you cannot modify the copyright details at the top of each module.</li>
 <li>If you want to distribute source code with your application, then you are only allowed to distribute versions released by the author. This is to maintain a single distribution point for the source code.</li>
 </ul>
-<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='installation'>Installation</h1>
+<h1 id='installation' class='heading'>Installation</h1>
 
 <p>Using <a href="https://github.com/Carthage/Carthage">Carthage</a>: add <code>github &quot;onekiloparsec/SwiftAA&quot;</code> to your <code>Cartfile</code> and then run <code>carthage update</code>.</p>
 
 <p>Using <a href="http://cocoapods.org/">CocoaPods</a>: add <code>pod &#39;SwiftAA&#39;</code> to your <code>Podfile</code> and then run <code>pod update</code>. </p>
-<a href='#introduction' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='introduction'>Introduction</h1>
+<h1 id='introduction' class='heading'>Introduction</h1>
 
 <p>The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
 <q>Astronomical Algorithms</q>, found in the reference textbook by Jean Meeus 
@@ -384,7 +384,7 @@ I need to put a lot more work on these algorithms. </p>
 to bring the AA+ framework to Apple&rsquo;s Swift realm (and Objective-C along the way). Pull requests will be accepted 
 only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
 to the original source (see the <a href="http://www.naughter.com/aa.html">AA+ website</a>).</p>
-<a href='#caution' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='caution'>Caution</h1>
+<h1 id='caution' class='heading'>Caution</h1>
 
 <p>The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the
 textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
@@ -392,7 +392,7 @@ should be careful. For a good example of a complete implementation of such trans
 <a href="http://docs.astropy.org/en/stable/coordinates/index.html">AstroPy excellent package</a>.</p>
 
 <p>The implementation of modern convention for coordinates, as in AstroPy, is planned for v2.1.</p>
-<a href='#notes-and-conventions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='notes-and-conventions'>Notes and Conventions</h1>
+<h1 id='notes-and-conventions' class='heading'>Notes and Conventions</h1>
 
 <p>Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
 is to build an Objective-C(++) layer that follow <em>strictly</em> the methods and interfaces of the underlying
@@ -406,7 +406,7 @@ library as well. Hence the (rather long) 5-letters <em>KPCAA</em> prefix of all 
 <p>These constraints come from the fact that no C++ code can be written directly alongside Swift code (in the same file). 
 And Swift doesn&rsquo;t have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper
 around it, with name prefixes.</p>
-<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='author'>Author</h1>
+<h1 id='author' class='heading'>Author</h1>
 
 <p>Cédric Foellmi, a.k.a. <strong><a href="https://twitter.com/onekiloparsec">@onekiloparsec</a></strong> (<a href="https://onekilopars.ec">website</a>). <br/>
 (Ph.D. in astrophysics, and former <em>support astronomer</em> at the <a href="http://www.eso.org">European Southern Observatory</a> in Chile).</p>
@@ -414,8 +414,8 @@ around it, with name prefixes.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-08-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

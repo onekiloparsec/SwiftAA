@@ -14,7 +14,7 @@
     <a title="CelestialBody Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (61% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (67% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -86,9 +86,6 @@
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
@@ -144,6 +141,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTSdx_x">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTxSd_x">*(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi1puRxS_11NumericTyperFTxx_x">+(_:_:)</a>
@@ -348,37 +348,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L17">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody19eclipticCoordinatesVS_19EclipticCoordinates"></a>
-                    <a name="//apple_ref/swift/Property/eclipticCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody19eclipticCoordinatesVS_19EclipticCoordinates">eclipticCoordinates</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The ecliptic (=heliocentric) coordinates of the object</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">eclipticCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/EclipticCoordinates.html">EclipticCoordinates</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L20">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -396,7 +366,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The equatorial coordinates of the object</p>
+                        <p>The coordinates of the object in the equatorial system (based on Earth equator).</p>
 
                       </div>
                       <div class="declaration">
@@ -408,7 +378,7 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L23">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -416,39 +386,9 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody29apparentEquatorialCoordinatesVS_21EquatorialCoordinates"></a>
-                    <a name="//apple_ref/swift/Property/apparentEquatorialCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody29apparentEquatorialCoordinatesVS_21EquatorialCoordinates">apparentEquatorialCoordinates</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CelestialBody</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ObjectBase.html">ObjectBase</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody19riseTransitSetTimesFT4withVS_21GeographicCoordinates_CS_19RiseTransitSetTimes"></a>
-                    <a name="//apple_ref/swift/Method/riseTransitSetTimes(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody19riseTransitSetTimesFT4withVS_21GeographicCoordinates_CS_19RiseTransitSetTimes">riseTransitSetTimes(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody19riseTransitSetTimesFT3forVS_21GeographicCoordinates_CS_19RiseTransitSetTimes"></a>
+                    <a name="//apple_ref/swift/Method/riseTransitSetTimes(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody19riseTransitSetTimesFT3forVS_21GeographicCoordinates_CS_19RiseTransitSetTimes">riseTransitSetTimes(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -464,14 +404,14 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)</p>
+                        <p>Returns the Rise, Transit and Set times of the body for a given location on Earth.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">riseTransitSetTimes</span><span class="p">(</span><span class="n">with</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">riseTransitSetTimes</span><span class="p">(</span><span class="k">for</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a></span></code></pre>
 
                         </div>
                       </div>
@@ -488,7 +428,6 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                               <td>
                                 <div>
                                   <p>The coordinates of the location on Earth.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -498,10 +437,9 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>A RiseTransitSetTimes object.</p>
-
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L31">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -509,9 +447,9 @@ Default implementation for planets is located in PlanetaryBase extension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody9hourAngleFT4withVS_21GeographicCoordinates_VS_4Hour"></a>
-                    <a name="//apple_ref/swift/Method/hourAngle(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody9hourAngleFT4withVS_21GeographicCoordinates_VS_4Hour">hourAngle(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody9hourAngleFT3forVS_21GeographicCoordinates_VS_4Hour"></a>
+                    <a name="//apple_ref/swift/Method/hourAngle(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody9hourAngleFT3forVS_21GeographicCoordinates_VS_4Hour">hourAngle(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -528,14 +466,15 @@ and its right ascension.</p>
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)</p>
+                        <p>Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
+and its right ascension.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">hourAngle</span><span class="p">(</span><span class="n">with</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Hour.html">Hour</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">hourAngle</span><span class="p">(</span><span class="k">for</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Hour.html">Hour</a></span></code></pre>
 
                         </div>
                       </div>
@@ -552,7 +491,6 @@ and its right ascension.</p>
                               <td>
                                 <div>
                                   <p>The geographic coordinates of the place.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -562,10 +500,9 @@ and its right ascension.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>The Hour Angle of the body.</p>
-
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L39">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -573,9 +510,9 @@ and its right ascension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody16parallacticAngleFT4withVS_21GeographicCoordinates_VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/parallacticAngle(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody16parallacticAngleFT4withVS_21GeographicCoordinates_VS_6Degree">parallacticAngle(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody16parallacticAngleFT3forVS_21GeographicCoordinates_VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/parallacticAngle(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody16parallacticAngleFT3forVS_21GeographicCoordinates_VS_6Degree">parallacticAngle(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -603,7 +540,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -611,9 +548,9 @@ and its right ascension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody26eclipticLongitudeOnHorizonFT4withVS_21GeographicCoordinates_VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/eclipticLongitudeOnHorizon(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody26eclipticLongitudeOnHorizonFT4withVS_21GeographicCoordinates_VS_6Degree">eclipticLongitudeOnHorizon(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody26eclipticLongitudeOnHorizonFT3forVS_21GeographicCoordinates_VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/eclipticLongitudeOnHorizon(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody26eclipticLongitudeOnHorizonFT3forVS_21GeographicCoordinates_VS_6Degree">eclipticLongitudeOnHorizon(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -641,7 +578,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -649,9 +586,9 @@ and its right ascension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody30angleBetweenEclipticAndHorizonFT4withVS_21GeographicCoordinates_VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/angleBetweenEclipticAndHorizon(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody30angleBetweenEclipticAndHorizonFT4withVS_21GeographicCoordinates_VS_6Degree">angleBetweenEclipticAndHorizon(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody30angleBetweenEclipticAndHorizonFT3forVS_21GeographicCoordinates_VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/angleBetweenEclipticAndHorizon(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody30angleBetweenEclipticAndHorizonFT3forVS_21GeographicCoordinates_VS_6Degree">angleBetweenEclipticAndHorizon(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -679,7 +616,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -687,9 +624,9 @@ and its right ascension.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody52angleBetweenNorthCelestialPoleAndNorthPoleOfEclipticFT4withVS_21GeographicCoordinates_VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody52angleBetweenNorthCelestialPoleAndNorthPoleOfEclipticFT4withVS_21GeographicCoordinates_VS_6Degree">angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(with:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody52angleBetweenNorthCelestialPoleAndNorthPoleOfEclipticFT3forVS_21GeographicCoordinates_VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody52angleBetweenNorthCelestialPoleAndNorthPoleOfEclipticFT3forVS_21GeographicCoordinates_VS_6Degree">angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -717,7 +654,7 @@ and its right ascension.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -746,7 +683,10 @@ sunrise and sunset.</p>
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)</p>
+                        <p>The angle the Earth must make between the time at which the object is at a given altitude, then rotate,
+produce a diurnal arc, and reach a time at which the object reached again the same altitude.
+Basically, for the object being the Sun, and the altitude being 0=horizon, compute the angle between
+sunrise and sunset.</p>
 
                       </div>
                       <div class="declaration">
@@ -770,7 +710,6 @@ sunrise and sunset.</p>
                               <td>
                                 <div>
                                   <p>The crossing altitude</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -783,7 +722,6 @@ sunrise and sunset.</p>
                               <td>
                                 <div>
                                   <p>The point on Earth from which one computes the arc.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -793,10 +731,9 @@ sunrise and sunset.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>The angle of the so-called diurnal arc</p>
-
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L58">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -826,7 +763,7 @@ sunrise and sunset.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L61">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L59">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -856,7 +793,7 @@ sunrise and sunset.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L64">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -864,9 +801,9 @@ sunrise and sunset.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/apparentRiseSetAltitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree">apparentRiseSetAltitude</a>
+                    <a name="/s:ZvP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Variable/apparentRiseSetAltitude" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvP7SwiftAA13CelestialBody23apparentRiseSetAltitudeVS_6Degree">apparentRiseSetAltitude</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -881,12 +818,12 @@ sunrise and sunset.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">apparentRiseSetAltitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">apparentRiseSetAltitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/CelestialBodies.swift#L67">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/CelestialBodies.swift#L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -896,8 +833,8 @@ sunrise and sunset.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-08-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

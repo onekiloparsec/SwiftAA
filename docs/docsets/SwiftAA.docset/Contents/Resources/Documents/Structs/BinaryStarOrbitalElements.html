@@ -14,7 +14,7 @@
     <a title="BinaryStarOrbitalElements Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (61% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (67% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -86,9 +86,6 @@
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v7SwiftAA14JulianDayB1950VS_9JulianDay">JulianDayB1950</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA10JulianYearVS_3Day">JulianYear</a>
               </li>
               <li class="nav-group-task">
@@ -144,6 +141,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTSdx_x">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAAoi1muRxS_11NumericTyperFTxSd_x">*(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAAoi1puRxS_11NumericTyperFTxx_x">+(_:_:)</a>
@@ -310,7 +310,13 @@
         <section>
           <section class="section">
             <h1>BinaryStarOrbitalElements</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BinaryStarOrbitalElements</span></code></pre>
+
+                </div>
+              </div>
+            <p>The BinaryStarOrbitalElements struct encompasses all orbital elements of a binary star.</p>
 
           </section>
           <section class="section task-group-section">
@@ -329,11 +335,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The revolution (orbital) period</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">revolutionPeriod</span><span class="p">:</span> <span class="kt">MeanSolarYear</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -351,11 +365,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The time of periastron</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">timeOfPeriastron</span><span class="p">:</span> <span class="kt">DecimalYear</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -373,11 +395,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The eccentricity of the orbit</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">eccentricity</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -395,11 +425,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The inclination of the orbit relative to the line of sight.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">inclination</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -417,11 +455,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The semi-major axis of the orbit</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">semiMajorAxis</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -439,11 +485,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The position angle of the ascending node</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">positionAngleOfAscendingNode</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -461,11 +515,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The longitude of the periastron.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">longitudeOfPeriastron</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -483,11 +545,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the orbital period.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">P</span><span class="p">:</span> <span class="kt">MeanSolarYear</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -505,11 +575,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the time of periastron</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">T</span><span class="p">:</span> <span class="kt">DecimalYear</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -527,11 +605,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the eccentricity</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -549,11 +635,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the inclination</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">i</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -571,11 +665,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the semi-major axis</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L40">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -593,11 +695,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the position angle of the ascending node</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">Omega</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -615,11 +725,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience accessor for the longitude of periastron</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">w</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-alpha4/SwiftAA/BinaryStars.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta0/SwiftAA/BinaryStars.swift#L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -629,8 +747,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-03-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-08-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
