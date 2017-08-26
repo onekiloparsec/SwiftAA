@@ -26,11 +26,11 @@ class PlanetaryPhenomenaTests: XCTestCase {
         XCTAssertEqualWithAccuracy(saturn.conjunction(mean: false).value, 2497437.903, accuracy: 0.001)
     }
     
-    // See AA. p.252
-//    func testMercuryWesternElongation() {
-//        let jd = JulianDay(year: 1993, month: 11, day: 1)
-//        let mercury = Mercury(julianDay: jd)
-//        XCTAssertEqualWithAccuracy(mercury.westernElongation(mean: false).value, 2449314.14, accuracy: 0.001)
-//        XCTAssertEqualWithAccuracy(mercury.elongationValue(eastern: false).value, 19.7506, accuracy: 0.0001)
-//    }
+    // See AA. p.253 & 254.
+    func testMercuryWesternElongation() {
+        let jd = JulianDay(year: 1993, month: 11, day: 1)
+        let mercury = Mercury(julianDay: jd)
+        XCTAssertEqualWithAccuracy(mercury.westernElongation(mean: false).value, 2449314.14, accuracy: 0.002)
+        XCTAssertEqualWithAccuracy(mercury.elongationValue(eastern: false).value, 19.7506, accuracy: 0.0001)
+    }
 }

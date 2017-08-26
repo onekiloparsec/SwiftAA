@@ -11,7 +11,15 @@
 
 double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    return CAAPlanetaryPhenomena::K(Year, (CAAPlanetaryPhenomena::PlanetaryObject)object, (CAAPlanetaryPhenomena::EventType)type);
+    // For Mercury and Venus, K cannot be computed for every event type.
+    // One can start with inferior conjunction though. See Example 36.c of AA p. 253.
+    
+    KPCPlanetaryEventType runningType = type;
+    if (object < (KPCPlanetaryObject)MARS && (type != INFERIOR_CONJUNCTION && type != SUPERIOR_CONJUNCTION)) {
+        runningType = INFERIOR_CONJUNCTION;
+    }
+
+    return CAAPlanetaryPhenomena::K(Year, (CAAPlanetaryPhenomena::PlanetaryObject)object, (CAAPlanetaryPhenomena::EventType)runningType);
 }
 
 double KPCAAPlanetaryPhenomena_Mean(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type)
@@ -31,7 +39,7 @@ double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject obje
 
 double KPCAAPlanetaryPhenomena(BOOL mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);
+    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);    
     if (mean) {
         return KPCAAPlanetaryPhenomena_Mean(k, object, type);
     }
