@@ -23,19 +23,22 @@ SwiftAA
 
 *The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.*
 
-Ongoing development is written in Swift3 and using AA+ version 1.76 (released February 12th, 2017). It will soon reach
-version 2.0. But it is already usable (and used) in production apps. 
+Ongoing development is written in Swift3 and using AA+ version 1.91 (released August 1st, 2017).
+**It is already used in production apps.** In particular, 
+[MeteorActive](https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8), a carefully crafted iOS app to get
+everything about meteors.
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
-These algorithms also make use of the [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework making it the
+This implementation make use of the [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework,
+and includes the complete support for the ELP/MPP02 theory (for the Moon, see 
+[here](ftp://cyrano-se.obspm.fr/pub/2_lunar_solutions/2_elpmpp02) for instance). Thus, SwiftAA, thanks to AA+, is the
 most complete and accurate collection of algorithms for all things astronomical.
 
-On top of this, SwiftAA provides **modern APIs** taking advantage of the expressiveness of Swift and its various modern
+But on top of this, **SwiftAA provides modern APIs** taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. In particular, SwiftAA provides **units safety** a lot stronger than C++ APIs. 
+completeness and ease of use. In particular, SwiftAA provides a lot stronger **units safety** compared to C++ APIs. 
 
-Moreover, SwiftAA intends to provide a much improved unit tests coverage. The target is about 50% of code coverage
-for the milestone 2.0.
+Moreover, SwiftAA intends to provide a much improved unit tests coverage. 
 
 
 Documentation
