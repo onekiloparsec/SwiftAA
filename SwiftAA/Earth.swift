@@ -150,5 +150,19 @@ public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
         
         return (times.riseTime, times.transitTime, times.setTime, nil)
     }
+    
+    
+    /// The heliocentric coordinates of the Earth. That is, its apparent position on the celestial sphere, as
+    /// as it would be seen by an observer at rest at the barycenter of the solar system, and referred to the
+    /// instantaneous equator, ecliptic and equinox.
+    /// See AA pp.217 and following.
+    public var heliocentricEclipticCoordinates: EclipticCoordinates {
+        get {
+            let longitude = KPCAAEclipticalElement_EclipticLongitude(self.julianDay.value, self.planet, self.highPrecision)
+            let latitude = KPCAAEclipticalElement_EclipticLatitude(self.julianDay.value, self.planet, self.highPrecision)
+            // Using standard epoch, thus standard value for the equinox, thus the mean obliquity.
+            return EclipticCoordinates(lambda: Degree(longitude), beta: Degree(latitude))
+        }
+    }
 }
 
