@@ -2539,7 +2539,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					9F694D891D15C67300EE7492 = {
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2548,7 +2548,7 @@
 					9FBA899A1E324A930096FEAC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MD266WQ2E2;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					9FC3402C1D156A5D0069E7C4 = {
@@ -3347,7 +3347,7 @@
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3379,7 +3379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -3462,7 +3462,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3480,7 +3480,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-iOS-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
