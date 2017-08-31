@@ -30,21 +30,21 @@ class GeographicCoordinatesTests: XCTestCase {
     func testGlobeRadii() {
         // Roughly Chicago. AA simply uses latitude = 42º.0.
         let chicago = GeographicCoordinates(positivelyWestwardLongitude: Degree(-87.623177), latitude: Degree(42.0))
-        XCTAssertEqualWithAccuracy(chicago.globeRadiusOfCurvature.value, 6364033.0, accuracy: 10.0)
-        XCTAssertEqualWithAccuracy(chicago.globeRadiusOfParallelOfLatitude.value, 4747001.0, accuracy: 10.0)
+        XCTAssertEqual(chicago.globeRadiusOfCurvature.value, 6364033.0, accuracy: 10.0)
+        XCTAssertEqual(chicago.globeRadiusOfParallelOfLatitude.value, 4747001.0, accuracy: 10.0)
     }
 
     // See AA p.85
     func testGlobeDistanceBetweenGeographicPoints() {
         let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 20, 14.0), latitude: Degree(.plus, 48, 50, 11.0))
         let washington = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 77, 03, 56), latitude: Degree(.plus, 38, 55, 17.0))
-        XCTAssertEqualWithAccuracy(paris.globeDistance(to: washington).value, 6181630.0, accuracy: 10.0)
+        XCTAssertEqual(paris.globeDistance(to: washington).value, 6181630.0, accuracy: 10.0)
     }
     
     // See AA p.82
     func testRelativeGlobeDistancesToEarthCenter() {
         let palomar = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 116, 51, 54.0), latitude: Degree(.plus, 33, 21, 22.0))
-        XCTAssertEqualWithAccuracy(palomar.rhoSinThetaPrime(forObserverHeight: 1706.0), 0.546861, accuracy: 0.000001)
-        XCTAssertEqualWithAccuracy(palomar.rhoCosThetaPrime(forObserverHeight: 1706.0), 0.836339, accuracy: 0.000001)
+        XCTAssertEqual(palomar.rhoSinThetaPrime(forObserverHeight: 1706.0), 0.546861, accuracy: 0.000001)
+        XCTAssertEqual(palomar.rhoCosThetaPrime(forObserverHeight: 1706.0), 0.836339, accuracy: 0.000001)
     }
 }
