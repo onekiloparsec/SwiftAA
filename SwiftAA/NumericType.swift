@@ -21,45 +21,40 @@ public protocol _NumericType {
 }
 
 extension _NumericType {
+    
     public init(floatLiteral: FloatLiteralType) {
         self.init(Double(floatLiteral))
     }
     public init(integerLiteral: IntegerLiteralType) {
         self.init(Double(integerLiteral))
     }
+    
+    #if swift(>=3.2)
+    public init?<T>(exactly source: T) where T : BinaryInteger {
+        guard let value = Double(exactly: source) else { return nil }
+        self.init(value)
+    }
+    #endif
+    
     public func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
         let roundedValue = self.value.rounded(toIncrement: increment.value, rule: rule)
         return type(of: self).init(roundedValue)
     }
+    
+    public static func == (lhs: Self, rhs: Self) -> Bool { return lhs.value == rhs.value }
+    public static func < (lhs: Self, rhs: Self) -> Bool { return lhs.value < rhs.value }
+    
+    public static func + (lhs: Self, rhs: Self) -> Self { return Self(lhs.value + rhs.value) }
+    public static func - (lhs: Self, rhs: Self) -> Self { return Self(lhs.value - rhs.value) }
+    public static func * (lhs: Self, rhs: Self) -> Self { return Self(lhs.value * rhs.value) }
+    
+    public static func += (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value + rhs.value) }
+    public static func -= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value - rhs.value) }
+    public static func *= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value * rhs.value) }
+    
+    public var magnitude: Self { return Self(value.magnitude) }
     public var hashValue: Int { return value.hashValue }
-}
-
-public func * <T: NumericType> (lhs: Double, rhs: T) -> T {
-    return T(lhs + rhs.value)
-}
-
-public func * <T: NumericType> (lhs: T, rhs: Double) -> T {
-    return T(lhs.value + rhs)
-}
-
-public func + <T: NumericType> (lhs: T, rhs: T) -> T {
-    return T(lhs.value + rhs.value)
-}
-
-public func - <T: NumericType> (lhs: T, rhs: T) -> T {
-    return T(lhs.value - rhs.value)
-}
-
-public func < <T: NumericType> (lhs: T, rhs: T) -> Bool {
-    return lhs.value < rhs.value
-}
-
-public func == <T: NumericType> (lhs: T, rhs: T) -> Bool {
-    return lhs.value == rhs.value
-}
-
-public prefix func - <T: NumericType> (number: T) -> T {
-    return T(-number.value)
+    
 }
 
 
