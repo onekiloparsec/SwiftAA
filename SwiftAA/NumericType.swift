@@ -70,6 +70,13 @@ extension FloatingPoint {
         return positive
     }
     
+    /// Returns self reduced to range -other/2 <.. +other/2
+    func zeroCenteredTruncatingRemainder(dividingBy other: Self) -> Self {
+        guard other > Self(0) else { fatalError("Divisor must be positive") }
+        let positive = positiveTruncatingRemainder(dividingBy: other)
+        let centered = positive > other / Self(2) ? positive - other : positive
+        return centered
+    }
     func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
         return (self / increment).rounded(rule) * increment
     }
