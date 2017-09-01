@@ -52,7 +52,7 @@ extension _NumericType {
     public static func -= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value - rhs.value) }
     public static func *= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value * rhs.value) }
     
-    public var magnitude: Self { return Self(value.magnitude) }
+    public var magnitude: Self { return Self(abs(value)) }
     public var hashValue: Int { return value.hashValue }
     
 }
