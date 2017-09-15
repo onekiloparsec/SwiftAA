@@ -32,7 +32,7 @@ public class Moon : Object, CelestialBody {
         
     // MARK: - CelestialBody
     
-    /// Radius vector of the Moon, that is, its distance from Earth.
+    /// Radius vector of the Moon, that is, its distance from Earth (not Sun).
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers. For consistency with others, we return AU.
     public var radiusVector: AstronomicalUnit {
