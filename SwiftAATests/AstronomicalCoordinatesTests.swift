@@ -3,7 +3,7 @@
 //  SwiftAA
 //
 //  Created by Alexander Vasenin on 24/12/2016.
-//  Copyright © 2016 onekiloparsec. All rights reserved.
+//  MIT Licence. See LICENCE file.
 //
 
 import XCTest

@@ -3,7 +3,7 @@
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 06/11/2016.
-//  Copyright © 2016 onekiloparsec. All rights reserved.
+//  MIT Licence. See LICENCE file.
 //
 
 /// Source: http://nssdc.gsfc.nasa.gov/planetary/planetfact.html

@@ -3,7 +3,7 @@
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 18/06/16.
-//  Copyright © 2016 onekiloparsec. All rights reserved.
+//  MIT Licence. See LICENCE file.
 //
 
 // Imported from the excellent Gist https://gist.github.com/fcanas/6f02fc92e3ae0b2f9ce7

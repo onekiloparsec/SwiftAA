@@ -3,7 +3,7 @@
 //  swiftaa
 //
 //  Created by Cédric Foellmi on 18/07/16.
-//  Copyright © 2016 onekiloparsec. All rights reserved.
+//  MIT Licence. See LICENCE file.
 //
 
 // This is the command-line project for Swift AA.
