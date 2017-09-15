@@ -58,7 +58,7 @@ extension _NumericType {
 }
 
 
-extension FloatingPoint {
+public extension FloatingPoint {
     func positiveTruncatingRemainder(dividingBy other: Self) -> Self {
         let truncated = truncatingRemainder(dividingBy: other)
         let positive = truncated.sign == .minus ? truncated + other : truncated
@@ -77,7 +77,7 @@ extension FloatingPoint {
     }
 }
 
-extension Double {
+public extension Double {
     init(_ sign: FloatingPointSign) {
         if case .plus = sign { self.init(1.0) }
         else { self.init(-1.0) }
@@ -118,9 +118,25 @@ extension Double {
     var seconds: Second {
         return Second(self)
     }
+    
+    var sexagesimal: SexagesimalNotation {
+        let deg = abs(self.rounded(.towardZero))
+        let min = ((abs(self) - deg) * 60.0).rounded(.towardZero)
+        let sec = ((abs(self) - deg) * 60.0 - min) * 60.0
+        return (self > 0.0 ? .plus : .minus, Int(deg), Int(min), Double(sec))
+    }
+
+    var sexagesimalShortString: String {
+        let sexa = self.sexagesimal
+        return sexa.sign.string
+            + String(format: "%02d", sexa.radical) + ":"
+            + String(format: "%02d", sexa.minute) + ":"
+            + String(format: "%03.1f", sexa.radical)
+        
+    }
 }
 
-extension FloatingPointSign {
+public extension FloatingPointSign {
     var string: String {
         get {
             if case .plus = self { return "+" }
@@ -134,3 +150,4 @@ public typealias SexagesimalNotation = (sign: FloatingPointSign, radical: Int, m
 public func == (lhs: SexagesimalNotation, rhs: SexagesimalNotation) -> Bool {
     return lhs.sign == rhs.sign && lhs.radical == rhs.radical && lhs.minute == rhs.minute && lhs.second == rhs.second
 }
+
