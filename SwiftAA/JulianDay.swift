@@ -162,6 +162,11 @@ public extension JulianDay {
     
     // Obliquity
     
+    
+    /// Obliquity of the ecliptic, that is, the angle between the ecliptic and the celestial equator.
+    ///
+    /// - Parameter mean: If true, compute the mean obliquity. Otherwise, compute the true obliquity.
+    /// - Returns: The obliquity of the ecliptic, in degrees.
     public func obliquityOfEcliptic(mean: Bool = true) -> Degree {
         return Degree(KPCAANutation_ObliquityOfEcliptic(mean, self.value))
     }

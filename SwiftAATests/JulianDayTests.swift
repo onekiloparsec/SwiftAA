@@ -225,6 +225,15 @@ class JulianDayTest: XCTestCase {
         let jd_td = JulianDay(2443192.65118)
         AssertEqual(jd_td.deltaT(), Second(48.0), accuracy: Second(0.5))
     }
+    
+    // See AA p. 148.
+    
+    func testObliquityOfEcliptic() {
+        let jd = JulianDay(year: 1987, month: 4, day: 10)
+        AssertEqual(jd, JulianDay	(2446895.5))
+        AssertEqual(jd.obliquityOfEcliptic(mean: true), Degree(.plus, 23, 26, 27.407), accuracy: ArcSecond(0.001).inDegrees)
+        AssertEqual(jd.obliquityOfEcliptic(mean: false), Degree(.plus, 23, 26, 36.850), accuracy: ArcSecond(0.001).inDegrees)
+    }
 }
 
 
