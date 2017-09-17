@@ -20,6 +20,8 @@ public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
 public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
 
+public let MeanLunarEquatorInclination: Degree = 1.54242 // Relative, to Ecliptic. See p. 372 of AA.
+
 public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
