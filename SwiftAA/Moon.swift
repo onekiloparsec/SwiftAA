@@ -204,7 +204,7 @@ public class Moon : Object, CelestialBody {
     /// - Parameter geoCoords: The position of the observer on Earth surface.
     /// - Returns: a new instance of SelenographicCoordinates
     public func topocentricTotalLibration(for geographicCoordinates: GeographicCoordinates) -> SelenographicCoordinates {
-        let details = KPCPhysicalMoon_CalculateTopocentric(self.julianDay.value, geoCoords.longitude.value, geoCoords.latitude.value)
+        let details = KPCPhysicalMoon_CalculateTopocentric(self.julianDay.value, geographicCoordinates.longitude.value, geographicCoordinates.latitude.value)
         return SelenographicCoordinates(longitude: Degree(details.l), latitude: Degree(details.b))
     }
 
