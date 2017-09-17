@@ -28,12 +28,12 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
         }()
     
     
-    /// The coordinates of the object in the equatorial system (based on Earth equator).
+    /// The coordinates of the object in the equatorial system (based on Earth equator), with the Earth's center as its origin.
     public var equatorialCoordinates: EquatorialCoordinates {
         get { return self.apparentGeocentricEquatorialCoordinates }
     }
     
-    /// The heliocentric coordinates of the planet. That is, its apparent position on the celestial sphere, as
+    /// The heliocentric coordinates of the planet in the ecliptic system (based on planet orbits plane). That is, its apparent position on the celestial sphere, as
     /// as it would be seen by an observer at rest at the barycenter of the solar system, and referred to the 
     /// instantaneous equator, ecliptic and equinox.
     /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
