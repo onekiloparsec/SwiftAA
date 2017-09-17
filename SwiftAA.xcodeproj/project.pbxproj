@@ -20,6 +20,7 @@
 		6FBCF9381E12210C00786EB4 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */; };
 		9F058A141D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
 		9F058A151D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */; };
+		9F074CE61F6EABD200BDE079 /* BinaryStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */; };
 		9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F1F129B1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F2154A61D296B4000C4DD06 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2154A51D296B4000C4DD06 /* Planets.swift */; };
@@ -897,6 +898,7 @@
 		6F67BB4D1E1C302D00377C7B /* NumericTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTypeTests.swift; sourceTree = "<group>"; };
 		6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		9F058A131D9108FE00D5E710 /* EllipticalPlanetaryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticalPlanetaryDetails.swift; sourceTree = "<group>"; };
+		9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStarsTests.swift; sourceTree = "<group>"; };
 		9F1F12991D7C6A83006FD828 /* Magnitudes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magnitudes.swift; sourceTree = "<group>"; };
 		9F2154A51D296B4000C4DD06 /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA2DCoordinate.h; path = ObjCAA/KPCAA2DCoordinate.h; sourceTree = "<group>"; };
@@ -1956,6 +1958,7 @@
 				9FE687E01E5E3B2F0038C81F /* AnglesTests.swift */,
 				9F6043751E61799E00395C0E /* AngularSeparationTests.swift */,
 				6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */,
+				9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */,
 				9F3849C91E60BA990013D9A3 /* CelestialBodiesTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
 				9FD1F4491E6E08C900EC5D66 /* EarthSeasonsTests.swift */,
@@ -3131,6 +3134,7 @@
 				6FBCF9381E12210C00786EB4 /* XCTestExtensions.swift in Sources */,
 				9F8681D11E6E91FE00C59F04 /* JupiterTests.swift in Sources */,
 				9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */,
+				9F074CE61F6EABD200BDE079 /* BinaryStarsTests.swift in Sources */,
 				9F89264B1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9F6043731E6176FA00395C0E /* RefractionTests.swift in Sources */,
 				9F5E3D481E395A280039B998 /* EarthTwilightsTests.swift in Sources */,

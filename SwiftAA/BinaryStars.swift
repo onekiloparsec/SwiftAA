@@ -47,18 +47,18 @@ public struct BinaryStarOrbitalElements {
 /// The BinaryStarDetails struct encompasses elements of a binary star.
 public struct BinaryStarDetails {
     /// The radius vector
-    public private(set) var radiusVector: Degree
+    public private(set) var radiusVector: ArcSecond
     /// The apparent position angle
     public private(set) var apparentPositionAngle: Degree
     /// The angular distance
-    public private(set) var angularDistance: Degree
+    public private(set) var angularDistance: ArcSecond
     
     /// Convenience accessor for the radius vector
-    public var r: Degree { get { return self.radiusVector } }
+    public var r: ArcSecond { get { return self.radiusVector } }
     /// Convenience accessor for the apparent position angle
     public var theta: Degree { get { return self.apparentPositionAngle } }
     /// Convenience accessor for the angular distance
-    public var rho: Degree { get { return self.angularDistance } }
+    public var rho: ArcSecond { get { return self.angularDistance } }
 }
 
 /// Returns the details of a binary star.
@@ -67,7 +67,7 @@ public struct BinaryStarDetails {
 ///   - time: The time at which the details must be computed.
 ///   - elements: the binary star orbital elements
 /// - Returns: The details of a binary star.
-public func binaryStarsApparentEccentricityDetails(time: Double, elements: BinaryStarOrbitalElements) -> BinaryStarDetails {
+public func binaryStarDetails(time: Double, elements: BinaryStarOrbitalElements) -> BinaryStarDetails {
     // Note the semiMajorAxis in expressed in arcseconds.
     let details = KPCAABinaryStar_CalculateDetails(time,
                                                    elements.P,
@@ -78,9 +78,9 @@ public func binaryStarsApparentEccentricityDetails(time: Double, elements: Binar
                                                    elements.Omega.value,
                                                    elements.w.value)
     
-    return BinaryStarDetails(radiusVector: Degree(details.r),
+    return BinaryStarDetails(radiusVector: ArcSecond(details.r),
                              apparentPositionAngle: Degree(details.Theta),
-                             angularDistance: Degree(details.Rho))
+                             angularDistance: ArcSecond(details.Rho))
 }
 
 /// Return the apparent eccentricity of the binary stars orbit.
@@ -90,6 +90,6 @@ public func binaryStarsApparentEccentricityDetails(time: Double, elements: Binar
 ///   - inclination: The orbit inclination
 ///   - omega: The longitude of periastron
 /// - Returns: The apparent eccentricity of the orbit, as seen on the sky.
-public func binaryStarsApparentEccentricity(eccentricity: Double, inclination: Degree, omega: Degree) -> Double {
+public func binaryStarApparentEccentricity(eccentricity: Double, inclination: Degree, omega: Degree) -> Double {
     return KPCAABinaryStar_ApparentEccentricity(eccentricity, inclination.value, omega.value)
 }
