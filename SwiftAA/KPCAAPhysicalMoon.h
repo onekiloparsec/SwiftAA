@@ -12,14 +12,15 @@
 extern "C" {
 #endif
 
+    
 typedef struct KPCAAPhysicalMoonDetails {
-    double ldash;
-    double bdash;
-    double ldash2;
-    double bdash2;
-    double l;
-    double b;
-    double P;
+    double ldash; // optical libration in longitude
+    double bdash; // optical libration in latitude
+    double ldash2; // physical libration in longitude
+    double bdash2; // physical lobration in latitude
+    double l; // total libration in longitude = l' + l''
+    double b; // total libration in latitude = b' + b''
+    double P; // position anngle of the Moon's axis of rotation
 } KPCAAPhysicalMoonDetails;
 
 typedef struct KPCAASelenographicMoonDetails {
