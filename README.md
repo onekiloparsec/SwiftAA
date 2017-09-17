@@ -29,7 +29,7 @@ Ongoing development is written in Swift3 and using AA+ version 1.91 (released Au
 everything about meteors.
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
-by Jean Meeus: *Astronomical Algorithms* (see below), called AA+. AA+ also includes additional algorithms of the
+*Astronomical Algorithms*, by Jean Meeus. This C++ package is called AA+ (see below). AA+ also includes additional algorithms of the
 [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets) framework, and includes the complete support for the ELP/MPP02 theory). 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical.
 
