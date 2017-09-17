@@ -8,15 +8,45 @@
 
 import Foundation
 
+
+/// AA, Chapter 53 (p.371): The mean period of rotation of the Moon is equal to the 
+/// mean sidereal period of revolution around the Earth, and the mean plane of the
+/// lunar equator intersects the ecliptic at a constant incliation (see
+/// @MeanLunarEquatorInclination) [...].
+/// On the average, therefore, the same hemisphere of the Moon is always turned
+/// towards the Earth. However, apparent oscillations known as optical librations,
+/// which are due to variations in the geometric position of the Earth relative to
+/// the lunar surface during the course of the orbital motion of the Moon, allow
+/// about 59% of the surface to be observed from tbe Earth.
+/// The mean center of the Moon's apparent disk is the origin of the system of 
+/// selenographic coordinates on the surface of the Moon [see below].
+/// The displacement, at any time, of the mean center of the disk from the apparent
+/// center, represents the amount of libration, and is measured by the selenographic
+/// coordinates of the apparent center of the disk at that time.
+public struct SelenographicCoordinates {
+    /// Selenographic longitude are measured from the lunar meridian that passes
+    /// through the mean center of the apparent disk, positive in the direction of
+    /// towards Mare Crisium, that is towards the west of geocentric celestial
+    /// sphere.
+    public let longitude: Degree
+    
+    /// Selenographic latitudes are measured from the lunar equator, positive towards
+    /// the north, that is, they are positive in the hemisphere containing
+    /// Mare Serenitatis.
+    public let latitude: Degree
+    
+    public var colongitude: Degree {
+        get { return (450.0.degrees - self.longitude).reduced }
+    }
+}
+
 /// The Earth's Moon object.
 public class Moon : Object, CelestialBody {
-//    public fileprivate(set) var topocentricPhysicalDetails: KPCAAPhysicalMoonDetails
-    
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
         [unowned self] in
         return KPCPhysicalMoon_CalculateGeocentric(self.julianDay.value)
         }()
-    
+
     public fileprivate(set) lazy var selenographicDetails: KPCAASelenographicMoonDetails = {
         [unowned self] in
         return KPCPhysicalMoon_SelenographicPositionOfSun(self.julianDay.value, self.highPrecision)
@@ -153,7 +183,71 @@ public class Moon : Object, CelestialBody {
 
     // MARK: - KPCAAMoonPhysicalDetails
 
-    // TODO: Complete PhysicalMoon details APIs
+    
+    /// AA (p.372): The selenographic longitude and latitude of the Earth, as given
+    /// in the almanacs, are the geocentric selenographic coordinates of the apparent
+    /// central point of the disk. At this point on the surface of the Moon,
+    /// the Earth is in the zenith.
+    ///
+    /// - Returns: a new instance of SelenographicCoordinates
+    public func geocentricTotalLibration() -> SelenographicCoordinates {
+        return SelenographicCoordinates(longitude: Degree(self.geocentricPhysicalDetails.l), latitude: Degree(self.geocentricPhysicalDetails.b))
+    }
+
+    
+    /// AA (p.375): For precise reduction sof observations, the geocentric values
+    /// of the librations and position angle of the axis should be reduced to the
+    /// values at the place of the observer on the surface of the Earth. For the 
+    /// librations, the differences may reach 1 degree and have important effects
+    /// on the limb-contour.
+    ///
+    /// - Parameter geoCoords: The position of the observer on Earth surface.
+    /// - Returns: a new instance of SelenographicCoordinates
+    public func topocentricTotalLibration(forLocation geoCoords: GeographicCoordinates) -> SelenographicCoordinates {
+        let details = KPCPhysicalMoon_CalculateTopocentric(self.julianDay.value, geoCoords.longitude.value, geoCoords.latitude.value)
+        return SelenographicCoordinates(longitude: Degree(details.l), latitude: Degree(details.b))
+    }
+
+    /// The position angle of the Moon's axis of rotation
+    public var rotationAxisPositionAngle: Degree {
+        return Degree(self.geocentricPhysicalDetails.P)
+    }
+    
+    /// AA (p.376): The selenographic coordinates of the Sun determine the regions
+    /// of the lunar surface that are illuminated. The coordinates returned are 
+    /// those of the subsolar point, that is, the point on the Moon surface
+    /// where the Sun is in the zenith.
+    public var selenographicPositionOfTheSun: SelenographicCoordinates {
+        return SelenographicCoordinates(longitude: Degree(self.selenographicDetails.l0), latitude: Degree(self.selenographicDetails.b0))
+    }
+    
+    /// Computes the altitude of the Sun above the Moon's horizon on a given 
+    /// location in the Moon surface.
+    ///
+    /// - Parameter selCoords: The position on the Moon surface.
+    /// - Returns: The altitude of the Sun above the local lunar horizon.
+    public func altitudeOfTheSun(forMoonLocation selCoords: SelenographicCoordinates) -> Degree {
+        return Degree(KPCPhysicalMoon_AltitudeOfSun(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    }
+
+    /// Computes the time of the sunrise, for a given location in the Moon surface,
+    /// taking the center of the Sun apparent disk.
+    ///
+    /// - Parameter selCoords: The position on the Moon surface.
+    /// - Returns: The julian day of the sunrise.
+    public func timeOfSunrise(forMoonLocation selCoords: SelenographicCoordinates) -> JulianDay {
+        return JulianDay(KPCPhysicalMoon_TimeOfSunrise(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    }
+
+    /// Computes the time of the sunset, for a given location in the Moon surface,
+    /// taking the center of the Sun apparent disk.
+    ///
+    /// - Parameter selCoords: The position on the Moon surface.
+    /// - Returns: The julian day of the sunset.
+    public func timeOfSunset(forMoonLocation selCoords: SelenographicCoordinates) -> JulianDay {
+        return JulianDay(KPCPhysicalMoon_TimeOfSunset(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    }
+
     
     // MARK: - KPCAAMoonPerigeeApogee
 
