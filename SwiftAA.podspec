@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftAA"
-  s.version      = "2.0-alpha2"
+  s.version      = "2.0-beta1"
   s.summary      = "The most comprehensive and accurate collection of astronomical algorithms in Swift."
 
   s.description  = <<-DESC
@@ -36,26 +36,11 @@ to become the most reliable source of astronomical computations.
 
   s.source       = { :git => "https://github.com/onekiloparsec/SwiftAA.git", :tag => "#{s.version}" }
 
-  s.source_files  = "SwiftAA", "SwiftAA/**/*.{h,m,mm,swift}", "aaplus-*", "aaplus-*/**/*.{h,cpp}"
+  s.source_files  = "SwiftAA", "SwiftAA/**/*.{h,m,mm,swift}", "ObjCAA", "ObjCAA/**/*.{h,m,mm,swift}", "aaplus-*", "aaplus-*/**/*.{h,cpp}"
   s.exclude_files = "aaplus-*/AATest.cpp", "SwiftAA/main.swift"
 
-  s.public_header_files = "SwiftAA/**/*.h"
-
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
+  s.public_header_files = "SwiftAA/**/*.h", "ObjCAA/**/*.h"
 
   s.framework  = "Foundation"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-  # s.requires_arc = true
-
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
 
 end
