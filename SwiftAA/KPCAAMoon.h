@@ -12,10 +12,10 @@
 extern "C" {
 #endif
 
-double KPCAAMoon_MeanLongitude(double JD);
-double KPCAAMoon_MeanElongation(double JD);
+double KPCAAMoon_MeanLongitude(double JD); // AA p. 338, Equ. 47.1
+double KPCAAMoon_MeanElongation(double JD); // AA p. 338, Equ. 47.2
 double KPCAAMoon_MeanAnomaly(double JD);
-double KPCAAMoon_ArgumentOfLatitude(double JD);
+double KPCAAMoon_ArgumentOfLatitude(double JD); // AA p. 338, Equ. 47.4 (not 47.3)
 double KPCAAMoon_MeanLongitudeAscendingNode(double JD);
 double KPCAAMoon_MeanLongitudePerigee(double JD);
 double KPCAAMoon_TrueLongitudeAscendingNode(double JD);
