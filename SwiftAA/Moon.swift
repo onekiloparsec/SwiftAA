@@ -135,12 +135,12 @@ public class Moon : Object, CelestialBody {
 
     // MARK: - Static Methods
     
-    static func horizontalParallax(fromRadiusVector radiusVector: AstronomicalUnit) -> Degree {
+    static func horizontalParallax(from radiusVector: AstronomicalUnit) -> Degree {
         return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector.value))
     }
     
-    static func radiusVector(fromHorizontalParallax parallax: Degree) -> AstronomicalUnit {
-        return AstronomicalUnit(KPCAAMoon_HorizontalParallaxToRadiusVector(parallax.value))
+    static func radiusVector(from horizontalParallax: Degree) -> AstronomicalUnit {
+        return AstronomicalUnit(KPCAAMoon_HorizontalParallaxToRadiusVector(horizontalParallax.value))
     }
     
     // MARK: - KPCAAMoonPhases
@@ -203,7 +203,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - Parameter geoCoords: The position of the observer on Earth surface.
     /// - Returns: a new instance of SelenographicCoordinates
-    public func topocentricTotalLibration(forLocation geoCoords: GeographicCoordinates) -> SelenographicCoordinates {
+    public func topocentricTotalLibration(for geographicCoordinates: GeographicCoordinates) -> SelenographicCoordinates {
         let details = KPCPhysicalMoon_CalculateTopocentric(self.julianDay.value, geoCoords.longitude.value, geoCoords.latitude.value)
         return SelenographicCoordinates(longitude: Degree(details.l), latitude: Degree(details.b))
     }
@@ -226,8 +226,11 @@ public class Moon : Object, CelestialBody {
     ///
     /// - Parameter selCoords: The position on the Moon surface.
     /// - Returns: The altitude of the Sun above the local lunar horizon.
-    public func altitudeOfTheSun(forMoonLocation selCoords: SelenographicCoordinates) -> Degree {
-        return Degree(KPCPhysicalMoon_AltitudeOfSun(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    public func altitudeOfTheSun(for selenographicCoordinates: SelenographicCoordinates) -> Degree {
+        return Degree(KPCPhysicalMoon_AltitudeOfSun(self.julianDay.value,
+                                                    selenographicCoordinates.longitude.value,
+                                                    selenographicCoordinates.latitude.value,
+                                                    self.highPrecision))
     }
 
     /// Computes the time of the sunrise, for a given location in the Moon surface,
@@ -235,8 +238,11 @@ public class Moon : Object, CelestialBody {
     ///
     /// - Parameter selCoords: The position on the Moon surface.
     /// - Returns: The julian day of the sunrise.
-    public func timeOfSunrise(forMoonLocation selCoords: SelenographicCoordinates) -> JulianDay {
-        return JulianDay(KPCPhysicalMoon_TimeOfSunrise(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    public func timeOfSunrise(for selenographicCoordinates: SelenographicCoordinates) -> JulianDay {
+        return JulianDay(KPCPhysicalMoon_TimeOfSunrise(self.julianDay.value,
+                                                       selenographicCoordinates.longitude.value,
+                                                       selenographicCoordinates.latitude.value,
+                                                       self.highPrecision))
     }
 
     /// Computes the time of the sunset, for a given location in the Moon surface,
@@ -244,8 +250,11 @@ public class Moon : Object, CelestialBody {
     ///
     /// - Parameter selCoords: The position on the Moon surface.
     /// - Returns: The julian day of the sunset.
-    public func timeOfSunset(forMoonLocation selCoords: SelenographicCoordinates) -> JulianDay {
-        return JulianDay(KPCPhysicalMoon_TimeOfSunset(self.julianDay.value, selCoords.longitude.value, selCoords.latitude.value, self.highPrecision))
+    public func timeOfSunset(for selenographicCoordinates: SelenographicCoordinates) -> JulianDay {
+        return JulianDay(KPCPhysicalMoon_TimeOfSunset(self.julianDay.value,
+                                                      selenographicCoordinates.longitude.value,
+                                                      selenographicCoordinates.latitude.value,
+                                                      self.highPrecision))
     }
 
     

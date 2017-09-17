@@ -1552,10 +1552,10 @@
 			children = (
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
 				9FD71F6A1D736F4100E6F656 /* Moon.swift */,
-				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
-				9FFC4A501DCF891F00382049 /* GeographicCoordinates.swift */,
-				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
 				9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */,
+				9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */,
+				9FFC4A501DCF891F00382049 /* GeographicCoordinates.swift */,
+				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
 			);
 			name = "Earth & Moon";
 			sourceTree = "<group>";

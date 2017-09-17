@@ -15,7 +15,7 @@ public struct GeographicCoordinates {
     public let latitude: Degree
     public let altitude: Meter
     
-    /// Returns the equivalent CLLocation object.
+    /// Returns the equivalent CLLocation object. Note the minus sign on longitude.
     public var location: CLLocation {
         let coordinates = CLLocationCoordinate2D(latitude: latitude.value, longitude: -longitude.value)
         let location = CLLocation(coordinate: coordinates, altitude: altitude.value, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: Date())
