@@ -65,7 +65,7 @@ public struct Parsec: NumericType, CustomStringConvertible {
 
 // MARK: -
 
-/// The Meter is a unit of angle.
+/// The Meter is a unit of distance.
 /// Meter structs conform to SwiftAA Numeric type protocol.
 public struct Meter: NumericType, CustomStringConvertible {
     /// The Meter value
@@ -83,11 +83,29 @@ public struct Meter: NumericType, CustomStringConvertible {
     /// Transform the current Meter in milimeters
     public var mm: Double { return value * 1e+3 }
     /// Transform the current Meter in kilometers
-    public var km: Double { return value * 1e-3 }
+    public var km: Kilometer { return Kilometer(value * 1e-3) }
     /// Transform the current Meter in AstronomicalUnit.
     public var AU: AstronomicalUnit { return AstronomicalUnit(value / 149597870700.0) }
 
-    public var description: String { return String(format: "%.1f meters", value) }
+    public var description: String { return String(format: "%.1f m", value) }
+}
+
+/// The Kilometer is a unit of distance.
+/// Meter structs conform to SwiftAA Numeric type protocol.
+public struct Kilometer: NumericType, CustomStringConvertible {
+    /// The Meter value
+    public let value: Double
+    
+    /// Returns a new Meter object.
+    ///
+    /// - Parameter value: The value of Meter.
+    public init(_ value: Double) {
+        self.value = value
+    }
+    
+    /// Transform the current Kilometer in Meter
+    public var m: Meter { return Meter(value * 1e3) }
+    public var description: String { return String(format: "%.1f km", value) }
 }
 
 
