@@ -28,17 +28,18 @@ Ongoing development is written in Swift3 and using AA+ version 1.91 (released Au
 [MeteorActive](https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8), a carefully crafted iOS app to get
 everything about meteors.
 
-SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation of Astronomical Algorithms (see below).
-This implementation make use of the [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework,
-and includes the complete support for the ELP/MPP02 theory (for the Moon, see 
-[here](ftp://cyrano-se.obspm.fr/pub/2_lunar_solutions/2_elpmpp02) for instance). Thus, SwiftAA, thanks to AA+, is the
-most complete and accurate collection of algorithms for all things astronomical.
+SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
+by Jean Meeus: *Astronomical Algorithms* (see below), called AA+. AA+ also includes additional algorithms of the
+[VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets) framework, and includes the complete support for the ELP/MPP02 theory). 
+Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical.
 
 But on top of this, **SwiftAA provides modern APIs** taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
 completeness and ease of use. In particular, SwiftAA provides a lot stronger **units safety** compared to C++ APIs. 
 
-Moreover, SwiftAA intends to provide a much improved unit tests coverage. 
+Moreover, SwiftAA intends to provide a much improved unit tests coverage. In fact, unit tests are being carefully written
+with data directly taken from Jean Meeus' AA textbook, AA+ own tests, USNO, SkySafari and Xephem (and thus trying to achieve a
+probably hypothetical consistency between these sources).
 
 
 Documentation
