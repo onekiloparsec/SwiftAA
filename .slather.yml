@@ -6,6 +6,7 @@ source_directory:
 output_directory: 
   - TestReports
 ignore:
+  - SwiftAA/Obj-C
   - AAPlusTests/*
   - SwiftAATests/*
   - SwiftAATests-iOS/*
