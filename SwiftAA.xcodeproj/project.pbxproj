@@ -23,6 +23,11 @@
 		9F074CE61F6EABD200BDE079 /* BinaryStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */; };
 		9F074CE81F6EB16000BDE079 /* PlutoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE71F6EB16000BDE079 /* PlutoTests.swift */; };
 		9F074CEA1F6EB45200BDE079 /* AsteroidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE91F6EB45200BDE079 /* AsteroidsTests.swift */; };
+		9F074D1A1F715FDD00BDE079 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074D191F715FDD00BDE079 /* DateTests.swift */; };
+		9F074D1B1F715FE200BDE079 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074D191F715FDD00BDE079 /* DateTests.swift */; };
+		9F074D1C1F715FEC00BDE079 /* BinaryStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */; };
+		9F074D1D1F715FEC00BDE079 /* PlutoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE71F6EB16000BDE079 /* PlutoTests.swift */; };
+		9F074D1E1F715FEC00BDE079 /* AsteroidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074CE91F6EB45200BDE079 /* AsteroidsTests.swift */; };
 		9F1F129A1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F1F129B1D7C6A83006FD828 /* Magnitudes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F12991D7C6A83006FD828 /* Magnitudes.swift */; };
 		9F2154A61D296B4000C4DD06 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2154A51D296B4000C4DD06 /* Planets.swift */; };
@@ -903,6 +908,7 @@
 		9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStarsTests.swift; sourceTree = "<group>"; };
 		9F074CE71F6EB16000BDE079 /* PlutoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlutoTests.swift; sourceTree = "<group>"; };
 		9F074CE91F6EB45200BDE079 /* AsteroidsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsTests.swift; sourceTree = "<group>"; };
+		9F074D191F715FDD00BDE079 /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		9F1F12991D7C6A83006FD828 /* Magnitudes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magnitudes.swift; sourceTree = "<group>"; };
 		9F2154A51D296B4000C4DD06 /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		9F29B5821B47320200B64C96 /* KPCAA2DCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAA2DCoordinate.h; path = ObjCAA/KPCAA2DCoordinate.h; sourceTree = "<group>"; };
@@ -1964,6 +1970,7 @@
 				9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */,
 				9F3849C91E60BA990013D9A3 /* CelestialBodiesTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
+				9F074D191F715FDD00BDE079 /* DateTests.swift */,
 				9FD1F4491E6E08C900EC5D66 /* EarthSeasonsTests.swift */,
 				9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */,
 				9F8926571E572D81005C8932 /* GeographicCoordinatesTests.swift */,
@@ -3081,6 +3088,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8681D51E6E921B00C59F04 /* MarsTests.swift in Sources */,
+				9F074D1E1F715FEC00BDE079 /* AsteroidsTests.swift in Sources */,
 				9F8681CF1E6E91DF00C59F04 /* SaturnTests.swift in Sources */,
 				9F6043741E6176FA00395C0E /* RefractionTests.swift in Sources */,
 				9F6043771E61799E00395C0E /* AngularSeparationTests.swift in Sources */,
@@ -3089,6 +3097,7 @@
 				9F4B1B061E7BD27600407106 /* MercuryTests.swift in Sources */,
 				9F3849CB1E60BA990013D9A3 /* CelestialBodiesTests.swift in Sources */,
 				9FBA89AA1E324ACE0096FEAC /* NutationTests.swift in Sources */,
+				9F074D1C1F715FEC00BDE079 /* BinaryStarsTests.swift in Sources */,
 				9FBA89AF1E324C490096FEAC /* NumericTypeTests.swift in Sources */,
 				9FBA89AE1E324ACE0096FEAC /* VenusTests.swift in Sources */,
 				9FBA89A81E324ACE0096FEAC /* JulianDayTests.swift in Sources */,
@@ -3107,6 +3116,8 @@
 				9F89264C1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9F89264F1E564BE0005C8932 /* PlanetaryPhenomenaTests.swift in Sources */,
 				9FE687E21E5E3B2F0038C81F /* AnglesTests.swift in Sources */,
+				9F074D1D1F715FEC00BDE079 /* PlutoTests.swift in Sources */,
+				9F074D1B1F715FE200BDE079 /* DateTests.swift in Sources */,
 				9FBA89A71E324ACE0096FEAC /* ConstantsTests.swift in Sources */,
 				9F5E3D491E395A290039B998 /* EarthTwilightsTests.swift in Sources */,
 				9F470DB31E5AD3D8003624D2 /* TimesTests.swift in Sources */,
@@ -3142,6 +3153,7 @@
 				9FC340301D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift in Sources */,
 				9F074CEA1F6EB45200BDE079 /* AsteroidsTests.swift in Sources */,
 				9F074CE61F6EABD200BDE079 /* BinaryStarsTests.swift in Sources */,
+				9F074D1A1F715FDD00BDE079 /* DateTests.swift in Sources */,
 				9F89264B1E563FBE005C8932 /* IlluminatedFractionTests.swift in Sources */,
 				9F6043731E6176FA00395C0E /* RefractionTests.swift in Sources */,
 				9F5E3D481E395A280039B998 /* EarthTwilightsTests.swift in Sources */,

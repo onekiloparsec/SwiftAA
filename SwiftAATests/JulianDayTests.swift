@@ -54,7 +54,16 @@ class JulianDayTest: XCTestCase {
         let date = Calendar.gregorianGMT.date(from: components)
         XCTAssertEqual(date?.julianDay.modified, 57648.0)
     }
-    
+
+    func testModifiedJulianDayToDate() {
+        var components = DateComponents()
+        components.year = 2016
+        components.month = 9
+        components.day = 17
+        let date = Calendar.gregorianGMT.date(from: components)!
+        XCTAssertEqual(JulianDay(modified: 57648.0), date.julianDay)
+    }
+
     func testJulian2016() {
         let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*1e9))
         let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)

@@ -86,7 +86,6 @@ public enum CelestialBodyTransitError: Error {
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
-
 extension KPCAAPlanet: CustomStringConvertible {
     public static func fromString(_ string: String) -> KPCAAPlanet {
         if string == "Mercury" {

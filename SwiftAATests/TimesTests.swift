@@ -101,4 +101,60 @@ class TimesTests: XCTestCase {
         // TT -> UT1 -> TT
         XCTAssertEqual(northwardEquinox.TTtoUT1().UT1toTT(), JulianDay(year: 1962, month: 3, day: 21, hour: 2, minute: 30, second: 7.231168))
     }
+    
+    func testDayConversions() {
+        let t1 = 3.1415
+        let t2 = -2.718
+        
+        XCTAssertEqual(Day(t1).inHours.value, t1*24.0)
+        XCTAssertEqual(Day(t2).inHours.value, t2*24.0)
+        
+        XCTAssertEqual(Day(t1).inMinutes.value, t1*24.0*60.0)
+        XCTAssertEqual(Day(t2).inMinutes.value, t2*24.0*60.0)
+        
+        XCTAssertEqual(Day(t1).inSeconds.value, t1*24.0*3600.0)
+        XCTAssertEqual(Day(t2).inSeconds.value, t2*24.0*3600.0)
+    }
+    
+    func testHourConversion() {
+        let t1 = 3.1415
+        let t2 = -2.718
+        
+        XCTAssertEqual(Hour(t1).inDays.value, t1/24.0)
+        XCTAssertEqual(Hour(t2).inDays.value, t2/24.0)
+        
+        XCTAssertEqual(Hour(t1).inMinutes.value, t1*60.0)
+        XCTAssertEqual(Hour(t2).inMinutes.value, t2*60.0)
+        
+        XCTAssertEqual(Hour(t1).inSeconds.value, t1*3600.0)
+        XCTAssertEqual(Hour(t2).inSeconds.value, t2*3600.0)
+    }
+    
+    func testMinuteConversion() {
+        let t1 = 3.1415
+        let t2 = -2.718
+        
+        XCTAssertEqual(Minute(t1).inDays.value, t1/(24.0*60.0))
+        XCTAssertEqual(Minute(t2).inDays.value, t2/(24.0*60.0))
+        
+        XCTAssertEqual(Minute(t1).inHours.value, t1/60.0)
+        XCTAssertEqual(Minute(t2).inHours.value, t2/60.0)
+        
+        XCTAssertEqual(Minute(t1).inSeconds.value, t1*60.0)
+        XCTAssertEqual(Minute(t2).inSeconds.value, t2*60.0)
+    }
+    
+    func testSecondConversion() {
+        let t1 = 3.1415
+        let t2 = -2.718
+        
+        XCTAssertEqual(Second(t1).inDays.value, t1/(24.0*3600.0))
+        XCTAssertEqual(Second(t2).inDays.value, t2/(24.0*3600.0))
+        
+        XCTAssertEqual(Second(t1).inHours.value, t1/3600.0)
+        XCTAssertEqual(Second(t2).inHours.value, t2/3600.0)
+        
+        XCTAssertEqual(Second(t1).inMinutes.value, t1/60.0)
+        XCTAssertEqual(Second(t2).inMinutes.value, t2/60.0)
+    }
 }
