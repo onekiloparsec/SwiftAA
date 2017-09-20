@@ -10,7 +10,8 @@ import XCTest
 @testable import SwiftAA
 
 class JupiterTests: XCTestCase {
-    func testAverageColorPresence() {
-        XCTAssertNotNil(Jupiter.averageColor)
+    
+    func testAverageColor() {
+        XCTAssertNotEqual(Jupiter.averageColor, Color.white)
     }
 }

@@ -12,8 +12,8 @@ import XCTest
 
 class VenusTests: XCTestCase {
 
-    func testAverageColorPresence() {
-        XCTAssertNotNil(Venus.averageColor)
+    func testAverageColor() {
+        XCTAssertNotEqual(Venus.averageColor, Color.white)
     }
     
     func testApparentGeocentricCoordinates() { // See AA p.225

@@ -23,6 +23,19 @@ class BinaryStarsTests: XCTestCase {
                                                         longitudeOfPeriastron: Degree(219.907))
 
     }
+
+    func testBinaryStarOrbitalElementsShortGetters() {
+        // non=numeri types
+        XCTAssertEqual(self.CoronoaeBorealisOrbitalElements!.revolutionPeriod, self.CoronoaeBorealisOrbitalElements!.P)
+        XCTAssertEqual(self.CoronoaeBorealisOrbitalElements!.timeOfPeriastron, self.CoronoaeBorealisOrbitalElements!.T)
+        XCTAssertEqual(self.CoronoaeBorealisOrbitalElements!.eccentricity, self.CoronoaeBorealisOrbitalElements!.e)
+        
+        // numeric types
+        AssertEqual(self.CoronoaeBorealisOrbitalElements!.inclination, self.CoronoaeBorealisOrbitalElements!.i)
+        AssertEqual(self.CoronoaeBorealisOrbitalElements!.semiMajorAxis, self.CoronoaeBorealisOrbitalElements!.a)
+        AssertEqual(self.CoronoaeBorealisOrbitalElements!.positionAngleOfAscendingNode, self.CoronoaeBorealisOrbitalElements!.Omega)
+        AssertEqual(self.CoronoaeBorealisOrbitalElements!.longitudeOfPeriastron, self.CoronoaeBorealisOrbitalElements!.w)
+    }
     
     func testBinaryStarDetails() {
         
@@ -30,6 +43,10 @@ class BinaryStarsTests: XCTestCase {
         AssertEqual(details.radiusVector, ArcSecond(0.74557), accuracy: ArcSecond(0.0005))
         AssertEqual(details.apparentPositionAngle, Degree(318.4), accuracy: Degree(0.05))
         AssertEqual(details.angularDistance, ArcSecond(0.411), accuracy: ArcSecond(0.0005))
+        
+        AssertEqual(details.radiusVector, details.r)
+        AssertEqual(details.apparentPositionAngle, details.theta)
+        AssertEqual(details.angularDistance, details.rho)
     }
     
     func testCoronoaeBorealisApparentEccentricity() {

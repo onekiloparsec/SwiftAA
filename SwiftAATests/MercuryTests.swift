@@ -11,8 +11,8 @@ import XCTest
 
 class MercuryTests: XCTestCase {
 
-    func testAverageColorPresence() {
-        XCTAssertNotNil(Mercury.averageColor)
+    func testAverageColor() {
+        XCTAssertNotEqual(Mercury.averageColor, Color.white)
     }
     
     // Taken from AA+ tests

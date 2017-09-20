@@ -10,7 +10,14 @@ import XCTest
 @testable import SwiftAA
 
 class SaturnTests: XCTestCase {
-    func testAverageColorPresence() {
-        XCTAssertNotNil(Saturn.averageColor)
+    
+    func testAverageColor() {
+        XCTAssertNotEqual(Saturn.averageColor, Color.white)
+    }
+
+    func testMoonsPresence() {
+        let jd = JulianDay(Date())
+        XCTAssertEqual(Saturn(julianDay: jd).moons.count, 7)
+        XCTAssertNotNil(Saturn(julianDay: jd).ringSystem)
     }
 }

@@ -66,9 +66,21 @@ public class Moon : Object, CelestialBody {
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers. For consistency with others, we return AU.
     public var radiusVector: AstronomicalUnit {
-        get { return Meter(KPCAAMoon_RadiusVector(self.julianDay.value)*1000.0).AU }
+        get { return Meter(self.distance.value*1000.0).AU }
     }
 
+    /// Radius vector of the Moon, that is, its distance from Earth (not Sun), in kilometers
+    public var distance: Kilometer {
+        get { return Kilometer(KPCAAMoon_RadiusVector(self.julianDay.value)) }
+    }
+
+    /// Horizontal parallax
+    public var horizontalParallax: Degree {
+        return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(self.distance.value))
+    }
+
+    // MARK: Coordinates
+    
     public var eclipticCoordinates: EclipticCoordinates {
         get {
             let latitude = Degree.init(KPCAAMoon_EclipticLatitude(julianDay.value))

@@ -10,7 +10,8 @@ import XCTest
 @testable import SwiftAA
 
 class MarsTests: XCTestCase {
+    
     func testAverageColorPresence() {
-        XCTAssertNotNil(Mars.averageColor)
+        XCTAssertNotEqual(Mars.averageColor, Color.white)
     }
 }

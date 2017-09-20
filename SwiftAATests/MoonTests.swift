@@ -70,7 +70,42 @@ class MoonTests: XCTestCase {
                     JulianDay(year: 2012, month: 10, day: 31, hour: 11, minute: 41, second: 8.0),
                     accuracy: 120.0.seconds.inJulianDays)
     }
-    
+ 
+    // See AA p.342, Example 47.a
+    func testGeocentricLongitudeLatitudeDistanceQuatorialHorizontalParallax() {
+        
+        let jd = JulianDay(2448724.5)
+        let moon = Moon(julianDay: jd)
+        
+        // mean longitude = L prime
+        AssertEqual(moon.meanLongitude, Degree(134.290182), accuracy: Degree(0.000001))
+        // elongation = D
+        AssertEqual(moon.meanElongation, Degree(113.842304), accuracy: Degree(0.000001))
+        // mean anomaly = M prime
+        AssertEqual(moon.meanAnomaly, Degree(5.150833), accuracy: Degree(0.000001))
+        // argument of latitude = F
+        AssertEqual(moon.argumentOfLatitude, Degree(219.889721), accuracy: Degree(0.000001))
+        // Distance
+        AssertEqual(moon.distance, Kilometer(368409.7), accuracy: Kilometer(0.1))
+        // Horizontal Parallax
+        AssertEqual(moon.horizontalParallax, Degree(0.991990), accuracy: Degree(0.000001))
+    }
+
+    // See AA p.342, Example 47.a
+    func testApparentRightAscensionDeclination() {
+        
+        let jd = JulianDay(2448724.5)
+        let moon = Moon(julianDay: jd)
+        let eclCoords = moon.eclipticCoordinates
+        
+        AssertEqual(eclCoords.lambda, Degree(133.167265), accuracy: Degree(0.000001))
+        AssertEqual(eclCoords.beta, Degree(-3.229126), accuracy: Degree(0.000001))
+        
+        // Not entirely satisfied with the accuracy here.
+        let equCoords = moon.apparentEquatorialCoordinates
+        AssertEqual(equCoords.rightAscension, Hour(.plus, 8, 58, 45.2), accuracy: Second(0.1).inHours)
+        AssertEqual(equCoords.declination, Degree(.plus, 13, 46, 6.0), accuracy: ArcSecond(10.0).inDegrees)
+    }
 }
 
 
