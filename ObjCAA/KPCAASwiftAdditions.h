@@ -16,6 +16,10 @@
 // The Obj-C code respects that. To extend it here to include Earth and Pluto,
 // We use the normal case.
 
+/**
+ KPCAAPlanetStrict is an enum for all true planets, that is, excluding the now official 
+ Dwarf Planet category, that is, Pluto.
+ */
 typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
     mercury = MERCURY,
     venus = VENUS,
@@ -28,6 +32,11 @@ typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
     undefined = -1
 };
 
+
+/**
+ KPCAAPlanet is an enum for all planets, being "true" planets, as it was for a long time, 
+ or not (like DwarfPlanet), that is, including Pluto.
+ */
 typedef NS_ENUM(NSInteger, KPCAAPlanet) {
     Mercury = mercury,
     Venus = venus,
