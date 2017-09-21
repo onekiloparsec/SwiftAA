@@ -11,7 +11,8 @@ import XCTest
 
 class MoonTests: XCTestCase {
     
-    func testEquatorialCoordinates() { // p.343
+    // See AA p.343
+    func testEquatorialCoordinates() {
         let moon = Moon(julianDay: JulianDay(year: 1992, month: 04, day: 12, hour: 00, minute: 00, second: 00))
         let equatorial = moon.equatorialCoordinates
         // FIXME: the reason for bad accuracy we use *mean* position instead of *apparent* in the book
@@ -19,17 +20,24 @@ class MoonTests: XCTestCase {
         AssertEqual(equatorial.declination, Degree(13.768368), accuracy: ArcMinute(0.1).inDegrees)
     }
     
-    func testTimeOfPhase() { // AA p.353
-        let date1 = Moon(julianDay: JulianDay(year: 1977, month: 1, day: 20)).timeOfPhase(forPhase: .new, isNext: true, mean: false)
-        let date2 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 17)).timeOfPhase(forPhase: .new, isNext: true, mean: false)
-        let date3 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 19)).timeOfPhase(forPhase: .new, isNext: false, mean: false)
-        let date4 = Moon(julianDay: JulianDay(year: 1977, month: 3, day: 19)).timeOfPhase(forPhase: .new, isNext: false, mean: false)
+    // See AA p.353, Example 49.a
+    func testTimeOfPhase() {
+        let date1 = Moon(julianDay: JulianDay(year: 1977, month: 1, day: 20)).time(of: .newMoon, forward: true, mean: false)
+        let date2 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 17)).time(of: .newMoon, forward: true, mean: false)
+        let date3 = Moon(julianDay: JulianDay(year: 1977, month: 2, day: 19)).time(of: .newMoon, forward: false, mean: false)
+        let date4 = Moon(julianDay: JulianDay(year: 1977, month: 3, day: 19)).time(of: .newMoon, forward: false, mean: false)
         let expected = JulianDay(year: 1977, month: 2, day: 18, hour: 3, minute: 37, second: 42)
-        let accuracy = JulianDay(1.0/86400.0)
+        let accuracy = JulianDay(1.0/86400.0) // 1 second
         AssertEqual(date1, expected, accuracy: accuracy)
         AssertEqual(date2, expected, accuracy: accuracy)
         AssertEqual(date3, expected, accuracy: accuracy)
         AssertEqual(date4, expected, accuracy: accuracy)
+    }
+    
+    // See AA p.353, Example 49.b
+    func testTimeOfPhaseAgain() {
+        let moon = Moon(julianDay: JulianDay(2467636.88597))
+        AssertEqual(moon.time(of: .lastQuarter, forward: false, mean: false), JulianDay(2467636.49186), accuracy: JulianDay(0.000005))
     }
     
     // Based on AA+ Tests. It says that an interesting case of moon rise occur on that date, on that place.
@@ -105,6 +113,23 @@ class MoonTests: XCTestCase {
         let equCoords = moon.apparentEquatorialCoordinates
         AssertEqual(equCoords.rightAscension, Hour(.plus, 8, 58, 45.2), accuracy: Second(0.1).inHours)
         AssertEqual(equCoords.declination, Degree(.plus, 13, 46, 6.0), accuracy: ArcSecond(10.0).inDegrees)
+    }
+    
+    // See AA p.345, Example 48.a
+    func testIlluminatedFraction() {
+        let jd = JulianDay(year: 1992, month: 4, day: 12)
+        let moon = Moon(julianDay: jd)
+
+        // Phase angle not as accuracte as one can expect from the book.
+        AssertEqual(moon.phaseAngle(), Degree(69.0756), accuracy: Degree(0.002))
+        XCTAssertEqualWithAccuracy(moon.illuminatedFraction(), 0.68, accuracy: 0.005)
+    }
+    
+    // See AA p.357, Example 50.a
+    func testApogeeTimeAndParallax() {
+        let moon = Moon(julianDay: JulianDay(2447442.8191))
+        AssertEqual(moon.apogee(true), JulianDay(2447442.3537), accuracy: JulianDay(0.0001))
+        XCTAssertEqualWithAccuracy(moon.apogeeParallax(), 3240.679, accuracy: 0.1)
     }
 }
 

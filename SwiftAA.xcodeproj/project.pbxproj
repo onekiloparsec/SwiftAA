@@ -1987,6 +1987,7 @@
 				9F8926571E572D81005C8932 /* GeographicCoordinatesTests.swift */,
 				9F89264A1E563FBE005C8932 /* IlluminatedFractionTests.swift */,
 				9FAA86501D8D85C800DF095E /* JulianDayTests.swift */,
+				9F074D251F72D5F300BDE079 /* JupiterMoonsTests.swift */,
 				9F8681D01E6E91FE00C59F04 /* JupiterTests.swift */,
 				9F33DA301E6458EB0037E37D /* MagnitudeTests.swift */,
 				9F8681D31E6E921B00C59F04 /* MarsTests.swift */,
@@ -2006,7 +2007,6 @@
 				9F8681CA1E6E91BB00C59F04 /* UranusTests.swift */,
 				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
 				6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */,
-				9F074D251F72D5F300BDE079 /* JupiterMoonsTests.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";

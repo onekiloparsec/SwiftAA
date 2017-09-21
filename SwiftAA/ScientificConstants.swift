@@ -69,9 +69,9 @@ public enum Season {
 /// - full: Full Moon
 /// - lastQuarter: Last Quarter
 public enum MoonPhase {
-    case new
+    case newMoon
     case firstQuarter
-    case full
+    case fullMoon
     case lastQuarter
 }
 

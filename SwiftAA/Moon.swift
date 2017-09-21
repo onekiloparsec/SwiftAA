@@ -161,25 +161,25 @@ public class Moon : Object, CelestialBody {
     /// Returns the Julian Day of the Moon phase.
     ///
     /// - Parameters:
-    ///   - ph: The phase of the moon we are looking for.
-    ///   - isNext: A boolean indicating whether one wants the result after the input date, or not.
+    ///   - phase: The phase of the moon we are looking for.
+    ///   - forward: A boolean indicating whether one wants the result after the input date, or not.
     ///   - mean: A boolean indicating one wans the mean or the true (instantaneous) value. Default is mean=true.
     /// - Returns: The Julian Day of the Moon phase.
-    public func timeOfPhase(forPhase ph: MoonPhase, isNext: Bool = true, mean: Bool = true) -> JulianDay {
+    public func time(of phase: MoonPhase, forward: Bool = true, mean: Bool = true) -> JulianDay {
         var k = round(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
-        switch ph {
-        case .new:
+        switch phase {
+        case .newMoon:
             k = k + 0.0
         case .firstQuarter:
             k = k + 0.25
-        case .full:
+        case .fullMoon:
             k = k + 0.50
         case .lastQuarter: 
             k = k + 0.75
         }
         let preliminary = timeOfPhase(k, isMean: mean)
-        let isActuallyNext = preliminary > julianDay
-        switch (isNext, isActuallyNext) {
+        let isAfter = preliminary > julianDay
+        switch (forward, isAfter) {
         case (true, true), (false, false):
             return preliminary
         case (true, false):
@@ -271,26 +271,24 @@ public class Moon : Object, CelestialBody {
 
     
     // MARK: - KPCAAMoonPerigeeApogee
-
-    // TODO: Check Apogee Perigee Units
     
-    public func perigee(_ mean: Bool = true) -> Double {
+    public func perigee(_ mean: Bool = true) -> JulianDay {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         if mean {
-            return KPCAAMoonPerigeeApogee_MeanPerigee(k)
+            return JulianDay(KPCAAMoonPerigeeApogee_MeanPerigee(k))
         }
         else {
-            return KPCAAMoonPerigeeApogee_TruePerigee(k)
+            return JulianDay(KPCAAMoonPerigeeApogee_TruePerigee(k))
         }
     }
 
-    public func apogee(_ mean: Bool = true) -> Double {
+    public func apogee(_ mean: Bool = true) -> JulianDay {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         if mean {
-            return KPCAAMoonPerigeeApogee_MeanApogee(k)
+            return JulianDay(KPCAAMoonPerigeeApogee_MeanApogee(k))
         }
         else {
-            return KPCAAMoonPerigeeApogee_TrueApogee(k)
+            return JulianDay(KPCAAMoonPerigeeApogee_TrueApogee(k))
 
         }
     }
