@@ -29,16 +29,16 @@ Ongoing development is written in Swift3 and using AA+ version 1.91 (released Au
 everything about meteors.
 
 SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
-*Astronomical Algorithms*, by Jean Meeus. This C++ package is called AA+ (see below). AA+ also includes additional algorithms of the
-[VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets) framework, and includes the complete support for the ELP/MPP02 theory). 
+*Astronomical Algorithms*, by Jean Meeus ([Amazon](https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus)). This C++ package is called **AA+** (see below). AA+ also includes additional algorithms of the
+[VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework, and includes the complete support for the ELP/MPP02 theory). 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical.
 
-But on top of this, **SwiftAA provides modern APIs** taking advantage of the expressiveness of Swift and its various modern
+But **SwiftAA provides modern APIs**, taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. In particular, SwiftAA provides a lot stronger **units safety** compared to C++ APIs. 
+the completeness and ease of use. In particular, **SwiftAA provides units safety** a lot stronger compared to C++ APIs. 
 
-Moreover, SwiftAA intends to provide a much improved unit tests coverage. In fact, unit tests are being carefully written
-with data directly taken from Jean Meeus' AA textbook, AA+ own tests, USNO, SkySafari and Xephem (and thus trying to achieve a
+Moreover, **SwiftAA has a much larger unit tests coverage**. In fact, unit tests are being carefully written
+with data directly taken from Jean Meeus' textbook, AA+ own tests, [USNO](http://www.usno.navy.mil), [SkySafari](https://skysafariastronomy.com) and [Xephem](http://www.clearskyinstitute.com/xephem/) (and thus trying to achieve a
 probably hypothetical consistency between these sources).
 
 
@@ -70,7 +70,7 @@ Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` 
 
 
 
-Introduction
+Notes
 ============
 
 The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
@@ -78,12 +78,12 @@ The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly t
 (purchasable from [Amazon](http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011)).
 To make the most of this code, you'd rather have a copy of the book with you.
 
-As the author of the app iObserve (for [Mac](http://onekilopars.ec/apps#iobserve) and [iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
+As the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
 myself worked a lot on implementing some of the AA algorithms for my needs. However, to push iObserve to the next level,
 I need to put a lot more work on these algorithms. 
 
-P.J. Naughter has kindly agreed to let me create a public repo with his code. My intention is to write a wrapper around it,
-to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests will be accepted 
+P.J. Naughter has kindly agreed to let me create a public repo with his code. My goal is to write a wrapper around it,
+to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests are accepted 
 only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
 to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
 
@@ -101,7 +101,7 @@ Notes and Conventions
 =====================
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
-is to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
+was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
 C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 
 'b' for boolean etc').
 
@@ -109,9 +109,7 @@ As Objective-C lacks namespaces, everything must be prefixed. It is a convention
 Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
 library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
 
-These constraints come from the fact that no C++ code can be written directly alongside Swift code (in the same file). 
-And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper
-around it, with name prefixes.
+The constraint of having an Objective-C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes.
 
 Author
 ======
