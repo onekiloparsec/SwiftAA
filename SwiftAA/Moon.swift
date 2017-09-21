@@ -273,7 +273,8 @@ public class Moon : Object, CelestialBody {
     // MARK: - KPCAAMoonPerigeeApogee
     
     public func perigee(_ mean: Bool = true) -> JulianDay {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
+        // See AA p.355 about rounding
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded(.toNearestOrAwayFromZero)
         if mean {
             return JulianDay(KPCAAMoonPerigeeApogee_MeanPerigee(k))
         }
@@ -283,24 +284,26 @@ public class Moon : Object, CelestialBody {
     }
 
     public func apogee(_ mean: Bool = true) -> JulianDay {
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
+        // See AA p.355 about rounding
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded(.toNearestOrAwayFromZero)
+        let shift = (k < 0) ? -0.5 : 0.5
         if mean {
-            return JulianDay(KPCAAMoonPerigeeApogee_MeanApogee(k))
+            return JulianDay(KPCAAMoonPerigeeApogee_MeanApogee(k+shift))
         }
         else {
-            return JulianDay(KPCAAMoonPerigeeApogee_TrueApogee(k))
+            return JulianDay(KPCAAMoonPerigeeApogee_TrueApogee(k+shift))
 
         }
     }
     
-    public func perigeeParallax() -> Double {
+    public func perigeeParallax() -> ArcSecond {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
-        return KPCAAMoonPerigeeApogee_PerigeeParallax(k)
+        return Degree(KPCAAMoonPerigeeApogee_PerigeeParallax(k)).inArcSeconds
     }
 
-    public func apogeeParallax() -> Double {
+    public func apogeeParallax() -> ArcSecond {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
-        return KPCAAMoonPerigeeApogee_ApogeeParallax(k)
+        return Degree(KPCAAMoonPerigeeApogee_ApogeeParallax(k)).inArcSeconds
     }
 
     // MARK: - KPCAAMoonMaxDeclinations

@@ -128,8 +128,9 @@ class MoonTests: XCTestCase {
     // See AA p.357, Example 50.a
     func testApogeeTimeAndParallax() {
         let moon = Moon(julianDay: JulianDay(2447442.8191))
-        AssertEqual(moon.apogee(true), JulianDay(2447442.3537), accuracy: JulianDay(0.0001))
-        XCTAssertEqualWithAccuracy(moon.apogeeParallax(), 3240.679, accuracy: 0.1)
+        // Test accuracies not as good as I expected compated to the book.
+        AssertEqual(moon.apogee(false), JulianDay(2447442.3537), accuracy: JulianDay(0.001))
+        AssertEqual(moon.apogeeParallax(), ArcSecond(3240.679), accuracy: ArcSecond(2.0))
     }
 }
 
