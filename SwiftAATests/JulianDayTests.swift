@@ -236,12 +236,23 @@ class JulianDayTest: XCTestCase {
     }
     
     // See AA p. 148.
-    
     func testObliquityOfEcliptic() {
         let jd = JulianDay(year: 1987, month: 4, day: 10)
         AssertEqual(jd, JulianDay	(2446895.5))
         AssertEqual(jd.obliquityOfEcliptic(mean: true), Degree(.plus, 23, 26, 27.407), accuracy: ArcSecond(0.001).inDegrees)
         AssertEqual(jd.obliquityOfEcliptic(mean: false), Degree(.plus, 23, 26, 36.850), accuracy: ArcSecond(0.001).inDegrees)
+    }
+    
+    // Data taken from USNO (http://tycho.usno.navy.mil/leapsec.html)
+    func testCumulativeLeapSecond() {
+        let jd1 = JulianDay(year: 1972, month: 6, day: 29) // One day before introduction of the first leap second.
+        AssertEqual(jd1.cumulativeLeapSeconds(), Second(10))
+
+        let jd2 = JulianDay(year: 2006, month: 1, day: 1) // One day before introduction of the first leap second.
+        AssertEqual(jd2.cumulativeLeapSeconds(), Second(33))
+
+        let jd3 = JulianDay(year: 2017, month: 1, day: 1)
+        AssertEqual(jd3.cumulativeLeapSeconds(), Second(37))
     }
 }
 

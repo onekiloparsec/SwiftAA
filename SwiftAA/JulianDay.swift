@@ -181,8 +181,12 @@ public extension JulianDay {
         return Second(KPCAADynamicalTime_DeltaT(self.value))
     }
     
-    public func cumulativeLeapSeconds() -> JulianDay {
-        return JulianDay(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
+    /// Return the total of leap seconds added to the UTC since their introduction in 1972. 
+    /// Read here http://tycho.usno.navy.mil/leapsec.html for a thorough explanation.
+    ///
+    /// - Returns: The total number of leap seconds accumulated since their introduction until the given JD.
+    public func cumulativeLeapSeconds() -> Second {
+        return Second(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
     }
     
     public func TTtoUTC() -> JulianDay {
