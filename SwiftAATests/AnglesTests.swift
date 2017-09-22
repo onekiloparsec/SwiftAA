@@ -50,7 +50,7 @@ class AnglesTests: XCTestCase {
         XCTAssertEqual(Degree(.plus, 0, 0, -90.0).value, 0.025)
     }
     
-    func testHourSexagesimalTransform() {
+    func testDegreeSexagesimalTransform() {
         let dplus = Degree(1.125)
         let dplussexagesimal: SexagesimalNotation = (.plus, 1, 7, 30.0)
         XCTAssertTrue(dplus.sexagesimal == dplussexagesimal)
@@ -58,5 +58,43 @@ class AnglesTests: XCTestCase {
         let dminus = Degree(-1.125)
         let dminussexagesimal: SexagesimalNotation = (.minus, 1, 7, 30.0)
         XCTAssertTrue(dminus.sexagesimal == dminussexagesimal)
+    }
+    
+    func testDegreeConversions() {
+        let d1 = 3.1415
+        let d2 = -2.718
+        
+        XCTAssertEqual(Degree(d1).inArcMinutes.value, d1*60.0)
+        XCTAssertEqual(Degree(d2).inArcMinutes.value, d2*60.0)
+        
+        XCTAssertEqual(Degree(d1).inArcSeconds.value, d1*3600.0)
+        XCTAssertEqual(Degree(d2).inArcSeconds.value, d2*3600.0)
+    }
+    
+    func testArcMinuteConversions() {
+        let d1 = 3.1415
+        let d2 = -2.718
+        
+        XCTAssertEqual(ArcMinute(d1).inDegrees.value, d1/60.0)
+        XCTAssertEqual(ArcMinute(d2).inDegrees.value, d2/60.0)
+        
+        XCTAssertEqual(ArcMinute(d1).inArcSeconds.value, d1*60.0)
+        XCTAssertEqual(ArcMinute(d2).inArcSeconds.value, d2*60.0)
+    }
+
+    func testArcSecondConversions() {
+        let d1 = 3.1415
+        let d2 = -2.718
+        
+        XCTAssertEqual(ArcSecond(d1).inDegrees.value, d1/3600.0)
+        XCTAssertEqual(ArcSecond(d2).inDegrees.value, d2/3600.0)
+        
+        XCTAssertEqual(ArcSecond(d1).inArcMinutes.value, d1/60.0)
+        XCTAssertEqual(ArcSecond(d2).inArcMinutes.value, d2/60.0)
+    }
+
+    func testArcSecondAsParallax() {
+        XCTAssertEqual(ArcSecond(1).distance().value, 1.0)
+        XCTAssertEqual(ArcSecond(10).distance().value, 0.1)
     }
 }

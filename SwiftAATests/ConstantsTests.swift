@@ -14,12 +14,12 @@ class ConstantsTests: XCTestCase {
     /// That's the Geocentric to Topocentric parallax correction. See AA p280.
     func testParallaxToDistance() {
         let parallax1: ArcSecond = 23.592
-        AssertEqual(parallax1.distance(), AstronomicalUnit(0.37276), accuracy: AstronomicalUnit(0.0005))
+        AssertEqual(parallax1.distanceFromEquatorialHorizontalParallax(), AstronomicalUnit(0.37276), accuracy: AstronomicalUnit(0.0005))
     }
     
-    func testDistanceToParallax() {
+    func testDistanceToEquatorialHorizontalParallax() {
         let distance1: AstronomicalUnit = 0.37276
-        AssertEqual(distance1.parallax(), ArcSecond(23.592), accuracy: ArcSecond(0.0005))
+        AssertEqual(distance1.equatorialHorizontalParallax(), ArcSecond(23.592), accuracy: ArcSecond(0.0005))
     }
 
     func testPlanet2PlanetaryObject() {

@@ -107,7 +107,7 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
     /// Transform the current ArcMinute in Degree
     public var inDegrees: Degree { return Degree(value / 60.0) }
     /// Transform the current ArcMinute in ArcSeconds
-    public var inArcseconds: ArcSecond { return ArcSecond(value * 60.0) }
+    public var inArcSeconds: ArcSecond { return ArcSecond(value * 60.0) }
     /// Transform the current ArcMinute in Hours
     public var inHours: Hour { return inDegrees.inHours }
     /// Transform the current ArcMinute in Radians
@@ -134,19 +134,30 @@ public struct ArcSecond: NumericType, CustomStringConvertible {
     /// Transform the current ArcSecond in Degrees
     public var inDegrees: Degree { return Degree(value / 3600.0) }
     /// Transform the current ArcSecond in ArcMinutes
-    public var inArcminutes: ArcMinute { return ArcMinute(value / 60.0) }
+    public var inArcMinutes: ArcMinute { return ArcMinute(value / 60.0) }
     /// Transform the current ArcSecond in Hours
     public var inHours: Hour { return inDegrees.inHours }
     /// Transform the current ArcSecond in Radians
     public var inRadians: Radian { return inDegrees.inRadians }
 
-    /// Returns a new distance in Astronomical Units, the arcsecond being understood as a parallax.
+    /// Returns a new distance in Astronomical Units, the arcsecond being understood as a 
+    /// geometrical parallax.
     ///
-    /// - Returns: The AU object.
-    public func distance() -> AstronomicalUnit {
-        return AstronomicalUnit(KPCAAParallax_ParallaxToDistance(inDegrees.value))
+    /// - Returns: The distance of the object.
+    public func distance() -> Parsec {
+        guard self.value > 0 else { fatalError("Value most be positive and above 0") }
+        return Parsec(1.0/value)
     }
     
+    /// Returns a new distance in Astronomical Units, the arcsecond being understood as a
+    /// equatorial horizontal parallax, that is the difference between the topocentric and
+    /// the geocentric coordinates of a solar system body (Sun, planet or comets).
+    ///
+    /// - Returns: The distance of the object.
+    public func distanceFromEquatorialHorizontalParallax() -> AstronomicalUnit {
+        return AstronomicalUnit(KPCAAParallax_ParallaxToDistance(inDegrees.value))
+    }
+
     public var description: String { return String(format: "%.2f arcsec", value) }
 }
 

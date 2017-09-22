@@ -31,10 +31,12 @@ public struct AstronomicalUnit: NumericType, CustomStringConvertible {
     /// Transform the current AstronomicalUnit in light-years
     public var ly: Double { return value / 206264.8 }
     
-    /// Returns the parallax value corresponding to the current distance.
+    /// Returns the equatorial horizontal parallax value corresponding to the current distance
+    /// of a solar system body, used in the difference between the toppocentric (as seen from 
+    /// the observer's place) and geocentric coordinates (as seen from the Earth center).
     ///
     /// - Returns: The parallax value.
-    public func parallax() -> ArcSecond {
+    public func equatorialHorizontalParallax() -> ArcSecond {
         return Degree(KPCAAParallax_DistanceToParallax(value)).inArcSeconds
     }
 
@@ -59,6 +61,14 @@ public struct Parsec: NumericType, CustomStringConvertible {
     /// Transform the current Parsec in AstronomicalUnits
     public var AU: AstronomicalUnit { return AstronomicalUnit(value * 206264.80624548031) }
     public var description: String { return String(format: "%.1f pc", value) }
+
+    /// Returns the parallax value corresponding to the current distance.
+    ///
+    /// - Returns: The parallax value.
+    public func parallax() -> ArcSecond {
+        guard self.value > 0 else { fatalError("Value must be positive and above 0") }
+        return ArcSecond(1.0/value)
+    }
 }
 
 
