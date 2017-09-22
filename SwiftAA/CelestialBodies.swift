@@ -32,14 +32,36 @@ public protocol CelestialBody: ObjectBase {
     /// Returns the Hour Angle of the celestial body, that is, the difference between its local mean sidereal time
     /// and its right ascension.
     ///
-    /// - Parameter geographicCoordinates: The geographic coordinates of the place.
+    /// - Parameter geographicCoordinates: The geographic coordinates of the observer.
     /// - Returns: The Hour Angle of the body.
     func hourAngle(for geographicCoordinates: GeographicCoordinates) -> Hour
 
+    
+    /// The parallactic angle is the angle between the direction of the *zenith point* relative the center of the disk,
+    /// and that of the celestial north. The zenith point of the disk of a body (for instance, the Sun or the Moon) is 
+    /// the uppermost point of the disk at the sky as seen by the observer at a given instant. See Fig. 4, AA p.98.
+    /// Exactly in zenith, the angle is not defined. When a celestial body passes exactly through the zenith, the
+    /// parallactic angle suddenly jumps from -90º to 90º.
+    ///
+    /// - Parameter geographicCoordinates: The geographic coordinates of the observer.
+    /// - Returns: The angle in degrees.
     func parallacticAngle(for geographicCoordinates: GeographicCoordinates) -> Degree
     
+    
+    /// For a given location of the observer, the ecliptic plane cross that of the local horizontal plane, marking
+    /// the horizon. Thus, one can compute the longitude of the two points of the ecliptic which are (180º appart)
+    /// on the horizon.
+    ///
+    /// - Parameter geographicCoordinates: The geographic coordinates of the observer.
+    /// - Returns: The longitude of the ecliptic.
     func eclipticLongitudeOnHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree
     
+    
+    /// For a given location of the observer, the ecliptic plane cross that of the local horizontal plane, marking
+    /// the horizon. Thus, one can compute the angle between the two planes.
+    ///
+    /// - Parameter geographicCoordinates: The geographic coordinates of the observer.
+    /// - Returns: The angle between the ecliptic and the horizon.
     func angleBetweenEclipticAndHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree
     
     func angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for geographicCoordinates: GeographicCoordinates) -> Degree
@@ -92,17 +114,17 @@ public extension CelestialBody {
     }
     
     func eclipticLongitudeOnHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.hourAngle(for: geographicCoordinates)
+        let theta = self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude)
         let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
-        return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(lha.value,
+        return Degree(KPCAAParallactic_EclipticLongitudeOnHorizon(theta.value,
                                                                   epsilon.value,
                                                                   geographicCoordinates.latitude.value))
     }
     
     func angleBetweenEclipticAndHorizon(for geographicCoordinates: GeographicCoordinates) -> Degree {
-        let lha = self.hourAngle(for: geographicCoordinates)
+        let theta = self.julianDay.meanLocalSiderealTime(longitude: geographicCoordinates.longitude)
         let epsilon = self.julianDay.obliquityOfEcliptic(mean: false)
-        return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(lha.value,
+        return Degree(KPCAAParallactic_AngleBetweenEclipticAndHorizon(theta.value,
                                                                       epsilon.value,
                                                                       geographicCoordinates.latitude.value))
     }
