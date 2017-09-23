@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ElementsOfPlanetaryOrbit Protocol Reference</title>
+    <title>DwarfPlanet Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/ElementsOfPlanetaryOrbit" class="dashAnchor"></a>
-    <a title="ElementsOfPlanetaryOrbit Protocol Reference"></a>
+    <a name="//apple_ref/swift/Class/DwarfPlanet" class="dashAnchor"></a>
+    <a title="DwarfPlanet Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">SwiftAA Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ElementsOfPlanetaryOrbit Protocol Reference
+        DwarfPlanet Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -33,7 +33,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a>
+                <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Earth.html">Earth</a>
@@ -80,6 +80,15 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2lySd">AU2ly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA4AU2mSd">AU2m</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2pcSd">AU2pc</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
@@ -96,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
               </li>
             </ul>
           </li>
@@ -181,9 +193,6 @@
                 <a href="../Protocols/CelestialBody.html">CelestialBody</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a>
               </li>
               <li class="nav-group-task">
@@ -203,6 +212,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
@@ -309,8 +321,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ElementsOfPlanetaryOrbit</h1>
-            <p>Undocumented</p>
+            <h1>DwarfPlanet</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DwarfPlanet</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
+So far, only Pluto is concerned.</p>
 
           </section>
           <section class="section task-group-section">
@@ -319,60 +338,30 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit13meanLongitudeFOS_7EquinoxVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/meanLongitude(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit13meanLongitudeFOS_7EquinoxVS_6Degree">meanLongitude(_:)</a>
+                    <a name="/s:vC7SwiftAA11DwarfPlanet16planetaryDetailsVSC31KPCAAEllipticalPlanetaryDetails"></a>
+                    <a name="//apple_ref/swift/Property/planetaryDetails" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA11DwarfPlanet16planetaryDetailsVSC31KPCAAEllipticalPlanetaryDetails">planetaryDetails</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Computes the mean longitude of the orbit</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Computes the mean longitude of the orbit</p>
+                        <p>Accessor to all values of the underlying elliptical planetary details. Will probably become private
+once all relevant accessors are implemented and covered.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">meanLongitude</span><span class="p">(</span><span class="n">_</span> <span class="nv">equinox</span><span class="p">:</span> <span class="kt"><a href="../Enums/Equinox.html">Equinox</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">planetaryDetails</span><span class="p">:</span> <span class="kt">KPCAAEllipticalPlanetaryDetails</span> <span class="o">=</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>equinox</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The equinox for which the computation is made</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The longitude in degrees</p>
-                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L16">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Planets.swift#L78">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -380,266 +369,30 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit13semimajorAxisFT_VS_16AstronomicalUnit"></a>
-                    <a name="//apple_ref/swift/Method/semimajorAxis()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit13semimajorAxisFT_VS_16AstronomicalUnit">semimajorAxis()</a>
+                    <a name="/s:vC7SwiftAA11DwarfPlanet23ellipticalObjectDetailsVSC28KPCAAEllipticalObjectDetails"></a>
+                    <a name="//apple_ref/swift/Property/ellipticalObjectDetails" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA11DwarfPlanet23ellipticalObjectDetailsVSC28KPCAAEllipticalObjectDetails">ellipticalObjectDetails</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Computes the semi major axis of the orbit</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Computes the semi major axis of the orbit</p>
+                        <p>Accessor to all values of the underlying object details. Will probably become private
+once all relevant accessors are implemented and covered.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">semimajorAxis</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">ellipticalObjectDetails</span><span class="p">:</span> <span class="kt">KPCAAEllipticalObjectDetails</span> <span class="o">=</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The semi major axis in astronomical units</p>
-                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L21">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit12eccentricityFT_Sd"></a>
-                    <a name="//apple_ref/swift/Method/eccentricity()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit12eccentricityFT_Sd">eccentricity()</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Computes the eccentricity of the orbit</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Computes the eccentricity of the orbit</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">eccentricity</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The eccentricity (comprise between 0==circular, and 1).</p>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L26">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit11inclinationFOS_7EquinoxVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/inclination(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit11inclinationFOS_7EquinoxVS_6Degree">inclination(_:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Computes the inclination of the planet on the plane of the ecliptic</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Computes the inclination of the planet on the plane of the ecliptic</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">inclination</span><span class="p">(</span><span class="n">_</span> <span class="nv">equinox</span><span class="p">:</span> <span class="kt"><a href="../Enums/Equinox.html">Equinox</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>equinox</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The equinox for which the computation is made</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The inclination in degrees</p>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L32">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit24longitudeOfAscendingNodeFOS_7EquinoxVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/longitudeOfAscendingNode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit24longitudeOfAscendingNodeFOS_7EquinoxVS_6Degree">longitudeOfAscendingNode(_:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Computes the longitude of the ascending node.</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Computes the longitude of the ascending node.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">longitudeOfAscendingNode</span><span class="p">(</span><span class="n">_</span> <span class="nv">equinox</span><span class="p">:</span> <span class="kt"><a href="../Enums/Equinox.html">Equinox</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>equinox</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The equinox for which the computation is made</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The longitude in degrees</p>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L38">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP7SwiftAA24ElementsOfPlanetaryOrbit21longitudeOfPerihelionFOS_7EquinoxVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/longitudeOfPerihelion(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA24ElementsOfPlanetaryOrbit21longitudeOfPerihelionFOS_7EquinoxVS_6Degree">longitudeOfPerihelion(_:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compute the longitude of the perihelion</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Compute the longitude of the perihelion</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">longitudeOfPerihelion</span><span class="p">(</span><span class="n">_</span> <span class="nv">equinox</span><span class="p">:</span> <span class="kt"><a href="../Enums/Equinox.html">Equinox</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>equinox</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The equinox for which the computation is made</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The longitude in degrees</p>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/ElementsOfPlanetaryOrbit.swift#L44">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Planets.swift#L85">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

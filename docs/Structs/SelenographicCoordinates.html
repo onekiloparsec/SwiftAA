@@ -14,7 +14,7 @@
     <a title="SelenographicCoordinates Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,7 +33,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a>
+                <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Earth.html">Earth</a>
@@ -80,6 +80,15 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2lySd">AU2ly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA4AU2mSd">AU2m</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2pcSd">AU2pc</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
@@ -96,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
               </li>
             </ul>
           </li>
@@ -181,9 +193,6 @@
                 <a href="../Protocols/CelestialBody.html">CelestialBody</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a>
               </li>
               <li class="nav-group-task">
@@ -203,6 +212,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
@@ -329,7 +341,11 @@ The mean center of the Moon&rsquo;s apparent disk is the origin of the system of
 selenographic coordinates on the surface of the Moon [see below].
 The displacement, at any time, of the mean center of the disk from the apparent
 center, represents the amount of libration, and is measured by the selenographic
-coordinates of the apparent center of the disk at that time.</p>
+coordinates of the apparent center of the disk at that time.
+AA (p.372): The selenographic longitude and latitude of the Earth, as given
+in the almanacs, are the geocentric selenographic coordinates of the apparent
+central point of the disk. At this point on the surface of the Moon,
+the Earth is in the zenith.</p>
 
           </section>
           <section class="section task-group-section">
@@ -363,7 +379,7 @@ sphere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L31">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -395,7 +411,7 @@ Mare Serenitatis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L36">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L40">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -425,7 +441,41 @@ Mare Serenitatis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L38-L40">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L42-L44">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV7SwiftAA24SelenographicCoordinatesoi2eeFTS0_S0__Sb"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV7SwiftAA24SelenographicCoordinatesoi2eeFTS0_S0__Sb">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SelenographicCoordinates</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L48-L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

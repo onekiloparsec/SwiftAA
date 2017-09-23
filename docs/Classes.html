@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (69% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -32,7 +32,7 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a>
+                <a href="Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Earth.html">Earth</a>
@@ -79,6 +79,15 @@
             <a href="Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA5AU2lySd">AU2ly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA4AU2mSd">AU2m</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA5AU2pcSd">AU2pc</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
@@ -95,6 +104,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
               </li>
             </ul>
           </li>
@@ -180,9 +192,6 @@
                 <a href="Protocols/CelestialBody.html">CelestialBody</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a>
               </li>
               <li class="nav-group-task">
@@ -202,6 +211,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
@@ -341,10 +353,10 @@ and <q>non-dwarf</q> planets.</p>
     <span class="kt"><a href="Protocols/CelestialBody.html">CelestialBody</a></span><span class="p">,</span>
     <span class="kt"><a href="Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span>
     <span class="kt"><a href="Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a></span><span class="p">,</span>
-    <span class="kt"><a href="Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a></span><span class="p">,</span>
+    <span class="kt"><a href="Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a></span><span class="p">,</span>
+    <span class="kt"><a href="Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a></span><span class="p">,</span>
     <span class="kt"><a href="Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span>
-    <span class="kt"><a href="Protocols/IlluminatedFraction.html">IlluminatedFraction</a></span><span class="p">,</span>
-    <span class="kt"><a href="Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a></span></code></pre>
+    <span class="kt"><a href="Protocols/IlluminatedFraction.html">IlluminatedFraction</a></span></code></pre>
 
                         </div>
                       </div>
@@ -370,17 +382,18 @@ and <q>non-dwarf</q> planets.</p>
                         <p>The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
 So far, only Pluto is concerned.</p>
 
+                        <a href="Classes/DwarfPlanet.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DwarfPlanet</span><span class="p">:</span> <span class="kt"><a href="Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/PlanetaryBase.html">PlanetaryBase</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DwarfPlanet</span><span class="p">:</span> <span class="kt"><a href="Classes/Object.html">Object</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/PlanetaryBase.html">PlanetaryBase</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Planets.swift#L75">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Planets.swift#L75-L89">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -410,7 +423,7 @@ So far, only Pluto is concerned.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Pluto</span><span class="p">:</span> <span class="kt"><a href="Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Pluto</span><span class="p">:</span> <span class="kt"><a href="Classes/DwarfPlanet.html">DwarfPlanet</a></span></code></pre>
 
                         </div>
                       </div>
@@ -520,7 +533,7 @@ So far, only Pluto is concerned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Sun.swift#L12-L154">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Sun.swift#L12-L142">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -709,7 +722,7 @@ So far, only Pluto is concerned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Earth&rsquo;s Moon object.</p>
+                        <p>The Earth&rsquo;s Moon.</p>
 
                         <a href="Classes/Moon.html" class="slightly-smaller">See more</a>
                       </div>
@@ -722,7 +735,7 @@ So far, only Pluto is concerned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L44-L421">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L55-L509">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

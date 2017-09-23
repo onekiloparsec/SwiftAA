@@ -14,7 +14,7 @@
     <a title="PlanetaryDiameters Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,7 +33,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a>
+                <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Earth.html">Earth</a>
@@ -80,6 +80,15 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2lySd">AU2ly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA4AU2mSd">AU2m</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2pcSd">AU2pc</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
@@ -96,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
               </li>
             </ul>
           </li>
@@ -181,9 +193,6 @@
                 <a href="../Protocols/CelestialBody.html">CelestialBody</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a>
               </li>
               <li class="nav-group-task">
@@ -203,6 +212,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
@@ -319,9 +331,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA18PlanetaryDiameters22equatorialSemiDiameterFT14usingOldValuesSb_VS_6Degree"></a>
+                    <a name="/s:FP7SwiftAA18PlanetaryDiameters22equatorialSemiDiameterFzT14usingOldValuesSb_VS_6Degree"></a>
                     <a name="//apple_ref/swift/Method/equatorialSemiDiameter(usingOldValues:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA18PlanetaryDiameters22equatorialSemiDiameterFT14usingOldValuesSb_VS_6Degree">equatorialSemiDiameter(usingOldValues:)</a>
+                    <a class="token" href="#/s:FP7SwiftAA18PlanetaryDiameters22equatorialSemiDiameterFzT14usingOldValuesSb_VS_6Degree">equatorialSemiDiameter(usingOldValues:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -347,12 +359,12 @@ phenomena such as transits and occultations.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">equatorialSemiDiameter</span><span class="p">(</span><span class="nv">usingOldValues</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">equatorialSemiDiameter</span><span class="p">(</span><span class="nv">usingOldValues</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/PlanetaryDiameters.swift#L17">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/PlanetaryDiameters.swift#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -360,9 +372,9 @@ phenomena such as transits and occultations.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA18PlanetaryDiameters17polarSemiDiameterFT14usingOldValuesSb_VS_6Degree"></a>
+                    <a name="/s:FP7SwiftAA18PlanetaryDiameters17polarSemiDiameterFzT14usingOldValuesSb_VS_6Degree"></a>
                     <a name="//apple_ref/swift/Method/polarSemiDiameter(usingOldValues:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA18PlanetaryDiameters17polarSemiDiameterFT14usingOldValuesSb_VS_6Degree">polarSemiDiameter(usingOldValues:)</a>
+                    <a class="token" href="#/s:FP7SwiftAA18PlanetaryDiameters17polarSemiDiameterFzT14usingOldValuesSb_VS_6Degree">polarSemiDiameter(usingOldValues:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -386,12 +398,12 @@ Note that for all planets but Jupiter and Saturn, the polarSemiDiameter is ident
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">polarSemiDiameter</span><span class="p">(</span><span class="nv">usingOldValues</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">polarSemiDiameter</span><span class="p">(</span><span class="nv">usingOldValues</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/PlanetaryDiameters.swift#L21">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/PlanetaryDiameters.swift#L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -14,7 +14,7 @@
     <a title="EllipticalPlanetaryDetails Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,7 +33,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:C7SwiftAA11DwarfPlanet">DwarfPlanet</a>
+                <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Earth.html">Earth</a>
@@ -80,6 +80,15 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2lySd">AU2ly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA4AU2mSd">AU2m</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA5AU2pcSd">AU2pc</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA13BesselianYearVS_3Day">BesselianYear</a>
               </li>
               <li class="nav-group-task">
@@ -96,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
               </li>
             </ul>
           </li>
@@ -181,9 +193,6 @@
                 <a href="../Protocols/CelestialBody.html">CelestialBody</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/ElementsOfPlanetaryOrbit.html">ElementsOfPlanetaryOrbit</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/EllipticalPlanetaryDetails.html">EllipticalPlanetaryDetails</a>
               </li>
               <li class="nav-group-task">
@@ -203,6 +212,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryOrbits.html">PlanetaryOrbits</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
@@ -365,19 +377,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The details of the object configuration</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">EllipticalPlanetaryDetails</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">ellipticalObjectDetails</span><span class="p">:</span> <span class="kt">KPCAAEllipticalObjectDetails</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -398,7 +410,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The ApparentGeocentricDistance</p>
+                        <p>The apparent geocentric distance</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -415,7 +427,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L19">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -436,7 +448,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The TrueGeocentricDistance</p>
+                        <p>The true geocentric distance of the planet</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -453,7 +465,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L22">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -491,7 +503,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L25">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L26">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -535,7 +547,7 @@ It accounts for 1) the effect of light-time and 2) the effect of the Earth motio
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L31">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/EllipticalPlanetaryDetails.swift#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
