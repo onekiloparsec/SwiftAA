@@ -284,7 +284,10 @@ public struct HorizontalCoordinates: CustomStringConvertible {
     /// - Returns: A angle value, between the two coordinates.
     public func angularSeparation(with otherCoordinates: HorizontalCoordinates) -> Degree {
         // note: we actually use AA method for *equatorial* coordinates separation (works fine for horizontal coordinates)
-        return Degree(KPCAAAngularSeparation_Separation(self.azimuth.inHours.value, self.altitude.value, otherCoordinates.azimuth.inHours.value, otherCoordinates.altitude.value))
+        return Degree(KPCAAAngularSeparation_Separation(self.azimuth.inHours.value,
+                                                        self.altitude.value,
+                                                        otherCoordinates.azimuth.inHours.value,
+                                                        otherCoordinates.altitude.value))
     }
     
     public var description: String { return String(format: "A=%@, h=%@", azimuth.description, altitude.description) }
