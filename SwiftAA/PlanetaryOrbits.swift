@@ -1,5 +1,5 @@
 //
-//  ElementsOfPlanetaryOrbit.swift
+//  PlanetaryOrbits.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 26/06/16.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
+/// This protocol encompasses various elements of planetary orbits.
+public protocol PlanetaryOrbits: PlanetaryBase {
     /// Computes the mean longitude of the orbit
     ///
     /// - Parameter equinox: The equinox for which the computation is made
@@ -44,7 +45,7 @@ public protocol ElementsOfPlanetaryOrbit: PlanetaryBase {
     func longitudeOfPerihelion(_ equinox: Equinox) -> Degree    
 }
 
-public extension ElementsOfPlanetaryOrbit {
+public extension PlanetaryOrbits {
     /// Computes the mean longitude of the orbit
     ///
     /// - Parameter equinox: The equinox for which the computation is made

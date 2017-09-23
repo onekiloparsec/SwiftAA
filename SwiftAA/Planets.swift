@@ -15,10 +15,10 @@ public class Planet: Object,
     CelestialBody,
     PlanetaryBase,
     PlanetaryPhenomena,
-    ElementsOfPlanetaryOrbit,
+    PlanetaryOrbits,
+    PlanetaryDiameters,
     EllipticalPlanetaryDetails,
-    IlluminatedFraction,
-    PlanetaryDiameters {
+    IlluminatedFraction {
 
     /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. :-)
     public class var averageColor: Color {

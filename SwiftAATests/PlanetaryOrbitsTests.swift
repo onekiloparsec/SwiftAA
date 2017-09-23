@@ -1,5 +1,5 @@
 //
-//  ElementsOfPlanetaryOrbitTests.swift
+//  PlanetaryOrbitsTests.swift
 //  SwiftAA
 //
 //  Created by Cédric Foellmi on 2017-09-20.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftAA
 
-class ElementsOfPlanetaryOrbitTests: XCTestCase {
+class PlanetaryOrbitsTests: XCTestCase {
 
     // See AA p.211, Example 31.a
     func testMeanOrbitalElementsOfMercury() {

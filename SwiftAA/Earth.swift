@@ -19,7 +19,7 @@ public enum TwilightSunAltitude: Degree {
     case astronomical = -18.0
 }
 
-public class Earth: Object, PlanetaryBase, ElementsOfPlanetaryOrbit {
+public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     public static var color: Color {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
