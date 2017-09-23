@@ -28,7 +28,10 @@ public class Sun: Object, CelestialBody {
     /// The (constant) diameter of the Sun.
     public let diameter: Meter = 1392000000.0
     
-    // Celestial Body
+    /// The default apparent altitude of the sun to compute rise and set times.
+    public static let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
+
+    // MARK: - Celestial Body
     
     /// The apparent equatorial semi diameter of the sun.
     public var equatorialSemiDiameter: Degree {
@@ -40,18 +43,16 @@ public class Sun: Object, CelestialBody {
         get { return self.equatorialSemiDiameter }
     }
     
-    /**
-     Computes the time of the next start of the synodic rotation of the Sun
-     (used to follow sunspots).
-     
-     - returns: The julian day of the next stary
-     */
+    /// Computes the time of the next start of the synodic rotation of the Sun
+    /// (used to follow sunspots).
+    ///
+    /// - Returns: The julian day of the next start
     public func nextStartOfTimeOfRotation() -> JulianDay {
         let C = ceil((self.julianDay.value - 2398140.2270)/27.2752316) // Equ 29.1 of AA.
         return JulianDay(KPCAAPhysicalSun_TimeOfStartOfRotation(Int(C)))
     }
     
-    /// Celestial Body
+    // MARK: - Coordinates
     
     /// The radius vector (distance to the Sun... here to conform to CelestialBody protocol).
     public var radiusVector: AstronomicalUnit { return 0.0 }
@@ -79,7 +80,7 @@ public class Sun: Object, CelestialBody {
         get { return self.apparentEclipticCoordinates.makeApparentEquatorialCoordinates() }
     }
 
-    /// Celestial Body Supplement
+    // MARK: - Celestial Body Supplement
     
     /// See AA, p.164. In some instances, for example in meteor work, it is necessary to have the Sun's longitude
     /// referred to the standard equinox of J2000.0. Between, 1900 and 2100, this can be performed with sufficient
@@ -89,47 +90,42 @@ public class Sun: Object, CelestialBody {
                                          beta: Degree(KPCAASun_GeometricEclipticLatitudeJ2000(self.julianDay.value, self.highPrecision))) }
     }
     
-    /**
-     This is the position angle of the northern extremity of the axis of rotation,
-     measured eastwards from the North Point of the solar disk.
-    
-     - returns: The position angle in degrees.
-     */
-    func positionAngleOfNorthernRotationAxisPoint() -> Degree {
-        return Degree(self.physicalDetails.P)
-    }
-    
-    /**
-     The heliographic latitude of the center of the solar disk. It represents the tilt
-     of the Sun's north pole toward (+) or away (-) from Earth. It is zero about June 6
-     and December 7, and reaches a maximum value about March 6 (-7º.25) and September 8
-     (+7º.25).
-     
-     - returns: The latitude in degrees.
-     */
-    func heliographicLatitudeOfSolarDiskCenter() -> Degree {
-        return Degree(self.physicalDetails.B0)
-    }
-    
-    /**
-     The heliographic longitude of the center of the solar disk. It decreases by about 
-     13.2 degrees per day.
-     
-     - returns: The longitude in degrees.
-     */
-    func heliographicLongitudeOfSolarDiskCenter() -> Degree {
-        return Degree(self.physicalDetails.L0)
+    /// Computes the apparent horizontal coordinates of the Sun for a given location of the observer.
+    ///
+    /// - Parameter geographicCoordinates: The location of the observer.
+    /// - Returns: A new horizontal coordinates instance.
+    public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
+        return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(with: geographicCoordinates, julianDay: self.julianDay)
     }
 
-    /**
-     A synodic rotation cycle of the Sun begins when the heliographic longitude of the
-     solar disk center is 0º.
-     
-     - parameter C: The rotation number. C = 1 on November 9, 1853.
-     
-     - returns: The julian day of the start of the cycle.
-     */
-    func timeOfStartOfSynodicRotation(rotationNumber C: Int) -> JulianDay {
+    // MARK: - Physical Observations of the Sun
+    
+    /// The position angle of the northern extremity of the axis of rotation,
+    /// measured eastwards from the North Point of the solar disk.
+    public var positionAngleOfNorthernRotationAxisPoint: Degree {
+        get { return Degree(self.physicalDetails.P) }
+    }
+    
+    /// The heliographic latitude of the center of the solar disk. It represents the tilt
+    /// of the Sun's north pole toward (+) or away (-) from Earth. It is zero about June 6
+    /// and December 7, and reaches a maximum value about March 6 (-7º.25) and September 8
+    /// (+7º.25).
+    public var heliographicLatitudeOfSolarDiskCenter: Degree {
+        get { return Degree(self.physicalDetails.B0) }
+    }
+    
+    /// The heliographic longitude of the center of the solar disk. It decreases by about
+    /// 13.2 degrees per day.
+    public var heliographicLongitudeOfSolarDiskCenter: Degree {
+        get { return Degree(self.physicalDetails.L0) }
+    }
+
+    /// A synodic rotation cycle of the Sun begins when the heliographic longitude of the
+    /// solar disk center is 0º.
+    ///
+    /// - Parameter C: The rotation number. C = 1 on November 9, 1853.
+    /// - Returns: The julian day of the start of the cycle.
+    public static func timeOfStartOfSynodicRotation(rotationNumber C: Int) -> JulianDay {
         return JulianDay(KPCAAPhysicalSun_TimeOfStartOfRotation(C))
     }
     
@@ -142,14 +138,6 @@ public class Sun: Object, CelestialBody {
     public func equationOfTime() -> Day {
         // KPCAA result is in minutes of time.
         return Day(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / (24.0 * 60.0))
-    }
-    
-    /// The default apparent altitude of the sun to compute rise and set times.
-    public static let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
-    
-    
-    public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
-        return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(with: geographicCoordinates, julianDay: self.julianDay)
     }
 }
 
