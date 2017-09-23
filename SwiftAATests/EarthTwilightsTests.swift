@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftAA
 
-class EarthTests: XCTestCase {
+class EarthTwilightsTests: XCTestCase {
     
     func testValidTwilightNorthernHemisphereWestLongitude() {
         

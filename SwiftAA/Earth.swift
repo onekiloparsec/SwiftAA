@@ -20,7 +20,7 @@ public enum TwilightSunAltitude: Degree {
 }
 
 public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
-    public static var color: Color {
+    public static var averageColor: Color {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
     

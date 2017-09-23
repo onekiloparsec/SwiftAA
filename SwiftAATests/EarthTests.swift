@@ -10,7 +10,11 @@ import XCTest
 @testable import SwiftAA
 
 // Based on AA+ "tests"
-class EarthSeasonsTests: XCTestCase {
+class EarthTests: XCTestCase {
+
+    func testAverageColor() {
+        XCTAssertNotEqual(Earth.averageColor, Color.white)
+    }
 
     func testLengthOfSeason2000() {
         let earth = Earth(julianDay: JulianDay(year: 2000, month: 2, day: 1))
