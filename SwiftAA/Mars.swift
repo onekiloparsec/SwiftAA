@@ -9,31 +9,54 @@
 import Foundation
 
 /// The Mars planet.
-public class Mars: Planet {
-    fileprivate var physicalDetails: KPCAAPhysicalMarsDetails
-    
+public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {
+
+    /// Accessor to all values of the underlying physical details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
+    public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalMarsDetails = {
+        [unowned self] in
+        return KPCAAPhysicalMars_CalculateDetails(self.julianDay.value, self.highPrecision)
+        }()
+
     /// The average color of the Planet.
     public class override var averageColor: Color {
         get { return Color(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
     }
-
-    /// Returns a new Mars struct.
-    ///
-    /// - Parameters:
-    ///   - julianDay: The julian day at which the object is created.
-    ///   - highPrecision: A boolean indicating whether high-precision (VSOP87 theory) must be used. Default is true.
-    public required init(julianDay: JulianDay, highPrecision: Bool = true) {
-        self.physicalDetails = KPCAAPhysicalMars_CalculateDetails(julianDay.value, highPrecision)
-        super.init(julianDay: julianDay, highPrecision: highPrecision)
-    }
     
-    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
-    public var planetocentricDeclinationEarth: Degree {
+    // MARK: - PlanetaryPhysicalDetails
+    
+    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth.
+    public var planetocentricDeclinationOfTheEarth: Degree {
         return Degree(self.physicalDetails.DE)
     }
 
-    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
-    public var planetocentricDeclinationSun: Degree {
+    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun.
+    public var planetocentricDeclinationOfTheSun: Degree {
         return Degree(self.physicalDetails.DS)
     }
+    
+    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun.
+    public var positionAngleOfNorthernRotationPole: Degree {
+        return Degree(self.physicalDetails.P)
+    }
+
+    // MARK: - MarsPhysicalDetails
+
+    /// The greatest defect of illumination of the angular quantity of the greatest length
+    /// of the dark region linking up the illuminated limb and the planet disk border.
+    public var angularAmountOfGreatestDefectOfIllumination: ArcSecond {
+        return ArcSecond(self.physicalDetails.q)
+    }
+    
+    /// The greatest defect of illumination of the angular quantity of the greatest length
+    /// of the dark region linking up the illuminated limb and the planet disk border.
+    public var positionAngleOfGreatestDefectOfIllumination: Degree {
+        return Degree(self.physicalDetails.X + 180).reduced
+    }
+    
+    /// The aerographic coordinates are those of Mars, to be compared geographic for the Earth.
+    public var aerographicLongitudeOfCentralMeridian: Degree {
+        return Degree(self.physicalDetails.w)
+    }
+
 }

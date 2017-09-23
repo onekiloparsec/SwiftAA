@@ -9,7 +9,10 @@
 import Foundation
 
 /// The Jupiter planet.
-public class Jupiter: Planet {
+public class Jupiter: Planet, PlanetaryPhysicalDetails, JupiterPhysicalDetails {
+    
+    /// Accessor to all values of the underlying physical details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalJupiterDetails = {
         [unowned self] in
         return KPCAAPhysicalJupiter_CalculateDetails(self.julianDay.value, self.highPrecision)
@@ -45,6 +48,8 @@ public class Jupiter: Planet {
                                                                  self.phaseAngle.value) }
     }
 
+    // MARK: - PlanetaryPhysicalDetails
+    
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
     public var planetocentricDeclinationOfTheEarth: Degree {
         return Degree(self.physicalDetails.DE)
@@ -54,6 +59,13 @@ public class Jupiter: Planet {
     public var planetocentricDeclinationOfTheSun: Degree {
         return Degree(self.physicalDetails.DS)
     }
+
+    /// The position angle of the northern rotation pole of the planet
+    public var positionAngleOfNorthernRotationPole: Degree {
+        return Degree(self.physicalDetails.P)
+    }
+
+    // MARK: - JupiterPhysicalDetails
 
     /// See AA. ch 43, pp. 293-
     
@@ -71,10 +83,5 @@ public class Jupiter: Planet {
     
     public var apparentCentralMeridianLongitudeSystemII: Degree {
         return Degree(self.physicalDetails.Apparentw2)
-    }
-
-    /// The position angle of the northern rotation pole of the planet
-    public var positionAngleOfNorthernRotationPole: Degree {
-        return Degree(self.physicalDetails.P)
     }
 }

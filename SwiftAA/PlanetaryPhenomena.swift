@@ -13,7 +13,7 @@ import Foundation
  *  conjunction, oppotisions, etc.
  */
 public protocol PlanetaryPhenomena: PlanetaryBase {
-        
+    
     /**
      Compute the julian day of the inferior conjunction of the planet after the given julian day.
 
