@@ -72,6 +72,7 @@ public extension FloatingPoint {
         let centered = positive > other / Self(2) ? positive - other : positive
         return centered
     }
+    
     func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> Self {
         return (self / increment).rounded(rule) * increment
     }

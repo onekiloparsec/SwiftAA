@@ -29,15 +29,6 @@ class NumericTypeTests: XCTestCase {
         AssertEqual(jd.rounded(toIncrement: Minute(15).inJulianDays), JulianDay(year: 2017, month: 1, day: 9, hour: 14), accuracy: accuracy)
         AssertEqual(jd.rounded(toIncrement: Hour(3).inJulianDays), JulianDay(year: 2017, month: 1, day: 9, hour: 15), accuracy: accuracy)
     }
-    
-    func testReduce0() {
-        AssertEqual(Degree(-190).reduced0, Degree(170))
-        AssertEqual(Degree(-10).reduced0, Degree(-10))
-        AssertEqual(Degree(10).reduced0, Degree(10))
-        AssertEqual(Degree(190).reduced0, Degree(-170))
-        AssertEqual(Degree(370).reduced0, Degree(10))
-    }
-    
 }
 
 

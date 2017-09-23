@@ -23,13 +23,13 @@ public struct AstronomicalUnit: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current AstronomicalUnit in Parsecs
-    public var pc: Parsec { return Parsec(value / 206264.80624548031) } // tan(1./3600.0*M_PI/180.)
+    public var inParsecs: Parsec { return Parsec(value * AU2pc) }
     /// Transform the current AstronomicalUnit in kilometers
-    public var km: Double { return value * 149597870.7 }
+    public var inKilometers: Kilometer { return self.inMeters.inKilometers }
     /// Transform the current AstronomicalUnit in Meters
-    public var m:  Meter  { return Meter(value * 149597870700.0) }
+    public var inMeters:  Meter  { return Meter(value * AU2m) }
     /// Transform the current AstronomicalUnit in light-years
-    public var ly: Double { return value / 206264.8 }
+    public var inLightYears: Double { return value * AU2ly }
     
     /// Returns the equatorial horizontal parallax value corresponding to the current distance
     /// of a solar system body, used in the difference between the toppocentric (as seen from 
@@ -59,7 +59,7 @@ public struct Parsec: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current Parsec in AstronomicalUnits
-    public var AU: AstronomicalUnit { return AstronomicalUnit(value * 206264.80624548031) }
+    public var inAstronomicalUnits: AstronomicalUnit { return AstronomicalUnit(value / AU2pc) }
     public var description: String { return String(format: "%.1f pc", value) }
 
     /// Returns the parallax value corresponding to the current distance.
@@ -88,14 +88,10 @@ public struct Meter: NumericType, CustomStringConvertible {
         self.value = value
     }
     
-    /// Transform the current Meter in Microns
-    public var µm: Double { return value * 1e+6 }
-    /// Transform the current Meter in milimeters
-    public var mm: Double { return value * 1e+3 }
     /// Transform the current Meter in kilometers
-    public var km: Kilometer { return Kilometer(value * 1e-3) }
+    public var inKilometers: Kilometer { return Kilometer(value * 1000.0) }
     /// Transform the current Meter in AstronomicalUnit.
-    public var AU: AstronomicalUnit { return AstronomicalUnit(value / 149597870700.0) }
+    public var inAstronomicalUnits: AstronomicalUnit { return AstronomicalUnit(value / AU2m) }
 
     public var description: String { return String(format: "%.1f m", value) }
 }
@@ -114,7 +110,7 @@ public struct Kilometer: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current Kilometer in Meter
-    public var m: Meter { return Meter(value * 1e3) }
+    public var inMeters: Meter { return Meter(value * 1000.0) }
     public var description: String { return String(format: "%.1f km", value) }
 }
 

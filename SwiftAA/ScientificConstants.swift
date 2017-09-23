@@ -26,6 +26,17 @@ public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
 
+public let rad2deg = Double.pi/180.0
+
+public let AU2pc: Double = tan(1.0/3600.0/rad2deg)
+public let AU2m: Double = 149597870700.0 // Wikipedia
+public let AU2ly: Double = 1.0/206264.8
+
+//public let pc2AU = 1.0/tan(1.0/3600.0/rad2deg)
+//public let m2AU = 1.0/149597870700.0
+//public let ly2AU = 206264.8
+
+
 /// Standard equinox values. Note: equinoxes are directions, epochs are point in time.
 /// The vernal equinox, which is the zero point of both right ascension and celestial longitude, is defined
 /// to be in the direction of the ascending node of the ecliptic on the equator.

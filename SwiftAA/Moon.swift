@@ -66,7 +66,7 @@ public class Moon : Object, CelestialBody {
     /// AA+ uses the Eq. for Delta written in p.342 of AA book.
     /// According to that Eq., the result is in Kilometers. For consistency with others, we return AU.
     public var radiusVector: AstronomicalUnit {
-        get { return Meter(self.distance.value*1000.0).AU }
+        get { return Meter(self.distance.value*1000.0).inAstronomicalUnits }
     }
 
     /// Convenience accessor of the Moon distance, that is, its distance from Earth (not Sun), in kilometers.

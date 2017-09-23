@@ -35,13 +35,6 @@ public struct Degree: NumericType, CustomStringConvertible {
         self.init(Double(sign) * (absDegree + absMinutes + absSeconds))
     }
 
-    /// Returns a new Degree object, from a sexagesimal tuple.
-    ///
-    /// - Parameter sexagesimal: The sexagesimal tuple
-    public init(_ sexagesimal: (Degree, ArcMinute, ArcSecond)) {
-        self.init(sexagesimal.0.value + sexagesimal.1.value/60.0 + sexagesimal.2.value/3600.0)
-    }
-
     /// Transform the current Degree in ArcMinutes
     public var inArcMinutes: ArcMinute { return ArcMinute(value * 60.0) }
     /// Transform the current Degree in ArcSeconds
@@ -110,8 +103,6 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
     public var inArcSeconds: ArcSecond { return ArcSecond(value * 60.0) }
     /// Transform the current ArcMinute in Hours
     public var inHours: Hour { return inDegrees.inHours }
-    /// Transform the current ArcMinute in Radians
-    public var inRadians: Radian { return inDegrees.inRadians }
     
     public var description: String { return String(format: "%.2f arcmin", value) }
 }
@@ -137,8 +128,6 @@ public struct ArcSecond: NumericType, CustomStringConvertible {
     public var inArcMinutes: ArcMinute { return ArcMinute(value / 60.0) }
     /// Transform the current ArcSecond in Hours
     public var inHours: Hour { return inDegrees.inHours }
-    /// Transform the current ArcSecond in Radians
-    public var inRadians: Radian { return inDegrees.inRadians }
 
     /// Returns a new distance in Astronomical Units, the arcsecond being understood as a 
     /// geometrical parallax.
@@ -177,12 +166,14 @@ public struct Radian: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current Radian in Degrees
-    public var inDegrees: Degree { return Degree(value / 0.017453292519943295769236907684886) }
+    public var inDegrees: Degree { return Degree(value / rad2deg) }
     /// Transform the current Radian in Hours
     public var inHours: Hour { return self.inDegrees.inHours }
     
     /// Returns self reduced to 0..<2PI range
-    public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 2*Double.pi)) }
+    public var reduced: Radian { return Radian(value.positiveTruncatingRemainder(dividingBy: 2*Double.pi)) }
+    /// Returns self reduced to -pi..<pi range (around 0)
+    public var reduced0: Radian { return Radian(value.zeroCenteredTruncatingRemainder(dividingBy: 2*Double.pi)) }
     
     public var description: String { return String(format: "%.3f rad", value) }
 }

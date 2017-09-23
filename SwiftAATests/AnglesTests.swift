@@ -49,7 +49,43 @@ class AnglesTests: XCTestCase {
         XCTAssertEqual(Degree(.plus, 0, 0, 90.0).value, 0.025)
         XCTAssertEqual(Degree(.plus, 0, 0, -90.0).value, 0.025)
     }
+
+    func testDegreeReduce() {
+        AssertEqual(Degree(-190).reduced, Degree(170))
+        AssertEqual(Degree(-10).reduced, Degree(350))
+        AssertEqual(Degree(10).reduced, Degree(10))
+        AssertEqual(Degree(190).reduced, Degree(190))
+        AssertEqual(Degree(370).reduced, Degree(10))
+        AssertEqual(Degree(350).reduced0, Degree(-10))
+    }
+
+    func testDegreeReduce0() {
+        AssertEqual(Degree(-190).reduced0, Degree(170))
+        AssertEqual(Degree(-10).reduced0, Degree(-10))
+        AssertEqual(Degree(10).reduced0, Degree(10))
+        AssertEqual(Degree(190).reduced0, Degree(-170))
+        AssertEqual(Degree(370).reduced0, Degree(10))
+        AssertEqual(Degree(350).reduced0, Degree(-10))
+    }
+
+    func testRadianReduce() {
+        AssertEqual(Radian(-Double.pi-0.1).reduced, Radian(Double.pi-0.1))
+        AssertEqual(Radian(-0.1).reduced, Radian(2.0*Double.pi-0.1))
+        AssertEqual(Radian(0.1).reduced, Radian(0.1))
+        AssertEqual(Radian(Double.pi+0.1).reduced, Radian(Double.pi+0.1))
+        AssertEqual(Radian(2.0*Double.pi+0.1).reduced, Radian(0.1), accuracy: Radian(0.00000000000001)) // warf, rounding error?
+        AssertEqual(Radian(2.0*Double.pi-0.1).reduced, Radian(2.0*Double.pi-0.1), accuracy: Radian(0.00000000000001)) // warf, rounding error?
+    }
     
+    func testRadianReduce0() {
+        AssertEqual(Radian(-Double.pi-0.1).reduced0, Radian(Double.pi-0.1))
+        AssertEqual(Radian(-0.1).reduced0, Radian(-0.1), accuracy: Radian(0.00000000000001)) // warf, rounding error?
+        AssertEqual(Radian(0.1).reduced0, Radian(0.1))
+        AssertEqual(Radian(Double.pi+0.1).reduced0, Radian(-Double.pi+0.1))
+        AssertEqual(Radian(2*Double.pi+0.1).reduced0, Radian(0.1), accuracy: Radian(0.00000000000001)) // warf, rounding error?
+        AssertEqual(Radian(2*Double.pi-0.1).reduced0, Radian(-0.1), accuracy: Radian(0.00000000000001)) // warf, rounding error?
+    }
+
     func testDegreeSexagesimalTransform() {
         let dplus = Degree(1.125)
         let dplussexagesimal: SexagesimalNotation = (.plus, 1, 7, 30.0)
@@ -69,6 +105,9 @@ class AnglesTests: XCTestCase {
         
         XCTAssertEqual(Degree(d1).inArcSeconds.value, d1*3600.0)
         XCTAssertEqual(Degree(d2).inArcSeconds.value, d2*3600.0)
+        
+        XCTAssertEqual(Radian(.pi).inDegrees.value, 180.0)
+        XCTAssertEqual(Degree(180.0).inRadians.value, .pi)
     }
     
     func testArcMinuteConversions() {
