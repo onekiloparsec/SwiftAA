@@ -17,11 +17,26 @@ KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEquatorial(double Alpha, doub
 KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEquatorialFK4(double Alpha, double Delta, double JD0, double JD);
 KPCAA2DCoordinateComponents KPCAAPrecession_PrecessEcliptic(double Lambda, double Beta, double JD0, double JD);
 
-KPCAA2DCoordinateComponents KPCAAPrecession_EquatorialPMToEcliptic(double Alpha, double Delta, double Beta, double PMAlpha, double PMDelta, double Epsilon);
+KPCAA2DCoordinateComponents KPCAAPrecession_EquatorialPMToEcliptic(double Alpha,
+                                                                   double Delta,
+                                                                   double Beta,
+                                                                   double PMAlpha,
+                                                                   double PMDelta,
+                                                                   double Epsilon);
 
-KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingUniformProperMotion(double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingUniformProperMotion(double t,
+                                                                                   double Alpha,
+                                                                                   double Delta,
+                                                                                   double PMAlpha,
+                                                                                   double PMDelta);
 
-KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingMotionInSpace(double r, double deltar, double t, double Alpha, double Delta, double PMAlpha, double PMDelta);
+KPCAA2DCoordinateComponents KPCAAPrecession_AdjustPositionUsingMotionInSpace(double r,
+                                                                             double deltar,
+                                                                             double t,
+                                                                             double Alpha,
+                                                                             double Delta,
+                                                                             double PMAlpha,
+                                                                             double PMDelta);
 
 #if __cplusplus
 }
