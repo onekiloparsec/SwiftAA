@@ -19,9 +19,4 @@ class JupiterTests: XCTestCase {
         let jd = JulianDay(Date())
         XCTAssertEqual(Jupiter(julianDay: jd).moons.count, 4)
     }
-
-    func testSemiDiameters() {
-        let jd = JulianDay(Date())
-        Jupiter(julianDay: jd).equatorialSemiDiameter
-    }
 }

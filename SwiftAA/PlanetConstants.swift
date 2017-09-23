@@ -15,6 +15,8 @@ public typealias MeterPerSquareSecond = Double
 public typealias KilometerPerSecond = Double
 public typealias MeterE9 = Double
 
+
+/// Base constants to be used for all planets.
 public protocol PlanetConstants {
     var mass: Kilogram { get }
     var diameter: Meter { get }
@@ -38,6 +40,7 @@ public protocol PlanetConstants {
     var globalMagneticField: Bool { get }
 }
 
+/// The constants for the Jupiter planet.
 public struct JupiterConstants: PlanetConstants {
     public let mass: Kilogram = 1.898e27
     public let diameter: Meter = 142984000.0

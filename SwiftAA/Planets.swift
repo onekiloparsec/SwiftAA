@@ -25,11 +25,15 @@ public class Planet: Object,
         get { return Color.white }
     }
         
+    /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.planetaryObject, self.highPrecision)
         }()
     
+    /// Accessor to all values of the underlying object details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
