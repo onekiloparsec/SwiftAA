@@ -115,26 +115,9 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 
 
 /// Convenient class for storing the Rise, Transit and Set times of a celestial body.
-public class RiseTransitSetTimes {
-    private lazy var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails = {
-        [unowned self] in
-        // AA+ p.102 indicates one need to get day D at 0h Dynamical Time, thus, midnight UT.
-        let jd = self.celestialBody.julianDay.midnight
-        let hp = self.celestialBody.highPrecision
-        
-        let celestialBodyType = type(of: self.celestialBody)
-        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
-        let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
-        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
-        
-        return riseTransitSet(forJulianDay: jd,
-                              equCoords1: body1.equatorialCoordinates,
-                              equCoords2: body2.equatorialCoordinates,
-                              equCoords3: body3.equatorialCoordinates,
-                              geoCoords: self.geographicCoordinates,
-                              apparentRiseSetAltitude: self.riseSetAltitude)
-    }()
-    
+public struct RiseTransitSetTimes {
+    private var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails
+
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
     public fileprivate(set) var celestialBody: CelestialBody
     
@@ -144,19 +127,33 @@ public class RiseTransitSetTimes {
     /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
     ///
     /// - Parameters:
-    ///   - celestialBody: The celestialbody for which to compute the times.
-    ///   - geographicCoordinates: The geographic coordinates for which to compute the times.
+    ///   - celestialBody: The celestial body under study.
+    ///   - geographicCoordinates: The geographic coordinates of the observer.
     ///   - riseSetAltitude: The altitude considered for rise and set times.
-    ///   - apparentEquatorialCoordinatesBlock: A closure block through which one get the apparent coordinates.
-    ///     By default, it is simply the apparentEquatorialCoordinates getter. But one can use other accessors or 
-    ///     function, to provide for instance the geocentric coordinates.
-    required public init(celestialBody: CelestialBody,
+    public init(celestialBody: CelestialBody,
                          geographicCoordinates: GeographicCoordinates,
                          riseSetAltitude: Degree? = nil)
     {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? type(of: celestialBody).apparentRiseSetAltitude
+        
+        // AA+ p.102 indicates one need to get day D at 0h Dynamical Time, thus, midnight UT.
+        let jd = self.celestialBody.julianDay.midnight
+        let hp = self.celestialBody.highPrecision
+        
+        let celestialBodyType = type(of: self.celestialBody)
+        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
+        let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
+        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
+        
+        self.riseTransiteSetTimesDetails = riseTransitSet(forJulianDay: jd,
+                                                          equCoords1: body1.equatorialCoordinates,
+                                                          equCoords2: body2.equatorialCoordinates,
+                                                          equCoords3: body3.equatorialCoordinates,
+                                                          geoCoords: self.geographicCoordinates,
+                                                          apparentRiseSetAltitude: self.riseSetAltitude)
+
     }
     
     /// The rise time of the celestial body, in Julian Day.
