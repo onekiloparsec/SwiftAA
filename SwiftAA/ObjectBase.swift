@@ -27,9 +27,10 @@ public protocol ObjectBase {
      Initialization of an object
      
      - parameter julianDay:     The julian day at which one will consider the object
-     - parameter highPrecision: If true, the VSOP87 theory will be used to increase precision significantly.
+     - parameter highPrecision: If true (default), the VSOP87 theory is used when relevant to 
+                                increase precision significantly.
      
-     - returns: A new instance of a ObjectBase object
+     - returns: A new instance of an ObjectBase object
      */
     init(julianDay: JulianDay, highPrecision: Bool)    
 }
