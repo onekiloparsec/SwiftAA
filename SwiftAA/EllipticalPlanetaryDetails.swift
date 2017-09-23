@@ -13,12 +13,13 @@ public protocol EllipticalPlanetaryDetails: PlanetaryBase {
     /// The details of the planet configuration
     var planetaryDetails: KPCAAEllipticalPlanetaryDetails { get }
     
+    /// The details of the object configuration
     var ellipticalObjectDetails: KPCAAEllipticalObjectDetails { get }
  
-    /// The ApparentGeocentricDistance
+    /// The apparent geocentric distance
     var apparentGeocentricDistance: AstronomicalUnit { get }
     
-    /// The TrueGeocentricDistance
+    /// The true geocentric distance of the planet
     var trueGeocentricDistance: AstronomicalUnit { get }
     
     /// The phase angle, that is the angle (Sun-planet-Earth).
