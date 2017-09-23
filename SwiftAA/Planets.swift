@@ -68,7 +68,8 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     
 }
 
-// special Pluto:
+/// The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
+/// So far, only Pluto is concerned.
 public class DwarfPlanet: Object, PlanetaryBase {}
 
 
