@@ -132,7 +132,7 @@ public extension Double {
         return sexa.sign.string
             + String(format: "%02d", sexa.radical) + ":"
             + String(format: "%02d", sexa.minute) + ":"
-            + String(format: "%03.1f", sexa.radical)
+            + String(format: "%04.1f", sexa.second)
         
     }
 }

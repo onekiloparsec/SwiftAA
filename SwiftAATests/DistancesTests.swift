@@ -19,6 +19,7 @@ class DistancesTests: XCTestCase {
         XCTAssertEqual(AstronomicalUnit(4.0).inLightYears, 4.0*AU2ly)
         
         AssertEqual(Meter(2.0).inAstronomicalUnits, AstronomicalUnit(2.0/AU2m))
+        AssertEqual(Parsec(3.0).inAstronomicalUnits, AstronomicalUnit(3.0/AU2pc))
     }
 
 }
