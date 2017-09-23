@@ -13,7 +13,7 @@
     <a title="SwiftAA  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (66% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (69% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -60,9 +60,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Pluto.html">Pluto</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/Saturn.html">Saturn</a>
@@ -204,6 +201,9 @@
                 <a href="Protocols/PlanetaryBase.html">PlanetaryBase</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
               </li>
               <li class="nav-group-task">
@@ -284,6 +284,9 @@
                 <a href="Structs/Radian.html">Radian</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/RiseTransitSetTimesDetails.html">RiseTransitSetTimesDetails</a>
               </li>
               <li class="nav-group-task">
@@ -336,16 +339,16 @@
 everything about meteors.</p>
 
 <p>SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
-<em>Astronomical Algorithms</em>, by Jean Meeus. This C++ package is called AA+ (see below). AA+ also includes additional algorithms of the
-<a href="https://en.wikipedia.org/wiki/VSOP_(planets)%20framework,%20and%20includes%20the%20complete%20support%20for%20the%20ELP/MPP02%20theory">VSOP87</a>. 
-Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical.</p>
+<em>Astronomical Algorithms</em>, by Jean Meeus (<a href="https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus">Amazon</a>). This C++ package is called <strong>AA+</strong> (see below). AA+ also includes additional algorithms of the
+<a href="https://en.wikipedia.org/wiki/VSOP_(planets)">VSOP87</a> framework, and includes the complete support for the ELP/MPP02 theory. 
+Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.</p>
 
-<p>But on top of this, <strong>SwiftAA provides modern APIs</strong> taking advantage of the expressiveness of Swift and its various modern
+<p>But <strong>SwiftAA provides modern APIs</strong>, taking advantage of the expressiveness of Swift and its various modern
 syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-completeness and ease of use. In particular, SwiftAA provides a lot stronger <strong>units safety</strong> compared to C++ APIs. </p>
+the completeness and ease of use. In particular, <strong>SwiftAA provides units safety</strong> a lot stronger compared to C++ APIs. </p>
 
-<p>Moreover, SwiftAA intends to provide a much improved unit tests coverage. In fact, unit tests are being carefully written
-with data directly taken from Jean Meeus&rsquo; AA textbook, AA+ own tests, USNO, SkySafari and Xephem (and thus trying to achieve a
+<p>Moreover, <strong>SwiftAA has a much larger unit tests coverage</strong>. In fact, unit tests are being carefully written
+with data directly taken from Jean Meeus&rsquo; textbook, AA+ own tests, <a href="http://www.usno.navy.mil">USNO</a>, <a href="https://skysafariastronomy.com">SkySafari</a> and <a href="http://www.clearskyinstitute.com/xephem/">Xephem</a> (and thus trying to achieve a
 probably hypothetical consistency between these sources).</p>
 <h1 id='documentation' class='heading'>Documentation</h1>
 
@@ -367,19 +370,19 @@ which retains its own licence. Quoting the <a href="http://www.naughter.com/aa.h
 <p>Using <a href="https://github.com/Carthage/Carthage">Carthage</a>: add <code>github &quot;onekiloparsec/SwiftAA&quot;</code> to your <code>Cartfile</code> and then run <code>carthage update</code>.</p>
 
 <p>Using <a href="http://cocoapods.org/">CocoaPods</a>: add <code>pod &#39;SwiftAA&#39;</code> to your <code>Podfile</code> and then run <code>pod update</code>. </p>
-<h1 id='introduction' class='heading'>Introduction</h1>
+<h1 id='notes' class='heading'>Notes</h1>
 
 <p>The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
 <q>Astronomical Algorithms</q>, found in the reference textbook by Jean Meeus 
 (purchasable from <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011">Amazon</a>).
 To make the most of this code, you&rsquo;d rather have a copy of the book with you.</p>
 
-<p>As the author of the app iObserve (for <a href="http://onekilopars.ec/apps#iobserve">Mac</a> and <a href="http://www.onekilopars.ec/apps/#iobserve-touch">iPad</a>), I have
+<p>As the author of the app iObserve (for <a href="http://onekilopars.ec/apps#iobserve">macOS</a> and <a href="http://www.onekilopars.ec/apps/#iobserve-touch">iOS/iPad</a>), I have
 myself worked a lot on implementing some of the AA algorithms for my needs. However, to push iObserve to the next level,
 I need to put a lot more work on these algorithms. </p>
 
-<p>P.J. Naughter has kindly agreed to let me create a public repo with his code. My intention is to write a wrapper around it,
-to bring the AA+ framework to Apple&rsquo;s Swift realm (and Objective-C along the way). Pull requests will be accepted 
+<p>P.J. Naughter has kindly agreed to let me create a public repo with his code. My goal is to write a wrapper around it,
+to bring the AA+ framework to Apple&rsquo;s Swift realm (and Objective-C along the way). Pull requests are accepted 
 only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
 to the original source (see the <a href="http://www.naughter.com/aa.html">AA+ website</a>).</p>
 <h1 id='caution' class='heading'>Caution</h1>
@@ -388,12 +391,10 @@ to the original source (see the <a href="http://www.naughter.com/aa.html">AA+ we
 textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
 should be careful. For a good example of a complete implementation of such transformations, see the 
 <a href="http://docs.astropy.org/en/stable/coordinates/index.html">AstroPy excellent package</a>.</p>
-
-<p>The implementation of modern convention for coordinates, as in AstroPy, is planned for v2.1.</p>
 <h1 id='notes-and-conventions' class='heading'>Notes and Conventions</h1>
 
 <p>Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
-is to build an Objective-C(++) layer that follow <em>strictly</em> the methods and interfaces of the underlying
+was to build an Objective-C(++) layer that follow <em>strictly</em> the methods and interfaces of the underlying
 C++ library. Only the name of some variables were a bit <q>Objective-C-fied</q> (to avoid prefix them with the one-letter type, 
 &lsquo;b&rsquo; for boolean etc&rsquo;).</p>
 
@@ -401,9 +402,7 @@ C++ library. Only the name of some variables were a bit <q>Objective-C-fied</q> 
 Objective-C. KPC stands for <q>kiloparsec</q> and is <q>my</q> usual prefix. I chose to keep the AA prefix that belongs to the C++
 library as well. Hence the (rather long) 5-letters <em>KPCAA</em> prefix of all methods.</p>
 
-<p>These constraints come from the fact that no C++ code can be written directly alongside Swift code (in the same file). 
-And Swift doesn&rsquo;t have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper
-around it, with name prefixes.</p>
+<p>The constraint of having an Objective-C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn&rsquo;t have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes.</p>
 <h1 id='author' class='heading'>Author</h1>
 
 <p>Cédric Foellmi, a.k.a. <strong><a href="https://twitter.com/onekiloparsec">@onekiloparsec</a></strong> (<a href="https://onekilopars.ec">website</a>). <br/>
@@ -412,7 +411,7 @@ around it, with name prefixes.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-17)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

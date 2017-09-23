@@ -14,7 +14,7 @@
     <a title="JulianDay Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (66% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -61,9 +61,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Pluto.html">Pluto</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Saturn.html">Saturn</a>
@@ -205,6 +202,9 @@
                 <a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
               </li>
               <li class="nav-group-task">
@@ -283,6 +283,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Radian.html">Radian</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/RiseTransitSetTimesDetails.html">RiseTransitSetTimesDetails</a>
@@ -1037,9 +1040,9 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA9JulianDay21cumulativeLeapSecondsFT_S0_"></a>
+                    <a name="/s:FV7SwiftAA9JulianDay21cumulativeLeapSecondsFT_VS_6Second"></a>
                     <a name="//apple_ref/swift/Method/cumulativeLeapSeconds()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA9JulianDay21cumulativeLeapSecondsFT_S0_">cumulativeLeapSeconds()</a>
+                    <a class="token" href="#/s:FV7SwiftAA9JulianDay21cumulativeLeapSecondsFT_VS_6Second">cumulativeLeapSeconds()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1047,19 +1050,24 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Return the total of leap seconds added to the UTC since their introduction in 1972. 
+Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.navy.mil/leapsec.html</a> for a thorough explanation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cumulativeLeapSeconds</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Second.html">Second</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The total number of leap seconds accumulated since their introduction until the given JD.</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L184-L186">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L188-L190">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1089,7 +1097,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L188-L190">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L192-L194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1119,7 +1127,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L192-L194">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L196-L198">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1149,7 +1157,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L196-L198">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L200-L202">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1179,7 +1187,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L200-L202">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L204-L206">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1209,7 +1217,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L204-L206">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L208-L210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1239,7 +1247,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L208-L210">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L212-L214">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1269,7 +1277,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L212-L214">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L216-L218">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1303,7 +1311,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L221-L227">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L225-L231">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1313,7 +1321,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-17)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

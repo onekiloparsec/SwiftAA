@@ -14,7 +14,7 @@
     <a title="ArcSecond Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (66% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (69% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -61,9 +61,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Pluto.html">Pluto</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Saturn.html">Saturn</a>
@@ -205,6 +202,9 @@
                 <a href="../Protocols/PlanetaryBase.html">PlanetaryBase</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryDiameters.html">PlanetaryDiameters</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
               </li>
               <li class="nav-group-task">
@@ -283,6 +283,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Radian.html">Radian</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RiseTransitSetTimes.html">RiseTransitSetTimes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/RiseTransitSetTimesDetails.html">RiseTransitSetTimesDetails</a>
@@ -432,9 +435,9 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV7SwiftAA9ArcSecond12inArcminutesVS_9ArcMinute"></a>
-                    <a name="//apple_ref/swift/Property/inArcminutes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA9ArcSecond12inArcminutesVS_9ArcMinute">inArcminutes</a>
+                    <a name="/s:vV7SwiftAA9ArcSecond12inArcMinutesVS_9ArcMinute"></a>
+                    <a name="//apple_ref/swift/Property/inArcMinutes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7SwiftAA9ArcSecond12inArcMinutesVS_9ArcMinute">inArcMinutes</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -449,7 +452,7 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inArcminutes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inArcMinutes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcMinute.html">ArcMinute</a></span></code></pre>
 
                         </div>
                       </div>
@@ -522,9 +525,9 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA9ArcSecond8distanceFT_VS_16AstronomicalUnit"></a>
+                    <a name="/s:FV7SwiftAA9ArcSecond8distanceFT_VS_6Parsec"></a>
                     <a name="//apple_ref/swift/Method/distance()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA9ArcSecond8distanceFT_VS_16AstronomicalUnit">distance()</a>
+                    <a class="token" href="#/s:FV7SwiftAA9ArcSecond8distanceFT_VS_6Parsec">distance()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -532,23 +535,60 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a new distance in Astronomical Units, the arcsecond being understood as a parallax.</p>
+                        <p>Returns a new distance in Astronomical Units, the arcsecond being understood as a 
+geometrical parallax.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distance</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distance</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Parsec.html">Parsec</a></span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The AU object.</p>
+                        <p>The distance of the object.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L146-L148">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L147-L150">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7SwiftAA9ArcSecond40distanceFromEquatorialHorizontalParallaxFT_VS_16AstronomicalUnit"></a>
+                    <a name="//apple_ref/swift/Method/distanceFromEquatorialHorizontalParallax()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7SwiftAA9ArcSecond40distanceFromEquatorialHorizontalParallaxFT_VS_16AstronomicalUnit">distanceFromEquatorialHorizontalParallax()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a new distance in Astronomical Units, the arcsecond being understood as a
+equatorial horizontal parallax, that is the difference between the topocentric and
+the geocentric coordinates of a solar system body (Sun, planet or comets).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distanceFromEquatorialHorizontalParallax</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/AstronomicalUnit.html">AstronomicalUnit</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The distance of the object.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L157-L159">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -587,7 +627,7 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-17)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
