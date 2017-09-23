@@ -23,6 +23,10 @@ import Foundation
 /// The displacement, at any time, of the mean center of the disk from the apparent
 /// center, represents the amount of libration, and is measured by the selenographic
 /// coordinates of the apparent center of the disk at that time.
+/// AA (p.372): The selenographic longitude and latitude of the Earth, as given
+/// in the almanacs, are the geocentric selenographic coordinates of the apparent
+/// central point of the disk. At this point on the surface of the Moon,
+/// the Earth is in the zenith.
 public struct SelenographicCoordinates {
     /// Selenographic longitude are measured from the lunar meridian that passes
     /// through the mean center of the apparent disk, positive in the direction of
@@ -40,7 +44,14 @@ public struct SelenographicCoordinates {
     }
 }
 
-/// The Earth's Moon object.
+public extension SelenographicCoordinates {
+    public static func == (lhs: SelenographicCoordinates, rhs: SelenographicCoordinates) -> Bool {
+        return lhs.longitude == rhs.longitude && lhs.latitude == rhs.latitude
+    }
+}
+
+
+/// The Earth's Moon.
 public class Moon : Object, CelestialBody {
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
         [unowned self] in
@@ -59,7 +70,10 @@ public class Moon : Object, CelestialBody {
 
     /// The diameter of the Moon.
     public let diameter: Meter = 3476000.0
-        
+
+    /// The standard/mean apparent altitude for rise and set of the Moon. See AA p.102.
+    public static let apparentRiseSetAltitude = Degree(0.125)
+
     // MARK: - CelestialBody
     
     /// Radius vector of the Moon, that is, its distance from Earth (not Sun).
@@ -135,41 +149,58 @@ public class Moon : Object, CelestialBody {
 
     // MARK: - KPCAAMoon
 
+    /// The mean longitude of the Moon
     public var meanLongitude: Degree {
         get { return Degree(KPCAAMoon_MeanLongitude(self.julianDay.value)) }
     }
 
+    /// The mean elongation of the Moon
     public var meanElongation: Degree {
         get { return Degree(KPCAAMoon_MeanElongation(self.julianDay.value)) }
     }
 
+    /// The mean anomaly of the moon
     public var meanAnomaly: Degree {
         get { return Degree(KPCAAMoon_MeanAnomaly(self.julianDay.value)) }
     }
 
+    /// The argument of Latitude
     public var argumentOfLatitude: Degree {
         get { return Degree(KPCAAMoon_ArgumentOfLatitude(self.julianDay.value)) }
     }
 
+    /// The mean longitude of perigee
     public var meanLongitudeOfPerigee: Degree {
         get { return Degree(KPCAAMoon_MeanLongitudePerigee(self.julianDay.value)) }
     }
-
-    public func longitudeOfAscendingNode(_ mean: Bool = true) -> Degree {
-        if mean {
-            return Degree(KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay.value))
-        }
-        else {
-            return Degree(KPCAAMoon_TrueLongitudeAscendingNode(self.julianDay.value))
-        }
+    
+    /// The mean longitude of the ascending node
+    public var meanLongitudeOfAscendingNode: Degree {
+        get { return Degree(KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay.value)) }
     }
+
+    /// The true longitude of the ascending node.
+    public var trueLongitudeOfAscendingNode: Degree {
+        get { return Degree(KPCAAMoon_TrueLongitudeAscendingNode(self.julianDay.value)) }
+    }
+
 
     // MARK: - Static Methods
     
+    
+    /// Transform the distance (radius vector) in horizontal parallax,
+    ///
+    /// - Parameter radiusVector: The radius vector of the Moon
+    /// - Returns: The horizontal parallax, in degrees
     static func horizontalParallax(from radiusVector: AstronomicalUnit) -> Degree {
         return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector.value))
     }
     
+    
+    /// Transform the horizontal parallax into the distance (radius vector)
+    ///
+    /// - Parameter horizontalParallax: The horizontal parallax of the Moon.
+    /// - Returns: The distance (radius vector) in astronomical units.
     static func radiusVector(from horizontalParallax: Degree) -> AstronomicalUnit {
         return AstronomicalUnit(KPCAAMoon_HorizontalParallaxToRadiusVector(horizontalParallax.value))
     }
@@ -214,17 +245,31 @@ public class Moon : Object, CelestialBody {
 
     // MARK: - KPCAAMoonPhysicalDetails
 
-    
-    /// AA (p.372): The selenographic longitude and latitude of the Earth, as given
-    /// in the almanacs, are the geocentric selenographic coordinates of the apparent
-    /// central point of the disk. At this point on the surface of the Moon,
-    /// the Earth is in the zenith.
+
+    /// Computes the optical librations of the Moon. That is the displacement, at any time, of the mean center
+    /// of the disk from the apparent center, measured by the selenographic coordinates of the apparent
+    /// center of the disk at that time. Optical librations are due to variations of the geometric position
+    /// of the Earth relative to the lunar surface during the course of the orbital motion of the Moon.
+    ///
+    /// - Returns: a new instance of SelenographicCoordinates
+    public func geocentricOpticalLibration() -> SelenographicCoordinates {
+        return SelenographicCoordinates(longitude: Degree(self.geocentricPhysicalDetails.ldash), latitude: Degree(self.geocentricPhysicalDetails.bdash))
+    }
+
+    /// Computes the physical librations of the Moon, which is due to the actual rotational motion of the Moon
+    /// about its mean rotation. This is much smaller than the optical libration.
+    ///
+    /// - Returns: a new instance of SelenographicCoordinates
+    public func geocentricPhysicalLibration() -> SelenographicCoordinates {
+        return SelenographicCoordinates(longitude: Degree(self.geocentricPhysicalDetails.ldash2), latitude: Degree(self.geocentricPhysicalDetails.bdash2))
+    }
+
+    /// Computes the total librations of the Moon, which is the sum of the optical and physical librations.
     ///
     /// - Returns: a new instance of SelenographicCoordinates
     public func geocentricTotalLibration() -> SelenographicCoordinates {
         return SelenographicCoordinates(longitude: Degree(self.geocentricPhysicalDetails.l), latitude: Degree(self.geocentricPhysicalDetails.b))
     }
-
     
     /// AA (p.375): For precise reduction sof observations, the geocentric values
     /// of the librations and position angle of the axis should be reduced to the
@@ -291,9 +336,13 @@ public class Moon : Object, CelestialBody {
     
     // MARK: - KPCAAMoonPerigeeApogee
     
+    /// Computes the date of the perigee.
+    ///
+    /// - Parameter mean: If `true`, the mean value is computed. Otherwise, the `true` one...
+    /// - Returns: A julian day.
     public func perigee(_ mean: Bool = true) -> JulianDay {
         // See AA p.355 about rounding
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded(.toNearestOrAwayFromZero)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded()
         if mean {
             return JulianDay(KPCAAMoonPerigeeApogee_MeanPerigee(k))
         }
@@ -302,9 +351,13 @@ public class Moon : Object, CelestialBody {
         }
     }
 
+    /// Computes the date of the apogeee.
+    ///
+    /// - Parameter mean: If `true`, the mean value is computed. Otherwise, the `true` one...
+    /// - Returns: A julian day.
     public func apogee(_ mean: Bool = true) -> JulianDay {
         // See AA p.355 about rounding
-        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded(.toNearestOrAwayFromZero)
+        let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear).rounded()
         let shift = (k < 0) ? -0.5 : 0.5
         if mean {
             return JulianDay(KPCAAMoonPerigeeApogee_MeanApogee(k+shift))
@@ -315,11 +368,18 @@ public class Moon : Object, CelestialBody {
         }
     }
     
+    
+    /// Computes the parallax of the perigee
+    ///
+    /// - Returns: The parallax in arcseconds.
     public func perigeeParallax() -> ArcSecond {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         return Degree(KPCAAMoonPerigeeApogee_PerigeeParallax(k)).inArcSeconds
     }
 
+    /// Computes the parallax of the apogeee
+    ///
+    /// - Returns: The parallax in arcseconds.
     public func apogeeParallax() -> ArcSecond {
         let k = KPCAAMoonPerigeeApogee_K(self.julianDay.date.fractionalYear)
         return Degree(KPCAAMoonPerigeeApogee_ApogeeParallax(k)).inArcSeconds
@@ -351,7 +411,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - returns: The date of the greatest declination of the Moon
     public func dateOfGreatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> JulianDay {
-        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear)
+        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear).rounded()
         if mean {
             return JulianDay(KPCAAMoonMaxDeclinations_MeanGreatestDeclination(k, northernly))
         }
@@ -367,7 +427,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - returns: The greatest declination of the Moon
     public func greatestDeclination(_ mean: Bool = true, northernly: Bool = true) -> Degree {
-        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear)
+        let k = KPCAAMoonMaxDeclinations_K(self.julianDay.date.fractionalYear).rounded()
         if mean {
             return Degree(KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(k))
         }
@@ -428,14 +488,23 @@ public class Moon : Object, CelestialBody {
     
     // MARK: - Moon Nodes
     
-    // TODO: Check Units
-
-    public func passageThroughNode() -> Double {
-        let k = KPCAAMoonNodes_K(self.julianDay.date.fractionalYear)
-        return KPCAAMoonNodes_PassageThroNode(k)
-    }
     
-    public static let apparentRiseSetAltitude = Degree(0.125) // Mean value, see AA p.102
+    /// Computes the date of the passage of the Moon through the ascending node.
+    ///
+    /// - Returns: A julian day.
+    public func passageThroughAscendingNode() -> JulianDay {
+        let k = KPCAAMoonNodes_K(self.julianDay.date.fractionalYear).rounded()
+        return JulianDay(KPCAAMoonNodes_PassageThroNode(k))
+    }
+
+    /// Computes the date of the passage of the Moon through the descending node.
+    ///
+    /// - Returns: A julian day.
+    public func passageThroughDescendingNode() -> JulianDay {
+        let k = KPCAAMoonNodes_K(self.julianDay.date.fractionalYear).rounded() + 0.5 // See AA p.363.
+        return JulianDay(KPCAAMoonNodes_PassageThroNode(k))
+    }
+
     
 }
 

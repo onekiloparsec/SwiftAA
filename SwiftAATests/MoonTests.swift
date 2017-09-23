@@ -128,9 +128,59 @@ class MoonTests: XCTestCase {
     // See AA p.357, Example 50.a
     func testApogeeTimeAndParallax() {
         let moon = Moon(julianDay: JulianDay(2447442.8191))
-        // Test accuracies not as good as I expected compated to the book.
+        // Test accuracies not as good as I expected compared to the book. But note that the apogee parallax is 3240.679 which 
+        // is precisely the number of the sum of the term in Table 50.B. There could be a little mistake in the book here.
         AssertEqual(moon.apogee(false), JulianDay(2447442.3537), accuracy: JulianDay(0.001))
         AssertEqual(moon.apogeeParallax(), ArcSecond(3240.679), accuracy: ArcSecond(2.0))
+    }
+    
+    // See AA p.365, Example 51.a
+    func testPassageThroughNodes() {
+        let moon = Moon(julianDay: JulianDay(year: 1987, month: 5, day: 15))
+        AssertEqual(moon.passageThroughAscendingNode(), JulianDay(2446938.76803), accuracy: JulianDay(0.00001))
+    }
+    
+    // See AA p.370, Example 52.a
+    func testGreatestDeclinationsNorth() {
+        let moon = Moon(julianDay: JulianDay(year: 1988, month: 12, day: 12)) // ~ 1988.95 as in the book
+        AssertEqual(moon.dateOfGreatestDeclination(false, northernly: true), JulianDay(2447518.3347), accuracy: JulianDay(0.0001))
+        AssertEqual(moon.greatestDeclination(false, northernly: true), Degree(28.1562), accuracy: Degree(0.0001))
+    }
+
+    // See AA p.370, Example 52.b
+    func testGreatestDeclinationsSouth() {
+        let moon = Moon(julianDay: JulianDay(year: 2049, month: 4, day: 20)) // -> k = 659 as in the book
+        AssertEqual(moon.dateOfGreatestDeclination(false, northernly: false), JulianDay(2469553.0834), accuracy: JulianDay(0.0001))
+        AssertEqual(moon.greatestDeclination(false, northernly: false), Degree(22.1384), accuracy: Degree(0.0001))
+    }
+
+    // See AA p.374, Example 53.a
+    func testLibrations() {
+        let moon = Moon(julianDay: JulianDay(year: 1992, month: 4, day: 12))
+        let optical = moon.geocentricOpticalLibration()
+        let physical = moon.geocentricPhysicalLibration()
+        let total = moon.geocentricTotalLibration()
+        
+        AssertEqual(optical.longitude, -1.206.degrees, accuracy: 0.005.degrees)
+        AssertEqual(optical.latitude, 4.194.degrees, accuracy: 0.005.degrees)
+        
+        AssertEqual(physical.longitude, -0.025.degrees, accuracy: 0.001.degrees)
+        AssertEqual(physical.latitude, 0.006.degrees, accuracy: 0.001.degrees)
+        
+        AssertEqual(total.longitude, -1.23.degrees, accuracy: 0.01.degrees)
+        AssertEqual(total.latitude, 4.20.degrees, accuracy: 0.01.degrees)
+        
+        AssertEqual(moon.rotationAxisPositionAngle, Degree(15.08), accuracy: Degree(0.01))
+    }
+    
+    // See AA p.377, Example 53.b
+    func testSelenographicDetails() {
+        let moon = Moon(julianDay: JulianDay(year: 1992, month: 4, day: 12))
+        
+        let pos = moon.selenographicPositionOfTheSun
+        AssertEqual(pos.longitude, Degree(67.89), accuracy: Degree(0.01))
+        AssertEqual(pos.latitude, Degree(1.46), accuracy: Degree(0.01))
+        AssertEqual(pos.colongitude, Degree(22.11), accuracy: Degree(0.01))
     }
 }
 
