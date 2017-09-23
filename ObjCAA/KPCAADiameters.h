@@ -43,7 +43,10 @@ double KPCAADiameters_AsteroidDiameter(double H, double A);
 double KPCAADiameters_ApparentAsteroidDiameter(double H, double A);
 
 // SwiftAA Additions
-    
+
+double KPCAADiameters_EquatorialSemiDiameterA(KPCAAPlanetStrict planet, double Delta);
+double KPCAADiameters_PolarSemiDiameterA(KPCAAPlanetStrict planet, double Delta);
+
 double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta);
 double KPCAADiameters_PolarSemiDiameterB(KPCAAPlanet planet, double Delta);
     

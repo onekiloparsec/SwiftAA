@@ -9,8 +9,16 @@
 import Foundation
 
 
-/// The Planet class encompasses all the shared properties of the planets, to be understood as "non-Earth" planets.
-public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, ElementsOfPlanetaryOrbit, EllipticalPlanetaryDetails, IlluminatedFraction  {
+/// The Planet class encompasses all the shared properties of the planets, to be understood as "non-Earth" 
+/// and "non-dwarf" planets.
+public class Planet: Object,
+    CelestialBody,
+    PlanetaryBase,
+    PlanetaryPhenomena,
+    ElementsOfPlanetaryOrbit,
+    EllipticalPlanetaryDetails,
+    IlluminatedFraction,
+    PlanetaryDiameters {
 
     /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. :-)
     public class var averageColor: Color {
@@ -50,17 +58,7 @@ public class Planet: Object, CelestialBody, PlanetaryBase, PlanetaryPhenomena, E
     public var radiusVector: AstronomicalUnit {
         get { return AstronomicalUnit(KPCAAEclipticalElement_RadiusVector(self.julianDay.value, self.planet, self.highPrecision)) }
     }
-    
-    /// The equatorial semi diameter of the planet
-    public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.radiusVector.value)) }
-    }
-    
-    /// The polar semi diameter of the planet
-    public var polarSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.radiusVector.value)) }
-    }
-    
+        
     /// the standard altitude of the planet, that is, the geometric altitude of the center of the body at the time
     /// of apparent rising or setting. There is a value for the stars and planets, and one for the Sun.
     /// See AA p.101 for more explanations

@@ -10,7 +10,6 @@ import Foundation
 
 
 /// Basic properties of an orbiting object. Used by solar system planets, and the Earth' Moon, and the Sun.
-/// Default implementation for planets is located in PlanetaryBase extension.
 
 public protocol CelestialBody: ObjectBase {
     /// The radius vector (=distance to the Sun)
@@ -76,16 +75,9 @@ public protocol CelestialBody: ObjectBase {
     ///   - coordinates: The point on Earth from which one computes the arc.
     /// - Returns: The angle of the so-called diurnal arc
     func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?)
-
-    /// The equatorial semi diameter of the object
-    var equatorialSemiDiameter: Degree { get }
-    
-    /// The polar semi diameter of the object.
-    var polarSemiDiameter: Degree { get }
     
     /// Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)
     static var apparentRiseSetAltitude: Degree { get }
-    
 }
 
 public extension CelestialBody {
