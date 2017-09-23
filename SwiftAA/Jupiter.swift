@@ -46,12 +46,12 @@ public class Jupiter: Planet {
     }
 
     /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
-    public var planetocentricDeclinationEarth: Degree {
+    public var planetocentricDeclinationOfTheEarth: Degree {
         return Degree(self.physicalDetails.DE)
     }
     
     /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
-    public var planetocentricDeclinationSun: Degree {
+    public var planetocentricDeclinationOfTheSun: Degree {
         return Degree(self.physicalDetails.DS)
     }
 
