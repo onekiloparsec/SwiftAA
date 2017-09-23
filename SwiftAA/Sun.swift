@@ -11,11 +11,15 @@ import Foundation
 /// The Sun.
 public class Sun: Object, CelestialBody {
     
+    /// Accessor to all values of the underlying physical details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var physicalDetails: KPCAAPhysicalSunDetails = {
         [unowned self] in
         return KPCAAPhysicalSun_CalculateDetails(self.julianDay.value, self.highPrecision)
         }()
     
+    /// Accessor to all values of the underlying eclipse details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var eclipseDetails: KPCAASolarEclipseDetails = {
         [unowned self] in
         KPCAAEclipses_CalculateSolar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
@@ -26,10 +30,12 @@ public class Sun: Object, CelestialBody {
     
     // Celestial Body
     
+    /// The apparent equatorial semi diameter of the sun.
     public var equatorialSemiDiameter: Degree {
         get { return Degree(KPCAADiameters_SunSemidiameterA(self.radiusVector.value)) }
     }
     
+    /// The apparent polar semi diameter of the sun
     public var polarSemiDiameter: Degree {
         get { return self.equatorialSemiDiameter }
     }
@@ -138,6 +144,7 @@ public class Sun: Object, CelestialBody {
         return Day(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / (24.0 * 60.0))
     }
     
+    /// The default apparent altitude of the sun to compute rise and set times.
     public static let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
     
     
