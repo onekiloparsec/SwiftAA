@@ -86,7 +86,15 @@ public enum CelestialBodyTransitError: Error {
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
+
+/// KPCAAPlanet is an enum for all planets, being "true" planets, as it was for a long time,
+/// or not (like DwarfPlanet), that is, including Pluto.
 extension KPCAAPlanet: CustomStringConvertible {
+    
+    /// Return the KPCAAPlanet enum value from a planet name string.
+    ///
+    /// - Parameter string: The planet name.
+    /// - Returns: The KPCAAPlanet enum value
     public static func fromString(_ string: String) -> KPCAAPlanet {
         if string == "Mercury" {
             return .Mercury
@@ -120,6 +128,7 @@ extension KPCAAPlanet: CustomStringConvertible {
         }
     }
     
+    /// Return the planet name according to the enum value.
     public var description: String {
         switch self {
         case .Mercury:
@@ -151,7 +160,14 @@ extension KPCAAPlanet: CustomStringConvertible {
 // planet enum parameters in Obj-C functions. The code here is the consequence of
 // choosing to make switch statments inside Obj-C layer, rather than in Swift one.
 
+///  KPCAAPlanetStrict is an enum for all true planets, that is, excluding the now official
+/// Dwarf Planet category, that is, Pluto.
 public extension KPCAAPlanetStrict {
+    
+    /// Return the equivalent KPCAAPlanetStrict enum value from the KPCAAPlanet enum.
+    ///
+    /// - Parameter planet: The KPCAAPlanet enum value
+    /// - Returns: The equivalent KPCAAPlanetStrict enum value
     static func fromPlanet(_ planet: KPCAAPlanet) -> KPCAAPlanetStrict {
         switch planet {
         case .Pluto:
@@ -163,6 +179,7 @@ public extension KPCAAPlanetStrict {
 }
 
 public extension KPCPlanetaryObject {
+    
     /// Returns the planetary object index from a given planet index.
     ///
     /// - Parameter planet: The planet index.

@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
  KPCAAPlanet is an enum for all planets, being "true" planets, as it was for a long time, 
  or not (like DwarfPlanet), that is, including Pluto.
  */
+
 typedef NS_ENUM(NSInteger, KPCAAPlanet) {
     Mercury = mercury,
     Venus = venus,

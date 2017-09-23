@@ -17,7 +17,7 @@ public protocol PlanetaryDiameters: EllipticalPlanetaryDetails {
     func equatorialSemiDiameter(usingOldValues: Bool) -> Degree
 
     /// The polar semi diameter of the planet. See `equatorialSemiDiameter` about "A" et "B" values.
-    /// Nota that for all planets but Jupiter and Saturn, the polarSemiDiameter is identical to the equatorial one.
+    /// Note that for all planets but Jupiter and Saturn, the polarSemiDiameter is identical to the equatorial one.
     func polarSemiDiameter(usingOldValues: Bool) -> Degree
 }
 
