@@ -182,6 +182,13 @@ class MoonTests: XCTestCase {
         AssertEqual(pos.latitude, Degree(1.46), accuracy: Degree(0.01))
         AssertEqual(pos.colongitude, Degree(22.11), accuracy: Degree(0.01))
     }
+    
+    // See AA p.346, Example 48.a
+    func testPositionAngleOfBrightLimb() {
+        let moon = Moon(julianDay: JulianDay(year: 1992, month: 4, day: 12))
+        AssertEqual(moon.positionAngleOfTheBrightLimb(), Degree(285.0), accuracy: Degree(0.1))
+    }
+
 }
 
 
