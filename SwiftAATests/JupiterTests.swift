@@ -14,4 +14,14 @@ class JupiterTests: XCTestCase {
     func testAverageColor() {
         XCTAssertNotEqual(Jupiter.averageColor, Color.white)
     }
+    
+    func testMoonsPresence() {
+        let jd = JulianDay(Date())
+        XCTAssertEqual(Jupiter(julianDay: jd).moons.count, 4)
+    }
+
+    func testSemiDiameters() {
+        let jd = JulianDay(Date())
+        Jupiter(julianDay: jd).equatorialSemiDiameter
+    }
 }
