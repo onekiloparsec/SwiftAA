@@ -136,4 +136,16 @@ class AnglesTests: XCTestCase {
         XCTAssertEqual(ArcSecond(1).distance().value, 1.0)
         XCTAssertEqual(ArcSecond(10).distance().value, 0.1)
     }
+    
+    func testRadianConversions() {
+        XCTAssertEqual(Radian(Double.pi).inHours.value, 12.0)
+        XCTAssertEqual(Radian(2*Double.pi).inHours.value, 24.0)
+    }
+    
+    func testDescriptionPresence() {
+        XCTAssertNotNil(Degree(1.0).description)
+        XCTAssertNotNil(ArcMinute(1.0).description)
+        XCTAssertNotNil(ArcSecond(1.0).description)
+        XCTAssertNotNil(Radian(1.0).description)
+    }
 }
