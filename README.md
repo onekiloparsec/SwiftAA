@@ -73,6 +73,8 @@ Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` 
 Notes
 ============
 
+AA+
+---
 The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
 "Astronomical Algorithms", found in the reference textbook by Jean Meeus 
 (purchasable from [Amazon](http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011)).
@@ -88,8 +90,8 @@ only about the Objective-C and Swift code. The AA+ code changes must be directed
 to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
 
 
-Caution
-========
+Caution on Coordinates
+-----
 
 The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the
 textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
@@ -97,8 +99,8 @@ should be careful. For a good example of a complete implementation of such trans
 [AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html).
 
 
-Notes and Conventions
-=====================
+Prefixes & Conventions
+----
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
 was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
