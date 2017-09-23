@@ -13,7 +13,7 @@ class DistancesTests: XCTestCase {
 
     func testBasicConversions() {
         AssertEqual(Kilometer(12345.6789).inMeters, Meter(12345678.9))
-        AssertEqual(Meter(12345.6789).inKilometers, Meter(12.3456789))
+        AssertEqual(Meter(12345.6789).inKilometers, Kilometer(12.3456789), accuracy: Kilometer(0.0000001)) // rounding error
         
         AssertEqual(AstronomicalUnit(2.0).inParsecs, Parsec(2.0*AU2pc))
         AssertEqual(AstronomicalUnit(3.0).inMeters, Meter(3.0*AU2m))

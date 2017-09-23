@@ -89,7 +89,7 @@ public struct Meter: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current Meter in kilometers
-    public var inKilometers: Kilometer { return Kilometer(value * 1000.0) }
+    public var inKilometers: Kilometer { return Kilometer(value / 1000.0) }
     /// Transform the current Meter in AstronomicalUnit.
     public var inAstronomicalUnits: AstronomicalUnit { return AstronomicalUnit(value / AU2m) }
 
