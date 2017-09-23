@@ -16,12 +16,12 @@ public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,
     /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
     /// Implementation return the modern American Astronomical Almanac value instead of Mueller's
-    var magnitude: Double { get }
+    var magnitude: Magnitude { get }
     
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,
     /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
     /// Implementation return the old Muller's values.
-    var magnitudeMuller: Double { get }
+    var magnitudeMuller: Magnitude { get }
 }
 
 public extension IlluminatedFraction {
@@ -34,20 +34,20 @@ public extension IlluminatedFraction {
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,
     /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
     /// Implementation return the modern American Astronomical Almanac value instead of Mueller's
-    var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
-                                                          self.radiusVector.value,
-                                                          self.apparentGeocentricDistance.value,
-                                                          self.phaseAngle.value) }
+    var magnitude: Magnitude {
+        get { return Magnitude(KPCAAIlluminatedFraction_MagnitudeAA(self.planetaryObject,
+                                                                    self.radiusVector.value,
+                                                                    self.apparentGeocentricDistance.value,
+                                                                    self.phaseAngle.value)) }
     }
     
     /// The magnitude of the planet, which depends on the planet's distance to the Earth,
     /// its distance to the Sun and the phase angle i (Sun-planet-Earth).
     /// Implementation return the old Muller's values.
-    var magnitudeMuller: Double {
-        get { return KPCAAIlluminatedFraction_MagnitudeMuller(self.planetaryObject,
-                                                              self.radiusVector.value,
-                                                              self.apparentGeocentricDistance.value,
-                                                              self.phaseAngle.value) }
+    var magnitudeMuller: Magnitude {
+        get { return Magnitude(KPCAAIlluminatedFraction_MagnitudeMuller(self.planetaryObject,
+                                                                        self.radiusVector.value,
+                                                                        self.apparentGeocentricDistance.value,
+                                                                        self.phaseAngle.value)) }
     }
 }

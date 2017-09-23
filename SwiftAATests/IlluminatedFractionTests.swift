@@ -32,13 +32,13 @@ class IlluminatedFractionTests: XCTestCase {
     func testMagnitudeMullerVenus() {
         let jd = JulianDay(year: 1992, month: 12, day: 20)
         let venus = Venus(julianDay: jd)
-        XCTAssertEqualWithAccuracy(venus.magnitudeMuller, -3.8, accuracy: 0.05)
+        XCTAssertEqualWithAccuracy(venus.magnitudeMuller.value, -3.8, accuracy: 0.05)
     }
     
     func testMagnitudeVenus() {
         let jd = JulianDay(year: 1992, month: 12, day: 20)
         let venus = Venus(julianDay: jd)
-        XCTAssertEqualWithAccuracy(venus.magnitude, -4.2, accuracy: 0.05)
+        XCTAssertEqualWithAccuracy(venus.magnitude.value, -4.2, accuracy: 0.05)
     }
     
     // See AA. p.286
