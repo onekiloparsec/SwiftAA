@@ -69,7 +69,7 @@ public class Moon : Object, CelestialBody {
         get { return Meter(self.distance.value*1000.0).AU }
     }
 
-    /// Radius vector of the Moon, that is, its distance from Earth (not Sun), in kilometers
+    /// Convenience accessor of the Moon distance, that is, its distance from Earth (not Sun), in kilometers.
     public var distance: Kilometer {
         get { return Kilometer(KPCAAMoon_RadiusVector(self.julianDay.value)) }
     }
@@ -81,38 +81,57 @@ public class Moon : Object, CelestialBody {
 
     // MARK: Coordinates
     
-    public var eclipticCoordinates: EclipticCoordinates {
+    
+    /// The apparent ecliptic coordinates of the Moon. In AA p.342, Example 47.a, they are called geocentric longitude
+    /// and latitude. But apparent right ascension and declination are derived directly from them using standard
+    /// coordinates transformations.
+    /// These coordinates are 'apparent' coordinates because they include the effect of nutation in longitude.
+    /// It is important to provide the current julian day as epoch to get the right coordinates.
+    public var apparentEclipticCoordinates: EclipticCoordinates {
         get {
             let latitude = Degree.init(KPCAAMoon_EclipticLatitude(julianDay.value))
             let longitude = Degree.init(KPCAAMoon_EclipticLongitude(julianDay.value))
-            return EclipticCoordinates(lambda: longitude, beta: latitude)
+            return EclipticCoordinates(lambda: longitude, beta: latitude, epoch: self.julianDay)
         }
     }
     
-    public var apparentEclipticCoordinates: EclipticCoordinates {
-        get { return self.eclipticCoordinates }
-    }
-    
-    public var equatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeEquatorialCoordinates() }
-    }
-    
+    /// The apparent equatorial coordinates of the Moon, obtained from the `apparentEclipticCoordinates`.
     public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
+        /// Do not use .makeApparentEquatorialCoordinates as it will over-correct for nutation. 
+        get { return self.apparentEclipticCoordinates.makeEquatorialCoordinates() }
     }
 
-    /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
-    public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
-    }
-    
-    /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
-    public var polarSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
+    /// The ecliptic coordinates of the Moon. [WARN]: For now, return the apparent ones.
+    /// TODO: Is there any other coordinates one could find? Is it meaningful?
+    public var eclipticCoordinates: EclipticCoordinates {
+        get { return self.apparentEclipticCoordinates }
     }
 
-    // TODO: add topocentric semi diameters
+    /// The equatorial coordinates of the Moon. [WARN]: For now, return the apparent ones.
+    /// TODO: Is there any other coordinates one could find? Is it meaningful?
+    public var equatorialCoordinates: EquatorialCoordinates {
+        get { return self.apparentEquatorialCoordinates }
+    }
+
+    // MARK: - Diameters
+
+    /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
+    public var geocentricSemiDiameter: ArcSecond {
+        get { return ArcSecond(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
+    }
     
+    
+    /// This is the topocentric semi diameter of the moon, that is for an observer located somewhere on the surface of the Earth.
+    ///
+    /// - Parameter geographicCoordinates: The location of the observer on Earth. The altitude matters!
+    /// - Returns: The topocentric semi diameter of the Moon.
+    public func topocentricSemiDiameter(for geographicCoordinates: GeographicCoordinates) -> ArcSecond {
+        return ArcSecond(KPCAADiameters_TopocentricMoonSemidiameter(self.radiusVector.value, // Distance from Earth in AU
+                                                                    self.apparentEquatorialCoordinates.delta.value, // Apparent Declination in Degrees
+                                                                    self.hourAngle(for: geographicCoordinates).value, // Hour Angle in Hours
+                                                                    geographicCoordinates.latitude.value, // Latitude in Degrees
+                                                                    geographicCoordinates.altitude.value)) // Height above see level in meters (see AA p.82)
+    }
 
     // MARK: - KPCAAMoon
 
