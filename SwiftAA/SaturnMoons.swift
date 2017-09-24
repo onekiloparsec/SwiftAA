@@ -20,6 +20,15 @@ public struct SaturnianMoon {
     /// The name of the Moon
     public var name: String
 
+    /// The synodic period of revolution. See AA, Table 46.a
+    public var synodicPeriod: Day
+
+    /// The visual magnitude at mean opposition. See AA, Table 46.a
+    public var visualMagnitude: Magnitude
+
+    /// The diameter. See AA, Table 46.a
+    public var diameter: Kilometer
+
     /// Returns whether the Moon is in transit or not (i.e. in front of Jupiter disk).
     public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
     
@@ -38,9 +47,12 @@ public struct SaturnianMoon {
     /// - Parameters:
     ///   - name: The name of the Moon.
     ///   - details: The details of the Moon.
-    init(name: String, details: KPCAASaturnMoonDetails) {
+    init(name: String, details: KPCAASaturnMoonDetails, synodicPeriod: Day, visualMagnitude: Magnitude, diameter: Kilometer) {
         self.name = name
         self.details = details
+        self.synodicPeriod = synodicPeriod
+        self.visualMagnitude = visualMagnitude
+        self.diameter = diameter
     }
 
     public func rectangularCoordinates(_ apparent: Bool = true) -> KPCAA3DCoordinateComponents {
