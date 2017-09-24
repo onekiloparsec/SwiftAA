@@ -9,42 +9,25 @@
 import Foundation
 
 // AstronomicalObject inherits from CelestialBody to benefit from the generic calculation of Rise and Set Times.
-class AstronomicalObject: Object, CelestialBody {
-    private var objectName: String = ""
-    public private(set) var equatorialCoordinates: EquatorialCoordinates
-    
-    public var equatorialSemiDiameter: Degree = 0.0
-    public var polarSemiDiameter: Degree = 0.0
-    
-    public override var name: String { get { return self.objectName } }
-    
-    public init(name: String, coordinates: EquatorialCoordinates, julianDay: JulianDay) {
-        self.objectName = name
+open class AstronomicalObject: ObjectBase, CelestialBody {
+    public var name: String = ""
+    public fileprivate(set) var julianDay: JulianDay
+    public fileprivate(set) var highPrecision: Bool
+    public fileprivate(set) var equatorialCoordinates: EquatorialCoordinates
+
+    public init(name: String, coordinates: EquatorialCoordinates, julianDay: JulianDay, highPrecision: Bool = true) {
+        self.name = name
+        self.julianDay = julianDay
         self.equatorialCoordinates = coordinates
-        super.init(julianDay: julianDay)
+        self.highPrecision = highPrecision
     }
     
     public required init(julianDay: JulianDay, highPrecision: Bool) {
         fatalError("init(julianDay:highPrecision:) has not been implemented")
     }
-    
-    /// The radius vector (i.e. the distance to the Sun). Returns -1. Only for conformance to CelestialBody.
-    public var radiusVector: AstronomicalUnit {
-        get { return -1 }
-    }
-    
-    public var eclipticCoordinates: EclipticCoordinates {
-        get { return self.equatorialCoordinates.makeEclipticCoordinates() }
-    }
-    
-    public var apparentEclipticCoordinates: EclipticCoordinates {
-        get { return self.eclipticCoordinates }
-    }
 
-    public var apparentEquatorialCoordinates: EquatorialCoordinates {
-        get { return self.eclipticCoordinates.makeApparentEquatorialCoordinates() }
-    }
-    
+    /// The radius vector (i.e. the distance to the Sun). Returns -1. Only for conformance to CelestialBody.
+    public var radiusVector: AstronomicalUnit { get { return -1 } }
+
     public static let apparentRiseSetAltitude = ArcMinute(-34).inDegrees // See AA p.101
-    
 }
