@@ -27,15 +27,19 @@ class AsteroidsTests: XCTestCase {
         
         // Wikipedia says Ceres is about 950 km in diameter. The calculation here are only approximate "diameters"
         AssertEqual(asteroidDiameter(magnitude: absMagCeres, albedo: albedoCeres), Kilometer(950.0), accuracy: Kilometer(100))
+        AssertEqual(apparentAsteroidDiameter(magnitude: absMagCeres, albedo: albedoCeres), ArcSecond(0.000041), accuracy: ArcSecond(0.00001))
         
         // Wikipedia says Ceres is about 950 km in diameter. The calculation here are only approximate "diameters"
         AssertEqual(asteroidDiameter(magnitude: absMagPallas, albedo: albedoPallas), Kilometer(545), accuracy: Kilometer(30))
+        AssertEqual(apparentAsteroidDiameter(magnitude: absMagPallas, albedo: albedoPallas), ArcSecond(0.000046), accuracy: ArcSecond(0.00001))
         
         // Wikipedia says Ceres is about 234 km in diameter. The calculation here are only approximate "diameters"
         AssertEqual(asteroidDiameter(magnitude: absMagJuno, albedo: albedoJuno), Kilometer(234), accuracy: Kilometer(10))
+        AssertEqual(apparentAsteroidDiameter(magnitude: absMagJuno, albedo: albedoJuno), ArcSecond(0.000057), accuracy: ArcSecond(0.00001))
         
         // Wikipedia says Ceres is about 530 km in diameter. The calculation here are only approximate "diameters"
         AssertEqual(asteroidDiameter(magnitude: absMagVesta, albedo: albedoVesta), Kilometer(530), accuracy: Kilometer(50))
+        AssertEqual(apparentAsteroidDiameter(magnitude: absMagVesta, albedo: albedoVesta), ArcSecond(0.00016), accuracy: ArcSecond(0.0001))
     }
     
 }
