@@ -131,7 +131,7 @@ public class Moon : Object, CelestialBody {
 
     /// This is the geocentric semi diameter of the moon, that is for an observer located at the center of the Earth
     public var geocentricSemiDiameter: ArcSecond {
-        get { return ArcSecond(KPCAADiameters_GeocentricMoonSemidiameter(self.radiusVector.value)) }
+        get { return ArcSecond(KPCAADiameters_GeocentricMoonSemidiameter(self.distance.value)) }
     }
     
     
@@ -140,7 +140,7 @@ public class Moon : Object, CelestialBody {
     /// - Parameter geographicCoordinates: The location of the observer on Earth. The altitude matters!
     /// - Returns: The topocentric semi diameter of the Moon.
     public func topocentricSemiDiameter(for geographicCoordinates: GeographicCoordinates) -> ArcSecond {
-        return ArcSecond(KPCAADiameters_TopocentricMoonSemidiameter(self.radiusVector.value, // Distance from Earth in AU
+        return ArcSecond(KPCAADiameters_TopocentricMoonSemidiameter(self.distance.value, // Distance from Earth in kilometers, not AU! See AA p.390.
                                                                     self.apparentEquatorialCoordinates.delta.value, // Apparent Declination in Degrees
                                                                     self.hourAngle(for: geographicCoordinates).value, // Hour Angle in Hours
                                                                     geographicCoordinates.latitude.value, // Latitude in Degrees

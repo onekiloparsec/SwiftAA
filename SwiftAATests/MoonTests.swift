@@ -199,6 +199,17 @@ class MoonTests: XCTestCase {
         AssertEqual(moon.eclipticLongitudeOnHorizon(for: geoCoords), Degree(.plus, 349, 21, 0), accuracy: ArcMinute(1).inDegrees)
     }
 
+    // Based on USNO simulator of Moon image, for the given date. Result is given in full diameter.
+    // See http://aa.usno.navy.mil/imagery/disk?body=moon&year=2017&month=9&day=24&hour=11&minute=31
+    func testMoonSemiDiameter() {
+        let jd = JulianDay(year: 2017, month: 9, day: 24, hour: 11, minute: 31, second: 0.0)
+        let moon = Moon(julianDay: jd)
+        AssertEqual(moon.geocentricSemiDiameter*2.0, Degree(.plus, 0, 29, 53.2).inArcSeconds, accuracy: ArcSecond(1.0))
+        
+        let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: Degree(51.0)) // longitude must be consistent with above.
+        AssertEqual(moon.topocentricSemiDiameter(for: geoCoords)*2.0, Degree(.plus, 0, 29, 53.2).inArcSeconds + 5.0.arcseconds, accuracy: ArcSecond(1.0))
+
+    }
 }
 
 
