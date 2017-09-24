@@ -13,7 +13,7 @@
     <a title="SwiftAA  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (72% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (74% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -31,6 +31,9 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AstronomicalObject.html">AstronomicalObject</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
@@ -106,7 +109,16 @@
                 <a href="Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
               <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA7deg2radSd">deg2rad</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA8hour2radSd">hour2rad</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v7SwiftAA8rad2hourSd">rad2hour</a>
               </li>
             </ul>
           </li>
@@ -115,6 +127,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/EarthEquinoxType.html">EarthEquinoxType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/EarthSolsticeType.html">EarthSolsticeType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Equinox.html">Equinox</a>
@@ -198,6 +216,12 @@
                 <a href="Protocols/IlluminatedFraction.html">IlluminatedFraction</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/MarsPhysicalDetails.html">MarsPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a>
               </li>
               <li class="nav-group-task">
@@ -217,6 +241,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/_NumericType.html">_NumericType</a>
@@ -351,13 +378,15 @@
 everything about meteors.</p>
 
 <p>SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
-<em>Astronomical Algorithms</em>, by Jean Meeus (<a href="https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus">Amazon</a>). This C++ package is called <strong>AA+</strong> (see below). AA+ also includes additional algorithms of the
+<em>Astronomical Algorithms</em>, by Jean Meeus (2nd ed., <a href="https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus">Amazon</a>). This C++ package is called <strong>AA+</strong> (see below). AA+ also includes additional algorithms of the
 <a href="https://en.wikipedia.org/wiki/VSOP_(planets)">VSOP87</a> framework, and includes the complete support for the ELP/MPP02 theory. 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.</p>
 
-<p>But <strong>SwiftAA provides modern APIs</strong>, taking advantage of the expressiveness of Swift and its various modern
-syntax elements, making it fun and easy of use. Additional functions and algorithms are added to improve even more 
-the completeness and ease of use. In particular, <strong>SwiftAA provides units safety</strong> a lot stronger compared to C++ APIs. </p>
+<p>But <strong>SwiftAA provides more modern and a lot more readable APIs</strong>, taking advantage of the expressiveness of Swift 
+and its various syntax elements, making it fun and easy of use. In fact, you simply can&rsquo;t use AA+ without having 
+the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added
+to improve even more  the completeness and ease of use. In particular, <strong>SwiftAA provides units safety</strong> a 
+lot stronger compared to C++ APIs. </p>
 
 <p>Moreover, <strong>SwiftAA has a much larger unit tests coverage</strong>. In fact, unit tests are being carefully written
 with data directly taken from Jean Meeus&rsquo; textbook, AA+ own tests, <a href="http://www.usno.navy.mil">USNO</a>, <a href="https://skysafariastronomy.com">SkySafari</a> and <a href="http://www.clearskyinstitute.com/xephem/">Xephem</a> (and thus trying to achieve a
@@ -424,7 +453,7 @@ library as well. Hence the (rather long) 5-letters <em>KPCAA</em> prefix of all 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

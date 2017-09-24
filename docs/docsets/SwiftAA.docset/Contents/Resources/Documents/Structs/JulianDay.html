@@ -14,7 +14,7 @@
     <a title="JulianDay Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (74% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -32,6 +32,9 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AstronomicalObject.html">AstronomicalObject</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
@@ -107,7 +110,16 @@
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7deg2radSd">deg2rad</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA8hour2radSd">hour2rad</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA8rad2hourSd">rad2hour</a>
               </li>
             </ul>
           </li>
@@ -116,6 +128,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EarthEquinoxType.html">EarthEquinoxType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EarthSolsticeType.html">EarthSolsticeType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Equinox.html">Equinox</a>
@@ -199,6 +217,12 @@
                 <a href="../Protocols/IlluminatedFraction.html">IlluminatedFraction</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MarsPhysicalDetails.html">MarsPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a>
               </li>
               <li class="nav-group-task">
@@ -218,6 +242,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/_NumericType.html">_NumericType</a>
@@ -1063,7 +1090,7 @@ TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate nami
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Return the total of leap seconds added to the UTC since their introduction in 1972. 
-Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.navy.mil/leapsec.html</a> for a thorough explanation.</p>
+See here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.navy.mil/leapsec.html</a> for a thorough explanation.</p>
 
                       </div>
                       <div class="declaration">
@@ -1097,19 +1124,26 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a Terrestrial Time (TT) value in a UTC (Coordinated Universal Time) one. UTC differs from 
+TAI by an integral number of seconds. UTC is kept within 0.9 seconds of UT1 by the introduction of 
+one-second steps to UTC, the <q>leap second.</q> To date these steps have always been positive.
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">TTtoUTC</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L192-L194">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L198-L200">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1127,19 +1161,26 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a UTC (Universal Time Coordinates) value in a Terrestrial Time (TT) one. UTC differs from
+TAI by an integral number of seconds. UTC is kept within 0.9 seconds of UT1 by the introduction of
+one-second steps to UTC, the <q>leap second.</q> To date these steps have always been positive
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">UTCtoTT</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L196-L198">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L208-L210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1157,19 +1198,25 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a Terrestrial Time (TT) value in a TAI one. TAI is the International Atomic Time scale, 
+a statistical timescale based on a large number of atomic clocks
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">TTtoTAI</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L200-L202">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L217-L219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1187,19 +1234,25 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a TAI value to a Terrestrial Time (TT) one. TAI is the International Atomic Time scale,
+a statistical timescale based on a large number of atomic clocks
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">TAItoTT</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L204-L206">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L226-L228">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1217,19 +1270,29 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a Terrestrial Time (TT) value in a UT1 one. Universal Time (UT) is counted from 0 hours at midnight, 
+with unit of duration the mean solar day, defined to be as uniform as possible despite variations in the 
+rotation of the Earth. UT0 is the rotational time of a particular place of observation. It is observed as 
+the diurnal motion of stars or extraterrestrial radio sources. UT1 is computed by correcting UT0 for the effect 
+of polar motion on the longitude of the observing site. It varies from uniformity because of the irregularities 
+in the Earth&rsquo;s rotation.
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">TTtoUT1</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L208-L210">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L239-L241">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1247,19 +1310,29 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transform a UT1 value in a Terrestrial Time (TT) one. Universal Time (UT) is counted from 0 hours at midnight,
+with unit of duration the mean solar day, defined to be as uniform as possible despite variations in the
+rotation of the Earth. UT0 is the rotational time of a particular place of observation. It is observed as
+the diurnal motion of stars or extraterrestrial radio sources. UT1 is computed by correcting UT0 for the effect
+of polar motion on the longitude of the observing site. It varies from uniformity because of the irregularities
+in the Earth&rsquo;s rotation.
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">UT1toTT</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JulianDay</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new julian day</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L212-L214">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L252-L254">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1267,9 +1340,9 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA9JulianDay11UT1minusUTCFT_S0_"></a>
+                    <a name="/s:FV7SwiftAA9JulianDay11UT1minusUTCFT_VS_6Second"></a>
                     <a name="//apple_ref/swift/Method/UT1minusUTC()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA9JulianDay11UT1minusUTCFT_S0_">UT1minusUTC()</a>
+                    <a class="token" href="#/s:FV7SwiftAA9JulianDay11UT1minusUTCFT_VS_6Second">UT1minusUTC()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1277,19 +1350,24 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Computes the difference between UT1 and UTC. Not to be confused with Delta T.
+See AA p.77- and <a href="http://tycho.usno.navy.mil/systime.html">http://tycho.usno.navy.mil/systime.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">JulianDay</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">UT1minusUTC</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Second.html">Second</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A difference in Seconds.</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L216-L218">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L260-L262">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1323,7 +1401,7 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L225-L231">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JulianDay.swift#L269-L275">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1333,7 +1411,7 @@ Read here <a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.na
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

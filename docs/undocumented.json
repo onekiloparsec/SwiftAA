@@ -22,6 +22,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/AstronomicalObject.swift",
+      "line": 12,
+      "symbol": "AstronomicalObject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/AstronomicalObject.swift",
+      "line": 18,
+      "symbol": "AstronomicalObject.init(name:coordinates:julianDay:highPrecision:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/CelestialBodies.swift",
       "line": 66,
       "symbol": "CelestialBody.angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for:)",
@@ -107,29 +121,43 @@
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
-      "line": 22,
+      "line": 27,
+      "symbol": "EarthEquinoxType.northwardSpring",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
+      "line": 28,
+      "symbol": "EarthEquinoxType.southwardSpring",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
+      "line": 37,
+      "symbol": "EarthSolsticeType.northernSummer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
+      "line": 38,
+      "symbol": "EarthSolsticeType.southernSummer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
+      "line": 41,
       "symbol": "Earth",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
-      "line": 23,
-      "symbol": "Earth.color",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
-      "line": 27,
-      "symbol": "Earth.equatorialRadius",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Earth.swift",
-      "line": 28,
-      "symbol": "Earth.polarRadius",
+      "line": 42,
+      "symbol": "Earth.averageColor",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
@@ -183,120 +211,64 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 192,
-      "symbol": "JulianDay.TTtoUTC()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 196,
-      "symbol": "JulianDay.UTCtoTT()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 200,
-      "symbol": "JulianDay.TTtoTAI()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 204,
-      "symbol": "JulianDay.TAItoTT()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 208,
-      "symbol": "JulianDay.TTtoUT1()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 212,
-      "symbol": "JulianDay.UT1toTT()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JulianDay.swift",
-      "line": 216,
-      "symbol": "JulianDay.UT1minusUTC()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 13,
-      "symbol": "Jupiter.physicalDetails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 23,
+      "line": 26,
       "symbol": "Jupiter.Io",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 24,
+      "line": 27,
       "symbol": "Jupiter.Europa",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 25,
+      "line": 28,
       "symbol": "Jupiter.Ganymede",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 26,
+      "line": 29,
       "symbol": "Jupiter.Callisto",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 28,
+      "line": 31,
       "symbol": "Jupiter.moons",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 42,
+      "line": 45,
       "symbol": "Jupiter.magnitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 64,
+      "line": 76,
       "symbol": "Jupiter.geometricCentralMeridianLongitudeSystemII",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 68,
+      "line": 80,
       "symbol": "Jupiter.apparentCentralMeridianLongitudeSystemI",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Jupiter.swift",
-      "line": 72,
+      "line": 84,
       "symbol": "Jupiter.apparentCentralMeridianLongitudeSystemII",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -1016,6 +988,41 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/PlanetaryPhysicalDetails.swift",
+      "line": 27,
+      "symbol": "MarsPhysicalDetails",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/PlanetaryPhysicalDetails.swift",
+      "line": 47,
+      "symbol": "JupiterPhysicalDetails",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/PlanetaryPhysicalDetails.swift",
+      "line": 53,
+      "symbol": "JupiterPhysicalDetails.geometricCentralMeridianLongitudeSystemII",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/PlanetaryPhysicalDetails.swift",
+      "line": 55,
+      "symbol": "JupiterPhysicalDetails.apparentCentralMeridianLongitudeSystemI",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/PlanetaryPhysicalDetails.swift",
+      "line": 57,
+      "symbol": "JupiterPhysicalDetails.apparentCentralMeridianLongitudeSystemII",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/RiseTransitSet.swift",
       "line": 13,
       "symbol": "RiseTransitSetTimesDetails.isRiseValid",
@@ -1116,20 +1123,27 @@
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Saturn.swift",
       "line": 25,
+      "symbol": "Saturn.Hyperion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Saturn.swift",
+      "line": 26,
       "symbol": "Saturn.Iapetus",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Saturn.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "Saturn.ringSystem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/SaturnMoons.swift",
-      "line": 46,
+      "line": 58,
       "symbol": "SaturnianMoon.rectangularCoordinates(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1143,113 +1157,85 @@
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 23,
-      "symbol": "MeanLunarEquatorInclination",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 29,
-      "symbol": "rad2deg",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 31,
-      "symbol": "AU2pc",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 32,
-      "symbol": "AU2m",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 33,
-      "symbol": "AU2ly",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 48,
+      "line": 60,
       "symbol": "Equinox.standardJ2000",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 69,
+      "line": 81,
       "symbol": "Season.spring",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 70,
+      "line": 82,
       "symbol": "Season.summer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 71,
+      "line": 83,
       "symbol": "Season.autumn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 72,
+      "line": 84,
       "symbol": "Season.winter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 83,
+      "line": 95,
       "symbol": "MoonPhase.newMoon",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 84,
+      "line": 96,
       "symbol": "MoonPhase.firstQuarter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 85,
+      "line": 97,
       "symbol": "MoonPhase.fullMoon",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 86,
+      "line": 98,
       "symbol": "MoonPhase.lastQuarter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 94,
+      "line": 106,
       "symbol": "CelestialBodyTransitError.alwaysBelowAltitude",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 95,
+      "line": 107,
       "symbol": "CelestialBodyTransitError.alwaysAboveAltitude",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
+      "line": 108,
+      "symbol": "CelestialBodyTransitError.undefinedPlanetaryObject",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },

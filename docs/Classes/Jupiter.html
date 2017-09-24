@@ -14,7 +14,7 @@
     <a title="Jupiter Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (72% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (74% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -32,6 +32,9 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AstronomicalObject.html">AstronomicalObject</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/DwarfPlanet.html">DwarfPlanet</a>
               </li>
@@ -107,7 +110,16 @@
                 <a href="../Global Variables.html#/s:v7SwiftAA21StandardEpoch_J2000_0VS_9JulianDay">StandardEpoch_J2000_0</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA7deg2radSd">deg2rad</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA8hour2radSd">hour2rad</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v7SwiftAA7rad2degSd">rad2deg</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v7SwiftAA8rad2hourSd">rad2hour</a>
               </li>
             </ul>
           </li>
@@ -116,6 +128,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EarthEquinoxType.html">EarthEquinoxType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EarthSolsticeType.html">EarthSolsticeType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Equinox.html">Equinox</a>
@@ -199,6 +217,12 @@
                 <a href="../Protocols/IlluminatedFraction.html">IlluminatedFraction</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MarsPhysicalDetails.html">MarsPhysicalDetails</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols.html#/s:P7SwiftAA11NumericType">NumericType</a>
               </li>
               <li class="nav-group-task">
@@ -218,6 +242,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlanetaryPhenomena.html">PlanetaryPhenomena</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/_NumericType.html">_NumericType</a>
@@ -324,7 +351,7 @@
             <h1>Jupiter</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                 </div>
               </div>
@@ -347,19 +374,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Accessor to all values of the underlying physical details. Will probably become private
+once all relevant accessors are implemented and covered.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">physicalDetails</span><span class="p">:</span> <span class="kt">KPCAAPhysicalJupiterDetails</span> <span class="o">=</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L16">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -389,7 +417,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L19-L21">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L22-L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -414,7 +442,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
@@ -444,7 +472,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
@@ -474,7 +502,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
@@ -504,7 +532,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
@@ -534,12 +562,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L28-L30">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L31-L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -599,7 +627,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L32-L40">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L35-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -624,16 +652,27 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L42-L46">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L45-L49">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PlanetaryPhysicalDetails"></a>
+                <a name="//apple_ref/swift/Section/PlanetaryPhysicalDetails" class="dashAnchor"></a>
+                <a href="#/PlanetaryPhysicalDetails">
+                  <h3 class="section-name">PlanetaryPhysicalDetails</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -659,7 +698,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L49-L51">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L54-L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -689,127 +728,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L54-L56">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7SwiftAA7Jupiter40geometricCentralMeridianLongitudeSystemIVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/geometricCentralMeridianLongitudeSystemI" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7SwiftAA7Jupiter40geometricCentralMeridianLongitudeSystemIVS_6Degree">geometricCentralMeridianLongitudeSystemI</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>See AA. ch 43, pp. 293-</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">geometricCentralMeridianLongitudeSystemI</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L60-L62">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7SwiftAA7Jupiter41geometricCentralMeridianLongitudeSystemIIVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/geometricCentralMeridianLongitudeSystemII" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7SwiftAA7Jupiter41geometricCentralMeridianLongitudeSystemIIVS_6Degree">geometricCentralMeridianLongitudeSystemII</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L64-L66">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7SwiftAA7Jupiter39apparentCentralMeridianLongitudeSystemIVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/apparentCentralMeridianLongitudeSystemI" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7SwiftAA7Jupiter39apparentCentralMeridianLongitudeSystemIVS_6Degree">apparentCentralMeridianLongitudeSystemI</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L68-L70">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7SwiftAA7Jupiter40apparentCentralMeridianLongitudeSystemIIVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/apparentCentralMeridianLongitudeSystemII" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7SwiftAA7Jupiter40apparentCentralMeridianLongitudeSystemIIVS_6Degree">apparentCentralMeridianLongitudeSystemII</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L72-L74">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L59-L61">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -839,7 +758,138 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L77-L79">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L64-L66">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/JupiterPhysicalDetails"></a>
+                <a name="//apple_ref/swift/Section/JupiterPhysicalDetails" class="dashAnchor"></a>
+                <a href="#/JupiterPhysicalDetails">
+                  <h3 class="section-name">JupiterPhysicalDetails</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7SwiftAA7Jupiter40geometricCentralMeridianLongitudeSystemIVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Property/geometricCentralMeridianLongitudeSystemI" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA7Jupiter40geometricCentralMeridianLongitudeSystemIVS_6Degree">geometricCentralMeridianLongitudeSystemI</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See AA. ch 43, pp. 293-</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">geometricCentralMeridianLongitudeSystemI</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L72-L74">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7SwiftAA7Jupiter41geometricCentralMeridianLongitudeSystemIIVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Property/geometricCentralMeridianLongitudeSystemII" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA7Jupiter41geometricCentralMeridianLongitudeSystemIIVS_6Degree">geometricCentralMeridianLongitudeSystemII</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L76-L78">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7SwiftAA7Jupiter39apparentCentralMeridianLongitudeSystemIVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Property/apparentCentralMeridianLongitudeSystemI" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA7Jupiter39apparentCentralMeridianLongitudeSystemIVS_6Degree">apparentCentralMeridianLongitudeSystemI</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L80-L82">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7SwiftAA7Jupiter40apparentCentralMeridianLongitudeSystemIIVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Property/apparentCentralMeridianLongitudeSystemII" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7SwiftAA7Jupiter40apparentCentralMeridianLongitudeSystemIIVS_6Degree">apparentCentralMeridianLongitudeSystemII</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Jupiter</span><span class="p">:</span> <span class="kt"><a href="../Classes/Planet.html">Planet</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/PlanetaryPhysicalDetails.html">PlanetaryPhysicalDetails</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/JupiterPhysicalDetails.html">JupiterPhysicalDetails</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Jupiter.swift#L84-L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -849,7 +899,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-23)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
