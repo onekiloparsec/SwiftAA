@@ -73,6 +73,8 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var inSeconds: Second { return Second(value * 3600.0) }
     /// Transform the current Hour value into Degrees.
     public var inDegrees: Degree { return Degree(value * 15.0) }
+    /// Transform the current Hour value into Radians.
+    public var inRadians: Radian { return Radian(value * hour2rad) }
     /// Transform the current Hour value into Julian Days (convenient for easily making operations with Julian Day fractions).
     public var inJulianDays: JulianDay { return JulianDay(value / 24.0) }
     

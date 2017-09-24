@@ -27,8 +27,15 @@ public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
 
+/// Conversion factor from radians to degrees.
+public let rad2deg = 180.0/Double.pi
 /// Conversion factor from degrees to radians.
 public let deg2rad = Double.pi/180.0
+
+/// Conversion factor from radians to hours.
+public let rad2hour = 3.8197186342054880584532103209403
+/// Conversion factor from hours to radians.
+public let hour2rad = 0.26179938779914943653855361527329
 
 /// Conversion factor from Astronomical Unit to parsecs.
 public let AU2pc: Double = tan(1.0/3600.0/deg2rad)

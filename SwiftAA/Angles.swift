@@ -40,7 +40,7 @@ public struct Degree: NumericType, CustomStringConvertible {
     /// Transform the current Degree in ArcSeconds
     public var inArcSeconds: ArcSecond { return ArcSecond(value * 3600.0) }
     /// Transform the current Degree in Radians
-    public var inRadians: Radian { return Radian(value * 0.017453292519943295769236907684886) }
+    public var inRadians: Radian { return Radian(value * deg2rad) }
     /// Transform the current Degree in Hours
     public var inHours: Hour { return Hour(value / 15.0) }
     
@@ -166,9 +166,9 @@ public struct Radian: NumericType, CustomStringConvertible {
     }
     
     /// Transform the current Radian in Degrees
-    public var inDegrees: Degree { return Degree(value / rad2deg) }
+    public var inDegrees: Degree { return Degree(value * rad2deg) }
     /// Transform the current Radian in Hours
-    public var inHours: Hour { return self.inDegrees.inHours }
+    public var inHours: Hour { return Hour(value * rad2hour) }
     
     /// Returns self reduced to 0..<2PI range
     public var reduced: Radian { return Radian(value.positiveTruncatingRemainder(dividingBy: 2*Double.pi)) }

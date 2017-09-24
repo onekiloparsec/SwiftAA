@@ -143,6 +143,9 @@ class TimesTests: XCTestCase {
         
         XCTAssertEqual(Hour(t1).inSeconds.value, t1*3600.0)
         XCTAssertEqual(Hour(t2).inSeconds.value, t2*3600.0)
+        
+        XCTAssertEqualWithAccuracy(Hour(12.0).inRadians.value, .pi, accuracy: 0.00000000001) // rounding errors
+        XCTAssertEqualWithAccuracy(Hour(-6.0).inRadians.value, -.pi/2.0, accuracy: 0.00000000001) // rounding errors
     }
     
     func testMinuteConversion() {
