@@ -1998,6 +1998,7 @@
 				9F6043751E61799E00395C0E /* AngularSeparationTests.swift */,
 				9F074CE91F6EB45200BDE079 /* AsteroidsTests.swift */,
 				6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */,
+				9F074D371F778D3A00BDE079 /* AstronomicalObjectTests.swift */,
 				9F074CE51F6EABD200BDE079 /* BinaryStarsTests.swift */,
 				9F3849C91E60BA990013D9A3 /* CelestialBodiesTests.swift */,
 				9FB755241E05A6C700EC7617 /* ConstantsTests.swift */,
@@ -2030,7 +2031,6 @@
 				9F8681CA1E6E91BB00C59F04 /* UranusTests.swift */,
 				9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */,
 				6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */,
-				9F074D371F778D3A00BDE079 /* AstronomicalObjectTests.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";

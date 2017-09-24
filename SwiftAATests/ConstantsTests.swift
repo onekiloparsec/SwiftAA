@@ -58,4 +58,17 @@ class ConstantsTests: XCTestCase {
         XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Pluto), KPCAAPlanetStrict.undefined)
     }
 
+    func testPlanetDescriptions() {
+        XCTAssertEqual(String(describing: KPCAAPlanet.Mercury), "Mercury")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Venus), "Venus")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Earth), "Earth")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Mars), "Mars")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Jupiter), "Jupiter")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Saturn), "Saturn")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Saturn), "Saturn")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Neptune), "Neptune")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Uranus), "Uranus")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Pluto), "Pluto")
+        XCTAssertEqual(String(describing: KPCAAPlanet.Undefined), "")
+    }
 }
