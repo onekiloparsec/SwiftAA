@@ -105,6 +105,7 @@ public enum MoonPhase {
 public enum CelestialBodyTransitError: Error {
     case alwaysBelowAltitude
     case alwaysAboveAltitude
+    case undefinedPlanetaryObject
 }
 
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
