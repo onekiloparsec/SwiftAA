@@ -26,18 +26,6 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     
     public static let equatorialRadius: Meter = 6378140.0
     public static let polarRadius: Meter = 6356760.0
-
-    // Additional methods for Earth to deal with the baryCentric parameter
-    
-    /// The Julian Day of the perihelion of the Earth-Moon system. See AA p273.
-    var barycentricPerihelion: JulianDay {
-        get { return JulianDay(KPCAAPlanetPerihelionAphelion_EarthPerihelion(KPCAAPlanetPerihelionAphelion_EarthK(self.julianDay.date.fractionalYear), true)) }
-    }
-    
-    /// The Julian Day of the aphelion of the Earth-Moon system. See AA p273.
-    var barycentricAphelion: JulianDay {
-        get { return JulianDay(KPCAAPlanetPerihelionAphelion_EarthAphelion(KPCAAPlanetPerihelionAphelion_EarthK(self.julianDay.date.fractionalYear), true)) }
-    }
     
     /// The longitude of the ascnending node.
     var longitudeOfAscendingNode: Degree {
