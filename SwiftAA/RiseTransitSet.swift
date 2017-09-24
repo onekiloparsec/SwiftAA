@@ -130,9 +130,7 @@ public struct RiseTransitSetTimes {
     ///   - celestialBody: The celestial body under study.
     ///   - geographicCoordinates: The geographic coordinates of the observer.
     ///   - riseSetAltitude: The altitude considered for rise and set times.
-    public init(celestialBody: CelestialBody,
-                         geographicCoordinates: GeographicCoordinates,
-                         riseSetAltitude: Degree? = nil)
+    public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, riseSetAltitude: Degree? = nil)
     {
         self.celestialBody = celestialBody
         self.geographicCoordinates = geographicCoordinates
