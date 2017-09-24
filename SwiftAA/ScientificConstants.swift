@@ -20,16 +20,21 @@ public let BesselianYear: Day = 365.2421988    // See p.133 of AA.
 public let StandardEpoch_J2000_0: JulianDay = 2451545.0 // See p.133 of AA.
 public let StandardEpoch_B1950_0: JulianDay = 2433282.4235 // See p.133 of AA.
 
+/// Mean value of the lunar equator inclination, relative to the ecliptic.
 public let MeanLunarEquatorInclination: Degree = 1.54242 // Relative, to Ecliptic. See p. 372 of AA.
 
 public typealias Kilogram=Double
 public typealias Celsius=Double
 public typealias Millibar=Double
 
-public let rad2deg = Double.pi/180.0
+/// Conversion factor from degrees to radians.
+public let deg2rad = Double.pi/180.0
 
-public let AU2pc: Double = tan(1.0/3600.0/rad2deg)
+/// Conversion factor from Astronomical Unit to parsecs.
+public let AU2pc: Double = tan(1.0/3600.0/deg2rad)
+/// Conversion factor from Astronomical Unit to meters.
 public let AU2m: Double = 149597870700.0 // Wikipedia
+/// Conversion factor from Astronomical Unit to light-years.
 public let AU2ly: Double = 1.0/206264.8
 
 //public let pc2AU = 1.0/tan(1.0/3600.0/rad2deg)
