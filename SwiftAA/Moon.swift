@@ -185,26 +185,6 @@ public class Moon : Object, CelestialBody {
     }
 
 
-    // MARK: - Static Methods
-    
-    
-    /// Transform the distance (radius vector) in horizontal parallax,
-    ///
-    /// - Parameter radiusVector: The radius vector of the Moon
-    /// - Returns: The horizontal parallax, in degrees
-    static func horizontalParallax(from radiusVector: AstronomicalUnit) -> Degree {
-        return Degree(KPCAAMoon_RadiusVectorToHorizontalParallax(radiusVector.value))
-    }
-    
-    
-    /// Transform the horizontal parallax into the distance (radius vector)
-    ///
-    /// - Parameter horizontalParallax: The horizontal parallax of the Moon.
-    /// - Returns: The distance (radius vector) in astronomical units.
-    static func radiusVector(from horizontalParallax: Degree) -> AstronomicalUnit {
-        return AstronomicalUnit(KPCAAMoon_HorizontalParallaxToRadiusVector(horizontalParallax.value))
-    }
-    
     // MARK: - KPCAAMoonPhases
 
     
