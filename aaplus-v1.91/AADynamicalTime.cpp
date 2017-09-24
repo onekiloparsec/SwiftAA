@@ -966,3 +966,4 @@ double CAADynamicalTime::UT1MinusUTC(double JD)
   double JDUTC = JD + ((CAADynamicalTime::DeltaT(JD) - CumulativeLeapSeconds(JD) - 32.184) / 86400);
   return (JD - JDUTC) * 86400;
 }
+
