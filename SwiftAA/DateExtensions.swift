@@ -89,7 +89,7 @@ public extension Date {
     /// Returns the number of integral days since January 1st, 2000.
     ///
     /// - Returns: The number of integral days since January 1st, 2000.
-    public func daysSince2000January0() -> Int {
+    public func daysSince2000January1() -> Int {
         let A = 367*self.year
         let B = (7*(self.year + (self.month+9)/12))/4
         let C = (275*self.month)/9
