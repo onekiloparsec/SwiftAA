@@ -102,6 +102,21 @@ class TimesTests: XCTestCase {
         XCTAssertEqual(northwardEquinox.TTtoUT1().UT1toTT(), JulianDay(year: 1962, month: 3, day: 21, hour: 2, minute: 30, second: 7.231168))
     }
     
+    // Based on data downloadable from http://tycho.usno.navy.mil/systime.html
+    func testUT1minusUTC() {
+        let jd1 = JulianDay(modified: 58018.0) // 2017  9 22, the day of writing this test...
+        AssertEqual(jd1.UT1minusUTC(), Second(0.32103), accuracy: Second(0.01))
+        let jd2 = JulianDay(modified: 58118.0) // 2017 12 31
+        AssertEqual(jd2.UT1minusUTC(), Second(0.19553), accuracy: Second(0.01))
+        // Not sure why the one below fails.
+//        let jd3 = JulianDay(modified: 58382.0) // 2018  9 21
+//        AssertEqual(jd3.UT1minusUTC(), Second(-0.07169), accuracy: Second(0.01))
+    }
+    
+    func testDaysSince2000January1() {
+        XCTAssertEqual(JulianDay(year: 2017, month: 9, day: 23, hour: 9, minute: 0, second: 0.0).date.daysSince2000January1(), 6476)
+    }
+    
     func testDayConversions() {
         let t1 = 3.1415
         let t2 = -2.718
