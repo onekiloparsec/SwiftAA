@@ -63,7 +63,7 @@ class TimesTests: XCTestCase {
     // See AATests.cpp
     func testTTtoUTRoundTripping() {
         let earth = Earth(julianDay: JulianDay(year: 1962, month: 1, day: 1), highPrecision: false)
-        let northwardEquinox = earth.equinox(true)
+        let northwardEquinox = earth.equinox(of: .northwardSpring)
         XCTAssertEqual(northwardEquinox.value, JulianDay(2437744.6042503607).value)
         
         // TT
@@ -79,7 +79,7 @@ class TimesTests: XCTestCase {
     // See AATests.cpp
     func testTTtoTAIRoundTripping() {
         let earth = Earth(julianDay: JulianDay(year: 1962, month: 1, day: 1), highPrecision: false)
-        let northwardEquinox = earth.equinox(true)
+        let northwardEquinox = earth.equinox(of: .northwardSpring)
         XCTAssertEqual(northwardEquinox.value, JulianDay(2437744.6042503607).value)
         
         // TT -> TAI
@@ -92,7 +92,7 @@ class TimesTests: XCTestCase {
     // See AATests.cpp
     func testTTtoUT1RoundTripping() {
         let earth = Earth(julianDay: JulianDay(year: 1962, month: 1, day: 1), highPrecision: false)
-        let northwardEquinox = earth.equinox(true)
+        let northwardEquinox = earth.equinox(of: .northwardSpring)
         XCTAssertEqual(northwardEquinox.value, JulianDay(2437744.6042503607).value)
         
         // TT -> UT1

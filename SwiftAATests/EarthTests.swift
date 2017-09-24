@@ -47,7 +47,19 @@ class EarthTests: XCTestCase {
         AssertEqual(details.transitTime!, expectedTransit, accuracy: accuracy)
         let expectedSet = JulianDay(year: 1988, month: 03, day: 20, hour: 2, minute: 55)
         AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
+    }
+    
+    func testEquinoxes() {
+        let earth = Earth(julianDay: JulianDay(year: 1962, month: 1, day: 1))
+        let northwardEquinox = earth.equinox(of: .northwardSpring)
+        AssertEqual(northwardEquinox, JulianDay(2437744.60425), accuracy: JulianDay(0.00001))
+    }
 
+    // See AA p.180, Example 27.a
+    func testSolstices() {
+        let earth = Earth(julianDay: JulianDay(year: 1962, month: 1, day: 1), highPrecision: true)
+        let northernSummer = earth.solstice(of: .northernSummer)
+        AssertEqual(northernSummer, JulianDay(2437837.39215), accuracy: JulianDay(0.00001))
     }
 }
 

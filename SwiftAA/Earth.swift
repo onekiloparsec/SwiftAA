@@ -19,12 +19,33 @@ public enum TwilightSunAltitude: Degree {
     case astronomical = -18.0
 }
 
+/// The two types of equinoxes
+///
+/// - northwardSpring: Spring in northern hemisphere (~March)
+/// - southwardSpring: Spring in southern hemisphere (~September)
+public enum EarthEquinoxType: Int {
+    case northwardSpring
+    case southwardSpring
+}
+
+
+/// The two type of solstices
+///
+/// - northernSummer: Summer in the northern hemisphere (~June)
+/// - southernSummer: Summer in the northern hemisphere (~December)
+public enum EarthSolsticeType: Int {
+    case northernSummer
+    case southernSummer
+}
+
 public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     public static var averageColor: Color {
         get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
     
+    /// Equatorial radius of the Eart. Source: Wikipedia.
     public static let equatorialRadius: Meter = 6378140.0
+    /// Polar radius of the Eart. Source: Wikipedia.
     public static let polarRadius: Meter = 6356760.0
     
     /// The longitude of the ascnending node.
@@ -35,17 +56,17 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     /**
      Computes the julian day of the equinox for the given year
      
-     - parameter northward: if yes, means the spring equinox for the northern hemisphere.
+     - parameter equinoxType: if yes, means the spring equinox for the northern hemisphere.
      if flase, it is the autumn equinox of the northern hemisphere.
      
      - returns: A julian day
      */
-    func equinox(_ northward: Bool) -> JulianDay {
+    func equinox(of equinoxType: EarthEquinoxType) -> JulianDay {
         let year = self.julianDay.date.year
-        if northward == true {
+        switch equinoxType {
+        case .northwardSpring:
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision))
-        }
-        else {
+        case .southwardSpring:
             return JulianDay(KPCAAEquinoxesAndSolstices_SouthwardEquinox(year, self.highPrecision))
         }
     }
@@ -53,17 +74,17 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     /**
      Computes the julian day of the solstice for the given year
      
-     - parameter northern: if true, means the summer solstice in the northern hemisphere,
+     - parameter solsticeType: if true, means the summer solstice in the northern hemisphere,
      if false, means the winter solstice in the norther hemisphere.
      
      - returns: A julian day
      */
-    func solstice(_ northern: Bool) -> JulianDay {
+    func solstice(of solsticeType: EarthSolsticeType) -> JulianDay {
         let year = self.julianDay.date.year
-        if northern == true {
+        switch solsticeType {
+        case .northernSummer:
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision))
-        }
-        else {
+        case .southernSummer:
             return JulianDay(KPCAAEquinoxesAndSolstices_SouthernSolstice(year, self.highPrecision))
         }
     }
