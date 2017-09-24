@@ -22,13 +22,14 @@ public class Saturn: Planet {
     public fileprivate(set) var Dione: SaturnianMoon
     public fileprivate(set) var Rhea: SaturnianMoon
     public fileprivate(set) var Titan: SaturnianMoon
+    public fileprivate(set) var Hyperion: SaturnianMoon
     public fileprivate(set) var Iapetus: SaturnianMoon
 
     public fileprivate(set) var ringSystem: SaturnRingSystem
 
     /// The list of saturnian moons, in increasing order of distance from the planet.
     public var moons: [SaturnianMoon] {
-        get { return [self.Mimas, self.Enceladus, self.Tethys, self.Dione, self.Rhea, self.Titan, self.Iapetus] }
+        get { return [self.Mimas, self.Enceladus, self.Tethys, self.Dione, self.Rhea, self.Titan, self.Hyperion, self.Iapetus] }
     }
     
     /// Returns a Saturn object.
@@ -38,13 +39,14 @@ public class Saturn: Planet {
     ///   - highPrecision: A boolean indicating whether high precision (VSOP87 theory) must be used. Default is true.
     public required init(julianDay: JulianDay, highPrecision: Bool = true) {
         let details = KPCAASaturnMoonsDetails_Calculate(julianDay.value, highPrecision)
-        self.Mimas = SaturnianMoon(name: "Mimas", details: details.Satellite1)
-        self.Enceladus = SaturnianMoon(name: "Enceladus", details: details.Satellite2)
-        self.Tethys = SaturnianMoon(name: "Tethys", details: details.Satellite3)
-        self.Dione = SaturnianMoon(name: "Dione", details: details.Satellite4)
-        self.Rhea = SaturnianMoon(name: "Rhea", details: details.Satellite5)
-        self.Titan = SaturnianMoon(name: "Titan", details: details.Satellite6)
-        self.Iapetus = SaturnianMoon(name: "Iapetus", details: details.Satellite7)
+        self.Mimas = SaturnianMoon(name: "Mimas", details: details.Satellite1, synodicPeriod: 0.9425, visualMagnitude: 12.9, diameter: 400.0)
+        self.Enceladus = SaturnianMoon(name: "Enceladus", details: details.Satellite2, synodicPeriod: 1.3704, visualMagnitude: 11.7, diameter: 498)
+        self.Tethys = SaturnianMoon(name: "Tethys", details: details.Satellite3, synodicPeriod: 1.8881, visualMagnitude: 10.2, diameter: 1046.0)
+        self.Dione = SaturnianMoon(name: "Dione", details: details.Satellite4, synodicPeriod: 2.7376, visualMagnitude: 10.4, diameter: 1120.0)
+        self.Rhea = SaturnianMoon(name: "Rhea", details: details.Satellite5, synodicPeriod: 4.5194, visualMagnitude: 9.7, diameter: 1528.0)
+        self.Titan = SaturnianMoon(name: "Titan", details: details.Satellite6, synodicPeriod: 15.9691, visualMagnitude: 8.3, diameter: 5150.0)
+        self.Hyperion = SaturnianMoon(name: "Hyperion", details: details.Satellite7, synodicPeriod: 21.3188, visualMagnitude: 14.2, diameter: 286.0)
+        self.Iapetus = SaturnianMoon(name: "Iapetus", details: details.Satellite8, synodicPeriod: 79.9202, visualMagnitude: 10.2, diameter: 1460.0)
         
         let ringDetails = KPCAASaturnRings_Calculate(julianDay.value, highPrecision)
         self.ringSystem = SaturnRingSystem(ringDetails)
