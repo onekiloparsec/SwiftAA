@@ -182,39 +182,83 @@ public extension JulianDay {
     }
     
     /// Return the total of leap seconds added to the UTC since their introduction in 1972. 
-    /// Read here http://tycho.usno.navy.mil/leapsec.html for a thorough explanation.
+    /// See here http://tycho.usno.navy.mil/leapsec.html for a thorough explanation.
     ///
     /// - Returns: The total number of leap seconds accumulated since their introduction until the given JD.
     public func cumulativeLeapSeconds() -> Second {
         return Second(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
     }
     
+    /// Transform a Terrestrial Time (TT) value in a UTC (Coordinated Universal Time) one. UTC differs from 
+    /// TAI by an integral number of seconds. UTC is kept within 0.9 seconds of UT1 by the introduction of 
+    /// one-second steps to UTC, the "leap second." To date these steps have always been positive.
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func TTtoUTC() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2UTC(self.value))
     }
 
+    /// Transform a UTC (Universal Time Coordinates) value in a Terrestrial Time (TT) one. UTC differs from
+    /// TAI by an integral number of seconds. UTC is kept within 0.9 seconds of UT1 by the introduction of
+    /// one-second steps to UTC, the "leap second." To date these steps have always been positive
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func UTCtoTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_UTC2TT(self.value))
     }
 
+    /// Transform a Terrestrial Time (TT) value in a TAI one. TAI is the International Atomic Time scale, 
+    /// a statistical timescale based on a large number of atomic clocks
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func TTtoTAI() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2TAI(self.value))
     }
 
+    /// Transform a TAI value to a Terrestrial Time (TT) one. TAI is the International Atomic Time scale,
+    /// a statistical timescale based on a large number of atomic clocks
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func TAItoTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TAI2TT(self.value))
     }
 
+    /// Transform a Terrestrial Time (TT) value in a UT1 one. Universal Time (UT) is counted from 0 hours at midnight, 
+    /// with unit of duration the mean solar day, defined to be as uniform as possible despite variations in the 
+    /// rotation of the Earth. UT0 is the rotational time of a particular place of observation. It is observed as 
+    /// the diurnal motion of stars or extraterrestrial radio sources. UT1 is computed by correcting UT0 for the effect 
+    /// of polar motion on the longitude of the observing site. It varies from uniformity because of the irregularities 
+    /// in the Earth's rotation.
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func TTtoUT1() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2UT1(self.value))
     }
 
+    /// Transform a UT1 value in a Terrestrial Time (TT) one. Universal Time (UT) is counted from 0 hours at midnight,
+    /// with unit of duration the mean solar day, defined to be as uniform as possible despite variations in the
+    /// rotation of the Earth. UT0 is the rotational time of a particular place of observation. It is observed as
+    /// the diurnal motion of stars or extraterrestrial radio sources. UT1 is computed by correcting UT0 for the effect
+    /// of polar motion on the longitude of the observing site. It varies from uniformity because of the irregularities
+    /// in the Earth's rotation.
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A new julian day
     public func UT1toTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_UT12TT(self.value))
     }
 
-    public func UT1minusUTC() -> JulianDay {
-        return JulianDay(KPCAADynamicalTime_UT1MinusUTC(self.value))
+    /// Computes the difference between UT1 and UTC. Not to be confused with Delta T.
+    /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
+    ///
+    /// - Returns: A difference in Seconds.
+    public func UT1minusUTC() -> Second {
+        return Second(KPCAADynamicalTime_UT1MinusUTC(self.value))
     }
 }
 
