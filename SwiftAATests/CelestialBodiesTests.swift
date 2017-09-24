@@ -43,5 +43,28 @@ class CelestialBodiesTests: XCTestCase {
         let refAngle = 74.4.degrees
         
         AssertEqual(gro_j1655_40.parallacticAngle(for: la_silla_dfosc), refAngle, accuracy: Degree(0.1))
-    }    
+    }
+    
+    // See AA p.99, Example 14.a
+    func testEclipticAndHorizon() {
+        // jd is chosen to produce jd.apparentGreenwichSiderealTime = jd.meanLocalSiderealTime(longitude=0) = 5.0h (75º) as in Example 14.a
+        let jd = JulianDay(year: 2017, month: 9, day: 21, hour: 4, minute: 58, second: 56.3824345393)
+        let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: Degree(51.0)) // longitude must be consistent with above.
+        
+        // Valid whatever the CelestialBody
+        let moon = Moon(julianDay: jd)
+        AssertEqual(moon.eclipticLongitudeOnHorizon(for: geoCoords), Degree(.plus, 349, 21, 0), accuracy: ArcMinute(1).inDegrees)
+        AssertEqual(moon.angleBetweenEclipticAndHorizon(for: geoCoords), Degree(62.0), accuracy: Degree(1))
+    }
+    
+    func testAngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic() {
+        // gro_j1655_40, see below
+        let starCoords = EquatorialCoordinates(alpha: Hour(.plus, 16, 54, 00.14), delta: Degree(.minus, 39, 50, 44.9))
+        
+        // AstronomicalObject is also a CelestialBody
+        let gro_j1655_40 = AstronomicalObject(name: "GRO J1655-40", coordinates: starCoords, julianDay: JulianDay(Date())) // Date has no effect.
+        
+        let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 122.0, latitude: 51.0)
+        AssertEqual(gro_j1655_40.angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for: geoCoords), Degree(186.0), accuracy: Degree(1))
+    }
 }

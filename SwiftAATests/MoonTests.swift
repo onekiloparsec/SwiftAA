@@ -189,16 +189,6 @@ class MoonTests: XCTestCase {
         AssertEqual(moon.positionAngleOfTheBrightLimb(), Degree(285.0), accuracy: Degree(0.1))
     }
 
-    // See AA p.99, Example 14.a
-    func testEclipticAndHorizon() {
-        // jd is chosen to produce jd.apparentGreenwichSiderealTime = jd.meanLocalSiderealTime(longitude=0) = 5.0h (75º) as in Example 14.a
-        let jd = JulianDay(year: 2017, month: 9, day: 21, hour: 4, minute: 58, second: 56.3824345393)
-        let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: Degree(51.0)) // longitude must be consistent with above.
-        
-        let moon = Moon(julianDay: jd)
-        AssertEqual(moon.eclipticLongitudeOnHorizon(for: geoCoords), Degree(.plus, 349, 21, 0), accuracy: ArcMinute(1).inDegrees)
-    }
-
     // Based on USNO simulator of Moon image, for the given date. Result is given in full diameter.
     // See http://aa.usno.navy.mil/imagery/disk?body=moon&year=2017&month=9&day=24&hour=11&minute=31
     func testMoonSemiDiameter() {

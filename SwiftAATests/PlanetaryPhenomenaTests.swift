@@ -33,4 +33,11 @@ class PlanetaryPhenomenaTests: XCTestCase {
         XCTAssertEqualWithAccuracy(mercury.westernElongation(mean: false).value, 2449314.14, accuracy: 0.002)
         XCTAssertEqualWithAccuracy(mercury.elongationValue(eastern: false).value, 19.7506, accuracy: 0.0001)
     }
+    
+//    // See AA. p.254.
+//    func testMarsStation() {
+//        let mars = Mars(julianDay: JulianDay(2450537.510))
+//        AssertEqual(mars.station1(), JulianDay(2450566.255))
+//    }
+
 }
