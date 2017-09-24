@@ -215,7 +215,10 @@ class MoonTests: XCTestCase {
         let jd = JulianDay(year: 1992, month: 4, day: 1)
         let moon = Moon(julianDay: jd)
         let copernicus = SelenographicCoordinates(longitude: -20.0, latitude: 9.7)
-        AssertEqual(moon.timeOfSunrise(for: copernicus), JulianDay(year: 1992, month: 4, day: 11, hour: 19, minute: 0, second: 0), accuracy: JulianDay(0.02))
+        let jdResult = JulianDay(year: 1992, month: 4, day: 11, hour: 19, minute: 0, second: 0)
+        AssertEqual(moon.timeOfSunrise(for: copernicus), jdResult, accuracy: JulianDay(0.02))
+        // At sunrise, the sun altitude is ~ 0
+        AssertEqual(Moon(julianDay: jdResult).altitudeOfTheSun(for: copernicus), Degree(0.0), accuracy: Degree(0.2))
     }
 }
 
