@@ -47,6 +47,21 @@ class EarthTests: XCTestCase {
         AssertEqual(details.transitTime!, expectedTransit, accuracy: accuracy)
         let expectedSet = JulianDay(year: 1988, month: 03, day: 20, hour: 2, minute: 55)
         AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
+
+        XCTAssertNil(details.error)
+    }
+    
+    func testRiseTransitSetTimesInvalidPlanet() {
+        let jd = JulianDay(year: 1988, month: 3, day: 20, hour: 0, minute: 0, second: 0)
+        let earth = Earth(julianDay: jd)
+        
+        let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
+        let details = earth.riseTransitSetTimes(for: .UNDEFINED, geographicCoordinates: boston)
+        
+        XCTAssertNil(details.riseTime)
+        XCTAssertNil(details.transitTime)
+        XCTAssertNil(details.setTime)
+        XCTAssertNotNil(details.error)
     }
     
     func testEquinoxes() {
