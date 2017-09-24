@@ -59,7 +59,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      - parameter equinoxType: if yes, means the spring equinox for the northern hemisphere.
      if flase, it is the autumn equinox of the northern hemisphere.
      
-     - returns: A julian day
+     - returns: A julian day of the TT time of the equinox.
      */
     func equinox(of equinoxType: EarthEquinoxType) -> JulianDay {
         let year = self.julianDay.date.year
@@ -77,7 +77,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      - parameter solsticeType: if true, means the summer solstice in the northern hemisphere,
      if false, means the winter solstice in the norther hemisphere.
      
-     - returns: A julian day
+     - returns: A julian day of the TT time of the solstice.
      */
     func solstice(of solsticeType: EarthSolsticeType) -> JulianDay {
         let year = self.julianDay.date.year
