@@ -67,4 +67,21 @@ class CelestialBodiesTests: XCTestCase {
         let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 122.0, latitude: 51.0)
         AssertEqual(gro_j1655_40.angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for: geoCoords), Degree(186.0), accuracy: Degree(1))
     }
+    
+    func testDiurnalArcsExtremes() {
+        // one of the northernmost towns in the world (norway)
+        let hammerfest = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 23, 40, 55), latitude: Degree(.plus, 70, 39, 48))
+
+        // northern winter
+        let winterSun = Sun(julianDay: JulianDay(year: 2017, month: 1, day: 1))
+        let winterArc = winterSun.diurnalArcAngle(for: 0.0, geographicCoordinates: hammerfest) // altitude could be anything > 0
+        XCTAssertNil(winterArc.value)
+        XCTAssertEqual(winterArc.error, .alwaysBelowAltitude)
+        
+        // northern summer
+        let summerSun = Sun(julianDay: JulianDay(year: 2017, month: 7, day: 1))
+        let summerArc = summerSun.diurnalArcAngle(for: 0.0, geographicCoordinates: hammerfest)
+        XCTAssertNil(summerArc.value)
+        XCTAssertEqual(summerArc.error, .alwaysAboveAltitude)
+    }
 }

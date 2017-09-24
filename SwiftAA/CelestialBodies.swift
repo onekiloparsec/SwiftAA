@@ -71,10 +71,10 @@ public protocol CelestialBody: ObjectBase {
     /// sunrise and sunset.
     ///
     /// - Parameters:
-    ///   - altitude: The crossing altitude
-    ///   - coordinates: The point on Earth from which one computes the arc.
+    ///   - objectAltitude: The crossing altitude
+    ///   - geographicCoordinates: The point on Earth from which one computes the arc.
     /// - Returns: The angle of the so-called diurnal arc
-    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?)
+    func diurnalArcAngle(for objectAltitude: Degree, geographicCoordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?)
     
     /// Geometric altitude (h0) of the center of the body at time of apparent rising or setting (see AA p.101)
     static var apparentRiseSetAltitude: Degree { get }
@@ -135,28 +135,28 @@ public extension CelestialBody {
     /// sunrise and sunset.
     ///
     /// - Parameters:
-    ///   - altitude: The crossing altitude
-    ///   - coordinates: The point on Earth from which one computes the arc.
+    ///   - objectAltitude: The crossing altitude
+    ///   - geographicCoordinates: The point on Earth from which one computes the arc.
     /// - Returns: The angle of the so-called diurnal arc
-    func diurnalArcAngle(forObjectAltitude altitude: Degree, coordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {
+    func diurnalArcAngle(for objectAltitude: Degree, geographicCoordinates: GeographicCoordinates) -> (value: Degree?, error: CelestialBodyTransitError?) {
         // Compute the diurnal arc that the Sun traverses to reach the specified altitude altit:
         
-        let sinAlt = sin(altitude.inRadians.value)
-        let sinLat = sin(coordinates.latitude.inRadians.value)
+        let sinAlt = sin(objectAltitude.inRadians.value)
+        let sinLat = sin(geographicCoordinates.latitude.inRadians.value)
         let sinDec = sin(self.equatorialCoordinates.declination.inRadians.value)
-        let cosLat = cos(coordinates.latitude.inRadians.value)
+        let cosLat = cos(geographicCoordinates.latitude.inRadians.value)
         let cosDec = cos(self.equatorialCoordinates.declination.inRadians.value)
         
         let cost = (sinAlt - sinLat * sinDec) / (cosLat * cosDec)
         
         if (cost >= 1.0 ) {
-            return (nil, .alwaysBelowAltitude)
+            return (value: nil, error: .alwaysBelowAltitude)
         }
         else if (cost <= -1.0) {
-            return (nil, .alwaysAboveAltitude)
+            return (value: nil, error: .alwaysAboveAltitude)
         }
         else {
-            return (Radian(acos(cost)).inDegrees, nil)
+            return (value: Radian(acos(cost)).inDegrees, error: nil)
         }
     }
 }
