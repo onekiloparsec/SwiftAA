@@ -38,6 +38,9 @@ public protocol MarsPhysicalDetails: PlanetaryPhysicalDetails {
     
     /// The aerographic coordinates are those of Mars, to be compared geographic for the Earth.
     var aerographicLongitudeOfCentralMeridian: Degree { get }
+
+    /// The aerographic coordinates are those of Mars, to be compared geographic for the Earth.
+    var apparentDiameter: ArcSecond { get }
 }
 
 

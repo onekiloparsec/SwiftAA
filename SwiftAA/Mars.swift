@@ -58,5 +58,9 @@ public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {
     public var aerographicLongitudeOfCentralMeridian: Degree {
         return Degree(self.physicalDetails.w)
     }
-
+    
+    /// The apparent diameter of Mars
+    public var apparentDiameter: ArcSecond {
+        return ArcSecond(self.physicalDetails.d)
+    }
 }
