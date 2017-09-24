@@ -208,7 +208,14 @@ class MoonTests: XCTestCase {
         
         let geoCoords = GeographicCoordinates(positivelyWestwardLongitude: 0, latitude: Degree(51.0)) // longitude must be consistent with above.
         AssertEqual(moon.topocentricSemiDiameter(for: geoCoords)*2.0, Degree(.plus, 0, 29, 53.2).inArcSeconds + 5.0.arcseconds, accuracy: ArcSecond(1.0))
-
+    }
+    
+    // See AA p.377, Example 53.c
+    func testSunrise() {
+        let jd = JulianDay(year: 1992, month: 4, day: 1)
+        let moon = Moon(julianDay: jd)
+        let copernicus = SelenographicCoordinates(longitude: -20.0, latitude: 9.7)
+        AssertEqual(moon.timeOfSunrise(for: copernicus), JulianDay(year: 1992, month: 4, day: 11, hour: 19, minute: 0, second: 0), accuracy: JulianDay(0.02))
     }
 }
 
