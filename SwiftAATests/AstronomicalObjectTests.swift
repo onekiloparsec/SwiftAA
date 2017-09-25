@@ -16,4 +16,9 @@ class AstronomicalObjectTests: XCTestCase {
         AssertEqual(AstronomicalObject(name: "GRO J1655-40", coordinates: coords, julianDay: JulianDay(Date())).radiusVector, AstronomicalUnit(-1))
     }
 
+    func testInitFatalError() {
+        assertFatalError(expectedMessage: "init(julianDay:highPrecision:) has not been implemented") {
+            _ = AstronomicalObject(julianDay: JulianDay(Date()), highPrecision: true)
+        }
+    }
 }
