@@ -16,6 +16,6 @@ class AngularSeparationTests: XCTestCase {
         let alphaBoo = EquatorialCoordinates(rightAscension: Hour(.plus, 14, 15, 39.7), declination: Degree(.plus, 19, 10, 57.0))
         let alphaVir = EquatorialCoordinates(rightAscension: Hour(.plus, 13, 25, 11.6), declination: Degree(.minus, 11, 09, 41.0))
         
-        AssertEqual(alphaBoo.angularSeparation(from: alphaVir), 32.7930.degrees, accuracy: 0.0001.degrees)
+        AssertEqual(alphaBoo.angularSeparation(with: alphaVir), 32.7930.degrees, accuracy: 0.0001.degrees)
     }
 }

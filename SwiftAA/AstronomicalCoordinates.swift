@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The Equatorial coordinates are the coordinates of an object in the equatorial system (based on Earth equator).
+/// The coordinates of an object in the equatorial system, based on Earth equator.
 public struct EquatorialCoordinates: CustomStringConvertible {
     
     /// The right ascension
@@ -23,7 +23,7 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     /// Convenience accessor of the declination
     public var delta: Degree { return declination }
     
-    /// Returns an EquatorialCoordinates oject.
+    /// Creates an EquatorialCoordinates instance.
     ///
     /// - Parameters:
     ///   - rightAscension: The right ascension value
@@ -35,7 +35,7 @@ public struct EquatorialCoordinates: CustomStringConvertible {
         self.epoch = epoch
     }
     
-    /// Returns an EquatorialCoordinates oject.
+    /// Creates an EquatorialCoordinates instance.
     ///
     /// - Parameters:
     ///   - alpha: The alpha (R.A.) value
@@ -54,35 +54,39 @@ public struct EquatorialCoordinates: CustomStringConvertible {
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epoch: self.epoch)
     }
     
-    /**
-     Transform the coordinates to galactic ones.
-     
-     The galactic coordinates system has been defined by the International Astronomical Union 
-     in 1959. In the standard equatorial system of B1950.0, the galactic North Pole
-     has the coordinates: alpha = 192.25 Degree, and delta = 27.4 Degree, and the origin
-     of the galactic longitude is the point (in western Sagittarius) of the galactic equator 
-     which is 33º distant from the ascending node (in western Aquila) of the galactic equator
-     with the equator of B1950.0.
-     These values have been fixed conventionally and therefore must be considered as exact for 
-     the mentionned equinox of B1950.0
-     
-     - returns: The corresponding galactic coordinates.
-     */
+    /// Transform the coordinates to galactic ones.
+    ///
+    /// The galactic coordinates system has been defined by the International Astronomical Union
+    /// in 1959. In the standard equatorial system of B1950.0, the galactic North Pole
+    /// has the coordinates: alpha = 192.25 Degree, and delta = 27.4 Degree, and the origin
+    /// of the galactic longitude is the point (in western Sagittarius) of the galactic equator
+    /// which is 33º distant from the ascending node (in western Aquila) of the galactic equator
+    /// with the equator of B1950.0.
+    /// These values have been fixed conventionally and therefore must be considered as exact for
+    /// the mentionned equinox of B1950.0
+    ///
+    /// - Returns: The corresponding galactic coordinates.
     public func makeGalacticCoordinates() -> GalacticCoordinates {
         let precessedCoords = self.precessedCoordinates(to: StandardEpoch_B1950_0)
         let components = KPCAACoordinateTransformation_Equatorial2Galactic(precessedCoords.rightAscension.value, precessedCoords.declination.value)
         return GalacticCoordinates(l: Degree(components.X), b: Degree(components.Y))
     }
     
-    public func makeHorizontalCoordinates(with coords: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
-        let lha = (julianDay.meanLocalSiderealTime(longitude: coords.longitude) - rightAscension).reduced
-        let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha.value, self.declination.value, coords.latitude.value)
+    /// Transforms the coordinates into horizontal ones.
+    ///
+    /// - Parameters:
+    ///   - location: The geographic location of the observer.
+    ///   - julianDay: The julian day of observation.
+    /// - Returns: <#return value description#>
+    public func makeHorizontalCoordinates(for location: GeographicCoordinates, julianDay: JulianDay) -> HorizontalCoordinates {
+        let lha = (julianDay.meanLocalSiderealTime(longitude: location.longitude) - rightAscension).reduced
+        let components = KPCAACoordinateTransformation_Equatorial2Horizontal(lha.value, self.declination.value, location.latitude.value)
         return HorizontalCoordinates(azimuth: Degree(components.X),
                                      altitude: Degree(components.Y),
-                                     geographicCoordinates: coords)
+                                     geographicCoordinates: location)
     }
     
-    /// Returns new EquatorialCoordinates precessed to a new given epoch.
+    /// Returns new EquatorialCoordinates precessed to the given epoch.
     ///
     /// - Parameter newEpoch: The new epoch to precess to.
     /// - Returns: A new EquatorialCoordinates object
@@ -95,28 +99,43 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     ///
     /// - Parameter otherCoordinates: The other coordinates to consider.
     /// - Returns: A angle value, between the two coordinates.
-    public func angularSeparation(from otherCoordinates: EquatorialCoordinates) -> Degree {
+    public func angularSeparation(with otherCoordinates: EquatorialCoordinates) -> Degree {
         return Degree(KPCAAAngularSeparation_Separation(self.alpha.value,
                                                         self.delta.value,
                                                         otherCoordinates.alpha.value,
                                                         otherCoordinates.delta.value))
     }
     
-    public func positionAngle(with otherCoordinates: EquatorialCoordinates) -> Degree {
+    /// Returns the position angle relative to other coordinates.
+    ///
+    /// - Parameter otherCoordinates: The other coordinates.
+    /// - Returns: The position angle between the two coordinates.
+    public func positionAngle(relativeTo otherCoordinates: EquatorialCoordinates) -> Degree {
         return Degree(KPCAAAngularSeparation_PositionAngle(self.alpha.value,
                                                            self.delta.value,
                                                            otherCoordinates.alpha.value,
                                                            otherCoordinates.delta.value))
     }
     
+    /// Return new ecliptic coordinates corrected for the annual aberration of the Earth. It must be used for star coordinates, not planets.
+    /// See AA, p149.
+    ///
+    /// - parameter julianDay:     The julian day for which the aberration is computed.
+    /// - parameter highPrecision: If `false`, the Ron-Vondrák algorithm is used. See AA p.153. If `true`, the newer VSOP87 theory is used.
+    ///
+    /// - returns: Corected ecliptic coordinates of the star.
+    public func correctedForAnnualAberration(julianDay: JulianDay, highPrecision: Bool = true) -> EquatorialCoordinates {
+        let diff = KPCAAAberration_EquatorialAberration(self.alpha.value, self.delta.value, julianDay.value, highPrecision)
+        return EquatorialCoordinates(alpha: Hour(self.alpha.value+diff.X), delta: Degree(self.delta.value+diff.Y), epoch: self.epoch)
+    }
+
     public var description: String { return String(format: "α=%@, δ=%@", alpha.description, delta.description) }
     
 }
 
 // MARK: -
 
-/// The Equatorial coordinates are the coordinates of an object in the ecliptic (a.k.a. celestial) system
-/// (based on Earth orbital plane).
+/// The coordinates in the ecliptic (a.k.a. celestial) system, based on solar-system planets orbital planes.
 public struct EclipticCoordinates: CustomStringConvertible {
     
     /// The celestial longitude
@@ -131,7 +150,7 @@ public struct EclipticCoordinates: CustomStringConvertible {
     /// A convenience accessor for the celestial latitude
     public var beta: Degree { return celestialLatitude }
     
-    /// Returns a new EclipticCoordinates object.
+    /// Creates a new EclipticCoordinates instance.
     ///
     /// - Parameters:
     ///   - celestialLongitude: The celestial longitude value
@@ -143,7 +162,7 @@ public struct EclipticCoordinates: CustomStringConvertible {
         self.epoch = epoch
     }
     
-    /// Returns a new EclipticCoordinates object.
+    /// Creates a new EclipticCoordinates instance.
     ///
     /// - Parameters:
     ///   - lambda: The longitude value.
@@ -153,33 +172,45 @@ public struct EclipticCoordinates: CustomStringConvertible {
         self.init(celestialLongitude: lambda, celestialLatitude: beta, epoch: epoch)
     }
     
-    /// Returns the equatorial coordinates corresponding to the current ecliptic ones.
+    /// Returns equatorial coordinates corresponding to the current ecliptic ones.
     ///
-    /// - Returns: A new equatorial coordinates object
+    /// - Returns: A new equatorial coordinates instance.
     public func makeEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_MeanObliquityOfEcliptic(self.epoch.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: self.epoch)
     }
 
-    /// Returns the apparent equatorial coordinates corresponding to the current ecliptic ones.
+    /// Returns apparent equatorial coordinates corresponding to the current ecliptic ones.
     ///
-    /// - Returns: A new equatorial coordinates object
+    /// - Returns: A new equatorial coordinates instance
     public func makeApparentEquatorialCoordinates() -> EquatorialCoordinates {
         let eclipticObliquity = KPCAANutation_TrueObliquityOfEcliptic(self.epoch.value)
         let components = KPCAACoordinateTransformation_Ecliptic2Equatorial(self.celestialLongitude.value, self.celestialLatitude.value, eclipticObliquity)
         return EquatorialCoordinates(alpha: Hour(components.X), delta: Degree(components.Y), epoch: self.epoch)
     }
 
-    /// Returns new EclipticCoordinates precessed to a new given epoch.
+    /// Returns EclipticCoordinates precessed to a new given epoch.
     ///
     /// - Parameter newEpoch: The new epoch to precess to.
-    /// - Returns: A new EclipticCoordinates object
+    /// - Returns: A new EclipticCoordinates instance
     public func precessedCoordinates(to newEpoch: JulianDay) -> EclipticCoordinates {
         let components = KPCAAPrecession_PrecessEcliptic(self.celestialLongitude.value, self.celestialLatitude.value, self.epoch.value, newEpoch.value)
         return EclipticCoordinates(lambda: Degree(components.X), beta: Degree(components.Y), epoch: newEpoch)
     }
     
+    /// Return new ecliptic coordinates corrected for the annual aberration of the Earth. It must be used for star coordinates, not planets.
+    /// See AA, p149.
+    ///
+    /// - parameter julianDay:     The julian day for which the aberration is computed.
+    /// - parameter highPrecision: If `false`, the Ron-Vondrák algorithm is used. See AA p.153. If `true`, the newer VSOP87 theory is used.OSun
+    ///
+    /// - returns: Corected ecliptic coordinates of the star.
+    public func correctedForAnnualAberration(julianDay: JulianDay, highPrecision: Bool = true) -> EclipticCoordinates {
+        let diff = KPCAAAberration_EclipticAberration(self.lambda.value, self.beta.value, julianDay.value, highPrecision)
+        return EclipticCoordinates(lambda: Degree(self.lambda.value+diff.X), beta: Degree(self.beta.value+diff.Y), epoch: self.epoch)
+    }
+
     public var description: String {
         return String(format: "λ=%@, β=%@ (epoch %@)", lambda.description, beta.description, epoch.description)
     }
@@ -188,7 +219,7 @@ public struct EclipticCoordinates: CustomStringConvertible {
 
 // MARK: -
 
-/// The Galactic coordinates are the coordinates of an object in the Milky Way galactic system.
+/// The coordinates of an object in the Milky Way galactic system.
 public struct GalacticCoordinates: CustomStringConvertible {
     
     /// The galactic longitude
@@ -203,7 +234,7 @@ public struct GalacticCoordinates: CustomStringConvertible {
     /// A convenience accessor for the galactic latitude
     public var b: Degree { return galacticLatitude }
     
-    /// Returns a new GalacticCoordinates object
+    /// Creates a new GalacticCoordinates instance.
     ///
     /// - Parameters:
     ///   - galacticLongitude: The galactic longitude
@@ -215,7 +246,7 @@ public struct GalacticCoordinates: CustomStringConvertible {
         self.epoch = epoch
     }
     
-    /// Returns a new GalacticCoordinates object
+    /// Creates a new GalacticCoordinates instance.
     ///
     /// - Parameters:
     ///   - l: The galactic longitude
@@ -240,7 +271,7 @@ public struct GalacticCoordinates: CustomStringConvertible {
 
 // MARK: -
 
-/// The HorizontalCoordinates are the coordinates of an object as seen from a location on Earth.
+/// The coordinates of an object as seen from an observer location on Earth.
 public struct HorizontalCoordinates: CustomStringConvertible {
     /// The azimuth, westward from the South see AA. p91
     public let azimuth: Degree
@@ -252,7 +283,7 @@ public struct HorizontalCoordinates: CustomStringConvertible {
     /// The azimuth angle, starting from the North.
     public var northBasedAzimuth: Degree { return (azimuth + 180).reduced }
     
-    /// Returns a new HorizontalCoordinates object
+    /// Creates a new HorizontalCoordinates instance.
     ///
     /// - Parameters:
     ///   - azimuth: The azimuth value.

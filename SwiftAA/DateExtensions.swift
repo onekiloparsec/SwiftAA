@@ -9,11 +9,7 @@
 import Foundation
 
 public extension Date {
-    /**
-     Computes the Julian Day from the date.
-     
-     - returns: The value of the Julian Day, as a fractional (double) number.
-     */
+    /// The Julian Day of the date.
     public var julianDay: JulianDay {
         return JulianDay(self)
     }
@@ -78,7 +74,7 @@ public extension Date {
     }
     
     
-    /// The fractional year corresponding to the date.
+    /// The fractional year corresponding of the date.
     public var fractionalYear: Double {
         get {
             let daysCount = (self.isLeap) ? 366.0 : 365.0

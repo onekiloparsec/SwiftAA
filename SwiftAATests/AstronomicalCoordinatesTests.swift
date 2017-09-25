@@ -25,7 +25,7 @@ class AstronomicalCoordinatesTests: XCTestCase {
         let jd = JulianDay(year: 1987, month: 4, day: 10, hour: 19, minute: 21, second: 0)
         let equatorial = EquatorialCoordinates(alpha: Hour(.plus, 23, 9, 16.641), delta: Degree(.minus, 6, 43, 11.61))
         let geographic = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 77, 3, 56.0), latitude: Degree(.plus, 38, 55, 17.0))
-        let horizontal = equatorial.makeHorizontalCoordinates(with: geographic, julianDay: jd)
+        let horizontal = equatorial.makeHorizontalCoordinates(for: geographic, julianDay: jd)
         AssertEqual(horizontal.altitude, Degree(15.1249), accuracy: ArcSecond(5.0).inDegrees)
         AssertEqual(horizontal.azimuth, Degree(68.0337), accuracy: ArcSecond(5.0).inDegrees)
         let eqBack = horizontal.makeEquatorialCoordinates(julianDay: jd)

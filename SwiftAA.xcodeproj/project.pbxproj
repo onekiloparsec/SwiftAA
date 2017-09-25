@@ -935,8 +935,6 @@
 		9FC501731E0571B2005CA6FC /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */; };
 		9FC501751E0582C9005CA6FC /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501741E0582C9005CA6FC /* Asteroids.swift */; };
 		9FC501761E0582C9005CA6FC /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC501741E0582C9005CA6FC /* Asteroids.swift */; };
-		9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
-		9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC545BC1DB7F8E900283B3D /* Aberration.swift */; };
 		9FD1F44A1E6E08C900EC5D66 /* EarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */; };
 		9FD1F44B1E6E08C900EC5D66 /* EarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */; };
 		9FD71F6B1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
@@ -1440,7 +1438,6 @@
 		9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-macOS-Info.plist"; path = "SwiftAATests/SwiftAATests-macOS-Info.plist"; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9FC501741E0582C9005CA6FC /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
-		9FC545BC1DB7F8E900283B3D /* Aberration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aberration.swift; sourceTree = "<group>"; };
 		9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTests.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBodies.swift; sourceTree = "<group>"; };
@@ -2174,7 +2171,6 @@
 				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
 				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
-				9FC545BC1DB7F8E900283B3D /* Aberration.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -2869,7 +2865,6 @@
 				9F47CA9F1F51D39A00FF13BA /* AABinaryStar.cpp in Sources */,
 				9F694DB11D15C67300EE7492 /* KPCAAGalileanMoons.mm in Sources */,
 				9F694DB51D15C67300EE7492 /* KPCAAAngularSeparation.mm in Sources */,
-				9FC545BE1DB7F8E900283B3D /* Aberration.swift in Sources */,
 				9F074D361F76E43E00BDE079 /* PlanetaryPhysicalDetails.swift in Sources */,
 				9FB755301E05EAAF00EC7617 /* Times.swift in Sources */,
 				9F694DC01D15C67300EE7492 /* KPCAASaturn.mm in Sources */,
@@ -3079,7 +3074,6 @@
 				9F47CA051F51D34100FF13BA /* AAVSOP87D_MAR.cpp in Sources */,
 				9F47C9A61F51D34100FF13BA /* AARefraction.cpp in Sources */,
 				9F47C9741F51D34100FF13BA /* AAKepler.cpp in Sources */,
-				9FC545BD1DB7F8E900283B3D /* Aberration.swift in Sources */,
 				9F47C9D91F51D34100FF13BA /* AAVSOP87A_NEP.cpp in Sources */,
 				9FFC4A4B1DCF872400382049 /* SaturnMoons.swift in Sources */,
 				9F694D871D157BD200EE7492 /* KPCAASaturn.mm in Sources */,

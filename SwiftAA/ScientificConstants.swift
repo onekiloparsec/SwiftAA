@@ -73,9 +73,9 @@ public enum Equinox {
 
 /// Earth seasons
 ///
-/// - spring: Sprint
+/// - spring: Spring
 /// - summer: Summer
-/// - autumn: Authumn
+/// - autumn: Autumn
 /// - winter: Winter
 public enum Season {
     case spring
@@ -100,8 +100,8 @@ public enum MoonPhase {
 
 /// Error used when computing Rise Transit and Set times (see Earth twilights and planetary rise, transit and set times).
 ///
-/// - alwaysBelowAltitude: The object for which times are computed is always below the given altitude.
-/// - alwaysAboveAltitude: The object for which times are computed is always above the given altitude.
+/// - alwaysBelowAltitude: The object is always below the given altitude.
+/// - alwaysAboveAltitude: The object is always above the given altitude.
 public enum CelestialBodyTransitError: Error {
     case alwaysBelowAltitude
     case alwaysAboveAltitude
@@ -111,8 +111,7 @@ public enum CelestialBodyTransitError: Error {
 // Check nested types in https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
 
 
-/// KPCAAPlanet is an enum for all planets, being "true" planets, as it was for a long time,
-/// or not (like DwarfPlanet), that is, including Pluto.
+/// KPCAAPlanet is an enum for all historical 9 planets, that is, including Pluto.
 extension KPCAAPlanet: CustomStringConvertible {
     
     /// Return the KPCAAPlanet enum value from a planet name string.
@@ -184,7 +183,7 @@ extension KPCAAPlanet: CustomStringConvertible {
 // planet enum parameters in Obj-C functions. The code here is the consequence of
 // choosing to make switch statments inside Obj-C layer, rather than in Swift one.
 
-///  KPCAAPlanetStrict is an enum for all true planets, that is, excluding the now official
+/// KPCAAPlanetStrict is an enum for all true planets, that is, excluding the now official
 /// Dwarf Planet category, that is, Pluto.
 public extension KPCAAPlanetStrict {
     
@@ -202,6 +201,7 @@ public extension KPCAAPlanetStrict {
     }
 }
 
+/// KPCPlanetaryObject is an enum for all planets, exlcuding Earth and Pluto.
 public extension KPCPlanetaryObject {
     
     /// Returns the planetary object index from a given planet index.
