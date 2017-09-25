@@ -11,6 +11,10 @@ import XCTest
 
 class PlanetaryBaseTest: XCTestCase {
     var jd: JulianDay = 0.0
+
+    func testPlanetBasic() {
+        XCTAssertEqual(Planet.averageColor, Color.white)
+    }
     
     func testMercuryTypes() {
         let mercury = Mercury(julianDay: self.jd)

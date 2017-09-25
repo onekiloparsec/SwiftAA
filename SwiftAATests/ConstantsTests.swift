@@ -21,6 +21,12 @@ class ConstantsTests: XCTestCase {
         let distance1: AstronomicalUnit = 0.37276
         AssertEqual(distance1.equatorialHorizontalParallax(), ArcSecond(23.592), accuracy: ArcSecond(0.0005))
     }
+    
+    func testEquinox() {
+        let date = Date()
+        XCTAssertEqual(Equinox.meanEquinoxOfTheDate(date).epoch, date.julianDay)
+        XCTAssertEqual(Equinox.standardJ2000.epoch, StandardEpoch_J2000_0)
+    }
 
     func testPlanet2PlanetaryObject() {
         XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Mercury), KPCPlanetaryObject.MERCURY)
@@ -65,10 +71,23 @@ class ConstantsTests: XCTestCase {
         XCTAssertEqual(String(describing: KPCAAPlanet.Mars), "Mars")
         XCTAssertEqual(String(describing: KPCAAPlanet.Jupiter), "Jupiter")
         XCTAssertEqual(String(describing: KPCAAPlanet.Saturn), "Saturn")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Saturn), "Saturn")
         XCTAssertEqual(String(describing: KPCAAPlanet.Neptune), "Neptune")
         XCTAssertEqual(String(describing: KPCAAPlanet.Uranus), "Uranus")
         XCTAssertEqual(String(describing: KPCAAPlanet.Pluto), "Pluto")
         XCTAssertEqual(String(describing: KPCAAPlanet.Undefined), "")
+    }
+    
+    func testPlanetFromString() {
+        XCTAssertEqual(KPCAAPlanet.fromString("Mercury"), .Mercury)
+        XCTAssertEqual(KPCAAPlanet.fromString("Venus"), .Venus)
+        XCTAssertEqual(KPCAAPlanet.fromString("Earth"), .Earth)
+        XCTAssertEqual(KPCAAPlanet.fromString("Mars"), .Mars)
+        XCTAssertEqual(KPCAAPlanet.fromString("Jupiter"), .Jupiter)
+        XCTAssertEqual(KPCAAPlanet.fromString("Saturn"), .Saturn)
+        XCTAssertEqual(KPCAAPlanet.fromString("Neptune"), .Neptune)
+        XCTAssertEqual(KPCAAPlanet.fromString("Uranus"), .Uranus)
+        XCTAssertEqual(KPCAAPlanet.fromString("Pluto"), .Pluto)
+        XCTAssertEqual(KPCAAPlanet.fromString(""), .Undefined)
+        XCTAssertEqual(KPCAAPlanet.fromString(">??"), .Undefined)
     }
 }

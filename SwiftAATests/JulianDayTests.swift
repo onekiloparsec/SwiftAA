@@ -254,6 +254,11 @@ class JulianDayTest: XCTestCase {
         let jd3 = JulianDay(year: 2017, month: 1, day: 1)
         AssertEqual(jd3.cumulativeLeapSeconds(), Second(37))
     }
+    
+    func testJulianDayDescription() {
+        XCTAssertEqual(String(describing: JulianDay(StandardEpoch_J2000_0.value)), "J2000.0")
+        XCTAssertEqual(String(describing: JulianDay(StandardEpoch_B1950_0.value)), "B1950.0")
+    }
 }
 
 
