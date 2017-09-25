@@ -15,13 +15,13 @@ SwiftAA
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
-[![SayThanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/onekiloparsec)
 [![Travis](https://img.shields.io/travis/onekiloparsec/SwiftAA.svg)](https://travis-ci.org/onekiloparsec/SwiftAA/)
 [![Codecov](https://img.shields.io/codecov/c/github/onekiloparsec/SwiftAA.svg)](https://codecov.io/gh/onekiloparsec/SwiftAA)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
+[![SayThanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/onekiloparsec)
 
-*The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.* 
+*The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
@@ -37,7 +37,7 @@ Ongoing development is using AA+ version 1.91 (released August 1st, 2017).
 
 But **SwiftAA provides more modern and a lot more readable APIs**, taking advantage of the expressiveness of Swift and its various syntax elements, making it fun and easy of use. In fact, you simply can't use AA+ without having the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added to improve even more  the completeness and ease of use. In particular, **SwiftAA provides units safety** a lot stronger compared to C++ APIs. 
 
-Moreover, **SwiftAA has a much larger unit tests coverage**. In fact, unit tests are being carefully written with data directly taken from Jean Meeus' textbook, AA+ own tests, [USNO](http://www.usno.navy.mil), [SkySafari](https://skysafariastronomy.com) and [Xephem](http://www.clearskyinstitute.com/xephem/) (and thus trying to achieve a probably hypothetical consistency between these sources).
+Moreover, **SwiftAA has a much larger unit tests coverage** (>90% for the Swift code!). In fact, unit tests are being carefully written with data directly taken from Jean Meeus' textbook, AA+ own tests, [USNO](http://www.usno.navy.mil), [SkySafari](https://skysafariastronomy.com) and [Xephem](http://www.clearskyinstitute.com/xephem/) (and thus trying to achieve a probably hypothetical consistency between these sources).
 
 
 Documentation
@@ -100,6 +100,5 @@ The constraint of having an Objective-C layer first comes from the fact that no 
 Author
 ======
 Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
-(Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile).
-I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
+(Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile). <br/> I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
 
