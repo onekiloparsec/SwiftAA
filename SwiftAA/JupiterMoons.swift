@@ -22,12 +22,6 @@ public struct GalileanMoonRectangularCoordinates {
     fileprivate(set) var Y: JupiterEquatorialRadius
     fileprivate(set) var Z: Double
     
-    init(X: JupiterEquatorialRadius, Y: JupiterEquatorialRadius, Z: Double) {
-        self.X = X
-        self.Y = Y
-        self.Z = Z
-    }
-
     init(components: KPCAA3DCoordinateComponents) {
         self.X = components.X
         self.Y = components.Y
