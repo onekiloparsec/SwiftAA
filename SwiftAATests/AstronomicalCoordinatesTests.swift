@@ -50,7 +50,23 @@ class AstronomicalCoordinatesTests: XCTestCase {
         AssertEqual(horizontal1.angularSeparation(with: horizontal2), Degree(45), accuracy: ArcSecond(0.0001).inDegrees)
         AssertEqual(horizontal2.angularSeparation(with: horizontal3), Degree(60), accuracy: ArcSecond(0.0001).inDegrees)
         AssertEqual(horizontal3.angularSeparation(with: horizontal1), Degree(90), accuracy: ArcSecond(0.0001).inDegrees)
-    }    
+    }
+    
+    func testEquatorialCoordinatesDescription() {
+        let equatorial = EquatorialCoordinates(alpha: Hour(.plus, 7, 45, 18.946), delta: Degree(.plus, 28, 1, 34.26))
+        XCTAssertEqual(String(describing: equatorial), "α=+7h45m18.946s, δ=+28°1'34.260\"")
+    }
+    
+    func testGalacticCoordinatesDescription() {
+        let galactic = GalacticCoordinates(l: Degree(.plus, 7, 45, 18.946), b: Degree(.plus, 28, 1, 34.26))
+        XCTAssertEqual(String(describing: galactic), "l=+7°45'18.946\", b=+28°1'34.260\" (epoch B1950.0)")
+    }
+
+    func testEclipticCoordinatesDescription() {
+        let ecliptic = EclipticCoordinates(lambda: Degree(.plus, 7, 45, 18.946), beta: Degree(.plus, 28, 1, 34.26))
+        XCTAssertEqual(String(describing: ecliptic), "λ=+7°45'18.946\", β=+28°1'34.260\" (epoch J2000.0)")
+    }
+
 }
 
 
