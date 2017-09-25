@@ -14,7 +14,7 @@
     <a title="EquatorialCoordinates Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (74% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (75% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -194,6 +194,9 @@
                 <a href="../Functions.html#/s:F7SwiftAA17binaryStarDetailsFT4timeSd8elementsVS_25BinaryStarOrbitalElements_VS_17BinaryStarDetails">binaryStarDetails(time:elements:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA10fatalErrorFTKT_SS4fileVs12StaticString4lineSu_Os5Never">fatalError(_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA10refractionFT20fromApparentAltitudeVS_6Degree8pressureSd11temperatureSd_VS_9ArcMinute">refraction(fromApparentAltitude:pressure:temperature:)</a>
               </li>
               <li class="nav-group-task">
@@ -201,6 +204,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA14riseTransitSetFT12forJulianDayVS_9JulianDay10equCoords1VS_21EquatorialCoordinates10equCoords2S1_10equCoords3S1_9geoCoordsVS_21GeographicCoordinates23apparentRiseSetAltitudeVS_6Degree_VS_26RiseTransitSetTimesDetails">riseTransitSet(forJulianDay:equCoords1:equCoords2:equCoords3:geoCoords:apparentRiseSetAltitude:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA11unreachableFT_Os5Never">unreachable()</a>
               </li>
             </ul>
           </li>
@@ -282,6 +288,9 @@
                 <a href="../Structs/EquatorialCoordinates.html">EquatorialCoordinates</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/FatalErrorUtil.html">FatalErrorUtil</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/GalacticCoordinates.html">GalacticCoordinates</a>
               </li>
               <li class="nav-group-task">
@@ -355,7 +364,7 @@
 
                 </div>
               </div>
-            <p>The Equatorial coordinates are the coordinates of an object in the equatorial system (based on Earth equator).</p>
+            <p>The coordinates of an object in the equatorial system, based on Earth equator.</p>
 
           </section>
           <section class="section task-group-section">
@@ -524,7 +533,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns an EquatorialCoordinates oject.</p>
+                        <p>Creates an EquatorialCoordinates instance.</p>
 
                       </div>
                       <div class="declaration">
@@ -597,7 +606,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns an EquatorialCoordinates oject.</p>
+                        <p>Creates an EquatorialCoordinates instance.</p>
 
                       </div>
                       <div class="declaration">
@@ -706,13 +715,13 @@
                       <div class="abstract">
                         <p>Transform the coordinates to galactic ones.</p>
 
-<p>The galactic coordinates system has been defined by the International Astronomical Union 
+<p>The galactic coordinates system has been defined by the International Astronomical Union
 in 1959. In the standard equatorial system of B1950.0, the galactic North Pole
 has the coordinates: alpha = 192.25 Degree, and delta = 27.4 Degree, and the origin
-of the galactic longitude is the point (in western Sagittarius) of the galactic equator 
+of the galactic longitude is the point (in western Sagittarius) of the galactic equator
 which is 33º distant from the ascending node (in western Aquila) of the galactic equator
 with the equator of B1950.0.
-These values have been fixed conventionally and therefore must be considered as exact for 
+These values have been fixed conventionally and therefore must be considered as exact for
 the mentionned equinox of B1950.0</p>
 
                       </div>
@@ -729,7 +738,7 @@ the mentionned equinox of B1950.0</p>
                         <p>The corresponding galactic coordinates.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L71-L75">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L69-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -737,9 +746,9 @@ the mentionned equinox of B1950.0</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA21EquatorialCoordinates25makeHorizontalCoordinatesFT4withVS_21GeographicCoordinates9julianDayVS_9JulianDay_VS_21HorizontalCoordinates"></a>
-                    <a name="//apple_ref/swift/Method/makeHorizontalCoordinates(with:julianDay:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates25makeHorizontalCoordinatesFT4withVS_21GeographicCoordinates9julianDayVS_9JulianDay_VS_21HorizontalCoordinates">makeHorizontalCoordinates(with:julianDay:)</a>
+                    <a name="/s:FV7SwiftAA21EquatorialCoordinates25makeHorizontalCoordinatesFT3forVS_21GeographicCoordinates9julianDayVS_9JulianDay_VS_21HorizontalCoordinates"></a>
+                    <a name="//apple_ref/swift/Method/makeHorizontalCoordinates(for:julianDay:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates25makeHorizontalCoordinatesFT3forVS_21GeographicCoordinates9julianDayVS_9JulianDay_VS_21HorizontalCoordinates">makeHorizontalCoordinates(for:julianDay:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -747,19 +756,54 @@ the mentionned equinox of B1950.0</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Transforms the coordinates into horizontal ones.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EquatorialCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeHorizontalCoordinates</span><span class="p">(</span><span class="k">for</span> <span class="nv">location</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">,</span> <span class="nv">julianDay</span><span class="p">:</span> <span class="kt"><a href="../Structs/JulianDay.html">JulianDay</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/HorizontalCoordinates.html">HorizontalCoordinates</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The geographic location of the observer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>julianDay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The julian day of observation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>&lt;#return value description#&gt;</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L77-L83">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L81-L87">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -777,7 +821,7 @@ the mentionned equinox of B1950.0</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns new EquatorialCoordinates precessed to a new given epoch.</p>
+                        <p>Returns new EquatorialCoordinates precessed to the given epoch.</p>
 
                       </div>
                       <div class="declaration">
@@ -812,7 +856,7 @@ the mentionned equinox of B1950.0</p>
                         <p>A new EquatorialCoordinates object</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L89-L92">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L93-L96">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -820,9 +864,9 @@ the mentionned equinox of B1950.0</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA21EquatorialCoordinates17angularSeparationFT4fromS0__VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/angularSeparation(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates17angularSeparationFT4fromS0__VS_6Degree">angularSeparation(from:)</a>
+                    <a name="/s:FV7SwiftAA21EquatorialCoordinates17angularSeparationFT4withS0__VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/angularSeparation(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates17angularSeparationFT4withS0__VS_6Degree">angularSeparation(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -837,7 +881,7 @@ the mentionned equinox of B1950.0</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">angularSeparation</span><span class="p">(</span><span class="n">from</span> <span class="nv">otherCoordinates</span><span class="p">:</span> <span class="kt">EquatorialCoordinates</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">angularSeparation</span><span class="p">(</span><span class="n">with</span> <span class="nv">otherCoordinates</span><span class="p">:</span> <span class="kt">EquatorialCoordinates</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
@@ -865,7 +909,7 @@ the mentionned equinox of B1950.0</p>
                         <p>A angle value, between the two coordinates.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L98-L103">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L102-L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -873,9 +917,9 @@ the mentionned equinox of B1950.0</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7SwiftAA21EquatorialCoordinates13positionAngleFT4withS0__VS_6Degree"></a>
-                    <a name="//apple_ref/swift/Method/positionAngle(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates13positionAngleFT4withS0__VS_6Degree">positionAngle(with:)</a>
+                    <a name="/s:FV7SwiftAA21EquatorialCoordinates13positionAngleFT10relativeToS0__VS_6Degree"></a>
+                    <a name="//apple_ref/swift/Method/positionAngle(relativeTo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7SwiftAA21EquatorialCoordinates13positionAngleFT10relativeToS0__VS_6Degree">positionAngle(relativeTo:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -883,56 +927,46 @@ the mentionned equinox of B1950.0</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns the position angle relative to other coordinates.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EquatorialCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">positionAngle</span><span class="p">(</span><span class="n">relativeTo</span> <span class="nv">otherCoordinates</span><span class="p">:</span> <span class="kt">EquatorialCoordinates</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>otherCoordinates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The other coordinates.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The position angle between the two coordinates.</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L105-L110">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L113-L118">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vPs23CustomStringConvertible11descriptionSS"></a>
-                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vPs23CustomStringConvertible11descriptionSS">description</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -994,7 +1028,36 @@ See AA, p149.</p>
                         <p>Corected ecliptic coordinates of the star.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Aberration.swift#L20-L23">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L127-L130">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vPs23CustomStringConvertible11descriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vPs23CustomStringConvertible11descriptionSS">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1004,7 +1067,7 @@ See AA, p149.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

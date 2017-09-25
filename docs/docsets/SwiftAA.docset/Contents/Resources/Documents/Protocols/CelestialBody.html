@@ -14,7 +14,7 @@
     <a title="CelestialBody Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (74% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (75% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -194,6 +194,9 @@
                 <a href="../Functions.html#/s:F7SwiftAA17binaryStarDetailsFT4timeSd8elementsVS_25BinaryStarOrbitalElements_VS_17BinaryStarDetails">binaryStarDetails(time:elements:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA10fatalErrorFTKT_SS4fileVs12StaticString4lineSu_Os5Never">fatalError(_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA10refractionFT20fromApparentAltitudeVS_6Degree8pressureSd11temperatureSd_VS_9ArcMinute">refraction(fromApparentAltitude:pressure:temperature:)</a>
               </li>
               <li class="nav-group-task">
@@ -201,6 +204,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA14riseTransitSetFT12forJulianDayVS_9JulianDay10equCoords1VS_21EquatorialCoordinates10equCoords2S1_10equCoords3S1_9geoCoordsVS_21GeographicCoordinates23apparentRiseSetAltitudeVS_6Degree_VS_26RiseTransitSetTimesDetails">riseTransitSet(forJulianDay:equCoords1:equCoords2:equCoords3:geoCoords:apparentRiseSetAltitude:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA11unreachableFT_Os5Never">unreachable()</a>
               </li>
             </ul>
           </li>
@@ -280,6 +286,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/EquatorialCoordinates.html">EquatorialCoordinates</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FatalErrorUtil.html">FatalErrorUtil</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GalacticCoordinates.html">GalacticCoordinates</a>
@@ -773,9 +782,9 @@ the horizon. Thus, one can compute the angle between the two planes.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7SwiftAA13CelestialBody15diurnalArcAngleFT17forObjectAltitudeVS_6Degree11coordinatesVS_21GeographicCoordinates_T5valueGSqS1__5errorGSqOS_25CelestialBodyTransitError__"></a>
-                    <a name="//apple_ref/swift/Method/diurnalArcAngle(forObjectAltitude:coordinates:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody15diurnalArcAngleFT17forObjectAltitudeVS_6Degree11coordinatesVS_21GeographicCoordinates_T5valueGSqS1__5errorGSqOS_25CelestialBodyTransitError__">diurnalArcAngle(forObjectAltitude:coordinates:)</a>
+                    <a name="/s:FP7SwiftAA13CelestialBody15diurnalArcAngleFT3forVS_6Degree21geographicCoordinatesVS_21GeographicCoordinates_T5valueGSqS1__5errorGSqOS_25CelestialBodyTransitError__"></a>
+                    <a name="//apple_ref/swift/Method/diurnalArcAngle(for:geographicCoordinates:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7SwiftAA13CelestialBody15diurnalArcAngleFT3forVS_6Degree21geographicCoordinatesVS_21GeographicCoordinates_T5valueGSqS1__5errorGSqOS_25CelestialBodyTransitError__">diurnalArcAngle(for:geographicCoordinates:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -804,7 +813,7 @@ sunrise and sunset.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">diurnalArcAngle</span><span class="p">(</span><span class="n">forObjectAltitude</span> <span class="nv">altitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span><span class="p">,</span> <span class="nv">coordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a></span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">diurnalArcAngle</span><span class="p">(</span><span class="k">for</span> <span class="nv">objectAltitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span><span class="p">,</span> <span class="nv">geographicCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/GeographicCoordinates.html">GeographicCoordinates</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Enums/CelestialBodyTransitError.html">CelestialBodyTransitError</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -815,7 +824,7 @@ sunrise and sunset.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>altitude</em>
+                                <em>objectAltitude</em>
                                 </code>
                               </td>
                               <td>
@@ -827,7 +836,7 @@ sunrise and sunset.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>coordinates</em>
+                                <em>geographicCoordinates</em>
                                 </code>
                               </td>
                               <td>
@@ -884,7 +893,7 @@ sunrise and sunset.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -13,7 +13,7 @@
     <a title="Structs  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftAA Docs</a> (74% documented)</p>
+        <p><a href="index.html">SwiftAA Docs</a> (75% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -193,6 +193,9 @@
                 <a href="Functions.html#/s:F7SwiftAA17binaryStarDetailsFT4timeSd8elementsVS_25BinaryStarOrbitalElements_VS_17BinaryStarDetails">binaryStarDetails(time:elements:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="Functions.html#/s:F7SwiftAA10fatalErrorFTKT_SS4fileVs12StaticString4lineSu_Os5Never">fatalError(_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAA10refractionFT20fromApparentAltitudeVS_6Degree8pressureSd11temperatureSd_VS_9ArcMinute">refraction(fromApparentAltitude:pressure:temperature:)</a>
               </li>
               <li class="nav-group-task">
@@ -200,6 +203,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F7SwiftAA14riseTransitSetFT12forJulianDayVS_9JulianDay10equCoords1VS_21EquatorialCoordinates10equCoords2S1_10equCoords3S1_9geoCoordsVS_21GeographicCoordinates23apparentRiseSetAltitudeVS_6Degree_VS_26RiseTransitSetTimesDetails">riseTransitSet(forJulianDay:equCoords1:equCoords2:equCoords3:geoCoords:apparentRiseSetAltitude:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:F7SwiftAA11unreachableFT_Os5Never">unreachable()</a>
               </li>
             </ul>
           </li>
@@ -279,6 +285,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/EquatorialCoordinates.html">EquatorialCoordinates</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FatalErrorUtil.html">FatalErrorUtil</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/GalacticCoordinates.html">GalacticCoordinates</a>
@@ -367,8 +376,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Magnitude is a unit of flux.
-Magnitude structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Magnitude is a unit of flux.</p>
 
                         <a href="Structs/Magnitude.html" class="slightly-smaller">See more</a>
                       </div>
@@ -381,7 +389,7 @@ Magnitude structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Fluxes.swift#L13-L23">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Fluxes.swift#L12-L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -486,7 +494,7 @@ Z is negative if the satellite is closer to the Earth than Jupiter, and positive
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JupiterMoons.swift#L20-L36">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JupiterMoons.swift#L20-L30">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -517,7 +525,7 @@ Z is negative if the satellite is closer to the Earth than Jupiter, and positive
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JupiterMoons.swift#L39-L79">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/JupiterMoons.swift#L33-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -539,8 +547,7 @@ Z is negative if the satellite is closer to the Earth than Jupiter, and positive
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Degree is a unit of angle.
-Degree structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Degree is a unit of angle.</p>
 
                         <a href="Structs/Degree.html" class="slightly-smaller">See more</a>
                       </div>
@@ -553,7 +560,7 @@ Degree structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L13-L82">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L12-L81">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -575,8 +582,7 @@ Degree structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The ArcMinute is a unit of angle.
-ArcMinute structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The ArcMinute is a unit of angle.</p>
 
                         <a href="Structs/ArcMinute.html" class="slightly-smaller">See more</a>
                       </div>
@@ -589,7 +595,7 @@ ArcMinute structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L89-L108">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L87-L106">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -611,8 +617,7 @@ ArcMinute structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The ArcSecond is a unit of angle.
-ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The ArcSecond is a unit of angle.</p>
 
                         <a href="Structs/ArcSecond.html" class="slightly-smaller">See more</a>
                       </div>
@@ -625,7 +630,7 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L114-L151">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L111-L148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -647,8 +652,7 @@ ArcSecond structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Radian is a unit of angle.
-Radian structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Radian is a unit of angle.</p>
 
                         <a href="Structs/Radian.html" class="slightly-smaller">See more</a>
                       </div>
@@ -661,7 +665,7 @@ Radian structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L157-L179">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Angles.swift#L153-L175">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -683,8 +687,7 @@ Radian structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Day is physical number representing an Earth day.
-Day structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Day is a number representing an Earth day.</p>
 
                         <a href="Structs/Day.html" class="slightly-smaller">See more</a>
                       </div>
@@ -697,7 +700,7 @@ Day structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L15-L38">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L14-L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -715,8 +718,7 @@ Day structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Hour is physical number representing an Earth hour.
-Hour structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Hour is a number representing an Earth hour.</p>
 
                         <a href="Structs/Hour.html" class="slightly-smaller">See more</a>
                       </div>
@@ -729,7 +731,7 @@ Hour structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L42-L102">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L40-L100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -751,8 +753,7 @@ Hour structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Minute is physical number representing an Earth minute.
-Minute structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Minute is a number representing an Earth minute.</p>
 
                         <a href="Structs/Minute.html" class="slightly-smaller">See more</a>
                       </div>
@@ -765,7 +766,7 @@ Minute structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L108-L136">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L105-L131">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -787,8 +788,7 @@ Minute structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Second is physical number representing an Earth second.
-Second structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Second is a number representing an Earth second.</p>
 
                         <a href="Structs/Second.html" class="slightly-smaller">See more</a>
                       </div>
@@ -801,78 +801,7 @@ Second structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L142-L170">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:V7SwiftAA21EquatorialCoordinates"></a>
-                    <a name="//apple_ref/swift/Struct/EquatorialCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:V7SwiftAA21EquatorialCoordinates">EquatorialCoordinates</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The Equatorial coordinates are the coordinates of an object in the equatorial system (based on Earth equator).</p>
-
-                        <a href="Structs/EquatorialCoordinates.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EquatorialCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L12-L114">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:V7SwiftAA19EclipticCoordinates"></a>
-                    <a name="//apple_ref/swift/Struct/EclipticCoordinates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:V7SwiftAA19EclipticCoordinates">EclipticCoordinates</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The Equatorial coordinates are the coordinates of an object in the ecliptic (a.k.a. celestial) system
-(based on Earth orbital plane).</p>
-
-                        <a href="Structs/EclipticCoordinates.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EclipticCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L120-L187">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Times.swift#L136-L162">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -924,6 +853,111 @@ Additional data can be taken from this source (referenced by Wikipedia):
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:V7SwiftAA14FatalErrorUtil"></a>
+                    <a name="//apple_ref/swift/Struct/FatalErrorUtil" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V7SwiftAA14FatalErrorUtil">FatalErrorUtil</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Utility functions that can replace and restore the <code>fatalError</code> global function.</p>
+
+                        <a href="Structs/FatalErrorUtil.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FatalErrorUtil</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Constants.swift#L44-L61">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V7SwiftAA21EquatorialCoordinates"></a>
+                    <a name="//apple_ref/swift/Struct/EquatorialCoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V7SwiftAA21EquatorialCoordinates">EquatorialCoordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The coordinates of an object in the equatorial system, based on Earth equator.</p>
+
+                        <a href="Structs/EquatorialCoordinates.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EquatorialCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L12-L134">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V7SwiftAA19EclipticCoordinates"></a>
+                    <a name="//apple_ref/swift/Struct/EclipticCoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V7SwiftAA19EclipticCoordinates">EclipticCoordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The coordinates in the ecliptic (a.k.a. celestial) system, based on solar-system planets orbital planes.</p>
+
+                        <a href="Structs/EclipticCoordinates.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EclipticCoordinates</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L139-L218">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:V7SwiftAA19GalacticCoordinates"></a>
                     <a name="//apple_ref/swift/Struct/GalacticCoordinates" class="dashAnchor"></a>
                     <a class="token" href="#/s:V7SwiftAA19GalacticCoordinates">GalacticCoordinates</a>
@@ -934,7 +968,7 @@ Additional data can be taken from this source (referenced by Wikipedia):
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Galactic coordinates are the coordinates of an object in the Milky Way galactic system.</p>
+                        <p>The coordinates of an object in the Milky Way galactic system.</p>
 
                         <a href="Structs/GalacticCoordinates.html" class="slightly-smaller">See more</a>
                       </div>
@@ -947,7 +981,7 @@ Additional data can be taken from this source (referenced by Wikipedia):
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L192-L239">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L223-L270">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -969,7 +1003,7 @@ Additional data can be taken from this source (referenced by Wikipedia):
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The HorizontalCoordinates are the coordinates of an object as seen from a location on Earth.</p>
+                        <p>The coordinates of an object as seen from an observer location on Earth.</p>
 
                         <a href="Structs/HorizontalCoordinates.html" class="slightly-smaller">See more</a>
                       </div>
@@ -982,7 +1016,7 @@ Additional data can be taken from this source (referenced by Wikipedia):
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L244-L295">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/AstronomicalCoordinates.swift#L275-L326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1137,7 +1171,7 @@ the Earth is in the zenith.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L30-L45">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L30-L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1194,8 +1228,7 @@ the Earth is in the zenith.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The AstronomicalUnit is a unit of distance.
-AstronomicalUnit structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The AstronomicalUnit is a unit of distance.</p>
 
                         <a href="Structs/AstronomicalUnit.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1208,7 +1241,7 @@ AstronomicalUnit structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L14-L44">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L13-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1230,8 +1263,7 @@ AstronomicalUnit structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Parsec is a unit of distance.
-Parsec structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Parsec is a unit of distance.</p>
 
                         <a href="Structs/Parsec.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1244,7 +1276,7 @@ Parsec structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L50-L72">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L48-L70">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1266,8 +1298,7 @@ Parsec structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Meter is a unit of distance.
-Meter structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Meter is a unit of distance.</p>
 
                         <a href="Structs/Meter.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1280,7 +1311,7 @@ Meter structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L80-L97">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L77-L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1298,8 +1329,7 @@ Meter structs conform to SwiftAA Numeric type protocol.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Kilometer is a unit of distance.
-Meter structs conform to SwiftAA Numeric type protocol.</p>
+                        <p>The Kilometer is a unit of distance.</p>
 
                         <a href="Structs/Kilometer.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1312,7 +1342,7 @@ Meter structs conform to SwiftAA Numeric type protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L101-L115">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Distances.swift#L97-L111">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1392,7 +1422,7 @@ Meter structs conform to SwiftAA Numeric type protocol.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

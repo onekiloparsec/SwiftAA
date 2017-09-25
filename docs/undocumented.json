@@ -8,20 +8,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/AstronomicalCoordinates.swift",
-      "line": 77,
-      "symbol": "EquatorialCoordinates.makeHorizontalCoordinates(with:julianDay:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/AstronomicalCoordinates.swift",
-      "line": 105,
-      "symbol": "EquatorialCoordinates.positionAngle(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/AstronomicalObject.swift",
       "line": 12,
       "symbol": "AstronomicalObject",
@@ -47,6 +33,13 @@
       "line": 124,
       "symbol": "CelestialBody.angleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Constants.swift",
+      "line": 31,
+      "symbol": "fatalError(_:file:line:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
@@ -275,79 +268,44 @@
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 45,
+      "line": 39,
       "symbol": "GalileanMoon.MeanLongitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 46,
+      "line": 40,
       "symbol": "GalileanMoon.TrueLongitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 47,
+      "line": 41,
       "symbol": "GalileanMoon.TropicalLongitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 48,
+      "line": 42,
       "symbol": "GalileanMoon.EquatorialLatitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 50,
+      "line": 44,
       "symbol": "GalileanMoon.radiusVector",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/JupiterMoons.swift",
-      "line": 75,
+      "line": 69,
       "symbol": "GalileanMoon.rectangularCoordinates(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Moon.swift",
-      "line": 42,
-      "symbol": "SelenographicCoordinates.colongitude",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Moon.swift",
-      "line": 48,
-      "symbol": "SelenographicCoordinates.==(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Moon.swift",
-      "line": 56,
-      "symbol": "Moon.geocentricPhysicalDetails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Moon.swift",
-      "line": 61,
-      "symbol": "Moon.selenographicDetails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Moon.swift",
-      "line": 66,
-      "symbol": "Moon.eclipseDetails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -359,91 +317,84 @@
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 14,
-      "symbol": "NumericType",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 17,
+      "line": 18,
       "symbol": "_NumericType",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 18,
+      "line": 19,
       "symbol": "_NumericType.value",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 19,
+      "line": 20,
       "symbol": "_NumericType.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 20,
+      "line": 21,
       "symbol": "_NumericType.rounded(toIncrement:rule:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 25,
+      "line": 26,
       "symbol": "_NumericType.init(floatLiteral:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 28,
+      "line": 29,
       "symbol": "_NumericType.init(integerLiteral:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 39,
+      "line": 40,
       "symbol": "_NumericType.rounded(toIncrement:rule:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 44,
+      "line": 45,
       "symbol": "_NumericType.==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 45,
+      "line": 46,
       "symbol": "_NumericType.<(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 47,
+      "line": 48,
       "symbol": "_NumericType.+(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 48,
+      "line": 49,
       "symbol": "_NumericType.-(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 49,
+      "line": 50,
       "symbol": "_NumericType.*(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -451,146 +402,153 @@
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
       "line": 51,
-      "symbol": "_NumericType.+=(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 52,
-      "symbol": "_NumericType.-=(_:_:)",
+      "symbol": "_NumericType./(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
       "line": 53,
-      "symbol": "_NumericType.*=(_:_:)",
+      "symbol": "_NumericType.+=(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
+      "line": 54,
+      "symbol": "_NumericType.-=(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
       "line": 55,
+      "symbol": "_NumericType.*=(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
+      "line": 57,
       "symbol": "_NumericType.magnitude",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 56,
+      "line": 58,
       "symbol": "_NumericType.hashValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 62,
+      "line": 64,
       "symbol": "FloatingPoint.positiveTruncatingRemainder(dividingBy:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 76,
+      "line": 78,
       "symbol": "FloatingPoint.rounded(toIncrement:rule:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 82,
+      "line": 84,
       "symbol": "Double.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 87,
+      "line": 89,
       "symbol": "Double.degrees",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 91,
+      "line": 93,
       "symbol": "Double.arcminutes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 95,
+      "line": 97,
       "symbol": "Double.arcseconds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 99,
+      "line": 101,
       "symbol": "Double.radians",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 103,
+      "line": 105,
       "symbol": "Double.julianDays",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 107,
+      "line": 109,
       "symbol": "Double.days",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 111,
+      "line": 113,
       "symbol": "Double.hours",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 115,
+      "line": 117,
       "symbol": "Double.minutes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 119,
+      "line": 121,
       "symbol": "Double.seconds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 123,
+      "line": 125,
       "symbol": "Double.sexagesimal",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 130,
+      "line": 132,
       "symbol": "Double.sexagesimalShortString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 141,
+      "line": 143,
       "symbol": "FloatingPointSign.string",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/NumericType.swift",
-      "line": 151,
+      "line": 153,
       "symbol": "==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"

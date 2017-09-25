@@ -14,7 +14,7 @@
     <a title="SelenographicCoordinates Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftAA Docs</a> (74% documented)</p>
+        <p><a href="../index.html">SwiftAA Docs</a> (75% documented)</p>
         <p class="header-right"><a href="https://github.com/onekiloparsec/SwiftAA"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://http%3A%2F%2Fonekiloparsec%2Egithub%2Eio%2FSwiftAA%2Fdocsets%2FSwiftAA%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -194,6 +194,9 @@
                 <a href="../Functions.html#/s:F7SwiftAA17binaryStarDetailsFT4timeSd8elementsVS_25BinaryStarOrbitalElements_VS_17BinaryStarDetails">binaryStarDetails(time:elements:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA10fatalErrorFTKT_SS4fileVs12StaticString4lineSu_Os5Never">fatalError(_:file:line:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA10refractionFT20fromApparentAltitudeVS_6Degree8pressureSd11temperatureSd_VS_9ArcMinute">refraction(fromApparentAltitude:pressure:temperature:)</a>
               </li>
               <li class="nav-group-task">
@@ -201,6 +204,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F7SwiftAA14riseTransitSetFT12forJulianDayVS_9JulianDay10equCoords1VS_21EquatorialCoordinates10equCoords2S1_10equCoords3S1_9geoCoordsVS_21GeographicCoordinates23apparentRiseSetAltitudeVS_6Degree_VS_26RiseTransitSetTimesDetails">riseTransitSet(forJulianDay:equCoords1:equCoords2:equCoords3:geoCoords:apparentRiseSetAltitude:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F7SwiftAA11unreachableFT_Os5Never">unreachable()</a>
               </li>
             </ul>
           </li>
@@ -280,6 +286,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/EquatorialCoordinates.html">EquatorialCoordinates</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FatalErrorUtil.html">FatalErrorUtil</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GalacticCoordinates.html">GalacticCoordinates</a>
@@ -456,53 +465,19 @@ Mare Serenitatis.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The associated colongitude.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SelenographicCoordinates</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">colongitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L42-L44">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFV7SwiftAA24SelenographicCoordinatesoi2eeFTS0_S0__Sb"></a>
-                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFV7SwiftAA24SelenographicCoordinatesoi2eeFTS0_S0__Sb">==(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SelenographicCoordinates</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L48-L50">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/Moon.swift#L43-L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -512,7 +487,7 @@ Mare Serenitatis.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-24)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
