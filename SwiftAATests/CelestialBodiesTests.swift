@@ -84,4 +84,32 @@ class CelestialBodiesTests: XCTestCase {
         XCTAssertNil(summerArc.value)
         XCTAssertEqual(summerArc.error, .alwaysAboveAltitude)
     }
+    
+    func testDiurnalArcs() {
+        // Take a place below polar circles
+        let paris = GeographicCoordinates(positivelyWestwardLongitude: Degree(.minus, 2, 21, 07), latitude: Degree(.plus, 48, 51, 24))
+        // Take a day where we know the Sun rises and sets.
+        let jd = JulianDay(year: 2017, month: 6, day: 21)
+        // Choose the altitude of the sun under study
+        let sunAltitude = TwilightSunAltitude.riseAndSet
+        // Get the times of sunrise and sunset (sun altitude ~ 0).
+        let times = Earth(julianDay: jd).twilights(forSunAltitude: sunAltitude.rawValue, coordinates: paris)
+        // Convert the difference between sunset and sunrise (daylength) in degrees.
+        let daylengthArc = Degree((times.set! - times.rise!).value * 24.0 * 15.0)
+        // Divide by two the daylength, as the diurnal arc is between provided altitude and meridian (half of daylength in this case)
+        let expectedAngle = daylengthArc / 2.0.degrees
+        // Take the Sun of that day, say, at the time of transit in Paris, but what matters is only the day.
+        let sun = Sun(julianDay: times.transit!)
+        // Just to check, get the horizontal coordinates to see how high the sun is going. Azimuth should be around 180º (sun crossing meridian in the south)
+//        let horizontalCoords = sun.makeHorizontalCoordinates(with: paris)
+        // Cpmpute the diurnal arc
+        let diurnalArc = sun.diurnalArcAngle(for: sunAltitude.rawValue, geographicCoordinates: paris)
+        // Compare the diurnal arc with the converted daylength above.
+        AssertEqual(expectedAngle, diurnalArc.value!, accuracy: Degree(1.0))
+        
+        // And then play with hour angles to realise they give almost the same results...
+//        let lhaRise = Sun(julianDay: times.rise!).hourAngle(for: paris).inDegrees
+//        let lhaSet = Sun(julianDay: times.set!).hourAngle(for: paris).inDegrees
+//        AssertEqual(lhaRise-lhaSet, diurnalArc.value!, accuracy: Degree(5.0))
+    }
 }
