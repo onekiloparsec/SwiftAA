@@ -101,5 +101,5 @@ Author
 ======
 Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
 (Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile).
-I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad(http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
+I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
 
