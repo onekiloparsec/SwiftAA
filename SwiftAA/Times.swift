@@ -10,8 +10,7 @@ import Foundation
 
 // MARK: -
 
-/// The Day is physical number representing an Earth day.
-/// Day structs conform to SwiftAA Numeric type protocol.
+/// The Day is a number representing an Earth day.
 public struct Day: NumericType, CustomStringConvertible {
     
     /// The Day value
@@ -37,8 +36,7 @@ public struct Day: NumericType, CustomStringConvertible {
     public var description: String { return String(format: "%.2f d", value) }
 }
 
-/// The Hour is physical number representing an Earth hour.
-/// Hour structs conform to SwiftAA Numeric type protocol.
+/// The Hour is a number representing an Earth hour.
 public struct Hour: NumericType, CustomStringConvertible {
 
     /// The Hour value
@@ -103,8 +101,7 @@ public struct Hour: NumericType, CustomStringConvertible {
 
 // MARK: -
 
-/// The Minute is physical number representing an Earth minute.
-/// Minute structs conform to SwiftAA Numeric type protocol.
+/// The Minute is a number representing an Earth minute.
 public struct Minute: NumericType, CustomStringConvertible {
     
     /// The Minute value
@@ -135,8 +132,7 @@ public struct Minute: NumericType, CustomStringConvertible {
 
 // MARK: -
 
-/// The Second is physical number representing an Earth second.
-/// Second structs conform to SwiftAA Numeric type protocol.
+/// The Second is a number representing an Earth second.
 public struct Second: NumericType, CustomStringConvertible {
     
     /// The Second value

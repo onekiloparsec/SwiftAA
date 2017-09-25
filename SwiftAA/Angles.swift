@@ -9,7 +9,6 @@
 import Foundation
 
 /// The Degree is a unit of angle.
-/// Degree structs conform to SwiftAA Numeric type protocol.
 public struct Degree: NumericType, CustomStringConvertible {
     /// The Degree value
     public let value: Double
@@ -21,7 +20,7 @@ public struct Degree: NumericType, CustomStringConvertible {
         self.value = value
     }
     
-    /// Returns a new Degree object, from sexagesimal components.
+    /// Creates a new Degree instance, from sexagesimal components.
     ///
     /// - Parameters:
     ///   - sign: The sign of the final value.
@@ -54,9 +53,9 @@ public struct Degree: NumericType, CustomStringConvertible {
         }
     }
 
-    /// Returns self reduced to 0..<360 range
+    /// Returns `self` reduced to 0..<360 range
     public var reduced: Degree { return Degree(value.positiveTruncatingRemainder(dividingBy: 360.0)) }
-    /// Returns self reduced to -180..<180 range (around 0)
+    /// Returns `self` reduced to -180..<180 range (around 0)
     public var reduced0: Degree { return Degree(value.zeroCenteredTruncatingRemainder(dividingBy: 360.0)) }
 
     /// Returns true if self is within circular [from,to] interval. Interval is opened by default. All values reduced to 0..<360 range.
@@ -85,12 +84,11 @@ public struct Degree: NumericType, CustomStringConvertible {
 // MARK: -
 
 /// The ArcMinute is a unit of angle.
-/// ArcMinute structs conform to SwiftAA Numeric type protocol.
 public struct ArcMinute: NumericType, CustomStringConvertible {
     /// The ArcMinute value
     public let value: Double
 
-    /// Returns a new ArcMinute object.
+    /// Creates a new ArcMinute instance.
     ///
     /// - Parameter value: The value of ArcMinute.
     public init(_ value: Double) {
@@ -110,12 +108,11 @@ public struct ArcMinute: NumericType, CustomStringConvertible {
 // MARK: -
 
 /// The ArcSecond is a unit of angle.
-/// ArcSecond structs conform to SwiftAA Numeric type protocol.
 public struct ArcSecond: NumericType, CustomStringConvertible {
     /// The ArcSecond value
     public let value: Double
     
-    /// Returns a new ArcSecond object.
+    /// Creates a new ArcSecond instance.
     ///
     /// - Parameter value: The value of ArcSecond.
     public init(_ value: Double) {
@@ -153,12 +150,11 @@ public struct ArcSecond: NumericType, CustomStringConvertible {
 // MARK: -
 
 /// The Radian is a unit of angle.
-/// Radian structs conform to SwiftAA Numeric type protocol.
 public struct Radian: NumericType, CustomStringConvertible {
     /// The Radian value
     public let value: Double
 
-    /// Returns a new Radian object.
+    /// Creates a new Radian instance.
     ///
     /// - Parameter value: The value of Radian.
     public init(_ value: Double) {

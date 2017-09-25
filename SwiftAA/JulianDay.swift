@@ -17,14 +17,14 @@ public struct JulianDay: NumericType {
     /// The Julian Day value
     public let value: Double
     
-    /// Returns a Julian Day struct initialized to contain the given value.
+    /// Creates a Julian Day initialized to contain the given value.
     ///
     /// - Parameter value: The value for the new Julian Day.
     public init(_ value: Double) {
         self.value = value
     }
     
-    /// Returns a Julian Day struct initialized from a given Gregorian calendar date, in the UT reference frame,
+    /// Creates a Julian Day initialized from a given Gregorian calendar date, in the UT reference frame,
     /// provided by its date components. Hour, minute and second are optional (and set to 0 by default).
     ///
     /// - Parameters:

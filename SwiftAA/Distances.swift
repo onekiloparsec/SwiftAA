@@ -10,12 +10,11 @@ import Foundation
 
 
 /// The AstronomicalUnit is a unit of distance.
-/// AstronomicalUnit structs conform to SwiftAA Numeric type protocol.
 public struct AstronomicalUnit: NumericType, CustomStringConvertible {
     /// The AstronomicalUnit value
     public let value: Double
     
-    /// Returns a new AstronomicalUnit object.
+    /// Creates a new AstronomicalUnit instance.
     ///
     /// - Parameter value: The value of AstronomicalUnit.
     public init(_ value: Double) {
@@ -46,12 +45,11 @@ public struct AstronomicalUnit: NumericType, CustomStringConvertible {
 // MARK: -
 
 /// The Parsec is a unit of distance.
-/// Parsec structs conform to SwiftAA Numeric type protocol.
 public struct Parsec: NumericType, CustomStringConvertible {
     /// The Parsec value
     public let value: Double
     
-    /// Returns a new Parsec object.
+    /// Creates a new Parsec instance.
     ///
     /// - Parameter value: The value of Parsec.
     public init(_ value: Double) {
@@ -76,12 +74,11 @@ public struct Parsec: NumericType, CustomStringConvertible {
 // MARK: -
 
 /// The Meter is a unit of distance.
-/// Meter structs conform to SwiftAA Numeric type protocol.
 public struct Meter: NumericType, CustomStringConvertible {
     /// The Meter value
     public let value: Double
     
-    /// Returns a new Meter object.
+    /// Creates a new Meter instance.
     ///
     /// - Parameter value: The value of Meter.
     public init(_ value: Double) {
@@ -97,14 +94,13 @@ public struct Meter: NumericType, CustomStringConvertible {
 }
 
 /// The Kilometer is a unit of distance.
-/// Meter structs conform to SwiftAA Numeric type protocol.
 public struct Kilometer: NumericType, CustomStringConvertible {
     /// The Meter value
     public let value: Double
     
-    /// Returns a new Meter object.
+    /// Creates a new Kilometer instance.
     ///
-    /// - Parameter value: The value of Meter.
+    /// - Parameter value: The value of Kilometer.
     public init(_ value: Double) {
         self.value = value
     }
