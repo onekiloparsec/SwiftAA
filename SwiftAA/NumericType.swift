@@ -47,6 +47,7 @@ extension _NumericType {
     public static func + (lhs: Self, rhs: Self) -> Self { return Self(lhs.value + rhs.value) }
     public static func - (lhs: Self, rhs: Self) -> Self { return Self(lhs.value - rhs.value) }
     public static func * (lhs: Self, rhs: Self) -> Self { return Self(lhs.value * rhs.value) }
+    public static func / (lhs: Self, rhs: Self) -> Self { return Self(lhs.value / rhs.value) }
     
     public static func += (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value + rhs.value) }
     public static func -= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value - rhs.value) }
