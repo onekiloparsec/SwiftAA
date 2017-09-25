@@ -2004,22 +2004,13 @@
 			name = Auxiliary;
 			sourceTree = "<group>";
 		};
-		9F6B38CA1D9F9FAC008A2D96 /* Sun */ = {
-			isa = PBXGroup;
-			children = (
-				9F525B291D3CB53400041696 /* Sun.swift */,
-			);
-			name = Sun;
-			sourceTree = "<group>";
-		};
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
-				9FDA5C311D16E6A7003B9F31 /* Solar System Planets */,
-				9F6B38CA1D9F9FAC008A2D96 /* Sun */,
+				9FDA5C311D16E6A7003B9F31 /* Solar System */,
 				9F1F12981D7C6A50006FD828 /* Astronomical Objects */,
 			);
 			name = Swift;
@@ -2156,9 +2147,10 @@
 			path = SwiftAATests;
 			sourceTree = "<group>";
 		};
-		9FDA5C311D16E6A7003B9F31 /* Solar System Planets */ = {
+		9FDA5C311D16E6A7003B9F31 /* Solar System */ = {
 			isa = PBXGroup;
 			children = (
+				9F525B291D3CB53400041696 /* Sun.swift */,
 				9F2154A51D296B4000C4DD06 /* Planets.swift */,
 				9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
@@ -2171,7 +2163,7 @@
 				9FDA5C251D16E5E2003B9F31 /* Neptune.swift */,
 				9F7CBFB71D16E58700E13FB1 /* Pluto.swift */,
 			);
-			name = "Solar System Planets";
+			name = "Solar System";
 			sourceTree = "<group>";
 		};
 		9FDA5C321D16E6B6003B9F31 /* Common */ = {
