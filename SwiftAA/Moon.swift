@@ -39,30 +39,32 @@ public struct SelenographicCoordinates {
     /// Mare Serenitatis.
     public let latitude: Degree
     
+    /// The associated colongitude.
     public var colongitude: Degree {
         get { return (450.0.degrees - self.longitude).reduced }
-    }
-}
-
-public extension SelenographicCoordinates {
-    public static func == (lhs: SelenographicCoordinates, rhs: SelenographicCoordinates) -> Bool {
-        return lhs.longitude == rhs.longitude && lhs.latitude == rhs.latitude
     }
 }
 
 
 /// The Earth's Moon.
 public class Moon : Object, CelestialBody {
+    
+    /// Accessor to all values underlying the geocentric physical details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {
         [unowned self] in
         return KPCPhysicalMoon_CalculateGeocentric(self.julianDay.value)
         }()
 
+    /// Accessor to all values underlying the selenographic details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var selenographicDetails: KPCAASelenographicMoonDetails = {
         [unowned self] in
         return KPCPhysicalMoon_SelenographicPositionOfSun(self.julianDay.value, self.highPrecision)
         }()
     
+    /// Accessor to all values underlying the eclipse details. Will probably become private
+    /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var eclipseDetails: KPCAALunarEclipseDetails = {
         [unowned self] in
         return KPCAAEclipses_CalculateLunar(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
