@@ -21,10 +21,11 @@ SwiftAA
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
 
-*The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.*
+*The most comprehensive and accurate collection of astronomical algorithms, in C++, Objective-C and Swift3, all in one place.* 
 
-Ongoing development is written in Swift3 and using AA+ version 1.91 (released August 1st, 2017).
-**It is already used in production apps.** In particular, 
+SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
+
+**SwiftAA is already used in production apps.** In particular, 
 [MeteorActive](https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8), a carefully crafted iOS app to get
 everything about meteors.
 
@@ -32,16 +33,11 @@ SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation
 *Astronomical Algorithms*, by Jean Meeus (2nd ed., [Amazon](https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus)). This C++ package is called **AA+** (see below). AA+ also includes additional algorithms of the
 [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework, and includes the complete support for the ELP/MPP02 theory. 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.
+Ongoing development is using AA+ version 1.91 (released August 1st, 2017). 
 
-But **SwiftAA provides more modern and a lot more readable APIs**, taking advantage of the expressiveness of Swift 
-and its various syntax elements, making it fun and easy of use. In fact, you simply can't use AA+ without having 
-the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added
-to improve even more  the completeness and ease of use. In particular, **SwiftAA provides units safety** a 
-lot stronger compared to C++ APIs. 
+But **SwiftAA provides more modern and a lot more readable APIs**, taking advantage of the expressiveness of Swift and its various syntax elements, making it fun and easy of use. In fact, you simply can't use AA+ without having the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added to improve even more  the completeness and ease of use. In particular, **SwiftAA provides units safety** a lot stronger compared to C++ APIs. 
 
-Moreover, **SwiftAA has a much larger unit tests coverage**. In fact, unit tests are being carefully written
-with data directly taken from Jean Meeus' textbook, AA+ own tests, [USNO](http://www.usno.navy.mil), [SkySafari](https://skysafariastronomy.com) and [Xephem](http://www.clearskyinstitute.com/xephem/) (and thus trying to achieve a
-probably hypothetical consistency between these sources).
+Moreover, **SwiftAA has a much larger unit tests coverage**. In fact, unit tests are being carefully written with data directly taken from Jean Meeus' textbook, AA+ own tests, [USNO](http://www.usno.navy.mil), [SkySafari](https://skysafariastronomy.com) and [Xephem](http://www.clearskyinstitute.com/xephem/) (and thus trying to achieve a probably hypothetical consistency between these sources).
 
 
 Documentation
@@ -77,27 +73,15 @@ Notes
 
 AA+
 ---
-The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the
-"Astronomical Algorithms", found in the reference textbook by Jean Meeus 
-(purchasable from [Amazon](http://www.amazon.com/exec/obidos/tg/detail/-/0943396611/103-5742735-0567011)).
-To make the most of this code, you'd rather have a copy of the book with you.
+The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the "Astronomical Algorithms", found in the reference textbook by Jean Meeus. To make the most of this code specifically, you have to have a copy of the book with you (APIs and method names are hardly understandable without knowing what they refer to).
 
-As the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)), I have
-myself worked a lot on implementing some of the AA algorithms for my needs. However, to push iObserve to the next level,
-I need to put a lot more work on these algorithms. 
-
-P.J. Naughter has kindly agreed to let me create a public repo with his code. My goal is to write a wrapper around it,
-to bring the AA+ framework to Apple's Swift realm (and Objective-C along the way). Pull requests are accepted 
-only about the Objective-C and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to)
-to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
+Pull requests are accepted only about the Objective-C(++) and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to) to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
 
 
 Caution on Coordinates
 -----
 
-The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the
-textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations
-should be careful. For a good example of a complete implementation of such transformations, see the 
+The coordinates computations are key for modern astronomy. However, there is no mention to modern conventions (like ICRS) in the textbook of Jean Meeus, therefore in the AA+ code. Awaiting for such improvement, any user wanting to compute coordinates transformations should be careful. For a good example of a complete implementation of such transformations, see the 
 [AstroPy excellent package](http://docs.astropy.org/en/stable/coordinates/index.html).
 
 
@@ -105,9 +89,7 @@ Prefixes & Conventions
 ----
 
 Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
-was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying
-C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 
-'b' for boolean etc').
+was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
 
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
 Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
@@ -119,3 +101,5 @@ Author
 ======
 Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
 (Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile).
+I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad(http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
+
