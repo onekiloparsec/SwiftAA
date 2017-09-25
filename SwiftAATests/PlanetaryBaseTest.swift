@@ -87,4 +87,17 @@ class PlanetaryBaseTest: XCTestCase {
         XCTAssertEqual(pluto.planetStrict, .undefined) // <-- yes, undefined.
         XCTAssertEqual(pluto.planetaryObject, .UNDEFINED) // <-- yes, UNDEFINED.
     }
+    
+    // See AA, p.270, Example 38.a
+    func testPerihelionAphelion() {
+        let venus = Venus(julianDay: JulianDay(year: 1978, month: 10, day: 15))
+        AssertEqual(venus.perihelion, JulianDay(2443873.704), accuracy: JulianDay(0.001))
+    }
+    
+    // See AA, p.270, Example 38.b
+    func testAphelion() {
+        let mars = Mars(julianDay: JulianDay(year: 2032, month: 1, day: 1))
+        AssertEqual(mars.aphelion, JulianDay(2463530.456), accuracy: JulianDay(0.001))
+    }
+
 }
