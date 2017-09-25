@@ -51,21 +51,25 @@ class AnglesTests: XCTestCase {
     }
 
     func testDegreeReduce() {
+        AssertEqual(Degree(-370).reduced, Degree(350))
+        AssertEqual(Degree(-350).reduced, Degree(10))
         AssertEqual(Degree(-190).reduced, Degree(170))
         AssertEqual(Degree(-10).reduced, Degree(350))
         AssertEqual(Degree(10).reduced, Degree(10))
         AssertEqual(Degree(190).reduced, Degree(190))
+        AssertEqual(Degree(350).reduced, Degree(350))
         AssertEqual(Degree(370).reduced, Degree(10))
-        AssertEqual(Degree(350).reduced0, Degree(-10))
     }
 
     func testDegreeReduce0() {
+        AssertEqual(Degree(-370).reduced0, Degree(-10))
+        AssertEqual(Degree(-350).reduced0, Degree(10))
         AssertEqual(Degree(-190).reduced0, Degree(170))
         AssertEqual(Degree(-10).reduced0, Degree(-10))
         AssertEqual(Degree(10).reduced0, Degree(10))
         AssertEqual(Degree(190).reduced0, Degree(-170))
-        AssertEqual(Degree(370).reduced0, Degree(10))
         AssertEqual(Degree(350).reduced0, Degree(-10))
+        AssertEqual(Degree(370).reduced0, Degree(10))
     }
 
     func testRadianReduce() {

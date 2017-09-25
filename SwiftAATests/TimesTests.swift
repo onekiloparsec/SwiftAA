@@ -129,6 +129,8 @@ class TimesTests: XCTestCase {
         
         XCTAssertEqual(Day(t1).inSeconds.value, t1*24.0*3600.0)
         XCTAssertEqual(Day(t2).inSeconds.value, t2*24.0*3600.0)
+        
+        XCTAssertEqual(Day(t1).inJulianDays.value, t1)
     }
     
     func testHourConversion() {
@@ -174,5 +176,45 @@ class TimesTests: XCTestCase {
         
         XCTAssertEqual(Second(t1).inMinutes.value, t1/60.0)
         XCTAssertEqual(Second(t2).inMinutes.value, t2/60.0)
+    }
+    
+    func testHourReduce() {
+        AssertEqual(Hour(-25).reduced, Hour(23))
+        AssertEqual(Hour(-23).reduced, Hour(1))
+        AssertEqual(Hour(-13).reduced, Hour(11))
+        AssertEqual(Hour(-1).reduced, Hour(23))
+        AssertEqual(Hour(1).reduced, Hour(1))
+        AssertEqual(Hour(13).reduced, Hour(13))
+        AssertEqual(Hour(23).reduced, Hour(23))
+        AssertEqual(Hour(25).reduced, Hour(1))
+    }
+    
+    func testHourReduce0() {
+        AssertEqual(Hour(-25).reduced0, Hour(-1))
+        AssertEqual(Hour(-23).reduced0, Hour(1))
+        AssertEqual(Hour(-13).reduced0, Hour(11))
+        AssertEqual(Hour(-1).reduced0, Hour(-1))
+        AssertEqual(Hour(1).reduced0, Hour(1))
+        AssertEqual(Hour(13).reduced0, Hour(-11))
+        AssertEqual(Hour(23).reduced0, Hour(-1))
+        AssertEqual(Hour(25).reduced0, Hour(1))
+    }
+    
+    func testMinuteReduce() {
+        AssertEqual(Minute(-61).reduced, Minute(59))
+        AssertEqual(Minute(-59).reduced, Minute(1))
+        AssertEqual(Minute(-31).reduced, Minute(29))
+        AssertEqual(Minute(-1).reduced, Minute(59))
+        AssertEqual(Minute(1).reduced, Minute(1))
+        AssertEqual(Minute(31).reduced, Minute(31))
+        AssertEqual(Minute(59).reduced, Minute(59))
+        AssertEqual(Minute(61).reduced, Minute(1))
+    }
+
+    func testDescriptions() {
+        XCTAssertNotNil(String(describing: Day(3.141519)))
+        XCTAssertNotNil(String(describing: Hour(3.141519)))
+        XCTAssertNotNil(String(describing: Minute(3.141519)))
+        XCTAssertNotNil(String(describing: Second(3.141519)))
     }
 }

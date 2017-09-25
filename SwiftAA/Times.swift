@@ -92,8 +92,8 @@ public struct Hour: NumericType, CustomStringConvertible {
     public var reduced: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)) }
     
     /// Returns a Hour whose value is reduced to the -12..<12 range (that is, around 0, hence the name).
-    public var reduced0: Hour { return Hour(value.positiveTruncatingRemainder(dividingBy: 24.0)-12.0) }
-    
+    public var reduced0: Hour { return Hour(value.zeroCenteredTruncatingRemainder(dividingBy: 24.0)) }
+
     /// A standard sexagesimal description of the Hour value.
     public var description: String {
         let (sign, hrs, min, sec) = self.sexagesimal
@@ -123,8 +123,6 @@ public struct Minute: NumericType, CustomStringConvertible {
     public var inHours: Hour { return Hour(value / 60.0) }
     /// Transform the current Minute value into Seconds.
     public var inSeconds: Second { return Second(value * 60.0) }
-    /// Transform the current Minute value into Degrees.
-    public var inDegrees: Degree { return Degree(value / 60.0 * 15.0) }
     /// Transform the current Minute value into Julian Days (convenient for easily making operations with Julian Day fractions).
     public var inJulianDays: JulianDay { return JulianDay(value / 1440.0) }
     
@@ -157,8 +155,6 @@ public struct Second: NumericType, CustomStringConvertible {
     public var inHours: Hour { return Hour(value / 3600.0) }
     /// Transform the current Second value into Minute.
     public var inMinutes: Minute { return Minute(value / 60.0) }
-    /// Transform the current Second value into Degrees.
-    public var inDegrees: Degree { return Degree(value / 3600.0 * 15.0) }
     /// Transform the current Second value into Julian Days (convenient for easily making operations with Julian Day fractions).
     public var inJulianDays: JulianDay { return JulianDay(value / 86400.0) }
     
