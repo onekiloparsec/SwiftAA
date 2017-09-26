@@ -210,6 +210,13 @@ class MoonTests: XCTestCase {
         // At sunrise, the sun altitude is ~ 0
         AssertEqual(Moon(julianDay: jdResult).altitudeOfTheSun(for: copernicus), Degree(0.0), accuracy: Degree(0.2))
     }
+    
+    func testLongitudeMeanPerigeeAscendingNode() {
+        let moon = Moon(julianDay: JulianDay(year: 1992, month: 4, day: 1))
+        AssertEqual(moon.longitudeOfMeanPerigee, Degree(127.914), accuracy: Degree(0.1))
+        AssertEqual(moon.longitudeOfMeanAscendingNode, Degree(274.983), accuracy: Degree(0.1))
+        AssertEqual(moon.longitudeOfTrueAscendingNode, Degree(274.806), accuracy: Degree(0.1))
+    }
 }
 
 

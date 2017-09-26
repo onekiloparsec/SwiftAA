@@ -171,18 +171,18 @@ public class Moon : Object, CelestialBody {
         get { return Degree(KPCAAMoon_ArgumentOfLatitude(self.julianDay.value)) }
     }
 
-    /// The mean longitude of perigee
-    public var meanLongitudeOfPerigee: Degree {
+    /// The longitude of mean perigee
+    public var longitudeOfMeanPerigee: Degree {
         get { return Degree(KPCAAMoon_MeanLongitudePerigee(self.julianDay.value)) }
     }
     
-    /// The mean longitude of the ascending node
-    public var meanLongitudeOfAscendingNode: Degree {
+    /// The longitude of the mean ascending node
+    public var longitudeOfMeanAscendingNode: Degree {
         get { return Degree(KPCAAMoon_MeanLongitudeAscendingNode(self.julianDay.value)) }
     }
 
-    /// The true longitude of the ascending node.
-    public var trueLongitudeOfAscendingNode: Degree {
+    /// The longitude of the true ascending node.
+    public var longitudeOfTrueAscendingNode: Degree {
         get { return Degree(KPCAAMoon_TrueLongitudeAscendingNode(self.julianDay.value)) }
     }
 
