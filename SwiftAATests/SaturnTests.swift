@@ -162,4 +162,19 @@ class SaturnTests: XCTestCase {
         XCTAssertEqual(iapetusTrueCoords.Y, 4.1435608547046954)
         XCTAssertEqual(iapetusTrueCoords.Z, 32.737852943980201)
     }
+    
+    // See AA, p.320, Example 45.a
+    func testRingsDetails() {
+        let jd = JulianDay(2448972.5)
+        let saturn = Saturn(julianDay: jd)
+        AssertEqual(saturn.ringSystem.earthCoordinates.latitude, Degree(16.442), accuracy: Degree(0.001))  // B
+        AssertEqual(saturn.ringSystem.earthCoordinates.longitude, Degree(149.0663), accuracy: Degree(0.001)) // U2
+        AssertEqual(saturn.ringSystem.sunCoordinates.latitude, Degree(14.679), accuracy: Degree(0.001)) // Bdash
+        AssertEqual(saturn.ringSystem.sunCoordinates.longitude, Degree(153.2645), accuracy: Degree(0.001)) // U1
+        AssertEqual(saturn.ringSystem.saturnicentricSunEarthLongitudesDifference, Degree(4.198), accuracy: Degree(0.001))
+        AssertEqual(saturn.ringSystem.northPolePositionAngle, Degree(6.741), accuracy: Degree(0.001))
+        AssertEqual(saturn.ringSystem.majorAxis, ArcSecond(35.87), accuracy: ArcSecond(0.1))
+        AssertEqual(saturn.ringSystem.minorAxis, ArcSecond(10.15), accuracy: ArcSecond(0.1))
+    }
 }
+

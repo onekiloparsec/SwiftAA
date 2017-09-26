@@ -49,7 +49,7 @@ public class Saturn: Planet {
         self.Iapetus = SaturnianMoon(name: "Iapetus", details: details.Satellite8, synodicPeriod: 79.9202, visualMagnitude: 10.2, diameter: 1460.0)
         
         let ringDetails = KPCAASaturnRings_Calculate(julianDay.value, highPrecision)
-        self.ringSystem = SaturnRingSystem(ringDetails)
+        self.ringSystem = SaturnRingSystem(ringDetails, julianDay: julianDay)
         
         super.init(julianDay: julianDay, highPrecision: highPrecision)
     }
@@ -59,13 +59,13 @@ public class Saturn: Planet {
         get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector.value,
                                                                 self.apparentGeocentricDistance.value,
                                                                 self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
-                                                                self.ringSystem.saturnicentricEarthLatitude.value) } }
+                                                                self.ringSystem.earthCoordinates.latitude.value) } }
     
     /// The magnitude 'Muller' of the planet. Includes the contribution from the ring.
     public var magnitudeMuller: Double {
         get { return KPCAAIlluminatedFraction_SaturnMagnitudeMuller(self.radiusVector.value,
                                                                     self.apparentGeocentricDistance.value,
                                                                     self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
-                                                                    self.ringSystem.saturnicentricEarthLatitude.value) } }
+                                                                    self.ringSystem.earthCoordinates.latitude.value) } }
 }
 

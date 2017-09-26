@@ -19,5 +19,7 @@ KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, BOOL highPrecision)
     results.a = details.a;
     results.b = details.b;
     results.DeltaU = details.DeltaU;
+    results.U1 = details.U1;
+    results.U2 = details.U2;
     return results;
 }

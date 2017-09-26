@@ -19,6 +19,8 @@ typedef struct KPCAASaturnRingDetails {
     double a;
     double b;
     double DeltaU;
+    double U1;
+    double U2;
 } KPCAASaturnRingDetails;
 
 KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, BOOL highPrecision);
