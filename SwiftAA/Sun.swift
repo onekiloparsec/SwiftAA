@@ -26,20 +26,23 @@ public class Sun: Object, CelestialBody {
         }()
     
     /// The (constant) diameter of the Sun.
-    public let diameter: Meter = 1392000000.0
-    
+    public static let diameter: Meter = 1392000000.0
+
+    /// The (constant/adopted) semi-diameter of the Sun.
+    public static let semiDiameterAtOneAU: ArcSecond = 959.63
+
     /// The default apparent altitude of the sun to compute rise and set times.
     public static let apparentRiseSetAltitude = ArcMinute(-50).inDegrees // See AA p.101
 
     // MARK: - Celestial Body
     
     /// The apparent equatorial semi diameter of the sun.
-    public var equatorialSemiDiameter: Degree {
-        get { return Degree(KPCAADiameters_SunSemidiameterA(self.radiusVector.value)) }
+    public var equatorialSemiDiameter: ArcSecond {
+        get { return ArcSecond(KPCAADiameters_SunSemidiameterA(self.radiusVector.value)) }
     }
     
     /// The apparent polar semi diameter of the sun
-    public var polarSemiDiameter: Degree {
+    public var polarSemiDiameter: ArcSecond {
         get { return self.equatorialSemiDiameter }
     }
     
@@ -54,8 +57,8 @@ public class Sun: Object, CelestialBody {
     
     // MARK: - Coordinates
     
-    /// The radius vector (distance to the Sun... here to conform to CelestialBody protocol).
-    public var radiusVector: AstronomicalUnit { return 0.0 }
+    /// The radius vector (distance between the Earth and the Sun.
+    public var radiusVector: AstronomicalUnit { return Earth(julianDay: self.julianDay, highPrecision: self.highPrecision).radiusVector }
     
     /// The ecliptic coordinates of the Sun
     public var eclipticCoordinates: EclipticCoordinates {
@@ -134,10 +137,10 @@ public class Sun: Object, CelestialBody {
     /// Compute the equation of time, that is, the difference between the apparent and the mean time. Or, in other
     /// words, the difference between the hour angle of the true Sun and the mean Sun.
     ///
-    /// - returns: The equation of time, in days.
-    public func equationOfTime() -> Day {
+    /// - returns: The equation of time, in Minute.
+    public func equationOfTime() -> Minute {
         // KPCAA result is in minutes of time.
-        return Day(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision) / (24.0 * 60.0))
+        return Minute(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision))
     }
 }
 
