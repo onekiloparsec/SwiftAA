@@ -12,7 +12,7 @@ import Foundation
 /// The Julian Day is a continuous count of days and fractions thereof from the beginning of the year -4712.
 /// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.
 /// Julian Day structs conform to SwiftAA Numeric type protocol.
-public struct JulianDay: NumericType {
+public struct JulianDay: NumericType, CustomStringConvertible {
     
     /// The Julian Day value
     public let value: Double
@@ -58,11 +58,7 @@ public struct JulianDay: NumericType {
 }
 
 public extension JulianDay {
-    /**
-     Returns a new Date object corresponding to the Julian Day value.
-     
-     - returns: A new Date object, in the gregorian calendar, corresponding to to the Julian Day value.
-     */
+    /// Returns a new Date object, in the Gregorian calendar, corresponding to the Julian Day value.
     public var date: Date {
         let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
         let decimalSeconds = aaDate.second()
@@ -80,41 +76,30 @@ public extension JulianDay {
         return date
     }
     
-    /**
-     Returns the so-called Modified Julian Day corresponding to the Julian Day value.
-     Contrary to the JD, the Modified Julian Day begins at Greenwhich mean midnight.
-     It is equal to JD - 2400 000.5
-     
-     - returns: A Double value, corresponding to to the modified Julian Day value.
-     */
+    /// Returns the so-called Modified Julian Day corresponding to the Julian Day value.
+    /// Contrary to the JD, the Modified Julian Day begins at Greenwhich mean midnight.
+    /// It is equal to JD - 2400 000.5
     public var modified: Double {
         get { return self.value - ModifiedJulianDayZero }
     }
     
-
-    /**
-     Returns the Julian Day corresponding to the Greenwhich midnight before the actual value.
-     
-     - returns: A Julian Day object, corresponding to the Greenwhich midnight before the actual value.
-     */
+    /// Returns the Julian Day corresponding to the Greenwhich midnight before the actual value.
     public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
-    /**
-     Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude,
-     before the actual value. It is a direct function of the longitude, and makes no reference to time zone whatsoever.
-     Once transformed to a Date object, it will most probably not corresponds to the normal "midnight" date & hour,
-     since the latter is identical by convention on a given timezone. The local date however is always respected 
-     (since you may cross the new-date line depending on longitude).
-     
-     - returns: A Julian Day object, corresponding to the geometric midnight local to a given Earth longitude.
-     */
+    /// Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude,
+    /// before the actual value. It is a direct function of the longitude, and makes no reference to time zone whatsoever.
+    /// Once transformed to a Date object, it will most probably not corresponds to the normal "midnight" date & hour,
+    /// since the latter is identical by convention on a given timezone. The local date however is always respected
+    /// (since you may cross the new-date line depending on longitude).
+    ///
+    /// - Parameter longitude: The observer longitude
+    /// - Returns:  Julian Day instance.
     public func localMidnight(longitude: Degree) -> JulianDay {
         var shift = 0.0
         if longitude.inHours.value > self.date.fractionalHour { shift = -1.0 }
         else if longitude.inHours.value+12.0 < -self.date.fractionalHour { shift = +1.0 }
         return self.midnight.date.addingTimeInterval(longitude.inHours.inSeconds.value).julianDay + JulianDay(shift)
     }
-
     
     /// Returns the Julian Day corresponding to the local midnight, based on timezone.
     ///
@@ -125,43 +110,37 @@ public extension JulianDay {
         return (self + offsetFromGMT).midnight - offsetFromGMT
     }
 
-    /**
-     Computes the mean sidereal time for the Greenwich meridian.
-     That is, the Greenwich hour angle of the mean vernal point (the intersection of the ecliptic
-     of the date with the mean equator of the date).
-     
-     - returns: The sidereal time in hours.
-     */
+    /// Computes the mean sidereal time for the Greenwich meridian.
+    ///
+    /// That is, the Greenwich hour angle of the mean vernal point (the intersection of the ecliptic
+    /// of the date with the mean equator of the date).
+    ///
+    /// - Returns: The sidereal time in hours.
     public func meanGreenwichSiderealTime() -> Hour {
         return Hour(KPCAASidereal_MeanGreenwichSiderealTime(self.value))
     }
-
-    /**
-     Computes the mean sidereal time for a given longitude on Earth.
-     
-     - parameter longitude: Positively Westward (see AA p. 93 for explanations).
-     Basically: this is the contrary of IAU decision. But this orientation is consistent
-     with longitude orientation in all other planets!
-     
-     - returns: The sidereal time in hours.
-     */
+    
+    /// Computes the mean sidereal time for a given longitude on Earth.
+    ///
+    /// - Parameter longitude: Positively Westward (see AA p. 93 for explanations).
+    ///             Basically: this is the contrary of IAU decision. But this orientation is consistent
+    ///             with longitude orientation in all other planets!
+    /// - Returns: The sidereal time in hours.
     public func meanLocalSiderealTime(longitude: Degree) -> Hour {
         return self.meanGreenwichSiderealTime() - longitude.inHours
     }
-
-    /**
-     Computes the apparent sidereal time.
-     That is, the Greenwich hour angle of the true vernal equinox, obtained by adding a correction
-     that depends on the nutation in longitude, and the true obliquity of the ecliptic.
-     
-     - returns: The sidereal time in hours.
-     */
+    
+    /// Computes the apparent sidereal time.
+    ///
+    /// That is, the Greenwich hour angle of the true vernal equinox, obtained by adding a correction
+    /// that depends on the nutation in longitude, and the true obliquity of the ecliptic.
+    ///
+    /// - Returns: The sidereal time in hours.
     public func apparentGreenwichSiderealTime() -> Hour {
         return Hour(KPCAASidereal_ApparentGreenwichSiderealTime(self.value))
     }
     
     // Obliquity
-    
     
     /// Obliquity of the ecliptic, that is, the angle between the ecliptic and the celestial equator.
     ///
@@ -260,10 +239,6 @@ public extension JulianDay {
     public func UT1minusUTC() -> Second {
         return Second(KPCAADynamicalTime_UT1MinusUTC(self.value))
     }
-}
-
-  
-extension JulianDay: CustomStringConvertible {
     
     /// The description of the Julian Day.
     public var description: String {
@@ -274,6 +249,5 @@ extension JulianDay: CustomStringConvertible {
         }
     }
 }
-
 
 
