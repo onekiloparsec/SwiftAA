@@ -49,8 +49,7 @@ The documentation generated from the code itself is available at [http://onekilo
 Licence
 =======
 
-The licence of this software is the [MIT](http://opensource.org/licenses/MIT) licence. But it does not apply to the AA+ Framework,
-which retains its own licence. Quoting the [original](http://www.naughter.com/aa.html):
+The licence of this software is the [MIT](http://opensource.org/licenses/MIT) licence, which allows you to use it freely in open-source or commercial products. But it does not apply to the AA+ Framework, which retains its own licence. Quoting the [original](http://www.naughter.com/aa.html):
 
 **AA+ Copyright :** 
 
@@ -62,7 +61,7 @@ which retains its own licence. Quoting the [original](http://www.naughter.com/aa
 Installation
 ============
 
-Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile` and then run `carthage update`.
+Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA.framework` into your project (in `embedded binaries`).
 
 Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` and then run `pod update`. 
 
@@ -88,12 +87,9 @@ The coordinates computations are key for modern astronomy. However, there is no 
 Prefixes & Conventions
 ----
 
-Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA
-was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
+Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
 
-As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in
-Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++
-library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
+As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++ library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
 
 The constraint of having an Objective-C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes.
 
