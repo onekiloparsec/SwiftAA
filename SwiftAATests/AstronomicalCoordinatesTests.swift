@@ -68,6 +68,39 @@ class AstronomicalCoordinatesTests: XCTestCase {
         XCTAssertEqual(String(describing: ecliptic), "λ=+7°45'18.946\", β=-28°1'34.260\" (epoch J2000.0, equinox J2000.0)")
     }
 
+    func testHorizontalCoordinatesDescription() {
+        let coords = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 77, 3, 56.0), latitude: Degree(.plus, 38, 55, 17.0))
+        let horizontal = HorizontalCoordinates(azimuth: -10.567, altitude: 87.654, geographicCoordinates: coords, julianDay: JulianDay(Date()))
+        XCTAssertEqual(String(describing: horizontal), "A=-10°34'01.200\", h=+87°39'14.400\"")
+    }
+
+    func testNothBasedAzimuth() {
+        let coords = GeographicCoordinates(positivelyWestwardLongitude: Degree(.plus, 77, 3, 56.0), latitude: Degree(.plus, 38, 55, 17.0))
+        let horizontal = HorizontalCoordinates(azimuth: -10.567, altitude: 87.654, geographicCoordinates: coords, julianDay: JulianDay(Date()))
+        AssertEqual(horizontal.northBasedAzimuth, horizontal.azimuth + 180.0)
+    }
+    
+    // See AA, p.135, Example 21.b
+    func testProperMotionAndPrecession() {
+        // Default to Epoch J2000.0 and Equinox J2000.0
+        let coords0 = EquatorialCoordinates(alpha: Hour(.plus, 2, 44, 11.986), delta: Degree(.plus, 49, 13, 42.48))
+        let properMotion = ProperMotion(deltaRightAscension: 0.03425, deltaDeclination: -0.0895)
+        
+        let newEpochJD = JulianDay(year: 2028, month: 11, day: 13, hour: 4, minute: 33, second: 36.0)
+        AssertEqual(newEpochJD, JulianDay(2462088.69))
+        
+        let coords1 = coords0.shiftedCoordinates(to: .epochOfTheDate(newEpochJD), with: properMotion)
+        AssertEqual(coords1.alpha, Hour(.plus, 2, 44, 12.975), accuracy: Second(0.001).inHours)
+        AssertEqual(coords1.delta, Degree(.plus, 49, 13, 39.90), accuracy: ArcSecond(0.01).inDegrees)
+        AssertEqual(coords1.equinox.julianDay, coords0.equinox.julianDay)
+        AssertEqual(coords1.epoch.julianDay, newEpochJD)
+        
+        let coords2 = coords1.precessedCoordinates(to: .meanEquinoxOfTheDate(newEpochJD))
+        AssertEqual(coords2.alpha, Hour(.plus, 2, 46, 11.331), accuracy: Second(0.001).inHours)
+        AssertEqual(coords2.delta, Degree(.plus, 49, 20, 54.54), accuracy: ArcSecond(0.01).inDegrees)
+        AssertEqual(coords2.equinox.julianDay, newEpochJD)
+        AssertEqual(coords2.epoch.julianDay, newEpochJD)
+    }
 }
 
 

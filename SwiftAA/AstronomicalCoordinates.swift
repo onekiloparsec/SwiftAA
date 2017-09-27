@@ -8,6 +8,14 @@
 
 import Foundation
 
+/// Struct to encapsulate amount of proper motion in equatorial reference.
+public struct ProperMotion {
+    /// The annual delta in right ascension
+    public let deltaRightAscension: Second
+    /// The annual delta in declination
+    public let deltaDeclination: ArcSecond
+}
+
 /// The coordinates of an object in the equatorial system, based on Earth equator.
 public struct EquatorialCoordinates: CustomStringConvertible {
     
@@ -106,13 +114,31 @@ public struct EquatorialCoordinates: CustomStringConvertible {
     public func precessedCoordinates(to newEquinox: Equinox) -> EquatorialCoordinates {
         let components = KPCAAPrecession_PrecessEquatorial(self.rightAscension.value,
                                                            self.declination.value,
-                                                           self.equinox.epoch.value,
-                                                           newEquinox.epoch.value)
+                                                           self.equinox.julianDay.value,
+                                                           newEquinox.julianDay.value)
         
         return EquatorialCoordinates(alpha: Hour(components.X),
                                      delta: Degree(components.Y),
                                      epoch: self.epoch,
                                      equinox: newEquinox)
+    }
+    
+    /// Returns new EquatorialCoordinates shifted to the new epoch by the given proper motion.
+    ///
+    /// - Parameters:
+    ///   - newEpoch: The new epoch of coordinates.
+    ///   - properMotion: The amount of proper motion
+    /// - Returns: A new EquatorialCoordinates instance.
+    public func shiftedCoordinates(to newEpoch: Epoch, with properMotion: ProperMotion) -> EquatorialCoordinates {
+        let deltaJDinJulianYears = (newEpoch.julianDay.value - self.epoch.julianDay.value) / JulianYear.value
+
+        let shiftAlpha = Second(properMotion.deltaRightAscension.value * deltaJDinJulianYears)
+        let shiftDelta = ArcSecond(properMotion.deltaDeclination.value * deltaJDinJulianYears)
+
+        return EquatorialCoordinates(alpha: self.alpha + shiftAlpha.inHours,
+                                     delta: self.delta + shiftDelta.inDegrees,
+                                     epoch: newEpoch,
+                                     equinox: self.equinox)
     }
     
     /// Returns the angular separation between two equatorial coordinates.

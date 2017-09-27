@@ -99,7 +99,7 @@ public enum Equinox: CustomStringConvertible {
     case standardB1950
     
     /// The Julian Day of the given equinox.
-    var epoch: JulianDay {
+    var julianDay: JulianDay {
         switch self {
         case .meanEquinoxOfTheDate(let julianDay):
             return julianDay
@@ -110,7 +110,7 @@ public enum Equinox: CustomStringConvertible {
         }
     }
     
-    public var description: String { return self.epoch.description }
+    public var description: String { return self.julianDay.description }
 }
 
 
