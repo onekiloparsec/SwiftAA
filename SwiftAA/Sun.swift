@@ -64,13 +64,16 @@ public class Sun: Object, CelestialBody {
     public var eclipticCoordinates: EclipticCoordinates {
         get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitude(self.julianDay.value, self.highPrecision)),
                                          beta: Degree(KPCAASun_GeometricEclipticLatitude(self.julianDay.value, self.highPrecision)),
-                                         epoch: self.julianDay) }
+                                         epoch: .epochOfTheDate(self.julianDay),
+                                         equinox: .meanEquinoxOfTheDate(self.julianDay)) }
     }
 
+    /// The apparent ecliptic coordinates of the Sun.
     public var apparentEclipticCoordinates: EclipticCoordinates {
         get { return EclipticCoordinates(lambda: Degree(KPCAASun_ApparentEclipticLongitude(self.julianDay.value, self.highPrecision)),
                                          beta: Degree(KPCAASun_ApparentEclipticLatitude(self.julianDay.value, self.highPrecision)),
-                                         epoch: self.julianDay) }
+                                         epoch: .epochOfTheDate(self.julianDay),
+                                         equinox: .meanEquinoxOfTheDate(self.julianDay)) }
     }
 
     /// The equatorial coordinates of the Sun
@@ -98,7 +101,7 @@ public class Sun: Object, CelestialBody {
     /// - Parameter geographicCoordinates: The location of the observer.
     /// - Returns: A new horizontal coordinates instance.
     public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
-        return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(for: geographicCoordinates, julianDay: self.julianDay)
+        return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(for: geographicCoordinates, at: self.julianDay)
     }
 
     // MARK: - Physical Observations of the Sun

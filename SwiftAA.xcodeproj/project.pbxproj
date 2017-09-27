@@ -1688,7 +1688,7 @@
 			name = "Partly Swifted v2.0";
 			sourceTree = "<group>";
 		};
-		9F3D51041D947DC900F03766 /* Earth & Moon */ = {
+		9F3D51041D947DC900F03766 /* Earth */ = {
 			isa = PBXGroup;
 			children = (
 				9F7A56FB1D15E6890033CDC5 /* Earth.swift */,
@@ -1698,7 +1698,7 @@
 				9FFC4A501DCF891F00382049 /* GeographicCoordinates.swift */,
 				9FEA1DCF1DA1625500F7E346 /* AthmosphericRefraction.swift */,
 			);
-			name = "Earth & Moon";
+			name = Earth;
 			sourceTree = "<group>";
 		};
 		9F3D51051D947DCF00F03766 /* Jupiter */ = {
@@ -2152,7 +2152,7 @@
 				9FE80D7A1DCF585A00CC6623 /* PlanetConstants.swift */,
 				9FDA5C281D16E60B003B9F31 /* Mercury.swift */,
 				9F694EE41D15C7CA00EE7492 /* Venus.swift */,
-				9F3D51041D947DC900F03766 /* Earth & Moon */,
+				9F3D51041D947DC900F03766 /* Earth */,
 				9FDA5C2B1D16E612003B9F31 /* Mars.swift */,
 				9F3D51051D947DCF00F03766 /* Jupiter */,
 				9F3D51061D947DD900F03766 /* Saturn */,

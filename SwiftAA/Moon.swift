@@ -107,7 +107,10 @@ public class Moon : Object, CelestialBody {
         get {
             let latitude = Degree.init(KPCAAMoon_EclipticLatitude(julianDay.value))
             let longitude = Degree.init(KPCAAMoon_EclipticLongitude(julianDay.value))
-            return EclipticCoordinates(lambda: longitude, beta: latitude, epoch: self.julianDay)
+            return EclipticCoordinates(lambda: longitude,
+                                       beta: latitude,
+                                       epoch: .epochOfTheDate(self.julianDay),
+                                       equinox: .meanEquinoxOfTheDate(self.julianDay))
         }
     }
     

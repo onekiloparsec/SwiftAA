@@ -44,30 +44,73 @@ public let AU2m: Double = 149597870700.0 // Wikipedia
 /// Conversion factor from Astronomical Unit to light-years.
 public let AU2ly: Double = 1.0/206264.8
 
-//public let pc2AU = 1.0/tan(1.0/3600.0/rad2deg)
-//public let m2AU = 1.0/149597870700.0
-//public let ly2AU = 206264.8
 
+/// Standard eqpoch values. Note: equinoxes are directions, epochs are point in time.
+public enum Epoch: CustomStringConvertible {
+    
+    /// The mean epoch of the date.
+    case epochOfTheDate(JulianDay)
+    
+    /// The standard 2000 epoch: January 1st, 2000, in the Julian calendar (1 year = 365.25 days).
+    case J2000
+    
+    /// The standard 1950 epoch: January 1st, 1950, in the Besselian calendar
+    /// (1 year = 365.2421988 days in AD1900, that is, the length of the tropical year).
+    case B1950
+    
+    /// The value of the epoch, in Julian Days.
+    var julianDay: JulianDay {
+        switch self {
+        case .epochOfTheDate(let julianDay):
+            return julianDay
+        case .J2000:
+            return StandardEpoch_J2000_0
+        case .B1950:
+            return StandardEpoch_B1950_0
+        }
+    }
+    
+    public var description: String {
+        switch self {
+        case .epochOfTheDate(let julianDay):
+            return julianDay.description
+        case .J2000:
+            return "J2000.0"
+        case .B1950:
+            return "B1950.0"
+        }
+    }
+}
 
 /// Standard equinox values. Note: equinoxes are directions, epochs are point in time.
 /// The vernal equinox, which is the zero point of both right ascension and celestial longitude, is defined
 /// to be in the direction of the ascending node of the ecliptic on the equator.
 /// Of course, at the standard epoch of J2000 corresponds to a specific (and thus standard) equinox.
-public enum Equinox {
+public enum Equinox: CustomStringConvertible {
     
     /// The mean equinox of the date is the intersection of the ecliptic of the date with the mean equator of the date.
-    case meanEquinoxOfTheDate(Date)
+    case meanEquinoxOfTheDate(JulianDay)
+    
+    /// The standard 2000 equinox: January 1st, 2000, in the Julian calendar (1 year = 365.25 days).
     case standardJ2000
+    
+    /// The standard 1950 equinox: January 1st, 1950, in the Besselian calendar 
+    /// (1 year = 365.2421988 days in AD1900, that is, the length of the tropical year).
+    case standardB1950
     
     /// The Julian Day of the given equinox.
     var epoch: JulianDay {
         switch self {
-        case .meanEquinoxOfTheDate(let date):
-            return date.julianDay
+        case .meanEquinoxOfTheDate(let julianDay):
+            return julianDay
         case .standardJ2000:
             return StandardEpoch_J2000_0
+        case .standardB1950:
+            return StandardEpoch_B1950_0
         }
     }
+    
+    public var description: String { return self.epoch.description }
 }
 
 

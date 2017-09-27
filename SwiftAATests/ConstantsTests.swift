@@ -24,8 +24,18 @@ class ConstantsTests: XCTestCase {
     
     func testEquinox() {
         let date = Date()
-        XCTAssertEqual(Equinox.meanEquinoxOfTheDate(date).epoch, date.julianDay)
+        XCTAssertEqual(Equinox.meanEquinoxOfTheDate(date.julianDay).epoch, date.julianDay)
         XCTAssertEqual(Equinox.standardJ2000.epoch, StandardEpoch_J2000_0)
+        XCTAssertEqual(Equinox.standardB1950.epoch, StandardEpoch_B1950_0)
+        XCTAssertNotNil(String(describing: Equinox.meanEquinoxOfTheDate(date.julianDay)))
+    }
+
+    func testEpoch() {
+        let date = Date()
+        XCTAssertEqual(Epoch.epochOfTheDate(date.julianDay).julianDay, date.julianDay)
+        XCTAssertEqual(Epoch.J2000.julianDay, StandardEpoch_J2000_0)
+        XCTAssertEqual(Epoch.B1950.julianDay, StandardEpoch_B1950_0)
+        XCTAssertNotNil(String(describing: Epoch.epochOfTheDate(date.julianDay)))
     }
 
     func testPlanet2PlanetaryObject() {

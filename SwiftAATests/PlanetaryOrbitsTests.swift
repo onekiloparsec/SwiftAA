@@ -18,9 +18,9 @@ class PlanetaryOrbitsTests: XCTestCase {
 
         // numeric types
         AssertEqual(mercury.semimajorAxis(), AstronomicalUnit(0.387098310))
-        AssertEqual(mercury.inclination(.meanEquinoxOfTheDate(jd.date)), Degree(7.006171), accuracy: Degree(0.000001))
-        AssertEqual(mercury.longitudeOfAscendingNode(.meanEquinoxOfTheDate(jd.date)), Degree(49.107650), accuracy: Degree(0.000001))
-        AssertEqual(mercury.longitudeOfPerihelion(.meanEquinoxOfTheDate(jd.date)), Degree(78.475382), accuracy: Degree(0.000001))
+        AssertEqual(mercury.inclination(.meanEquinoxOfTheDate(jd)), Degree(7.006171), accuracy: Degree(0.000001))
+        AssertEqual(mercury.longitudeOfAscendingNode(.meanEquinoxOfTheDate(jd)), Degree(49.107650), accuracy: Degree(0.000001))
+        AssertEqual(mercury.longitudeOfPerihelion(.meanEquinoxOfTheDate(jd)), Degree(78.475382), accuracy: Degree(0.000001))
 
         // non-numeric types
         XCTAssertEqualWithAccuracy(mercury.eccentricity(), 0.20564510, accuracy: 0.00000001)

@@ -52,10 +52,10 @@ public extension PlanetaryOrbits {
     /// - Returns: The longitude in degrees
     func meanLongitude(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
-        case .meanEquinoxOfTheDate:
-            return Degree(KPCAAElementsPlanetaryOrbit_MeanLongitude(self.planetStrict, self.julianDay.value))
         case .standardJ2000:
             return Degree(KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(self.planetStrict, self.julianDay.value))
+        default:
+            return Degree(KPCAAElementsPlanetaryOrbit_MeanLongitude(self.planetStrict, self.julianDay.value))
         }
     }
     
@@ -79,10 +79,10 @@ public extension PlanetaryOrbits {
     /// - Returns: The inclination in degrees
     func inclination(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
-        case .meanEquinoxOfTheDate:
-            return Degree(KPCAAElementsPlanetaryOrbit_Inclination(self.planetStrict, self.julianDay.value))
         case .standardJ2000:
             return Degree(KPCAAElementsPlanetaryOrbit_InclinationJ2000(self.planetStrict, self.julianDay.value))
+        default:
+            return Degree(KPCAAElementsPlanetaryOrbit_Inclination(self.planetStrict, self.julianDay.value))
         }
     }
     
@@ -92,10 +92,10 @@ public extension PlanetaryOrbits {
     /// - Returns: The longitude in degrees
     func longitudeOfAscendingNode(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
-        case .meanEquinoxOfTheDate:
-            return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(self.planetStrict, self.julianDay.value))
         case .standardJ2000:
             return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value))
+        default:
+            return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(self.planetStrict, self.julianDay.value))
         }
     }
     
@@ -105,10 +105,10 @@ public extension PlanetaryOrbits {
     /// - Returns: The longitude in degrees
     func longitudeOfPerihelion(_ equinox: Equinox = .standardJ2000) -> Degree {
         switch equinox {
-        case .meanEquinoxOfTheDate:
-            return Degree(KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planetStrict, self.julianDay.value))
         case .standardJ2000:
             return Degree(KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(self.planetStrict, self.julianDay.value))
+        default:
+            return Degree(KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planetStrict, self.julianDay.value))
         }
     }
 }
