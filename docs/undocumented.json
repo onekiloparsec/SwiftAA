@@ -1107,6 +1107,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/SaturnRings.swift",
+      "line": 25,
+      "symbol": "SaturnRingSystem.julianDay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
       "line": 21,
       "symbol": "StandardEpoch_B1950_0",
@@ -1115,93 +1122,79 @@
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 60,
-      "symbol": "Equinox.standardJ2000",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 81,
+      "line": 124,
       "symbol": "Season.spring",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 82,
+      "line": 125,
       "symbol": "Season.summer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 83,
+      "line": 126,
       "symbol": "Season.autumn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 84,
+      "line": 127,
       "symbol": "Season.winter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 95,
+      "line": 138,
       "symbol": "MoonPhase.newMoon",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 96,
+      "line": 139,
       "symbol": "MoonPhase.firstQuarter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 97,
+      "line": 140,
       "symbol": "MoonPhase.fullMoon",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 98,
+      "line": 141,
       "symbol": "MoonPhase.lastQuarter",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 106,
+      "line": 149,
       "symbol": "CelestialBodyTransitError.alwaysBelowAltitude",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 107,
+      "line": 150,
       "symbol": "CelestialBodyTransitError.alwaysAboveAltitude",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/ScientificConstants.swift",
-      "line": 108,
+      "line": 151,
       "symbol": "CelestialBodyTransitError.undefinedPlanetaryObject",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/Sun.swift",
-      "line": 67,
-      "symbol": "Sun.apparentEclipticCoordinates",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],

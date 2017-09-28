@@ -136,6 +136,9 @@
                 <a href="../Enums/EarthSolsticeType.html">EarthSolsticeType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/Epoch.html">Epoch</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/Equinox.html">Equinox</a>
               </li>
               <li class="nav-group-task">
@@ -330,6 +333,9 @@
                 <a href="../Structs/Parsec.html">Parsec</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ProperMotion.html">ProperMotion</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Radian.html">Radian</a>
               </li>
               <li class="nav-group-task">
@@ -343,6 +349,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaturnianMoon.html">SaturnianMoon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaturnicentricCoordinates.html">SaturnicentricCoordinates</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Second.html">Second</a>
@@ -373,9 +382,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV7SwiftAA16SaturnRingSystem27saturnicentricEarthLatitudeVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/saturnicentricEarthLatitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem27saturnicentricEarthLatitudeVS_6Degree">saturnicentricEarthLatitude</a>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem9julianDayVS_9JulianDay"></a>
+                    <a name="//apple_ref/swift/Property/julianDay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem9julianDayVS_9JulianDay">julianDay</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -383,21 +392,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Saturnicentric latitude of the Earth referred to the plane of the ring (B),
-positive towards the north. When B is positive, the visible surface of the ring is
-the northern one.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">saturnicentricEarthLatitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SaturnRingSystem</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L20">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -405,9 +412,9 @@ the northern one.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV7SwiftAA16SaturnRingSystem25saturnicentricSunLatitudeVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/saturnicentricSunLatitude" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem25saturnicentricSunLatitudeVS_6Degree">saturnicentricSunLatitude</a>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem16earthCoordinatesVS_25SaturnicentricCoordinates"></a>
+                    <a name="//apple_ref/swift/Property/earthCoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem16earthCoordinatesVS_25SaturnicentricCoordinates">earthCoordinates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -415,21 +422,80 @@ the northern one.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Saturnicentric latitude of the Sun referred to the plane of the ring (B&rsquo;),
-positive towards the north. When B&rsquo; is positive, the illuminated surface of the ring is
-the northern one.</p>
+                        <p>The Saturnicentric coordinates of the Earth referred to the plane of the ring (B)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">saturnicentricSunLatitude</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">earthCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaturnicentricCoordinates.html">SaturnicentricCoordinates</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L27">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L28-L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem14sunCoordinatesVS_25SaturnicentricCoordinates"></a>
+                    <a name="//apple_ref/swift/Property/sunCoordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem14sunCoordinatesVS_25SaturnicentricCoordinates">sunCoordinates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Saturnicentric coordinates of the Sun referred to the plane of the ring (B)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sunCoordinates</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaturnicentricCoordinates.html">SaturnicentricCoordinates</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L33-L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem42saturnicentricSunEarthLongitudesDifferenceVS_6Degree"></a>
+                    <a name="//apple_ref/swift/Property/saturnicentricSunEarthLongitudesDifference" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem42saturnicentricSunEarthLongitudesDifferenceVS_6Degree">saturnicentricSunEarthLongitudesDifference</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The difference between the Saturnicentric longitude of the Sun and the Earth, measured in
+the plane of the ring. Used to compute Saturn&rsquo;s magnitude.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">saturnicentricSunEarthLongitudesDifference</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -462,7 +528,7 @@ the East (trust me&hellip; see AA p.317)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L35">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -470,9 +536,9 @@ the East (trust me&hellip; see AA p.317)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV7SwiftAA16SaturnRingSystem9majorAxisVS_6Degree"></a>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem9majorAxisVS_9ArcSecond"></a>
                     <a name="//apple_ref/swift/Property/majorAxis" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem9majorAxisVS_6Degree">majorAxis</a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem9majorAxisVS_9ArcSecond">majorAxis</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -487,12 +553,12 @@ the East (trust me&hellip; see AA p.317)</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">majorAxis</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">majorAxis</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcSecond.html">ArcSecond</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L40">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -500,9 +566,9 @@ the East (trust me&hellip; see AA p.317)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV7SwiftAA16SaturnRingSystem9minorAxisVS_6Degree"></a>
+                    <a name="/s:vV7SwiftAA16SaturnRingSystem9minorAxisVS_9ArcSecond"></a>
                     <a name="//apple_ref/swift/Property/minorAxis" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem9minorAxisVS_6Degree">minorAxis</a>
+                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem9minorAxisVS_9ArcSecond">minorAxis</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -517,43 +583,12 @@ the East (trust me&hellip; see AA p.317)</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minorAxis</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minorAxis</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArcSecond.html">ArcSecond</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L45">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV7SwiftAA16SaturnRingSystem42saturnicentricSunEarthLongitudesDifferenceVS_6Degree"></a>
-                    <a name="//apple_ref/swift/Property/saturnicentricSunEarthLongitudesDifference" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV7SwiftAA16SaturnRingSystem42saturnicentricSunEarthLongitudesDifferenceVS_6Degree">saturnicentricSunEarthLongitudesDifference</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The difference between the Saturnicentric longitude of the Sun and the Earth, measured in
-the plane of the ring. Used to compute Saturn&rsquo;s magnitude.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">saturnicentricSunEarthLongitudesDifference</span><span class="p">:</span> <span class="kt"><a href="../Structs/Degree.html">Degree</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0-beta1/SwiftAA/SaturnRings.swift#L51">Show on GitHub</a>
+                        <a href="https://github.com/onekiloparsec/SwiftAA/tree/2.0/SwiftAA/SaturnRings.swift#L51">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -563,7 +598,7 @@ the plane of the ring. Used to compute Saturn&rsquo;s magnitude.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-25)</p>
+          <p>&copy; 2017 <a class="link" href="https://onekilopars.ec" target="_blank" rel="external">onekiloparsec</a>. All rights reserved. (Last updated: 2017-09-28)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
