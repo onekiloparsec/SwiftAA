@@ -47,17 +47,6 @@ Documentation
 The documentation generated from the code itself is available at [http://onekiloparsec.github.io/SwiftAA](http://onekiloparsec.github.io/SwiftAA).
 
 
-Licence
-=======
-
-The licence of this software is the [MIT](http://opensource.org/licenses/MIT) licence, which allows you to use it freely in open-source or commercial products. But it does not apply to the AA+ Framework, which retains its own licence. Quoting the [original](http://www.naughter.com/aa.html):
-
-**AA+ Copyright :** 
-
-* You are allowed to include the source code in any product (commercial, shareware, freeware or otherwise) when your product is released in binary form.
-* You are allowed to modify the source code in any way you want except you cannot modify the copyright details at the top of each module.
-* If you want to distribute source code with your application, then you are only allowed to distribute versions released by the author. This is to maintain a single distribution point for the source code.
-
 
 Installation
 ============
@@ -101,5 +90,17 @@ Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** 
 
 
 
-## License
+Licence
+=======
+
+The licence of this software is the [MIT](http://opensource.org/licenses/MIT) licence, which allows you to use it freely in open-source or commercial products. But it does not apply to the AA+ Framework, which retains its own licence. Quoting the [original](http://www.naughter.com/aa.html):
+
+**AA+ Copyright :** 
+
+* You are allowed to include the source code in any product (commercial, shareware, freeware or otherwise) when your product is released in binary form.
+* You are allowed to modify the source code in any way you want except you cannot modify the copyright details at the top of each module.
+* If you want to distribute source code with your application, then you are only allowed to distribute versions released by the author. This is to maintain a single distribution point for the source code.
+
+## FOSSA
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA?ref=badge_large)
