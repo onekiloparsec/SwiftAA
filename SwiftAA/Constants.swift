@@ -27,8 +27,8 @@ import Foundation
 // See https://stackoverflow.com/questions/32873212/unit-test-fatalerror-in-swift?answertab=active#tab-top
 // to make possible to unit test fatalError.
 //
-// overrides Swift global `fatalError`
-public func fatalError(_ message: @autoclosure () -> String = "", file: StaticString = #file, line: UInt = #line) -> Never {
+// testable drop-in replacement for `fatalError()`
+internal func fatalError(_ message: @autoclosure () -> String = "", file: StaticString = #file, line: UInt = #line) -> Never {
     FatalErrorUtil.fatalErrorClosure(message(), file, line)
 //    unreachable()
 }
