@@ -45,8 +45,8 @@ class IlluminatedFractionTests: XCTestCase {
     func testMagnitudeSaturn() {
         let jd = JulianDay(year: 1992, month: 12, day: 16)
         let saturn = Saturn(julianDay: jd)
-        XCTAssertEqualWithAccuracy(saturn.magnitudeMuller, 0.9, accuracy: 0.05)
+        XCTAssertEqualWithAccuracy(saturn.magnitudeMuller.value, 0.9, accuracy: 0.05)
         // Magnitude (not Muller) is using Astronomical Almanacs algorithm.
-        XCTAssertEqualWithAccuracy(saturn.magnitude, 0.75, accuracy: 0.05)
+        XCTAssertEqualWithAccuracy(saturn.magnitude.value, 0.75, accuracy: 0.05)
     }
 }
