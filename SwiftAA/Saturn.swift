@@ -55,17 +55,17 @@ public class Saturn: Planet {
     }
     
     /// The magnitude of the planet. Includes the contribution from the ring.
-    public var magnitude: Double {
-        get { return KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector.value,
+    public var magnitude: Magnitude {
+        get { return Magnitude(KPCAAIlluminatedFraction_SaturnMagnitudeAA(self.radiusVector.value,
                                                                 self.apparentGeocentricDistance.value,
                                                                 self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
-                                                                self.ringSystem.earthCoordinates.latitude.value) } }
+                                                                self.ringSystem.earthCoordinates.latitude.value)) } }
     
     /// The magnitude 'Muller' of the planet. Includes the contribution from the ring.
-    public var magnitudeMuller: Double {
-        get { return KPCAAIlluminatedFraction_SaturnMagnitudeMuller(self.radiusVector.value,
+    public var magnitudeMuller: Magnitude {
+        get { return Magnitude(KPCAAIlluminatedFraction_SaturnMagnitudeMuller(self.radiusVector.value,
                                                                     self.apparentGeocentricDistance.value,
                                                                     self.ringSystem.saturnicentricSunEarthLongitudesDifference.value,
-                                                                    self.ringSystem.earthCoordinates.latitude.value) } }
+                                                                    self.ringSystem.earthCoordinates.latitude.value)) } }
 }
 
