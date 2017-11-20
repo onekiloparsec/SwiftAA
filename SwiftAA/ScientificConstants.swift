@@ -276,19 +276,19 @@ public extension KPCPlanetaryObject {
     public var objectType: Planet.Type? {
         switch self {
         case .MERCURY:
-            return SwiftAA.Mercury
+            return SwiftAA.Mercury.self
         case .VENUS:
-            return SwiftAA.Venus
+            return SwiftAA.Venus.self
         case .MARS:
-            return SwiftAA.Mars
+            return SwiftAA.Mars.self
         case .JUPITER:
-            return SwiftAA.Jupiter
+            return SwiftAA.Jupiter.self
         case .SATURN:
-            return SwiftAA.Saturn
+            return SwiftAA.Saturn.self
         case .URANUS:
-            return SwiftAA.Uranus
+            return SwiftAA.Uranus.self
         case .NEPTUNE:
-            return SwiftAA.Neptune
+            return SwiftAA.Neptune.self
         case .UNDEFINED:
             return nil
         }
