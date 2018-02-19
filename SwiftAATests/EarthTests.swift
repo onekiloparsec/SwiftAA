@@ -85,5 +85,21 @@ class EarthTests: XCTestCase {
         AssertEqual(earth.solstice(of: .northernSummer), JulianDay(year: 1962, month: 6, day: 21, hour: 21, minute: 24, second: 40.266644), accuracy: Second(5.0).inJulianDays)
         AssertEqual(earth.solstice(of: .southernSummer), JulianDay(year: 1962, month: 12, day: 22, hour: 8, minute: 15, second: 49.259721), accuracy: Second(5.0).inJulianDays)
     }
+    
+    // See AATests.cpp.
+    // Procedure: Run AAPlusTests Xcode target, put breakpoints on lines ~1125 and read memory values.
+    func testLongLatRadius () {
+        let earthLowPrecision = Earth(julianDay: JulianDay(2448908.5), highPrecision: false)
+        let earthHighPrecision = Earth(julianDay: JulianDay(2448908.5), highPrecision: true)
+        
+        XCTAssertEqual(earthLowPrecision.heliocentricEclipticCoordinates.celestialLongitude.value, 19.907371990723732)
+        XCTAssertEqual(earthHighPrecision.heliocentricEclipticCoordinates.celestialLongitude.value, 19.907297242049481)
+        
+        XCTAssertEqual(earthLowPrecision.heliocentricEclipticCoordinates.celestialLatitude.value, -0.00017901250407703628)
+        XCTAssertEqual(earthHighPrecision.heliocentricEclipticCoordinates.celestialLatitude.value, -0.00020664594472918907)
+        
+        XCTAssertEqual(earthLowPrecision.radiusVector.value, 0.99760774951494113)
+        XCTAssertEqual(earthHighPrecision.radiusVector.value, 0.99760852023559332)
+    }
 }
 
