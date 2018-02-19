@@ -9,7 +9,7 @@ before_install:
 install: 
   - bundle install --without=documentation 
 script:
-  - xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS  -sdk iphonesimulator10.3 -destination 'platform=iOS Simulator,OS=10.3,name=iPhone 7'
+  - xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS  -sdk iphonesimulator10.3 -destination 'platform=iOS Simulator,OS=10.3.1,name=iPhone 7'
 after_success: 
   - slather
   - bash <(curl -s https://codecov.io/bash) -f TestReports/cobertura.xml -X xcodeplist
