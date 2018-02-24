@@ -3,6 +3,7 @@
 </h3>
 <p align="center">
 <b>SwiftAA</b> &bull;
+<a href="https://github.com/onekiloparsec/AA.js">AA.js</a> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
