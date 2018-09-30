@@ -25,28 +25,28 @@ class IlluminatedFractionTests: XCTestCase {
     func testFractionVenus() {
         let jd = JulianDay(year: 1992, month: 12, day: 20)
         let venus = Venus(julianDay: jd)
-        XCTAssertEqualWithAccuracy(venus.illuminatedFraction, 0.647, accuracy: 0.001)
+        XCTAssertEqual(venus.illuminatedFraction, 0.647, accuracy: 0.001)
     }
     
     // See AA. p.285
     func testMagnitudeMullerVenus() {
         let jd = JulianDay(year: 1992, month: 12, day: 20)
         let venus = Venus(julianDay: jd)
-        XCTAssertEqualWithAccuracy(venus.magnitudeMuller.value, -3.8, accuracy: 0.05)
+        XCTAssertEqual(venus.magnitudeMuller.value, -3.8, accuracy: 0.05)
     }
     
     func testMagnitudeVenus() {
         let jd = JulianDay(year: 1992, month: 12, day: 20)
         let venus = Venus(julianDay: jd)
-        XCTAssertEqualWithAccuracy(venus.magnitude.value, -4.2, accuracy: 0.05)
+        XCTAssertEqual(venus.magnitude.value, -4.2, accuracy: 0.05)
     }
     
     // See AA. p.286
     func testMagnitudeSaturn() {
         let jd = JulianDay(year: 1992, month: 12, day: 16)
         let saturn = Saturn(julianDay: jd)
-        XCTAssertEqualWithAccuracy(saturn.magnitudeMuller.value, 0.9, accuracy: 0.05)
+        XCTAssertEqual(saturn.magnitudeMuller.value, 0.9, accuracy: 0.05)
         // Magnitude (not Muller) is using Astronomical Almanacs algorithm.
-        XCTAssertEqualWithAccuracy(saturn.magnitude.value, 0.75, accuracy: 0.05)
+        XCTAssertEqual(saturn.magnitude.value, 0.75, accuracy: 0.05)
     }
 }

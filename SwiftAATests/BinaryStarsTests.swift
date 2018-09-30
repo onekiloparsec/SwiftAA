@@ -54,6 +54,6 @@ class BinaryStarsTests: XCTestCase {
                                                       inclination: self.CoronoaeBorealisOrbitalElements!.i,
                                                       omega: self.CoronoaeBorealisOrbitalElements!.Omega)
         
-        XCTAssertEqualWithAccuracy(eccPrime, 0.86, accuracy: 0.01)
+        XCTAssertEqual(eccPrime, 0.86, accuracy: 0.01)
     }
 }

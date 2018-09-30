@@ -23,7 +23,7 @@ class PlanetaryOrbitsTests: XCTestCase {
         AssertEqual(mercury.longitudeOfPerihelion(.meanEquinoxOfTheDate(jd)), Degree(78.475382), accuracy: Degree(0.000001))
 
         // non-numeric types
-        XCTAssertEqualWithAccuracy(mercury.eccentricity(), 0.20564510, accuracy: 0.00000001)
+        XCTAssertEqual(mercury.eccentricity(), 0.20564510, accuracy: 0.00000001)
     }
 
 }

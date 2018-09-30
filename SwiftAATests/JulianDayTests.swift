@@ -43,7 +43,7 @@ class JulianDayTest: XCTestCase {
         XCTAssertEqual(components.hour!, 2)
         XCTAssertEqual(components.minute!, 3)
         XCTAssertEqual(components.second!, 4)
-        XCTAssertEqualWithAccuracy(Double(components.nanosecond!)/1e9, 521659000/1e9, accuracy: 0.001)
+        XCTAssertEqual(Double(components.nanosecond!)/1e9, 521659000/1e9, accuracy: 0.001)
     }
 
     func testDate1ToModifiedJulianDay() {
@@ -91,8 +91,8 @@ class JulianDayTest: XCTestCase {
         let date2 = jd1.date
         let jd2 = date1.julianDay
         let accuracy = TimeInterval(0.001)
-        XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
+        XCTAssertEqual(date.timeIntervalSinceReferenceDate, date1.timeIntervalSinceReferenceDate, accuracy: accuracy)
+        XCTAssertEqual(date.timeIntervalSinceReferenceDate, date2.timeIntervalSinceReferenceDate, accuracy: accuracy)
         AssertEqual(jd, jd1, accuracy: Second(accuracy).inJulianDays)
         AssertEqual(jd, jd2, accuracy: Second(accuracy).inJulianDays)
     }

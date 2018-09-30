@@ -122,7 +122,7 @@ class MoonTests: XCTestCase {
 
         // Phase angle not as accuracte as one can expect from the book.
         AssertEqual(moon.phaseAngle(), Degree(69.0756), accuracy: Degree(0.002))
-        XCTAssertEqualWithAccuracy(moon.illuminatedFraction(), 0.68, accuracy: 0.005)
+        XCTAssertEqual(moon.illuminatedFraction(), 0.68, accuracy: 0.005)
     }
     
     // See AA p.357, Example 50.a
