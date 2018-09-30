@@ -12,7 +12,7 @@
 SwiftAA
 ============
 
-![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
+![](https://img.shields.io/badge/Swift-4.2-blue.svg?style=flat)
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
