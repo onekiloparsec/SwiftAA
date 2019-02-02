@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0ffa78fd-4176-4573-a4f8-c8c5b10bab07}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{dc0f61d2-e835-4794-b12f-cb92bfefdb09}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{37911f03-56db-4a1c-b6aa-7cc424580461}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AAAberration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAAngularSeparation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AABinaryStar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AACoordinateTransformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AADate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AADiameters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AADynamicalTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEarth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEclipses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEclipticalElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAElementsPlanetaryOrbit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAElliptical.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEquationOfTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAEquinoxesAndSolstices.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAFK5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAGalileanMoons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAGlobe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAIlluminatedFraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAInterpolate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAJewishCalendar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAJupiter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAKepler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMercury.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoonIlluminatedFraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoonMaxDeclinations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoonNodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoonPerigeeApogee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoonPhases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAMoslemCalendar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AANearParabolic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AANeptune.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AANodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AANutation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAParabolic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAParallactic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAParallax.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPhysicalJupiter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPhysicalMars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPhysicalMoon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPhysicalSun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPlanetaryPhenomena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPlanetPerihelionAphelion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPluto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPrecession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AARefraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AARiseTransitSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AASaturn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AASaturnMoons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AASaturnRings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AASidereal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAStellarMagnitudes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AASun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AATest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAUranus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVenus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_EMB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_EAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_EMB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87A_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_EAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87B_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_EAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87C_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_EAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87D_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_EAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_JUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_MAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_MER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_NEP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_SUN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_URA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAVSOP87E_VEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAELP2000.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAELPMPP02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AA+.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AA2DCoordinate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AA3DCoordinate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAAberration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAAngularSeparation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AABinaryStar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AACoordinateTransformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AADate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AADiameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AADynamicalTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEarth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEclipses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEclipticalElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAElementsPlanetaryOrbit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAElliptical.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEquationOfTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAEquinoxesAndSolstices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAFK5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAGalileanMoons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAGlobe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAIlluminatedFraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAInterpolate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAJewishCalendar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAJupiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAKepler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMercury.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoonIlluminatedFraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoonMaxDeclinations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoonNodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoonPerigeeApogee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoonPhases.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAMoslemCalendar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AANearParabolic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AANeptune.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AANodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AANutation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAParabolic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAParallactic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAParallax.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPhysicalJupiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPhysicalMars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPhysicalMoon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPhysicalSun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPlanetaryPhenomena.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPlanetPerihelionAphelion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPluto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPrecession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AARefraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AARiseTransitSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AASaturn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AASaturnMoons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AASaturnRings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AASidereal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAStellarMagnitudes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AASun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAUranus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVenus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_EMB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_EAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_EMB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87A_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_EAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87B_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_EAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87C_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_EAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87D_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_EAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_JUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_MAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_MER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_NEP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_SAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_SUN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_URA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAVSOP87E_VEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAELP2000.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAELPMPP02.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

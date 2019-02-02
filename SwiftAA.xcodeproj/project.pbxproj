@@ -1972,7 +1972,8 @@
 				9F47C93E1F51D34100FF13BA /* stdafx.cpp */,
 				9F47C93F1F51D34100FF13BA /* stdafx.h */,
 			);
-			path = "aaplus-v1.91";
+			name = "aaplus-v1.91";
+			path = "aaplus-v1.99";
 			sourceTree = "<group>";
 		};
 		9F51D0C31D3D5D6E00895295 /* libswiftaa */ = {
@@ -2020,7 +2021,7 @@
 				9F47C8CF1F51D34100FF13BA /* AATest.cpp */,
 			);
 			name = "AA+ Tests";
-			path = "aaplus-v1.91";
+			path = "aaplus-v1.99";
 			sourceTree = "<group>";
 		};
 		9F8926501E56D4F1005C8932 /* Bridge */ = {

@@ -106,9 +106,13 @@ class TimesTests: XCTestCase {
     func testUT1minusUTC() {
         let jd1 = JulianDay(modified: 58018.0) // 2017  9 22, the day of writing this test...
         AssertEqual(jd1.UT1minusUTC(), Second(0.32103), accuracy: Second(0.01))
+
         let jd2 = JulianDay(modified: 58118.0) // 2017 12 31
-        AssertEqual(jd2.UT1minusUTC(), Second(0.19553), accuracy: Second(0.01))
-        // Not sure why the one below fails.
+//        Expected value in aaplus-1.91 = 0.19553
+//        Expected value in aaplus-1.99 = 0.21742
+        AssertEqual(jd2.UT1minusUTC(), Second(0.21742), accuracy: Second(0.001))
+        
+//        Not sure why the one below fails.
 //        let jd3 = JulianDay(modified: 58382.0) // 2018  9 21
 //        AssertEqual(jd3.UT1minusUTC(), Second(-0.07169), accuracy: Second(0.01))
     }

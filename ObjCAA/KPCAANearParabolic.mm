@@ -52,7 +52,7 @@ KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double
 void KPCAANearParabolic_CalulateTrueAnnomalyAndRadius(double JD, struct KPCAANearParabolicObjectElements elements, double *v, double *r)
 {
     CAANearParabolicObjectElements elementsPlus;
-    CAANearParabolic::CalulateTrueAnnomalyAndRadius(JD, elementsPlus, *v, *r);
+    CAANearParabolic::CalculateTrueAnnomalyAndRadius(JD, elementsPlus, *v, *r);
     
     elements.q = elementsPlus.q;
     elements.i = elementsPlus.i;
