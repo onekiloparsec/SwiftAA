@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftAA"
-  s.version      = "2.0.1"
+  s.version      = "2.0.2"
   s.summary      = "The most comprehensive and accurate collection of astronomical algorithms in Swift."
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ to become the most reliable source of astronomical computations.
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   #s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "MIT-LICENSE.txt" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   s.author             = { "onekiloparsec (a.k.a. Cédric Foellmi)" => "cedric@onekilopars.ec" }
@@ -30,7 +30,7 @@ to become the most reliable source of astronomical computations.
 
   #  When using multiple platforms
   s.ios.deployment_target = "9.0"
-  s.osx.deployment_target = "10.10"
+  s.osx.deployment_target = "10.11"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
@@ -42,5 +42,6 @@ to become the most reliable source of astronomical computations.
   s.public_header_files = "SwiftAA/**/*.h", "ObjCAA/**/*.h"
 
   s.framework  = "Foundation"
+  s.swift_version = "4.2"
 
 end
