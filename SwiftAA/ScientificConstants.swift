@@ -273,7 +273,7 @@ public extension KPCPlanetaryObject {
     }
     
     /// Returns the SwiftAA Class type for the given planetary object.
-    public var objectType: Planet.Type? {
+    var objectType: Planet.Type? {
         switch self {
         case .MERCURY:
             return SwiftAA.Mercury.self
