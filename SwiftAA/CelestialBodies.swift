@@ -85,7 +85,7 @@ public extension CelestialBody {
     ///
     /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
     /// - Returns: A RiseTransitSetTimes object.
-    public func riseTransitSetTimes(for geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
+    func riseTransitSetTimes(for geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
         return RiseTransitSetTimes(celestialBody: self, geographicCoordinates: geographicCoordinates)
     }
     
