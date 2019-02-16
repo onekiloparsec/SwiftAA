@@ -55,7 +55,12 @@ extension _NumericType {
     public static func *= (lhs: inout Self, rhs: Self) { lhs = Self(lhs.value * rhs.value) }
     
     public var magnitude: Self { return Self(abs(value)) }
+
+    #if swift(>=4.2)
+    public func hash(into hasher: inout Hasher) { hasher.combine(value) }
+    #else
     public var hashValue: Int { return value.hashValue }
+    #endif
     
 }
 
