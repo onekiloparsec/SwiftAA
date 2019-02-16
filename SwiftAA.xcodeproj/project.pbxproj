@@ -1542,7 +1542,7 @@
 				9F7379891C26B79F007EF484 /* Swift */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
 				9FC3402E1D156A5D0069E7C4 /* Unit Tests */,
-				9F47C8581F51D34100FF13BA /* aaplus-v1.91 */,
+				9F47C8581F51D34100FF13BA /* aaplus-v1.99 */,
 				9F877AFD1E052A80006FC6E5 /* AA+ Tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
@@ -1743,7 +1743,7 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
-		9F47C8581F51D34100FF13BA /* aaplus-v1.91 */ = {
+		9F47C8581F51D34100FF13BA /* aaplus-v1.99 */ = {
 			isa = PBXGroup;
 			children = (
 				9F47C8591F51D34100FF13BA /* AA+.h */,
@@ -1972,7 +1972,6 @@
 				9F47C93E1F51D34100FF13BA /* stdafx.cpp */,
 				9F47C93F1F51D34100FF13BA /* stdafx.h */,
 			);
-			name = "aaplus-v1.91";
 			path = "aaplus-v1.99";
 			sourceTree = "<group>";
 		};
