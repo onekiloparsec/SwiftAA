@@ -56,7 +56,8 @@ extension _NumericType {
     
     public var magnitude: Self { return Self(abs(value)) }
 
-    #if swift(>=4.2)
+    // This is compatible with Xcode 9 equivalent of `#if compiler(>=4.2)` (see https://github.com/apple/swift-evolution/blob/master/proposals/0212-compiler-version-directive.md)
+    #if swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0))
     public func hash(into hasher: inout Hasher) { hasher.combine(value) }
     #else
     public var hashValue: Int { return value.hashValue }
