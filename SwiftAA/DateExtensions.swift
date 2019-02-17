@@ -10,59 +10,59 @@ import Foundation
 
 public extension Date {
     /// The Julian Day of the date.
-    public var julianDay: JulianDay {
+    var julianDay: JulianDay {
         return JulianDay(self)
     }
     
     /// The year component of the date.
-    public var year: Int {
+    var year: Int {
         get { return Calendar.gregorianGMT.component(.year, from: self) }
     }
     
     /// The month component of the date
-    public var month: Int {
+    var month: Int {
         get { return Calendar.gregorianGMT.component(.month, from: self) }
     }
     
     /// The dat component of the date.
-    public var day: Int {
+    var day: Int {
         get { return Calendar.gregorianGMT.component(.day, from: self) }
     }
     
     /// The hour component of the date.
-    public var hour: Int {
+    var hour: Int {
         get { return Calendar.gregorianGMT.component(.hour, from: self) }
     }
     
     /// The fractional hour of the date
-    public var fractionalHour: Double {
+    var fractionalHour: Double {
         get { return Double(self.hour) + Double(self.minute)/60.0 + Double(self.second)/3600.0 + Double(self.nanosecond)/1e9/3600.0 }
     }
     
     /// The minute component of the date.
-    public var minute: Int {
+    var minute: Int {
         get { return Calendar.gregorianGMT.component(.minute, from: self) }
     }
     
     /// The second component of the date.
-    public var second: Int {
+    var second: Int {
         get { return Calendar.gregorianGMT.component(.second, from: self) }
     }
     
     /// The remainder of the date, in nanoseconds.
-    public var nanosecond: Int {
+    var nanosecond: Int {
         get { return Calendar.gregorianGMT.component(.nanosecond, from: self) }
     }
     
     /// Returns whether the date is in a leap year or not.
-    public var isLeap : Bool {
+    var isLeap : Bool {
         get { return ((self.year % 100) == 0) ? (self.year % 400) == 0 : (self.year % 4) == 0 }
     }
     
     /// Returns a new date corresponding the 1st of January of the same year.
     ///
     /// - Returns: A new date object.
-    public func januaryFirstDate() -> Date {
+    func januaryFirstDate() -> Date {
         var components = DateComponents()
         components.year = self.year
         components.month = 1
@@ -75,7 +75,7 @@ public extension Date {
     
     
     /// The fractional year corresponding of the date.
-    public var fractionalYear: Double {
+    var fractionalYear: Double {
         get {
             let daysCount = (self.isLeap) ? 366.0 : 365.0
             return Double(self.year) + ((self.julianDay.value - self.januaryFirstDate().julianDay.value) / daysCount)
@@ -85,7 +85,7 @@ public extension Date {
     /// Returns the number of integral days since January 1st, 2000.
     ///
     /// - Returns: The number of integral days since January 1st, 2000.
-    public func daysSince2000January1() -> Int {
+    func daysSince2000January1() -> Int {
         let A = 367*self.year
         let B = (7*(self.year + (self.month+9)/12))/4
         let C = (275*self.month)/9

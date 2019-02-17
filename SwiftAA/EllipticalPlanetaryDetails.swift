@@ -53,7 +53,7 @@ public extension EllipticalPlanetaryDetails {
     /// it is actually seen from the center of the moving Earth, and referred to the instantaneous equator, ecliptic
     /// and equinox.
     /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
-    public var apparentGeocentricEquatorialCoordinates: EquatorialCoordinates {
+    var apparentGeocentricEquatorialCoordinates: EquatorialCoordinates {
         get {
             let ra = Hour(self.planetaryDetails.ApparentGeocentricRA)
             let dec = Degree(self.planetaryDetails.ApparentGeocentricDeclination)

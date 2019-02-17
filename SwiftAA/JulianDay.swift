@@ -59,7 +59,7 @@ public struct JulianDay: NumericType, CustomStringConvertible {
 
 public extension JulianDay {
     /// Returns a new Date object, in the Gregorian calendar, corresponding to the Julian Day value.
-    public var date: Date {
+    var date: Date {
         let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
         let decimalSeconds = aaDate.second()
         let roundedSeconds = decimalSeconds.rounded(.towardZero)
@@ -79,12 +79,12 @@ public extension JulianDay {
     /// Returns the so-called Modified Julian Day corresponding to the Julian Day value.
     /// Contrary to the JD, the Modified Julian Day begins at Greenwhich mean midnight.
     /// It is equal to JD - 2400 000.5
-    public var modified: Double {
+    var modified: Double {
         get { return self.value - ModifiedJulianDayZero }
     }
     
     /// Returns the Julian Day corresponding to the Greenwhich midnight before the actual value.
-    public var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
+    var midnight: JulianDay { return JulianDay((value - 0.5).rounded(.down) + 0.5) }
     
     /// Returns the Julian Day corresponding to the geometric midnight local to a given Earth longitude,
     /// before the actual value. It is a direct function of the longitude, and makes no reference to time zone whatsoever.
@@ -94,7 +94,7 @@ public extension JulianDay {
     ///
     /// - Parameter longitude: The observer longitude
     /// - Returns:  Julian Day instance.
-    public func localMidnight(longitude: Degree) -> JulianDay {
+    func localMidnight(longitude: Degree) -> JulianDay {
         var shift = 0.0
         if longitude.inHours.value > self.date.fractionalHour { shift = -1.0 }
         else if longitude.inHours.value+12.0 < -self.date.fractionalHour { shift = +1.0 }
@@ -105,7 +105,7 @@ public extension JulianDay {
     ///
     /// - Parameter timeZone: The time zone.
     /// - Returns: A Julian Day object
-    public func localMidnight(timeZone: TimeZone) -> JulianDay {
+    func localMidnight(timeZone: TimeZone) -> JulianDay {
         let offsetFromGMT = JulianDay(Double(timeZone.secondsFromGMT(for: self.date)) / (60*60*24))
         return (self + offsetFromGMT).midnight - offsetFromGMT
     }
@@ -116,7 +116,7 @@ public extension JulianDay {
     /// of the date with the mean equator of the date).
     ///
     /// - Returns: The sidereal time in hours.
-    public func meanGreenwichSiderealTime() -> Hour {
+    func meanGreenwichSiderealTime() -> Hour {
         return Hour(KPCAASidereal_MeanGreenwichSiderealTime(self.value))
     }
     
@@ -126,7 +126,7 @@ public extension JulianDay {
     ///             Basically: this is the contrary of IAU decision. But this orientation is consistent
     ///             with longitude orientation in all other planets!
     /// - Returns: The sidereal time in hours.
-    public func meanLocalSiderealTime(longitude: Degree) -> Hour {
+    func meanLocalSiderealTime(longitude: Degree) -> Hour {
         return self.meanGreenwichSiderealTime() - longitude.inHours
     }
     
@@ -136,7 +136,7 @@ public extension JulianDay {
     /// that depends on the nutation in longitude, and the true obliquity of the ecliptic.
     ///
     /// - Returns: The sidereal time in hours.
-    public func apparentGreenwichSiderealTime() -> Hour {
+    func apparentGreenwichSiderealTime() -> Hour {
         return Hour(KPCAASidereal_ApparentGreenwichSiderealTime(self.value))
     }
     
@@ -146,7 +146,7 @@ public extension JulianDay {
     ///
     /// - Parameter mean: If true, compute the mean obliquity. Otherwise, compute the true obliquity.
     /// - Returns: The obliquity of the ecliptic, in degrees.
-    public func obliquityOfEcliptic(mean: Bool = true) -> Degree {
+    func obliquityOfEcliptic(mean: Bool = true) -> Degree {
         return Degree(KPCAANutation_ObliquityOfEcliptic(mean, self.value))
     }
     
@@ -156,7 +156,7 @@ public extension JulianDay {
     /// TD was later renamed TT for Terrestrial Time (which is a fairly unfortunate naming...).
     ///
     /// - Returns: The number of seconds (and fraction of thereof) between TD and UT.
-    public func deltaT() -> Second {
+    func deltaT() -> Second {
         return Second(KPCAADynamicalTime_DeltaT(self.value))
     }
     
@@ -164,7 +164,7 @@ public extension JulianDay {
     /// See here http://tycho.usno.navy.mil/leapsec.html for a thorough explanation.
     ///
     /// - Returns: The total number of leap seconds accumulated since their introduction until the given JD.
-    public func cumulativeLeapSeconds() -> Second {
+    func cumulativeLeapSeconds() -> Second {
         return Second(KPCAADynamicalTime_CumulativeLeapSeconds(self.value))
     }
     
@@ -174,7 +174,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func TTtoUTC() -> JulianDay {
+    func TTtoUTC() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2UTC(self.value))
     }
 
@@ -184,7 +184,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func UTCtoTT() -> JulianDay {
+    func UTCtoTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_UTC2TT(self.value))
     }
 
@@ -193,7 +193,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func TTtoTAI() -> JulianDay {
+    func TTtoTAI() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2TAI(self.value))
     }
 
@@ -202,7 +202,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func TAItoTT() -> JulianDay {
+    func TAItoTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TAI2TT(self.value))
     }
 
@@ -215,7 +215,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func TTtoUT1() -> JulianDay {
+    func TTtoUT1() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_TT2UT1(self.value))
     }
 
@@ -228,7 +228,7 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A new julian day
-    public func UT1toTT() -> JulianDay {
+    func UT1toTT() -> JulianDay {
         return JulianDay(KPCAADynamicalTime_UT12TT(self.value))
     }
 
@@ -236,12 +236,12 @@ public extension JulianDay {
     /// See AA p.77- and http://tycho.usno.navy.mil/systime.html
     ///
     /// - Returns: A difference in Seconds.
-    public func UT1minusUTC() -> Second {
+    func UT1minusUTC() -> Second {
         return Second(KPCAADynamicalTime_UT1MinusUTC(self.value))
     }
     
     /// The description of the Julian Day.
-    public var description: String {
+    var description: String {
         switch self {
         case StandardEpoch_J2000_0: return "J2000.0"
         case StandardEpoch_B1950_0: return "B1950.0"

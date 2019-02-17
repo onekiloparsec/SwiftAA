@@ -140,28 +140,28 @@ double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k)
 long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case Mercury:
+        case mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryK(Year);
             break;
-        case Venus:
+        case venus:
             return KPCAAPlanetPerihelionAphelion_VenusK(Year);
             break;
-        case Earth:
+        case earth:
             return KPCAAPlanetPerihelionAphelion_EarthK(Year);
             break;
-        case Mars:
+        case mars:
             return KPCAAPlanetPerihelionAphelion_MarsK(Year);
             break;
-        case Jupiter:
+        case jupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterK(Year);
             break;
-        case Saturn:
+        case saturn:
             return KPCAAPlanetPerihelionAphelion_SaturnK(Year);
             break;
-        case Uranus:
+        case uranus:
             return KPCAAPlanetPerihelionAphelion_UranusK(Year);
             break;
-        case Neptune:
+        case neptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneK(Year);
             break;
         default:
@@ -173,28 +173,28 @@ long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet)
 double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case Mercury:
+        case mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(k);
             break;
-        case Venus:
+        case venus:
             return KPCAAPlanetPerihelionAphelion_VenusPerihelion(k);
             break;
-        case Earth:
+        case earth:
             return KPCAAPlanetPerihelionAphelion_EarthPerihelion(k, YES);
             break;
-        case Mars:
+        case mars:
             return KPCAAPlanetPerihelionAphelion_MarsPerihelion(k);
             break;
-        case Jupiter:
+        case jupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterPerihelion(k);
             break;
-        case Saturn:
+        case saturn:
             return KPCAAPlanetPerihelionAphelion_SaturnPerihelion(k);
             break;
-        case Uranus:
+        case uranus:
             return KPCAAPlanetPerihelionAphelion_UranusPerihelion(k);
             break;
-        case Neptune:
+        case neptune:
             return KPCAAPlanetPerihelionAphelion_NeptunePerihelion(k);
             break;
         default:
@@ -206,28 +206,28 @@ double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanetStrict planet
 double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case Mercury:
+        case mercury:
             return KPCAAPlanetPerihelionAphelion_MercuryAphelion(k);
             break;
-        case Venus:
+        case venus:
             return KPCAAPlanetPerihelionAphelion_VenusAphelion(k);
             break;
-        case Earth:
+        case earth:
             return KPCAAPlanetPerihelionAphelion_EarthAphelion(k, YES);
             break;
-        case Mars:
+        case mars:
             return KPCAAPlanetPerihelionAphelion_MarsAphelion(k);
             break;
-        case Jupiter:
+        case jupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterAphelion(k);
             break;
-        case Saturn:
+        case saturn:
             return KPCAAPlanetPerihelionAphelion_SaturnAphelion(k);
             break;
-        case Uranus:
+        case uranus:
             return KPCAAPlanetPerihelionAphelion_UranusAphelion(k);
             break;
-        case Neptune:
+        case neptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneAphelion(k);
             break;
         default:
