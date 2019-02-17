@@ -197,7 +197,7 @@ public class Moon : Object, CelestialBody {
     ///
     /// - Parameters:
     ///   - phase: The phase of the moon we are looking for.
-    ///   - forward: A boolean indicating whether one wants the result after the input date, or not.
+    ///   - forward: A boolean indicating whether one wants the result after the input date, or not. Default is forward=true.
     ///   - mean: A boolean indicating one wans the mean or the true (instantaneous) value. Default is mean=true.
     /// - Returns: The Julian Day of the Moon phase.
     public func time(of phase: MoonPhase, forward: Bool = true, mean: Bool = true) -> JulianDay {
