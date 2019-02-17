@@ -201,7 +201,7 @@ public class Moon : Object, CelestialBody {
     ///   - mean: A boolean indicating one wans the mean or the true (instantaneous) value. Default is mean=true.
     /// - Returns: The Julian Day of the Moon phase.
     public func time(of phase: MoonPhase, forward: Bool = true, mean: Bool = true) -> JulianDay {
-        var k = round(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
+        var k = floor(KPCAAMoonPhases_K(self.julianDay.date.fractionalYear))
         switch phase {
         case .newMoon:
             k = k + 0.0
