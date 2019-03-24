@@ -25,7 +25,7 @@ SwiftAA
 
 *The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
 
-(Looking for a C# implementation? See [here](https://github.com/jsauve/AASharp).)
+Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C#, AASharp](https://github.com/jsauve/AASharp).
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
