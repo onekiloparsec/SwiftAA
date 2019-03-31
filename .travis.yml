@@ -12,5 +12,5 @@ script:
   - xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS  -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,OS=12.0,name=iPhone XS'
 after_success: 
   - slather
-  - bash <(curl -s https://codecov.io/bash) -f TestReports/cobertura.xml -X xcodeplist
+  - bash <(curl -s https://codecov.io/bash) -f TestReports/cobertura.xml -X coveragepy -X gcov -X xcode -X fix
 
