@@ -61,7 +61,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      
      - returns: A julian day of the TT time of the equinox.
      */
-    func equinox(of equinoxType: EarthEquinoxType) -> JulianDay {
+    public func equinox(of equinoxType: EarthEquinoxType) -> JulianDay {
         let year = self.julianDay.date.year
         switch equinoxType {
         case .northwardSpring:
@@ -79,7 +79,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      
      - returns: A julian day of the TT time of the solstice.
      */
-    func solstice(of solsticeType: EarthSolsticeType) -> JulianDay {
+    public func solstice(of solsticeType: EarthSolsticeType) -> JulianDay {
         let year = self.julianDay.date.year
         switch solsticeType {
         case .northernSummer:
@@ -97,7 +97,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      
      - returns: A length in (Julian) Days.
      */
-    func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Day {
+    public func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Day {
         let year = self.julianDay.date.year
         switch season {
         case .spring:
@@ -117,7 +117,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     ///   - sunAltitude: The sun altitude to consider. See TwilightSunAltitude for known values.
     ///   - coordinates: The geographic coordinates for which to compute the twilights.
     /// - Returns: The rise, transit and set times, in Julian Day, and an error, if relevant.
-    func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, transit: JulianDay?, set: JulianDay?, error: CelestialBodyTransitError?) {
+    public func twilights(forSunAltitude sunAltitude: Degree, coordinates: GeographicCoordinates) -> (rise: JulianDay?, transit: JulianDay?, set: JulianDay?, error: CelestialBodyTransitError?) {
         
         var error: CelestialBodyTransitError? = nil
         
@@ -146,7 +146,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     ///   - planet: The considered planet. Cannot be the Earth.
     ///   - coordinates: The geographic coordinates for which to compute the twilights.
     /// - Returns: The rise, transit and set times, in Julian Day, and an error, if relevant.
-    func riseTransitSetTimes(for planetaryObject: KPCPlanetaryObject, geographicCoordinates: GeographicCoordinates) -> (riseTime: JulianDay?, transitTime: JulianDay?, setTime: JulianDay?, error: CelestialBodyTransitError?) {
+    public func riseTransitSetTimes(for planetaryObject: KPCPlanetaryObject, geographicCoordinates: GeographicCoordinates) -> (riseTime: JulianDay?, transitTime: JulianDay?, setTime: JulianDay?, error: CelestialBodyTransitError?) {
         guard planetaryObject != .UNDEFINED else {
             return (riseTime: nil, transitTime: nil, setTime: nil, error: CelestialBodyTransitError.undefinedPlanetaryObject)
         }
