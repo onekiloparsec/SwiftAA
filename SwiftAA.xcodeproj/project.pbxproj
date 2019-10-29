@@ -2680,7 +2680,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
 					9F51D0C11D3D5D6E00895295 = {
@@ -2694,7 +2694,7 @@
 					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1110;
 					};
 					9FBA899A1E324A930096FEAC = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -2706,7 +2706,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = MD266WQ2E2;
 						DevelopmentTeamName = "CEDRIC FOLLMI";
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					9FFA29291D15710F00034972 = {
@@ -3620,7 +3620,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -3653,7 +3653,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CEDRIC FOLLMI (TBNSVT99Y3)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -3704,7 +3704,7 @@
 				PRODUCT_NAME = SwiftAA;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -3735,7 +3735,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -3793,7 +3793,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-macOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -3811,7 +3811,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-macOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
