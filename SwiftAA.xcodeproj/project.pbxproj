@@ -1542,7 +1542,7 @@
 				9F7379891C26B79F007EF484 /* Swift */,
 				9F29B5811B47319D00B64C96 /* Obj-C */,
 				9FC3402E1D156A5D0069E7C4 /* Unit Tests */,
-				9F47C8581F51D34100FF13BA /* aaplus-v1.99 */,
+				9F47C8581F51D34100FF13BA /* aaplus */,
 				9F877AFD1E052A80006FC6E5 /* AA+ Tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F51D0C31D3D5D6E00895295 /* libswiftaa */,
@@ -1743,7 +1743,7 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
-		9F47C8581F51D34100FF13BA /* aaplus-v1.99 */ = {
+		9F47C8581F51D34100FF13BA /* aaplus */ = {
 			isa = PBXGroup;
 			children = (
 				9F47C8591F51D34100FF13BA /* AA+.h */,
@@ -1972,7 +1972,8 @@
 				9F47C93E1F51D34100FF13BA /* stdafx.cpp */,
 				9F47C93F1F51D34100FF13BA /* stdafx.h */,
 			);
-			path = "aaplus-v1.99";
+			name = aaplus;
+			path = "aaplus-v2.08";
 			sourceTree = "<group>";
 		};
 		9F51D0C31D3D5D6E00895295 /* libswiftaa */ = {
@@ -2690,7 +2691,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					9F694D891D15C67300EE7492 = {
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 					};
 					9F7379871C26B79F007EF484 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2699,7 +2700,7 @@
 					9FBA899A1E324A930096FEAC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MD266WQ2E2;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					9FC3402C1D156A5D0069E7C4 = {
@@ -3502,7 +3503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3556,7 +3557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -3635,12 +3636,14 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3668,11 +3671,13 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -3755,7 +3760,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3773,7 +3779,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAATests/SwiftAATests-iOS-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
