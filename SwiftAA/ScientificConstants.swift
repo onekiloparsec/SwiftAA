@@ -217,6 +217,8 @@ extension KPCAAPlanet: CustomStringConvertible {
             return "Pluto"
         case .Undefined:
             return ""
+        @unknown default:
+            return ""
         }
     }
 }
@@ -290,6 +292,8 @@ public extension KPCPlanetaryObject {
         case .NEPTUNE:
             return SwiftAA.Neptune.self
         case .UNDEFINED:
+            return nil
+        @unknown default:
             return nil
         }
     }
