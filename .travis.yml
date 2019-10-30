@@ -9,7 +9,7 @@ jobs:
     include:
     - osx_image: xcode11
       xcode_sdk: iphonesimulator13.0
-      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS  -sdk iphonesimulator13.0 -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
+      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS -toolchain com.apple.dt.toolchain.Swift_5 -sdk iphonesimulator13.0 -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
     - osx_image: xcode10
       xcode_sdk: iphonesimulator12.0
-      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS  -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,OS=12.0,name=iPhone XS'
+      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS -toolchain com.apple.dt.toolchain.Swift_4 -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,OS=12.0,name=iPhone XS'
