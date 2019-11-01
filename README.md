@@ -12,7 +12,7 @@
 SwiftAA
 ============
 
-![](https://img.shields.io/badge/Swift-4.2-blue.svg?style=flat)
+![](https://img.shields.io/badge/Swift-5-blue.svg?style=flat)
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
@@ -25,7 +25,7 @@ SwiftAA
 
 *The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
 
-Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).
+Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp). 
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
@@ -37,7 +37,8 @@ SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation
 *Astronomical Algorithms*, by Jean Meeus (2nd ed., [Amazon](https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus)). This C++ package is called **AA+** (see below). AA+ also includes additional algorithms of the
 [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework, and includes the complete support for the ELP/MPP02 theory. 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.
-Ongoing development is using AA+ version 1.99 (released January 16th, 2019). 
+
+Today's version of AA+ used in SwiftAA is 2.08 (released October 22th, 2019). 
 
 But **SwiftAA provides more modern and a lot more readable APIs**, taking advantage of the expressiveness of Swift and its various syntax elements, making it fun and easy of use. In fact, you simply can't use AA+ without having the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added to improve even more  the completeness and ease of use. In particular, **SwiftAA provides units safety** a lot stronger compared to C++ APIs. 
 
@@ -85,6 +86,13 @@ Needless to say how different the syntax is between C, C++, Objective-C and Swif
 As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++ library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
 
 The constraint of having an Objective-C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes.
+
+
+Branches
+----
+
+For Swift4, see the  `swift4` branch. Likewise for Swift3 (unmaintained).
+
 
 Author
 ======
