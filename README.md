@@ -8,6 +8,9 @@
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
 </p>
+<p align="center">
+<a href="https://www.patreon.com/bePatron?u=2743110" data-patreon-widget-type="become-patron-button">Become a Patron!</a><!-- <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script> -->
+</p>
 
 SwiftAA
 ============
@@ -99,7 +102,10 @@ Author
 Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
 (Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile). <br/> I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
 
+Support
+=======
 
+You can help me spend more time on Open-Source software for astronomers by <a href="https://patreon.com/onekiloparsec" target=_blank>supporting me on Patreon</a>! 
 
 Licence
 =======
