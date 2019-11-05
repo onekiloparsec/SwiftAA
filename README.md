@@ -101,8 +101,8 @@ For Swift4, see the  `swift4` branch. Likewise for Swift3 (unmaintained).
 
 Author
 ======
-Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekilopars.ec)). <br/>
-(Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile). <br/> I am the author of the app iObserve (for [macOS](http://onekilopars.ec/apps#iobserve) and [iOS/iPad](http://www.onekilopars.ec/apps/#iobserve-touch)) and [arcsecond.io](https://www.arcsecond.io).
+Cédric Foellmi, a.k.a. **[@onekiloparsec](https://twitter.com/onekiloparsec)** ([website](https://onekiloparsec.dev)). <br/>
+(Ph.D. in astrophysics, and former *support astronomer* at the [European Southern Observatory](http://www.eso.org) in Chile). <br/> I am the author of the app iObserve (for [macOS](http://onekiloparsec.dev/iobserve) (and formerly in [iOS/iPad]) and [arcsecond.io](https://www.arcsecond.io).
 
 Support
 =======
