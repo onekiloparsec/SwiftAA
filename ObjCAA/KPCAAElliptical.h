@@ -14,6 +14,19 @@
 extern "C" {
 #endif
 
+typedef NS_ENUM(NSUInteger, KPCAAEllipticalObject) {
+    SUN_elliptical,
+    MERCURY_elliptical,
+    VENUS_elliptical,
+    MARS_elliptical,
+    JUPITER_elliptical,
+    SATURN_elliptical,
+    URANUS_elliptical,
+    NEPTUNE_elliptical,
+    PLUTO_elliptical,
+    UNDEFINED_elliptical = 999 // Swift Addition
+};
+
 typedef struct KPCAAEllipticalObjectElements {
     double a;
     double e;
