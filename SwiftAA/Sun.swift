@@ -145,5 +145,13 @@ public class Sun: Object, CelestialBody {
         // KPCAA result is in minutes of time.
         return Minute(KPCAAEquationOfTime_Calculate(self.julianDay.value, self.highPrecision))
     }
+    
+    // MARK: - Elliptical (Planetary) Details Supplement
+    
+    /// AA+ provides computation for so-called elliptical planetary details also for the Sun
+    public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
+        [unowned self] in
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, .SUN_elliptical, self.highPrecision)
+        }()
 }
 
