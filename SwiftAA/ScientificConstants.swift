@@ -298,3 +298,35 @@ public extension KPCPlanetaryObject {
         }
     }
 }
+
+
+/// KPCAAEllipticalObject is an enum for the Sun, all planets, exlcuding Earth but including Pluto.
+public extension KPCAAEllipticalObject {
+    
+    /// Returns the elliptical object index from a given planet index.
+    ///
+    /// - Parameter planet: The planet index.
+    /// - Returns: The corresponding elliptical object index. The Sun must be handled individually.
+    static func fromPlanet(_ planet: KPCAAPlanet) -> KPCAAEllipticalObject {
+        switch planet {
+        case .Mercury:
+            return .MERCURY_elliptical
+        case .Venus:
+            return .VENUS_elliptical
+        case .Mars:
+            return .MARS_elliptical
+        case .Jupiter:
+            return .JUPITER_elliptical
+        case .Saturn:
+            return .SATURN_elliptical
+        case .Uranus:
+            return .URANUS_elliptical
+        case .Neptune:
+            return .NEPTUNE_elliptical
+        case .Pluto:
+            return .PLUTO_elliptical
+        default:
+            return .UNDEFINED_elliptical
+        }
+    }
+}
