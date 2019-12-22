@@ -51,9 +51,9 @@ double KPCAAElliptical_DistanceToLightTime(double Distance)
     return CAAElliptical::DistanceToLightTime(Distance);
 }
 
-KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision)
+KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCAAEllipticalObject object, BOOL highPrecision)
 {
-    CAAElliptical::EllipticalObject ellipticalObject = ellipticalObjectFromPlanetaryObject(object);
+    CAAElliptical::EllipticalObject ellipticalObject = ellipticalObjectFromKPCAAEllipticalObject(object);
     CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, ellipticalObject, highPrecision);
     
     struct KPCAAEllipticalPlanetaryDetails details;

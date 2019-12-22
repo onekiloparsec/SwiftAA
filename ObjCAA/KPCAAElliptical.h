@@ -65,7 +65,7 @@ typedef struct KPCAAEllipticalObjectDetails {
 
 
 double KPCAAElliptical_DistanceToLightTime(double Distance);
-KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCPlanetaryObject object, BOOL highPrecision);
+KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCAAEllipticalObject object, BOOL highPrecision);
 double KPCAAElliptical_SemiMajorAxisFromPerihelionDistance(double q, double e);
 double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a);
 KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);

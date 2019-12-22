@@ -29,7 +29,7 @@ public class Planet: Object,
     /// once all relevant accessors are implemented and covered.
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.planetaryObject, self.highPrecision)
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
         }()
     
     /// Accessor to all values of the underlying object details. Will probably become private
@@ -77,7 +77,7 @@ public class DwarfPlanet: Object, PlanetaryBase, EllipticalPlanetaryDetails, Pla
     /// once all relevant accessors are implemented and covered.
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.planetaryObject, self.highPrecision)
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
         }()
     
     /// Accessor to all values of the underlying object details. Will probably become private
