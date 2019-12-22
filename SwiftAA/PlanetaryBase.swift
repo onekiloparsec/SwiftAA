@@ -28,6 +28,9 @@ public protocol PlanetaryBase: ObjectBase {
     /// The index of the planet in the list of all planets, but the Earth and Pluto.
     var planetaryObject: KPCPlanetaryObject { get }
     
+    /// The index of the planet in the list of all elliptical objects, that is the Sun, all Planets but Earth, and including Pluto.
+    var ellipticalObject: KPCAAEllipticalObject { get }
+    
     /// The julian day of the perihelion of the planet the after the given julian day of the object.
     var perihelion: JulianDay { get }
     
@@ -55,6 +58,11 @@ public extension PlanetaryBase {
     /// The index of the planet in the list of all planets, but the Earth.
     var planetaryObject: KPCPlanetaryObject {
         return KPCPlanetaryObject.fromPlanet(self.planet)
+    }
+    
+    /// The index of the planet in the list of all elliptical objects, that is all Planets but Earth, but including Pluto.
+    var ellipticalObject: KPCAAEllipticalObject {
+        return KPCAAEllipticalObject.fromPlanet(self.planet)
     }
     
     /// The julian day of the perihelion of the planet the after the given julian day of the object.
