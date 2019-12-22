@@ -9,31 +9,37 @@
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
 
-CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object);
-CAAElliptical::EllipticalObject ellipticalObjectFromPlanetaryObject(KPCPlanetaryObject object) {
+CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object);
+CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object) {
     switch (object) {
-        case MERCURY:
+        case SUN_elliptical:
+            return CAAElliptical::EllipticalObject::SUN;
+            break;
+        case MERCURY_elliptical:
             return CAAElliptical::EllipticalObject::MERCURY;
             break;
-        case VENUS:
+        case VENUS_elliptical:
             return CAAElliptical::EllipticalObject::VENUS;
             break;
-        case MARS:
+        case MARS_elliptical:
             return CAAElliptical::EllipticalObject::MARS;
             break;
-        case JUPITER:
+        case JUPITER_elliptical:
             return CAAElliptical::EllipticalObject::JUPITER;
             break;
-        case SATURN:
+        case SATURN_elliptical:
             return CAAElliptical::EllipticalObject::SATURN;
             break;
-        case URANUS:
+        case URANUS_elliptical:
             return CAAElliptical::EllipticalObject::URANUS;
             break;
-        case NEPTUNE:
+        case NEPTUNE_elliptical:
             return CAAElliptical::EllipticalObject::NEPTUNE;
             break;
-            
+        case PLUTO_elliptical:
+            return CAAElliptical::EllipticalObject::PLUTO;
+            break;
+
         default:
             throw NSInvalidArgumentException;
             break;
