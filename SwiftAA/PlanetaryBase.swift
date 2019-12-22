@@ -25,7 +25,7 @@ public protocol PlanetaryBase: ObjectBase {
     /// The index of the planet in the official list of 8 planets, that is, not accounting the dwarf planet, Pluto.
     var planetStrict: KPCAAPlanetStrict { get }
     
-    /// The index of the planet in the list of all planets, but the Earth.
+    /// The index of the planet in the list of all planets, but the Earth and Pluto.
     var planetaryObject: KPCPlanetaryObject { get }
     
     /// The julian day of the perihelion of the planet the after the given julian day of the object.
