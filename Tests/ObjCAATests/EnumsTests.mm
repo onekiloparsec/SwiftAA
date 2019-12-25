@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SwiftAA.h"
 #import "KPCAAPlanetaryPhenomena.h"
 #import "AAPlanetaryPhenomena.h"
 
