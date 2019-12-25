@@ -1336,14 +1336,14 @@
 		9F6043721E6176FA00395C0E /* RefractionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefractionTests.swift; sourceTree = "<group>"; };
 		9F6043751E61799E00395C0E /* AngularSeparationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularSeparationTests.swift; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/apps/SwiftAA/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
+		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/code/SwiftAA/Sources/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutation.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
-		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
-		9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftAA-Bridging-Header.h"; path = "SwiftAA/SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = Sources/SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
+		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "Sources/SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
+		9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftAA-Bridging-Header.h"; path = "Sources/SwiftAA/SwiftAA-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F737A7C1C26DBCE007EF484 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F7A56FB1D15E6890033CDC5 /* Earth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
 		9F7A56FE1D15F2F40033CDC5 /* VenusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenusTests.swift; sourceTree = "<group>"; };
@@ -1493,6 +1493,23 @@
 				9FC501741E0582C9005CA6FC /* Asteroids.swift */,
 			);
 			name = "Astronomical Objects";
+			sourceTree = "<group>";
+		};
+		9F1F8FA623B36793008BF62A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9F737A7C1C26DBCE007EF484 /* README.md */,
+				9F4E65121E582C20008B667E /* SwiftAA.podspec */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		9F1F8FA723B367C3008BF62A /* ObjCAA */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
+			);
+			name = ObjCAA;
 			sourceTree = "<group>";
 		};
 		9F29B4601B47313500B64C96 = {
@@ -1678,13 +1695,10 @@
 		9F4277CD1E504BC100D1BA8D /* SwiftAA */ = {
 			isa = PBXGroup;
 			children = (
-				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
 				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
 				9F737A791C26BA98007EF484 /* SwiftAA-Bridging-Header.h */,
 				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
 				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
-				9F737A7C1C26DBCE007EF484 /* README.md */,
-				9F4E65121E582C20008B667E /* SwiftAA.podspec */,
 			);
 			name = SwiftAA;
 			sourceTree = "<group>";
@@ -1934,6 +1948,8 @@
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				9F1F8FA623B36793008BF62A /* Root */,
+				9F1F8FA723B367C3008BF62A /* ObjCAA */,
 				9F4277CD1E504BC100D1BA8D /* SwiftAA */,
 				9F4277CE1E504BC700D1BA8D /* Tests */,
 			);
@@ -1950,7 +1966,7 @@
 				9F1F12981D7C6A50006FD828 /* Astronomical Objects */,
 			);
 			name = Swift;
-			path = SwiftAA;
+			path = Sources/SwiftAA;
 			sourceTree = "<group>";
 		};
 		9F877AFD1E052A80006FC6E5 /* AA+ Tests */ = {
@@ -3474,7 +3490,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
-				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				INFOPLIST_FILE = "Sources/SwiftAA/SwiftAA-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
@@ -3508,7 +3524,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
-				INFOPLIST_FILE = "SwiftAA/SwiftAA-iOS-Info.plist";
+				INFOPLIST_FILE = "Sources/SwiftAA/SwiftAA-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
@@ -3539,7 +3555,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
-				INFOPLIST_FILE = "SwiftAA/SwiftAA-macOS-Info.plist";
+				INFOPLIST_FILE = "Sources/SwiftAA/SwiftAA-macOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
@@ -3569,7 +3585,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
-				INFOPLIST_FILE = "SwiftAA/SwiftAA-macOS-Info.plist";
+				INFOPLIST_FILE = "Sources/SwiftAA/SwiftAA-macOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
