@@ -36,10 +36,10 @@ to become the most reliable source of astronomical computations.
 
   s.source       = { :git => "https://github.com/onekiloparsec/SwiftAA.git", :tag => "#{s.version}" }
 
-  s.source_files  = "SwiftAA", "SwiftAA/**/*.{h,m,mm,swift}", "ObjCAA", "ObjCAA/**/*.{h,m,mm,swift}", "aaplus-*", "aaplus-*/**/*.{h,cpp}"
-  s.exclude_files = "aaplus-*/AATest.cpp", "SwiftAA/main.swift"
+  s.source_files  = "Sources", "Sources/SwiftAA/*.{h,cpp,m,mm,swift}", "Sources/ObjCAA/*.{h,cpp,m,mm,swift}", "Sources/AA+/*.{h,cpp,m,mm,swift}"
+  s.exclude_files = "Sources/**/AATest.cpp"
 
-  s.public_header_files = "SwiftAA/**/*.h", "ObjCAA/**/*.h"
+  s.public_header_files = "Sources/ObjCAA/include/*.h"
 
   s.framework  = "Foundation"
   s.swift_version = "5"
