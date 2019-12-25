@@ -990,24 +990,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9F51D0C01D3D5D6E00895295 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F525B3E1D3CDEDC00041696 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		9FFA29281D15710F00034972 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1348,10 +1330,8 @@
 		9F4B1B041E7BD27600407106 /* MercuryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercuryTests.swift; sourceTree = "<group>"; };
 		9F4E65121E582C20008B667E /* SwiftAA.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftAA.podspec; sourceTree = "<group>"; };
 		9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalCoordinates.swift; sourceTree = "<group>"; };
-		9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibswiftaa.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F525B291D3CB53400041696 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		9F525B2C1D3CB58300041696 /* ObjectBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
-		9F525B401D3CDEDC00041696 /* swiftaa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftaa; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5E3D451E395A0E0039B998 /* EarthTwilightsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTwilightsTests.swift; sourceTree = "<group>"; };
 		9F6043721E6176FA00395C0E /* RefractionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefractionTests.swift; sourceTree = "<group>"; };
 		9F6043751E61799E00395C0E /* AngularSeparationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularSeparationTests.swift; sourceTree = "<group>"; };
@@ -1464,20 +1444,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F51D0BF1D3D5D6E00895295 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F525B3D1D3CDEDC00041696 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9F694E311D15C67300EE7492 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1549,8 +1515,6 @@
 				9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */,
 				9FFA292A1D15710F00034972 /* AAPlusTests */,
 				9F694EE21D15C67300EE7492 /* SwiftAA.framework */,
-				9F525B401D3CDEDC00041696 /* swiftaa */,
-				9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */,
 				9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */,
 			);
 			name = Products;
@@ -2525,40 +2489,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9F51D0C11D3D5D6E00895295 /* libswiftaa */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F51D0C81D3D5D6E00895295 /* Build configuration list for PBXNativeTarget "libswiftaa" */;
-			buildPhases = (
-				9F51D0BE1D3D5D6E00895295 /* Sources */,
-				9F51D0BF1D3D5D6E00895295 /* Frameworks */,
-				9F51D0C01D3D5D6E00895295 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = libswiftaa;
-			productName = libswiftaa;
-			productReference = 9F51D0C21D3D5D6E00895295 /* liblibswiftaa.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		9F525B3F1D3CDEDC00041696 /* swiftaa */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F525B441D3CDEDC00041696 /* Build configuration list for PBXNativeTarget "swiftaa" */;
-			buildPhases = (
-				9F525B3C1D3CDEDC00041696 /* Sources */,
-				9F525B3D1D3CDEDC00041696 /* Frameworks */,
-				9F525B3E1D3CDEDC00041696 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = swiftaa;
-			productName = swiftaa;
-			productReference = 9F525B401D3CDEDC00041696 /* swiftaa */;
-			productType = "com.apple.product-type.tool";
-		};
 		9F694D891D15C67300EE7492 /* SwiftAA-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA-iOS" */;
@@ -2658,12 +2588,6 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = onekiloparsec;
 				TargetAttributes = {
-					9F51D0C11D3D5D6E00895295 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					9F525B3F1D3CDEDC00041696 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					9F694D891D15C67300EE7492 = {
 						LastSwiftMigration = 1110;
 					};
@@ -2707,8 +2631,6 @@
 				9FC3402C1D156A5D0069E7C4 /* SwiftAATests-macOS */,
 				9FBA899A1E324A930096FEAC /* SwiftAATests-iOS */,
 				9FFA29291D15710F00034972 /* AAPlusTests */,
-				9F51D0C11D3D5D6E00895295 /* libswiftaa */,
-				9F525B3F1D3CDEDC00041696 /* swiftaa */,
 			);
 		};
 /* End PBXProject section */
@@ -2746,20 +2668,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F51D0BE1D3D5D6E00895295 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F525B3C1D3CDEDC00041696 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9F694D8A1D15C67300EE7492 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3543,49 +3451,6 @@
 			};
 			name = Release;
 		};
-		9F51D0C91D3D5D6E00895295 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9F51D0CA1D3D5D6E00895295 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9F525B451D3CDEDC00041696 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		9F525B461D3CDEDC00041696 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		9F694EE01D15C67300EE7492 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3813,24 +3678,6 @@
 			buildConfigurations = (
 				9F29B47E1B47313500B64C96 /* Debug */,
 				9F29B47F1B47313500B64C96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F51D0C81D3D5D6E00895295 /* Build configuration list for PBXNativeTarget "libswiftaa" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F51D0C91D3D5D6E00895295 /* Debug */,
-				9F51D0CA1D3D5D6E00895295 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F525B441D3CDEDC00041696 /* Build configuration list for PBXNativeTarget "swiftaa" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F525B451D3CDEDC00041696 /* Debug */,
-				9F525B461D3CDEDC00041696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
