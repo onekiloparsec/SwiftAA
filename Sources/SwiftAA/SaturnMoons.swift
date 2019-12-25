@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// The GalileanMoon struct encompasses all properties of Galilean moons
 /// Saturnian Moons are a world by themselves! We'll consider the 7 most important for now.

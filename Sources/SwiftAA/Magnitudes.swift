@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 public extension Magnitude {
     /// Combine two magnitudes.

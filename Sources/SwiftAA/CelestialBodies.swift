@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import ObjCAA
 
 /// Basic properties of an orbiting object. Used by solar system planets, and the Earth' Moon, and the Sun.
 

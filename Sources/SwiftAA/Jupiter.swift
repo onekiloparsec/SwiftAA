@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// The Jupiter planet.
 public class Jupiter: Planet, PlanetaryPhysicalDetails, JupiterPhysicalDetails {

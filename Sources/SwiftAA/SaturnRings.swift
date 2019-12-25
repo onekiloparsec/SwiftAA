@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// Saturnicentric coordinates are centered on Saturn.
 public struct SaturnicentricCoordinates {

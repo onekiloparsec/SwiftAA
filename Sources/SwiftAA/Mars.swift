@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// The Mars planet.
 public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {

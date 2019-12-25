@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import ObjCAA
 
 /// The GeographicCoordinates object encompasses the basic elements of a location on Earth, including its altitude.
 public struct GeographicCoordinates {

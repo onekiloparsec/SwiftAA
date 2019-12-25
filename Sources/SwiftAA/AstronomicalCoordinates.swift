@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// Struct to encapsulate amount of proper motion in equatorial reference.
 public struct ProperMotion {

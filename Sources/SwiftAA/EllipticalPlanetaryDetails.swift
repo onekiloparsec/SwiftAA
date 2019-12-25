@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// The EllipticalPlanetaryDetails encompasses various elliptical details of solar-system planets.
 public protocol EllipticalPlanetaryDetails: PlanetaryBase {

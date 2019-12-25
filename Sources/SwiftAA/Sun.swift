@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 /// The Sun.
 public class Sun: Object, CelestialBody {

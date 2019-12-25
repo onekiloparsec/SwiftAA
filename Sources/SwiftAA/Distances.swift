@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import ObjCAA
 
 /// The AstronomicalUnit is a unit of distance.
 public struct AstronomicalUnit: NumericType, CustomStringConvertible {

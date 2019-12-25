@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 enum PlanetError: Error {
     case invalidSubtype

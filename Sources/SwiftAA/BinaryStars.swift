@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 public typealias MeanSolarYear = Double
 public typealias DecimalYear = Double

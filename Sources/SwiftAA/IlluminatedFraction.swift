@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjCAA
 
 public protocol IlluminatedFraction: EllipticalPlanetaryDetails {
     

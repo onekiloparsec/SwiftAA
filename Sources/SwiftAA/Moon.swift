@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import ObjCAA
 
 /// AA, Chapter 53 (p.371): The mean period of rotation of the Moon is equal to the 
 /// mean sidereal period of revolution around the Earth, and the mean plane of the
