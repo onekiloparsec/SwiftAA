@@ -536,6 +536,7 @@
 		9F62747623B3D37500F4B4CC /* ObjCAA.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9F62730B23B3D0CE00F4B4CC /* ObjCAA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F62747923B3D6CB00F4B4CC /* ObjCAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F62730B23B3D0CE00F4B4CC /* ObjCAA.framework */; };
 		9F62747A23B3D6CB00F4B4CC /* ObjCAA.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9F62730B23B3D0CE00F4B4CC /* ObjCAA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F62747D23B3D83A00F4B4CC /* SwiftAA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73798A1C26B79F007EF484 /* SwiftAA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F694EE51D15C7CA00EE7492 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE41D15C7CA00EE7492 /* Venus.swift */; };
 		9F694EE61D15C7CA00EE7492 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE41D15C7CA00EE7492 /* Venus.swift */; };
 		9F694EE81D15CDF500EE7492 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694EE71D15CDF500EE7492 /* Constants.swift */; };
@@ -1039,7 +1040,7 @@
 		9F6043721E6176FA00395C0E /* RefractionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefractionTests.swift; sourceTree = "<group>"; };
 		9F6043751E61799E00395C0E /* AngularSeparationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularSeparationTests.swift; sourceTree = "<group>"; };
 		9F62730B23B3D0CE00F4B4CC /* ObjCAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjCAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F62730D23B3D0CE00F4B4CC /* ObjCAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCAA.h; path = ObjCAA/ObjCAA.h; sourceTree = "<group>"; };
+		9F62730D23B3D0CE00F4B4CC /* ObjCAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCAA.h; path = Sources/ObjCAA/ObjCAA.h; sourceTree = "<group>"; };
 		9F62730E23B3D0CE00F4B4CC /* ObjCAA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ObjCAA-Info.plist"; path = "Sources/ObjCAA/ObjCAA-Info.plist"; sourceTree = "<group>"; };
 		9F62731323B3D0CE00F4B4CC /* ObjCAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1048,7 +1049,7 @@
 		9F694EE71D15CDF500EE7492 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F6B38CB1D9FCED0008A2D96 /* Nutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutation.swift; sourceTree = "<group>"; };
 		9F7379881C26B79F007EF484 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftAA.h; sourceTree = "<group>"; };
+		9F73798A1C26B79F007EF484 /* SwiftAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftAA.h; path = Sources/SwiftAA/SwiftAA.h; sourceTree = "<group>"; };
 		9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-macOS-Info.plist"; path = "Sources/SwiftAA/SwiftAA-macOS-Info.plist"; sourceTree = "<group>"; };
 		9F737A7C1C26DBCE007EF484 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F7A56FB1D15E6890033CDC5 /* Earth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
@@ -1227,6 +1228,7 @@
 		9F1F8FA723B367C3008BF62A /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				9F62730D23B3D0CE00F4B4CC /* ObjCAA.h */,
 				9F62730E23B3D0CE00F4B4CC /* ObjCAA-Info.plist */,
 				9F1F911B23B3B3CF008BF62A /* ObjCAATests-Info.plist */,
 			);
@@ -1271,8 +1273,6 @@
 		9F29B5811B47319D00B64C96 /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				9F62730D23B3D0CE00F4B4CC /* ObjCAA.h */,
-				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
 				9F8FC29A1E06DA930012B4DA /* To Be Swifted v3.0 */,
 				9F2A87A61D1FF6250004ADDD /* Partly Swifted v2.0 */,
 				9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */,
@@ -1429,6 +1429,7 @@
 		9F4277CD1E504BC100D1BA8D /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
 				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
 				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
 				9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */,
@@ -1674,8 +1675,8 @@
 			isa = PBXGroup;
 			children = (
 				9F1F8FA623B36793008BF62A /* Root */,
-				9F1F8FA723B367C3008BF62A /* ObjC */,
 				9F4277CD1E504BC100D1BA8D /* Swift */,
+				9F1F8FA723B367C3008BF62A /* ObjC */,
 			);
 			name = Auxiliary;
 			sourceTree = "<group>";
@@ -1683,7 +1684,6 @@
 		9F7379891C26B79F007EF484 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
 				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
@@ -1849,6 +1849,7 @@
 		9FEA1DD21DA1679B00F7E346 /* Not Swifted */ = {
 			isa = PBXGroup;
 			children = (
+				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
 				9F8AB3901B48201600EF40C8 /* KPCAADate.h */,
 				9F8AB3911B48201600EF40C8 /* KPCAADate.mm */,
 				9F48D5281B4EBCFC00B7EE7F /* KPCAAInterpolate.h */,
@@ -2051,6 +2052,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F62747D23B3D83A00F4B4CC /* SwiftAA.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
