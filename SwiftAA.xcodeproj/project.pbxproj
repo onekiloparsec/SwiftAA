@@ -1043,6 +1043,7 @@
 		9F62730D23B3D0CE00F4B4CC /* ObjCAA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjCAA.h; path = Sources/ObjCAA/ObjCAA.h; sourceTree = "<group>"; };
 		9F62730E23B3D0CE00F4B4CC /* ObjCAA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ObjCAA-Info.plist"; path = "Sources/ObjCAA/ObjCAA-Info.plist"; sourceTree = "<group>"; };
 		9F62731323B3D0CE00F4B4CC /* ObjCAATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCAATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F62747E23B3D9A300F4B4CC /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		9F694EE21D15C67300EE7492 /* SwiftAA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftAA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAA-iOS-Info.plist"; path = "/Users/onekiloparsec/code/SwiftAA/Sources/SwiftAA/SwiftAA-iOS-Info.plist"; sourceTree = "<absolute>"; };
 		9F694EE41D15C7CA00EE7492 /* Venus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
@@ -1220,6 +1221,7 @@
 			isa = PBXGroup;
 			children = (
 				9F737A7C1C26DBCE007EF484 /* README.md */,
+				9F62747E23B3D9A300F4B4CC /* Package.swift */,
 				9F4E65121E582C20008B667E /* SwiftAA.podspec */,
 			);
 			name = Root;
