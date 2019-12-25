@@ -1504,21 +1504,21 @@
 			name = Root;
 			sourceTree = "<group>";
 		};
-		9F1F8FA723B367C3008BF62A /* ObjCAA */ = {
+		9F1F8FA723B367C3008BF62A /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
 				9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */,
 			);
-			name = ObjCAA;
+			name = ObjC;
 			sourceTree = "<group>";
 		};
 		9F29B4601B47313500B64C96 = {
 			isa = PBXGroup;
 			children = (
 				9F7379891C26B79F007EF484 /* Swift */,
-				9F29B5811B47319D00B64C96 /* Obj-C */,
+				9F29B5811B47319D00B64C96 /* ObjC */,
 				9FC3402E1D156A5D0069E7C4 /* Unit Tests */,
-				9F47C8581F51D34100FF13BA /* aaplus */,
+				9F47C8581F51D34100FF13BA /* AA+ */,
 				9F877AFD1E052A80006FC6E5 /* AA+ Tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F29B46B1B47313500B64C96 /* Products */,
@@ -1537,7 +1537,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F29B5811B47319D00B64C96 /* Obj-C */ = {
+		9F29B5811B47319D00B64C96 /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
 				9F8FC29A1E06DA930012B4DA /* To Be Swifted v3.0 */,
@@ -1545,7 +1545,7 @@
 				9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */,
 				9FEA1DD21DA1679B00F7E346 /* Not Swifted */,
 			);
-			name = "Obj-C";
+			name = ObjC;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -1693,7 +1693,7 @@
 			name = Saturn;
 			sourceTree = "<group>";
 		};
-		9F4277CD1E504BC100D1BA8D /* SwiftAA */ = {
+		9F4277CD1E504BC100D1BA8D /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				9F73798A1C26B79F007EF484 /* SwiftAA.h */,
@@ -1701,7 +1701,7 @@
 				9F73798C1C26B79F007EF484 /* SwiftAA-macOS-Info.plist */,
 				9F694EE31D15C67300EE7492 /* SwiftAA-iOS-Info.plist */,
 			);
-			name = SwiftAA;
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		9F4277CE1E504BC700D1BA8D /* Tests */ = {
@@ -1714,7 +1714,7 @@
 			path = Tests/SwiftAATests;
 			sourceTree = "<group>";
 		};
-		9F47C8581F51D34100FF13BA /* aaplus */ = {
+		9F47C8581F51D34100FF13BA /* AA+ */ = {
 			isa = PBXGroup;
 			children = (
 				9F47C8591F51D34100FF13BA /* AA+.h */,
@@ -1943,7 +1943,7 @@
 				9F47C93E1F51D34100FF13BA /* stdafx.cpp */,
 				9F47C93F1F51D34100FF13BA /* stdafx.h */,
 			);
-			name = aaplus;
+			name = "AA+";
 			path = "Sources/aaplus-v2.08";
 			sourceTree = "<group>";
 		};
@@ -1951,8 +1951,8 @@
 			isa = PBXGroup;
 			children = (
 				9F1F8FA623B36793008BF62A /* Root */,
-				9F1F8FA723B367C3008BF62A /* ObjCAA */,
-				9F4277CD1E504BC100D1BA8D /* SwiftAA */,
+				9F1F8FA723B367C3008BF62A /* ObjC */,
+				9F4277CD1E504BC100D1BA8D /* Swift */,
 				9F4277CE1E504BC700D1BA8D /* Tests */,
 			);
 			name = Auxiliary;
