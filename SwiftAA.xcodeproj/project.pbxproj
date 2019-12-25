@@ -2041,6 +2041,7 @@
 				9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */,
 			);
 			name = "Obj-C";
+			path = ../Tests/SwiftAATests;
 			sourceTree = "<group>";
 		};
 		9FB755351E05F23F00EC7617 /* Swift */ = {
@@ -2086,6 +2087,7 @@
 				6FBCF9361E12210200786EB4 /* XCTestExtensions.swift */,
 			);
 			name = Swift;
+			path = ../Tests/SwiftAATests;
 			sourceTree = "<group>";
 		};
 		9FC3402E1D156A5D0069E7C4 /* Unit Tests */ = {
