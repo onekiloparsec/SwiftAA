@@ -14,19 +14,10 @@ to become the most reliable source of astronomical computations.
                    DESC
 
   s.homepage     = "https://www.onekiloparsec.dev/swiftaa"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-  #s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-
   s.author             = { "onekiloparsec (a.k.a. Cédric Foellmi)" => "cedric@onekiloparsec.dev" }
-  # Or just: s.author    = "Cédric"
-  # s.authors            = { "Cédric" => "cedric@onekiloparsec.dev" }
   s.social_media_url   = "http://twitter.com/onekiloparsec"
-
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   s.ios.deployment_target = "11.0"
@@ -36,12 +27,24 @@ to become the most reliable source of astronomical computations.
 
   s.source       = { :git => "https://github.com/onekiloparsec/SwiftAA.git", :tag => "#{s.version}" }
 
-  s.source_files  = "Sources", "Sources/SwiftAA/*.{h,cpp,m,mm,swift}", "Sources/ObjCAA/*.{h,cpp,m,mm,swift}", "Sources/AA+/*.{h,cpp,m,mm,swift}"
-  s.exclude_files = "Sources/**/AATest.cpp"
-
-  s.public_header_files = "Sources/ObjCAA/include/*.h"
-
-  s.framework  = "Foundation"
+  s.framework    = "Foundation"
   s.swift_version = "5"
+
+  s.subspec 'ObjCAA' do |sp|
+    sp.name          = "ObjCAA"
+    sp.source_files  = "Sources/ObjCAA", "Sources/ObjCAA/**/*.{h,cpp}"
+    sp.public_header_files = "Sources/ObjCAA/include/*.h"
+    sp.dependency 'AA+'
+
+    sp.subspec 'AA+' do |ssp|
+      ssp.name          = "AA+"
+      ssp.source_files  = "Sources/AA+", "Sources/AA+/**/*.{h,cpp}"
+      ssp.exclude_files = "Sources/AA+/AATest.cpp"
+      ssp.public_header_files = "Sources/AA+/include/*.h"
+    end
+  end
+
+  s.dependency 'ObjCAA'
+  s.source_files  = "Sources", "Sources/SwiftAA/*.swift"
 
 end
