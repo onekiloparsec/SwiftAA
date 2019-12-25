@@ -1546,7 +1546,7 @@
 				9FEA1DD21DA1679B00F7E346 /* Not Swifted */,
 			);
 			name = "Obj-C";
-			path = Sources/ObjCAA;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */ = {
@@ -3606,7 +3606,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MD266WQ2E2;
-				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-iOS-Info.plist";
+				INFOPLIST_FILE = "Tests/SwiftAATests/SwiftAATests-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3626,7 +3626,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MD266WQ2E2;
-				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-iOS-Info.plist";
+				INFOPLIST_FILE = "Tests/SwiftAATests/SwiftAATests-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onekiloparsec.SwiftAATests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3645,7 +3645,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-macOS-Info.plist";
+				INFOPLIST_FILE = "Tests/SwiftAATests/SwiftAATests-macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3663,7 +3663,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "SwiftAATests/SwiftAATests-macOS-Info.plist";
+				INFOPLIST_FILE = "Tests/SwiftAATests/SwiftAATests-macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
