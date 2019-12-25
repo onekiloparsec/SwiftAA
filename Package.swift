@@ -11,21 +11,43 @@ let package = Package(
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
+            name: "AA+",
+            type: .static,
+            targets: ["AA+"]
+        ),
+        .library(
             name: "ObjCAA",
             targets: ["ObjCAA"]
         ),
+        .library(
+            name: "SwiftAA",
+            targets: ["SwiftAA"]
+        )
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "ObjCAA",
+            name: "AA+",
             dependencies: [],
-            exclude: ["Sources/ObjCAA/ObjCAA-Info.plist"]
+            exclude: ["Sources/AA+/naughter.css", "Sources/AA+/CMakeLists.txt", "Sources/AA+/AA+.htm"]
+        ),
+        .target(
+            name: "ObjCAA",
+            dependencies: ["AA+"],
+            exclude: []
         ),
         .testTarget(
             name: "ObjCAATests",
             dependencies: ["ObjCAA"]),
+        .target(
+            name: "SwiftAA",
+            dependencies: ["ObjCAA"],
+            exclude: []
+        ),
+        .testTarget(
+            name: "SwiftAATests",
+            dependencies: ["SwiftAA"]),
     ],
     cxxLanguageStandard: .gnucxx14
 )
