@@ -1035,7 +1035,7 @@
 		9F29B5921B47BA7C00B64C96 /* KPCAAAngularSeparation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAAngularSeparation.mm; path = ObjCAA/KPCAAAngularSeparation.mm; sourceTree = "<group>"; };
 		9F29B5951B47BFA700B64C96 /* KPCAABinaryStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAABinaryStar.h; path = ObjCAA/KPCAABinaryStar.h; sourceTree = "<group>"; };
 		9F29B5961B47BFA700B64C96 /* KPCAABinaryStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAABinaryStar.mm; path = ObjCAA/KPCAABinaryStar.mm; sourceTree = "<group>"; };
-		9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = ObjCAA/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
+		9F2A879F1D1FC4970004ADDD /* KPCAASwiftAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAASwiftAdditions.h; path = Sources/ObjCAA/KPCAASwiftAdditions.h; sourceTree = "<group>"; };
 		9F2A87A31D1FF5030004ADDD /* JulianDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDay.swift; sourceTree = "<group>"; };
 		9F2A87AA1D2063710004ADDD /* PlanetaryOrbits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryOrbits.swift; sourceTree = "<group>"; };
 		9F2A87AD1D20662F0004ADDD /* IlluminatedFraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IlluminatedFraction.swift; sourceTree = "<group>"; };
@@ -1381,7 +1381,7 @@
 		9F89264D1E564BE0005C8932 /* PlanetaryPhenomenaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryPhenomenaTests.swift; sourceTree = "<group>"; };
 		9F8926511E56D51B005C8932 /* SwiftAATests-macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftAATests-macOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F8926521E56D51B005C8932 /* SwiftAATests-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftAATests-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		9F8926531E56D51B005C8932 /* EnumsTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnumsTests.mm; sourceTree = "<group>"; };
+		9F8926531E56D51B005C8932 /* EnumsTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EnumsTests.mm; path = ../ObjCAATests/EnumsTests.mm; sourceTree = "<group>"; };
 		9F8926571E572D81005C8932 /* GeographicCoordinatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeographicCoordinatesTests.swift; sourceTree = "<group>"; };
 		9F8AB38B1B481D4B00EF40C8 /* KPCAACoordinateTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAACoordinateTransformation.h; path = ObjCAA/KPCAACoordinateTransformation.h; sourceTree = "<group>"; };
 		9F8AB38C1B481D4B00EF40C8 /* KPCAACoordinateTransformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAACoordinateTransformation.mm; path = ObjCAA/KPCAACoordinateTransformation.mm; sourceTree = "<group>"; };
@@ -1404,11 +1404,11 @@
 		9FB755311E05F14A00EC7617 /* ScientificConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScientificConstants.swift; sourceTree = "<group>"; };
 		9FB755371E05F34B00EC7617 /* PlanetaryBaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBaseTest.swift; sourceTree = "<group>"; };
 		9FBA899B1E324A930096FEAC /* SwiftAATests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FBA899F1E324A930096FEAC /* SwiftAATests-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-iOS-Info.plist"; path = "SwiftAATests/SwiftAATests-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9FBA899F1E324A930096FEAC /* SwiftAATests-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-iOS-Info.plist"; path = "Tests/SwiftAATests/SwiftAATests-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9FBB4AC61DCF7D6D00E9ADD9 /* BinaryStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryStars.swift; sourceTree = "<group>"; };
 		9FC3402D1D156A5D0069E7C4 /* SwiftAATests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftAATests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCAA2DCoordinateTests.swift; sourceTree = "<group>"; };
-		9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAATests-macOS-Info.plist"; path = "SwiftAATests/SwiftAATests-macOS-Info.plist"; sourceTree = "<group>"; };
+		9FC340311D156A5D0069E7C4 /* SwiftAATests-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftAATests-macOS-Info.plist"; sourceTree = "<group>"; };
 		9FC501711E0571B2005CA6FC /* AstronomicalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9FC501741E0582C9005CA6FC /* Asteroids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
 		9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTests.swift; sourceTree = "<group>"; };
@@ -1546,6 +1546,7 @@
 				9FEA1DD21DA1679B00F7E346 /* Not Swifted */,
 			);
 			name = "Obj-C";
+			path = Sources/ObjCAA;
 			sourceTree = "<group>";
 		};
 		9F2A87A21D1FF4C20004ADDD /* Swifted v2.0 */ = {
@@ -1710,6 +1711,7 @@
 				9FBA899F1E324A930096FEAC /* SwiftAATests-iOS-Info.plist */,
 			);
 			name = Tests;
+			path = Tests/SwiftAATests;
 			sourceTree = "<group>";
 		};
 		9F47C8581F51D34100FF13BA /* aaplus */ = {
@@ -1942,7 +1944,7 @@
 				9F47C93F1F51D34100FF13BA /* stdafx.h */,
 			);
 			name = aaplus;
-			path = "aaplus-v2.08";
+			path = "Sources/aaplus-v2.08";
 			sourceTree = "<group>";
 		};
 		9F694D881D15C65D00EE7492 /* Auxiliary */ = {
@@ -1981,7 +1983,6 @@
 		9F8926501E56D4F1005C8932 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				9F8926531E56D51B005C8932 /* EnumsTests.mm */,
 				9F8926511E56D51B005C8932 /* SwiftAATests-macOS-Bridging-Header.h */,
 				9F8926521E56D51B005C8932 /* SwiftAATests-iOS-Bridging-Header.h */,
 			);
@@ -2039,9 +2040,10 @@
 				9FC3402F1D156A5D0069E7C4 /* KPCAA2DCoordinateTests.swift */,
 				9FFA28FC1D156CC600034972 /* KPCAA3DCoordinateTests.swift */,
 				9FFA29021D156E1500034972 /* KPCAAAberrationTests.swift */,
+				9F8926531E56D51B005C8932 /* EnumsTests.mm */,
 			);
 			name = "Obj-C";
-			path = ../Tests/SwiftAATests;
+			path = ../Tests/ObjCAATests;
 			sourceTree = "<group>";
 		};
 		9FB755351E05F23F00EC7617 /* Swift */ = {
