@@ -12,14 +12,17 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "AA+",
+            type: .dynamic,
             targets: ["AA+"]
         ),
         .library(
             name: "ObjCAA",
+            type: .dynamic,
             targets: ["ObjCAA"]
         ),
         .library(
             name: "SwiftAA",
+            type: .dynamic,
             targets: ["SwiftAA"]
         )
     ],
