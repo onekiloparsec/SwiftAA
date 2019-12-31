@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftAA"
-  s.version      = "2.2.0"
+  s.version      = "2.2.1"
   s.summary      = "The most comprehensive and accurate collection of astronomical algorithms in Swift."
 
   s.description  = <<-DESC
@@ -30,21 +30,7 @@ to become the most reliable source of astronomical computations.
   s.framework    = "Foundation"
   s.swift_version = "5"
 
-  s.subspec 'ObjCAA' do |sp|
-    sp.name          = "ObjCAA"
-    sp.source_files  = "Sources/ObjCAA", "Sources/ObjCAA/**/*.{h,cpp}"
-    sp.public_header_files = "Sources/ObjCAA/include/*.h"
-    sp.dependency 'AA+'
-
-    sp.subspec 'AA+' do |ssp|
-      ssp.name          = "AA+"
-      ssp.source_files  = "Sources/AA+", "Sources/AA+/**/*.{h,cpp}"
-      ssp.exclude_files = "Sources/AA+/AATest.cpp"
-      ssp.public_header_files = "Sources/AA+/include/*.h"
-    end
-  end
-
-  s.dependency 'ObjCAA'
   s.source_files  = "Sources", "Sources/SwiftAA/*.swift"
+  s.dependency 'ObjCAA', '~> 2.2.1'
 
 end
