@@ -2,14 +2,8 @@ coverage_service: cobertura_xml
 xcodeproj: SwiftAA.xcodeproj
 scheme: "SwiftAA-iOS"
 source_directory:
-  - SwiftAA
+  - Sources/SwiftAA
 output_directory: 
   - TestReports
 ignore:
-  - ObjCAA/*
-  - AAPlusTests/*
-  - SwiftAATests/*
-  - SwiftAATests-iOS/*
   - TestReports/*
-  - libswiftaa/*
-  - aaplus*

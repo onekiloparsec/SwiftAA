@@ -14,7 +14,7 @@
 </a>
 </p>
 
-SwiftAA
+SwiftAA (and ObjCAA)
 ============
 
 ![](https://img.shields.io/badge/Swift-5-blue.svg?style=flat)
@@ -26,11 +26,17 @@ SwiftAA
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/onekiloparsec/SwiftAA)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA?ref=badge_shield)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
-[![SayThanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/onekiloparsec)
 
 *The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
 
-Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp). 
+*(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
+
+Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
+
+See Notes below for the difference between ObjCAA and SwiftAA.
+
+Description
+=======
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
@@ -42,8 +48,6 @@ SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation
 *Astronomical Algorithms*, by Jean Meeus (2nd ed., [Amazon](https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus)). This C++ package is called **AA+** (see below). AA+ also includes additional algorithms of the
 [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework, and includes the complete support for the ELP/MPP02 theory. 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.
-
-Today's version of AA+ used in SwiftAA is 2.08 (released October 22th, 2019). 
 
 But **SwiftAA provides more modern and a lot more readable APIs**, taking advantage of the expressiveness of Swift and its various syntax elements, making it fun and easy of use. In fact, you simply can't use AA+ without having the AA book. While SwiftAA is precisely made to be accessible by anyone. Additional functions and algorithms are added to improve even more  the completeness and ease of use. In particular, **SwiftAA provides units safety** a lot stronger compared to C++ APIs. 
 
@@ -60,20 +64,38 @@ The documentation generated from the code itself is available at [http://onekilo
 Installation
 ============
 
-Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA.framework` into your project (in `embedded binaries`).
+Using the [Swift Package Manager](https://swift.org/package-manager/): either through Xcode > File > Swift Packages > Add Package Dependency... and enter this repo URL (including the `.git` extension), , then choose `SwiftAA` target. Or add the line  `.package(url: "https://github.com/onekiloparsec/SwiftAA.git", from: "2.2.2")` in the `dependencies` section of your `Package.swift` file.
 
-Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` and then run `pod update`. 
+Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA-macOS.framework` or `SwiftAA-iOS.framework` into your project (in `embedded binaries`).
+
+Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'`, or `pod 'ObjCAA'` to your `Podfile` and then run `pod update`. 
 
 
 
 Notes
 ============
 
+ObjCAA
+---
+
+For a long time, all the C++, Objective-C++ and Swift code was bundled together. But in order to distribute SwiftAA through the SPM, it was necessary to split the sources into seperate folders. Then, three different libraries were declared in the `Package.swift` file and built separatedly, each of them depending on the previous one (`AA+`, then `ObjCAA`, and finally `SwiftAA`). 
+
+During that evolution, we chose to create a specific `ObjCAA` target inside the Xcode project. The consequence is that `ObjCAA` must be imported in `SwiftAA` source files that need it. Not a big deal, expect for Cocoapods which doesn't understand the subtelty. Hence, we created a specific `ObjCAA` pod, which will follow the versionning numbers of the main package.
+
+In summary, we have:
+
+* Three targets available through the Swift Package Manager: `AA+`, `ObjCAA` and `SwiftAA`. Embed only the last level you intend to use in your project.
+* Three targets available through Carthage, inside the Xcode project: `ObjCAA` (including `AA+`), `SwiftAA-iOS` and `SwiftAA-macOS`.
+* Two pods available through Cocoapods: `ObjCAA` and `SwiftAA`.
+
+
 AA+
 ---
 The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the "Astronomical Algorithms", found in the reference textbook by Jean Meeus. To make the most of this code specifically, you have to have a copy of the book with you (APIs and method names are hardly understandable without knowing what they refer to).
 
 Pull requests are accepted only about the Objective-C(++) and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to) to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
+
+Today's version of AA+ used in SwiftAA is 2.08 (released October 22th, 2019). 
 
 
 Caution on Coordinates
