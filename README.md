@@ -14,7 +14,7 @@
 </a>
 </p>
 
-SwiftAA
+SwiftAA (and ObjCAA)
 ============
 
 ![](https://img.shields.io/badge/Swift-5-blue.svg?style=flat)
@@ -30,7 +30,7 @@ SwiftAA
 
 *The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
 
-Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp). 
+Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).  See Notes below for the difference between ObjCAA and SwiftAA.
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
@@ -60,14 +60,30 @@ The documentation generated from the code itself is available at [http://onekilo
 Installation
 ============
 
-Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA.framework` into your project (in `embedded binaries`).
+Using the [Swift Package Manager](https://swift.org/package-manager/): either through Xcode > File > Swift Packages > Add Package Dependency... and enter this repo URL (including the `.git` extension), , then choose `SwiftAA` target. Or add the line  `.package(url: "https://github.com/onekiloparsec/SwiftAA.git", from: "2.2.2")` in the `dependencies` section of your `Package.swift` file.
 
-Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` and then run `pod update`. 
+Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA-macOS.framework` or `SwiftAA-iOS.framework` into your project (in `embedded binaries`).
+
+Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'`, or `pod 'ObjCAA'` to your `Podfile` and then run `pod update`. 
 
 
 
 Notes
 ============
+
+ObjCAA
+---
+
+For a long time, all the C++, Objective-C++ and Swift code was bundled together. In order to distribute SwiftAA through the SPM, it was necessary to split the sources into seperate folders. Then, the three different libraries are declared in the `Package.swift` file and built separatedly, each of them depending on the previous one (`AA+`, then `ObjCAA`, and finally `SwiftAA`). 
+
+During that evolution, we chose to create a specific `ObjCAA` target inside the Xcode project. The consequence is that `ObjCAA` must be imported in `SwiftAA` source files that need it. Not a big deal, expect for Cocoapods which don't understand the subtelty. Hence, we created a specific `ObjCAA` pod, which will follow the versionning numbers of the main package.
+
+In summary, we have:
+
+* Three targets available through the Swift Package Manager: `AA+`, `ObjCAA` and `SwiftAA`. Embed only the last level you intend to use in your project.
+* Three targets available through Carthage, inside the Xcode project: `ObjCAA` (including `AA+`), `SwiftAA-iOS` and `SwiftAA-macOS`.
+* Two pods available through Cocoapods: `ObjCAA` and `SwiftAA`.
+
 
 AA+
 ---
