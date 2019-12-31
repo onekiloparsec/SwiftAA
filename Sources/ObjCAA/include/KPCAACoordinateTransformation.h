@@ -37,7 +37,7 @@ double RadiansToHours(double Radians);
 double HoursToRadians(double Hours);
 double HoursToDegrees(double Hours);
 double DegreesToHours(double Degrees);
-double PI();
+double PI(void);
 double MapTo0To360Range(double Degrees);
 double MapToMinus90To90Range(double Degrees);
 double MapTo0To24Range(double HourAngle);
