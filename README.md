@@ -31,7 +31,9 @@ SwiftAA (and ObjCAA)
 
 *(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
 
-Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).  See Notes below for the difference between ObjCAA and SwiftAA.
+Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
+
+See Notes below for the difference between ObjCAA and SwiftAA.
 
 Description
 =======
