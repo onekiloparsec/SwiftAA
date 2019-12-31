@@ -36,14 +36,14 @@ let package = Package(
             dependencies: ["AA+"],
             exclude: []
         ),
-        .testTarget(
-            name: "ObjCAATests",
-            dependencies: ["ObjCAA"]),
         .target(
             name: "SwiftAA",
             dependencies: ["ObjCAA"],
             exclude: []
         ),
+        .testTarget(
+            name: "ObjCAATests",
+            dependencies: ["ObjCAA"]),
         .testTarget(
             name: "SwiftAATests",
             dependencies: ["SwiftAA"]),
