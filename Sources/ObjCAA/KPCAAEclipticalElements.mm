@@ -17,6 +17,7 @@
 #import "KPCAAUranus.h"
 #import "KPCAANeptune.h"
 #import "KPCAAPluto.h"
+#include <stdexcept>
 
 KPCAAEclipticalElementDetails KPCAAEclipticalElement_CalculateDetails(double i0, double w0, double omega0, double JD0, double JD)
 {
@@ -81,10 +82,11 @@ double KPCAAEclipticalElement_EclipticLongitude(double JD, KPCAAPlanet planet, B
             return KPCAAPluto_EclipticLongitude(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -127,10 +129,11 @@ double KPCAAEclipticalElement_EclipticLatitude(double JD, KPCAAPlanet planet, BO
             return KPCAAPluto_EclipticLatitude(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -173,9 +176,10 @@ double KPCAAEclipticalElement_RadiusVector(double JD, KPCAAPlanet planet, BOOL h
             return KPCAAPluto_RadiusVector(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }

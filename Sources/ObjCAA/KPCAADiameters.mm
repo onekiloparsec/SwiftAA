@@ -8,6 +8,7 @@
 
 #import "KPCAADiameters.h"
 #import "AADiameters.h"
+#include <stdexcept>
 
 double KPCAADiameters_SunSemidiameterA(double Delta)
 {
@@ -177,10 +178,11 @@ double KPCAADiameters_EquatorialSemiDiameterA(KPCAAPlanetStrict planet, double D
             return KPCAADiameters_NeptuneSemidiameterA(Delta);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -215,10 +217,11 @@ double KPCAADiameters_PolarSemiDiameterA(KPCAAPlanetStrict planet, double Delta)
             return KPCAADiameters_NeptuneSemidiameterA(Delta);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -258,10 +261,11 @@ double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta)
             return KPCAADiameters_PlutoSemidiameterB(Delta);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -300,9 +304,10 @@ double KPCAADiameters_PolarSemiDiameterB(KPCAAPlanet planet, double Delta)
             return KPCAADiameters_PlutoSemidiameterB(Delta);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }

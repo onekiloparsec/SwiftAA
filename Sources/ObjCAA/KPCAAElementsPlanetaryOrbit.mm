@@ -8,6 +8,7 @@
 
 #import "KPCAAElementsPlanetaryOrbit.h"
 #import "AAElementsPlanetaryOrbit.h"
+#include <stdexcept>
 
 double KPCAAElementsPlanetaryOrbit_MercuryMeanLongitude(double JD) { return CAAElementsPlanetaryOrbit::MercuryMeanLongitude(JD); }
 double KPCAAElementsPlanetaryOrbit_MercurySemimajorAxis(double JD) { return CAAElementsPlanetaryOrbit::MercurySemimajorAxis(JD); }
@@ -156,10 +157,11 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanetStrict planet, doubl
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -198,10 +200,11 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanetStrict planet, 
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -240,10 +243,11 @@ double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanetStrict planet, doubl
             return KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -283,10 +287,11 @@ double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanetStrict planet, double
             return KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -325,10 +330,11 @@ double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanetStrict planet, double 
             return KPCAAElementsPlanetaryOrbit_NeptuneInclination(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -367,10 +373,11 @@ double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanetStrict planet, do
             return KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -409,10 +416,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanetStrict plan
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -451,10 +459,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanetStrict
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -493,10 +502,11 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanetStrict planet,
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }
 
@@ -535,9 +545,10 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanetStrict pl
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(JD);
             break;
         }
-        default:
-            [NSException raise:NSInvalidArgumentException format:@"Invalid planet type %li", (long)planet];
-            return 0.0;
+        default: {
+            throw std::invalid_argument("Invalid planet type");
+            return -1.0;
             break;
+        }
     }
 }

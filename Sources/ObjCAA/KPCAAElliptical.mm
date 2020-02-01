@@ -8,6 +8,7 @@
 
 #import "KPCAAElliptical.h"
 #import "AAElliptical.h"
+#include <stdexcept>
 
 CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object);
 CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object) {
@@ -41,7 +42,7 @@ CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAE
             break;
 
         default:
-            throw NSInvalidArgumentException;
+            throw std::invalid_argument("invalid object parameter");
             break;
     }
 }
