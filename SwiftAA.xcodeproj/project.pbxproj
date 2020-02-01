@@ -624,7 +624,8 @@
 		9FEEDE7B1D1708B500983CB7 /* Pluto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBFB71D16E58700E13FB1 /* Pluto.swift */; };
 		9FF037A11E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
 		9FF037A21E3BF5BC00460D6F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */; };
-		9FF2138623E57D6B00E4F248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF2138523E57D6B00E4F248 /* Foundation.framework */; };
+		9FF2138923E57DEA00E4F248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF2138523E57D6B00E4F248 /* Foundation.framework */; };
+		9FF2138A23E57DEA00E4F248 /* Foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF2138523E57D6B00E4F248 /* Foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FFC4A4B1DCF872400382049 /* SaturnMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */; };
 		9FFC4A4C1DCF872400382049 /* SaturnMoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4A1DCF872400382049 /* SaturnMoons.swift */; };
 		9FFC4A4E1DCF875F00382049 /* SaturnRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC4A4D1DCF875F00382049 /* SaturnRings.swift */; };
@@ -692,6 +693,17 @@
 				9F62747A23B3D6CB00F4B4CC /* ObjCAA.framework in Embed Libraries */,
 			);
 			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF2138B23E57DEA00E4F248 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FF2138A23E57DEA00E4F248 /* Foundation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9FFA29281D15710F00034972 /* CopyFiles */ = {
@@ -1155,7 +1167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF2138623E57D6B00E4F248 /* Foundation.framework in Frameworks */,
+				9FF2138923E57DEA00E4F248 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2073,6 +2085,7 @@
 				9F62730723B3D0CE00F4B4CC /* Sources */,
 				9F62730823B3D0CE00F4B4CC /* Frameworks */,
 				9F62730923B3D0CE00F4B4CC /* Resources */,
+				9FF2138B23E57DEA00E4F248 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
