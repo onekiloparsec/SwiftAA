@@ -75,9 +75,3 @@ typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
 
 @end
 
-@interface KPCAADate (SwiftAAAdditions)
-
-- (instancetype)initWithGregorianCalendarDate:(NSDate *)date;
-
-@end
-
