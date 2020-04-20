@@ -15,7 +15,7 @@ import Foundation
 public protocol NumericType: _NumericType, SignedNumeric, Comparable, ExpressibleByFloatLiteral, Hashable { /* intentionally left blank */ }
 
 // note: we use two separate protocols because it's impossible to declare conformance *and* provide default implementation at the same time 
-public protocol _NumericType {
+public protocol _NumericType: AdditiveArithmetic {
     var value: Double { get }
     init(_ value: Double)
     func rounded(toIncrement increment: Self, rule: FloatingPointRoundingRule) -> Self
