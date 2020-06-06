@@ -43,6 +43,21 @@ public struct SelenographicCoordinates {
     public var colongitude: Degree {
         get { return (450.0.degrees - self.longitude).reduced }
     }
+
+    /// A Selenographic coordinates centered at the equator and prime meridian.
+    public static var zero: SelenographicCoordinates {
+        return SelenographicCoordinates(longitude: 0.0.degrees, latitude: 0.0.degrees)
+    }
+
+    /// Returns a SelenographicCoordinates object.
+    ///
+    /// - Parameters:
+    ///   - longitude: The longitude.
+    ///   - latitude: The latitude
+    public init(longitude: Degree, latitude: Degree) {
+        self.longitude = longitude
+        self.latitude = latitude
+    }
 }
 
 
