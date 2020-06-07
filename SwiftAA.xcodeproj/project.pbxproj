@@ -1133,6 +1133,7 @@
 		9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthTests.swift; sourceTree = "<group>"; };
 		9FD71F6A1D736F4100E6F656 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelestialBodies.swift; sourceTree = "<group>"; };
+		9FD749A4248D9A0100F026DA /* ObjCAA.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjCAA.podspec; sourceTree = "<group>"; };
 		9FDA5C251D16E5E2003B9F31 /* Neptune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
 		9FDA5C281D16E60B003B9F31 /* Mercury.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
 		9FDA5C2B1D16E612003B9F31 /* Mars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mars.swift; sourceTree = "<group>"; };
@@ -1238,6 +1239,7 @@
 				9F737A7C1C26DBCE007EF484 /* README.md */,
 				9F62747E23B3D9A300F4B4CC /* Package.swift */,
 				9F4E65121E582C20008B667E /* SwiftAA.podspec */,
+				9FD749A4248D9A0100F026DA /* ObjCAA.podspec */,
 			);
 			name = Root;
 			sourceTree = "<group>";
