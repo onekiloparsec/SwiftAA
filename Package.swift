@@ -17,7 +17,6 @@ let package = Package(
         ),
         .library(
             name: "ObjCAA",
-            type: .dynamic,
             targets: ["ObjCAA"]
         ),
         .library(
