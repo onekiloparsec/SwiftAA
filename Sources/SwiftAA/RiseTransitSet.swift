@@ -87,24 +87,24 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                          hour: sexagesimalRise.radical,
                          minute: sexagesimalRise.minute,
                          second: sexagesimalRise.second)
-
+    
     let transit = JulianDay(year: date.year,
                             month: date.month,
                             day: date.day,
                             hour: sexagesimalTransit.radical,
                             minute: sexagesimalTransit.minute,
                             second: sexagesimalTransit.second)
-
+    
     let set = JulianDay(year: date.year,
                         month: date.month,
                         day: date.day,
                         hour: sexagesimalSet.radical,
                         minute: sexagesimalSet.minute,
                         second: sexagesimalSet.second)
-
-//    let rise = julianDay + Hour(details.Rise).inJulianDays
-//    let transit = julianDay + Hour(details.Transit).inJulianDays
-//    let set = julianDay + Hour(details.Set).inJulianDays
+    
+    //    let rise = julianDay + Hour(details.Rise).inJulianDays
+    //    let transit = julianDay + Hour(details.Transit).inJulianDays
+    //    let set = julianDay + Hour(details.Set).inJulianDays
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
                                       riseTime: rise,
@@ -117,12 +117,10 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 
 /// Convenient class for storing the Rise, Transit and Set times of a celestial body.
 public struct RiseTransitSetTimes {
-    private var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails
-
+    private var riseTransiteSetTimesDetails: RiseTransitSetTimesDetails? = nil
+    public fileprivate(set) var transitError: CelestialBodyTransitError? = nil
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
-    public fileprivate(set) var celestialBody: CelestialBody
-    
-    private let riseSetAltitude: Degree
+    public fileprivate(set) var riseSetAltitude: Degree
     
     
     /// Returns a new RiseTransitSetTimes object giving access to Rise, Transit and Set times of the provided body.
@@ -131,43 +129,65 @@ public struct RiseTransitSetTimes {
     ///   - celestialBody: The celestial body under study.
     ///   - geographicCoordinates: The geographic coordinates of the observer.
     ///   - riseSetAltitude: The altitude considered for rise and set times.
-    public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, riseSetAltitude: Degree? = nil)
+    public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, riseSetAltitude: Degree? = nil, transitError: CelestialBodyTransitError? = nil)
     {
-        self.celestialBody = celestialBody
+        self.transitError = transitError
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? type(of: celestialBody).apparentRiseSetAltitude
         
         // AA+ p.102 indicates one need to get day D at 0h Dynamical Time, thus, midnight UT.
-        let jd = self.celestialBody.julianDay.midnight
-        let hp = self.celestialBody.highPrecision
-        
-        let celestialBodyType = type(of: self.celestialBody)
-        let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
-        let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
-        let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
-        
-        self.riseTransiteSetTimesDetails = riseTransitSet(forJulianDay: jd,
-                                                          equCoords1: body1.equatorialCoordinates,
-                                                          equCoords2: body2.equatorialCoordinates,
-                                                          equCoords3: body3.equatorialCoordinates,
-                                                          geoCoords: self.geographicCoordinates,
-                                                          apparentRiseSetAltitude: self.riseSetAltitude)
+        let jd = celestialBody.julianDay.midnight
+        let hp = celestialBody.highPrecision
+                
+        let celestialBodyType = type(of: celestialBody)
+        if (celestialBodyType is AstronomicalObject.Type) {
+            self.riseTransiteSetTimesDetails = riseTransitSet(forJulianDay: jd,
+                                                              equCoords1: celestialBody.equatorialCoordinates,
+                                                              equCoords2: celestialBody.equatorialCoordinates,
+                                                              equCoords3: celestialBody.equatorialCoordinates,
+                                                              geoCoords: geographicCoordinates,
+                                                              apparentRiseSetAltitude: AstronomicalObject.apparentRiseSetAltitude)
 
+        } else {
+            let body1: CelestialBody = celestialBodyType.init(julianDay: jd-1, highPrecision: hp)
+            let body2: CelestialBody = celestialBodyType.init(julianDay: jd, highPrecision: hp)
+            let body3: CelestialBody = celestialBodyType.init(julianDay: jd+1, highPrecision: hp)
+            
+            self.riseTransiteSetTimesDetails = riseTransitSet(forJulianDay: jd,
+                                                              equCoords1: body1.equatorialCoordinates,
+                                                              equCoords2: body2.equatorialCoordinates,
+                                                              equCoords3: body3.equatorialCoordinates,
+                                                              geoCoords: self.geographicCoordinates,
+                                                              apparentRiseSetAltitude: self.riseSetAltitude)
+
+        }
     }
     
+    /// Returns a new RiseTransitSetTimes object with an error.
+    ///
+    /// - Parameters:
+    ///   - geographicCoordinates: The geographic coordinates of the observer.
+    ///   - riseSetAltitude: The altitude considered for rise and set times.
+    public init(geographicCoordinates: GeographicCoordinates, transitError: CelestialBodyTransitError? = nil)
+    {
+        self.transitError = transitError
+        self.geographicCoordinates = geographicCoordinates
+        self.riseSetAltitude = Degree(0)
+    }
+
     /// The rise time of the celestial body, in Julian Day.
     public var riseTime: JulianDay? {
-        get { return self.riseTransiteSetTimesDetails.isRiseValid ? self.riseTransiteSetTimesDetails.riseTime : nil }
+        get { return (self.riseTransiteSetTimesDetails != nil && self.riseTransiteSetTimesDetails!.isRiseValid) ? self.riseTransiteSetTimesDetails!.riseTime : nil }
     }
     
     /// The transit time of the celestial body, in Julian Day.
     public var transitTime: JulianDay? {
-        get { return self.riseTransiteSetTimesDetails.isTransitAboveHorizon ? self.riseTransiteSetTimesDetails.transitTime : nil }
+        get { return (self.riseTransiteSetTimesDetails != nil && self.riseTransiteSetTimesDetails!.isTransitAboveHorizon) ? self.riseTransiteSetTimesDetails!.transitTime : nil }
     }
     
     /// The set time of the celestial body, in Julian Day.
     public var setTime: JulianDay? {
-        get { return self.riseTransiteSetTimesDetails.isSetValid ? self.riseTransiteSetTimesDetails.setTime : nil }
+        get { return (self.riseTransiteSetTimesDetails != nil && self.riseTransiteSetTimesDetails!.isSetValid) ? self.riseTransiteSetTimesDetails!.setTime : nil }
     }
 }
 

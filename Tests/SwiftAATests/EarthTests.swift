@@ -48,7 +48,7 @@ class EarthTests: XCTestCase {
         let expectedSet = JulianDay(year: 1988, month: 03, day: 20, hour: 2, minute: 55)
         AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
 
-        XCTAssertNil(details.error)
+        XCTAssertNil(details.transitError)
     }
     
     func testRiseTransitSetTimesInvalidPlanet() {
@@ -61,7 +61,7 @@ class EarthTests: XCTestCase {
         XCTAssertNil(details.riseTime)
         XCTAssertNil(details.transitTime)
         XCTAssertNil(details.setTime)
-        XCTAssertNotNil(details.error)
+        XCTAssertNotNil(details.transitError)
     }
     
     func testEquinoxes() {
