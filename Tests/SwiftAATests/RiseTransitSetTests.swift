@@ -85,6 +85,33 @@ class RiseTransitSetTests: XCTestCase {
 //        AssertEqual(details.setTime!, expectedSet, accuracy: accuracy)
 //    }
     
+    // See https://github.com/onekiloparsec/SwiftAA/issues/95 for the problem
+    // See https://github.com/codebox/star-rise-and-set-times/blob/master/test/spec/calc-spec.js for the test
+    func testSiriusInCerroParanalChile() {
+        let jd1 = JulianDay(year: 2018, month: 1, day: 1, hour: 12, minute: 0, second: 0)
+        let jd2 = JulianDay(year: 2018, month: 6, day: 1, hour: 12, minute: 0, second: 0)
+        
+        let coords = EquatorialCoordinates(rightAscension: Hour(.plus, 6, 45, 9.25), declination: Degree(.minus, 16, 42, 47.3))
+        
+        let sirius1 = AstronomicalObject(name: "Sirius", coordinates: coords, julianDay:jd1)
+        let sirius2 = AstronomicalObject(name: "Sirius", coordinates: coords, julianDay:jd2)
+        
+        let paranal = GeographicCoordinates(positivelyWestwardLongitude: Degree(24.627222),latitude: Degree(-70.404167), altitude: 2400)
+        
+        let results1 = sirius1.riseTransitSetTimes(for: paranal)
+        let results2 = sirius2.riseTransitSetTimes(for: paranal)
+        
+        XCTAssertNotNil(results1.riseTime)
+        XCTAssertNotNil(results1.transitTime)
+        XCTAssertNotNil(results1.setTime)
+        
+        XCTAssertNotNil(results2.riseTime)
+        XCTAssertNotNil(results2.transitTime)
+        XCTAssertNotNil(results2.setTime)
+        
+//        AssertEqual(results1.riseTime!.date.fractionalHour, Double(22.151388), accuracy: Double(0.001), "")
+    }
+    
 }
 
 
