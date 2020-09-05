@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1170"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -20,8 +20,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9FBA899A1E324A930096FEAC"
-               BuildableName = "SwiftAATests-iOS.xctest"
-               BlueprintName = "SwiftAATests-iOS"
+               BuildableName = "SwiftAATests.xctest"
+               BlueprintName = "SwiftAATests"
                ReferencedContainer = "container:SwiftAA.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1170"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F7379871C26B79F007EF484"
+               BlueprintIdentifier = "9F694D891D15C67300EE7492"
                BuildableName = "SwiftAA.framework"
-               BlueprintName = "SwiftAA-macOS"
+               BlueprintName = "SwiftAA"
+               ReferencedContainer = "container:SwiftAA.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9FBA899A1E324A930096FEAC"
+               BuildableName = "SwiftAATests.xctest"
+               BlueprintName = "SwiftAATests"
                ReferencedContainer = "container:SwiftAA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,20 +45,22 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F7379871C26B79F007EF484"
+            BlueprintIdentifier = "9F694D891D15C67300EE7492"
             BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-macOS"
+            BlueprintName = "SwiftAA"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FC3402C1D156A5D0069E7C4"
-               BuildableName = "SwiftAATests-macOS.xctest"
-               BlueprintName = "SwiftAATests-macOS"
+               BlueprintIdentifier = "9FBA899A1E324A930096FEAC"
+               BuildableName = "SwiftAATests.xctest"
+               BlueprintName = "SwiftAATests"
                ReferencedContainer = "container:SwiftAA.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -63,9 +79,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F7379871C26B79F007EF484"
+            BlueprintIdentifier = "9F694D891D15C67300EE7492"
             BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-macOS"
+            BlueprintName = "SwiftAA"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +95,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F7379871C26B79F007EF484"
+            BlueprintIdentifier = "9F694D891D15C67300EE7492"
             BuildableName = "SwiftAA.framework"
-            BlueprintName = "SwiftAA-macOS"
+            BlueprintName = "SwiftAA"
             ReferencedContainer = "container:SwiftAA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
