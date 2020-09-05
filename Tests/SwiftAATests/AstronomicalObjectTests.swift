@@ -17,7 +17,7 @@ class AstronomicalObjectTests: XCTestCase {
     }
 
     func testInitFatalError() {
-        assertFatalError(expectedMessage: "init(julianDay:highPrecision:) has not been implemented") {
+        assertFatalError(expectedMessage: "init(julianDay:highPrecision:) cannot be implemented.") {
             _ = AstronomicalObject(julianDay: JulianDay(Date()), highPrecision: true)
         }
     }

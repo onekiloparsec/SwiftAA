@@ -8,7 +8,6 @@
 
 import Foundation
 
-// AstronomicalObject inherits from CelestialBody to benefit from the generic calculation of Rise and Set Times.
 open class AstronomicalObject: ObjectBase, CelestialBody {
     public var name: String = ""
     public fileprivate(set) var julianDay: JulianDay
@@ -23,7 +22,7 @@ open class AstronomicalObject: ObjectBase, CelestialBody {
     }
     
     public required init(julianDay: JulianDay, highPrecision: Bool) {
-        fatalError("init(julianDay:highPrecision:) has not been implemented")
+        fatalError("init(julianDay:highPrecision:) cannot be implemented.")
     }
 
     /// The radius vector (i.e. the distance to the Sun). Returns -1. Only for conformance to CelestialBody.
