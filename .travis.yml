@@ -10,3 +10,7 @@ jobs:
     - osx_image: xcode11
       xcode_sdk: iphonesimulator13.0
       script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA -toolchain com.apple.dt.toolchain.Swift_5 -sdk iphonesimulator13.0 -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
+after_success: 
+  - slather
+  - bash <(curl -s https://codecov.io/bash) -f TestReports/cobertura.xml -X coveragepy -X gcov -X xcode
+
