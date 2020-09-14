@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ObjCAA"
-  s.version      = "2.2.5"
+  s.version      = "2.3.0"
   s.summary      = "The most comprehensive and accurate collection of astronomical algorithms in Objective-C."
 
   s.description  = <<-DESC
