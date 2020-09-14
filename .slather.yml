@@ -1,6 +1,6 @@
 coverage_service: cobertura_xml
 xcodeproj: SwiftAA.xcodeproj
-scheme: "SwiftAA-iOS"
+scheme: "SwiftAA"
 source_directory:
   - Sources/SwiftAA
 output_directory: 

@@ -1,7 +1,7 @@
 language : objective-c
 os: osx
 xcode_project: SwiftAA.xcodeproj
-xcode_scheme: SwiftAA-iOS
+xcode_scheme: SwiftAA
 cache: bundler
 before_install: rvm use $RVM_RUBY_VERSION
 install: bundle install --without=documentation
@@ -9,4 +9,4 @@ jobs:
     include:
     - osx_image: xcode11
       xcode_sdk: iphonesimulator13.0
-      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA-iOS -toolchain com.apple.dt.toolchain.Swift_5 -sdk iphonesimulator13.0 -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
+      script: xcodebuild clean build test -quiet -project SwiftAA.xcodeproj -scheme SwiftAA -toolchain com.apple.dt.toolchain.Swift_5 -sdk iphonesimulator13.0 -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
