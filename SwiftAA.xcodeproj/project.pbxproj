@@ -2718,6 +2718,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2762,6 +2763,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.SwiftAA;
 				PRODUCT_NAME = SwiftAA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2848,6 +2850,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 2.3.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.ObjCAA;
@@ -2889,6 +2892,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 2.3.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onekiloparsec.ObjCAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
