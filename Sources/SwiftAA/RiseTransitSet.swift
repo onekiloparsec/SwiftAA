@@ -129,16 +129,15 @@ public struct RiseTransitSetTimes {
     ///   - celestialBody: The celestial body under study.
     ///   - geographicCoordinates: The geographic coordinates of the observer.
     ///   - riseSetAltitude: The altitude considered for rise and set times.
-    public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, riseSetAltitude: Degree? = nil, transitError: CelestialBodyTransitError? = nil)
+    public init(celestialBody: CelestialBody, geographicCoordinates: GeographicCoordinates, riseSetAltitude: Degree? = nil)
     {
-        self.transitError = transitError
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = riseSetAltitude ?? type(of: celestialBody).apparentRiseSetAltitude
         
         // AA+ p.102 indicates one need to get day D at 0h Dynamical Time, thus, midnight UT.
         let jd = celestialBody.julianDay.midnight
         let hp = celestialBody.highPrecision
-                
+        
         let celestialBodyType = type(of: celestialBody)
         if (celestialBodyType is AstronomicalObject.Type) {
             self.details = riseTransitSet(forJulianDay: jd,
@@ -161,9 +160,13 @@ public struct RiseTransitSetTimes {
                                           apparentRiseSetAltitude: self.riseSetAltitude)
             
         }
+        
+        if (!self.details!.isRiseValid && !self.details!.isSetValid) {
+            self.transitError = (self.details!.isTransitAboveHorizon) ? .alwaysAboveAltitude : .alwaysBelowAltitude
         }
     }
-    
+        
+
     /// Returns a new RiseTransitSetTimes object with an error.
     ///
     /// - Parameters:
@@ -175,7 +178,7 @@ public struct RiseTransitSetTimes {
         self.geographicCoordinates = geographicCoordinates
         self.riseSetAltitude = Degree(0)
     }
-
+    
     /// The rise time of the celestial body, in Julian Day.
     public var riseTime: JulianDay? {
         get { return (self.details != nil && self.details!.isRiseValid) ? self.details!.riseTime : nil }
