@@ -80,10 +80,13 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
     let sexagesimalRise = Hour(details.Rise).sexagesimal
     let sexagesimalTransit = Hour(details.Transit).sexagesimal
     let sexagesimalSet = Hour(details.Set).sexagesimal
+    let riseDate = (Hour(details.Rise) > Hour(details.Transit) ? Calendar.gregorianGMT.date(byAdding: .day, value: -1, to: date) : date) ?? date
     
-    let rise = JulianDay(year: date.year,
-                         month: date.month,
-                         day: date.day,
+    let setDate = (Hour(details.Transit) > Hour(details.Set) ? Calendar.gregorianGMT.date(byAdding: .day, value: 1, to: date) : date) ?? date
+    
+    let rise = JulianDay(year: riseDate.year,
+                         month: riseDate.month,
+                         day: riseDate.day,
                          hour: sexagesimalRise.radical,
                          minute: sexagesimalRise.minute,
                          second: sexagesimalRise.second)
@@ -95,9 +98,9 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
                             minute: sexagesimalTransit.minute,
                             second: sexagesimalTransit.second)
     
-    let set = JulianDay(year: date.year,
-                        month: date.month,
-                        day: date.day,
+    let set = JulianDay(year: setDate.year,
+                        month: setDate.month,
+                        day: setDate.day,
                         hour: sexagesimalSet.radical,
                         minute: sexagesimalSet.minute,
                         second: sexagesimalSet.second)
