@@ -120,7 +120,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 
 /// Convenient class for storing the Rise, Transit and Set times of a celestial body.
 public struct RiseTransitSetTimes {
-    public var details: RiseTransitSetTimesDetails? = nil
+    private var details: RiseTransitSetTimesDetails? = nil
     public fileprivate(set) var transitError: CelestialBodyTransitError? = nil
     public fileprivate(set) var geographicCoordinates: GeographicCoordinates
     public fileprivate(set) var riseSetAltitude: Degree
