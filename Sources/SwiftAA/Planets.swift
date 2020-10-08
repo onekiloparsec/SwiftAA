@@ -20,7 +20,7 @@ public class Planet: Object,
     EllipticalPlanetaryDetails,
     IlluminatedFraction {
 
-    /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. :-)
+    /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. 
     public class var averageColor: Color {
         get { return Color.white }
     }
