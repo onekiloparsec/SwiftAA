@@ -59,3 +59,42 @@ let results2 = polaris.riseTransitSetTimes(
         latitude: Degree(.plus, 49, 9, 3),
         altitude: 210)
 )
+
+
+let timeZone = TimeZone.current
+let dateTimeFormatter = DateFormatter()
+dateTimeFormatter.dateStyle = .short
+dateTimeFormatter.timeStyle = .short
+dateTimeFormatter.timeZone = timeZone
+dateTimeFormatter.locale = Locale.current
+print("The current timezone is: \(timeZone)")
+print("Hours from GMT: \(timeZone.secondsFromGMT() / 60 / 60)")
+print("The current locale is: \(Locale.current)\n")
+
+let day = JulianDay(year: 2020, month: 8, day: 24, hour: 12, minute: 0, second: 0)
+
+let threeSgr = AstronomicalObject(
+    name: "3 Sagittarii",
+    coordinates: EquatorialCoordinates(rightAscension: Hour(.plus, 17, 47, 33.62), declination: Degree(.minus, 27, 49, 50.85)),
+    julianDay: day
+)
+
+let rehbergTower = GeographicCoordinates(positivelyWestwardLongitude: Degree(7.970309), latitude: Degree(49.181973))
+let hoernumBeach = GeographicCoordinates(positivelyWestwardLongitude: Degree(8.279082), latitude: Degree(54.752388))
+
+let resultsForRehbergTower = threeSgr.riseTransitSetTimes(
+    for: rehbergTower
+)
+
+let resultsForHoernumBeach = threeSgr.riseTransitSetTimes(
+    for: hoernumBeach
+)
+
+print("Rehberg Tower")
+print("3 Sagittarii rises on \(dateTimeFormatter.string(from: resultsForRehbergTower.riseTime!.date))")
+print("3 Sagittarii transit occurs on \(dateTimeFormatter.string(from: resultsForRehbergTower.transitTime!.date))")
+print("3 Sagittarii sets on \(dateTimeFormatter.string(from: resultsForRehbergTower.setTime!.date))\n")
+print("Hörnum Beach")
+print("3 Sagittarii rises on \(dateTimeFormatter.string(from: resultsForHoernumBeach.riseTime!.date))")
+print("3 Sagittarii transit occurs on \(dateTimeFormatter.string(from: resultsForHoernumBeach.transitTime!.date))")
+print("3 Sagittarii sets on \(dateTimeFormatter.string(from: resultsForHoernumBeach.setTime!.date))")
