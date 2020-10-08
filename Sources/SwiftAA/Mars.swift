@@ -36,7 +36,10 @@ public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {
         return Degree(self.physicalDetails.DS)
     }
     
-    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun.
+    /// The geocentric position angle of Mars' northern rotation pole, also called position angle of axis. It is the angle
+    /// that the Martian meridian from the center of the disk to the northern rotation pole forms (on the geocentric celestial sphere)
+    /// with the declination circle through the center. It is measured eastwards from the North Point of the disk. By defintion,
+    /// position angle 0º means northwards on the sky, 90º east, 180º south and 270º west. See AA. p 287.
     public var positionAngleOfNorthernRotationPole: Degree {
         return Degree(self.physicalDetails.P)
     }
@@ -55,7 +58,8 @@ public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {
         return Degree(self.physicalDetails.X + 180).reduced
     }
     
-    /// The aerographic coordinates are those of Mars, to be compared geographic for the Earth.
+    /// The areographic longitude of the central meridian, as seen from the Earth. The word "areographic" means that use is made
+    /// of a coordinate system on the surface of Mars. Compare with "geographic" for the Earth. See AA. p 287.
     public var aerographicLongitudeOfCentralMeridian: Degree {
         return Degree(self.physicalDetails.w)
     }
