@@ -21,6 +21,13 @@ public protocol CelestialBody: ObjectBase {
     /// The coordinates of the object in the heliocentric ecliptic system.
 //    var heliocentricEclipticCoordinates: EclipticCoordinates { get }
     
+    /// Computes the apparent horizontal coordinates of the body for a given location of the observer.
+    ///
+    /// - Parameter geographicCoordinates: The location of the observer.
+    /// - Returns: A new horizontal coordinates instance.
+    func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates
+
+    
     /// Returns the Rise, Transit and Set times of the body for a given location on Earth.
     ///
     /// - Parameter geographicCoordinates: The coordinates of the location on Earth.
@@ -127,6 +134,10 @@ public extension CelestialBody {
         return Degree(KPCAAParallactic_AngleBetweenNorthCelestialPoleAndNorthPoleOfEcliptic(eclipticCoords.lambda.value,
                                                                                             eclipticCoords.beta.value,
                                                                                             epsilon.value))
+    }
+
+    func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
+        return self.equatorialCoordinates.makeHorizontalCoordinates(for: geographicCoordinates, at: self.julianDay)
     }
 
     /// The angle the Earth must make between the time at which the object is at a given altitude, then rotate,
