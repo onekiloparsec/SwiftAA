@@ -90,7 +90,7 @@ public class Sun: Object, CelestialBody {
     // MARK: - Celestial Body Supplement
     
     /// See AA, p.164. In some instances, for example in meteor work, it is necessary to have the Sun's longitude
-    /// referred to the standard equinox of J2000.0. Between, 1900 and 2100, this can be performed with sufficient
+    /// referred to the standard equinox of J2000.0. Between 1900 and 2100, this can be performed with sufficient
     /// accuracy.
     public var eclipticCoordinatesStandardJ2000: EclipticCoordinates {
         get { return EclipticCoordinates(lambda: Degree(KPCAASun_GeometricEclipticLongitudeJ2000(self.julianDay.value, self.highPrecision)),
