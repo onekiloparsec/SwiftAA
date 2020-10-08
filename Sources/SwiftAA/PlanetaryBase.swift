@@ -32,10 +32,10 @@ public protocol PlanetaryBase: ObjectBase {
     /// The index of the planet in the list of all elliptical objects, that is the Sun, all Planets but Earth, and including Pluto.
     var ellipticalObject: KPCAAEllipticalObject { get }
     
-    /// The julian day of the perihelion of the planet the after the given julian day of the object.
+    /// The julian day of the perihelion of the planet after the given julian day of the object.
     var perihelion: JulianDay { get }
     
-    /// The julian day of the aphelion of the planet the after the given julian day of the object.
+    /// The julian day of the aphelion of the planet after the given julian day of the object.
     var aphelion: JulianDay { get }
     
     /// The distance to the Sun.
