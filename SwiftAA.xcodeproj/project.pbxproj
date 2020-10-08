@@ -145,7 +145,6 @@
 		9F33DA351E645B510037E37D /* Fluxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33DA331E645B510037E37D /* Fluxes.swift */; };
 		9F3849CB1E60BA990013D9A3 /* CelestialBodiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3849C91E60BA990013D9A3 /* CelestialBodiesTests.swift */; };
 		9F470DB31E5AD3D8003624D2 /* TimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F470DB11E5AD3D8003624D2 /* TimesTests.swift */; };
-		9F47CB7A1F51D3D700FF13BA /* AATest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C8CF1F51D34100FF13BA /* AATest.cpp */; };
 		9F4B1B061E7BD27600407106 /* MercuryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4B1B041E7BD27600407106 /* MercuryTests.swift */; };
 		9F502F0F1D3EBFFF002C394F /* AstronomicalCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */; };
 		9F525B2B1D3CB53400041696 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F525B291D3CB53400041696 /* Sun.swift */; };
@@ -755,7 +754,6 @@
 		9F47C8CC1F51D34100FF13BA /* AAStellarMagnitudes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAStellarMagnitudes.h; path = include/AAStellarMagnitudes.h; sourceTree = "<group>"; };
 		9F47C8CD1F51D34100FF13BA /* AASun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AASun.cpp; sourceTree = "<group>"; };
 		9F47C8CE1F51D34100FF13BA /* AASun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AASun.h; path = include/AASun.h; sourceTree = "<group>"; };
-		9F47C8CF1F51D34100FF13BA /* AATest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATest.cpp; sourceTree = "<group>"; };
 		9F47C8D21F51D34100FF13BA /* AAUranus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAUranus.cpp; sourceTree = "<group>"; };
 		9F47C8D31F51D34100FF13BA /* AAUranus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAUranus.h; path = include/AAUranus.h; sourceTree = "<group>"; };
 		9F47C8D41F51D34100FF13BA /* AAVenus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAVenus.cpp; sourceTree = "<group>"; };
@@ -1126,7 +1124,6 @@
 				9F29B5811B47319D00B64C96 /* ObjC */,
 				9FC3402E1D156A5D0069E7C4 /* Unit Tests */,
 				9F47C8581F51D34100FF13BA /* AA+ */,
-				9F877AFD1E052A80006FC6E5 /* AA+ Tests */,
 				9F694D881D15C65D00EE7492 /* Auxiliary */,
 				9F29B46B1B47313500B64C96 /* Products */,
 				9F1F910823B3B316008BF62A /* Frameworks */,
@@ -1566,15 +1563,6 @@
 			);
 			name = Swift;
 			path = Sources/SwiftAA;
-			sourceTree = "<group>";
-		};
-		9F877AFD1E052A80006FC6E5 /* AA+ Tests */ = {
-			isa = PBXGroup;
-			children = (
-				9F47C8CF1F51D34100FF13BA /* AATest.cpp */,
-			);
-			name = "AA+ Tests";
-			path = "aaplus-v1.99";
 			sourceTree = "<group>";
 		};
 		9F8FC29A1E06DA930012B4DA /* To Be Swifted v3.0 */ = {
@@ -2435,7 +2423,6 @@
 				9F074D891F77D80200BDE079 /* AAVSOP87B_MAR.cpp in Sources */,
 				9F074D931F77D80200BDE079 /* AAVSOP87C_NEP.cpp in Sources */,
 				9F074D6B1F77D80200BDE079 /* AARefraction.cpp in Sources */,
-				9F47CB7A1F51D3D700FF13BA /* AATest.cpp in Sources */,
 				9F074D741F77D80200BDE079 /* AAVenus.cpp in Sources */,
 				9F074DA21F77D80200BDE079 /* AAVSOP87E_MER.cpp in Sources */,
 				9F074D751F77D80200BDE079 /* AAVSOP87.cpp in Sources */,
