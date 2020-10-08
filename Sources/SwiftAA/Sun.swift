@@ -101,7 +101,7 @@ public class Sun: Object, CelestialBody {
     ///
     /// - Parameter geographicCoordinates: The location of the observer.
     /// - Returns: A new horizontal coordinates instance.
-    public func makeHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
+    public func makeApparentHorizontalCoordinates(with geographicCoordinates: GeographicCoordinates) -> HorizontalCoordinates {
         return self.apparentEquatorialCoordinates.makeHorizontalCoordinates(for: geographicCoordinates, at: self.julianDay)
     }
 
