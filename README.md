@@ -1,5 +1,5 @@
 <h3 align="center">
-<img src="http://onekiloparsec.dev/wp-content/uploads/2020/10/1kpcAstroComponents.png" width="100%" />
+<img src="http://onekiloparsec.dev/wp-content/uploads/2020/10/1kpcAstroComponents.png" />
 </h3>
 <p align="center">
 <b>SwiftAA</b> &bull;
