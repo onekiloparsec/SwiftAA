@@ -54,6 +54,11 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
         get { return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value)) }
     }
     
+    /// The mean anomaly (the Sun mean anomaly is the same as the Earth's one. See AA. p163.).
+    public var meanAnomaly: Degree {
+        get { return Degree(KPCAAEarth_SunMeanAnomaly(self.julianDay.value)) }
+    }
+    
     /**
      Computes the julian day of the equinox for the given year
      
