@@ -49,7 +49,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     /// Polar radius of the Eart. Source: Wikipedia.
     public static let polarRadius: Meter = 6356760.0
     
-    /// The longitude of the ascnending node.
+    /// The longitude of the ascending node.
     public var longitudeOfAscendingNode: Degree {
         get { return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value)) }
     }
