@@ -33,6 +33,15 @@ public protocol PlanetaryDetails: PlanetaryBase {
     /// and equinox.
     /// It accounts for 1) the effect of light-time and 2) the effect of the Earth motion. See AA p224.
     var apparentGeocentricEquatorialCoordinates: EquatorialCoordinates { get }
+    
+    /// The planetocentric declination of the Earth. When it is positive, the planet' northern pole is tilted towards the Earth
+    var planetocentricDeclinationOfTheEarth: Degree { get }
+    
+    /// The planetocentric declination of the Sun. When it is positive, the planet' northern pole is tilted towards the Sun
+    var planetocentricDeclinationOfTheSun: Degree { get }
+    
+    /// The position angle of the northern rotation pole of the planet
+    var positionAngleOfNorthernRotationPole: Degree { get }
 }
 
 public extension PlanetaryDetails {
