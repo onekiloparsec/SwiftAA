@@ -11,14 +11,7 @@ import ObjCAA
 
 /// The Planet class encompasses all the shared properties of the planets, to be understood as "non-Earth" 
 /// and "non-dwarf" planets.
-public class Planet: Object,
-    CelestialBody,
-    PlanetaryBase,
-    PlanetaryPhenomena,
-    PlanetaryOrbits,
-    PlanetaryDiameters,
-    EllipticalPlanetaryDetails,
-    IlluminatedFraction {
+public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena, PlanetaryOrbits {
 
     /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. 
     public class var averageColor: Color {
@@ -27,14 +20,14 @@ public class Planet: Object,
         
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
+    public lazy var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
         }()
     
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
+    public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
         }()
@@ -72,17 +65,18 @@ public class Planet: Object,
 
 /// The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
 /// So far, only Pluto is concerned.
-public class DwarfPlanet: Object, PlanetaryBase, EllipticalPlanetaryDetails, PlanetaryDiameters {
+public class DwarfPlanet: Object, PlanetaryDetails {
+    
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
+    public lazy var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
         }()
     
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var ellipticalObjectDetails: KPCAAEllipticalObjectDetails = {
+    public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
         return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
         }()

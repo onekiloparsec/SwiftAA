@@ -10,7 +10,7 @@ import Foundation
 import ObjCAA
 
 /// The Mars planet.
-public class Mars: Planet, PlanetaryPhysicalDetails, MarsPhysicalDetails {
+public class Mars: Planet, MarsPhysicalDetails {
 
     /// Accessor to all values of the underlying physical details. Will probably become private
     /// once all relevant accessors are implemented and covered.

@@ -10,7 +10,7 @@ import Foundation
 import ObjCAA
 
 /// The Jupiter planet.
-public class Jupiter: Planet, PlanetaryPhysicalDetails, JupiterPhysicalDetails {
+public class Jupiter: Planet, JupiterPhysicalDetails {
     
     /// Accessor to all values of the underlying physical details. Will probably become private
     /// once all relevant accessors are implemented and covered.
