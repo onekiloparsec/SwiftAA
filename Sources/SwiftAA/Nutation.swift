@@ -15,16 +15,16 @@ extension Earth {
     /// It is due principally to the action of the Moon. It can be decomposed into components parallel and
     /// perpendicular to the ecliptic. 
     /// Here it is that component along the ecliptic.
-    public var nutationInLongitude: ArcMinute {
-        get { return ArcMinute(KPCAANutation_NutationInLongitude(self.julianDay.value)) }
+    public var nutationInLongitude: ArcSecond {
+        get { return ArcSecond(KPCAANutation_NutationInLongitude(self.julianDay.value)) }
     }
     
     /// The nutation is a periodic oscillation of the rotational axis of the Earth around its "mean" position
     /// It is due principally to the action of the Moon. It can be decomposed into components parallel and
     /// perpendicular to the ecliptic.
     /// Here it is that component perpendicular to the ecliptic.
-    public var nutationInObliquity: ArcMinute {
-        get { return ArcMinute(KPCAANutation_NutationInObliquity(self.julianDay.value)) }
+    public var nutationInObliquity: ArcSecond {
+        get { return ArcSecond(KPCAANutation_NutationInObliquity(self.julianDay.value)) }
     }
     
     //public func nutationInRightAscension(julianDay: JulianDay) -> Double {
