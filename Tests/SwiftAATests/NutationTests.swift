@@ -28,13 +28,13 @@ class NutationTests: XCTestCase {
     func testNutationInLongitude() { // See AA p.148
         let jd = JulianDay(year: 1987, month: 4, day: 10, hour: 0, minute: 0, second: 0)
         let earth = Earth(julianDay: jd)
-        AssertEqual(earth.nutationInLongitude, ArcMinute(-3.788), accuracy: ArcMinute(0.0001))
+        AssertEqual(earth.nutationInLongitude, ArcSecond(-3.788), accuracy: ArcSecond(0.0001))
     }
 
     func testNutationInObliquity() { // See AA p.148
         let jd = JulianDay(year: 1987, month: 4, day: 10, hour: 0, minute: 0, second: 0)
         let earth = Earth(julianDay: jd)
-        AssertEqual(earth.nutationInObliquity, ArcMinute(9.44252), accuracy: ArcMinute(0.0001))
+        AssertEqual(earth.nutationInObliquity, ArcSecond(9.44252), accuracy: ArcSecond(0.0001))
     }
 }
 

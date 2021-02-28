@@ -19,8 +19,8 @@ class VenusTests: XCTestCase {
     // See AA p.225
     func testApparentGeocentricCoordinates() {
         let venus = Venus(julianDay: JulianDay(year: 1992, month: 12, day: 20))
-        AssertEqual(Hour(venus.planetaryDetails.ApparentGeocentricRA), Hour(21.078181), accuracy: ArcSecond(0.1).inHours)
-        AssertEqual(Degree(venus.planetaryDetails.ApparentGeocentricDeclination), Degree(-18.88801), accuracy: ArcSecond(0.1).inDegrees)
+        AssertEqual(Hour(venus.allPlanetaryDetails.ApparentGeocentricRA), Hour(21.078181), accuracy: ArcSecond(0.1).inHours)
+        AssertEqual(Degree(venus.allPlanetaryDetails.ApparentGeocentricDeclination), Degree(-18.88801), accuracy: ArcSecond(0.1).inDegrees)
     }
     
     // See AA p.284
