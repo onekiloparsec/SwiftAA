@@ -9,8 +9,7 @@
 import Foundation
 
 /**
- *  The PlanetaryPhenomena protocol encompass all methods associated with planetary phenomena in the solar system:
- *  conjunction, oppotisions, etc.
+ *  The PlanetaryPhysicalDetails protocol encompass physical quantities that can be computed for two planets only: Mars & Jupiter.
  */
 public protocol PlanetaryPhysicalDetails: PlanetaryBase {
     
