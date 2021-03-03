@@ -117,9 +117,9 @@ public extension PlanetaryDetails {
             guard self.planet != .Pluto else {
                 throw InvalidParameterError.invalidPlanet(self.planet)
             }
-            return Degree(KPCAADiameters_EquatorialSemiDiameterA(self.planetStrict, self.trueGeocentricDistance.value))
+            return Degree(KPCAADiameters_EquatorialSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
-            return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.trueGeocentricDistance.value))
+            return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
         }
     }
     
@@ -129,9 +129,10 @@ public extension PlanetaryDetails {
             guard self.planet != .Pluto else {
                 throw InvalidParameterError.invalidPlanet(self.planet)
             }
-            return Degree(KPCAADiameters_PolarSemiDiameterA(self.planetStrict, self.trueGeocentricDistance.value))
+            return Degree(KPCAADiameters_PolarSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
-            return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.trueGeocentricDistance.value))
+            return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
         }
     }
+    
 }
