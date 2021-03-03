@@ -17,18 +17,12 @@ enum InvalidParameterError: Error {
 public protocol PlanetaryDetails: PlanetaryBase {
     /// The details of the planet configuration
     var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails { get }
-    
-    /// The details of the object configuration
-    var allObjectDetails: KPCAAEllipticalObjectDetails { get }
-    
+        
     /// Useful named accessors:
  
     /// The apparent geocentric distance
     var apparentGeocentricDistance: AstronomicalUnit { get }
-    
-    /// The true geocentric distance of the planet
-    var trueGeocentricDistance: AstronomicalUnit { get }
-    
+        
     /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree { get }
     
@@ -61,11 +55,7 @@ public extension PlanetaryDetails {
     var apparentGeocentricDistance: AstronomicalUnit {
         get { return AstronomicalUnit(self.allPlanetaryDetails.ApparentGeocentricDistance) }
     }
-    
-    var trueGeocentricDistance: AstronomicalUnit {
-        get { return AstronomicalUnit(self.allObjectDetails.TrueGeocentricDistance) }
-    }
-    
+        
     /// The phase angle, that is the angle (Sun-planet-Earth).
     var phaseAngle: Degree {
         get { return Degree(KPCAAIlluminatedFraction_PhaseAngle(self.radiusVector.value,

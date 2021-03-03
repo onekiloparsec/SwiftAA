@@ -11,6 +11,9 @@ import ObjCAA
 
 /// This protocol encompasses various elements of planetary orbits.
 public protocol PlanetaryOrbits: PlanetaryBase {
+    /// The details of the object configuration
+    var allObjectDetails: KPCAAEllipticalObjectDetails { get }
+
     /// Computes the mean longitude of the orbit
     ///
     /// - Parameter equinox: The equinox for which the computation is made
@@ -43,7 +46,10 @@ public protocol PlanetaryOrbits: PlanetaryBase {
     ///
     /// - Parameter equinox: The equinox for which the computation is made
     /// - Returns: The longitude in degrees
-    func longitudeOfPerihelion(_ equinox: Equinox) -> Degree    
+    func longitudeOfPerihelion(_ equinox: Equinox) -> Degree
+    
+    /// The true geocentric distance between the planet and the Earth's center
+    var trueGeocentricDistance: AstronomicalUnit { get }
 }
 
 public extension PlanetaryOrbits {
@@ -111,5 +117,10 @@ public extension PlanetaryOrbits {
         default:
             return Degree(KPCAAElementsPlanetaryOrbit_LongitudePerihelion(self.planetStrict, self.julianDay.value))
         }
+    }
+    
+    
+    var trueGeocentricDistance: AstronomicalUnit {
+        get { return AstronomicalUnit(self.allObjectDetails.TrueGeocentricDistance) }
     }
 }

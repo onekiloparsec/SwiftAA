@@ -29,7 +29,7 @@ public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena
     /// once all relevant accessors are implemented and covered.
     public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
+        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision)
         }()
     
     
@@ -65,7 +65,7 @@ public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena
 
 /// The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
 /// So far, only Pluto is concerned.
-public class DwarfPlanet: Object, PlanetaryDetails {
+public class DwarfPlanet: Object, PlanetaryDetails, PlanetaryOrbits {
     
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
     /// once all relevant accessors are implemented and covered.
@@ -78,7 +78,7 @@ public class DwarfPlanet: Object, PlanetaryDetails {
     /// once all relevant accessors are implemented and covered.
     public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.highPrecision)
+        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision)
         }()
 }
 
