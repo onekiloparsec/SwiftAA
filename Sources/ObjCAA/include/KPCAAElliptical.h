@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KPCAA3DCoordinate.h"
 #import "KPCAAPlanetaryPhenomena.h"
+#import "KPCAASwiftAdditions.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,13 +29,13 @@ typedef NS_ENUM(NSUInteger, KPCAAEllipticalObject) {
 };
 
 typedef struct KPCAAEllipticalObjectElements {
-    double a;
-    double e;
-    double i;
-    double w;
-    double omega;
-    double JDEquinox;
-    double T;
+    double a; // semi-major axis (AU)
+    double e; // eccentricity
+    double i; // inclination (degree)
+    double w; // longitude (argument) of perihelion, yes it corresponds to lowercase omega in Meeu's book (see pp 228).
+    double omega; // longitude of ascending node, yes it corresponds to capital Omega in Meeus' book (see pp 228).
+    double JDEquinox; // J2000
+    double T; // time of perihelion
 } KPCAAEllipticalObjectElements;
 
 typedef struct KPCAAEllipticalPlanetaryDetails {
@@ -69,7 +70,7 @@ KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double
 double KPCAAElliptical_SemiMajorAxisFromPerihelionDistance(double q, double e);
 double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a);
 KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision);
-KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, BOOL highPrecision);
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, KPCAAPlanetStrict planetStrict, BOOL highPrecision);
 double KPCAAElliptical_InstantaneousVelocity(double r, double a);
 double KPCAAElliptical_VelocityAtPerihelion(double e, double a);
 double KPCAAElliptical_VelocityAtAphelion(double e, double a);

@@ -7,6 +7,10 @@
 //
 
 #import "KPCAAElliptical.h"
+#import "KPCAAElementsPlanetaryOrbit.h"
+#import "KPCAAPlanetPerihelionAphelion.h"
+#import "KPCAADate.h"
+#import "AADate.h"
 #import "AAElliptical.h"
 #include <stdexcept>
 
@@ -81,16 +85,17 @@ double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a)
 KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision)
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
+    
+    elementsPlus.a = (*elements).a;
+    elementsPlus.e = (*elements).e;
+    elementsPlus.i = (*elements).i;
+    elementsPlus.w = (*elements).w;
+    elementsPlus.omega = (*elements).omega;
+    elementsPlus.JDEquinox = (*elements).JDEquinox;
+    elementsPlus.T = (*elements).T;
+
     CAAEllipticalObjectDetails detailsPlus = CAAElliptical::Calculate(JD, elementsPlus, highPrecision);
     
-    (*elements).a = elementsPlus.a;
-    (*elements).e = elementsPlus.e;
-    (*elements).i = elementsPlus.i;
-    (*elements).w = elementsPlus.w;
-    (*elements).omega = elementsPlus.omega;
-    (*elements).JDEquinox = elementsPlus.JDEquinox;
-    (*elements).T = elementsPlus.T;
-
     struct KPCAAEllipticalObjectDetails details;
     
     details.HeliocentricRectangularEquatorialCoordinateComponents = KPCAA3DCoordinateComponentsMake(detailsPlus.HeliocentricRectangularEquatorial.X,
@@ -117,9 +122,22 @@ KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, K
     return details;
 }
 
-KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, BOOL highPrecision)
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, KPCAAPlanetStrict planetStrict, BOOL highPrecision)
 {
-    KPCAAEllipticalObjectElements elements;
+    struct KPCAAEllipticalObjectElements elements;
+    
+    elements.a = KPCAAElementsPlanetaryOrbit_SemimajorAxis(planetStrict, JD);
+    elements.e = KPCAAElementsPlanetaryOrbit_Eccentricity(planetStrict, JD);
+    elements.i = KPCAAElementsPlanetaryOrbit_Inclination(planetStrict, JD);
+    elements.w = KPCAAElementsPlanetaryOrbit_LongitudePerihelion(planetStrict, JD);
+    elements.omega = KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(planetStrict, JD);
+    
+    elements.JDEquinox = 2451545.0; // J2000
+    
+    double fractionalYear = CAADate(JD, true).FractionalYear();
+    long k = KPCAAPlanetPerihelionAphelion_K(fractionalYear, planetStrict);
+    elements.T = KPCAAPlanetPerihelionAphelion_Perihelion(k, planetStrict);
+    
     return KPCAAElliptical_CalculateObjectDetails(JD, &elements, highPrecision);
 }
 
