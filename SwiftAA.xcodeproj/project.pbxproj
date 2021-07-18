@@ -523,8 +523,6 @@
 		9FC895602503D797004E9055 /* KPCAAEquationOfTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */; };
 		9FC895612503D797004E9055 /* AAAngularSeparation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C85F1F51D34100FF13BA /* AAAngularSeparation.cpp */; };
 		9FC895622503D797004E9055 /* KPCAAElementsPlanetaryOrbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF028251B4990CB008B28A6 /* KPCAAElementsPlanetaryOrbit.mm */; };
-		9FC895642503D797004E9055 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF2138523E57D6B00E4F248 /* Foundation.framework */; };
-		9FC895672503D797004E9055 /* Foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF2138523E57D6B00E4F248 /* Foundation.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9FD1F44B1E6E08C900EC5D66 /* EarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1F4491E6E08C900EC5D66 /* EarthTests.swift */; };
 		9FD71F6C1D736F4100E6F656 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6A1D736F4100E6F656 /* Moon.swift */; };
 		9FD71F6F1D736FCB00E6F656 /* CelestialBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */; };
@@ -576,7 +574,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9FC895672503D797004E9055 /* Foundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1018,7 +1015,6 @@
 		9FF028281B4A5434008B28A6 /* KPCAAElliptical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAElliptical.h; path = ObjCAA/include/KPCAAElliptical.h; sourceTree = "<group>"; };
 		9FF028291B4A5434008B28A6 /* KPCAAElliptical.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAElliptical.mm; path = ObjCAA/KPCAAElliptical.mm; sourceTree = "<group>"; };
 		9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		9FF2138523E57D6B00E4F248 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9FF55F8C1B4B093900A99DA2 /* KPCAAEquationOfTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquationOfTime.h; path = ObjCAA/include/KPCAAEquationOfTime.h; sourceTree = "<group>"; };
 		9FF55F8D1B4B093900A99DA2 /* KPCAAEquationOfTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAAEquationOfTime.mm; path = ObjCAA/KPCAAEquationOfTime.mm; sourceTree = "<group>"; };
 		9FF55F901B4B099700A99DA2 /* KPCAAEquinoxesAndSolstices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAAEquinoxesAndSolstices.h; path = ObjCAA/include/KPCAAEquinoxesAndSolstices.h; sourceTree = "<group>"; };
@@ -1059,7 +1055,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC895642503D797004E9055 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1108,7 +1103,6 @@
 		9F1F910823B3B316008BF62A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9FF2138523E57D6B00E4F248 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
