@@ -20,17 +20,15 @@ public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena
         
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails = {
-        [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
-        }()
+    public var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails {
+        get { return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision) }
+    }
     
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
-        [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision)
-        }()
+    public var allObjectDetails: KPCAAEllipticalObjectDetails {
+        get { return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision) }
+    }
     
     
     /// The coordinates of the object in the equatorial system (based on Earth equator), with the Earth's center as its origin.
@@ -69,17 +67,15 @@ public class DwarfPlanet: Object, PlanetaryDetails, PlanetaryOrbits {
     
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails = {
-        [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision)
-        }()
+    public var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails {
+        get { return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision) }
+    }
     
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
-        [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision)
-        }()
+    public var allObjectDetails: KPCAAEllipticalObjectDetails {
+        get { return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision) }
+    }
 }
 
 

@@ -51,11 +51,10 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
-    public lazy var allObjectDetails: KPCAAEllipticalObjectDetails = {
-        [unowned self] in
-        return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision)
-        }()
-
+    public var allObjectDetails: KPCAAEllipticalObjectDetails {
+        get { return KPCAAElliptical_CalculateObjectDetailsNoElements(self.julianDay.value, self.planetStrict, self.highPrecision) }
+    }
+    
     /// The longitude of the ascending node.
     public var longitudeOfAscendingNode: Degree {
         get { return Degree(KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(self.planetStrict, self.julianDay.value)) }
