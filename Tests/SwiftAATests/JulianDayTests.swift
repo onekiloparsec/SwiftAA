@@ -30,7 +30,8 @@ class JulianDayTest: XCTestCase {
         components.second = 4
         components.nanosecond = 500000000
         let date = Calendar.gregorianGMT.date(from: components)!
-        let jd = JulianDay(2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0)
+        // 2421123.5 + 2.0/24.0 + 3.0/1440.0 + (4.0+500000000/1e9)/86400.0
+        let jd = JulianDay(2421123.58546875)
         AssertEqual(date.julianDay, jd, accuracy: Second(0.001).inJulianDays)
     }
 
@@ -66,7 +67,8 @@ class JulianDayTest: XCTestCase {
 
     func testJulian2016() {
         let components = DateComponents(year: 2016, month: 12, day: 21, hour: 01, minute: 04, second: 09, nanosecond: Int(0.1035*1e9))
-        let jd = JulianDay(2457743.5 + 01.0/24.0 + 04.0/1440.0 + 09.1035/86400)
+        // 2457743.5 + 1.0/24.0 + 4.0/1440.0 + 9.1035/86400
+        let jd = JulianDay(2457743.544549809)
         testJulian(components, jd)
         let jd2 = JulianDay(year: 2016, month: 12, day: 21, hour: 1, minute: 4, second: 9.1035)
         AssertEqual(jd, jd2, accuracy: Second(0.001).inJulianDays)
@@ -74,13 +76,15 @@ class JulianDayTest: XCTestCase {
     
     func testJulian1980() {
         let components = DateComponents(year: 1980, month: 03, day: 15, hour: 03, minute: 47, second: 05, nanosecond: 0)
-        let jd = JulianDay(2444313.5 + 03.0/24.0 + 47.0/1440.0 + 05.0/86400.0)
+        // 2444313.5 + 03.0/24.0 + 47.0/1440.0 + 05.0/86400.0
+        let jd = JulianDay(2444313.6576967593)
         testJulian(components, jd)
     }
     
     func testJulian1932() {
         let components = DateComponents(year: 1932, month: 10, day: 02, hour: 21, minute: 15, second: 59, nanosecond: 0)
-        let jd = JulianDay(2426982.5 + 21.0/24.0 + 15.0/1440.0 + 59.0/86400.0)
+        // 2426982.5 + 21.0/24.0 + 15.0/1440.0 + 59.0/86400.0
+        let jd = JulianDay(2426983.386099537)
         testJulian(components, jd)
     }
     
