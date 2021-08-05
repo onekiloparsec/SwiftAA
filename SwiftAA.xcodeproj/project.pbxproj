@@ -961,7 +961,7 @@
 		9F7CBFAE1D16B8E100E13FB1 /* PlanetaryBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaryBase.swift; sourceTree = "<group>"; };
 		9F7CBFB11D16C4BE00E13FB1 /* Uranus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
 		9F7CBFB41D16E56800E13FB1 /* Saturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
-		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; };
+		9F7CBFB71D16E58700E13FB1 /* Pluto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pluto.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F8681CA1E6E91BB00C59F04 /* UranusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UranusTests.swift; sourceTree = "<group>"; };
 		9F8681CD1E6E91DF00C59F04 /* SaturnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaturnTests.swift; sourceTree = "<group>"; };
 		9F8681D01E6E91FE00C59F04 /* JupiterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JupiterTests.swift; sourceTree = "<group>"; };
@@ -1552,6 +1552,7 @@
 			children = (
 				9FB755261E05B59000EC7617 /* Numeric Types */,
 				9FDA5C321D16E6B6003B9F31 /* Common */,
+				9FE289C925EF72D4008DC5F8 /* Astronomical Coordinates */,
 				9FB70C681D25A3BD00A03C6D /* Solar System Base */,
 				9FDA5C311D16E6A7003B9F31 /* Solar System */,
 				9F1F12981D7C6A50006FD828 /* Astronomical Objects */,
@@ -1696,10 +1697,17 @@
 				9FF037A01E3BF5BC00460D6F /* DateExtensions.swift */,
 				9FB755311E05F14A00EC7617 /* ScientificConstants.swift */,
 				9F525B2C1D3CB58300041696 /* ObjectBase.swift */,
-				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
 				9FD71F6D1D736FCB00E6F656 /* CelestialBodies.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		9FE289C925EF72D4008DC5F8 /* Astronomical Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				9F502F0D1D3EBFFF002C394F /* AstronomicalCoordinates.swift */,
+			);
+			name = "Astronomical Coordinates";
 			sourceTree = "<group>";
 		};
 		9FEA1DD21DA1679B00F7E346 /* Not Swifted */ = {
