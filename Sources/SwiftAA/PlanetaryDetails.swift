@@ -43,11 +43,11 @@ public protocol PlanetaryDetails: PlanetaryBase {
     /// There are also older values (1980) named "A" values. In the case of Venus, the "B" value refers to the planet's
     /// crust, while the "A" value refers to the top of the cloud level. The latter is more relevant for astronomical
     /// phenomena such as transits and occultations.
-    func equatorialSemiDiameter(usingOldValues: Bool) throws -> Degree
+    func equatorialSemiDiameter(usingOldValues: Bool) throws -> ArcSecond
 
     /// The polar semi diameter of the planet. See `equatorialSemiDiameter` about "A" et "B" values.
     /// Note that for all planets but Jupiter and Saturn, the polarSemiDiameter is identical to the equatorial one.
-    func polarSemiDiameter(usingOldValues: Bool) throws -> Degree
+    func polarSemiDiameter(usingOldValues: Bool) throws -> ArcSecond
 }
 
 public extension PlanetaryDetails {
