@@ -102,26 +102,26 @@ public extension PlanetaryDetails {
     }
     
     /// The equatorial semi diameter of the object
-    func equatorialSemiDiameter(usingOldValues: Bool = false) throws -> Degree {
+    func equatorialSemiDiameter(usingOldValues: Bool = false) throws -> ArcSecond {
         if (usingOldValues) {
             guard self.planet != .Pluto else {
                 throw InvalidParameterError.invalidPlanet(self.planet)
             }
-            return Degree(KPCAADiameters_EquatorialSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
+            return ArcSecond(KPCAADiameters_EquatorialSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
-            return Degree(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
+            return ArcSecond(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
         }
     }
     
     /// The polar semi diameter of the object.
-    func polarSemiDiameter(usingOldValues: Bool = false) throws -> Degree {
+    func polarSemiDiameter(usingOldValues: Bool = false) throws -> ArcSecond {
         if (usingOldValues) {
             guard self.planet != .Pluto else {
                 throw InvalidParameterError.invalidPlanet(self.planet)
             }
-            return Degree(KPCAADiameters_PolarSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
+            return ArcSecond(KPCAADiameters_PolarSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
-            return Degree(KPCAADiameters_PolarSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
+            return ArcSecond(KPCAADiameters_PolarSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
         }
     }
     
