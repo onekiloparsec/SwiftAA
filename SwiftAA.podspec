@@ -31,6 +31,6 @@ to become the most reliable source of astronomical computations.
   s.swift_version = "5"
 
   s.source_files  = "Sources", "Sources/SwiftAA/*.swift"
-  s.dependency 'ObjCAA', '~> 2.3.0'
+  s.dependency 'ObjCAA', '~> 2.3.1'
 
 end
