@@ -32,7 +32,7 @@ let package = Package(
             name: "AAplus",
             dependencies: [],
             path: "Sources/AA+",
-            exclude: ["Sources/AA+/naughter.css", "Sources/AA+/CMakeLists.txt", "Sources/AA+/AA+.htm"]
+            exclude: ["naughter.css", "CMakeLists.txt", "AA+.htm"]
         ),
         .target(
             name: "ObjCAA",
