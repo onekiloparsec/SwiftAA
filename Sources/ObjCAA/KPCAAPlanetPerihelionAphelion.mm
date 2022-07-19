@@ -17,12 +17,12 @@ long KPCAAPlanetPerihelionAphelion_MercuryK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_MercuryPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::MercuryPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Mercury(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_MercuryAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::MercuryAphelion(k);
+    return CAAPlanetPerihelionAphelion::Mercury(k);
 }
 
 
@@ -33,12 +33,12 @@ long KPCAAPlanetPerihelionAphelion_VenusK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_VenusPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::VenusPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Venus(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_VenusAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::VenusAphelion(k);
+    return CAAPlanetPerihelionAphelion::Venus(k);
 }
 
 
@@ -65,12 +65,12 @@ long KPCAAPlanetPerihelionAphelion_MarsK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_MarsPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::MarsPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Mars(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_MarsAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::MarsAphelion(k);
+    return CAAPlanetPerihelionAphelion::Mars(k);
 }
 
 
@@ -81,12 +81,12 @@ long KPCAAPlanetPerihelionAphelion_JupiterK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_JupiterPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::JupiterPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Jupiter(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_JupiterAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::JupiterAphelion(k);
+    return CAAPlanetPerihelionAphelion::Jupiter(k);
 }
 
 
@@ -97,12 +97,12 @@ long KPCAAPlanetPerihelionAphelion_SaturnK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_SaturnPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::SaturnPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Saturn(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_SaturnAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::SaturnAphelion(k);
+    return CAAPlanetPerihelionAphelion::Saturn(k);
 }
 
 
@@ -113,12 +113,12 @@ long KPCAAPlanetPerihelionAphelion_UranusK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_UranusPerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::UranusPerihelion(k);
+    return CAAPlanetPerihelionAphelion::Uranus(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_UranusAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::UranusAphelion(k);
+    return CAAPlanetPerihelionAphelion::Uranus(k);
 }
 
 
@@ -129,12 +129,12 @@ long KPCAAPlanetPerihelionAphelion_NeptuneK(double Year)
 
 double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::NeptunePerihelion(k);
+    return CAAPlanetPerihelionAphelion::Neptune(k);
 }
 
 double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k)
 {
-    return CAAPlanetPerihelionAphelion::NeptuneAphelion(k);
+    return CAAPlanetPerihelionAphelion::Neptune(k);
 }
 
 long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet)
