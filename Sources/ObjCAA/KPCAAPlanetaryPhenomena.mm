@@ -19,31 +19,31 @@ double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlan
         runningType = INFERIOR_CONJUNCTION;
     }
 
-    return CAAPlanetaryPhenomena::K(Year, (CAAPlanetaryPhenomena::PlanetaryObject)object, (CAAPlanetaryPhenomena::EventType)runningType);
+    return CAAPlanetaryPhenomena::K(Year, (CAAPlanetaryPhenomena::Planet)object, (CAAPlanetaryPhenomena::Type)runningType);
 }
 
 double KPCAAPlanetaryPhenomena_Mean(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    return CAAPlanetaryPhenomena::Mean(k, (CAAPlanetaryPhenomena::PlanetaryObject)object, (CAAPlanetaryPhenomena::EventType)type);
+    return CAAPlanetaryPhenomena::Mean(k, (CAAPlanetaryPhenomena::Planet)object, (CAAPlanetaryPhenomena::Type)type);
 }
 
 double KPCAAPlanetaryPhenomena_True(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    return CAAPlanetaryPhenomena::True(k, (CAAPlanetaryPhenomena::PlanetaryObject)object, (CAAPlanetaryPhenomena::EventType)type);
+    return CAAPlanetaryPhenomena::True(k, (CAAPlanetaryPhenomena::Planet)object, (CAAPlanetaryPhenomena::Type)type);
 }
 
 double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, BOOL eastern)
 {
-    return CAAPlanetaryPhenomena::ElongationValue(k, (CAAPlanetaryPhenomena::PlanetaryObject)object, (bool)eastern);
+    return CAAPlanetaryPhenomena::ElongationValue(k, (CAAPlanetaryPhenomena::Planet)object, (bool)eastern);
 }
 
 double KPCAAPlanetaryPhenomena(BOOL mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);    
+    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);
     if (mean) {
-        return KPCAAPlanetaryPhenomena_Mean(k, object, type);
+        return KPCAAPlanetaryPhenomena_Mean(round(k), object, type);
     }
     else {
-        return KPCAAPlanetaryPhenomena_True(k, object, type);
+        return KPCAAPlanetaryPhenomena_True(round(k), object, type);
     }
 }

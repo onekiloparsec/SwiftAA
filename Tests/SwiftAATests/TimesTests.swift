@@ -95,8 +95,8 @@ class TimesTests: XCTestCase {
         let northwardEquinox = earth.equinox(of: .northwardSpring)
         XCTAssertEqual(northwardEquinox.value, JulianDay(2437744.6042503607).value)
         
-        // TT -> UT1
-        XCTAssertEqual(northwardEquinox.TTtoUT1(), JulianDay(year: 1962, month: 3, day: 21, hour: 2, minute: 29, second: 33.140024))
+        // TT -> UT1 Note: before version with v2.44, it was not necessary to provide accuracy in this test.
+        AssertEqual(northwardEquinox.TTtoUT1(), JulianDay(year: 1962, month: 3, day: 21, hour: 2, minute: 29, second: 33.140024), accuracy: JulianDay(0.0000001))
         
         // TT -> UT1 -> TT
         XCTAssertEqual(northwardEquinox.TTtoUT1().UT1toTT(), JulianDay(year: 1962, month: 3, day: 21, hour: 2, minute: 30, second: 7.231168))

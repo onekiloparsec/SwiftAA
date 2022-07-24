@@ -247,7 +247,7 @@ public extension KPCAAPlanetStrict {
     }
 }
 
-/// KPCPlanetaryObject is an enum for all planets, exlcuding Earth and Pluto.
+/// KPCPlanetaryObject is an enum for all planets, excluding Earth and Pluto.
 public extension KPCPlanetaryObject {
     
     /// Returns the planetary object index from a given planet index.
@@ -301,7 +301,7 @@ public extension KPCPlanetaryObject {
 }
 
 
-/// KPCAAEllipticalObject is an enum for the Sun, all planets, exlcuding Earth but including Pluto.
+/// KPCAAEllipticalObject is an enum for the Sun, all planets, excluding Earth but including Pluto.
 public extension KPCAAEllipticalObject {
     
     /// Returns the elliptical object index from a given planet index.
@@ -324,8 +324,6 @@ public extension KPCAAEllipticalObject {
             return .URANUS_elliptical
         case .Neptune:
             return .NEPTUNE_elliptical
-        case .Pluto:
-            return .PLUTO_elliptical
         default:
             return .UNDEFINED_elliptical
         }

@@ -14,43 +14,43 @@ extern "C" {
 #endif
 
 long KPCAAPlanetPerihelionAphelion_MercuryK(double Year);
-double KPCAAPlanetPerihelionAphelion_MercuryPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_MercuryAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_MercuryPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_MercuryAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_VenusK(double Year);
-double KPCAAPlanetPerihelionAphelion_VenusPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_VenusAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_VenusPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_VenusAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_EarthK(double Year);
-double KPCAAPlanetPerihelionAphelion_EarthPerihelion(long k, BOOL barycentric);
-double KPCAAPlanetPerihelionAphelion_EarthAphelion(long k, BOOL barycentric);
+double KPCAAPlanetPerihelionAphelion_EarthPerihelion(double k, BOOL barycentric);
+double KPCAAPlanetPerihelionAphelion_EarthAphelion(double k, BOOL barycentric);
 
 long KPCAAPlanetPerihelionAphelion_MarsK(double Year);
-double KPCAAPlanetPerihelionAphelion_MarsPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_MarsAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_MarsPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_MarsAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_JupiterK(double Year);
-double KPCAAPlanetPerihelionAphelion_JupiterPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_JupiterAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_JupiterPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_JupiterAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_SaturnK(double Year);
-double KPCAAPlanetPerihelionAphelion_SaturnPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_SaturnAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_SaturnPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_SaturnAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_UranusK(double Year);
-double KPCAAPlanetPerihelionAphelion_UranusPerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_UranusAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_UranusPerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_UranusAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_NeptuneK(double Year);
-double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(long k);
-double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(long k);
+double KPCAAPlanetPerihelionAphelion_NeptunePerihelion(double k);
+double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(double k);
 
     
 // SwiftAA Additions
     
-long KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet);
-double KPCAAPlanetPerihelionAphelion_Perihelion(long k, KPCAAPlanetStrict planet);
-double KPCAAPlanetPerihelionAphelion_Aphelion(long k, KPCAAPlanetStrict planet);
+double KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet);
+double KPCAAPlanetPerihelionAphelion_Perihelion(double k, KPCAAPlanetStrict planet);
+double KPCAAPlanetPerihelionAphelion_Aphelion(double k, KPCAAPlanetStrict planet);
     
 #if __cplusplus
 }

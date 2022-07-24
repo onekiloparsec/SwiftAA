@@ -15,6 +15,7 @@
 extern "C" {
 #endif
 
+// As for AA+ 2.44 onward, there is no more PLUTO_elliptical.
 typedef NS_ENUM(NSUInteger, KPCAAEllipticalObject) {
     SUN_elliptical,
     MERCURY_elliptical,
@@ -24,7 +25,6 @@ typedef NS_ENUM(NSUInteger, KPCAAEllipticalObject) {
     SATURN_elliptical,
     URANUS_elliptical,
     NEPTUNE_elliptical,
-    PLUTO_elliptical,
     UNDEFINED_elliptical = 999 // Swift Addition
 };
 

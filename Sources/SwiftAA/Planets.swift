@@ -63,14 +63,8 @@ public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena
 
 /// The DwarfPlanet class encompasses all the shared properties of so-called dwarf planets. 
 /// So far, only Pluto is concerned.
-public class DwarfPlanet: Object, PlanetaryDetails, PlanetaryOrbits {
-    
-    /// Accessor to all values of the underlying elliptical planetary details. Will probably become private
-    /// once all relevant accessors are implemented and covered.
-    public var allPlanetaryDetails: KPCAAEllipticalPlanetaryDetails {
-        get { return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, self.ellipticalObject, self.highPrecision) }
-    }
-    
+public class DwarfPlanet: Object, PlanetaryOrbits {
+        
     /// Accessor to all values of the underlying object details. Will probably become private
     /// once all relevant accessors are implemented and covered.
     public var allObjectDetails: KPCAAEllipticalObjectDetails {

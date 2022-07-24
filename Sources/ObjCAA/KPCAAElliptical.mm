@@ -14,37 +14,33 @@
 #import "AAElliptical.h"
 #include <stdexcept>
 
-CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object);
-CAAElliptical::EllipticalObject ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object) {
+CAAElliptical::Object ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object);
+CAAElliptical::Object ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object) {
     switch (object) {
         case SUN_elliptical:
-            return CAAElliptical::EllipticalObject::SUN;
+            return CAAElliptical::Object::SUN;
             break;
         case MERCURY_elliptical:
-            return CAAElliptical::EllipticalObject::MERCURY;
+            return CAAElliptical::Object::MERCURY;
             break;
         case VENUS_elliptical:
-            return CAAElliptical::EllipticalObject::VENUS;
+            return CAAElliptical::Object::VENUS;
             break;
         case MARS_elliptical:
-            return CAAElliptical::EllipticalObject::MARS;
+            return CAAElliptical::Object::MARS;
             break;
         case JUPITER_elliptical:
-            return CAAElliptical::EllipticalObject::JUPITER;
+            return CAAElliptical::Object::JUPITER;
             break;
         case SATURN_elliptical:
-            return CAAElliptical::EllipticalObject::SATURN;
+            return CAAElliptical::Object::SATURN;
             break;
         case URANUS_elliptical:
-            return CAAElliptical::EllipticalObject::URANUS;
+            return CAAElliptical::Object::URANUS;
             break;
         case NEPTUNE_elliptical:
-            return CAAElliptical::EllipticalObject::NEPTUNE;
+            return CAAElliptical::Object::NEPTUNE;
             break;
-        case PLUTO_elliptical:
-            return CAAElliptical::EllipticalObject::PLUTO;
-            break;
-
         default:
             throw std::invalid_argument("invalid object parameter");
             break;
@@ -58,7 +54,7 @@ double KPCAAElliptical_DistanceToLightTime(double Distance)
 
 KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCAAEllipticalObject object, BOOL highPrecision)
 {
-    CAAElliptical::EllipticalObject ellipticalObject = ellipticalObjectFromKPCAAEllipticalObject(object);
+    CAAElliptical::Object ellipticalObject = ellipticalObjectFromKPCAAEllipticalObject(object);
     CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, ellipticalObject, highPrecision);
     
     struct KPCAAEllipticalPlanetaryDetails details;
