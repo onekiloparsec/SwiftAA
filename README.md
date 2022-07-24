@@ -3,7 +3,7 @@
 </h3>
 <p align="center">
 <b>SwiftAA</b> &bull;
-<a href="https://github.com/onekiloparsec/AA.js">AA.js</a> &bull;
+<a href="https://github.com/onekiloparsec/aa-js">aa-js</a> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
@@ -31,7 +31,7 @@ SwiftAA (and ObjCAA)
 
 *(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
 
-Other implementations: [JavaScript (AA.js)](https://github.com/onekiloparsec/AA.js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
+Other implementations: [JavaScript (aa-js)](https://github.com/onekiloparsec/aa-js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
 
 See Notes below for the difference between ObjCAA and SwiftAA.
 
