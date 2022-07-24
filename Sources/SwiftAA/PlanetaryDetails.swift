@@ -103,10 +103,10 @@ public extension PlanetaryDetails {
     
     /// The equatorial semi diameter of the object
     func equatorialSemiDiameter(usingOldValues: Bool = false) throws -> ArcSecond {
+        guard self.planet != .Pluto else {
+            throw InvalidParameterError.invalidPlanet(self.planet)
+        }
         if (usingOldValues) {
-            guard self.planet != .Pluto else {
-                throw InvalidParameterError.invalidPlanet(self.planet)
-            }
             return ArcSecond(KPCAADiameters_EquatorialSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
             return ArcSecond(KPCAADiameters_EquatorialSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
@@ -115,10 +115,10 @@ public extension PlanetaryDetails {
     
     /// The polar semi diameter of the object.
     func polarSemiDiameter(usingOldValues: Bool = false) throws -> ArcSecond {
+        guard self.planet != .Pluto else {
+            throw InvalidParameterError.invalidPlanet(self.planet)
+        }
         if (usingOldValues) {
-            guard self.planet != .Pluto else {
-                throw InvalidParameterError.invalidPlanet(self.planet)
-            }
             return ArcSecond(KPCAADiameters_PolarSemiDiameterA(self.planetStrict, self.apparentGeocentricDistance.value))
         } else {
             return ArcSecond(KPCAADiameters_PolarSemiDiameterB(self.planet, self.apparentGeocentricDistance.value))
