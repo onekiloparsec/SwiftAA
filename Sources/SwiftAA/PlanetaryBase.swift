@@ -69,7 +69,7 @@ public extension PlanetaryBase {
     /// The julian day of the perihelion of the planet the after the given julian day of the object.
     var perihelion: JulianDay {
         get {
-            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict).rounded()
             return JulianDay(KPCAAPlanetPerihelionAphelion_Perihelion(k, self.planetStrict))
         }
     }
@@ -77,7 +77,7 @@ public extension PlanetaryBase {
     /// The julian day of the aphelion of the planet the after the given julian day of the object.
     var aphelion: JulianDay {
         get {
-            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict)
+            let k = KPCAAPlanetPerihelionAphelion_K(self.julianDay.date.fractionalYear, self.planetStrict).rounded() + 0.5
             return JulianDay(KPCAAPlanetPerihelionAphelion_Aphelion(k, self.planetStrict))
         }
     }
