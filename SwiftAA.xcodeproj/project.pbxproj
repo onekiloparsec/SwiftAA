@@ -1918,9 +1918,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F694EDF1D15C67300EE7492 /* Build configuration list for PBXNativeTarget "SwiftAA" */;
 			buildPhases = (
+				9F694E321D15C67300EE7492 /* Headers */,
 				9F694D8A1D15C67300EE7492 /* Sources */,
 				9F694E311D15C67300EE7492 /* Frameworks */,
-				9F694E321D15C67300EE7492 /* Headers */,
 				9F694EDE1D15C67300EE7492 /* Resources */,
 				9F1F910D23B3B317008BF62A /* Embed Libraries */,
 			);
