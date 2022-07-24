@@ -324,8 +324,6 @@ public extension KPCAAEllipticalObject {
             return .URANUS_elliptical
         case .Neptune:
             return .NEPTUNE_elliptical
-        case .Pluto:
-            return .PLUTO_elliptical
         default:
             return .UNDEFINED_elliptical
         }

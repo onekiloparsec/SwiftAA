@@ -20,8 +20,6 @@ class PlanetaryDiametersTests: XCTestCase {
         XCTAssertNotNil(try! Saturn(julianDay: jd).equatorialSemiDiameter(usingOldValues: true))
         XCTAssertNotNil(try! Uranus(julianDay: jd).equatorialSemiDiameter(usingOldValues: true))
         XCTAssertNotNil(try! Neptune(julianDay: jd).equatorialSemiDiameter(usingOldValues: true))
-        
-        XCTAssertThrowsError(try Pluto(julianDay: jd).equatorialSemiDiameter(usingOldValues: true))
     }
 
     func testNewValues() {
@@ -33,7 +31,6 @@ class PlanetaryDiametersTests: XCTestCase {
         XCTAssertNotNil(try! Saturn(julianDay: jd).equatorialSemiDiameter())
         XCTAssertNotNil(try! Uranus(julianDay: jd).equatorialSemiDiameter())
         XCTAssertNotNil(try! Neptune(julianDay: jd).equatorialSemiDiameter())
-        XCTAssertNotNil(try! Pluto(julianDay: jd).equatorialSemiDiameter())
     }
     
     func testEquatorialPolarComparedValues() {
