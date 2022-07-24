@@ -30,8 +30,8 @@ is crafted.
   s.swift_version = "5"
 
   s.name          = "ObjCAA"
-  s.source_files  = "Sources/ObjCAA", "Sources/ObjCAA/**/*.{h,cpp}", "Sources/aaplus-v2.08", "Sources/aaplus-v2.08/**/*.{h,cpp}"
+  s.source_files  = "Sources/ObjCAA", "Sources/ObjCAA/**/*.{h,cpp}", "Sources/aaplus-v2.44", "Sources/aaplus-v2.44/**/*.{h,cpp}"
   s.public_header_files = "Sources/ObjCAA/include/*.h"
-  s.exclude_files = "Sources/aaplus-v2.08/AATest.cpp"
+  s.exclude_files = "Sources/aaplus-v2.44/AATest.cpp"
 
 end
