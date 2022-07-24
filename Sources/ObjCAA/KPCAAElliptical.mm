@@ -41,10 +41,6 @@ CAAElliptical::Object ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalO
         case NEPTUNE_elliptical:
             return CAAElliptical::Object::NEPTUNE;
             break;
-//        case PLUTO_elliptical:
-//            return CAAElliptical::Object::PLUTO;
-//            break;
-
         default:
             throw std::invalid_argument("invalid object parameter");
             break;
