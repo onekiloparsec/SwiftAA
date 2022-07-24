@@ -86,7 +86,7 @@ public extension PlanetaryPhenomena {
 
     func elongationValue(eastern: Bool = true) -> Degree {
         let k = KPCAAPlanetaryPhenomena_K(self.julianDay.date.fractionalYear, self.planetaryObject, .EASTERN_ELONGATION)
-        return Degree(KPCAAPlanetaryPhenomena_ElongationValue(k, self.planetaryObject, eastern))
+        return Degree(KPCAAPlanetaryPhenomena_ElongationValue(k.rounded(), self.planetaryObject, eastern))
     }
 
 }

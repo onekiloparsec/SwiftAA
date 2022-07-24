@@ -39,11 +39,11 @@ double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject obje
 
 double KPCAAPlanetaryPhenomena(BOOL mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
-    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);    
+    double k = KPCAAPlanetaryPhenomena_K(Year, object, type);
     if (mean) {
-        return KPCAAPlanetaryPhenomena_Mean(k, object, type);
+        return KPCAAPlanetaryPhenomena_Mean(round(k), object, type);
     }
     else {
-        return KPCAAPlanetaryPhenomena_True(k, object, type);
+        return KPCAAPlanetaryPhenomena_True(round(k), object, type);
     }
 }
