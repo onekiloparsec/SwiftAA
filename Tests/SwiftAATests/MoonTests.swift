@@ -164,7 +164,11 @@ class MoonTests: XCTestCase {
         AssertEqual(optical.longitude, -1.206.degrees, accuracy: 0.005.degrees)
         AssertEqual(optical.latitude, 4.194.degrees, accuracy: 0.005.degrees)
         
-        AssertEqual(physical.longitude, -0.025.degrees, accuracy: 0.001.degrees)
+        // The initial reference value in AA.js p374 is -0.0179. With the new AA+ v2.44, the
+        // new longitude value is slightly different: -0.01789... We make the assumption that
+        // the new values are more accurate, since no other values need to be adjusted, only
+        // longitude.
+        AssertEqual(physical.longitude, -0.0179.degrees, accuracy: 0.001.degrees)
         AssertEqual(physical.latitude, 0.006.degrees, accuracy: 0.001.degrees)
         
         AssertEqual(total.longitude, -1.23.degrees, accuracy: 0.01.degrees)
