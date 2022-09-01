@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -32,7 +32,13 @@ let package = Package(
             name: "AAplus",
             dependencies: [],
             path: "Sources/AA+",
-            exclude: ["naughter.css", "CMakeLists.txt", "AA+.htm"]
+            exclude: ["naughter.css",
+                      "CMakeLists.txt",
+                      "AA+.htm",
+                      "include/AAVSOP2013.h",
+                      "include/AA+.h",
+                      "AAVSOP2013.cpp",
+                      "AATest.cpp"]
         ),
         .target(
             name: "ObjCAA",
@@ -51,5 +57,5 @@ let package = Package(
             name: "SwiftAATests",
             dependencies: ["SwiftAA"]),
     ],
-    cxxLanguageStandard: .gnucxx14
+    cxxLanguageStandard: .gnucxx17
 )
