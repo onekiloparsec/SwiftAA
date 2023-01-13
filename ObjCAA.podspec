@@ -32,6 +32,12 @@ is crafted.
   s.name          = "ObjCAA"
   s.source_files  = "Sources/ObjCAA", "Sources/ObjCAA/**/*.{h,cpp}", "Sources/aaplus-v2.44", "Sources/aaplus-v2.44/**/*.{h,cpp}"
   s.public_header_files = "Sources/ObjCAA/include/*.h"
-  s.exclude_files = "Sources/aaplus-v2.44/AATest.cpp"
+  s.exclude_files = "Sources/aaplus-v2.44/AATest.cpp", "Sources/aaplus-v2.44/include/AAVSOP2013.h", "Sources/aaplus-v2.44/AAVSOP2013.cpp"
+  
+  s.library = 'c++'
+  s.xcconfig = {
+       'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
+       'CLANG_CXX_LIBRARY' => 'libc++'
+  }
 
 end
