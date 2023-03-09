@@ -6,7 +6,7 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import <Foundation/Foundation.h>
+#import "PlatformHelpers.h"
 #import "KPCAA2DCoordinate.h"
 #import "KPCAA3DCoordinate.h"
 

@@ -9,7 +9,6 @@
 #import "KPCAAElliptical.h"
 #import "KPCAAElementsPlanetaryOrbit.h"
 #import "KPCAAPlanetPerihelionAphelion.h"
-#import "KPCAADate.h"
 #import "AADate.h"
 #import "AAElliptical.h"
 #include <stdexcept>

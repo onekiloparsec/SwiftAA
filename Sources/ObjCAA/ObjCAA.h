@@ -6,13 +6,7 @@
 //  Copyright © 2019 onekiloparsec. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-//! Project version number for ObjCAA.
-FOUNDATION_EXPORT double ObjCAAVersionNumber;
-
-//! Project version string for ObjCAA.
-FOUNDATION_EXPORT const unsigned char ObjCAAVersionString[];
+#import <ObjCAA/PlatformHelpers.h>
 
 // In this header, you should import all the public headers of your framework using statements like #import <ObjCAA/PublicHeader.h>
 

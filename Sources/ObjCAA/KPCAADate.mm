@@ -9,64 +9,20 @@
 #import "KPCAADate.h"
 #import "AADate.h"
 
-@interface KPCAADate () {
-    CAADate _wrapped;
-}
-@end
-
-@implementation KPCAADate
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _wrapped = CAADate();
-    }
-    return self;
+double KPCAADate_DateToJulianDay(long year, long month, long day, BOOL useGregorianCalendar) {
+    return CAADate::DateToJD(year, month, day, (bool)useGregorianCalendar);
 }
 
-- (instancetype)initWithWrappedDate:(CAADate)wrappedDate
-{
-    self = [super init];
-    if (self) {
-        _wrapped = wrappedDate;
-    }
-    return self;
+BOOL KPCAADate_IsLeapForYear(long year, BOOL useGregorianCalendar) {
+    return CAADate::IsLeap(year, (bool)useGregorianCalendar);
 }
 
-- (instancetype)initWithYear:(long)Year month:(long)Month day:(double)Day usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return [self initWithWrappedDate:CAADate(Year, Month, Day, (bool)gregorianCalendar)];
+void KPCAADate_DayOfYearToDayAndMonth(long dayOfYear, BOOL leapYear, long * dayOfMonth, long * month) {
+    return CAADate::DayOfYearToDayAndMonth(dayOfYear, (bool)leapYear, *dayOfMonth, *month);
 }
 
-- (instancetype)initWithYear:(long)Year month:(long)Month day:(double)Day hour:(double)Hour minute:(double)Minute second:(double)Second usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return [self initWithWrappedDate:CAADate(Year, Month, Day, Hour, Minute, Second, (bool)gregorianCalendar)];
-}
-
-- (instancetype)initWithJulianDay:(double)JD usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return [self initWithWrappedDate:CAADate(JD, (bool)gregorianCalendar)];
-}
-
-+ (double)DateToJDForYear:(long)Year month:(long)Month day:(double)Day usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return CAADate::DateToJD(Year, Month, Day, (bool)gregorianCalendar);
-}
-
-+ (BOOL)IsLeapForYear:(long)Year usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return CAADate::IsLeap(Year, (bool)gregorianCalendar);
-}
-
-+ (void)DayOfYearToDayAndMonth:(long)DayOfYear leap:(BOOL)leapYear dayOfMonth:(long *)DayOfMonth month:(long *)Month
-{
-    return CAADate::DayOfYearToDayAndMonth(DayOfYear, (bool)leapYear, *DayOfMonth, *Month);
-}
-
-+ (KPCAACalendarDate)JulianToGregorianForYear:(long)Year month:(long)Month day:(long)Day
-{
-    CAACalendarDate plusDate = CAADate::JulianToGregorian(Year, Month, Day);
+KPCAACalendarDate KPCAADate_JulianToGregorian(long year, long month, long day) {
+    CAACalendarDate plusDate = CAADate::JulianToGregorian(year, month, day);
     KPCAACalendarDate date;
     date.Year = plusDate.Year;
     date.Month = plusDate.Month;
@@ -74,9 +30,8 @@
     return date;
 }
 
-+ (KPCAACalendarDate)GregorianToJulianForYear:(long)Year month:(long)Month day:(long)Day
-{
-    CAACalendarDate plusDate = CAADate::GregorianToJulian(Year, Month, Day);
+KPCAACalendarDate KPCAADate_GregorianToJulian(long year, long month, long day) {
+    CAACalendarDate plusDate = CAADate::GregorianToJulian(year, month, day);
     KPCAACalendarDate date;
     date.Year = plusDate.Year;
     date.Month = plusDate.Month;
@@ -84,115 +39,107 @@
     return date;
 }
 
-+ (BOOL)AfterPapalReformForYear:(long)Year month:(long)Month day:(double)Day
-{
-    return (BOOL)CAADate::AfterPapalReform(Year, Month, Day);
+KPCAADateHandle KPCAADate_CreateWithDate(long year, long month, double day, BOOL useGregorianCalendar) {
+    KPCAADateHandle dateHandle = new CAADate(year, month, day, (bool)useGregorianCalendar);
+    return dateHandle;
 }
 
-+ (BOOL)AfterPapalReformForJulianDay:(double)JD
-{
-    return (BOOL)CAADate::AfterPapalReform(JD);
+KPCAADateHandle KPCAADate_CreateWithDateTime(long year, long month, double day, double hour, double minute, double second, BOOL useGregorianCalendar) {
+    KPCAADateHandle dateHandle = new CAADate(year, month, day, hour, minute, second, (bool)useGregorianCalendar);
+    return dateHandle;
 }
 
-+ (double)DayOfYearForJulianDay:(double)JD year:(long)Year usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    return CAADate::DayOfYear(JD, Year, (bool)gregorianCalendar);
+KPCAADateHandle KPCAADate_CreateWithJulianDay(double julianDay, BOOL useGregorianCalendar) {
+    KPCAADateHandle dateHandle = new CAADate(julianDay, (bool)useGregorianCalendar);
+    return dateHandle;
 }
 
-+ (long)DaysInMonth:(long)Month leap:(BOOL)leapYear
-{
-    return CAADate::DaysInMonth(Month, (bool)leapYear);
+void KPCAADate_Destroy(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    delete datePtr;
 }
 
-- (double)Julian
-{
-    return _wrapped.Julian();
+double KPCAADate_GetJulian(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Julian();
 }
 
-- (long)Day
-{
-    return _wrapped.Day();
+long KPCAADate_GetDay(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Day();
+}
+long KPCAADate_GetMonth(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Month();
+}
+long KPCAADate_GetYear(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Year();
+}
+long KPCAADate_GetHour(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Hour();
+}
+long KPCAADate_GetMinute(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Minute();
+}
+double KPCAADate_GetSecond(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Second();
 }
 
-- (long)Month
-{
-    return _wrapped.Month();
+void KPCAADate_SetDateTime(KPCAADateHandle date, long year, long month, double day, double hour, double minute, double second, BOOL useGregorianCalendar) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    datePtr->Set(year, month, day, hour, minute, second, (bool)useGregorianCalendar);
 }
 
-- (long)Year
-{
-    return _wrapped.Year();
+void KPCAADate_SetJulianDay(KPCAADateHandle date, double julianDay, BOOL useGregorianCalendar) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    datePtr->Set(julianDay, (bool)useGregorianCalendar);
 }
 
-- (long)Hour
-{
-    return _wrapped.Hour();
+void KPCAADate_SetIsInGregorianCalendar(KPCAADateHandle date, BOOL useGregorianCalendar) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    datePtr->SetInGregorianCalendar((bool)useGregorianCalendar);
 }
 
-- (long)Minute
-{
-    return _wrapped.Minute();
+void KPCAADate_GetDateTime(KPCAADateHandle date, long * year, long * month, long * day, long * hour, long * minute, double * second) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    datePtr->Get(*year, *month, *day, *hour, *minute, *second);
 }
 
-- (double)Second
-{
-    return _wrapped.Second();
+DAY_OF_WEEK KPCAADate_GetDayOfWeek(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return (DAY_OF_WEEK)datePtr->DayOfWeek();
 }
 
-- (void)setDateWithYear:(long)Year month:(long)Month day:(double)Day hour:(double)Hour minute:(double)Minute second:(double)Second usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    _wrapped.Set(Year, Month, Day, Hour, Minute, Second, (bool)gregorianCalendar);
+double KPCAADate_GetDayOfYear(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->DayOfYear();
 }
 
-- (void)setDateWithJulianDay:(double)JD usingGregorianCalendar:(BOOL)gregorianCalendar
-{
-    _wrapped.Set(JD, (bool)gregorianCalendar);
+long KPCAADate_GetDaysInMonth(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->DaysInMonth();
 }
 
-- (void)setInGregorianCalendar:(BOOL)gregorianCalendar
-{
-    _wrapped.SetInGregorianCalendar((bool)gregorianCalendar);
+long KPCAADate_GetDaysInYear(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->DaysInYear();
 }
 
-- (void)getDateWithYear:(long *)Year month:(long *)Month day:(long *)Day hour:(long *)Hour minute:(long *)Minute second:(double *)Second
-{
-    _wrapped.Get(*Year, *Month, *Day, *Hour, *Minute, *Second);
+BOOL KPCAADate_GetLeap(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->Leap();
 }
 
-- (DAY_OF_WEEK)DayOfWeek
-{
-    return (DAY_OF_WEEK)_wrapped.DayOfWeek();
+BOOL KPCAADate_GetIsInGregorianCalendar(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->InGregorianCalendar();
 }
 
-- (double)DayOfYear
-{
-    return _wrapped.DayOfYear();
+double KPCAADate_GetFractionalYear(KPCAADateHandle date) {
+    CAADate* datePtr = reinterpret_cast<CAADate *>(date);
+    return datePtr->FractionalYear();
 }
-
-- (long)DaysInMonth
-{
-    return _wrapped.DaysInMonth();
-}
-
-- (long)DaysInYear
-{
-    return _wrapped.DaysInYear();
-}
-
-- (BOOL)Leap
-{
-    return _wrapped.Leap();
-}
-
-- (BOOL)InGregorianCalendar
-{
-    return _wrapped.InGregorianCalendar();
-}
-
-- (double)FractionalYear
-{
-    return _wrapped.FractionalYear();
-}
-
-@end
-
