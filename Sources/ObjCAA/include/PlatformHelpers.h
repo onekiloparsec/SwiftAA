@@ -7,7 +7,7 @@
 // Set to 1 to never import Foundation, even if on an Apple platform. Useful for testing etc.
 #define NEVER_USE_FOUNDATION 1
 
-#include "TargetConditionals.h"
+//#include "TargetConditionals.h"
 
 #if (TARGET_OS_OSX || TARGET_OS_MACCATALYST || TARGET_OS_IOS || TARGET_OS_WATCH) && !NEVER_USE_FOUNDATION
 #import <Foundation/Foundation.h>
