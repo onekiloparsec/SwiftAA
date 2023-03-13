@@ -6,6 +6,10 @@
 //  Copyright © 2017 onekiloparsec. All rights reserved.
 //
 
+#import "PlatformHelpers.h"
+
+#if SHOULD_IMPORT_OBJC_FOUNDATION
+
 #import <XCTest/XCTest.h>
 #import "KPCAAPlanetaryPhenomena.h"
 #import "AAPlanetaryPhenomena.h"
@@ -30,3 +34,5 @@
 
 
 @end
+
+#endif

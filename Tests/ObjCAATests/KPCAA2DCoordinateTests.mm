@@ -6,6 +6,10 @@
 //  MIT Licence. See LICENCE file.
 //
 
+#import "PlatformHelpers.h"
+
+#if SHOULD_IMPORT_OBJC_FOUNDATION
+
 #import <XCTest/XCTest.h>
 #import "KPCAA2DCoordinate.h"
 
@@ -30,3 +34,5 @@
 }
 
 @end
+
+#endif
