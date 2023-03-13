@@ -7,9 +7,17 @@
 // Set to 1 to never import Foundation, even if on an Apple platform. Useful for testing etc.
 #define NEVER_USE_FOUNDATION 1
 
-//#include "TargetConditionals.h"
+#ifdef TARGET_OS_OSX
+    #if (TARGET_OS_OSX || TARGET_OS_MACCATALYST || TARGET_OS_IOS || TARGET_OS_WATCH) && !NEVER_USE_FOUNDATION
+        #define SHOULD_IMPORT_FOUNDATION 1
+    #else
+        #define SHOULD_IMPORT_FOUNDATION 0
+    #endif
+#else
+    #define SHOULD_IMPORT_FOUNDATION 0
+#endif
 
-#if (TARGET_OS_OSX || TARGET_OS_MACCATALYST || TARGET_OS_IOS || TARGET_OS_WATCH) && !NEVER_USE_FOUNDATION
+#if SHOULD_IMPORT_FOUNDATION
 #import <Foundation/Foundation.h>
 #else
 
@@ -25,5 +33,5 @@ typedef int NSInteger;
 typedef unsigned int NSUInteger;
 #endif
 
-#endif // OS check
+#endif // Foundation check
 #endif /* PlatformHelpers_h */
