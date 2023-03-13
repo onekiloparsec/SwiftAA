@@ -4,24 +4,17 @@
 #ifndef PlatformHelpers_h
 #define PlatformHelpers_h
 
-// Set to 1 to never import Foundation, even if on an Apple platform. Useful for testing etc.
-#define NEVER_USE_FOUNDATION 1
-
 #ifdef TARGET_OS_OSX
-    #if (TARGET_OS_OSX || TARGET_OS_MACCATALYST || TARGET_OS_IOS || TARGET_OS_WATCH) && !NEVER_USE_FOUNDATION
-        #define SHOULD_IMPORT_OBJC_FOUNDATION 1
+    #if TARGET_OS_OSX || TARGET_OS_MACCATALYST || TARGET_OS_IOS || TARGET_OS_WATCH
+        #define IS_ON_APPLE_PLATFORM 1
     #else
-        #define SHOULD_IMPORT_OBJC_FOUNDATION 0
+        #define IS_ON_APPLE_PLATFORM 0
     #endif
 #else
-    #define SHOULD_IMPORT_OBJC_FOUNDATION 0
+    #define IS_ON_APPLE_PLATFORM 0
 #endif
 
-#if SHOULD_IMPORT_OBJC_FOUNDATION
-//#import <Foundation/Foundation.h>
-#else
-
-// The following imports and defines are pinched from parts of Foundation. They're needed for the ObjC++ bridge to build.
+// The following imports and defines are pinched from parts of Foundation. They're needed for the bridge to build.
 #include "math.h"
 #include "stdbool.h"
 
@@ -33,5 +26,4 @@ typedef int NSInteger;
 typedef unsigned int NSUInteger;
 #endif
 
-#endif // Foundation check
 #endif /* PlatformHelpers_h */

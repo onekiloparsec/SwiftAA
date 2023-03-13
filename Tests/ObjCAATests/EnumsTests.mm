@@ -8,7 +8,7 @@
 
 #import "PlatformHelpers.h"
 
-#if SHOULD_IMPORT_OBJC_FOUNDATION
+#if IS_ON_APPLE_PLATFORM
 
 #import <XCTest/XCTest.h>
 #import "KPCAAPlanetaryPhenomena.h"
