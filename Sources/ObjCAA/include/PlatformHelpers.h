@@ -18,7 +18,7 @@
 #endif
 
 #if SHOULD_IMPORT_OBJC_FOUNDATION
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
 #else
 
 // The following imports and defines are pinched from parts of Foundation. They're needed for the ObjC++ bridge to build.
