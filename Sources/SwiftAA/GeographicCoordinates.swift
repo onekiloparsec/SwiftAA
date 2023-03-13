@@ -7,22 +7,39 @@
 //
 
 import Foundation
-import CoreLocation
 import ObjCAA
+
+#if canImport(CoreLocation)
+import CoreLocation
+
+public extension GeographicCoordinates {
+
+    /// Returns the equivalent CLLocation object. Note the minus sign on longitude.
+    var location: CLLocation {
+        let coordinates = CLLocationCoordinate2D(latitude: latitude.value, longitude: -longitude.value)
+        let location = CLLocation(coordinate: coordinates, altitude: altitude.value, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: Date())
+        return location
+    }
+
+    /// Returns a GeographicCoordinates object.
+    ///
+    /// - Parameter location: a CLLocation object
+    init(_ location: CLLocation) {
+        let lon = Degree(-location.coordinate.longitude)
+        let lat = Degree(location.coordinate.latitude)
+        let alt = Meter(location.altitude)
+        self.init(positivelyWestwardLongitude: lon, latitude: lat, altitude: alt)
+    }
+}
+
+#endif
 
 /// The GeographicCoordinates object encompasses the basic elements of a location on Earth, including its altitude.
 public struct GeographicCoordinates {
     public let longitude: Degree
     public let latitude: Degree
     public let altitude: Meter
-    
-    /// Returns the equivalent CLLocation object. Note the minus sign on longitude.
-    public var location: CLLocation {
-        let coordinates = CLLocationCoordinate2D(latitude: latitude.value, longitude: -longitude.value)
-        let location = CLLocation(coordinate: coordinates, altitude: altitude.value, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: Date())
-        return location
-    }
-    
+
     /// Convenience method
     public static var zero: GeographicCoordinates {
         return GeographicCoordinates(positivelyWestwardLongitude: 0.0.degrees, latitude: 0.0.degrees)
@@ -39,17 +56,6 @@ public struct GeographicCoordinates {
         self.latitude = latitude
         self.altitude = altitude
     }
-    
-    /// Returns a GeographicCoordinates object.
-    ///
-    /// - Parameter location: a CLLocation object
-    public init(_ location: CLLocation) {
-        let lon = Degree(-location.coordinate.longitude)
-        let lat = Degree(location.coordinate.latitude)
-        let alt = Meter(location.altitude)
-        self.init(positivelyWestwardLongitude: lon, latitude: lat, altitude: alt)
-    }
-    
     
     /// High accuracy computation of the distance between two points on Earth's surface, taking into account
     /// the Earth flattening.

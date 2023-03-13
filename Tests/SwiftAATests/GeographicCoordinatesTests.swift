@@ -7,10 +7,15 @@
 //
 
 import XCTest
-import CoreLocation
 @testable import SwiftAA
 
+#if canImport(CoreLocation)
+import CoreLocation
+#endif
+
 class GeographicCoordinatesTests: XCTestCase {
+
+    #if canImport(CoreLocation)
     func testConstructorFromCLLocation() {
         let location = CLLocation(latitude: 10.0, longitude: 20.0)
         let coords = GeographicCoordinates(location)
@@ -24,7 +29,7 @@ class GeographicCoordinatesTests: XCTestCase {
         XCTAssertEqual(location.coordinate.longitude, coords.location.coordinate.longitude)
         XCTAssertEqual(location.coordinate.latitude, coords.location.coordinate.latitude)
     }
-
+    #endif
 
     // See AA p.84
     func testGlobeRadii() {
