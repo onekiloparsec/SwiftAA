@@ -14,7 +14,7 @@ double KPCAAParabolic_CalculateBarkers(double W)
     return CAAParabolic::CalculateBarkers(W);
 }
 
-KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision)
+KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, bool highPrecision)
 {
     CAAParabolicObjectElements elementsPlus = CAAParabolicObjectElements();
     elementsPlus.q = elements.q;

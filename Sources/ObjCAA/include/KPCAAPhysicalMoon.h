@@ -32,11 +32,11 @@ typedef struct KPCAASelenographicMoonDetails {
 
 KPCAAPhysicalMoonDetails KPCPhysicalMoon_CalculateGeocentric(double JD);
 KPCAAPhysicalMoonDetails KPCPhysicalMoon_CalculateTopocentric(double JD, double Longitude, double Latitude);
-KPCAASelenographicMoonDetails KPCPhysicalMoon_SelenographicPositionOfSun(double JD, BOOL highPrecision);
+KPCAASelenographicMoonDetails KPCPhysicalMoon_SelenographicPositionOfSun(double JD, bool highPrecision);
 
-double KPCPhysicalMoon_AltitudeOfSun(double JD, double Longitude, double Latitude, BOOL highPrecision);
-double KPCPhysicalMoon_TimeOfSunrise(double JD, double Longitude, double Latitude, BOOL highPrecision);
-double KPCPhysicalMoon_TimeOfSunset(double JD, double Longitude, double Latitude, BOOL highPrecision);
+double KPCPhysicalMoon_AltitudeOfSun(double JD, double Longitude, double Latitude, bool highPrecision);
+double KPCPhysicalMoon_TimeOfSunrise(double JD, double Longitude, double Latitude, bool highPrecision);
+double KPCPhysicalMoon_TimeOfSunset(double JD, double Longitude, double Latitude, bool highPrecision);
 
 #if __cplusplus
 }

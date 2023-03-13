@@ -9,7 +9,7 @@
 #import "KPCAAPhysicalSun.h"
 #import "AAPhysicalSun.h"
 
-KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, BOOL highPrecision)
+KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, bool highPrecision)
 {
     CAAPhysicalSunDetails details = CAAPhysicalSun::Calculate(JD, highPrecision);
     KPCAAPhysicalSunDetails results;

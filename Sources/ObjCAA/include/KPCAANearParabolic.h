@@ -42,7 +42,7 @@ typedef struct KPCAANearParabolicObjectDetails {
 } KPCAANearParabolicObjectDetails;
 
 
-KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, BOOL highPrecision);
+KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, bool highPrecision);
 void KPCAANearParabolic_CalulateTrueAnnomalyAndRadius(double JD, struct KPCAANearParabolicObjectElements elements, double *v, double *r);
 
 #if __cplusplus

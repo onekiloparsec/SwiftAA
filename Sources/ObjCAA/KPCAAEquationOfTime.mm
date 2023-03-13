@@ -9,7 +9,7 @@
 #import "KPCAAEquationOfTime.h"
 #import "AAEquationOfTime.h"
 
-double KPCAAEquationOfTime_Calculate(double JD, BOOL highPrecision)
+double KPCAAEquationOfTime_Calculate(double JD, bool highPrecision)
 {
     return CAAEquationOfTime::Calculate(JD, highPrecision);
 }

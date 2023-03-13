@@ -18,7 +18,7 @@ typedef struct KPCAAPhysicalSunDetails {
     double L0;
 } KPCAAPhysicalSunDetails;
 
-KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, BOOL highPrecision);
+KPCAAPhysicalSunDetails KPCAAPhysicalSun_CalculateDetails(double JD, bool highPrecision);
 double KPCAAPhysicalSun_TimeOfStartOfRotation(long C);
 
 #if __cplusplus

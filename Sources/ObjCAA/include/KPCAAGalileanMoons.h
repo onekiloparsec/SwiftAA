@@ -21,10 +21,10 @@ typedef struct KPCAAGalileanMoonDetails {
     double r;
     KPCAA3DCoordinateComponents TrueRectangularCoordinateComponents;
     KPCAA3DCoordinateComponents ApparentRectangularCoordinateComponents;
-    BOOL inTransit;
-    BOOL inOccultation;
-    BOOL inEclipse;
-    BOOL inShadowTransit;
+    bool inTransit;
+    bool inOccultation;
+    bool inEclipse;
+    bool inShadowTransit;
 } KPCAAGalileanMoonDetails;
 
 typedef struct KPCAAGalileanMoonsDetails {
@@ -34,7 +34,7 @@ typedef struct KPCAAGalileanMoonsDetails {
     KPCAAGalileanMoonDetails Satellite4;
 } KPCAAGalileanMoonsDetails;
 
-KPCAAGalileanMoonsDetails KPCAAGalileanMoons_CalculateDetails(double JD, BOOL highPrecision);
+KPCAAGalileanMoonsDetails KPCAAGalileanMoons_CalculateDetails(double JD, bool highPrecision);
 
 #if __cplusplus
 }

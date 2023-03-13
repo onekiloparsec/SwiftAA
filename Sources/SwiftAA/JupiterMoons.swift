@@ -45,16 +45,16 @@ public struct GalileanMoon {
     public var radiusVector: AstronomicalUnit { get { return AstronomicalUnit(self.details.r) } }
 
     /// Returns whether the Moon is in transit or not (i.e. in front of Jupiter disk).
-    public var inTransit: Bool { get { return self.details.inTransit.boolValue } }
+    public var inTransit: Bool { get { return self.details.inTransit } }
     
     /// Returns whether the Moon is in occultation or not (i.e. behind the Jupiter disk).
-    public var inOccultation: Bool { get { return self.details.inOccultation.boolValue } }
+    public var inOccultation: Bool { get { return self.details.inOccultation } }
 
     /// Returns whether the Moon is eclipsing Jupiter.
-    public var inEclipse: Bool { get { return self.details.inEclipse.boolValue } }
+    public var inEclipse: Bool { get { return self.details.inEclipse } }
     
     /// Returns whether the Moon is eclipsed by Jupiter.
-    public var inShadowTransit: Bool { get { return self.details.inShadowTransit.boolValue } }
+    public var inShadowTransit: Bool { get { return self.details.inShadowTransit } }
 
     /// Returns a GalileanMoon object
     ///

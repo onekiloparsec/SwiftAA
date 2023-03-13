@@ -32,12 +32,12 @@ double KPCAAPlanetaryPhenomena_True(double k, KPCPlanetaryObject object, KPCPlan
     return CAAPlanetaryPhenomena::True(k, (CAAPlanetaryPhenomena::Planet)object, (CAAPlanetaryPhenomena::Type)type);
 }
 
-double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, BOOL eastern)
+double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, bool eastern)
 {
     return CAAPlanetaryPhenomena::ElongationValue(k, (CAAPlanetaryPhenomena::Planet)object, (bool)eastern);
 }
 
-double KPCAAPlanetaryPhenomena(BOOL mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
+double KPCAAPlanetaryPhenomena(bool mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type)
 {
     double k = KPCAAPlanetaryPhenomena_K(Year, object, type);
     if (mean) {

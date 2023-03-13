@@ -14,7 +14,7 @@ double KPCAAMoonMaxDeclinations_K(double Year)
     return CAAMoonMaxDeclinations::K(Year);
 }
 
-double KPCAAMoonMaxDeclinations_MeanGreatestDeclination(double k, BOOL northerly)
+double KPCAAMoonMaxDeclinations_MeanGreatestDeclination(double k, bool northerly)
 {
     return CAAMoonMaxDeclinations::MeanGreatestDeclination(k, (bool)northerly);
 }
@@ -24,13 +24,13 @@ double KPCAAMoonMaxDeclinations_MeanGreatestDeclinationValue(double k)
     return CAAMoonMaxDeclinations::MeanGreatestDeclinationValue(k);
 }
 
-double KPCAAMoonMaxDeclinations_TrueGreatestDeclination(double k, BOOL northerly)
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclination(double k, bool northerly)
 {
     return CAAMoonMaxDeclinations::TrueGreatestDeclination(k, northerly);
 }
 
-double KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(double k, BOOL northerly)
+double KPCAAMoonMaxDeclinations_TrueGreatestDeclinationValue(double k, bool northerly)
 {
-    return CAAMoonMaxDeclinations::TrueGreatestDeclinationValue(k, (BOOL)northerly);
+    return CAAMoonMaxDeclinations::TrueGreatestDeclinationValue(k, (bool)northerly);
 }
 

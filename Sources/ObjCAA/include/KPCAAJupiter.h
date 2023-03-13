@@ -12,9 +12,9 @@
 extern "C" {
 #endif
 
-double KPCAAJupiter_EclipticLongitude(double JD, BOOL highPrecision);
-double KPCAAJupiter_EclipticLatitude(double JD, BOOL highPrecision);
-double KPCAAJupiter_RadiusVector(double JD, BOOL highPrecision);
+double KPCAAJupiter_EclipticLongitude(double JD, bool highPrecision);
+double KPCAAJupiter_EclipticLatitude(double JD, bool highPrecision);
+double KPCAAJupiter_RadiusVector(double JD, bool highPrecision);
 
 #if __cplusplus
 }

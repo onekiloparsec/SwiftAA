@@ -38,13 +38,13 @@ typedef enum KPCPlanetaryEventType: NSUInteger {
 double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type);
 double KPCAAPlanetaryPhenomena_Mean(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type);
 double KPCAAPlanetaryPhenomena_True(double k, KPCPlanetaryObject object, KPCPlanetaryEventType type);
-double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, BOOL eastern);
+double KPCAAPlanetaryPhenomena_ElongationValue(double k, KPCPlanetaryObject object, bool eastern);
 
     
     
 /* SwiftAA Aditions */
     
-double KPCAAPlanetaryPhenomena(BOOL mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type);
+double KPCAAPlanetaryPhenomena(bool mean, double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type);
     
 #if __cplusplus
 }

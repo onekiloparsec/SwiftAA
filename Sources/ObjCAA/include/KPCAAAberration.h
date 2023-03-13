@@ -15,11 +15,11 @@ extern "C" {
 #endif
 
 // 3D
-KPCAA3DCoordinateComponents KPCAAAberration_EarthVelocity(double JD, BOOL highPrecision);
+KPCAA3DCoordinateComponents KPCAAAberration_EarthVelocity(double JD, bool highPrecision);
 
 // 2D
-KPCAA2DCoordinateComponents KPCAAAberration_EquatorialAberration(double Alpha, double Delta, double JD, BOOL highPrecision);
-KPCAA2DCoordinateComponents KPCAAAberration_EclipticAberration(double Lambda, double Beta, double JD, BOOL highPrecision);
+KPCAA2DCoordinateComponents KPCAAAberration_EquatorialAberration(double Alpha, double Delta, double JD, bool highPrecision);
+KPCAA2DCoordinateComponents KPCAAAberration_EclipticAberration(double Lambda, double Beta, double JD, bool highPrecision);
 
 #if __cplusplus
 }

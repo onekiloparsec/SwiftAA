@@ -9,17 +9,17 @@
 #import "KPCAASaturn.h"
 #import "AASaturn.h"
 
-double KPCAASaturn_EclipticLongitude(double JD, BOOL highPrecision)
+double KPCAASaturn_EclipticLongitude(double JD, bool highPrecision)
 {
     return CAASaturn::EclipticLongitude(JD, highPrecision);
 }
 
-double KPCAASaturn_EclipticLatitude(double JD, BOOL highPrecision)
+double KPCAASaturn_EclipticLatitude(double JD, bool highPrecision)
 {
     return CAASaturn::EclipticLatitude(JD, highPrecision);
 }
 
-double KPCAASaturn_RadiusVector(double JD, BOOL highPrecision)
+double KPCAASaturn_RadiusVector(double JD, bool highPrecision)
 {
     return CAASaturn::RadiusVector(JD, highPrecision);
 }

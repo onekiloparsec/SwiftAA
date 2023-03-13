@@ -21,7 +21,7 @@ double KPCAANutation_TrueObliquityOfEcliptic(double JD);
 
 /* SwiftAA Additions */
     
-double KPCAANutation_ObliquityOfEcliptic(BOOL mean, double JD);
+double KPCAANutation_ObliquityOfEcliptic(bool mean, double JD);
     
 #if __cplusplus
 }

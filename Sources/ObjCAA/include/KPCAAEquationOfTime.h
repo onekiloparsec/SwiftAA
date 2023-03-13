@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-double KPCAAEquationOfTime_Calculate(double JD, BOOL highPrecision);
+double KPCAAEquationOfTime_Calculate(double JD, bool highPrecision);
 
 #if __cplusplus
 }

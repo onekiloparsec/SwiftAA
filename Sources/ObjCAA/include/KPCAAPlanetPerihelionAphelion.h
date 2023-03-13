@@ -22,8 +22,8 @@ double KPCAAPlanetPerihelionAphelion_VenusPerihelion(double k);
 double KPCAAPlanetPerihelionAphelion_VenusAphelion(double k);
 
 long KPCAAPlanetPerihelionAphelion_EarthK(double Year);
-double KPCAAPlanetPerihelionAphelion_EarthPerihelion(double k, BOOL barycentric);
-double KPCAAPlanetPerihelionAphelion_EarthAphelion(double k, BOOL barycentric);
+double KPCAAPlanetPerihelionAphelion_EarthPerihelion(double k, bool barycentric);
+double KPCAAPlanetPerihelionAphelion_EarthAphelion(double k, bool barycentric);
 
 long KPCAAPlanetPerihelionAphelion_MarsK(double Year);
 double KPCAAPlanetPerihelionAphelion_MarsPerihelion(double k);

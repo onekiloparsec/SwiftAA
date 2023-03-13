@@ -9,7 +9,7 @@
 #import "KPCAAPhysicalJupiter.h"
 #import "AAPhysicalJupiter.h"
 
-KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiter_CalculateDetails(double JD, BOOL highPrecision)
+KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiter_CalculateDetails(double JD, bool highPrecision)
 {
     CAAPhysicalJupiterDetails detailsPlus = CAAPhysicalJupiter::Calculate(JD, highPrecision);
     

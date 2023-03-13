@@ -9,7 +9,7 @@
 #import "KPCAANearParabolic.h"
 #import "AANearParabolic.h"
 
-KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, BOOL highPrecision)
+KPCAANearParabolicObjectDetails KPCAANearParabolic_CalculateObjectDetails(double JD, KPCAANearParabolicObjectElements elements, bool highPrecision)
 {
     CAANearParabolicObjectElements elementsPlus = CAANearParabolicObjectElements();
 

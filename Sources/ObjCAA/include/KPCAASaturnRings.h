@@ -23,7 +23,7 @@ typedef struct KPCAASaturnRingDetails {
     double U2;
 } KPCAASaturnRingDetails;
 
-KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, BOOL highPrecision);
+KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, bool highPrecision);
 
 #if __cplusplus
 }

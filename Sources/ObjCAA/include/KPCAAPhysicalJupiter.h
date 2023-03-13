@@ -22,7 +22,7 @@ typedef struct KPCAAPhysicalJupiterDetails {
     double P;
 } KPCAAPhysicalJupiterDetails;
 
-KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiter_CalculateDetails(double JD, BOOL highPrecision);
+KPCAAPhysicalJupiterDetails KPCAAPhysicalJupiter_CalculateDetails(double JD, bool highPrecision);
 
 #if __cplusplus
 }

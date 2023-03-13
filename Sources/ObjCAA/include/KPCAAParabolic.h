@@ -42,7 +42,7 @@ typedef struct KPCAAParabolicObjectDetails {
 
 
 double KPCAAParabolic_CalculateBarkers(double W);
-KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, BOOL highPrecision);
+KPCAAParabolicObjectDetails KPCAAParabolic_CalculateDetails(double JD, struct KPCAAParabolicObjectElements elements, bool highPrecision);
 
 #if __cplusplus
 }

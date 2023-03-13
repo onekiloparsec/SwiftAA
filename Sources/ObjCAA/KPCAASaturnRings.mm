@@ -9,7 +9,7 @@
 #import "KPCAASaturnRings.h"
 #import "AASaturnRings.h"
 
-KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, BOOL highPrecision)
+KPCAASaturnRingDetails KPCAASaturnRings_Calculate(double JD, bool highPrecision)
 {
     CAASaturnRingDetails details = CAASaturnRings::Calculate(JD, highPrecision);
     KPCAASaturnRingDetails results;

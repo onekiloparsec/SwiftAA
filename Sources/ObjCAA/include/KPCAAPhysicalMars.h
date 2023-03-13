@@ -23,7 +23,7 @@ typedef struct KPCAAPhysicalMarsDetails {
     double d;
 } KPCAAPhysicalMarsDetails;
 
-KPCAAPhysicalMarsDetails KPCAAPhysicalMars_CalculateDetails(double JD, BOOL highPrecision);
+KPCAAPhysicalMarsDetails KPCAAPhysicalMars_CalculateDetails(double JD, bool highPrecision);
 
 #if __cplusplus
 }

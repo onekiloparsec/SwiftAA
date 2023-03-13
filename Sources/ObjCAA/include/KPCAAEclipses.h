@@ -22,7 +22,7 @@ typedef struct KPCAASolarEclipseDetails {
 } KPCAASolarEclipseDetails;
 
 typedef struct KPCAALunarEclipseDetails {
-    BOOL eclipse;
+    bool eclipse;
     double TimeOfMaximumEclipse;
     double F;
     double u;

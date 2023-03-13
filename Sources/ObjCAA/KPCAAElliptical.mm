@@ -51,7 +51,7 @@ double KPCAAElliptical_DistanceToLightTime(double Distance)
     return CAAElliptical::DistanceToLightTime(Distance);
 }
 
-KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCAAEllipticalObject object, BOOL highPrecision)
+KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double JD, KPCAAEllipticalObject object, bool highPrecision)
 {
     CAAElliptical::Object ellipticalObject = ellipticalObjectFromKPCAAEllipticalObject(object);
     CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, ellipticalObject, highPrecision);
@@ -77,7 +77,7 @@ double KPCAAElliptical_MeanMotionFromSemiMajorAxis(double a)
     return CAAElliptical::MeanMotionFromSemiMajorAxis(a);
 }
 
-KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, BOOL highPrecision)
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, KPCAAEllipticalObjectElements *elements, bool highPrecision)
 {
     CAAEllipticalObjectElements elementsPlus = CAAEllipticalObjectElements();
     
@@ -117,7 +117,7 @@ KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetails(double JD, K
     return details;
 }
 
-KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, KPCAAPlanetStrict planetStrict, BOOL highPrecision)
+KPCAAEllipticalObjectDetails KPCAAElliptical_CalculateObjectDetailsNoElements(double JD, KPCAAPlanetStrict planetStrict, bool highPrecision)
 {
     struct KPCAAEllipticalObjectElements elements;
     

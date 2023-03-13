@@ -13,11 +13,11 @@ extern "C" {
 #endif
 
 typedef struct KPCAARiseTransitSetDetails {
-    BOOL isRiseValid;
+    bool isRiseValid;
     double Rise;
-    BOOL isTransitAboveHorizon;
+    bool isTransitAboveHorizon;
     double Transit;
-    BOOL isSetValid;
+    bool isSetValid;
     double Set;
 } KPCAARiseTransitSetDetails;
 

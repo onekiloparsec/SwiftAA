@@ -47,12 +47,12 @@ long KPCAAPlanetPerihelionAphelion_EarthK(double Year)
     return CAAPlanetPerihelionAphelion::EarthK(Year);
 }
 
-double KPCAAPlanetPerihelionAphelion_EarthPerihelion(double k, BOOL barycentric)
+double KPCAAPlanetPerihelionAphelion_EarthPerihelion(double k, bool barycentric)
 {
     return CAAPlanetPerihelionAphelion::EarthPerihelion(k, barycentric);
 }
 
-double KPCAAPlanetPerihelionAphelion_EarthAphelion(double k, BOOL barycentric)
+double KPCAAPlanetPerihelionAphelion_EarthAphelion(double k, bool barycentric)
 {
     return CAAPlanetPerihelionAphelion::EarthAphelion(k, barycentric);
 }
@@ -180,7 +180,7 @@ double KPCAAPlanetPerihelionAphelion_Perihelion(double k, KPCAAPlanetStrict plan
             return KPCAAPlanetPerihelionAphelion_VenusPerihelion(k);
             break;
         case KPCAAPlanetStrictEarth:
-            return KPCAAPlanetPerihelionAphelion_EarthPerihelion(k, YES);
+            return KPCAAPlanetPerihelionAphelion_EarthPerihelion(k, true);
             break;
         case KPCAAPlanetStrictMars:
             return KPCAAPlanetPerihelionAphelion_MarsPerihelion(k);
@@ -213,7 +213,7 @@ double KPCAAPlanetPerihelionAphelion_Aphelion(double k, KPCAAPlanetStrict planet
             return KPCAAPlanetPerihelionAphelion_VenusAphelion(k);
             break;
         case KPCAAPlanetStrictEarth:
-            return KPCAAPlanetPerihelionAphelion_EarthAphelion(k, YES);
+            return KPCAAPlanetPerihelionAphelion_EarthAphelion(k, true);
             break;
         case KPCAAPlanetStrictMars:
             return KPCAAPlanetPerihelionAphelion_MarsAphelion(k);
