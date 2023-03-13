@@ -143,7 +143,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     ///   - coordinates: The geographic coordinates for which to compute the twilights.
     /// - Returns: The rise, transit and set times, in Julian Day, and an error, if relevant.
     public func riseTransitSetTimes(for planetaryObject: KPCPlanetaryObject, geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
-        guard planetaryObject != .UNDEFINED else {
+        guard planetaryObject != KPCPlanetaryObjectUNDEFINED else {
             return RiseTransitSetTimes(geographicCoordinates: geographicCoordinates, transitError: CelestialBodyTransitError.undefinedPlanetaryObject)
         }
         

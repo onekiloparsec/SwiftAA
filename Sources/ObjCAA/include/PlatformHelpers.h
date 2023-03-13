@@ -61,24 +61,6 @@ typedef unsigned long NSUInteger;
 typedef int NSInteger;
 typedef unsigned int NSUInteger;
 #endif
-#define __CF_ENUM_ATTRIBUTES __attribute__((enum_extensibility(open)))
-#define __CF_CLOSED_ENUM_ATTRIBUTES __attribute__((enum_extensibility(closed)))
-#define __CF_OPTIONS_ATTRIBUTES __attribute__((flag_enum,enum_extensibility(open)))
-
-#define __CF_NAMED_ENUM(_type, _name)     enum __CF_ENUM_ATTRIBUTES _name : _type _name; enum _name : _type
-#define __CF_ANON_ENUM(_type)             enum __CF_ENUM_ATTRIBUTES : _type
-#define CF_CLOSED_ENUM(_type, _name)      enum __CF_CLOSED_ENUM_ATTRIBUTES _name : _type _name; enum _name : _type
-#if (__cplusplus)
-#define CF_OPTIONS(_type, _name) _type _name; enum __CF_OPTIONS_ATTRIBUTES : _type
-#else
-#define CF_OPTIONS(_type, _name) enum __CF_OPTIONS_ATTRIBUTES _name : _type _name; enum _name : _type
-#endif
-
-#define __CF_ENUM_GET_MACRO(_1, _2, NAME, ...) NAME
-
-#define CF_ENUM(...) __CF_ENUM_GET_MACRO(__VA_ARGS__, __CF_NAMED_ENUM, __CF_ANON_ENUM, )(__VA_ARGS__)
-
-#define NS_ENUM(...) CF_ENUM(__VA_ARGS__)
 
 #endif // OS check
 #endif /* PlatformHelpers_h */

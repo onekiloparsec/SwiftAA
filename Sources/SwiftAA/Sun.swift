@@ -152,7 +152,7 @@ public class Sun: Object, CelestialBody {
     /// AA+ provides computation for so-called elliptical planetary details also for the Sun
     public lazy var planetaryDetails: KPCAAEllipticalPlanetaryDetails = {
         [unowned self] in
-        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, .SUN_elliptical, self.highPrecision)
+        return KPCAAElliptical_CalculatePlanetaryDetails(self.julianDay.value, KPCAAEllipticalObjectSUN, self.highPrecision)
         }()
 }
 

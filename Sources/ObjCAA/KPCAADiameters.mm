@@ -150,31 +150,31 @@ double KPCAADiameters_ApparentAsteroidDiameter(double H, double A)
 double KPCAADiameters_EquatorialSemiDiameterA(KPCAAPlanetStrict planet, double Delta)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAADiameters_MercurySemidiameterA(Delta);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAADiameters_VenusSemidiameterA(Delta);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAADiameters_MarsSemidiameterA(Delta);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAADiameters_JupiterEquatorialSemidiameterA(Delta);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAADiameters_SaturnEquatorialSemidiameterA(Delta);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAADiameters_UranusSemidiameterA(Delta);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAADiameters_NeptuneSemidiameterA(Delta);
             break;
         }
@@ -189,31 +189,31 @@ double KPCAADiameters_EquatorialSemiDiameterA(KPCAAPlanetStrict planet, double D
 double KPCAADiameters_PolarSemiDiameterA(KPCAAPlanetStrict planet, double Delta)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAADiameters_MercurySemidiameterA(Delta);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAADiameters_VenusSemidiameterA(Delta);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAADiameters_MarsSemidiameterA(Delta);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAADiameters_JupiterPolarSemidiameterA(Delta);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAADiameters_SaturnPolarSemidiameterA(Delta);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAADiameters_UranusSemidiameterA(Delta);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAADiameters_NeptuneSemidiameterA(Delta);
             break;
         }
@@ -229,35 +229,35 @@ double KPCAADiameters_PolarSemiDiameterA(KPCAAPlanetStrict planet, double Delta)
 double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta)
 {
     switch (planet) {
-        case Mercury: {
+        case KPCAAPlanetMercury: {
             return KPCAADiameters_MercurySemidiameterB(Delta);
             break;
         }
-        case Venus: {
+        case KPCAAPlanetVenus: {
             return KPCAADiameters_VenusSemidiameterB(Delta);
             break;
         }
-        case Mars: {
+        case KPCAAPlanetMars: {
             return KPCAADiameters_MarsSemidiameterB(Delta);
             break;
         }
-        case Jupiter: {
+        case KPCAAPlanetJupiter: {
             return KPCAADiameters_JupiterEquatorialSemidiameterB(Delta);
             break;
         }
-        case Saturn: {
+        case KPCAAPlanetSaturn: {
             return KPCAADiameters_SaturnEquatorialSemidiameterB(Delta);
             break;
         }
-        case Uranus: {
+        case KPCAAPlanetUranus: {
             return KPCAADiameters_UranusSemidiameterB(Delta);
             break;
         }
-        case Neptune: {
+        case KPCAAPlanetNeptune: {
             return KPCAADiameters_NeptuneSemidiameterB(Delta);
             break;
         }
-        case Pluto: {
+        case KPCAAPlanetPluto: {
             return KPCAADiameters_PlutoSemidiameterB(Delta);
             break;
         }
@@ -272,35 +272,35 @@ double KPCAADiameters_EquatorialSemiDiameterB(KPCAAPlanet planet, double Delta)
 double KPCAADiameters_PolarSemiDiameterB(KPCAAPlanet planet, double Delta)
 {
     switch (planet) {
-        case Mercury: {
+        case KPCAAPlanetMercury: {
             return KPCAADiameters_MercurySemidiameterB(Delta);
             break;
         }
-        case Venus: {
+        case KPCAAPlanetVenus: {
             return KPCAADiameters_VenusSemidiameterB(Delta);
             break;
         }
-        case Mars: {
+        case KPCAAPlanetMars: {
             return KPCAADiameters_MarsSemidiameterB(Delta);
             break;
         }
-        case Jupiter: {
+        case KPCAAPlanetJupiter: {
             return KPCAADiameters_JupiterPolarSemidiameterB(Delta);
             break;
         }
-        case Saturn: {
+        case KPCAAPlanetSaturn: {
             return KPCAADiameters_SaturnPolarSemidiameterB(Delta);
             break;
         }
-        case Uranus: {
+        case KPCAAPlanetUranus: {
             return KPCAADiameters_UranusSemidiameterB(Delta);
             break;
         }
-        case Neptune: {
+        case KPCAAPlanetNeptune: {
             return KPCAADiameters_NeptuneSemidiameterB(Delta);
             break;
         }
-        case Pluto: {
+        case KPCAAPlanetPluto: {
             return KPCAADiameters_PlutoSemidiameterB(Delta);
             break;
         }

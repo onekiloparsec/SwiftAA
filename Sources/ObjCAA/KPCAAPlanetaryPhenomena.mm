@@ -15,8 +15,8 @@ double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlan
     // One can start with inferior conjunction though. See Example 36.c of AA p. 253.
     
     KPCPlanetaryEventType runningType = type;
-    if (object < (KPCPlanetaryObject)MARS && (type != INFERIOR_CONJUNCTION && type != SUPERIOR_CONJUNCTION)) {
-        runningType = INFERIOR_CONJUNCTION;
+    if (object < (KPCPlanetaryObject)KPCPlanetaryObjectMARS && (type != KPCPlanetaryEventTypeINFERIOR_CONJUNCTION && type != KPCPlanetaryEventTypeSUPERIOR_CONJUNCTION)) {
+        runningType = KPCPlanetaryEventTypeINFERIOR_CONJUNCTION;
     }
 
     return CAAPlanetaryPhenomena::K(Year, (CAAPlanetaryPhenomena::Planet)object, (CAAPlanetaryPhenomena::Type)runningType);

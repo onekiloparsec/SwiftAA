@@ -16,17 +16,17 @@ extern "C" {
 #endif
 
 // As for AA+ 2.44 onward, there is no more PLUTO_elliptical.
-typedef NS_ENUM(NSUInteger, KPCAAEllipticalObject) {
-    SUN_elliptical,
-    MERCURY_elliptical,
-    VENUS_elliptical,
-    MARS_elliptical,
-    JUPITER_elliptical,
-    SATURN_elliptical,
-    URANUS_elliptical,
-    NEPTUNE_elliptical,
-    UNDEFINED_elliptical = 999 // Swift Addition
-};
+typedef enum KPCAAEllipticalObject: NSUInteger {
+    KPCAAEllipticalObjectSUN,
+    KPCAAEllipticalObjectMERCURY,
+    KPCAAEllipticalObjectVENUS,
+    KPCAAEllipticalObjectMARS,
+    KPCAAEllipticalObjectJUPITER,
+    KPCAAEllipticalObjectSATURN,
+    KPCAAEllipticalObjectURANUS,
+    KPCAAEllipticalObjectNEPTUNE,
+    KPCAAEllipticalObjectUNDEFINED = 999 // Swift Addition
+} KPCAAEllipticalObject;
 
 typedef struct KPCAAEllipticalObjectElements {
     double a; // semi-major axis (AU)

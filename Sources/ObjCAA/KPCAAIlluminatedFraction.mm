@@ -111,25 +111,25 @@ double KPCAAIlluminatedFraction_NeptuneMagnitudeAA(double r, double Delta)
 double KPCAAIlluminatedFraction_MagnitudeMuller(KPCPlanetaryObject planet, double r, double Delta, double i)
 {
     switch (planet) {
-        case MERCURY:
+        case KPCPlanetaryObjectMERCURY:
             return KPCAAIlluminatedFraction_MercuryMagnitudeMuller(r, Delta, i);
             break;
-        case VENUS:
+        case KPCPlanetaryObjectVENUS:
             return KPCAAIlluminatedFraction_VenusMagnitudeMuller(r, Delta, i);
             break;
-        case MARS:
+        case KPCPlanetaryObjectMARS:
             return KPCAAIlluminatedFraction_MarsMagnitudeMuller(r, Delta, i);
             break;
-        case JUPITER:
+        case KPCPlanetaryObjectJUPITER:
             return KPCAAIlluminatedFraction_JupiterMagnitudeMuller(r, Delta);
             break;
-        case SATURN:
+        case KPCPlanetaryObjectSATURN:
             return NAN;
             break;
-        case URANUS:
+        case KPCPlanetaryObjectURANUS:
             return KPCAAIlluminatedFraction_UranusMagnitudeMuller(r, Delta);
             break;
-        case NEPTUNE:
+        case KPCPlanetaryObjectNEPTUNE:
             return KPCAAIlluminatedFraction_NeptuneMagnitudeMuller(r, Delta);
             break;
         default:
@@ -140,25 +140,25 @@ double KPCAAIlluminatedFraction_MagnitudeMuller(KPCPlanetaryObject planet, doubl
 double KPCAAIlluminatedFraction_MagnitudeAA(KPCPlanetaryObject planet, double r, double Delta, double i)
 {
     switch (planet) {
-        case MERCURY:
+        case KPCPlanetaryObjectMERCURY:
             return KPCAAIlluminatedFraction_MercuryMagnitudeAA(r, Delta, i);
             break;
-        case VENUS:
+        case KPCPlanetaryObjectVENUS:
             return KPCAAIlluminatedFraction_VenusMagnitudeAA(r, Delta, i);
             break;
-        case MARS:
+        case KPCPlanetaryObjectMARS:
             return KPCAAIlluminatedFraction_MarsMagnitudeAA(r, Delta, i);
             break;
-        case JUPITER:
+        case KPCPlanetaryObjectJUPITER:
             return KPCAAIlluminatedFraction_JupiterMagnitudeAA(r, Delta, i);
             break;
-        case SATURN:
+        case KPCPlanetaryObjectSATURN:
             return NAN;
             break;
-        case URANUS:
+        case KPCPlanetaryObjectURANUS:
             return KPCAAIlluminatedFraction_UranusMagnitudeAA(r, Delta);
             break;
-        case NEPTUNE:
+        case KPCPlanetaryObjectNEPTUNE:
             return KPCAAIlluminatedFraction_NeptuneMagnitudeAA(r, Delta);
             break;
         default:

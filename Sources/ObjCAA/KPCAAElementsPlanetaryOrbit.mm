@@ -125,35 +125,35 @@ double KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(double JD) { 
 double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryMeanLongitude(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusMeanLongitude(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthMeanLongitude(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsMeanLongitude(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterMeanLongitude(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnMeanLongitude(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusMeanLongitude(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitude(JD);
             break;
         }
@@ -168,35 +168,35 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitude(KPCAAPlanetStrict planet, doubl
 double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryMeanLongitudeJ2000(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusMeanLongitudeJ2000(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthMeanLongitudeJ2000(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsMeanLongitudeJ2000(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterMeanLongitudeJ2000(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnMeanLongitudeJ2000(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusMeanLongitudeJ2000(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneMeanLongitudeJ2000(JD);
             break;
         }
@@ -211,35 +211,35 @@ double KPCAAElementsPlanetaryOrbit_MeanLongitudeJ2000(KPCAAPlanetStrict planet, 
 double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercurySemimajorAxis(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusSemimajorAxis(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthSemimajorAxis(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsSemimajorAxis(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterSemimajorAxis(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnSemimajorAxis(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusSemimajorAxis(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneSemimajorAxis(JD);
             break;
         }
@@ -255,35 +255,35 @@ double KPCAAElementsPlanetaryOrbit_SemimajorAxis(KPCAAPlanetStrict planet, doubl
 double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryEccentricity(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusEccentricity(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthEccentricity(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsEccentricity(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterEccentricity(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnEccentricity(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusEccentricity(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneEccentricity(JD);
             break;
         }
@@ -298,35 +298,35 @@ double KPCAAElementsPlanetaryOrbit_Eccentricity(KPCAAPlanetStrict planet, double
 double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryInclination(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusInclination(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthInclination(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsInclination(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterInclination(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnInclination(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusInclination(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneInclination(JD);
             break;
         }
@@ -341,35 +341,35 @@ double KPCAAElementsPlanetaryOrbit_Inclination(KPCAAPlanetStrict planet, double 
 double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryInclinationJ2000(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusInclinationJ2000(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthInclinationJ2000(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsInclinationJ2000(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterInclinationJ2000(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnInclinationJ2000(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusInclinationJ2000(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneInclinationJ2000(JD);
             break;
         }
@@ -384,35 +384,35 @@ double KPCAAElementsPlanetaryOrbit_InclinationJ2000(KPCAAPlanetStrict planet, do
 double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNode(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNode(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return -1.0;
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNode(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNode(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNode(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNode(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNode(JD);
             break;
         }
@@ -427,35 +427,35 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNode(KPCAAPlanetStrict plan
 double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusLongitudeAscendingNodeJ2000(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudeAscendingNodeJ2000(JD);
             break;
         }
@@ -470,35 +470,35 @@ double KPCAAElementsPlanetaryOrbit_LongitudeAscendingNodeJ2000(KPCAAPlanetStrict
 double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelion(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelion(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelion(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelion(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelion(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelion(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelion(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelion(JD);
             break;
         }
@@ -513,35 +513,35 @@ double KPCAAElementsPlanetaryOrbit_LongitudePerihelion(KPCAAPlanetStrict planet,
 double KPCAAElementsPlanetaryOrbit_LongitudePerihelionJ2000(KPCAAPlanetStrict planet, double JD)
 {
     switch (planet) {
-        case mercury: {
+        case KPCAAPlanetStrictMercury: {
             return KPCAAElementsPlanetaryOrbit_MercuryLongitudePerihelionJ2000(JD);
             break;
         }
-        case venus: {
+        case KPCAAPlanetStrictVenus: {
             return KPCAAElementsPlanetaryOrbit_VenusLongitudePerihelionJ2000(JD);
             break;
         }
-        case earth: {
+        case KPCAAPlanetStrictEarth: {
             return KPCAAElementsPlanetaryOrbit_EarthLongitudePerihelionJ2000(JD);
             break;
         }
-        case mars: {
+        case KPCAAPlanetStrictMars: {
             return KPCAAElementsPlanetaryOrbit_MarsLongitudePerihelionJ2000(JD);
             break;
         }
-        case jupiter: {
+        case KPCAAPlanetStrictJupiter: {
             return KPCAAElementsPlanetaryOrbit_JupiterLongitudePerihelionJ2000(JD);
             break;
         }
-        case saturn: {
+        case KPCAAPlanetStrictSaturn: {
             return KPCAAElementsPlanetaryOrbit_SaturnLongitudePerihelionJ2000(JD);
             break;
         }
-        case uranus: {
+        case KPCAAPlanetStrictUranus: {
             return KPCAAElementsPlanetaryOrbit_UranusLongitudePerihelionJ2000(JD);
             break;
         }
-        case neptune: {
+        case KPCAAPlanetStrictNeptune: {
             return KPCAAElementsPlanetaryOrbit_NeptuneLongitudePerihelionJ2000(JD);
             break;
         }

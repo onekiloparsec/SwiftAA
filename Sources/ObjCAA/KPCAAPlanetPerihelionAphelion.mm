@@ -140,28 +140,28 @@ double KPCAAPlanetPerihelionAphelion_NeptuneAphelion(double k)
 double KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case mercury:
+        case KPCAAPlanetStrictMercury:
             return KPCAAPlanetPerihelionAphelion_MercuryK(Year);
             break;
-        case venus:
+        case KPCAAPlanetStrictVenus:
             return KPCAAPlanetPerihelionAphelion_VenusK(Year);
             break;
-        case earth:
+        case KPCAAPlanetStrictEarth:
             return KPCAAPlanetPerihelionAphelion_EarthK(Year);
             break;
-        case mars:
+        case KPCAAPlanetStrictMars:
             return KPCAAPlanetPerihelionAphelion_MarsK(Year);
             break;
-        case jupiter:
+        case KPCAAPlanetStrictJupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterK(Year);
             break;
-        case saturn:
+        case KPCAAPlanetStrictSaturn:
             return KPCAAPlanetPerihelionAphelion_SaturnK(Year);
             break;
-        case uranus:
+        case KPCAAPlanetStrictUranus:
             return KPCAAPlanetPerihelionAphelion_UranusK(Year);
             break;
-        case neptune:
+        case KPCAAPlanetStrictNeptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneK(Year);
             break;
         default:
@@ -173,28 +173,28 @@ double KPCAAPlanetPerihelionAphelion_K(double Year, KPCAAPlanetStrict planet)
 double KPCAAPlanetPerihelionAphelion_Perihelion(double k, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case mercury:
+        case KPCAAPlanetStrictMercury:
             return KPCAAPlanetPerihelionAphelion_MercuryPerihelion(k);
             break;
-        case venus:
+        case KPCAAPlanetStrictVenus:
             return KPCAAPlanetPerihelionAphelion_VenusPerihelion(k);
             break;
-        case earth:
+        case KPCAAPlanetStrictEarth:
             return KPCAAPlanetPerihelionAphelion_EarthPerihelion(k, YES);
             break;
-        case mars:
+        case KPCAAPlanetStrictMars:
             return KPCAAPlanetPerihelionAphelion_MarsPerihelion(k);
             break;
-        case jupiter:
+        case KPCAAPlanetStrictJupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterPerihelion(k);
             break;
-        case saturn:
+        case KPCAAPlanetStrictSaturn:
             return KPCAAPlanetPerihelionAphelion_SaturnPerihelion(k);
             break;
-        case uranus:
+        case KPCAAPlanetStrictUranus:
             return KPCAAPlanetPerihelionAphelion_UranusPerihelion(k);
             break;
-        case neptune:
+        case KPCAAPlanetStrictNeptune:
             return KPCAAPlanetPerihelionAphelion_NeptunePerihelion(k);
             break;
         default:
@@ -206,28 +206,28 @@ double KPCAAPlanetPerihelionAphelion_Perihelion(double k, KPCAAPlanetStrict plan
 double KPCAAPlanetPerihelionAphelion_Aphelion(double k, KPCAAPlanetStrict planet)
 {
     switch (planet) {
-        case mercury:
+        case KPCAAPlanetStrictMercury:
             return KPCAAPlanetPerihelionAphelion_MercuryAphelion(k);
             break;
-        case venus:
+        case KPCAAPlanetStrictVenus:
             return KPCAAPlanetPerihelionAphelion_VenusAphelion(k);
             break;
-        case earth:
+        case KPCAAPlanetStrictEarth:
             return KPCAAPlanetPerihelionAphelion_EarthAphelion(k, YES);
             break;
-        case mars:
+        case KPCAAPlanetStrictMars:
             return KPCAAPlanetPerihelionAphelion_MarsAphelion(k);
             break;
-        case jupiter:
+        case KPCAAPlanetStrictJupiter:
             return KPCAAPlanetPerihelionAphelion_JupiterAphelion(k);
             break;
-        case saturn:
+        case KPCAAPlanetStrictSaturn:
             return KPCAAPlanetPerihelionAphelion_SaturnAphelion(k);
             break;
-        case uranus:
+        case KPCAAPlanetStrictUranus:
             return KPCAAPlanetPerihelionAphelion_UranusAphelion(k);
             break;
-        case neptune:
+        case KPCAAPlanetStrictNeptune:
             return KPCAAPlanetPerihelionAphelion_NeptuneAphelion(k);
             break;
         default:

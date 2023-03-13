@@ -12,27 +12,27 @@
 extern "C" {
 #endif
 
-typedef NS_ENUM(NSUInteger, KPCPlanetaryObject) {
-    MERCURY,
-    VENUS,
-    MARS,
-    JUPITER,
-    SATURN,
-    URANUS,
-    NEPTUNE,
-    UNDEFINED = 999 // Swift Addition
-};
+typedef enum KPCPlanetaryObject: NSUInteger {
+    KPCPlanetaryObjectMERCURY,
+    KPCPlanetaryObjectVENUS,
+    KPCPlanetaryObjectMARS,
+    KPCPlanetaryObjectJUPITER,
+    KPCPlanetaryObjectSATURN,
+    KPCPlanetaryObjectURANUS,
+    KPCPlanetaryObjectNEPTUNE,
+    KPCPlanetaryObjectUNDEFINED = 999 // Swift Addition
+} KPCPlanetaryObject;
 
-typedef NS_ENUM(NSUInteger, KPCPlanetaryEventType) {
-    INFERIOR_CONJUNCTION,
-    SUPERIOR_CONJUNCTION,
-    OPPOSITION,
-    CONJUNCTION,
-    EASTERN_ELONGATION,
-    WESTERN_ELONGATION,
-    STATION1,
-    STATION2
-};
+typedef enum KPCPlanetaryEventType: NSUInteger {
+    KPCPlanetaryEventTypeINFERIOR_CONJUNCTION,
+    KPCPlanetaryEventTypeSUPERIOR_CONJUNCTION,
+    KPCPlanetaryEventTypeOPPOSITION,
+    KPCPlanetaryEventTypeCONJUNCTION,
+    KPCPlanetaryEventTypeEASTERN_ELONGATION,
+    KPCPlanetaryEventTypeWESTERN_ELONGATION,
+    KPCPlanetaryEventTypeSTATION1,
+    KPCPlanetaryEventTypeSTATION2
+} KPCPlanetaryEventType;
 
 
 double KPCAAPlanetaryPhenomena_K(double Year, KPCPlanetaryObject object, KPCPlanetaryEventType type);

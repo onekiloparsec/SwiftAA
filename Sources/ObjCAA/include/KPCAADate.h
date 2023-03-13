@@ -15,15 +15,15 @@ typedef struct KPCAACalendarDate {
 } KPCAACalendarDate;
 
 
-typedef NS_ENUM(NSUInteger, DAY_OF_WEEK) {
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY
-};
+typedef enum DAY_OF_WEEK: NSUInteger {
+    DAY_OF_WEEKSUNDAY,
+    DAY_OF_WEEKMONDAY,
+    DAY_OF_WEEKTUESDAY,
+    DAY_OF_WEEKWEDNESDAY,
+    DAY_OF_WEEKTHURSDAY,
+    DAY_OF_WEEKFRIDAY,
+    DAY_OF_WEEKSATURDAY
+} DAY_OF_WEEK;
 
 #ifdef __cplusplus
 extern "C" {

@@ -46,39 +46,39 @@ KPCAAEclipticalElementDetails KPCAAEclipticalElement_FK4B1950ToFK5J2000(double i
 double KPCAAEclipticalElement_EclipticLongitude(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
     switch (planet) {
-        case Mercury: {
+        case KPCAAPlanetMercury: {
             return KPCAAMercury_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Venus: {
+        case KPCAAPlanetVenus: {
             return KPCAAVenus_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Earth: {
+        case KPCAAPlanetEarth: {
             return KPCAAEarth_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Mars: {
+        case KPCAAPlanetMars: {
             return KPCAAMars_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Jupiter: {
+        case KPCAAPlanetJupiter: {
             return KPCAAJupiter_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Saturn: {
+        case KPCAAPlanetSaturn: {
             return KPCAASaturn_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Uranus: {
+        case KPCAAPlanetUranus: {
             return KPCAAUranus_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Neptune: {
+        case KPCAAPlanetNeptune: {
             return KPCAANeptune_EclipticLongitude(JD, highPrecision);
             break;
         }
-        case Pluto: {
+        case KPCAAPlanetPluto: {
             return KPCAAPluto_EclipticLongitude(JD);
             break;
         }
@@ -93,39 +93,39 @@ double KPCAAEclipticalElement_EclipticLongitude(double JD, KPCAAPlanet planet, B
 double KPCAAEclipticalElement_EclipticLatitude(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
     switch (planet) {
-        case Mercury: {
+        case KPCAAPlanetMercury: {
             return KPCAAMercury_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Venus: {
+        case KPCAAPlanetVenus: {
             return KPCAAVenus_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Earth: {
+        case KPCAAPlanetEarth: {
             return KPCAAEarth_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Mars: {
+        case KPCAAPlanetMars: {
             return KPCAAMars_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Jupiter: {
+        case KPCAAPlanetJupiter: {
             return KPCAAJupiter_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Saturn: {
+        case KPCAAPlanetSaturn: {
             return KPCAASaturn_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Uranus: {
+        case KPCAAPlanetUranus: {
             return KPCAAUranus_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Neptune: {
+        case KPCAAPlanetNeptune: {
             return KPCAANeptune_EclipticLatitude(JD, highPrecision);
             break;
         }
-        case Pluto: {
+        case KPCAAPlanetPluto: {
             return KPCAAPluto_EclipticLatitude(JD);
             break;
         }
@@ -140,39 +140,39 @@ double KPCAAEclipticalElement_EclipticLatitude(double JD, KPCAAPlanet planet, BO
 double KPCAAEclipticalElement_RadiusVector(double JD, KPCAAPlanet planet, BOOL highPrecision)
 {
     switch (planet) {
-        case Mercury: {
+        case KPCAAPlanetMercury: {
             return KPCAAMercury_RadiusVector(JD, highPrecision);
             break;
         }
-        case Venus: {
+        case KPCAAPlanetVenus: {
             return KPCAAVenus_RadiusVector(JD, highPrecision);
             break;
         }
-        case Earth: {
+        case KPCAAPlanetEarth: {
             return KPCAAEarth_RadiusVector(JD, highPrecision);
             break;
         }
-        case Mars: {
+        case KPCAAPlanetMars: {
             return KPCAAMars_RadiusVector(JD, highPrecision);
             break;
         }
-        case Jupiter: {
+        case KPCAAPlanetJupiter: {
             return KPCAAJupiter_RadiusVector(JD, highPrecision);
             break;
         }
-        case Saturn: {
+        case KPCAAPlanetSaturn: {
             return KPCAASaturn_RadiusVector(JD, highPrecision);
             break;
         }
-        case Uranus: {
+        case KPCAAPlanetUranus: {
             return KPCAAUranus_RadiusVector(JD, highPrecision);
             break;
         }
-        case Neptune: {
+        case KPCAAPlanetNeptune: {
             return KPCAANeptune_RadiusVector(JD, highPrecision);
             break;
         }
-        case Pluto: {
+        case KPCAAPlanetPluto: {
             return KPCAAPluto_RadiusVector(JD);
             break;
         }

@@ -16,28 +16,28 @@
 CAAElliptical::Object ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object);
 CAAElliptical::Object ellipticalObjectFromKPCAAEllipticalObject(KPCAAEllipticalObject object) {
     switch (object) {
-        case SUN_elliptical:
+        case KPCAAEllipticalObjectSUN:
             return CAAElliptical::Object::SUN;
             break;
-        case MERCURY_elliptical:
+        case KPCAAEllipticalObjectMERCURY:
             return CAAElliptical::Object::MERCURY;
             break;
-        case VENUS_elliptical:
+        case KPCAAEllipticalObjectVENUS:
             return CAAElliptical::Object::VENUS;
             break;
-        case MARS_elliptical:
+        case KPCAAEllipticalObjectMARS:
             return CAAElliptical::Object::MARS;
             break;
-        case JUPITER_elliptical:
+        case KPCAAEllipticalObjectJUPITER:
             return CAAElliptical::Object::JUPITER;
             break;
-        case SATURN_elliptical:
+        case KPCAAEllipticalObjectSATURN:
             return CAAElliptical::Object::SATURN;
             break;
-        case URANUS_elliptical:
+        case KPCAAEllipticalObjectURANUS:
             return CAAElliptical::Object::URANUS;
             break;
-        case NEPTUNE_elliptical:
+        case KPCAAEllipticalObjectNEPTUNE:
             return CAAElliptical::Object::NEPTUNE;
             break;
         default:

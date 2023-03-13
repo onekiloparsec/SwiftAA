@@ -20,17 +20,17 @@
  KPCAAPlanetStrict is an enum for all true planets, that is, excluding the now official 
  Dwarf Planet category, that is, Pluto.
  */
-typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
-    mercury = MERCURY,
-    venus = VENUS,
-    earth = 99,
-    mars = MARS,
-    jupiter = JUPITER,
-    saturn = SATURN,
-    uranus = URANUS,
-    neptune = NEPTUNE,
-    undefined = -1
-};
+typedef enum KPCAAPlanetStrict: NSInteger {
+    KPCAAPlanetStrictMercury = KPCPlanetaryObjectMERCURY,
+    KPCAAPlanetStrictVenus = KPCPlanetaryObjectVENUS,
+    KPCAAPlanetStrictEarth = 99,
+    KPCAAPlanetStrictMars = KPCPlanetaryObjectMARS,
+    KPCAAPlanetStrictJupiter = KPCPlanetaryObjectJUPITER,
+    KPCAAPlanetStrictSaturn = KPCPlanetaryObjectSATURN,
+    KPCAAPlanetStrictUranus = KPCPlanetaryObjectURANUS,
+    KPCAAPlanetStrictNeptune = KPCPlanetaryObjectNEPTUNE,
+    KPCAAPlanetStrictUndefined = -1
+} KPCAAPlanetStrict;
 
 
 /**
@@ -38,17 +38,17 @@ typedef NS_ENUM(NSInteger, KPCAAPlanetStrict) {
  or not (like DwarfPlanet), that is, including Pluto.
  */
 
-typedef NS_ENUM(NSInteger, KPCAAPlanet) {
-    Mercury = mercury,
-    Venus = venus,
-    Earth = earth,
-    Mars = mars,
-    Jupiter = jupiter,
-    Saturn = saturn,
-    Uranus = uranus,
-    Neptune = neptune,
-    Pluto = 999,
-    Undefined = -1
-};
+typedef enum KPCAAPlanet: NSInteger {
+    KPCAAPlanetMercury = KPCAAPlanetStrictMercury,
+    KPCAAPlanetVenus = KPCAAPlanetStrictVenus,
+    KPCAAPlanetEarth = KPCAAPlanetStrictEarth,
+    KPCAAPlanetMars = KPCAAPlanetStrictMars,
+    KPCAAPlanetJupiter = KPCAAPlanetStrictJupiter,
+    KPCAAPlanetSaturn = KPCAAPlanetStrictSaturn,
+    KPCAAPlanetUranus = KPCAAPlanetStrictUranus,
+    KPCAAPlanetNeptune = KPCAAPlanetStrictNeptune,
+    KPCAAPlanetPluto = 999,
+    KPCAAPlanetUndefined = -1
+} KPCAAPlanet;
 
 #endif /* KPCAASwiftAdditions_h */
