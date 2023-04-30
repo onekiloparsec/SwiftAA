@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPCAASwiftAdditions.h"
+#import <ObjCAA/KPCAASwiftAdditions.h>
 
 #ifdef __cplusplus
 extern "C" {

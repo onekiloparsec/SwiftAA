@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPCAA2DCoordinate.h"
-#import "KPCAA3DCoordinate.h"
+#import <ObjCAA/KPCAA2DCoordinate.h>
+#import <ObjCAA/KPCAA3DCoordinate.h>
 
 #ifdef __cplusplus
 extern "C" {

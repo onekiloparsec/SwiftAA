@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "KPCAA2DCoordinate.h"
+#import <ObjCAA/KPCAA2DCoordinate.h>
 
 @interface KPCAA2DCoordinateTests : XCTestCase
 

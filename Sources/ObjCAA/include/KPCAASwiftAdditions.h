@@ -9,7 +9,7 @@
 #ifndef KPCAASwiftAdditions_h
 #define KPCAASwiftAdditions_h
 
-#import "KPCAAPlanetaryPhenomena.h"
+#import <ObjCAA/KPCAAPlanetaryPhenomena.h>
 
 // SwiftAA Aditions
 // The trick here is that CAPITALS are used in the C++ code for PlanetaryObject

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPCAA3DCoordinate.h"
-#import "KPCAAPlanetaryPhenomena.h"
-#import "KPCAASwiftAdditions.h"
+#import <ObjCAA/KPCAA3DCoordinate.h>
+#import <ObjCAA/KPCAAPlanetaryPhenomena.h>
+#import <ObjCAA/KPCAASwiftAdditions.h>
 
 #ifdef __cplusplus
 extern "C" {

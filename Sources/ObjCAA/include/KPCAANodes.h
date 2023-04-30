@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPCAAElliptical.h"
-#import "KPCAAParabolic.h"
+#import <ObjCAA/KPCAAElliptical.h>
+#import <ObjCAA/KPCAAParabolic.h>
 
 #ifdef __cplusplus
 extern "C" {
