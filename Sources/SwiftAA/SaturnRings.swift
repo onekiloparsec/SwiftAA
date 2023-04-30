@@ -11,6 +11,11 @@ import ObjCAA
 
 /// Saturnicentric coordinates are centered on Saturn.
 public struct SaturnicentricCoordinates {
+    public init(longitude: Degree, latitude: Degree) {
+        self.longitude = longitude
+        self.latitude = latitude
+    }
+    
     /// Saturnicentric longitudes, referred to the plane of the ring.
     public let longitude: Degree
     
