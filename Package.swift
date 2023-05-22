@@ -49,14 +49,15 @@ let package = Package(
         .target(
             name: "SwiftAA",
             dependencies: ["ObjCAA"],
-            exclude: []
+            exclude: ["SwiftAA-Info.plist"]
         ),
         .testTarget(
             name: "ObjCAATests",
             dependencies: ["ObjCAA"]),
         .testTarget(
             name: "SwiftAATests",
-            dependencies: ["SwiftAA"]),
+            dependencies: ["SwiftAA"],
+            exclude: ["SwiftAATests-Info.plist"])
     ],
     cxxLanguageStandard: .gnucxx17
 )
