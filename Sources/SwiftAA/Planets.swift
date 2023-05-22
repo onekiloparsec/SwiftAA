@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Planet class encompasses all the shared properties of the planets, to be understood as "non-Earth" 
 /// and "non-dwarf" planets.

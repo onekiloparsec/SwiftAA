@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /**
  *  The PlanetaryPhenomena protocol encompass all methods associated with planetary phenomena in the solar system:

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 typealias JupiterEquatorialRadius = Double
 

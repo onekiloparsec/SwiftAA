@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Sun.
 public class Sun: Object, CelestialBody {

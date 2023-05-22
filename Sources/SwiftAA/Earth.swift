@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 public enum TwilightSunAltitude: Degree {
     case diskCenterOnGeometricHorizon = 0

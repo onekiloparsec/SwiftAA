@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Saturn planet.
 public class Saturn: Planet {

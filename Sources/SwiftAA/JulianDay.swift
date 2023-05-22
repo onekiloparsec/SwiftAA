@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Julian Day is a continuous count of days and fractions thereof from the beginning of the year -4712.
 /// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.

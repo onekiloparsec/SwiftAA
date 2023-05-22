@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 #if canImport(CoreLocation)
 import CoreLocation

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Mars planet.
 public class Mars: Planet, MarsPhysicalDetails {

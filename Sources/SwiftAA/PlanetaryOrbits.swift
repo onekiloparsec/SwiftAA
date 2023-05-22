@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// This protocol encompasses various elements of planetary orbits.
 public protocol PlanetaryOrbits: PlanetaryBase {

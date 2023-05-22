@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 enum InvalidParameterError: Error {
     case invalidPlanet(KPCAAPlanet)
