@@ -6,10 +6,10 @@
 //  Copyright © 2019 onekiloparsec. All rights reserved.
 //
 
+// Note: This is the public header used when building a static library (i.e., with SPM). Imports should be done
+// in the "Header.h" style.
+
 #import "PlatformHelpers.h"
-
-// In this header, you should import all the public headers of your framework using statements like #import "PublicHeader.h"
-
 #import "KPCAASwiftAdditions.h"
 
 #import "KPCAA2DCoordinate.h"

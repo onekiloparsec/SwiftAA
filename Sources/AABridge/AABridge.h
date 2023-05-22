@@ -6,10 +6,10 @@
 //  Copyright © 2019 onekiloparsec. All rights reserved.
 //
 
+// Note: This is the public header used when building a framework bundle. Imports should be done in the
+// <AABridge/Header.h> style.
+
 #import <AABridge/PlatformHelpers.h>
-
-// In this header, you should import all the public headers of your framework using statements like #import <AABridge/PublicHeader.h>
-
 #import <AABridge/KPCAASwiftAdditions.h>
 
 #import <AABridge/KPCAA2DCoordinate.h>
@@ -28,7 +28,6 @@
 #import <AABridge/KPCAAElliptical.h>
 #import <AABridge/KPCAAEquationOfTime.h>
 #import <AABridge/KPCAAEquinoxesAndSolstices.h>
-#import <AABridge/KPCAAFK5.h>
 #import <AABridge/KPCAAGalileanMoons.h>
 #import <AABridge/KPCAAGlobe.h>
 #import <AABridge/KPCAAIlluminatedFraction.h>
