@@ -6,7 +6,7 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import <ObjCAA/KPCAA3DCoordinate.h>
+#import "KPCAA3DCoordinate.h"
 #import "AA3DCoordinate.h"
 
 KPCAA3DCoordinateComponents KPCAA3DCoordinateComponentsMake(double X, double Y, double Z)
