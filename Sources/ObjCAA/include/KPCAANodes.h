@@ -6,9 +6,9 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import "PlatformHelpers.h"
-#import "KPCAAElliptical.h"
-#import "KPCAAParabolic.h"
+#import <ObjCAA/PlatformHelpers.h>
+#import <ObjCAA/KPCAAElliptical.h>
+#import <ObjCAA/KPCAAParabolic.h>
 
 #ifdef __cplusplus
 extern "C" {

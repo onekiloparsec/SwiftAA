@@ -6,8 +6,8 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import "PlatformHelpers.h"
-#import "KPCAASwiftAdditions.h"
+#import <ObjCAA/PlatformHelpers.h>
+#import <ObjCAA/KPCAASwiftAdditions.h>
 
 #ifdef __cplusplus
 extern "C" {

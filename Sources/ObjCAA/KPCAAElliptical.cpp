@@ -57,8 +57,8 @@ KPCAAEllipticalPlanetaryDetails KPCAAElliptical_CalculatePlanetaryDetails(double
     CAAEllipticalPlanetaryDetails detailsPlus = CAAElliptical::Calculate(JD, ellipticalObject, highPrecision);
     
     struct KPCAAEllipticalPlanetaryDetails details;
-    details.ApparentGeocentricLongitude = detailsPlus.ApparentGeocentricLongitude;
-    details.ApparentGeocentricLatitude = detailsPlus.ApparentGeocentricLatitude;
+    details.ApparentGeocentricLongitude = detailsPlus.ApparentGeocentricEclipticalLongitude;
+    details.ApparentGeocentricLatitude = detailsPlus.ApparentGeocentricEclipticalLatitude;
     details.ApparentGeocentricDistance = detailsPlus.ApparentGeocentricDistance;
     details.ApparentLightTime = detailsPlus.ApparentLightTime;
     details.ApparentGeocentricRA = detailsPlus.ApparentGeocentricRA;

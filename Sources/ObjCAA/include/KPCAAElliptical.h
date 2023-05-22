@@ -6,10 +6,10 @@
 //  Licensed under the MIT License (see LICENSE file)
 //
 
-#import "PlatformHelpers.h"
-#import "KPCAA3DCoordinate.h"
-#import "KPCAAPlanetaryPhenomena.h"
-#import "KPCAASwiftAdditions.h"
+#import <ObjCAA/PlatformHelpers.h>
+#import <ObjCAA/KPCAA3DCoordinate.h>
+#import <ObjCAA/KPCAAPlanetaryPhenomena.h>
+#import <ObjCAA/KPCAASwiftAdditions.h>
 
 #ifdef __cplusplus
 extern "C" {

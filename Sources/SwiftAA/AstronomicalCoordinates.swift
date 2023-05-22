@@ -11,6 +11,11 @@ import ObjCAA
 
 /// Struct to encapsulate amount of proper motion in equatorial reference.
 public struct ProperMotion {
+    public init(deltaRightAscension: Second, deltaDeclination: ArcSecond) {
+        self.deltaRightAscension = deltaRightAscension
+        self.deltaDeclination = deltaDeclination
+    }
+    
     /// The annual delta in right ascension
     public let deltaRightAscension: Second
     /// The annual delta in declination

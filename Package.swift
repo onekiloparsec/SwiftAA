@@ -35,10 +35,11 @@ let package = Package(
             exclude: ["naughter.css",
                       "CMakeLists.txt",
                       "AA+.htm",
-                      "include/AAVSOP2013.h",
-                      "include/AA+.h",
+                      "AAVSOP2013.h",
+                      "AA+.h",
                       "AAVSOP2013.cpp",
-                      "AATest.cpp"]
+                      "AATest.cpp"],
+            publicHeadersPath: ""
         ),
         .target(
             name: "ObjCAA",
