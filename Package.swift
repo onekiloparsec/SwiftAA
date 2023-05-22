@@ -8,11 +8,11 @@ let package = Package(
     platforms: [.macOS(.v10_13), .iOS(.v12)],
     products: [
         // The AAplus product is the C++ project this one wraps. 
-        .library(name: "AAplus", type: .dynamic, targets: ["AAplus"]),
+        .library(name: "AAplus", targets: ["AAplus"]),
         // The AABridge product provides C (not Objective-C) bindings for AAplus for Swift to use.
         .library(name: "AABridge", targets: ["AABridge"]),
         // …and finally, SwiftAA provides the Swift interface.
-        .library(name: "SwiftAA", type: .dynamic, targets: ["SwiftAA"])
+        .library(name: "SwiftAA", targets: ["SwiftAA"])
     ],
     targets: [
         .target(
