@@ -14,7 +14,7 @@
 </a>
 </p>
 
-SwiftAA (and ObjCAA)
+SwiftAA
 ============
 
 ![](https://img.shields.io/badge/Swift-5-blue.svg?style=flat)
@@ -27,13 +27,11 @@ SwiftAA (and ObjCAA)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA?ref=badge_shield)
 ![](https://img.shields.io/cocoapods/v/SwiftAA.svg)
 
-*The most comprehensive collection of accurate astronomical algorithms, in C++, Objective-C and Swift, all in one place.* 
+*The most comprehensive collection of accurate astronomical algorithms, in C++ and Swift, all in one place.* 
 
 *(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
 
 Other implementations: [JavaScript (aa-js)](https://github.com/onekiloparsec/aa-js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
-
-See Notes below for the difference between ObjCAA and SwiftAA.
 
 Description
 =======
@@ -44,7 +42,7 @@ SwiftAA provides everything you need to build our Solar System, compute length o
 [MeteorActive](https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8), a carefully crafted iOS app to get
 everything about meteors.
 
-SwiftAA is first built with an Objective-C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
+SwiftAA is first built with a C(++) layer atop the C++ implementation by P.J. Naughter of the reference textbook
 *Astronomical Algorithms*, by Jean Meeus (2nd ed., [Amazon](https://www.amazon.com/Astronomical-Algorithms-Jean-Meeus/dp/0943396611/ref=sr_1_1?ie=UTF8&qid=1506016222&sr=8-1&keywords=astronomical+algorithms+jean+meeus)). This C++ package is called **AA+** (see below). AA+ also includes additional algorithms of the
 [VSOP87](https://en.wikipedia.org/wiki/VSOP_(planets)) framework, and includes the complete support for the ELP/MPP02 theory. 
 Thus, SwiftAA, thanks to AA+, is the most complete and accurate collection of algorithms for all things astronomical in Swift.
@@ -64,38 +62,40 @@ The documentation generated from the code itself is available at [http://onekilo
 Installation
 ============
 
-Using the [Swift Package Manager](https://swift.org/package-manager/): either through Xcode > File > Swift Packages > Add Package Dependency... and enter this repo URL (including the `.git` extension), , then choose `SwiftAA` target. Or add the line  `.package(url: "https://github.com/onekiloparsec/SwiftAA.git", from: "2.2.2")` in the `dependencies` section of your `Package.swift` file.
+Using the [Swift Package Manager](https://swift.org/package-manager/): either through Xcode > File > Swift Packages > Add Package Dependency... and enter this repo URL (including the `.git` extension), , then choose `SwiftAA` target. Or add the line  `.package(url: "https://github.com/onekiloparsec/SwiftAA.git", from: "3.0.0")` in the `dependencies` section of your `Package.swift` file.
 
 Using [Carthage](https://github.com/Carthage/Carthage): add `github "onekiloparsec/SwiftAA"` to your `Cartfile`, then run `carthage update`, and finally add the newly built `SwiftAA-macOS.framework` or `SwiftAA-iOS.framework` into your project (in `embedded binaries`).
 
-Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'`, or `pod 'ObjCAA'` to your `Podfile` and then run `pod update`. 
+Using [CocoaPods](http://cocoapods.org/): add `pod 'SwiftAA'` to your `Podfile` and then run `pod update`. 
 
 
 
 Notes
 ============
 
-ObjCAA
+AABridge
 ---
 
-For a long time, all the C++, Objective-C++ and Swift code was bundled together. But in order to distribute SwiftAA through the SPM, it was necessary to split the sources into seperate folders. Then, three different libraries were declared in the `Package.swift` file and built separatedly, each of them depending on the previous one (`AA+`, then `ObjCAA`, and finally `SwiftAA`). 
+The `AABridge` library is simply a bridge between the C++ codebase provided by `AA+` and the Swift code in `SwiftAA`. It's implemented entirely in C. It's recommended that you use either the `A++` C++ code directly or the `SwiftAA` Swift wrapper.
 
-During that evolution, we chose to create a specific `ObjCAA` target inside the Xcode project. The consequence is that `ObjCAA` must be imported in `SwiftAA` source files that need it. Not a big deal, expect for Cocoapods which doesn't understand the subtelty. Hence, we created a specific `ObjCAA` pod, which will follow the versionning numbers of the main package.
+For a long time, all the C++, (Objective-)C(++) and Swift code was bundled together. But in order to distribute SwiftAA through the SPM, it was necessary to split the sources into seperate folders. Then, three different libraries were declared in the `Package.swift` file and built separatedly, each of them depending on the previous one (`AA+`, then `AABridge`, and finally `SwiftAA`). 
+
+During that evolution, we chose to create a specific `AABridge` target inside the Xcode project. The consequence is that `AABridge` must be imported in `SwiftAA` source files that need it. Not a big deal, expect for Cocoapods which doesn't understand the subtelty. Hence, we created a specific `AABridge` pod, which will follow the versioning numbers of the main package.
 
 In summary, we have:
 
-* Three targets available through the Swift Package Manager: `AA+`, `ObjCAA` and `SwiftAA`. Embed only the last level you intend to use in your project.
-* Three targets available through Carthage, inside the Xcode project: `ObjCAA` (including `AA+`), `SwiftAA-iOS` and `SwiftAA-macOS`.
-* Two pods available through Cocoapods: `ObjCAA` and `SwiftAA`.
+* Three targets available through the Swift Package Manager: `AA+`, `AABridge` and `SwiftAA`. Embed only the last level you intend to use in your project.
+* Three targets available through Carthage, inside the Xcode project: `AABridge` (including `AA+`), `SwiftAA-iOS` and `SwiftAA-macOS`.
+* Two pods available through Cocoapods: `AABridge` and `SwiftAA`.
 
 
 AA+
 ---
 The AA+ framework, written in C++ by PJ Naughter (Visual C++ MVP) is certainly the best and most complete implementation of the "Astronomical Algorithms", found in the reference textbook by Jean Meeus. To make the most of this code specifically, you have to have a copy of the book with you (APIs and method names are hardly understandable without knowing what they refer to).
 
-Pull requests are accepted only about the Objective-C(++) and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to) to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
+Pull requests are accepted only about the C(++) and Swift code. The AA+ code changes must be directed (as I will personnaly do if I need to) to the original source (see the [AA+ website](http://www.naughter.com/aa.html)).
 
-Today's version of AA+ used in SwiftAA is 2.44 (released 14 July 2022). 
+Today's version of AA+ used in SwiftAA is 2.50 (released 16 April 2023). 
 
 
 Caution on Coordinates
@@ -108,11 +108,11 @@ The coordinates computations are key for modern astronomy. However, there is no 
 Prefixes & Conventions
 ----
 
-Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA was to build an Objective-C(++) layer that follow *strictly* the methods and interfaces of the underlying C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
+Needless to say how different the syntax is between C, C++, Objective-C and Swift. The main guideline in writting SwiftAA was to build a C(++) layer that follow *strictly* the methods and interfaces of the underlying C++ library. Only the name of some variables were a bit "Objective-C-fied" (to avoid prefix them with the one-letter type, 'b' for boolean etc').
 
-As Objective-C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++ library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
+As C lacks namespaces, everything must be prefixed. It is a convention to use 3-letters prefixes in Objective-C. KPC stands for "kiloparsec" and is "my" usual prefix. I chose to keep the AA prefix that belongs to the C++ library as well. Hence the (rather long) 5-letters *KPCAA* prefix of all methods.
 
-The constraint of having an Objective-C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes.
+The constraint of having an C layer first comes from the fact that no C++ code can be written directly alongside Swift code (in the same file). And Swift doesn't have the header/implementation split into different files. Hence one must write a Objective-C++/C wrapper around it, with name prefixes. Additionally, this codebase is compatible with Swift on Linux, and Objective-C is largely unavailable there - and thus the `AABridge` layer is built in C.
 
 
 Branches
