@@ -20,6 +20,7 @@ SwiftAA
 ![](https://img.shields.io/badge/Swift-5-blue.svg?style=flat)
 ![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![](https://img.shields.io/badge/platform-osx-lightgrey.svg)
+![](https://img.shields.io/badge/platform-linux-lightgrey.svg)
 ![](https://img.shields.io/badge/licence-MIT-blue.svg)
 [![Travis](https://img.shields.io/travis/onekiloparsec/SwiftAA.svg)](https://travis-ci.org/onekiloparsec/SwiftAA/)
 [![Codecov](https://img.shields.io/codecov/c/github/onekiloparsec/SwiftAA.svg)](https://codecov.io/gh/onekiloparsec/SwiftAA)
