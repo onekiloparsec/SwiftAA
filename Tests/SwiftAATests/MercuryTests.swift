@@ -12,7 +12,7 @@ import XCTest
 class MercuryTests: XCTestCase {
 
     func testAverageColor() {
-        XCTAssertNotEqual(Mercury.averageColor, Color.white)
+        XCTAssertNotEqual(Mercury.averageColor, CelestialColor.white)
     }
     
     // Taken from AA+ tests

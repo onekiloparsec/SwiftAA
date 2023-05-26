@@ -10,12 +10,12 @@ import Foundation
 
 #if canImport(UIKit)
     import UIKit
-    public typealias Color=UIColor
+    public typealias CelestialColor=UIColor
 #elseif canImport(AppKit)
     import AppKit
-    public typealias Color=NSColor
+    public typealias CelestialColor=NSColor
 #else
-    public struct Color: Equatable, Hashable {
+    public struct CelestialColor: Equatable, Hashable {
         public static let white = Color(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
         public let red: Double

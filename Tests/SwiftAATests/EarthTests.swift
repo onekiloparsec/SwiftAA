@@ -14,7 +14,7 @@ import AABridge
 class EarthTests: XCTestCase {
 
     func testAverageColor() {
-        XCTAssertNotEqual(Earth.averageColor, Color.white)
+        XCTAssertNotEqual(Earth.averageColor, CelestialColor.white)
     }
 
     func testLengthOfSeason2000() {

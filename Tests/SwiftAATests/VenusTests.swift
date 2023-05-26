@@ -13,7 +13,7 @@ import XCTest
 class VenusTests: XCTestCase {
 
     func testAverageColor() {
-        XCTAssertNotEqual(Venus.averageColor, Color.white)
+        XCTAssertNotEqual(Venus.averageColor, CelestialColor.white)
     }
     
     // See AA p.225

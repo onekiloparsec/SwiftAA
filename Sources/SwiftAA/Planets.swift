@@ -14,8 +14,8 @@ import AABridge
 public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena, PlanetaryOrbits {
 
     /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. 
-    public class var averageColor: Color {
-        get { return Color.white }
+    public class var averageColor: CelestialColor {
+        get { return CelestialColor.white }
     }
         
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private

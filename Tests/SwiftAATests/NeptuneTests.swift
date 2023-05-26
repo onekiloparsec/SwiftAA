@@ -12,6 +12,6 @@ import XCTest
 class NeptuneTests: XCTestCase {
 
     func testAverageColor() {
-        XCTAssertNotEqual(Neptune.averageColor, Color.white)
+        XCTAssertNotEqual(Neptune.averageColor, CelestialColor.white)
     }
 }

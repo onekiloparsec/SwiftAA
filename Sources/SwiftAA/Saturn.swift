@@ -13,8 +13,8 @@ import AABridge
 public class Saturn: Planet {
     
     /// The average color of the planet.
-    public class override var averageColor: Color {
-        get { return Color(red: 0.941, green:0.827, blue:0.616, alpha: 1.0) }
+    public class override var averageColor: CelestialColor {
+        get { return CelestialColor(red: 0.941, green:0.827, blue:0.616, alpha: 1.0) }
     }
 
     public fileprivate(set) var Mimas: SaturnianMoon

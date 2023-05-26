@@ -12,8 +12,8 @@ import Foundation
 public class Neptune: Planet {
     
     /// The average color of the planet
-    public class override var averageColor: Color {
-        get { return Color(red: 0.392, green:0.518, blue:0.871, alpha: 1.0) }
+    public class override var averageColor: CelestialColor {
+        get { return CelestialColor(red: 0.392, green:0.518, blue:0.871, alpha: 1.0) }
     }
 }
 
