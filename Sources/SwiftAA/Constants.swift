@@ -16,7 +16,7 @@ import Foundation
     public typealias CelestialColor=NSColor
 #else
     public struct CelestialColor: Equatable, Hashable {
-        public static let white = Color(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        public static let white = CelestialColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
         public let red: Double
         public let green: Double
