@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Julian Day is a continuous count of days and fractions thereof from the beginning of the year -4712.
 /// By tradition, the Julian Day begins at Greenwhich mean noon, that is, at 12h Universal Time.
@@ -35,8 +35,10 @@ public struct JulianDay: NumericType, CustomStringConvertible {
     ///   - minute: The minute of the date
     ///   - second: The second of the date. Precision goes to the nanosecond.
     public init(year: Int, month: Int, day: Int, hour: Int = 0, minute: Int = 0, second: Double = 0.0) {
-        let aaDate = KPCAADate(year: year, month: month, day: Double(day), hour: Double(hour), minute: Double(minute), second: second, usingGregorianCalendar: true)!
-        self.init(aaDate.julian())
+        let handle = KPCAADate_CreateWithDateTime(year, month, Double(day), Double(hour), Double(minute), second, true)
+        let julianValue: Double = KPCAADate_GetJulian(handle)
+        KPCAADate_Destroy(handle)
+        self.init(julianValue)
     }
     
     /// Returns a Julian Day struct initialized from a given Gregorian calendar date, in the UT reference frame,
@@ -60,17 +62,18 @@ public struct JulianDay: NumericType, CustomStringConvertible {
 public extension JulianDay {
     /// Returns a new Date object, in the Gregorian calendar, corresponding to the Julian Day value.
     var date: Date {
-        let aaDate = KPCAADate(julianDay: value, usingGregorianCalendar: true)!
-        let decimalSeconds = aaDate.second()
+        let aaDate = KPCAADate_CreateWithJulianDay(value, true)
+        let decimalSeconds = KPCAADate_GetSecond(aaDate)
         let roundedSeconds = decimalSeconds.rounded(.towardZero)
         let nanoseconds = (decimalSeconds - roundedSeconds) * 1e9
-        let components = DateComponents(year: aaDate.year(),
-                                        month: aaDate.month(), 
-                                        day: aaDate.day(),
-                                        hour: aaDate.hour(),
-                                        minute: aaDate.minute(),
+        let components = DateComponents(year: KPCAADate_GetYear(aaDate),
+                                        month: KPCAADate_GetMonth(aaDate),
+                                        day: KPCAADate_GetDay(aaDate),
+                                        hour: KPCAADate_GetHour(aaDate),
+                                        minute: KPCAADate_GetMinute(aaDate),
                                         second: Int(roundedSeconds),
                                         nanosecond: Int(nanoseconds))
+        KPCAADate_Destroy(aaDate)
         
         let date = Calendar.gregorianGMT.date(from: components)!
         return date

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 public enum TwilightSunAltitude: Degree {
     case diskCenterOnGeometricHorizon = 0
@@ -40,8 +40,8 @@ public enum EarthSolsticeType: Int {
 }
 
 public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
-    public static var averageColor: Color {
-        get { return Color(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
+    public static var averageColor: CelestialColor {
+        get { return CelestialColor(red:0.133, green:0.212, blue:0.290, alpha:1.000) }
     }
     
     /// Equatorial radius of the Eart. Source: Wikipedia.
@@ -143,7 +143,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
     ///   - coordinates: The geographic coordinates for which to compute the twilights.
     /// - Returns: The rise, transit and set times, in Julian Day, and an error, if relevant.
     public func riseTransitSetTimes(for planetaryObject: KPCPlanetaryObject, geographicCoordinates: GeographicCoordinates) -> RiseTransitSetTimes {
-        guard planetaryObject != .UNDEFINED else {
+        guard planetaryObject != KPCPlanetaryObjectUNDEFINED else {
             return RiseTransitSetTimes(geographicCoordinates: geographicCoordinates, transitError: CelestialBodyTransitError.undefinedPlanetaryObject)
         }
         

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The RiseTransitSetTimesDetails struct encompasses all elements of the times of rise, transit and set.
 public struct RiseTransitSetTimesDetails {
@@ -106,11 +106,11 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
     //    let transit = julianDay + Hour(details.Transit).inJulianDays
     //    let set = julianDay + Hour(details.Set).inJulianDays
     
-    return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid.boolValue,
+    return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid,
                                       riseTime: rise,
-                                      isTransitAboveHorizon: details.isTransitAboveHorizon.boolValue,
+                                      isTransitAboveHorizon: details.isTransitAboveHorizon,
                                       transitTime: transit,
-                                      isSetValid: details.isSetValid.boolValue,
+                                      isSetValid: details.isSetValid,
                                       setTime: set)
 }
 

@@ -12,7 +12,7 @@ import XCTest
 class PlutoTests: XCTestCase {
     
     func testAverageColor() {
-        XCTAssertNotEqual(Pluto.averageColor, Color.white)
+        XCTAssertNotEqual(Pluto.averageColor, CelestialColor.white)
     }
         
 }

@@ -12,7 +12,7 @@ import XCTest
 class SaturnTests: XCTestCase {
     
     func testAverageColor() {
-        XCTAssertNotEqual(Saturn.averageColor, Color.white)
+        XCTAssertNotEqual(Saturn.averageColor, CelestialColor.white)
     }
 
     func testMoonsPresence() {

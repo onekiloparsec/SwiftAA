@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 enum PlanetError: Error {
     case invalidSubtype

@@ -5,57 +5,25 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftAA",
-    platforms: [
-        .macOS(.v10_13), .iOS(.v12),
-    ],
+    platforms: [.macOS(.v10_13), .iOS(.v12)],
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(
-            name: "AAplus",
-            type: .dynamic,
-            targets: ["AAplus"]
-        ),
-        .library(
-            name: "ObjCAA",
-            targets: ["ObjCAA"]
-        ),
-        .library(
-            name: "SwiftAA",
-            type: .dynamic,
-            targets: ["SwiftAA"]
-        )
+        // The AAplus product is the C++ project this one wraps. 
+        .library(name: "AAplus", targets: ["AAplus"]),
+        // The AABridge product provides C (not Objective-C) bindings for AAplus for Swift to use.
+        .library(name: "AABridge", targets: ["AABridge"]),
+        // …and finally, SwiftAA provides the Swift interface.
+        .library(name: "SwiftAA", targets: ["SwiftAA"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "AAplus",
-            dependencies: [],
-            path: "Sources/AA+",
-            exclude: ["naughter.css",
-                      "CMakeLists.txt",
-                      "AA+.htm",
-                      "include/AAVSOP2013.h",
-                      "include/AA+.h",
-                      "AAVSOP2013.cpp",
-                      "AATest.cpp"]
+            name: "AAplus", path: "Sources/AA+",
+            exclude: ["naughter.css", "CMakeLists.txt", "AA+.htm", "AAVSOP2013.h", "AA+.h", "AAVSOP2013.cpp", "AATest.cpp"],
+            publicHeadersPath: ""
         ),
-        .target(
-            name: "ObjCAA",
-            dependencies: ["AAplus"],
-            exclude: []
-        ),
-        .target(
-            name: "SwiftAA",
-            dependencies: ["ObjCAA"],
-            exclude: []
-        ),
-        .testTarget(
-            name: "ObjCAATests",
-            dependencies: ["ObjCAA"]),
-        .testTarget(
-            name: "SwiftAATests",
-            dependencies: ["SwiftAA"]),
+        .target(name: "AABridge", dependencies: ["AAplus"]),
+        .testTarget(  name: "AABridgeTests", dependencies: ["AABridge"]),
+        .target(name: "SwiftAA", dependencies: ["AABridge"], exclude: ["SwiftAA-Info.plist"]),
+        .testTarget(name: "SwiftAATests", dependencies: ["SwiftAA"], exclude: ["SwiftAATests-Info.plist"])
     ],
     cxxLanguageStandard: .gnucxx17
 )

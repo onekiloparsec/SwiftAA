@@ -7,85 +7,86 @@
 //
 
 import XCTest
+import AABridge
 @testable import SwiftAA
 
 class PlanetaryBaseTest: XCTestCase {
     var jd: JulianDay = 0.0
 
     func testPlanetBasic() {
-        XCTAssertEqual(Planet.averageColor, Color.white)
+        XCTAssertEqual(Planet.averageColor, CelestialColor.white)
     }
     
     func testMercuryTypes() {
         let mercury = Mercury(julianDay: self.jd)
         XCTAssertEqual(mercury.name, "Mercury")
-        XCTAssertEqual(mercury.planet, .Mercury)
-        XCTAssertEqual(mercury.planetStrict, .mercury)
-        XCTAssertEqual(mercury.planetaryObject, .MERCURY)
+        XCTAssertEqual(mercury.planet, KPCAAPlanetMercury)
+        XCTAssertEqual(mercury.planetStrict, KPCAAPlanetStrictMercury)
+        XCTAssertEqual(mercury.planetaryObject, KPCPlanetaryObjectMERCURY)
     }
 
     func testVenusTypes() {
         let venus = Venus(julianDay: self.jd)
         XCTAssertEqual(venus.name, "Venus")
-        XCTAssertEqual(venus.planet, .Venus)
-        XCTAssertEqual(venus.planetStrict, .venus)
-        XCTAssertEqual(venus.planetaryObject, .VENUS)
+        XCTAssertEqual(venus.planet, KPCAAPlanetVenus)
+        XCTAssertEqual(venus.planetStrict, KPCAAPlanetStrictVenus)
+        XCTAssertEqual(venus.planetaryObject, KPCPlanetaryObjectVENUS)
     }
 
     func testEarthTypes() {
         let earth = Earth(julianDay: self.jd)
         XCTAssertEqual(earth.name, "Earth")
-        XCTAssertEqual(earth.planet, .Earth)
-        XCTAssertEqual(earth.planetStrict, .earth)
-        XCTAssertEqual(earth.planetaryObject, .UNDEFINED) // <-- yes, UNDEFINED.
+        XCTAssertEqual(earth.planet, KPCAAPlanetEarth)
+        XCTAssertEqual(earth.planetStrict, KPCAAPlanetStrictEarth)
+        XCTAssertEqual(earth.planetaryObject, KPCPlanetaryObjectUNDEFINED) // <-- yes, UNDEFINED.
     }
 
     func testMarsTypes() {
         let mars = Mars(julianDay: self.jd)
         XCTAssertEqual(mars.name, "Mars")
-        XCTAssertEqual(mars.planet, .Mars)
-        XCTAssertEqual(mars.planetStrict, .mars)
-        XCTAssertEqual(mars.planetaryObject, .MARS)
+        XCTAssertEqual(mars.planet, KPCAAPlanetMars)
+        XCTAssertEqual(mars.planetStrict, KPCAAPlanetStrictMars)
+        XCTAssertEqual(mars.planetaryObject, KPCPlanetaryObjectMARS)
     }
 
     func testJupiterTypes() {
         let jupiter = Jupiter(julianDay: self.jd)
         XCTAssertEqual(jupiter.name, "Jupiter")
-        XCTAssertEqual(jupiter.planet, .Jupiter)
-        XCTAssertEqual(jupiter.planetStrict, .jupiter)
-        XCTAssertEqual(jupiter.planetaryObject, .JUPITER)
+        XCTAssertEqual(jupiter.planet, KPCAAPlanetJupiter)
+        XCTAssertEqual(jupiter.planetStrict, KPCAAPlanetStrictJupiter)
+        XCTAssertEqual(jupiter.planetaryObject, KPCPlanetaryObjectJUPITER)
     }
 
     func testSaturnTypes() {
         let saturn = Saturn(julianDay: self.jd)
         XCTAssertEqual(saturn.name, "Saturn")
-        XCTAssertEqual(saturn.planet, .Saturn)
-        XCTAssertEqual(saturn.planetStrict, .saturn)
-        XCTAssertEqual(saturn.planetaryObject, .SATURN)
+        XCTAssertEqual(saturn.planet, KPCAAPlanetSaturn)
+        XCTAssertEqual(saturn.planetStrict, KPCAAPlanetStrictSaturn)
+        XCTAssertEqual(saturn.planetaryObject, KPCPlanetaryObjectSATURN)
     }
 
     func testUranusTypes() {
         let uranus = Uranus(julianDay: self.jd)
         XCTAssertEqual(uranus.name, "Uranus")
-        XCTAssertEqual(uranus.planet, .Uranus)
-        XCTAssertEqual(uranus.planetStrict, .uranus)
-        XCTAssertEqual(uranus.planetaryObject, .URANUS)
+        XCTAssertEqual(uranus.planet, KPCAAPlanetUranus)
+        XCTAssertEqual(uranus.planetStrict, KPCAAPlanetStrictUranus)
+        XCTAssertEqual(uranus.planetaryObject, KPCPlanetaryObjectURANUS)
     }
 
     func testNeptuneTypes() {
         let neptune = Neptune(julianDay: self.jd)
         XCTAssertEqual(neptune.name, "Neptune")
-        XCTAssertEqual(neptune.planet, .Neptune)
-        XCTAssertEqual(neptune.planetStrict, .neptune)
-        XCTAssertEqual(neptune.planetaryObject, .NEPTUNE)
+        XCTAssertEqual(neptune.planet, KPCAAPlanetNeptune)
+        XCTAssertEqual(neptune.planetStrict, KPCAAPlanetStrictNeptune)
+        XCTAssertEqual(neptune.planetaryObject, KPCPlanetaryObjectNEPTUNE)
     }
 
     func testPlutoTypes() {
         let pluto = Pluto(julianDay: self.jd)
         XCTAssertEqual(pluto.name, "Pluto")
-        XCTAssertEqual(pluto.planet, .Pluto)
-        XCTAssertEqual(pluto.planetStrict, .undefined) // <-- yes, undefined.
-        XCTAssertEqual(pluto.planetaryObject, .UNDEFINED) // <-- yes, UNDEFINED.
+        XCTAssertEqual(pluto.planet, KPCAAPlanetPluto)
+        XCTAssertEqual(pluto.planetStrict, KPCAAPlanetStrictUndefined) // <-- yes, undefined.
+        XCTAssertEqual(pluto.planetaryObject, KPCPlanetaryObjectUNDEFINED) // <-- yes, UNDEFINED.
     }
     
     // See AA, p.270, Example 38.a

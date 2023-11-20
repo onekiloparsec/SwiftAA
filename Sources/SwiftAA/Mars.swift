@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Mars planet.
 public class Mars: Planet, MarsPhysicalDetails {
@@ -20,8 +20,8 @@ public class Mars: Planet, MarsPhysicalDetails {
         }()
 
     /// The average color of the Planet.
-    public class override var averageColor: Color {
-        get { return Color(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
+    public class override var averageColor: CelestialColor {
+        get { return CelestialColor(red: 0.137, green:0.447, blue:0.208, alpha: 1.0) }
     }
     
     // MARK: - PlanetaryPhysicalDetails

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// See AA p. 391. AA+ result is given in kilometers
 public func asteroidDiameter(magnitude: Magnitude, albedo: Double) -> Kilometer {

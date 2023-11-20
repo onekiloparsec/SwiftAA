@@ -7,15 +7,15 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Planet class encompasses all the shared properties of the planets, to be understood as "non-Earth" 
 /// and "non-dwarf" planets.
 public class Planet: Object, CelestialBody, PlanetaryDetails, PlanetaryPhenomena, PlanetaryOrbits {
 
     /// Convenience accesor for the average color of the planet, making it easier to draw a solar system. 
-    public class var averageColor: Color {
-        get { return Color.white }
+    public class var averageColor: CelestialColor {
+        get { return CelestialColor.white }
     }
         
     /// Accessor to all values of the underlying elliptical planetary details. Will probably become private

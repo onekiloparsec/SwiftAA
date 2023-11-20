@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// Constant value substracted from Julian Day to create so-called modified julian days.
 public let ModifiedJulianDayZero: Double = 2400000.5
@@ -164,61 +164,61 @@ extension KPCAAPlanet: CustomStringConvertible {
     /// - Returns: The KPCAAPlanet enum value
     public static func fromString(_ string: String) -> KPCAAPlanet {
         if string == "Mercury" {
-            return .Mercury
+            return KPCAAPlanetMercury
         }
         else if string == "Venus" {
-            return .Venus
+            return KPCAAPlanetVenus
         }
         else if string == "Earth" {
-            return .Earth
+            return KPCAAPlanetEarth
         }
         else if string == "Mars" {
-            return .Mars
+            return KPCAAPlanetMars
         }
         else if string == "Jupiter" {
-            return .Jupiter
+            return KPCAAPlanetJupiter
         }
         else if string == "Saturn" {
-            return .Saturn
+            return KPCAAPlanetSaturn
         }
         else if string == "Uranus" {
-            return .Uranus
+            return KPCAAPlanetUranus
         }
         else if string == "Neptune" {
-            return .Neptune
+            return KPCAAPlanetNeptune
         }
         else if string == "Pluto" {
-            return .Pluto
+            return KPCAAPlanetPluto
         }
         else {
-            return .Undefined
+            return KPCAAPlanetUndefined
         }
     }
     
     /// Return the planet name according to the enum value.
     public var description: String {
         switch self {
-        case .Mercury:
+        case KPCAAPlanetMercury:
             return "Mercury"
-        case .Venus:
+        case KPCAAPlanetVenus:
             return "Venus"
-        case .Earth:
+        case KPCAAPlanetEarth:
             return "Earth"
-        case .Mars:
+        case KPCAAPlanetMars:
             return "Mars"
-        case .Jupiter:
+        case KPCAAPlanetJupiter:
             return "Jupiter"
-        case .Saturn:
+        case KPCAAPlanetSaturn:
             return "Saturn"
-        case .Uranus:
+        case KPCAAPlanetUranus:
             return "Uranus"
-        case .Neptune:
+        case KPCAAPlanetNeptune:
             return "Neptune"
-        case .Pluto:
+        case KPCAAPlanetPluto:
             return "Pluto"
-        case .Undefined:
+        case KPCAAPlanetUndefined:
             return ""
-        @unknown default:
+        default:
             return ""
         }
     }
@@ -239,10 +239,10 @@ public extension KPCAAPlanetStrict {
     /// - Returns: The equivalent KPCAAPlanetStrict enum value
     static func fromPlanet(_ planet: KPCAAPlanet) -> KPCAAPlanetStrict {
         switch planet {
-        case .Pluto:
-            return .undefined
+        case KPCAAPlanetPluto:
+            return KPCAAPlanetStrictUndefined
         default:
-            return KPCAAPlanetStrict(rawValue: planet.rawValue)!
+            return KPCAAPlanetStrict(rawValue: planet.rawValue)
         }
     }
 }
@@ -256,45 +256,45 @@ public extension KPCPlanetaryObject {
     /// - Returns: The corresponding planetary object index.
     static func fromPlanet(_ planet: KPCAAPlanet) -> KPCPlanetaryObject {
         switch planet {
-        case .Mercury:
-            return .MERCURY
-        case .Venus:
-            return .VENUS
-        case .Mars:
-            return .MARS
-        case .Jupiter:
-            return .JUPITER
-        case .Saturn:
-            return .SATURN
-        case .Uranus:
-            return .URANUS
-        case .Neptune:
-            return .NEPTUNE
+        case KPCAAPlanetMercury:
+            return KPCPlanetaryObjectMERCURY
+        case KPCAAPlanetVenus:
+            return KPCPlanetaryObjectVENUS
+        case KPCAAPlanetMars:
+            return KPCPlanetaryObjectMARS
+        case KPCAAPlanetJupiter:
+            return KPCPlanetaryObjectJUPITER
+        case KPCAAPlanetSaturn:
+            return KPCPlanetaryObjectSATURN
+        case KPCAAPlanetUranus:
+            return KPCPlanetaryObjectURANUS
+        case KPCAAPlanetNeptune:
+            return KPCPlanetaryObjectNEPTUNE
         default:
-            return .UNDEFINED
+            return KPCPlanetaryObjectUNDEFINED
         }
     }
     
     /// Returns the SwiftAA Class type for the given planetary object.
     var objectType: Planet.Type? {
         switch self {
-        case .MERCURY:
+        case KPCPlanetaryObjectMERCURY:
             return SwiftAA.Mercury.self
-        case .VENUS:
+        case KPCPlanetaryObjectVENUS:
             return SwiftAA.Venus.self
-        case .MARS:
+        case KPCPlanetaryObjectMARS:
             return SwiftAA.Mars.self
-        case .JUPITER:
+        case KPCPlanetaryObjectJUPITER:
             return SwiftAA.Jupiter.self
-        case .SATURN:
+        case KPCPlanetaryObjectSATURN:
             return SwiftAA.Saturn.self
-        case .URANUS:
+        case KPCPlanetaryObjectURANUS:
             return SwiftAA.Uranus.self
-        case .NEPTUNE:
+        case KPCPlanetaryObjectNEPTUNE:
             return SwiftAA.Neptune.self
-        case .UNDEFINED:
+        case KPCPlanetaryObjectUNDEFINED:
             return nil
-        @unknown default:
+        default:
             return nil
         }
     }
@@ -310,22 +310,22 @@ public extension KPCAAEllipticalObject {
     /// - Returns: The corresponding elliptical object index. The Sun must be handled individually.
     static func fromPlanet(_ planet: KPCAAPlanet) -> KPCAAEllipticalObject {
         switch planet {
-        case .Mercury:
-            return .MERCURY_elliptical
-        case .Venus:
-            return .VENUS_elliptical
-        case .Mars:
-            return .MARS_elliptical
-        case .Jupiter:
-            return .JUPITER_elliptical
-        case .Saturn:
-            return .SATURN_elliptical
-        case .Uranus:
-            return .URANUS_elliptical
-        case .Neptune:
-            return .NEPTUNE_elliptical
+        case KPCAAPlanetMercury:
+            return KPCAAEllipticalObjectMERCURY
+        case KPCAAPlanetVenus:
+            return KPCAAEllipticalObjectVENUS
+        case KPCAAPlanetMars:
+            return KPCAAEllipticalObjectMARS
+        case KPCAAPlanetJupiter:
+            return KPCAAEllipticalObjectJUPITER
+        case KPCAAPlanetSaturn:
+            return KPCAAEllipticalObjectSATURN
+        case KPCAAPlanetUranus:
+            return KPCAAEllipticalObjectURANUS
+        case KPCAAPlanetNeptune:
+            return KPCAAEllipticalObjectNEPTUNE
         default:
-            return .UNDEFINED_elliptical
+            return KPCAAEllipticalObjectUNDEFINED
         }
     }
 }

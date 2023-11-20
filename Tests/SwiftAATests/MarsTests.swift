@@ -12,7 +12,7 @@ import XCTest
 class MarsTests: XCTestCase {
     
     func testAverageColorPresence() {
-        XCTAssertNotEqual(Mars.averageColor, Color.white)
+        XCTAssertNotEqual(Mars.averageColor, CelestialColor.white)
     }
     
     // See AA p.291, Example 42.a

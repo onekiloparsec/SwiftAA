@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// The Jupiter planet.
 public class Jupiter: Planet, JupiterPhysicalDetails {
@@ -20,8 +20,8 @@ public class Jupiter: Planet, JupiterPhysicalDetails {
         }()
     
     /// The average color of the planet.
-    public class override var averageColor: Color {
-        get { return Color(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
+    public class override var averageColor: CelestialColor {
+        get { return CelestialColor(red: 0.647, green:0.608, blue:0.576, alpha: 1.0) }
     }
     
     public fileprivate(set) var Io: GalileanMoon

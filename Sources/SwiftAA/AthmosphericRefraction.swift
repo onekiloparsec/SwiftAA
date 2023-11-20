@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjCAA
+import AABridge
 
 /// Compute the atmospheric refraction from the apparent altitude of a celestial body h0 that has been already measured,
 /// and from which one must substract R to find the true altitude h.

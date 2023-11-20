@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import ObjCAA
+import AABridge
 @testable import SwiftAA
 
 class ConstantsTests: XCTestCase {
@@ -40,65 +40,65 @@ class ConstantsTests: XCTestCase {
     }
 
     func testPlanet2PlanetaryObject() {
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Mercury), KPCPlanetaryObject.MERCURY)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Venus), KPCPlanetaryObject.VENUS)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Earth), KPCPlanetaryObject.UNDEFINED)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Mars), KPCPlanetaryObject.MARS)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Jupiter), KPCPlanetaryObject.JUPITER)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Saturn), KPCPlanetaryObject.SATURN)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Neptune), KPCPlanetaryObject.NEPTUNE)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Uranus), KPCPlanetaryObject.URANUS)
-        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(.Pluto), KPCPlanetaryObject.UNDEFINED)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetMercury), KPCPlanetaryObjectMERCURY)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetVenus), KPCPlanetaryObjectVENUS)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetEarth), KPCPlanetaryObjectUNDEFINED)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetMars), KPCPlanetaryObjectMARS)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetJupiter), KPCPlanetaryObjectJUPITER)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetSaturn), KPCPlanetaryObjectSATURN)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetNeptune), KPCPlanetaryObjectNEPTUNE)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetUranus), KPCPlanetaryObjectURANUS)
+        XCTAssertEqual(KPCPlanetaryObject.fromPlanet(KPCAAPlanetPluto), KPCPlanetaryObjectUNDEFINED)
     }
     
     func testPlanet2PlanetaryObjectType() {
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Mercury).objectType! is SwiftAA.Mercury.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Venus).objectType! is SwiftAA.Venus.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Earth).objectType == nil)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Mars).objectType! is SwiftAA.Mars.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Jupiter).objectType! is SwiftAA.Jupiter.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Saturn).objectType! is SwiftAA.Saturn.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Neptune).objectType! is SwiftAA.Neptune.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Uranus).objectType! is SwiftAA.Uranus.Type)
-        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(.Pluto).objectType == nil)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetMercury).objectType! is SwiftAA.Mercury.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetVenus).objectType! is SwiftAA.Venus.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetEarth).objectType == nil)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetMars).objectType! is SwiftAA.Mars.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetJupiter).objectType! is SwiftAA.Jupiter.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetSaturn).objectType! is SwiftAA.Saturn.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetNeptune).objectType! is SwiftAA.Neptune.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetUranus).objectType! is SwiftAA.Uranus.Type)
+        XCTAssertTrue(KPCPlanetaryObject.fromPlanet(KPCAAPlanetPluto).objectType == nil)
     }
     
     func testPlanet2PlanetStrict() {
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Mercury), KPCAAPlanetStrict.mercury)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Venus), KPCAAPlanetStrict.venus)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Earth), KPCAAPlanetStrict.earth)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Mars), KPCAAPlanetStrict.mars)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Jupiter), KPCAAPlanetStrict.jupiter)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Saturn), KPCAAPlanetStrict.saturn)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Neptune), KPCAAPlanetStrict.neptune)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Uranus), KPCAAPlanetStrict.uranus)
-        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(.Pluto), KPCAAPlanetStrict.undefined)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetMercury), KPCAAPlanetStrictMercury)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetVenus), KPCAAPlanetStrictVenus)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetEarth), KPCAAPlanetStrictEarth)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetMars), KPCAAPlanetStrictMars)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetJupiter), KPCAAPlanetStrictJupiter)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetSaturn), KPCAAPlanetStrictSaturn)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetNeptune), KPCAAPlanetStrictNeptune)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetUranus), KPCAAPlanetStrictUranus)
+        XCTAssertEqual(KPCAAPlanetStrict.fromPlanet(KPCAAPlanetPluto), KPCAAPlanetStrictUndefined)
     }
 
     func testPlanetDescriptions() {
-        XCTAssertEqual(String(describing: KPCAAPlanet.Mercury), "Mercury")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Venus), "Venus")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Earth), "Earth")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Mars), "Mars")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Jupiter), "Jupiter")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Saturn), "Saturn")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Neptune), "Neptune")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Uranus), "Uranus")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Pluto), "Pluto")
-        XCTAssertEqual(String(describing: KPCAAPlanet.Undefined), "")
+        XCTAssertEqual(String(describing: KPCAAPlanetMercury), "Mercury")
+        XCTAssertEqual(String(describing: KPCAAPlanetVenus), "Venus")
+        XCTAssertEqual(String(describing: KPCAAPlanetEarth), "Earth")
+        XCTAssertEqual(String(describing: KPCAAPlanetMars), "Mars")
+        XCTAssertEqual(String(describing: KPCAAPlanetJupiter), "Jupiter")
+        XCTAssertEqual(String(describing: KPCAAPlanetSaturn), "Saturn")
+        XCTAssertEqual(String(describing: KPCAAPlanetNeptune), "Neptune")
+        XCTAssertEqual(String(describing: KPCAAPlanetUranus), "Uranus")
+        XCTAssertEqual(String(describing: KPCAAPlanetPluto), "Pluto")
+        XCTAssertEqual(String(describing: KPCAAPlanetUndefined), "")
     }
     
     func testPlanetFromString() {
-        XCTAssertEqual(KPCAAPlanet.fromString("Mercury"), .Mercury)
-        XCTAssertEqual(KPCAAPlanet.fromString("Venus"), .Venus)
-        XCTAssertEqual(KPCAAPlanet.fromString("Earth"), .Earth)
-        XCTAssertEqual(KPCAAPlanet.fromString("Mars"), .Mars)
-        XCTAssertEqual(KPCAAPlanet.fromString("Jupiter"), .Jupiter)
-        XCTAssertEqual(KPCAAPlanet.fromString("Saturn"), .Saturn)
-        XCTAssertEqual(KPCAAPlanet.fromString("Neptune"), .Neptune)
-        XCTAssertEqual(KPCAAPlanet.fromString("Uranus"), .Uranus)
-        XCTAssertEqual(KPCAAPlanet.fromString("Pluto"), .Pluto)
-        XCTAssertEqual(KPCAAPlanet.fromString(""), .Undefined)
-        XCTAssertEqual(KPCAAPlanet.fromString(">??"), .Undefined)
+        XCTAssertEqual(KPCAAPlanet.fromString("Mercury"), KPCAAPlanetMercury)
+        XCTAssertEqual(KPCAAPlanet.fromString("Venus"), KPCAAPlanetVenus)
+        XCTAssertEqual(KPCAAPlanet.fromString("Earth"), KPCAAPlanetEarth)
+        XCTAssertEqual(KPCAAPlanet.fromString("Mars"), KPCAAPlanetMars)
+        XCTAssertEqual(KPCAAPlanet.fromString("Jupiter"), KPCAAPlanetJupiter)
+        XCTAssertEqual(KPCAAPlanet.fromString("Saturn"), KPCAAPlanetSaturn)
+        XCTAssertEqual(KPCAAPlanet.fromString("Neptune"), KPCAAPlanetNeptune)
+        XCTAssertEqual(KPCAAPlanet.fromString("Uranus"), KPCAAPlanetUranus)
+        XCTAssertEqual(KPCAAPlanet.fromString("Pluto"), KPCAAPlanetPluto)
+        XCTAssertEqual(KPCAAPlanet.fromString(""), KPCAAPlanetUndefined)
+        XCTAssertEqual(KPCAAPlanet.fromString(">??"), KPCAAPlanetUndefined)
     }
 }

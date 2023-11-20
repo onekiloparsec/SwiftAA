@@ -7,13 +7,14 @@
 //
 
 import XCTest
+import AABridge
 @testable import SwiftAA
 
 // Based on AA+ "tests"
 class EarthTests: XCTestCase {
 
     func testAverageColor() {
-        XCTAssertNotEqual(Earth.averageColor, Color.white)
+        XCTAssertNotEqual(Earth.averageColor, CelestialColor.white)
     }
 
     func testLengthOfSeason2000() {
@@ -38,7 +39,7 @@ class EarthTests: XCTestCase {
         let earth = Earth(julianDay: jd)
         
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
-        let details = earth.riseTransitSetTimes(for: .VENUS, geographicCoordinates: boston)
+        let details = earth.riseTransitSetTimes(for: KPCPlanetaryObjectVENUS, geographicCoordinates: boston)
         
         let accuracy = Minute(2.0).inJulianDays
         let expectedRise = JulianDay(year: 1988, month: 03, day: 20, hour: 12, minute: 25)
@@ -56,7 +57,7 @@ class EarthTests: XCTestCase {
         let earth = Earth(julianDay: jd)
         
         let boston = GeographicCoordinates(positivelyWestwardLongitude: 71.0833, latitude: 42.3333)
-        let details = earth.riseTransitSetTimes(for: .UNDEFINED, geographicCoordinates: boston)
+        let details = earth.riseTransitSetTimes(for: KPCPlanetaryObjectUNDEFINED, geographicCoordinates: boston)
         
         XCTAssertNil(details.riseTime)
         XCTAssertNil(details.transitTime)

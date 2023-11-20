@@ -8,12 +8,28 @@
 
 import Foundation
 
-#if os(OSX)
-    import AppKit
-    public typealias Color=NSColor
-#else
+#if canImport(UIKit)
     import UIKit
-    public typealias Color=UIColor
+    public typealias CelestialColor=UIColor
+#elseif canImport(AppKit)
+    import AppKit
+    public typealias CelestialColor=NSColor
+#else
+    public struct CelestialColor: Equatable, Hashable {
+        public static let white = CelestialColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+        public let red: Double
+        public let green: Double
+        public let blue: Double
+        public let alpha: Double
+
+        public init (red: Double, green: Double, blue: Double, alpha: Double) {
+            self.red = red
+            self.green = green
+            self.blue = blue
+            self.alpha = alpha
+        }
+    }
 #endif
 
 #if os(OSX)
