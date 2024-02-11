@@ -1,17 +1,9 @@
-<h3 align="center">
-<img src="http://onekiloparsec.dev/wp-content/uploads/2020/10/1kpcAstroComponents.png" />
-</h3>
 <p align="center">
 <b>SwiftAA</b> &bull;
 <a href="https://github.com/onekiloparsec/aa-js">aa-js</a> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <a href="https://github.com/onekiloparsec/FITSImporter">FITSImporter</a> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
-</p>
-<p align="center">
-<a href="https://www.patreon.com/onekiloparsec" target="_blank">
-<img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patreon">
-</a>
 </p>
 
 SwiftAA
