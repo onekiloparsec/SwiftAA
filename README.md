@@ -24,14 +24,14 @@ SwiftAA
 
 *(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
 
-Other implementations: [JavaScript (aa-js)](https://github.com/onekiloparsec/aa-js), [C# (AASharp)](https://github.com/jsauve/AASharp).  
+Other implementations: [C# (AASharp)](https://github.com/jsauve/AASharp), and [JavaScript (aa-js)](https://github.com/onekiloparsec/aa-js), which has sligthly different APIs (not covering all the original AA, but with additional useful things).
 
 Description
 =======
 
 SwiftAA provides everything you need to build our Solar System, compute length of seasons, moon phases, determine rise, transit and set times, get positions of large planetary moons, transform coordinates, determine physical details of planets, their illumination, distance etc. With a professional-grade accuracy.
 
-**SwiftAA is already used in production apps.** In particular, 
+**SwiftAA is already used in production apps.** In particular, the apps by [Vaonis](https://vaonis.com) who make amazing smart telescopes. But also mobile apps such as
 [MeteorActive](https://itunes.apple.com/us/app/meteoractive/id1205712190?mt=8), a carefully crafted iOS app to get
 everything about meteors.
 
