@@ -65,7 +65,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
 {
     // Do NOT pass Right Ascension values in degrees, as requested by AA+. It will be transformed later.
     // See CAARiseTransitSet::CalculateTransit, line 72.
-    let details = KPCAARiseTransitSet_Calculate(julianDay.UTCtoTT().value,
+    let details = KPCAARiseTransitSet_Calculate(julianDay.value,
                                                 equCoords1.alpha.value,
                                                 equCoords1.delta.value,
                                                 equCoords2.alpha.value,
