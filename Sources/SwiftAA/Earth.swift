@@ -74,7 +74,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      - returns: A julian day of the TT time of the equinox.
      */
     public func equinox(of equinoxType: EarthEquinoxType) -> JulianDay {
-        let year = self.julianDay.date.year
+        let year = self.julianDay.year
         switch equinoxType {
         case .northwardSpring:
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthwardEquinox(year, self.highPrecision))
@@ -92,7 +92,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      - returns: A julian day of the TT time of the solstice.
      */
     public func solstice(of solsticeType: EarthSolsticeType) -> JulianDay {
-        let year = self.julianDay.date.year
+        let year = self.julianDay.year
         switch solsticeType {
         case .northernSummer:
             return JulianDay(KPCAAEquinoxesAndSolstices_NorthernSolstice(year, self.highPrecision))
@@ -110,7 +110,7 @@ public class Earth: Object, PlanetaryBase, PlanetaryOrbits {
      - returns: A length in (Julian) Days.
      */
     public func lengthOfSeason(_ season: Season, northernHemisphere: Bool) -> Day {
-        let year = self.julianDay.date.year
+        let year = self.julianDay.year
         switch season {
         case .spring:
             return Day(KPCAAEquinoxesAndSolstices_LengthOfSpring(year, northernHemisphere, self.highPrecision))

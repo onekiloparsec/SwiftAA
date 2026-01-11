@@ -66,7 +66,10 @@ public extension JulianDay {
         let decimalSeconds = KPCAADate_GetSecond(aaDate)
         let roundedSeconds = decimalSeconds.rounded(.towardZero)
         let nanoseconds = (decimalSeconds - roundedSeconds) * 1e9
-        let components = DateComponents(year: KPCAADate_GetYear(aaDate),
+        let aaYear = KPCAADate_GetYear(aaDate)
+        // the aaYear sequence is -2, -1, 0, 1, 2 while the Gregorian years are counted era0 2, era0 1, era1 1, era1 2
+        let components = DateComponents(era: aaYear > 0 ? 1 : 0,
+                                        year: aaYear > 0 ? aaYear : abs(1 - aaYear),
                                         month: KPCAADate_GetMonth(aaDate),
                                         day: KPCAADate_GetDay(aaDate),
                                         hour: KPCAADate_GetHour(aaDate),
@@ -79,6 +82,20 @@ public extension JulianDay {
         return date
     }
     
+    /// Returns the astronomical year count of this Julian Day value. The year before 1 is returned as 0, the year before 0 returned as -1.
+    /// This astronomical  counting differs from the Gregorian year where the year before year 1 is 1BC.
+    /// The reason to offer this separate attribute is the difficulty of extracting the year before 1 from a Swift Date object
+    /// and before the year equivalent to JulianDay 0, Swift Date always returns era 0 year 4712
+    /// and many SwiftAA functions use an intermediate conversion from a JulianDay to a Gregorian year, and will fail when used on a Swift Date object for years before 1
+    /// and they expect a year 0 and not the 0-skip of the Gregorian calendar.
+    /// This intermediate use of the Gregorian calendar in general instead of Julian Day is risky and most likely slow, but changing would require a lot of work.
+    var year: Int {
+        let aaDate = KPCAADate_CreateWithJulianDay(value, true)
+        let aaYear = KPCAADate_GetYear(aaDate)
+        KPCAADate_Destroy(aaDate)
+        return aaYear
+    }
+
     /// Returns the so-called Modified Julian Day corresponding to the Julian Day value.
     /// Contrary to the JD, the Modified Julian Day begins at Greenwhich mean midnight.
     /// It is equal to JD - 2400 000.5
