@@ -15,6 +15,7 @@ extern "C" {
 typedef struct KPCAARiseTransitSetDetails {
     bool isRiseValid;
     double Rise;
+    bool isTransitValid;
     bool isTransitAboveHorizon;
     double Transit;
     bool isSetValid;

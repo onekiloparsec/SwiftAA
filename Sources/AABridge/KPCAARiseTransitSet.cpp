@@ -25,6 +25,7 @@ KPCAARiseTransitSetDetails KPCAARiseTransitSet_Calculate(double JD,
     KPCAARiseTransitSetDetails details;
     details.isRiseValid = detailsPlus.bRiseValid;
     details.Rise = detailsPlus.Rise;
+    details.isTransitValid = detailsPlus.bTransitValid;
     details.isTransitAboveHorizon = detailsPlus.bTransitAboveHorizon;
     details.Transit = detailsPlus.Transit;
     details.isSetValid = detailsPlus.bSetValid;

@@ -13,6 +13,7 @@ import AABridge
 public struct RiseTransitSetTimesDetails {
     public private(set) var isRiseValid: Bool
     public private(set) var riseTime: JulianDay
+    public private(set) var isTransitValid: Bool
     public private(set) var isTransitAboveHorizon: Bool
     public private(set) var transitTime: JulianDay
     public private(set) var isSetValid: Bool
@@ -82,6 +83,7 @@ public func riseTransitSet(forJulianDay julianDay: JulianDay,
     
     return RiseTransitSetTimesDetails(isRiseValid: details.isRiseValid,
                                       riseTime: rise,
+                                      isTransitValid: details.isTransitValid,
                                       isTransitAboveHorizon: details.isTransitAboveHorizon,
                                       transitTime: transit,
                                       isSetValid: details.isSetValid,
@@ -160,7 +162,7 @@ public struct RiseTransitSetTimes {
     
     /// The transit time of the celestial body, in Julian Day.
     public var transitTime: JulianDay? {
-        get { return (self.details != nil && self.details!.isTransitAboveHorizon) ? self.details!.transitTime : nil }
+        get { return (self.details != nil && self.details!.isTransitValid) ? self.details!.transitTime : nil }
     }
     
     /// The set time of the celestial body, in Julian Day.
