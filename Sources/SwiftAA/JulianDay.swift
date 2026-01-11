@@ -101,7 +101,7 @@ public extension JulianDay {
         var shift = 0.0
         if longitude.inHours.value > self.date.fractionalHour { shift = -1.0 }
         else if longitude.inHours.value+12.0 < -self.date.fractionalHour { shift = +1.0 }
-        return self.midnight.date.addingTimeInterval(longitude.inHours.inSeconds.value).julianDay + JulianDay(shift)
+        return JulianDay(self.midnight.value + longitude.value / 15.0 / 24.0) + JulianDay(shift)
     }
     
     /// Returns the Julian Day corresponding to the local midnight, based on timezone.
