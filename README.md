@@ -16,9 +16,7 @@ SwiftAA
 [![Codecov](https://img.shields.io/codecov/c/github/onekiloparsec/SwiftAA.svg)](https://codecov.io/gh/onekiloparsec/SwiftAA)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fonekiloparsec%2FSwiftAA?ref=badge_shield)
 
-*The most comprehensive collection of accurate astronomical algorithms, in C++ and Swift, all in one place.* 
-
-*(Available through all distribution mechanisms: Swift Package Manager, Cocoapods and Carthage.)*
+*The most comprehensive collection of accurate astronomical algorithms in Swift.* 
 
 Other implementations: [C# (AASharp)](https://github.com/jsauve/AASharp), and [JavaScript (aa-js)](https://github.com/onekiloparsec/aa-js), which has sligthly different APIs (not covering all the original AA, but with additional useful things).
 
