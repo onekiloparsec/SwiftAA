@@ -9,7 +9,7 @@
 import Foundation
 import ObjCAA
 
-typealias JupiterEquatorialRadius = Double
+public typealias JupiterEquatorialRadius = Double
 
 
 /// These coordinates describe the position of the four great satellites of Jupiter, with respect to the planet,
@@ -19,9 +19,9 @@ typealias JupiterEquatorialRadius = Double
 /// Y is measured positively to the north, the axis coinciding with the rotation axis of the planet.
 /// Z is negative if the satellite is closer to the Earth than Jupiter, and positive otherwise.
 public struct GalileanMoonRectangularCoordinates {
-    fileprivate(set) var X: JupiterEquatorialRadius
-    fileprivate(set) var Y: JupiterEquatorialRadius
-    fileprivate(set) var Z: Double
+    public fileprivate(set) var X: JupiterEquatorialRadius
+    public fileprivate(set) var Y: JupiterEquatorialRadius
+    public fileprivate(set) var Z: Double
     
     init(components: KPCAA3DCoordinateComponents) {
         self.X = components.X
